@@ -28,7 +28,7 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
 /** 
- * Updated by JCasGen Thu May 31 14:36:10 CEST 2012
+ * Updated by JCasGen Thu May 31 16:23:19 CEST 2012
  * @generated */
 public class ExperimentalTextSimilarityScore_Type extends TextSimilarityScore_Type {
   /** @generated */

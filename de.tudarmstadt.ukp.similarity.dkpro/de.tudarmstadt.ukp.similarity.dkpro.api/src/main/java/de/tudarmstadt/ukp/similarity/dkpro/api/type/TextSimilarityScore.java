@@ -28,8 +28,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Thu May 31 14:36:10 CEST 2012
- * XML source: /home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity/de.tudarmstadt.ukp.similarity.dkpro/de.tudarmstadt.ukp.similarity.dkpro.api/src/main/resources/desc/type/Relatedness.xml
+ * Updated by JCasGen Thu May 31 16:23:19 CEST 2012
+ * XML source: /home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity/de.tudarmstadt.ukp.similarity.dkpro/de.tudarmstadt.ukp.similarity.dkpro.api/src/main/resources/desc/type/Similarity.xml
  * @generated */
 public class TextSimilarityScore extends Annotation {
   /** @generated
