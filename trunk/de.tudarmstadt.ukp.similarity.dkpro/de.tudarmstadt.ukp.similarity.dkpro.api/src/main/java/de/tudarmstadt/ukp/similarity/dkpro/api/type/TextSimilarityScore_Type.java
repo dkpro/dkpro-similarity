@@ -31,7 +31,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Thu May 31 14:36:10 CEST 2012
+ * Updated by JCasGen Thu May 31 16:23:19 CEST 2012
  * @generated */
 public class TextSimilarityScore_Type extends Annotation_Type {
   /** @generated */
