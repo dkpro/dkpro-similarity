@@ -49,6 +49,7 @@
   <modules>
   	<module>de.tudarmstadt.ukp.similarity.algorithms</module>
   	<module>de.tudarmstadt.ukp.similarity.dkpro</module>
+    <module>de.tudarmstadt.ukp.similarity.example</module>
   	<module>de.tudarmstadt.ukp.similarity.ml</module>
   </modules>
 </project>
