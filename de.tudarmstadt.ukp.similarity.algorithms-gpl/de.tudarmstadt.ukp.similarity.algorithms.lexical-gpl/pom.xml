@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>de.tudarmstadt.ukp.similarity.algorithms-gpl</artifactId>
+    <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>de.tudarmstadt.ukp.similarity.algorithms-gpl</groupId>
+  <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.wcohen.ss</groupId>
+  		<artifactId>secondstring</artifactId>
+  		<version>20060615</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.api</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>uk.ac.shef.wit.simmetrics</groupId>
+  		<artifactId>simmetrics</artifactId>
+  		<version>1.6.2.20070207</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
+  	</dependency>
+  </dependencies>
+</project>
