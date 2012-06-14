@@ -30,10 +30,10 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 
-public class TextSimilarityResource
+public class TextSimilarityDefaultResource
     extends TextSimilarityResourceBase
 {
-	public static final String PARAM_TEXT_SIMILARITY_MEASURE = "TextRelatednessMeasure";
+	public static final String PARAM_TEXT_SIMILARITY_MEASURE = "TextSimilarityMeasure";
 	@ConfigurationParameter(name=PARAM_TEXT_SIMILARITY_MEASURE, mandatory=true)
 	private String textSimilarityMeasureName;
 	

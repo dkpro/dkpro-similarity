@@ -39,18 +39,18 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
  * the ferrett plagiarism and collusion detector. In Plagiarism: Prevention,
  * Practice and Policies Conference, 2004.
  */
-public class NGramJaccardMeasure
+public class WordNGramJaccardMeasure
 	extends TextSimilarityMeasureBase
 {
 	int n;
 	
-	public NGramJaccardMeasure()
+	public WordNGramJaccardMeasure()
 	{
 		// Default constructor uses trigrams
 		this.n = 3;
 	}
 	
-	public NGramJaccardMeasure(int n)
+	public WordNGramJaccardMeasure(int n)
 	{
 		this.n = n;
 	}

@@ -16,7 +16,7 @@ import org.uimafit.factory.AggregateBuilder;
 import org.uimafit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.algorithms.api.resource.TextSimilarityResource;
+import de.tudarmstadt.ukp.similarity.algorithms.api.resource.TextSimilarityDefaultResource;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
@@ -47,8 +47,8 @@ public class WithDKPro
 		    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
 		    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
 		    SimilarityScorer.PARAM_TEXT_SIMILARITY_MEASURE, createExternalResourceDescription(
-		    	TextSimilarityResource.class,
-		    	TextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, "de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.NGramContainmentMeasure")
+		    	TextSimilarityDefaultResource.class,
+		    	TextSimilarityDefaultResource.PARAM_TEXT_SIMILARITY_MEASURE, "de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.NGramContainmentMeasure")
 		    );
 
 		AnalysisEngine writer = createPrimitive(CASDumpWriter.class,
