@@ -23,7 +23,7 @@
     <version>2</version>
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity</groupId>
-  <artifactId>de.tudarmstadt.ukp.similarity</artifactId>
+  <artifactId>de.tudarmstadt.ukp.similarity-asl</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <dependencies>

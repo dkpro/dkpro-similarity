@@ -18,14 +18,14 @@
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.vsm</artifactId>
+  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   		<type>jar</type>
   		<scope>compile</scope>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical</artifactId>
+  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   		<type>jar</type>
   		<scope>compile</scope>
