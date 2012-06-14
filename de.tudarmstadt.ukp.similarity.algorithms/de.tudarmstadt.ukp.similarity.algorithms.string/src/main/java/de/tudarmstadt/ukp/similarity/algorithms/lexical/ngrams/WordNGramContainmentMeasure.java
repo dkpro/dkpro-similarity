@@ -22,16 +22,16 @@ import java.util.List;
 import java.util.Set;
 
 
-public class NGramContainmentMeasure
-	extends NGramJaccardMeasure
+public class WordNGramContainmentMeasure
+	extends WordNGramJaccardMeasure
 {
-	public NGramContainmentMeasure()
+	public WordNGramContainmentMeasure()
 	{
 		// Default constructor uses trigrams
 		super(3);
 	}
 	
-	public NGramContainmentMeasure(int n)
+	public WordNGramContainmentMeasure(int n)
 	{
 		super(n);
 	}

@@ -6,8 +6,8 @@ import java.util.List;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.NGramContainmentMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.NGramJaccardMeasure;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramJaccardMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.InnerVectorProduct;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.VectorComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.VectorNorm;
@@ -23,7 +23,7 @@ public class WithoutDKPro
 		List<String> lemmas2 = getTokens("The quick brown dog jumps over the lazy fox");
 		
 		// Compute a trigram relatedness		
-		TextSimilarityMeasure measure = new NGramContainmentMeasure(3);
+		TextSimilarityMeasure measure = new WordNGramContainmentMeasure(3);
 
 		double score = measure.getSimilarity(lemmas1, lemmas2);
 

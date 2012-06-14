@@ -15,9 +15,9 @@ import org.uimafit.factory.AggregateBuilder;
 import org.uimafit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.algorithms.api.resource.TextSimilarityResource;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.NGramContainmentMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.NGramJaccardMeasure;
+import de.tudarmstadt.ukp.similarity.algorithms.api.resource.TextSimilarityDefaultResource;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramJaccardMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
@@ -38,13 +38,13 @@ public class FeatureGeneration
 		List<FeatureConfig> configs = new ArrayList<FeatureConfig>();
 		
 		configs.add(new FeatureConfig(
-				new NGramContainmentMeasure(),
+				new WordNGramContainmentMeasure(),
 				SimilaritySegments.TOKENS,
 				false,
 				"content/word-ngrams"));
 		
 		configs.add(new FeatureConfig(
-			new NGramJaccardMeasure(),
+			new WordNGramJaccardMeasure(),
 			SimilaritySegments.TOKENS,
 			false,
 			"content/word-ngrams"));
@@ -68,8 +68,8 @@ public class FeatureGeneration
 			    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
 			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, config.getSegmentFeaturePath(),
 			    SimilarityScorer.PARAM_TEXT_SIMILARITY_MEASURE, createExternalResourceDescription(
-			    	TextSimilarityResource.class,
-			    	TextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, config.getMeasure().getClass().getName())
+			    	TextSimilarityDefaultResource.class,
+			    	TextSimilarityDefaultResource.PARAM_TEXT_SIMILARITY_MEASURE, config.getMeasure().getClass().getName())
 			    );
 			
 			AnalysisEngine writer = createPrimitive(SimilarityScoreWriter.class,
