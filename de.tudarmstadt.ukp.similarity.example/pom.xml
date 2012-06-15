@@ -71,5 +71,12 @@
   		<type>jar</type>
   		<scope>compile</scope>
   	</dependency>
+  	<dependency>
+  		<groupId>weka</groupId>
+  		<artifactId>weka</artifactId>
+  		<version>3.7.5</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
+  	</dependency>
   </dependencies>
 </project>
