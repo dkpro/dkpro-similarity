@@ -20,6 +20,7 @@ public class WordNGramResource
 	
 	public static final String PARAM_N = "N";
 	@ConfigurationParameter(name=PARAM_N, mandatory=true)
+	private String nValue;
 	private int n;
 	
 	@SuppressWarnings("unchecked")
@@ -32,6 +33,7 @@ public class WordNGramResource
         }
         
         try {
+        	n = Integer.parseInt(nValue);     	
 			measure = (TextSimilarityMeasure) Class.forName(textSimilarityMeasureName).
 				getConstructor(new Class[] { Integer.TYPE }).
 				newInstance(n);
