@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.resource;
+package de.tudarmstadt.ukp.similarity.dkpro.resource.lexical;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
@@ -8,7 +8,7 @@ import org.apache.uima.resource.ResourceSpecifier;
 import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.api.resource.TextSimilarityResourceBase;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
 
 
 public class WordNGramResource
