@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.api.resource;
+package de.tudarmstadt.ukp.similarity.dkpro.resource;
 
 import java.util.Collection;
 import java.util.Map;
@@ -33,32 +33,28 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 public class TextSimilarityDefaultResource
     extends TextSimilarityResourceBase
 {
+	public static final String MSG_CANNOT_INITIALIZE = "Cannot initialize text similarity resource. Base measure not found.";
+		
 	public static final String PARAM_TEXT_SIMILARITY_MEASURE = "TextSimilarityMeasure";
 	@ConfigurationParameter(name=PARAM_TEXT_SIMILARITY_MEASURE, mandatory=true)
 	private String textSimilarityMeasureName;
 	
-    @SuppressWarnings("unchecked")
-    @Override
-    public boolean initialize(ResourceSpecifier aSpecifier, Map aAdditionalParams)
-        throws ResourceInitializationException
+	@Override
+    public void afterResourcesInitialized()
     {
-        if (!super.initialize(aSpecifier, aAdditionalParams)) {
-            return false;
-        }
-        
+    	super.afterResourcesInitialized();
+    	
         try {
 			measure = (TextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
 		}
 		catch (InstantiationException e) {
-			throw new ResourceInitializationException(e);
+			getLogger().error(MSG_CANNOT_INITIALIZE);
 		}
 		catch (IllegalAccessException e) {
-			throw new ResourceInitializationException(e);
+			getLogger().error(MSG_CANNOT_INITIALIZE);
 		}
 		catch (ClassNotFoundException e) {
-			throw new ResourceInitializationException(e);
+			getLogger().error(MSG_CANNOT_INITIALIZE);
 		}
-        
-        return true;
     }
 }

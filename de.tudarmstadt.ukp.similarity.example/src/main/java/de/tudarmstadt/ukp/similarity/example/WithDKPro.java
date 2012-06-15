@@ -16,12 +16,12 @@ import org.uimafit.factory.AggregateBuilder;
 import org.uimafit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.algorithms.api.resource.TextSimilarityDefaultResource;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.resource.WordNGramResource;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityDefaultResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.WordNGramResource;
 
 
 public class WithDKPro

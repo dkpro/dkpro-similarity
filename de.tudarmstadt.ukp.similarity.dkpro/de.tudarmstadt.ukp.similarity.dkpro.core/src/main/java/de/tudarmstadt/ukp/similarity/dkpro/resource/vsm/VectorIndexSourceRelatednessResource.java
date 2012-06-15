@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.vsm.resource;
+package de.tudarmstadt.ukp.similarity.dkpro.resource.vsm;
 
 import java.io.File;
 import java.util.Map;
@@ -25,10 +25,10 @@ import org.apache.uima.resource.ResourceSpecifier;
 import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.similarity.algorithms.api.resource.TextSimilarityResourceBase;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.VectorComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.CachingVectorReader;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.vectorindex.VectorIndexReader;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
 
 public final class VectorIndexSourceRelatednessResource
 	extends TextSimilarityResourceBase

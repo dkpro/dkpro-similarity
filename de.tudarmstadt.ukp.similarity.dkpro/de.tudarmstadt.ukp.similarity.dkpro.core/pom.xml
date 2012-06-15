@@ -43,7 +43,11 @@
   		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.api</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
-  		<type>jar</type>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
   		<scope>compile</scope>
   	</dependency>
   </dependencies>
