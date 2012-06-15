@@ -31,5 +31,6 @@
   	<module>de.tudarmstadt.ukp.similarity.algorithms.core</module>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.lexical</module>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.vsm</module>
+  	<module>de.tudarmstadt.ukp.similarity.algorithms.style-asl</module>
   </modules>
 </project>

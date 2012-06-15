@@ -17,9 +17,26 @@
  *******************************************************************************/
 package de.tudarmstadt.ukp.similarity.algorithms.api;
 
+import java.util.Collection;
+
+import org.apache.commons.lang.NotImplementedException;
+
 public abstract class JCasTextSimilarityMeasureBase
 	extends TextSimilarityMeasureBase
 	implements JCasTextSimilarityMeasure
 {
+	@Override
+	public double getSimilarity(Collection<String> stringList1,
+			Collection<String> stringList2)
+		throws SimilarityException
+	{
+		throw new SimilarityException(new NotImplementedException());
+	}
 
+	@Override
+	public double getSimilarity(String string1, String string2)
+		throws SimilarityException
+	{
+		throw new SimilarityException(new NotImplementedException());
+	}
 }
