@@ -29,7 +29,7 @@
   <modules>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.api</module>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.core</module>
-  	<module>de.tudarmstadt.ukp.similarity.algorithms.string</module>
+  	<module>de.tudarmstadt.ukp.similarity.algorithms.lexical</module>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.vsm</module>
   </modules>
 </project>
