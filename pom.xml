@@ -13,7 +13,8 @@
   	<dependencies>
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  			<artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical.gpl</artifactId>
+  			<artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
   		</dependency>
   	</dependencies>
   </dependencyManagement>
