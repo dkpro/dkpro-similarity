@@ -9,6 +9,14 @@
   <artifactId>de.tudarmstadt.ukp.similarity-gpl</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  			<artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical.gpl</artifactId>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
   <modules>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl</module>
   </modules>
