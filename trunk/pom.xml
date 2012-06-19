@@ -47,9 +47,17 @@
   	</dependencies>
   </dependencyManagement>
   <modules>
-  	<module>de.tudarmstadt.ukp.similarity.algorithms</module>
-  	<module>de.tudarmstadt.ukp.similarity.dkpro</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.api-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.core-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.style-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.dkpro.api-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.dkpro.core-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.dkpro.data-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.dkpro.io-asl</module>
     <module>de.tudarmstadt.ukp.similarity.example</module>
-  	<module>de.tudarmstadt.ukp.similarity.ml</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.ml.core-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.ml.io-asl</module>
   </modules>
 </project>
