@@ -10,6 +10,6 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
-  	<module>de.tudarmstadt.ukp.similarity.algorithms-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl</module>
   </modules>
 </project>
