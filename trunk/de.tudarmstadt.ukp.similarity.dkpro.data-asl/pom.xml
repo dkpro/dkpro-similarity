@@ -23,6 +23,6 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
-  <artifactId>de.tudarmstadt.ukp.similarity.dkpro.data</artifactId>
+  <artifactId>de.tudarmstadt.ukp.similarity.dkpro.data-asl</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 </project>
