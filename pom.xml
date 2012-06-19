@@ -52,12 +52,12 @@
     <module>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</module>
     <module>de.tudarmstadt.ukp.similarity.algorithms.style-asl</module>
     <module>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.dkpro.api-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.dkpro.core-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.dkpro.data-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.dkpro.io-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.dkpro.api-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.dkpro.core-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.dkpro.data-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.dkpro.io-asl</module>
     <module>de.tudarmstadt.ukp.similarity.example</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.ml.core-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.ml.io-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.ml.core-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.ml.io-asl</module>
   </modules>
 </project>
