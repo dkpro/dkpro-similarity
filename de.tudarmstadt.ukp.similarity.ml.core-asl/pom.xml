@@ -23,7 +23,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity.ml</groupId>
-  <artifactId>de.tudarmstadt.ukp.similarity.ml.core</artifactId>
+  <artifactId>de.tudarmstadt.ukp.similarity.ml.core-asl</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
   	<dependency>

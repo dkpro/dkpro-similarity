@@ -94,7 +94,7 @@
             <artifactId>de.tudarmstadt.ukp.similarity.ml.core-asl</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-                <dependency>
+        <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.ml</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.ml.io-asl</artifactId>
             <version>0.0.1-SNAPSHOT</version>
