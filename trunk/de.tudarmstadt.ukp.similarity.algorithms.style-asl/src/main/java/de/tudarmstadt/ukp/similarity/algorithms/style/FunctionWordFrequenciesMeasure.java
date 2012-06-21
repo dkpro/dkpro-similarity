@@ -24,7 +24,7 @@ public class FunctionWordFrequenciesMeasure
 	public FunctionWordFrequenciesMeasure()
 		throws IOException
 	{
-		functionWords = FileUtils.readLines(new File("src/main/resources/function-words-mosteller-wallace.txt"));
+		functionWords = FileUtils.readLines(new File("src/main/resources/functionWords/en/function-words-mosteller-wallace.txt"));
 	}	
 	
 	@Override
