@@ -50,7 +50,6 @@ public class MCS06AggregateComparator
 	 * @param measure The word similarity measure to use.
 	 * @throws IOException 
 	 */
-	@SuppressWarnings("unchecked")
 	public MCS06AggregateComparator(TextSimilarityMeasure measure, File idfValuesFile)
 		throws IOException
 	{
