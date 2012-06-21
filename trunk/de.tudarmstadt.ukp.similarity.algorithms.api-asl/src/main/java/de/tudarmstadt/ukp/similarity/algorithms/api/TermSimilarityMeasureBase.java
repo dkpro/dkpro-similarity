@@ -44,6 +44,7 @@ public abstract class TermSimilarityMeasureBase
 
 		// Not all comparators are normalized to a range from 0-1 - so for now we disable this.
 		// See bug 692
+		// FIXME I think this bug is still valid and returning 1.0 here is not valid for some measures
 		if (term1 == term2 || term1.equals(term2)) {
 			return 1.0;
 		}
