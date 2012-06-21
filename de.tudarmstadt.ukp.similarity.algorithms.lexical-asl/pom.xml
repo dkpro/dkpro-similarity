@@ -41,5 +41,12 @@
   		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</artifactId>
   	</dependency>
+  	<dependency>
+  		<groupId>com.wcohen.ss</groupId>
+  		<artifactId>secondstring</artifactId>
+  		<version>20060615</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
+  	</dependency>
   </dependencies>
 </project>
