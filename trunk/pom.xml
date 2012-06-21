@@ -120,5 +120,6 @@
     <module>de.tudarmstadt.ukp.similarity.ml.core-asl</module>
     <module>de.tudarmstadt.ukp.similarity.ml.io-asl</module>
     <module>de.tudarmstadt.ukp.similarity.algorithms.structure-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.sound</module>
   </modules>
 </project>
