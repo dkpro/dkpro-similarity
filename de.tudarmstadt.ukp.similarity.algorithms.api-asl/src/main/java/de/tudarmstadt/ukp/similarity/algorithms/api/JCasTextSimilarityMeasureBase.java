@@ -30,13 +30,13 @@ public abstract class JCasTextSimilarityMeasureBase
 			Collection<String> stringList2)
 		throws SimilarityException
 	{
-		throw new SimilarityException(new NotImplementedException());
+		throw new SimilarityException(new NotImplementedException("Use getSimilarity(JCas, JCas) for this measure."));
 	}
 
 	@Override
 	public double getSimilarity(String string1, String string2)
 		throws SimilarityException
 	{
-		throw new SimilarityException(new NotImplementedException());
+		throw new SimilarityException(new NotImplementedException("Use getSimilarity(JCas, JCas) for this measure."));
 	}
 }
