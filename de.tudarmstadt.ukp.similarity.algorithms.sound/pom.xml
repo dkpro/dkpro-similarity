@@ -6,7 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  <artifactId>de.tudarmstadt.ukp.similarity.algorithms.sound</artifactId>
+  <artifactId>de.tudarmstadt.ukp.similarity.algorithms.sound-asl</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
   	<dependency>
