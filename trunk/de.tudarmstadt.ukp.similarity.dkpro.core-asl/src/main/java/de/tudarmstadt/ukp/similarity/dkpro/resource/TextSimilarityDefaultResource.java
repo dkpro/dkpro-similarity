@@ -17,17 +17,9 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.dkpro.resource;
 
-import java.util.Collection;
-import java.util.Map;
-
-import org.apache.uima.resource.ResourceInitializationException;
-import org.apache.uima.resource.ResourceSpecifier;
 import org.uimafit.descriptor.ConfigurationParameter;
-import org.uimafit.descriptor.ExternalResource;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 
 public class TextSimilarityDefaultResource
