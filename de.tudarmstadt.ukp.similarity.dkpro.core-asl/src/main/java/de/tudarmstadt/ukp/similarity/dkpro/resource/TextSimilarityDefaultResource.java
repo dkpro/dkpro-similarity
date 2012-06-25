@@ -17,6 +17,10 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.dkpro.resource;
 
+import java.util.Map;
+
+import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.resource.ResourceSpecifier;
 import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
@@ -25,28 +29,32 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 public class TextSimilarityDefaultResource
     extends TextSimilarityResourceBase
 {
-	public static final String MSG_CANNOT_INITIALIZE = "Cannot initialize text similarity resource. Base measure not found.";
-		
 	public static final String PARAM_TEXT_SIMILARITY_MEASURE = "TextSimilarityMeasure";
 	@ConfigurationParameter(name=PARAM_TEXT_SIMILARITY_MEASURE, mandatory=true)
 	private String textSimilarityMeasureName;
 	
+	@SuppressWarnings("unchecked")
 	@Override
-    public void afterResourcesInitialized()
-    {
-    	super.afterResourcesInitialized();
-    	
+	public boolean initialize(ResourceSpecifier aSpecifier, Map aAdditionalParams)
+	    throws ResourceInitializationException
+	{
+	    if (!super.initialize(aSpecifier, aAdditionalParams)) {
+	        return false;
+	    }
+
         try {
-			measure = (TextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
-		}
-		catch (InstantiationException e) {
-			getLogger().error(MSG_CANNOT_INITIALIZE);
-		}
-		catch (IllegalAccessException e) {
-			getLogger().error(MSG_CANNOT_INITIALIZE);
-		}
-		catch (ClassNotFoundException e) {
-			getLogger().error(MSG_CANNOT_INITIALIZE);
-		}
-    }
+            measure = (TextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
+        }
+        catch (InstantiationException e) {
+            throw new ResourceInitializationException(e);
+        }
+        catch (IllegalAccessException e) {
+            throw new ResourceInitializationException(e);
+        }
+        catch (ClassNotFoundException e) {
+            throw new ResourceInitializationException(e);
+        }
+
+	    return true;
+	}
 }
