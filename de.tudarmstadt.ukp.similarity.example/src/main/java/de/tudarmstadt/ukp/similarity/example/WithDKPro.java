@@ -21,7 +21,7 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityDefaultResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.WordNGramResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.WordNGramContainmentResource;
 
 
 public class WithDKPro
@@ -84,9 +84,8 @@ public class WithDKPro
 			    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
 			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
 			    SimilarityScorer.PARAM_TEXT_SIMILARITY_MEASURE, createExternalResourceDescription(
-			    	WordNGramResource.class,
-			    	WordNGramResource.PARAM_TEXT_SIMILARITY_MEASURE, "de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure",
-			    	WordNGramResource.PARAM_N, "3")
+			    	WordNGramContainmentResource.class,
+			    	WordNGramContainmentResource.PARAM_N, "3")
 			    );
 			return scorer;
 		}
