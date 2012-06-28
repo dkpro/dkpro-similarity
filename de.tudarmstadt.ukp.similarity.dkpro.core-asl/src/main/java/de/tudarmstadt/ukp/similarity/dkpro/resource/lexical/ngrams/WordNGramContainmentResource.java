@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.dkpro.resource.lexical;
+package de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams;
 
 import java.util.Map;
 
@@ -6,11 +6,11 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 import org.uimafit.descriptor.ConfigurationParameter;
 
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramJaccardMeasure;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
 
 
-public class WordNGramJaccardResource
+public class WordNGramContainmentResource
 	extends TextSimilarityResourceBase
 {
 	public static final String PARAM_N = "N";
@@ -26,7 +26,7 @@ public class WordNGramJaccardResource
             return false;
         }
         
-		measure = new WordNGramJaccardMeasure(n);
+		measure = new WordNGramContainmentMeasure(n);
         
         return true;
     }
