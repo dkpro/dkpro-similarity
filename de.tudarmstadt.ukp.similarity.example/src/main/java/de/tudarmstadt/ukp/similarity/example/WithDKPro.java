@@ -21,7 +21,7 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityDefaultResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.WordNGramContainmentResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 
 
 public class WithDKPro
