@@ -23,10 +23,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang.NotImplementedException;
+import org.apache.commons.lang.StringUtils;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
+import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 /**
  * Algorithm taken from
@@ -57,7 +57,7 @@ public class GreedyStringTiling
 			Collection<String> stringList2)
 		throws SimilarityException
 	{
-		throw new SimilarityException(new NotImplementedException());
+	    return getSimilarity(StringUtils.join(stringList1, " "), StringUtils.join(stringList2, " "));
 	}
 	
 	/**
