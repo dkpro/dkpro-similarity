@@ -92,8 +92,7 @@ public class ShortAnswerGradingReader
 						pair.setText1(refAnswer);
 						pair.setText2(answer);
 						
-						
-						System.out.println(pair.getID2() + " # " + refAnswer + " # " + answer);
+						getLogger().debug(pair.getID2() + " # " + refAnswer + " # " + answer);
 						
 						pairs.add(pair);
 						

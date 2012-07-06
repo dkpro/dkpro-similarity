@@ -65,6 +65,8 @@ public class SimilarityScorer
 		throws ResourceInitializationException
 	{
 		super.initialize(aContext);
+		
+		getLogger().info(textSimilarityMeasure.getName());
 	}
 	
 	@Override
@@ -78,7 +80,7 @@ public class SimilarityScorer
 			DocumentMetaData md1 = JCasUtil.selectSingle(view1, DocumentMetaData.class);
 			DocumentMetaData md2 = JCasUtil.selectSingle(view2, DocumentMetaData.class);
 			
-			getLogger().info("Getting relatedness: " + md1.getDocumentId() + " / " + md2.getDocumentId());
+			getLogger().debug("Getting relatedness: " + md1.getDocumentId() + " / " + md2.getDocumentId());
 			
 			List<String> f1 = getFeatures(view1);
 			List<String> f2 = getFeatures(view2);
