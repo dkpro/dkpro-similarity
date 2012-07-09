@@ -23,11 +23,11 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 import org.uimafit.descriptor.ConfigurationParameter;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
+import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
 
 
-public class TextSimilarityDefaultResource
-    extends TextSimilarityResourceBase
+public class JCasTextSimilarityDefaultResource
+    extends JCasTextSimilarityResourceBase
 {
 
     public static final String PARAM_TEXT_SIMILARITY_MEASURE = "TextSimilarityMeasure";
@@ -44,7 +44,7 @@ public class TextSimilarityDefaultResource
 	    }
 
         try {
-            measure = (TextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
+            measure = (JCasTextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
         }
         catch (InstantiationException e) {
             throw new ResourceInitializationException(e);

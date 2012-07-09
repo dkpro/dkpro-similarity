@@ -35,9 +35,11 @@ import org.uimafit.util.JCasUtil;
 import de.tudarmstadt.ukp.dkpro.core.api.featurepath.FeaturePathException;
 import de.tudarmstadt.ukp.dkpro.core.api.featurepath.FeaturePathFactory;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
+import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.api.type.ExperimentalTextSimilarityScore;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityDefaultResource;
 
 
 public class SimilarityScorer
@@ -57,7 +59,7 @@ public class SimilarityScorer
 	
 	public static final String PARAM_TEXT_SIMILARITY_MEASURE = "TextRelatednessMeasure";
 	@ExternalResource(key=PARAM_TEXT_SIMILARITY_MEASURE, mandatory=true)
-	private TextSimilarityMeasure textSimilarityMeasure;
+	private TextSimilarityMeasure textSimilarityResource;
 
 	
 	@Override
@@ -66,7 +68,7 @@ public class SimilarityScorer
 	{
 		super.initialize(aContext);
 		
-		getLogger().info(textSimilarityMeasure.getName());
+		getLogger().info(textSimilarityResource.getName());
 	}
 	
 	@Override
@@ -82,10 +84,15 @@ public class SimilarityScorer
 			
 			getLogger().debug("Getting relatedness: " + md1.getDocumentId() + " / " + md2.getDocumentId());
 			
-			List<String> f1 = getFeatures(view1);
-			List<String> f2 = getFeatures(view2);
-			
-			double relatedness = textSimilarityMeasure.getSimilarity(f1, f2);
+			double relatedness;
+			if (textSimilarityResource instanceof JCasTextSimilarityDefaultResource) {
+                relatedness = ((JCasTextSimilarityMeasure) textSimilarityResource).getSimilarity(view1, view2);
+			}
+			else {
+	            List<String> f1 = getFeatures(view1);
+	            List<String> f2 = getFeatures(view2);
+                relatedness = textSimilarityResource.getSimilarity(f1, f2);
+			}
 			
 			ExperimentalTextSimilarityScore score = new ExperimentalTextSimilarityScore(jcas);
 			score.setScore(relatedness);
