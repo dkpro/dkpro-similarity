@@ -80,4 +80,9 @@ public abstract class TextSimilarityResourceBase
     {
         return mode;
     }
+    
+    public void setMode(TextSimilarityResourceMode mode)
+    {
+    	this.mode = mode;
+    }
 }

@@ -3,14 +3,13 @@ package de.tudarmstadt.ukp.similarity.dkpro.resource;
 import java.util.Collection;
 
 import org.apache.uima.jcas.JCas;
-import org.uimafit.component.Resource_ImplBase;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 
 
 public class JCasTextSimilarityResourceBase
-	extends Resource_ImplBase
+	extends TextSimilarityResourceBase
 	implements JCasTextSimilarityMeasure
 {
 	protected JCasTextSimilarityMeasure measure;
