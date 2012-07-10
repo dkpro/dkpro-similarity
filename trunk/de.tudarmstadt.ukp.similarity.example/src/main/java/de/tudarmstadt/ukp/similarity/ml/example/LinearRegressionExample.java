@@ -21,7 +21,7 @@ import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityDefaultResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
 
 public class LinearRegressionExample
@@ -46,8 +46,9 @@ public class LinearRegressionExample
 			    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
 			    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
 			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, Document.class.getName(),
-			    SimilarityScorer.PARAM_TEXT_SIMILARITY_MEASURE, createExternalResourceDescription(
+			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
 			    	LinearRegressionResource.class,
+			    	LinearRegressionResource.PARAM_MODE, TextSimilarityResourceBase.TextSimilarityResourceMode.jcas.toString(),
 			    	LinearRegressionResource.PARAM_TRAIN_ARFF, "classpath:models/train.arff",
 			    	LinearRegressionResource.PARAM_TEST_ARFF, "classpath:models/test.arff")
 			    );

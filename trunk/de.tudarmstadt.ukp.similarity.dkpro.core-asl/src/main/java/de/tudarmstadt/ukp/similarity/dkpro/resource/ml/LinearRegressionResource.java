@@ -10,11 +10,11 @@ import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.ml.LinearRegressionSimilarityMeasure;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
 
 
 public class LinearRegressionResource
-	extends JCasTextSimilarityResourceBase
+	extends SimpleTextSimilarityResource
 {
 	public static final String PARAM_TRAIN_ARFF = "TRAIN_ARFF";
 	@ConfigurationParameter(name=PARAM_TRAIN_ARFF, mandatory=true)

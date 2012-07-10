@@ -35,6 +35,7 @@ import org.uimafit.util.JCasUtil;
 import de.tudarmstadt.ukp.dkpro.core.api.featurepath.FeaturePathException;
 import de.tudarmstadt.ukp.dkpro.core.api.featurepath.FeaturePathFactory;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
+import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.dkpro.api.type.ExperimentalTextSimilarityScore;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
@@ -81,24 +82,24 @@ public class SimilarityScorer
 			DocumentMetaData md1 = JCasUtil.selectSingle(view1, DocumentMetaData.class);
 			DocumentMetaData md2 = JCasUtil.selectSingle(view2, DocumentMetaData.class);
 			
-			getLogger().debug("Getting relatedness: " + md1.getDocumentId() + " / " + md2.getDocumentId());
+			getLogger().debug("Getting similarity: " + md1.getDocumentId() + " / " + md2.getDocumentId());
 			
-			double relatedness;
+			double similarity;
 			switch (textSimilarityResource.getMode()) {
 			    case text:
-			        relatedness = textSimilarityResource.getSimilarity(view1.getDocumentText(), view2.getDocumentText());
+			    	similarity = textSimilarityResource.getSimilarity(view1.getDocumentText(), view2.getDocumentText());
 			        break;
 			    case jcas:
-	                relatedness = ((JCasTextSimilarityResourceBase) textSimilarityResource).getSimilarity(view1, view2);
+			    	similarity = ((JCasTextSimilarityMeasure) textSimilarityResource).getSimilarity(view1, view2);
 			        break;
                 default: 
                     List<String> f1 = getFeatures(view1);
                     List<String> f2 = getFeatures(view2);
-                    relatedness = textSimilarityResource.getSimilarity(f1, f2);
+                    similarity = textSimilarityResource.getSimilarity(f1, f2);
 			}
 			
 			ExperimentalTextSimilarityScore score = new ExperimentalTextSimilarityScore(jcas);
-			score.setScore(relatedness);
+			score.setScore(similarity);
 			score.addToIndexes();						
 		}
 		catch (CASException e) {
