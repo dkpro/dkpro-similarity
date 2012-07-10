@@ -7,7 +7,6 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 
 import de.tudarmstadt.ukp.similarity.ml.util.ArffConverter;
-import de.tudarmstadt.ukp.similarity.ml.util.ArffConverter.GoldScoreTransformation;
 
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
@@ -53,8 +52,7 @@ public class FeatureCombination
 		// Convert to arff
 		String arff = ArffConverter.toArffString(
 				trainFeatures,
-				gs,
-				GoldScoreTransformation.CONTINUOUSLY_0_TO_5);
+				gs);
 		
 		// Output to file
 		FileUtils.writeStringToFile(TEMP_ARFF_FILE, arff);
@@ -74,8 +72,7 @@ public class FeatureCombination
 		// Convert to arff
 		String arff = ArffConverter.toArffString(
 				testFeatures,
-				null,	// we pass null for the gold standard in the Test setting
-				GoldScoreTransformation.CONTINUOUSLY_0_TO_5);
+				null);	// we pass null for the gold standard in the Test setting
 		
 		// Output to file
 		FileUtils.writeStringToFile(TEMP_ARFF_FILE, arff);

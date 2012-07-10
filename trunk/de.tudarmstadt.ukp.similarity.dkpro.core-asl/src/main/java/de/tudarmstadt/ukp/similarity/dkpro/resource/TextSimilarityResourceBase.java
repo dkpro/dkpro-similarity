@@ -29,7 +29,6 @@ public abstract class TextSimilarityResourceBase
     extends Resource_ImplBase
     implements TextSimilarityMeasure
 {
-
     public enum TextSimilarityResourceMode {
         jcas,
         text,

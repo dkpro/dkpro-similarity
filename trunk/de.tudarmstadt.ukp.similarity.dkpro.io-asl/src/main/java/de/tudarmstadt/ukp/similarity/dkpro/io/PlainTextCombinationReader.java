@@ -63,8 +63,8 @@ public class PlainTextCombinationReader
 				String id = file.getName().substring(file.getName().length() - 5, file.getName().length() - 4);
 				
 				CombinationPair pair = new CombinationPair(inputDir.getAbsolutePath());
-				pair.setID1(file.getName().substring(0, file.getName().length() - 4) + "a");
-				pair.setID2(file.getName().substring(0, file.getName().length() - 4) + "b");
+				pair.setID1(file.getName().substring(0, file.getName().length() - 4));
+				pair.setID2(file.getName().substring(0, file.getName().length() - 4));
 				pair.setText1(s.split("\n")[0]);
 				pair.setText2(s.split("\n")[1]);
 				

@@ -25,12 +25,12 @@ import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase.TextSimilarityResourceMode;
 
 
 public class SimpleTextSimilarityResource
     extends JCasTextSimilarityResourceBase
 {
-
     public static final String PARAM_TEXT_SIMILARITY_MEASURE = "TextSimilarityMeasure";
 	@ConfigurationParameter(name=PARAM_TEXT_SIMILARITY_MEASURE, mandatory=true)
 	private String textSimilarityMeasureName;
