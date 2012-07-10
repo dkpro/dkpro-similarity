@@ -17,83 +17,50 @@
  *******************************************************************************/
 package de.tudarmstadt.ukp.similarity.ml;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
+import org.apache.uima.resource.ExternalResourceDescription;
 
 
 public class FeatureConfig
 {
-	public enum SimilaritySegments
-	{
-		TOKENS,
-		LEMMAS,
-		STRING,
-		JCAS,
-	}
-	
-	private TextSimilarityMeasure measure;
-	private String segmentFeaturePath;
+	private ExternalResourceDescription resource;
 	private boolean filterStopwords;
 	private String targetPath;
 	private String fileNameSuffix;
 	
-	public FeatureConfig(TextSimilarityMeasure measure, SimilaritySegments segments, boolean filterStopwords,
+	public FeatureConfig(ExternalResourceDescription resource, boolean filterStopwords,
 			String targetPath)
 	{
-		init(measure, segments, filterStopwords, targetPath, "");
+		init(resource, filterStopwords, targetPath, "");
 	}
 	
-	public FeatureConfig(TextSimilarityMeasure measure, SimilaritySegments segments, boolean filterStopwords,
+	public FeatureConfig(ExternalResourceDescription resource, boolean filterStopwords,
 			String targetPath, String fileNameSuffix)
 	{
-		init(measure, segments, filterStopwords, targetPath, fileNameSuffix);
+		init(resource, filterStopwords, targetPath, fileNameSuffix);
 	}
 	
-	public FeatureConfig(JCasTextSimilarityMeasure measure, String targetPath)
+	public FeatureConfig(ExternalResourceDescription resource, String targetPath)
 	{
-		init(measure, null, false, targetPath, "");
+		init(resource, false, targetPath, "");
 	}
 	
-	public FeatureConfig(JCasTextSimilarityMeasure measure, String targetPath, String fileNameSuffix)
+	public FeatureConfig(ExternalResourceDescription resource, String targetPath, String fileNameSuffix)
 	{
-		init(measure, null, false, targetPath, fileNameSuffix);
+		init(resource, false, targetPath, fileNameSuffix);
 	}
 	
-	private void init(TextSimilarityMeasure measure, SimilaritySegments segments, boolean filterStopwords,
+	private void init(ExternalResourceDescription resource, boolean filterStopwords,
 			String targetPath, String fileNameSuffix)
 	{
-		if (measure instanceof JCasTextSimilarityMeasure)
-		{
-			segmentFeaturePath = null;
-		} else {		
-			switch(segments)
-			{
-				case TOKENS:
-					segmentFeaturePath = "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token";				
-					break;
-				case LEMMAS:
-					segmentFeaturePath = "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma/getValue";
-					break;
-				case STRING:
-					segmentFeaturePath = "org.apache.uima.jcas.tcas.DocumentAnnotation";
-					break;
-			}
-		}
-		
-		this.measure = measure;
+		this.resource = resource;
 		this.filterStopwords = filterStopwords;
 		this.targetPath = targetPath;
 		this.fileNameSuffix = fileNameSuffix;
 	}
 	
-	public String getSegmentFeaturePath()
+	public ExternalResourceDescription getResource()
 	{
-		return segmentFeaturePath;
-	}
-
-	public TextSimilarityMeasure getMeasure()
-	{
-		return measure;
+		return resource;
 	}
 
 	public boolean filterStopwords()
