@@ -59,7 +59,7 @@ public class SimpleTextSimilarityResource
                     measure = (JCasTextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
                     break;
                 default: 
-                    measure = (JCasTextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
+                    measure = (TextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
                     break;
             }
         }
