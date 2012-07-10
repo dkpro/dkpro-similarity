@@ -52,6 +52,14 @@ public class FeatureGeneration
 				"content/string"
 				));
 		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	WordNGramContainmentResource.class,
+				    	WordNGramContainmentResource.PARAM_N, "3"),
+				false,
+				"content/n-grams"
+				));
+		
 //		configs.add(new FeatureConfig(
 //				new LongestCommonSubsequenceComparator(),
 //				SimilaritySegments.STRING,
