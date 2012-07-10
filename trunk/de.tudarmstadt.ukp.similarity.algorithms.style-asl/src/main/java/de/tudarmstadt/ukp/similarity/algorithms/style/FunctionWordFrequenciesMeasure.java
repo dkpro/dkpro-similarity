@@ -2,6 +2,7 @@ package de.tudarmstadt.ukp.similarity.algorithms.style;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -12,6 +13,7 @@ import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
 import org.apache.uima.jcas.JCas;
 import org.uimafit.util.JCasUtil;
 
+import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
@@ -24,10 +26,18 @@ public class FunctionWordFrequenciesMeasure
 	public FunctionWordFrequenciesMeasure()
 		throws IOException
 	{
-		functionWords = FileUtils.readLines(new File("src/main/resources/functionWords/en/function-words-mosteller-wallace.txt"));
+	    URL resourceUrl = ResourceUtils.resolveLocation("classpath:/functionWords/en/function-words-mosteller-wallace.txt", this, null);
+		functionWords = FileUtils.readLines(new File(resourceUrl.getFile()));
 	}	
 	
-	@Override
+    public FunctionWordFrequenciesMeasure(String functionWordListLocation)
+        throws IOException
+    {
+        URL resourceUrl = ResourceUtils.resolveLocation(functionWordListLocation, this, null);
+        functionWords = FileUtils.readLines(new File(resourceUrl.getFile()));
+    }   
+
+    @Override
 	public double getSimilarity(JCas jcas1, JCas jcas2)
 		throws SimilarityException
 	{

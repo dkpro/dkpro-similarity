@@ -39,7 +39,7 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.api.type.ExperimentalTextSimilarityScore;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityDefaultResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
 
 
 public class SimilarityScorer
@@ -85,7 +85,7 @@ public class SimilarityScorer
 			getLogger().debug("Getting relatedness: " + md1.getDocumentId() + " / " + md2.getDocumentId());
 			
 			double relatedness;
-			if (textSimilarityResource instanceof JCasTextSimilarityDefaultResource) {
+			if (textSimilarityResource instanceof JCasTextSimilarityResourceBase) {
                 relatedness = ((JCasTextSimilarityMeasure) textSimilarityResource).getSimilarity(view1, view2);
 			}
 			else {
