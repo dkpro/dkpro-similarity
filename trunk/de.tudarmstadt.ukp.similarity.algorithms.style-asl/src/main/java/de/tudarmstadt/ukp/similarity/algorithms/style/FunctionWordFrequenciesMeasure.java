@@ -2,13 +2,17 @@ package de.tudarmstadt.ukp.similarity.algorithms.style;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
 import org.apache.uima.jcas.JCas;
 import org.uimafit.util.JCasUtil;
@@ -26,17 +30,32 @@ public class FunctionWordFrequenciesMeasure
 	public FunctionWordFrequenciesMeasure()
 		throws IOException
 	{
-	    URL resourceUrl = ResourceUtils.resolveLocation("classpath:/functionWords/en/function-words-mosteller-wallace.txt", this, null);
-		functionWords = FileUtils.readLines(new File(resourceUrl.getFile()));
+	    init("classpath:/functionWords/en/function-words-mosteller-wallace.txt");
 	}	
 	
     public FunctionWordFrequenciesMeasure(String functionWordListLocation)
         throws IOException
     {
-        URL resourceUrl = ResourceUtils.resolveLocation(functionWordListLocation, this, null);
-        functionWords = FileUtils.readLines(new File(resourceUrl.getFile()));
+        init(functionWordListLocation);
     }   
 
+    private void init(String functionWordListLocation) throws IOException {
+        functionWords = new ArrayList<String>();
+        InputStream is = null;
+        try {
+            URL url = ResourceUtils.resolveLocation(functionWordListLocation, this, null);
+            is = url.openStream();
+            String content = IOUtils.toString(is, "UTF-8");
+            for (String line : Arrays.asList(content.split("\n"))) {
+                if (line.length() > 0)
+                    functionWords.add(line);
+            }
+        }
+        finally{
+            IOUtils.closeQuietly(is);
+        }
+    }
+    
     @Override
 	public double getSimilarity(JCas jcas1, JCas jcas2)
 		throws SimilarityException

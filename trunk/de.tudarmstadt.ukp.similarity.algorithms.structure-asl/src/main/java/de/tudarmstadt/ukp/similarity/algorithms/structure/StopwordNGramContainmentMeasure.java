@@ -17,8 +17,8 @@
  *******************************************************************************/
 package de.tudarmstadt.ukp.similarity.algorithms.structure;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,7 +27,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
@@ -54,14 +54,20 @@ public class StopwordNGramContainmentMeasure
 	{
 		this.n = n;
 	
-        URL resourceUrl = ResourceUtils.resolveLocation(stopwordList, this, null);
-		
-		stopwords = new ArrayList<String>();
-		for (String line : (List<String>)FileUtils.readLines(new File(resourceUrl.getFile())))
-		{
-			if (line.length() > 0)
-				stopwords.add(line);
-		}
+        stopwords = new ArrayList<String>();
+        InputStream is = null;
+        try {
+            URL url = ResourceUtils.resolveLocation(stopwordList, this, null);
+            is = url.openStream();
+            String content = IOUtils.toString(is, "UTF-8");
+            for (String line : Arrays.asList(content.split("\n"))) {
+                if (line.length() > 0)
+                    stopwords.add(line);
+            }
+        }
+        finally{
+            IOUtils.closeQuietly(is);
+        }
 	}
 	
 	@Override
