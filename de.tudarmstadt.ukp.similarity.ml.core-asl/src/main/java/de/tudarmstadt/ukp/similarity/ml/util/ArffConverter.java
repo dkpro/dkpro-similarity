@@ -15,15 +15,8 @@ import org.apache.commons.lang.StringUtils;
 public class ArffConverter
 {	
 	public static final String LF = System.getProperty("line.separator");
-	
-	public enum GoldScoreTransformation
-	{
-		CONTINUOUSLY_0_TO_5,
-		BINARY_0_5,
-		STEPWISE_0_1_2_3_4_5,
-	}
-	
-	public static String toArffString(Collection<File> csvFiles, File goldFile, GoldScoreTransformation evalMode)
+		
+	public static String toArffString(Collection<File> csvFiles, File goldFile)
 		throws IOException
 	{
 		// Create the Arff header
@@ -36,8 +29,8 @@ public class ArffConverter
 		
 		for (File file : csvFiles)
 		{			
-			String feature = file.getParentFile().getName() + "_" + file.getName().substring(0, file.getName().length() - 4);
-			feature = feature.replaceAll(",", "");
+			String feature = file.getParentFile().getName() + "/" + file.getName().substring(0, file.getName().length() - 4);
+			// feature = feature.replaceAll(",", "");
 			
 			// Add the attribute to the Arff header
 			arff.append("@attribute " + feature + " numeric" + LF);
@@ -91,46 +84,6 @@ public class ArffConverter
 			docObj.add(value);
 			data.put(doc, docObj);									
 		}
-					
-		// Add a modified gold score for non-standard evaluation modes
-		if (evalMode != GoldScoreTransformation.CONTINUOUSLY_0_TO_5)
-		{
-			lines = FileUtils.readLines(goldFile);
-			for (int doc = 1; doc <= lines.size(); doc++)
-			{					
-				double value = Double.parseDouble(lines.get(doc - 1));
-				
-				switch (evalMode)
-				{
-					case BINARY_0_5:
-						value = (value < 2.5) ? 0 : 5;
-						break;
-					case STEPWISE_0_1_2_3_4_5:
-						if (value >= 4.5) 		value = 5;
-						else if (value >= 3.5) 	value = 4;
-						else if (value >= 2.5) 	value = 3;
-						else if (value >= 1.5) 	value = 2;
-						else if (value >= 0.5) 	value = 1;
-						else 				 	value = 0;
-						break;
-				}
-				
-				List<Double> docObj = data.get(doc);
-				docObj.add(value);
-				data.put(doc, docObj);
-			}
-			
-			// Add modified gold attribute to attribute list in header
-			switch (evalMode)
-			{
-				case BINARY_0_5:
-					arff.append("@attribute mgold { 0, 5 }" + LF);
-					break;
-				case STEPWISE_0_1_2_3_4_5:
-					arff.append("@attribute mgold { 0, 1, 2, 3, 4, 5 }" + LF);
-					break;
-			}			
-		}
 		
 		// Finalize header
 		arff.append(LF);
@@ -140,10 +93,6 @@ public class ArffConverter
 		for (int i = 1; i <= data.keySet().size(); i++)
 		{			
 			String dataItem = StringUtils.join(data.get(i), ",");
-			
-			// Remove the double representation ".0" from nominal classes
-			if (evalMode != GoldScoreTransformation.CONTINUOUSLY_0_TO_5)
-				dataItem = dataItem.substring(0, dataItem.length() - 2);
 			
 			arff.append(dataItem + LF);
 		}

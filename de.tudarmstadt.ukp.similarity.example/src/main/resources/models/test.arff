@@ -1,0 +1,8 @@
+@relation temp-relation
+
+@attribute word-ngrams/NGramContainmentMeasure_3grams numeric
+@attribute word-ngrams/NGramJaccardMeasure_3grams numeric
+@attribute gold real
+
+@data
+0.19857142857142855,0.577272727272727,0.0

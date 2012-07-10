@@ -9,6 +9,7 @@ import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.algorithms.style.FunctionWordFrequenciesMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase.TextSimilarityResourceMode;
 
 
 public class FunctionWordFrequenciesMeasureResource
