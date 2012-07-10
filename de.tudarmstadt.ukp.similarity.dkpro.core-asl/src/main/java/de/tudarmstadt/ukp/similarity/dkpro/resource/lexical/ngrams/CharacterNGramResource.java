@@ -31,6 +31,8 @@ public class CharacterNGramResource
             return false;
         }
 
+        this.mode = TextSimilarityResourceMode.list;
+        
         try {
             measure = new CharacterNGramMeasure(n, idfValuesFile);
         }

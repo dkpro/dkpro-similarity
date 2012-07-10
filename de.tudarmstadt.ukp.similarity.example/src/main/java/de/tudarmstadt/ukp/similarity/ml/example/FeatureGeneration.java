@@ -21,7 +21,7 @@ import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityDefaultResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
 import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.FeatureConfig.SimilaritySegments;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
@@ -67,9 +67,9 @@ public class FeatureGeneration
 			    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
 			    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
 			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, config.getSegmentFeaturePath(),
-			    SimilarityScorer.PARAM_TEXT_SIMILARITY_MEASURE, createExternalResourceDescription(
-			    	TextSimilarityDefaultResource.class,
-			    	TextSimilarityDefaultResource.PARAM_TEXT_SIMILARITY_MEASURE, config.getMeasure().getClass().getName())
+			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
+			    	SimpleTextSimilarityResource.class,
+			    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, config.getMeasure().getClass().getName())
 			    );
 			
 			AnalysisEngine writer = createPrimitive(SimilarityScoreWriter.class,

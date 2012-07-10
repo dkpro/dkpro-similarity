@@ -1,6 +1,5 @@
 package de.tudarmstadt.ukp.similarity.algorithms.style;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -11,7 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
 import org.apache.uima.jcas.JCas;

@@ -26,6 +26,8 @@ public class WordNGramJaccardResource
             return false;
         }
         
+        this.mode = TextSimilarityResourceMode.list;
+        
 		measure = new WordNGramJaccardMeasure(n);
         
         return true;

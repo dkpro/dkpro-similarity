@@ -20,7 +20,7 @@ import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityDefaultResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 
 
@@ -71,9 +71,9 @@ public class WithDKPro
 			    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
 			    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
 			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
-			    SimilarityScorer.PARAM_TEXT_SIMILARITY_MEASURE, createExternalResourceDescription(
-			    	TextSimilarityDefaultResource.class,
-			    	TextSimilarityDefaultResource.PARAM_TEXT_SIMILARITY_MEASURE, "de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure")
+			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
+			    	SimpleTextSimilarityResource.class,
+			    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, "de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure")
 			    );
 			return scorer;
 		case 2:
@@ -83,7 +83,7 @@ public class WithDKPro
 			    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
 			    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
 			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
-			    SimilarityScorer.PARAM_TEXT_SIMILARITY_MEASURE, createExternalResourceDescription(
+			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
 			    	WordNGramContainmentResource.class,
 			    	WordNGramContainmentResource.PARAM_N, "3")
 			    );

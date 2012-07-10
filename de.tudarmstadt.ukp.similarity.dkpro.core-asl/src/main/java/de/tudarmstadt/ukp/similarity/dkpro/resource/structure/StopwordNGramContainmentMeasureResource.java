@@ -31,6 +31,8 @@ public class StopwordNGramContainmentMeasureResource
             return false;
         }
 
+        this.mode = TextSimilarityResourceMode.list;
+        
         try {
             int n = Integer.parseInt(nString); 
             measure = new StopwordNGramContainmentMeasure(n, stopwordListLocation);

@@ -25,6 +25,8 @@ public class WordNGramContainmentResource
         if (!super.initialize(aSpecifier, aAdditionalParams)) {
             return false;
         }
+
+        this.mode = TextSimilarityResourceMode.list;
         
 		measure = new WordNGramContainmentMeasure(n);
         
