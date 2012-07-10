@@ -1,6 +1,5 @@
 package de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
@@ -21,7 +20,7 @@ public class CharacterNGramResource
 	
 	public static final String PARAM_IDF_VALUES_FILE = "IdfValuesFile";
 	@ConfigurationParameter(name=PARAM_IDF_VALUES_FILE, mandatory=true)
-	private File idfValuesFile;
+	private String idfValuesFile;
 	
 	@SuppressWarnings("unchecked")
     @Override

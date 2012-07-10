@@ -40,6 +40,10 @@
     </dependency>
     <dependency>
         <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+        <artifactId>de.tudarmstadt.ukp.similarity.algorithms.structure-asl</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
         <artifactId>de.tudarmstadt.ukp.similarity.algorithms.style-asl</artifactId>
     </dependency>
   	<dependency>

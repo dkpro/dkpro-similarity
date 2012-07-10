@@ -19,6 +19,7 @@ package de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -28,6 +29,7 @@ import java.util.Set;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.NotImplementedException;
 
+import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 
@@ -57,13 +59,15 @@ public class CharacterNGramMeasure
 		this.idf = idfValues;
 	}
 	
-	public CharacterNGramMeasure(int n, File idfValuesFile)
+	public CharacterNGramMeasure(int n, String idfValuesFile)
 		throws IOException
 	{
 		this.n = n;
 		
+        URL resourceUrl = ResourceUtils.resolveLocation(idfValuesFile, this, null);
+		
 		idf = new HashMap<String, Double>();
-		for (String line : FileUtils.readLines(idfValuesFile))
+		for (String line : FileUtils.readLines(new File(resourceUrl.getFile())))
 		{
 			String[] linesplit = line.split("\t");
 			idf.put(linesplit[0], Double.parseDouble(linesplit[1]));
