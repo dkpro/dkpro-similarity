@@ -50,6 +50,8 @@ public final class VectorIndexSourceRelatednessResource
             return false;
         }
         
+        this.mode = TextSimilarityResourceMode.list;
+
         measure = new VectorComparator(new CachingVectorReader(
                 new VectorIndexReader(new File(modelLocation)),
                 Integer.parseInt(cacheSize)

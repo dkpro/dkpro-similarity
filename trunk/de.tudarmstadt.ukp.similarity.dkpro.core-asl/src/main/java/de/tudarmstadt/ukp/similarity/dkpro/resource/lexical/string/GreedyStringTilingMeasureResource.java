@@ -25,6 +25,8 @@ public class GreedyStringTilingMeasureResource
             return false;
         }
         
+        this.mode = TextSimilarityResourceMode.list;
+        
 		measure = new GreedyStringTiling(minMatchLength);
         
         return true;

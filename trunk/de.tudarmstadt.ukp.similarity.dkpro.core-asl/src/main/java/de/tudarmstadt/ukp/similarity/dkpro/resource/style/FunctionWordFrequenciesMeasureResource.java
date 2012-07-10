@@ -27,6 +27,8 @@ public class FunctionWordFrequenciesMeasureResource
             return false;
         }
 
+        this.mode = TextSimilarityResourceMode.jcas;
+        
         try {
             if (functionWordListLocation != null) {
                 measure = new FunctionWordFrequenciesMeasure(functionWordListLocation);

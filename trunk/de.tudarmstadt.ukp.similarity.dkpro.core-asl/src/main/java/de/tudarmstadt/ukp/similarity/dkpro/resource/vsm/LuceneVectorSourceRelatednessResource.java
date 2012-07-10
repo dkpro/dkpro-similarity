@@ -45,6 +45,8 @@ public final class LuceneVectorSourceRelatednessResource
             return false;
         }
         
+        this.mode = TextSimilarityResourceMode.list;
+        
         measure = new VectorComparator(new LuceneVectorReader(new File(modelLocation)));
         
         return true;

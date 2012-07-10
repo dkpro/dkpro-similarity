@@ -24,9 +24,10 @@ import org.apache.uima.resource.ResourceSpecifier;
 import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
+import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 
 
-public class JCasTextSimilarityDefaultResource
+public class SimpleTextSimilarityResource
     extends JCasTextSimilarityResourceBase
 {
 
@@ -34,6 +35,10 @@ public class JCasTextSimilarityDefaultResource
 	@ConfigurationParameter(name=PARAM_TEXT_SIMILARITY_MEASURE, mandatory=true)
 	private String textSimilarityMeasureName;
 	
+    public static final String PARAM_MODE= "Mode";
+    @ConfigurationParameter(name=PARAM_MODE, mandatory=true, defaultValue="list")
+    private TextSimilarityResourceMode modeParameter;
+
     @SuppressWarnings("unchecked")
 	@Override
 	public boolean initialize(ResourceSpecifier aSpecifier, Map aAdditionalParams)
@@ -43,8 +48,21 @@ public class JCasTextSimilarityDefaultResource
 	        return false;
 	    }
 
+	    this.mode = modeParameter;
+	    
         try {
-            measure = (JCasTextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
+            switch (mode) {
+                case list:
+                case text:
+                    measure = (TextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
+                    break;
+                case jcas:
+                    measure = (JCasTextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
+                    break;
+                default: 
+                    measure = (TextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
+                    break;
+            }
         }
         catch (InstantiationException e) {
             throw new ResourceInitializationException(e);

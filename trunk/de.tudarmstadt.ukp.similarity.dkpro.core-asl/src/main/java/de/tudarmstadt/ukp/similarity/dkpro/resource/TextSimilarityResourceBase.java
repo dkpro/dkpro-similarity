@@ -30,7 +30,14 @@ public abstract class TextSimilarityResourceBase
     implements TextSimilarityMeasure
 {
 
+    public enum TextSimilarityResourceMode {
+        jcas,
+        text,
+        list
+    }
+    
     protected TextSimilarityMeasure measure;
+    protected TextSimilarityResourceMode mode;
     
     @Override
     public double getSimilarity(Collection<String> stringList1, Collection<String> stringList2)
@@ -68,5 +75,10 @@ public abstract class TextSimilarityResourceBase
     public void endMassOperation()
     {
     	measure.endMassOperation();
+    }
+
+    public TextSimilarityResourceMode getMode()
+    {
+        return mode;
     }
 }
