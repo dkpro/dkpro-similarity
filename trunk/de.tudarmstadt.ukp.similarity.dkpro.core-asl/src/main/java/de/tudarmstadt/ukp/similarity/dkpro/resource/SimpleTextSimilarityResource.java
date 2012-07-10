@@ -24,10 +24,11 @@ import org.apache.uima.resource.ResourceSpecifier;
 import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
+import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 
 
 public class SimpleTextSimilarityResource
-    extends JCasTextSimilarityResourceBase
+    extends TextSimilarityResourceBase
 {
     public static final String PARAM_TEXT_SIMILARITY_MEASURE = "TextSimilarityMeasure";
 	@ConfigurationParameter(name=PARAM_TEXT_SIMILARITY_MEASURE, mandatory=true)
@@ -52,7 +53,7 @@ public class SimpleTextSimilarityResource
             switch (mode) {
                 case list:
                 case text:
-                    measure = (JCasTextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
+                    measure = (TextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
                     break;
                 case jcas:
                     measure = (JCasTextSimilarityMeasure) Class.forName(textSimilarityMeasureName).newInstance();
