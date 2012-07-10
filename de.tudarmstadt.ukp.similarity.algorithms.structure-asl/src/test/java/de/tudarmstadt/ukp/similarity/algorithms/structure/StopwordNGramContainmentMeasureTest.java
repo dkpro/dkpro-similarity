@@ -19,7 +19,6 @@ package de.tudarmstadt.ukp.similarity.algorithms.structure;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,9 +65,7 @@ public class StopwordNGramContainmentMeasureTest
 		// [be, the, i]
 		// [the, i, this]
 		
-		TextSimilarityMeasure comparator = new StopwordNGramContainmentMeasure(3,
-				new File("src/main/resources/stopwords/stopwords-bnc-stamatatos.txt"));
+		TextSimilarityMeasure comparator = new StopwordNGramContainmentMeasure(3, "classpath:/stopwords/stopwords-bnc-stamatatos.txt");
 		assertEquals(0.25, comparator.getSimilarity(doc1, doc2), epsilon);
-
 	}
 }

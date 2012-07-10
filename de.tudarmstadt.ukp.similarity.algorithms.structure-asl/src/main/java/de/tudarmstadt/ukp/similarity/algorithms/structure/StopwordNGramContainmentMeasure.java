@@ -19,6 +19,7 @@ package de.tudarmstadt.ukp.similarity.algorithms.structure;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -28,6 +29,7 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 
+import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 
@@ -47,13 +49,15 @@ public class StopwordNGramContainmentMeasure
 	int n;
 	List<String> stopwords;
 	
-	public StopwordNGramContainmentMeasure(int n, File stopwordList)
+	public StopwordNGramContainmentMeasure(int n, String stopwordList)
 		throws IOException
 	{
 		this.n = n;
+	
+        URL resourceUrl = ResourceUtils.resolveLocation(stopwordList, this, null);
 		
 		stopwords = new ArrayList<String>();
-		for (String line : (List<String>)FileUtils.readLines(stopwordList))
+		for (String line : (List<String>)FileUtils.readLines(new File(resourceUrl.getFile())))
 		{
 			if (line.length() > 0)
 				stopwords.add(line);
