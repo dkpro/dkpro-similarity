@@ -48,7 +48,6 @@ public class LinearRegressionExample
 			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, Document.class.getName(),
 			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
 			    	LinearRegressionResource.class,
-			    	LinearRegressionResource.PARAM_MODE, TextSimilarityResourceBase.TextSimilarityResourceMode.jcas.toString(),
 			    	LinearRegressionResource.PARAM_TRAIN_ARFF, "classpath:models/train.arff",
 			    	LinearRegressionResource.PARAM_TEST_ARFF, "classpath:models/test.arff")
 			    );
