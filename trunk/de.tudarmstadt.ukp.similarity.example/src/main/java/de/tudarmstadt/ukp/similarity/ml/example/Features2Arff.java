@@ -14,14 +14,29 @@ public class Features2Arff
 	public static void main(String[] args)
 		throws Exception
 	{
-		String BASE_PATH = "/home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.example";
-		File inputDir = new File(BASE_PATH + "/src/main/resources/mm09-features");
+		// TRAIN
 		
-		List<File> files = listFiles(inputDir, ".txt", true);		
-
-		String arff = ArffConverter.toArffString(files, null);
+		String F_BASE_PATH = "/home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.example";
+		String G_BASE_PATH = "/home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.dkpro.data-asl";
 		
-		FileUtils.writeStringToFile(new File("src/main/resources/models/mm09.arff"), arff);
+		File inputDir = new File(F_BASE_PATH + "/src/main/resources/semeval-train-all-combined-features");
+		
+		String arff = ArffConverter.toArffString(
+				listFiles(inputDir, ".txt", true),
+				new File(G_BASE_PATH + "/src/main/resources/goldstandards/semeval/train/STS.gs.ALLcombined.txt"));
+		
+		FileUtils.writeStringToFile(new File("src/main/resources/models/semeval-train-all-combined.arff"), arff);
+		
+		// TEST
+		
+//		String BASE_PATH = "/home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.example";
+//		File inputDir = new File(BASE_PATH + "/src/main/resources/mm09-features");
+//		
+//		String arff = ArffConverter.toArffString(
+//				listFiles(inputDir, ".txt", true),
+//				null);
+//		
+//		FileUtils.writeStringToFile(new File("src/main/resources/models/mm09.arff"), arff);
 	}
 	
 	private static List<File> listFiles(File folder, String suffix, boolean recursively)

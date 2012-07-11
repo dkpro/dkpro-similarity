@@ -24,9 +24,19 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 public class ShortAnswerGradingReader
 	extends CombinationReader
 {
+	public enum ShortAnswerGradingDocumentID
+	{
+		hierarchical,
+		sequential
+	}
+	
 	public static final String PARAM_INPUT_DIR = "InputDir";
 	@ConfigurationParameter(name=PARAM_INPUT_DIR, mandatory=true)
 	private File inputDir;
+	
+	public static final String PARAM_DOCUMENT_IDS = "DocumentIds";
+	@ConfigurationParameter(name=PARAM_DOCUMENT_IDS, mandatory=false, defaultValue="sequential")
+	private ShortAnswerGradingDocumentID documentIDs;
 	
 	public static final String PARAM_ENCODING = "Encoding";
 	@ConfigurationParameter(name=PARAM_ENCODING, mandatory=false, defaultValue="UTF-8")
@@ -42,6 +52,8 @@ public class ShortAnswerGradingReader
 		
 		try
 		{
+			int seq_no = 1;
+			
 			for(int assignment = 1; assignment <= 3; assignment++)
 			{
 				// Process assignment
@@ -77,8 +89,20 @@ public class ShortAnswerGradingReader
 						String answer = lineSplit[2];
 						int studentID = Integer.parseInt(lineSplit[1].substring(1, lineSplit[1].length() - 1));		// Ignore surrounding braces
 						
-						String id1 = assignment + ":" + questionIndex;
-						String id2 = assignment + ":" + questionIndex + ":" + studentID;
+						String id1, id2;
+						
+						switch (documentIDs)
+						{
+							case sequential:
+								id1 = new Integer(seq_no).toString();
+								id2 = new Integer(seq_no).toString();
+								break;
+							default:
+								id1 = assignment + ":" + questionIndex;
+								id2 = assignment + ":" + questionIndex + ":" + studentID;
+						}
+						
+						seq_no++;
 						
 						// Add to combination pairs
 						CombinationPair pair = new CombinationPair(inputDir.toString());
