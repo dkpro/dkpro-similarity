@@ -14,13 +14,35 @@ public class Features2Arff
 	public static void main(String[] args)
 		throws Exception
 	{
-		// We use the same feature set that FeatureGeneration.java is also using
-		List<File> files = new ArrayList<File>();
-		files.add(new File("src/main/resources/features/content/word-ngrams/NGramContainmentMeasure_3grams.txt"));
-		files.add(new File("src/main/resources/features/content/word-ngrams/NGramJaccardMeasure_3grams.txt"));
+		String BASE_PATH = "/home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.example";
+		File inputDir = new File(BASE_PATH + "/src/main/resources/mm09-features");
 		
+		List<File> files = listFiles(inputDir, ".txt", true);		
+
 		String arff = ArffConverter.toArffString(files, null);
 		
-		FileUtils.writeStringToFile(new File("src/main/resources/models/train.arff"), arff);
+		FileUtils.writeStringToFile(new File("src/main/resources/models/mm09.arff"), arff);
+	}
+	
+	private static List<File> listFiles(File folder, String suffix, boolean recursively)
+	{
+		List<File> files = new ArrayList<File>();
+		
+		String s = folder.getAbsolutePath();
+		
+		for (File file : folder.listFiles())
+		{
+			if (file.isDirectory())
+			{
+				if (recursively && !file.getName().startsWith("."))
+					files.addAll(listFiles(file, suffix, recursively));
+			} else {
+				if (!file.getName().startsWith(".") && 
+					file.getName().endsWith(suffix))
+					files.add(file);
+			}
+		}
+		
+		return files;
 	}
 }

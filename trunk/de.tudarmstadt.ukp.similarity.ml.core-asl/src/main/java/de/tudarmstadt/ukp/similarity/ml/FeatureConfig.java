@@ -23,44 +23,58 @@ import org.apache.uima.resource.ExternalResourceDescription;
 public class FeatureConfig
 {
 	private ExternalResourceDescription resource;
+	private String segmentFeaturePath;
 	private boolean filterStopwords;
 	private String targetPath;
 	private String fileNameSuffix;
+	private String measureName;
 	
-	public FeatureConfig(ExternalResourceDescription resource, boolean filterStopwords,
-			String targetPath)
+	public FeatureConfig(ExternalResourceDescription resource, String segmentFeaturePath, boolean filterStopwords,
+			String targetPath, String measureName)
 	{
-		init(resource, filterStopwords, targetPath, "");
+		init(resource, segmentFeaturePath, filterStopwords, targetPath, "", measureName);
 	}
 	
 	public FeatureConfig(ExternalResourceDescription resource, boolean filterStopwords,
-			String targetPath, String fileNameSuffix)
+			String targetPath, String fileNameSuffix, String measureName)
 	{
-		init(resource, filterStopwords, targetPath, fileNameSuffix);
+		init(resource, null, filterStopwords, targetPath, fileNameSuffix, measureName);
 	}
 	
-	public FeatureConfig(ExternalResourceDescription resource, String targetPath)
+	public FeatureConfig(ExternalResourceDescription resource, String targetPath, String measureName)
 	{
-		init(resource, false, targetPath, "");
+		init(resource, null, false, targetPath, "", measureName);
 	}
 	
-	public FeatureConfig(ExternalResourceDescription resource, String targetPath, String fileNameSuffix)
+	public FeatureConfig(ExternalResourceDescription resource, String targetPath, String fileNameSuffix, String measureName)
 	{
-		init(resource, false, targetPath, fileNameSuffix);
+		init(resource, null, false, targetPath, fileNameSuffix, measureName);
 	}
 	
-	private void init(ExternalResourceDescription resource, boolean filterStopwords,
-			String targetPath, String fileNameSuffix)
+	private void init(ExternalResourceDescription resource, String segmentFeaturePath, boolean filterStopwords,
+			String targetPath, String fileNameSuffix, String measureName)
 	{
 		this.resource = resource;
+		
+		if (segmentFeaturePath != null)
+			this.segmentFeaturePath = segmentFeaturePath;
+		else
+			this.segmentFeaturePath = "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token";
+		
 		this.filterStopwords = filterStopwords;
 		this.targetPath = targetPath;
 		this.fileNameSuffix = fileNameSuffix;
+		this.measureName = measureName;
 	}
 	
 	public ExternalResourceDescription getResource()
 	{
 		return resource;
+	}
+	
+	public String getSegmentFeaturePath()
+	{
+		return segmentFeaturePath;
 	}
 
 	public boolean filterStopwords()
@@ -76,5 +90,10 @@ public class FeatureConfig
 	public String getFileNameSuffix()
 	{
 		return fileNameSuffix;
+	}
+	
+	public String getMeasureName()
+	{
+		return measureName;
 	}
 }
