@@ -40,17 +40,12 @@ public class ShortAnswerGradingReader
 	{
 		List<CombinationPair> pairs = new ArrayList<CombinationPair>();
 		
-		Collection<File> files = FileUtils.listFiles(inputDir, new String[]{ "txt" }, true);
-		Iterator<File> iterator = files.iterator();
-		
 		try
 		{
-			while(iterator.hasNext())
+			for(int assignment = 1; assignment <= 3; assignment++)
 			{
 				// Process assignment
-				File file = iterator.next();
-				
-				int assignment = Integer.parseInt(file.getName().substring(0, file.getName().length() - 4));
+				File file = new File(inputDir.getAbsolutePath() + "/" + assignment + ".txt");
 				
 				List<String> lines = FileUtils.readLines(file, encoding);
 				
