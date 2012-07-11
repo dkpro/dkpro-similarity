@@ -20,9 +20,11 @@ import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
+import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
+import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 
 public class LinearRegressionExample
 {
@@ -31,9 +33,14 @@ public class LinearRegressionExample
 	public static void main(String[] args)
 		throws Exception
 	{
-		CollectionReader reader = createCollectionReader(PlainTextCombinationReader.class,
-				PlainTextCombinationReader.PARAM_INPUT_DIR, "classpath:/datasets/test/plaintext",
-				PlainTextCombinationReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
+		CollectionReader reader = createCollectionReader(ShortAnswerGradingReader.class,
+				ShortAnswerGradingReader.PARAM_INPUT_DIR, "classpath:/datasets/mm09",
+				ShortAnswerGradingReader.PARAM_DOCUMENT_IDS, "sequential",
+				ShortAnswerGradingReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
+		
+//		CollectionReader reader = createCollectionReader(PlainTextCombinationReader.class,
+//				PlainTextCombinationReader.PARAM_INPUT_DIR, "classpath:/datasets/test/plaintext",
+//				PlainTextCombinationReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
 
 		AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
 		
@@ -48,12 +55,14 @@ public class LinearRegressionExample
 			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, Document.class.getName(),
 			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
 			    	LinearRegressionResource.class,
-			    	LinearRegressionResource.PARAM_TRAIN_ARFF, "classpath:models/train.arff",
-			    	LinearRegressionResource.PARAM_TEST_ARFF, "classpath:models/test.arff")
+			    	LinearRegressionResource.PARAM_TRAIN_ARFF, "classpath:models/semeval-train-all-combined.arff",
+			    	LinearRegressionResource.PARAM_TEST_ARFF, "classpath:models/mm09.arff")
 			    );
 		
-		AnalysisEngine writer = createPrimitive(CASDumpWriter.class,
-		    CASDumpWriter.PARAM_OUTPUT_FILE, OUTPUT_FILE);
+		AnalysisEngine writer = createPrimitive(SimilarityScoreWriter.class,
+				SimilarityScoreWriter.PARAM_OUTPUT_FILE, OUTPUT_FILE,
+				SimilarityScoreWriter.PARAM_OUTPUT_SCORES_ONLY, true,
+				SimilarityScoreWriter.PARAM_OUTPUT_GOLD_SCORES, true);
 
 		SimplePipeline.runPipeline(reader, aggr_seg, scorer, writer);
 		

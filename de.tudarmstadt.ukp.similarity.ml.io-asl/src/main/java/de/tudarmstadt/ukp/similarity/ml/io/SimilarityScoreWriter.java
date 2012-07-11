@@ -36,6 +36,7 @@ import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.similarity.dkpro.api.type.ExperimentalTextSimilarityScore;
+import de.tudarmstadt.ukp.similarity.dkpro.api.type.GoldTextSimilarityScore;
 import de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 
@@ -52,6 +53,10 @@ public class SimilarityScoreWriter
 	public static final String PARAM_OUTPUT_SCORES_ONLY = "OutputScoresOnly";
 	@ConfigurationParameter(name=PARAM_OUTPUT_SCORES_ONLY, mandatory=false)
 	private boolean outputScoresOnly;
+	
+	public static final String PARAM_OUTPUT_GOLD_SCORES = "OutputGoldScores";
+	@ConfigurationParameter(name=PARAM_OUTPUT_GOLD_SCORES, mandatory=false, defaultValue="false")
+	private boolean outputGoldScores;
 	
 	private BufferedWriter writer;
 
@@ -92,14 +97,28 @@ public class SimilarityScoreWriter
 		
 		TextSimilarityScore score = JCasUtil.selectSingle(jcas, ExperimentalTextSimilarityScore.class);
 		
+		TextSimilarityScore goldScore = null;
+		if (outputGoldScores)
+			goldScore = JCasUtil.selectSingle(jcas, GoldTextSimilarityScore.class); 
+		
 		try {
 			if (outputScoresOnly)
 			{
-				writer.write(score.getScore() + LF);
+				if (outputGoldScores)
+					writer.write(score.getScore() + "\t" + goldScore.getScore() + LF);
+				else
+					writer.write(score.getScore() + LF);
 			} else {
-				writer.write(md1.getDocumentId() + "\t" + 
+				if (outputGoldScores) {
+					writer.write(md1.getDocumentId() + "\t" + 
+							 md2.getDocumentId() + "\t" + 
+							 score.getScore() + "\t" + 
+							 goldScore.getScore() + LF);
+				} else {
+					writer.write(md1.getDocumentId() + "\t" + 
 							 md2.getDocumentId() + "\t" + 
 							 score.getScore() + LF);
+				}
 			}
 		}
 		catch (IOException e) {
