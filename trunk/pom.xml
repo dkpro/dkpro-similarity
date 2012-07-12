@@ -147,8 +147,13 @@
     <module>de.tudarmstadt.ukp.similarity.algorithms.api-asl</module>
     <module>de.tudarmstadt.ukp.similarity.algorithms.core-asl</module>
     <module>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.lsr</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.ml-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.sound</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.structure-asl</module>
     <module>de.tudarmstadt.ukp.similarity.algorithms.style-asl</module>
     <module>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.wikipedia</module>
     <module>de.tudarmstadt.ukp.similarity.dkpro.api-asl</module>
     <module>de.tudarmstadt.ukp.similarity.dkpro.core-asl</module>
     <module>de.tudarmstadt.ukp.similarity.dkpro.data-asl</module>
@@ -156,9 +161,5 @@
     <module>de.tudarmstadt.ukp.similarity.example</module>
     <module>de.tudarmstadt.ukp.similarity.ml.core-asl</module>
     <module>de.tudarmstadt.ukp.similarity.ml.io-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.structure-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.sound</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.wikipedia</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.ml-asl</module>
   </modules>
 </project>
