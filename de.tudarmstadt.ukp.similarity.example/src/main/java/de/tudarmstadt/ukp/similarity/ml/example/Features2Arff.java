@@ -29,14 +29,14 @@ public class Features2Arff
 		
 		// TEST
 		
-//		String BASE_PATH = "/home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.example";
-//		File inputDir = new File(BASE_PATH + "/src/main/resources/mm09-features");
-//		
-//		String arff = ArffConverter.toArffString(
-//				listFiles(inputDir, ".txt", true),
-//				null);
-//		
-//		FileUtils.writeStringToFile(new File("src/main/resources/models/mm09.arff"), arff);
+		String BASE_PATH = "/home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.example";
+		inputDir = new File(BASE_PATH + "/src/main/resources/mm09-features");
+		
+		arff = ArffConverter.toArffString(
+				listFiles(inputDir, ".txt", true),
+				null);
+		
+		FileUtils.writeStringToFile(new File("src/main/resources/models/mm09.arff"), arff);
 	}
 	
 	private static List<File> listFiles(File folder, String suffix, boolean recursively)
