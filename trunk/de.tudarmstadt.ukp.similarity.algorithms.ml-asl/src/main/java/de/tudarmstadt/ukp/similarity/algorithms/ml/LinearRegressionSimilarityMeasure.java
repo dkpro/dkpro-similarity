@@ -16,11 +16,13 @@ import weka.classifiers.functions.LinearRegression;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
+import weka.filters.Filter;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
+import de.tudarmstadt.ukp.similarity.ml.filters.LogFilter;
 import de.tudarmstadt.ukp.similarity.ml.util.ArffConverter;
 
 
@@ -35,7 +37,7 @@ public class LinearRegressionSimilarityMeasure
 	Instances test;
 	
 	public LinearRegressionSimilarityMeasure(File trainArff, File testArff)
-		throws SimilarityException, IOException
+		throws Exception
 	{
 		// Get all instances
 		Instances train = getTrainInstances(trainArff);	
@@ -46,7 +48,7 @@ public class LinearRegressionSimilarityMeasure
         logFilter.setInputFormat(train);
         train = Filter.useFilter(train, logFilter);        
         logFilter.setInputFormat(test);
-        test = Filter.useFilter(test, logFilter);*/ 		         
+        test = Filter.useFilter(test, logFilter);*/		         
         
         Classifier clsCopy;
 		try {
@@ -56,6 +58,11 @@ public class LinearRegressionSimilarityMeasure
 			// Build the classifier
 			filteredClassifier = clsCopy;
 			filteredClassifier.buildClassifier(train);
+			
+			Evaluation eval = new Evaluation(train);
+	        eval.evaluateModel(filteredClassifier, test);
+	        
+	        System.out.println(filteredClassifier.toString());
 		}
 		catch (Exception e) {
 			throw new SimilarityException(e);

@@ -25,9 +25,13 @@ import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramJaccardMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.GreedyStringTiling;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.JaroSecondStringComparator;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.JaroWinklerSecondStringComparator;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LevenshteinComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.MongeElkanSecondStringComparator;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
@@ -36,6 +40,9 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrat
 import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.StopwordNGramContainmentMeasureResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.style.FunctionWordFrequenciesMeasureResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
 import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
@@ -52,6 +59,60 @@ public class FeatureGenerationTest
 		List<FeatureConfig> configs = new ArrayList<FeatureConfig>();
 		
 		// String features
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	SimpleTextSimilarityResource.class,
+				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
+				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, JaroSecondStringComparator.class.getName()),
+				Document.class.getName(),
+				false,
+				"content/string",
+				"Jaro"
+				));
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	SimpleTextSimilarityResource.class,
+				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
+				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, JaroWinklerSecondStringComparator.class.getName()),
+				Document.class.getName(),
+				false,
+				"content/string",
+				"JaroWinkler"
+				));
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	SimpleTextSimilarityResource.class,
+				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
+				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, MongeElkanSecondStringComparator.class.getName()),
+				Document.class.getName(),
+				false,
+				"content/string",
+				"MongeElkan"
+				));
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	SimpleTextSimilarityResource.class,
+				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
+				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, LevenshteinComparator.class.getName()),
+				Document.class.getName(),
+				false,
+				"content/string",
+				"Levenshtein"
+				));
+		
+//		configs.add(new FeatureConfig(
+//				createExternalResourceDescription(
+//				    	GreedyStringTilingMeasureResource.class,
+//				    	GreedyStringTilingMeasureResource.PARAM_MIN_MATCH_LENGTH, "3"),
+//				Document.class.getName(),
+//				false,
+//				"content/string",
+//				"GreedyStringTiling_3"
+//				));
+		
 		configs.add(new FeatureConfig(
 				createExternalResourceDescription(
 				    	SimpleTextSimilarityResource.class,
@@ -139,6 +200,31 @@ public class FeatureGenerationTest
 				"content/esa",
 				"ESA_WN"
 				));
+		
+		// Structure
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	StopwordNGramContainmentMeasureResource.class,
+				    	StopwordNGramContainmentMeasureResource.PARAM_N, "3",
+				    	StopwordNGramContainmentMeasureResource.PARAM_STOPWORD_LIST_LOCATION, "/home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.dkpro.data-asl/src/main/resources/stopwords/stopwords-bnc-stamatatos.txt"),
+				Lemma.class.getName() + "/value",
+				false,
+				"structure",
+				"StopwordNGramContainmentMeasure_3_stamatatos"
+				));
+		
+		// Style
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	FunctionWordFrequenciesMeasureResource.class,
+				    	FunctionWordFrequenciesMeasureResource.PARAM_FUNCTION_WORD_LIST_LOCATION, "/home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.dkpro.data-asl/src/main/resources/stopwords/function-words-mosteller-wallace.txt"),
+				Lemma.class.getName() + "/value",
+				false,
+				"style",
+				"FunctionWordFrequenciesMeasure"
+				));
+		
 		
 		
 		

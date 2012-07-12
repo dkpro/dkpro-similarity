@@ -38,12 +38,9 @@ public class LinearRegressionResource
         	this.setMode(TextSimilarityResourceMode.jcas);
             measure = new LinearRegressionSimilarityMeasure(trainArff, testArff);
         }
-        catch (IOException e) {
+        catch (Exception e) {
             throw new ResourceInitializationException(e);
         }
-		catch (SimilarityException e) {
-			throw new ResourceInitializationException(e);
-		}
         
         return true;
     }
