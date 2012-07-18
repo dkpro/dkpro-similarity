@@ -36,7 +36,7 @@
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
   			<artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource-asl</artifactId>
-  			<version>0.8.0-SNAPSHOT</version>
+  			<version>0.8.0</version>
   			<type>pom</type>
   			<scope>import</scope>
   		</dependency>
