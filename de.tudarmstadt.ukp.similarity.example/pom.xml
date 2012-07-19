@@ -53,23 +53,16 @@
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   		<artifactId>de.tudarmstadt.ukp.dkpro.core.treetagger-asl</artifactId>
-  		<version>1.4.0-SNAPSHOT</version>
-  		<type>jar</type>
-  		<scope>compile</scope>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   		<artifactId>de.tudarmstadt.ukp.dkpro.core.treetagger-bin</artifactId>
-  		<version>2012042500</version>
-  		<type>jar</type>
-  		<scope>compile</scope>
+  		<version>20120425.0</version>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   		<artifactId>de.tudarmstadt.ukp.dkpro.core.treetagger-model-en</artifactId>
-  		<version>2011110900</version>
-  		<type>jar</type>
-  		<scope>compile</scope>
+  		<version>20111109.0</version>
   	</dependency>
   </dependencies>
 </project>
