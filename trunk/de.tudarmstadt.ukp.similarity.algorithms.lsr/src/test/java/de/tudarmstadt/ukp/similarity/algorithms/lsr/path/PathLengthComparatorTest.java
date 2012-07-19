@@ -47,9 +47,9 @@ public class PathLengthComparatorTest {
     @BeforeClass
     public static void initialize() throws ResourceLoaderException  {
         wordnet    = ResourceFactory.getInstance().get("wordnet", "en");
-        germanet   = ResourceFactory.getInstance().get("germanet", "de");
+        germanet   = ResourceFactory.getInstance().get("germanet7", "de");
         wikipedia  = ResourceFactory.getInstance().get("wikipedia", "test");
-        wiktionary = ResourceFactory.getInstance().get("wiktionary", "en");
+//        wiktionary = ResourceFactory.getInstance().get("wiktionary", "en");
     }
 
     @Test
@@ -64,7 +64,7 @@ public class PathLengthComparatorTest {
 
         assertEquals(0.0, comparator.getSimilarity(entitiesAuto, entitiesAuto), epsilon);
         assertEquals(1.0, comparator.getSimilarity(entitiesAuto, entitiesBagger), epsilon);
-        assertEquals(-1.0, comparator.getSimilarity(entitiesAuto, entitiesSchnell), epsilon);
+        assertEquals(6.0, comparator.getSimilarity(entitiesAuto, entitiesSchnell), epsilon);
     }
 
     @Ignore("The path from 'tree' to 'tree' should be 0 but is 13! - See bug 163")
