@@ -13,6 +13,22 @@
         <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
         <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.graph-asl</artifactId>
     </dependency>
+    <dependency>
+        <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+        <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl</artifactId>
+        <version>0.8.0</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+        <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wikipedia-asl</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+        <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl</artifactId>
+        <scope>test</scope>
+    </dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
   		<artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>

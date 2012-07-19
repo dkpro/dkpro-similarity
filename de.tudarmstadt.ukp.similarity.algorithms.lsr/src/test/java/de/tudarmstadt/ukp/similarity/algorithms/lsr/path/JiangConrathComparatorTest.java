@@ -97,7 +97,7 @@ public class JiangConrathComparatorTest
 	public void testJiangConrathGermaNet()
 		throws Exception
 	{
-        LexicalSemanticResource germaNet = ResourceFactory.getInstance().get("germanet", "de");
+        LexicalSemanticResource germaNet = ResourceFactory.getInstance().get("germanet7", "de");
 
         LexSemResourceComparator comparator = new JiangConrathComparator(germaNet, germaNet.getRoot());
         assertEquals("JiangConrathComparator", comparator.getName());
@@ -112,6 +112,6 @@ public class JiangConrathComparatorTest
         assertEquals(1.0, comparator.getSimilarity(entitiesEntity, entitiesEntity), epsilon);
 
         // different pages
-        assertEquals(0.6990, comparator.getSimilarity(entitiesEntity, entitiesAuto), epsilon);
+        assertEquals(0.74965, comparator.getSimilarity(entitiesEntity, entitiesAuto), epsilon);
     }
 }
