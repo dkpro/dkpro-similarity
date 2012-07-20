@@ -15,13 +15,12 @@ import org.apache.uima.collection.CollectionReader;
 import org.uimafit.factory.AggregateBuilder;
 import org.uimafit.pipeline.SimplePipeline;
 
-import com.sleepycat.je.utilint.LongStat;
-
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
+import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpSegmenter;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramJaccardMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.GreedyStringTiling;
@@ -238,20 +237,21 @@ public class FeatureGenerationTrain
 						SemEvalCorpusReader.PARAM_INPUT_FILE, "classpath:/datasets/semeval/train/STS.input.ALLcombined.txt",
 						SemEvalCorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
 		
-				AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
+				AnalysisEngineDescription seg = createPrimitiveDescription(
+						BreakIteratorSegmenter.class);
 				
 				AggregateBuilder builder = new AggregateBuilder();
 				builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
 				builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
 				AnalysisEngine aggr_seg = builder.createAggregate();
 				
-				AnalysisEngineDescription tt = createPrimitiveDescription(
-						TreeTaggerPosLemmaTT4J.class,
-						TreeTaggerPosLemmaTT4J.PARAM_LANGUAGE_CODE, "en");		
-				builder = new AggregateBuilder();
-				builder.add(tt, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
-				builder.add(tt, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
-				AnalysisEngine aggr_tt = builder.createAggregate();
+//				AnalysisEngineDescription tt = createPrimitiveDescription(
+//						TreeTaggerPosLemmaTT4J.class,
+//						TreeTaggerPosLemmaTT4J.PARAM_LANGUAGE_CODE, "en");		
+//				builder = new AggregateBuilder();
+//				builder.add(tt, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
+//				builder.add(tt, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
+//				AnalysisEngine aggr_tt = builder.createAggregate();
 				
 	//			AnalysisEngineDescription stopw = createPrimitiveDescription(
 	//					StopwordFilter.class,
@@ -274,7 +274,7 @@ public class FeatureGenerationTrain
 					SimilarityScoreWriter.PARAM_OUTPUT_FILE, OUTPUT_FEATURE_DIR + "/" + config.getTargetPath() + "/" + config.getMeasureName() + ".txt",
 					SimilarityScoreWriter.PARAM_OUTPUT_SCORES_ONLY, true);
 		
-				SimplePipeline.runPipeline(reader, aggr_seg, aggr_tt, scorer, writer);
+				SimplePipeline.runPipeline(reader, aggr_seg, scorer, writer);
 			}
 		}
 		
