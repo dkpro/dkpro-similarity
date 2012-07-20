@@ -9,6 +9,15 @@
   <artifactId>de.tudarmstadt.ukp.similarity-gpl</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  <dependencies>
+  	<dependency>
+  		<groupId>edu.ucla.sspace</groupId>
+  		<artifactId>sspace</artifactId>
+  		<version>2.0.3</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
+  	</dependency>
+  </dependencies>
   <dependencyManagement>
   	<dependencies>
   		<dependency>
@@ -20,5 +29,6 @@
   </dependencyManagement>
   <modules>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl</module>
   </modules>
 </project>
