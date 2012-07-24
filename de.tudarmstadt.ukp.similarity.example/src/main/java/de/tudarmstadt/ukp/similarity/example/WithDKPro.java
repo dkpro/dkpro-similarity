@@ -16,12 +16,18 @@ import org.uimafit.factory.AggregateBuilder;
 import org.uimafit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
+//import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
+import de.tudarmstadt.ukp.similarity.algorithms.style.MTLDComparator;
+import de.tudarmstadt.ukp.similarity.algorithms.style.TypeTokenRatioComparator;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleJCasTextSimilarityResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.style.FunctionWordFrequenciesMeasureResource;
 
 
 public class WithDKPro
@@ -32,18 +38,26 @@ public class WithDKPro
 		throws Exception
 	{
 		// Run the pipeline with different similarity measures
-		for (int i = 1; i <= 2; i++)
+		for (int i = 1; i <= 3; i++)
 		{	
 			CollectionReader reader = createCollectionReader(PlainTextCombinationReader.class,
 					PlainTextCombinationReader.PARAM_INPUT_DIR, "classpath:/datasets/test/plaintext",
 					PlainTextCombinationReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
 	
-			AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
-			
+			AnalysisEngineDescription seg = createPrimitiveDescription(
+					BreakIteratorSegmenter.class);
 			AggregateBuilder builder = new AggregateBuilder();
 			builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
 			builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
 			AnalysisEngine aggr_seg = builder.createAggregate();
+			
+//			AnalysisEngineDescription tt = createPrimitiveDescription(
+//					TreeTaggerPosLemmaTT4J.class,
+//					TreeTaggerPosLemmaTT4J.PARAM_LANGUAGE_CODE, "en");		
+//			builder = new AggregateBuilder();
+//			builder.add(tt, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
+//			builder.add(tt, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
+//			AnalysisEngine aggr_tt = builder.createAggregate();
 	
 			AnalysisEngine scorer = getSimilarityScorer(i);
 			
@@ -86,6 +100,15 @@ public class WithDKPro
 			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
 			    	WordNGramContainmentResource.class,
 			    	WordNGramContainmentResource.PARAM_N, "3")
+			    );
+			return scorer;
+		case 3:
+			scorer = createPrimitive(SimilarityScorer.class,
+				SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
+			    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
+			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
+			    	SimpleJCasTextSimilarityResource.class,
+			    	SimpleJCasTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, TypeTokenRatioComparator.class.getName())
 			    );
 			return scorer;
 		}
