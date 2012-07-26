@@ -24,7 +24,6 @@
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity.dkpro.core-asl</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <dependencies>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
@@ -37,6 +36,10 @@
     <dependency>
         <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
         <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+        <artifactId>de.tudarmstadt.ukp.similarity.algorithms.ml-asl</artifactId>
     </dependency>
     <dependency>
         <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
@@ -59,15 +62,40 @@
   		<artifactId>de.tudarmstadt.ukp.dkpro.core.api.metadata-asl</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.ml-asl</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   		<artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
-  		<version>1.3.0</version>
-  		<scope>compile</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.api-asl
+  		</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.core-asl
+  		</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.similarity.algorithms.lsr-asl
+  		</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   </dependencies>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  			<artifactId>
+  				de.tudarmstadt.ukp.dkpro.lexsemresource-asl
+  			</artifactId>
+  			<version>0.8.0</version>
+  			<type>pom</type>
+  			<scope>import</scope>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
 </project>
