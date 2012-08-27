@@ -22,5 +22,12 @@
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   		<artifactId>de.tudarmstadt.ukp.dkpro.core.api.resources-asl</artifactId>
   	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl
+  		</artifactId>
+  		<version>1.3.0</version>
+  	</dependency>
   </dependencies>
 </project>
