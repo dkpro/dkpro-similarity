@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.aggregate;
+package de.tudarmstadt.ukp.similarity.algorithms.lsr.aggregate;
 
 import java.io.File;
 import java.io.IOException;
@@ -139,7 +139,7 @@ public class MCS06AggregateComparator
 				}
 			}
 			
-			// Weigh
+			// Weight
 			double weightedScore;
 			if (idfValues.containsKey(w1))
 			{
