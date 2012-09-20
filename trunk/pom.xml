@@ -182,5 +182,8 @@
     <module>
     	de.tudarmstadt.ukp.similarity.experiments.wordpairs-asl
     </module>
+    <module>
+    	de.tudarmstadt.ukp.similarity.experiments.wordchoice-asl
+    </module>
   </modules>
 </project>
