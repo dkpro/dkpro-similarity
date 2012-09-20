@@ -179,5 +179,8 @@
     <module>de.tudarmstadt.ukp.similarity.example</module>
     <module>de.tudarmstadt.ukp.similarity.ml.core-asl</module>
     <module>de.tudarmstadt.ukp.similarity.ml.io-asl</module>
+    <module>
+    	de.tudarmstadt.ukp.similarity.experiments.wordpairs-asl
+    </module>
   </modules>
 </project>
