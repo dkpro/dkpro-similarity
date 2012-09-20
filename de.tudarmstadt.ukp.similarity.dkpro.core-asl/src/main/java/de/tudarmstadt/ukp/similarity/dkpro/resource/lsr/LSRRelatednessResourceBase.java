@@ -39,13 +39,13 @@ public abstract class LSRRelatednessResourceBase
 
     // Attention! Can only have String parameters in external resources.
     
-    public static final String PARAM_RESOURCE_NAME = "ResourceName";
+    public static final String PARAM_RESOURCE_NAME = "LsrResourceName";
     @ConfigurationParameter(name = PARAM_RESOURCE_NAME, mandatory = true)
-    protected String resourceName;
+    protected String lsrResourceName;
     
-    public static final String PARAM_RESOURCE_LANGUAGE = "ResourceLanguage";
+    public static final String PARAM_RESOURCE_LANGUAGE = "LSRResourceLanguage";
     @ConfigurationParameter(name = PARAM_RESOURCE_LANGUAGE, mandatory = true)
-    protected String resourceLanguage;
+    protected String lsrResourceLanguage;
 
     protected LexicalSemanticResource lsr;
     
@@ -59,7 +59,7 @@ public abstract class LSRRelatednessResourceBase
 		}
 
 		try {
-            lsr = ResourceFactory.getInstance().get(resourceName, resourceLanguage);
+            lsr = ResourceFactory.getInstance().get(lsrResourceName, lsrResourceLanguage);
         }
         catch (ResourceLoaderException e) {
             throw new ResourceInitializationException(e);
