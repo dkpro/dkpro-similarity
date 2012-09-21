@@ -31,4 +31,9 @@
   	<module>de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl</module>
   </modules>
+  <scm>
+  	<url>http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn/trunk</url>
+  	<connection>http://dkpro-similarity-gpl.googlecode.com/svn/trunk/dkpro-similarity-gpl</connection>
+  	<developerConnection>scm:svn:https://dkpro-similarity-gpl.googlecode.com/svn/trunk/dkpro-similarity-gpl</developerConnection>
+  </scm>
 </project>

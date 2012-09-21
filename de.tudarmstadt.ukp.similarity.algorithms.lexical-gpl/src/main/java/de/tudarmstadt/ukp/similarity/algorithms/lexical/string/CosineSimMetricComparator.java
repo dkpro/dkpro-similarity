@@ -14,11 +14,9 @@ import java.util.Collection;
 
 import org.apache.commons.lang.StringUtils;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-
 import uk.ac.shef.wit.simmetrics.similaritymetrics.AbstractStringMetric;
 import uk.ac.shef.wit.simmetrics.similaritymetrics.CosineSimilarity;
-
+import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 
 public class CosineSimMetricComparator
 	extends SimMetricComparator_ImplBase
