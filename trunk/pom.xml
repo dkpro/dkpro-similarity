@@ -30,12 +30,10 @@
   	<dependency>
   		<groupId>junit</groupId>
   		<artifactId>junit</artifactId>
-  		<version>4.10</version>
   	</dependency>
   	<dependency>
   		<groupId>org.uimafit</groupId>
   		<artifactId>uimafit</artifactId>
-  		<version>1.4.0</version>
   	</dependency>
   </dependencies>
   <dependencyManagement>
@@ -185,5 +183,6 @@
     <module>
     	de.tudarmstadt.ukp.similarity.experiments.wordchoice-asl
     </module>
+    <module>de.tudarmstadt.ukp.similarity.experiments.api-asl</module>
   </modules>
 </project>
