@@ -7,4 +7,49 @@
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity.experiments</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity.experiments.wordpairs-asl</artifactId>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.commons</groupId>
+  		<artifactId>commons-math3</artifactId>
+  		<version>3.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.core.api.metadata-asl
+  		</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.core.io.text-asl
+  		</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.similarity.algorithms.api-asl
+  		</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.similarity.dkpro.core-asl
+  		</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl
+  		</artifactId>
+  		<version>0.8.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.similarity.experiments</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.similarity.experiments.api-asl
+  		</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
