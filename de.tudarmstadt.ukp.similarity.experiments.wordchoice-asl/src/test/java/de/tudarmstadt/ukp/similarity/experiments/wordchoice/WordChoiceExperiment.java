@@ -13,6 +13,8 @@ import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.JiangConrathRelatednessResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.LSRRelatednessResourceBase;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.LinRelatednessResource;
+import de.tudarmstadt.ukp.similarity.experiments.wordchoice.WordChoiceResourceBasedSemRelAnnotator;
+import de.tudarmstadt.ukp.similarity.experiments.wordchoice.WordChoiceWordPairAnnotator;
 import de.tudarmstadt.ukp.similarity.experiments.wordchoice.io.WordChoiceProblemReader;
 import de.tudarmstadt.ukp.similarity.experiments.wordchoice.io.WordChoiceProblemsEvaluator;
 
