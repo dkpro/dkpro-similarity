@@ -22,6 +22,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Set;
 
+import org.junit.Assume;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity;
@@ -67,6 +68,9 @@ public class WuPalmerComparatorTest
 	public void testWuPalmerWordnet()
 		throws Exception
 	{
+        
+        Assume.assumeTrue(Runtime.getRuntime().maxMemory() >= 2000000000);
+
         LexicalSemanticResource wordnet = ResourceFactory.getInstance().get("wordnet", "en");
         wordnet.setIsCaseSensitive(false);
 
