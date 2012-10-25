@@ -11,6 +11,8 @@ import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import de.tudarmstadt.ukp.similarity.ml.util.ArffConverter;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Dataset;
@@ -24,18 +26,23 @@ public class Features2Arff
 {
 	public static final String LF = System.getProperty("line.separator");
 	
-	public static void toArffFile(Dataset dataset, Mode mode, String targetDir)
+	public static void toArffFile(Mode mode, Dataset... datasets)
 		throws IOException
 	{
-		// Do not use a gold standard (i.e. create a training model)		
-		toArffFile(dataset, mode, targetDir, null);		
+		for (Dataset dataset : datasets)
+		{			
+			String path = "classpath:/goldstandards/semeval/" + mode.toString().toLowerCase() + "/STS.gs." + dataset.toString() + ".txt";
+			
+			PathMatchingResourcePatternResolver r = new PathMatchingResourcePatternResolver();
+	        Resource res = r.getResource(path);
+			
+			toArffFile(mode, dataset, res.getFile());
+		}
 	}
-	
-	public static void toArffFile(Dataset dataset, Mode mode, String targetDir, File goldStandard)
+		
+	private static void toArffFile(Mode mode, Dataset dataset, File goldStandard)
 		throws IOException
 	{
-		// Use a gold standard (i.e. create a test model)
-		
 		System.out.println("Generating ARFF file");
 		
 		Collection<File> files = FileUtils.listFiles(

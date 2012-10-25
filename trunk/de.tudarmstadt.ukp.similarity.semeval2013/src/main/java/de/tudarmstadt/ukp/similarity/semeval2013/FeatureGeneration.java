@@ -108,15 +108,15 @@ public class FeatureGeneration
 				"Levenshtein"
 				));
 		
-		configs.add(new FeatureConfig(
-				createExternalResourceDescription(
-				    	GreedyStringTilingMeasureResource.class,
-				    	GreedyStringTilingMeasureResource.PARAM_MIN_MATCH_LENGTH, "3"),
-				Document.class.getName(),
-				false,
-				"string",
-				"GreedyStringTiling_3"
-				));
+//		configs.add(new FeatureConfig(
+//				createExternalResourceDescription(
+//				    	GreedyStringTilingMeasureResource.class,
+//				    	GreedyStringTilingMeasureResource.PARAM_MIN_MATCH_LENGTH, "3"),
+//				Document.class.getName(),
+//				false,
+//				"string",
+//				"GreedyStringTiling_3"
+//				));
 		
 		configs.add(new FeatureConfig(
 				createExternalResourceDescription(
@@ -293,7 +293,7 @@ public class FeatureGeneration
 		System.out.println("Successful.");
 	}
 	
-	public static void combineFeatureSets(String root, Mode mode, Dataset target, Dataset... sources)
+	public static void combineFeatureSets(Mode mode, Dataset target, Dataset... sources)
 			throws IOException
 	{	
 		String outputFolderName = target.toString();
@@ -301,14 +301,14 @@ public class FeatureGeneration
 		System.out.println("Combining feature sets");
 		
 		// Check if target directory exists. If so, delete it.
-		File targetDir = new File(root + "/" + mode.toString().toLowerCase() + "/" + target.toString());
+		File targetDir = new File(FEATURES_DIR + "/" + mode.toString().toLowerCase() + "/" + target.toString());
 		if (targetDir.exists())
 		{
 			System.out.println(" - cleaned target directory");
 			FileUtils.deleteDirectory(targetDir);
 		}
 		
-		String featurePathOfFirstSet = root + "/" + mode.toString().toLowerCase() + "/" + sources[0].toString();
+		String featurePathOfFirstSet = FEATURES_DIR + "/" + mode.toString().toLowerCase() + "/" + sources[0].toString();
 		
 		Collection<File> features = FileUtils.listFiles(new File(featurePathOfFirstSet), new String[] { "txt" }, true);
 		
