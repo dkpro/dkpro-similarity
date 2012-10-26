@@ -65,7 +65,9 @@ public class SemEval2013Baseline
 		Features2Arff.toArffFile(TEST, MSRpar, MSRvid);
 
 		Evaluator.runLinearRegression(ALL, MSRpar, MSRvid);
+		
+		// For submission scenario, comment the line below
+		// (there is no gold standard present then to compare with)
 		Evaluator.runEvaluationMetrics(TEST, PearsonAll, PearsonAllnrm, PearsonMean);
 	}
-
 }
