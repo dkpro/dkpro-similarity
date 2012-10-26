@@ -120,8 +120,18 @@ public class Features2Arff
 		}
 			
 		for (int doc = 1; doc <= lines.size(); doc++)
-		{					
+		{	
+			System.out.println(lines.get(doc - 1).length());
+			System.out.println(lines.get(doc - 1));
+			if (lines.get(doc - 1).length() == 0)
+			{
+				System.out.println("here2");
+				break;
+			}
+			
 			double value = Double.parseDouble(lines.get(doc - 1));				
+			
+			System.out.println(doc);
 			
 			List<Double> docObj = data.get(doc);
 			docObj.add(value);

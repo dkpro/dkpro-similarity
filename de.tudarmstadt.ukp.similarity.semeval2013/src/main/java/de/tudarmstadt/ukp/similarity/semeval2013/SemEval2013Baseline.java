@@ -36,23 +36,20 @@ public class SemEval2013Baseline
 	public static final String OUTPUT_DIR = "target/output";
 	public static final String REPORT_FILE = "report.txt";
 	
-	public static void mainTrain(String[] args)
+	public static void main(String[] args)
 		throws Exception
 	{
-		// TRAIN
-		
 		FeatureGeneration.generateFeatures(MSRpar, TRAIN);
 		FeatureGeneration.generateFeatures(MSRvid, TRAIN);
+		FeatureGeneration.generateFeatures(SMTeuroparl, TRAIN);
 		
-		FeatureGeneration.combineFeatureSets(TRAIN, ALL, MSRpar, MSRvid);
-		
-		Features2Arff.toArffFile(TRAIN, ALL);
+		Features2Arff.toArffFile(TRAIN, MSRpar, MSRvid, SMTeuroparl);
 
-		// TODO: Some cross-validation example
-		//Evaluation.runLinearRegressionCV(ALLcombined);
+		Evaluator.runLinearRegressionCV(TRAIN, MSRpar, MSRvid, SMTeuroparl);
+		Evaluator.runEvaluationMetrics(TRAIN, PearsonAll, PearsonAllnrm, PearsonMean);
 	}
 
-	public static void main(String[] args)
+	public static void mainTest(String[] args)
 		throws Exception
 	{
 		FeatureGeneration.generateFeatures(MSRpar, TRAIN);
@@ -67,8 +64,8 @@ public class SemEval2013Baseline
 		Features2Arff.toArffFile(TRAIN, ALL);
 		Features2Arff.toArffFile(TEST, MSRpar, MSRvid);
 
-		Evaluation.runLinearRegression(ALL, MSRpar, MSRvid);
-		Evaluation.runEvaluationMetrics(TEST, PearsonAll, PearsonAllnrm, PearsonMean);
+		Evaluator.runLinearRegression(ALL, MSRpar, MSRvid);
+		Evaluator.runEvaluationMetrics(TEST, PearsonAll, PearsonAllnrm, PearsonMean);
 	}
 
 }
