@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
@@ -52,7 +53,8 @@ import de.tudarmstadt.ukp.statistics.correlation.PearsonCorrelation;
 
 import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.OUTPUT_DIR;
 import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.MODELS_DIR;
-import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.REPORT_FILE;
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.EvaluationMetric.*;
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Dataset.*;
 
 
 public class Evaluator
@@ -188,23 +190,36 @@ public class Evaluator
 		}
 	}
 	
-	public static void runEvaluationMetrics(Mode mode, EvaluationMetric... metrics)
+	public static void runEvaluationMetric(Mode mode, EvaluationMetric metric, Dataset... datasets)
 		throws IOException
 	{
 		StringBuilder sb = new StringBuilder();
 		
-		for (EvaluationMetric metric : metrics)
+		// Compute Pearson correlation for the specified datasets
+		for (Dataset dataset : datasets)
 		{
-			for (Dataset dataset : Dataset.values())
+			computePearsonCorrelation(mode, dataset);
+		}
+		
+		if (metric == PearsonAll)
+		{
+			List<Double> concatExp = new ArrayList<Double>();
+			List<Double> concatGS = new ArrayList<Double>();
+			
+			// Concat the scores
+			for (Dataset dataset : datasets)
 			{
-				if (dataset.equals(Dataset.ALL))
-					continue;
-				
 				File expScoresFile = new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".csv");
 				
-				if (!expScoresFile.exists())
-					continue;
+				List<String> lines = FileUtils.readLines(expScoresFile);
 				
+				for (String line : lines)
+					concatExp.add(Double.parseDouble(line));
+			}
+			
+			// Concat the gold standard
+			for (Dataset dataset : datasets)
+			{
 				String gsScoresFilePath = "classpath:/goldstandards/semeval/" + mode.toString().toLowerCase() + "/" + 
 						"STS.gs." + dataset.toString() + ".txt";
 				
@@ -212,26 +227,67 @@ public class Evaluator
 		        Resource res = r.getResource(gsScoresFilePath);				
 				File gsScoresFile = res.getFile();
 				
-				List<Double> expScores = new ArrayList<Double>();
-				List<Double> gsScores = new ArrayList<Double>();
+				List<String> lines = FileUtils.readLines(gsScoresFile);
 				
-				List<String> expLines = FileUtils.readLines(expScoresFile);
-				List<String> gsLines = FileUtils.readLines(gsScoresFile);
-				
-				for (int i = 0; i < expLines.size(); i++)
-				{
-					expScores.add(Double.parseDouble(expLines.get(i)));
-					gsScores.add(Double.parseDouble(gsLines.get(i)));
-				}
-
-				Double correl = PearsonCorrelation.computeCorrelation(expScores, gsScores);
-				
-				FileUtils.writeStringToFile(
-						new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt"),
-						correl.toString());
+				for (String line : lines)
+					concatGS.add(Double.parseDouble(line));
 			}
+			
+			Double correl = PearsonCorrelation.computeCorrelation(concatExp, concatGS);
+			
+			sb.append(correl.toString());
 		}
+		else if (metric == PearsonMean)
+		{
+			List<Double> scores = new ArrayList<Double>();
+			
+			for (Dataset dataset : datasets)
+			{
+				File resultFile = new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt");
+				double score = Double.parseDouble(FileUtils.readFileToString(resultFile));
+				
+				scores.add(score);
+			}
+			
+			double mean = 0.0;
+			for (Double score : scores)
+				mean += score;
+			mean = mean / scores.size();
+			
+			sb.append(mean);
+		}
+
+		FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + metric.toString() + ".txt"), sb.toString());
+	}
+	
+	private static void computePearsonCorrelation(Mode mode, Dataset dataset)
+		throws IOException
+	{
+		File expScoresFile = new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".csv");
 		
-		FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + REPORT_FILE), sb.toString());
+		String gsScoresFilePath = "classpath:/goldstandards/semeval/" + mode.toString().toLowerCase() + "/" + 
+				"STS.gs." + dataset.toString() + ".txt";
+		
+		PathMatchingResourcePatternResolver r = new PathMatchingResourcePatternResolver();
+        Resource res = r.getResource(gsScoresFilePath);				
+		File gsScoresFile = res.getFile();
+		
+		List<Double> expScores = new ArrayList<Double>();
+		List<Double> gsScores = new ArrayList<Double>();
+		
+		List<String> expLines = FileUtils.readLines(expScoresFile);
+		List<String> gsLines = FileUtils.readLines(gsScoresFile);
+		
+		for (int i = 0; i < expLines.size(); i++)
+		{
+			expScores.add(Double.parseDouble(expLines.get(i)));
+			gsScores.add(Double.parseDouble(gsLines.get(i)));
+		}
+
+		Double correl = PearsonCorrelation.computeCorrelation(expScores, gsScores);
+		
+		FileUtils.writeStringToFile(
+				new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt"),
+				correl.toString());
 	}
 }
