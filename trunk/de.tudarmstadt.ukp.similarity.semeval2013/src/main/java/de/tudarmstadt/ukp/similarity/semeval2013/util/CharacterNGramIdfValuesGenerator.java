@@ -1,6 +1,7 @@
 package de.tudarmstadt.ukp.similarity.semeval2013.util;
 
 import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.UTILS_DIR;
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.DATASET_DIR;
 
 import java.io.File;
 import java.net.URL;
@@ -26,7 +27,7 @@ public class CharacterNGramIdfValuesGenerator
 	{			
 		final String LF = System.getProperty("line.separator");
 		
-		URL inputUrl = ResourceUtils.resolveLocation("classpath:/datasets/semeval/test/STS.input." + dataset.toString() + ".txt");
+		URL inputUrl = ResourceUtils.resolveLocation(DATASET_DIR + "/test/STS.input." + dataset.toString() + ".txt");
 		List<String> lines = FileUtils.readLines(new File(inputUrl.getPath())); 
 
 		System.out.println("Computing character " + n + "-grams");
