@@ -13,7 +13,7 @@ package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
 import uk.ac.shef.wit.simmetrics.similaritymetrics.DiceSimilarity;
 
 public class DiceSimMetricComparator
-	extends SimMetricComparator_ImplBase
+	extends SimMetricsComparator_ImplBase
 {
     
     public DiceSimMetricComparator() {

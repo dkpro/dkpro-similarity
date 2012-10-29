@@ -20,7 +20,7 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 import uk.ac.shef.wit.simmetrics.similaritymetrics.AbstractStringMetric;
 
 
-public abstract class SimMetricComparator_ImplBase
+public abstract class SimMetricsComparator_ImplBase
 	extends TextSimilarityMeasureBase
 {
     

@@ -18,11 +18,11 @@ import uk.ac.shef.wit.simmetrics.similaritymetrics.AbstractStringMetric;
 import uk.ac.shef.wit.simmetrics.similaritymetrics.CosineSimilarity;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 
-public class CosineSimMetricComparator
-	extends SimMetricComparator_ImplBase
+public class CosineSimMetricsComparator
+	extends SimMetricsComparator_ImplBase
 {
     
-    public CosineSimMetricComparator() {
+    public CosineSimMetricsComparator() {
         this.similarityMeasure = new CosineSimilarity();
     }
 

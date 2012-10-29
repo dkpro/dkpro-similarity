@@ -14,7 +14,7 @@ import uk.ac.shef.wit.simmetrics.similaritymetrics.OverlapCoefficient;
 
 
 public class OverlapCoefficientSimMetricComparator
-	extends SimMetricComparator_ImplBase
+	extends SimMetricsComparator_ImplBase
 {
     
     public OverlapCoefficientSimMetricComparator() {
