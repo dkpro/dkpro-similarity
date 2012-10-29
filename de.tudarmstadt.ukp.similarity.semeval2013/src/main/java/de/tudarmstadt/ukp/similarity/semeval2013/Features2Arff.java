@@ -14,7 +14,6 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
-import de.tudarmstadt.ukp.similarity.ml.util.ArffConverter;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Dataset;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Mode;
 

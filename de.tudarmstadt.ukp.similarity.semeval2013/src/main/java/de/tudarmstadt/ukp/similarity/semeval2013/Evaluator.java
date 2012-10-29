@@ -1,5 +1,10 @@
 package de.tudarmstadt.ukp.similarity.semeval2013;
 
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.DATASET_DIR;
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.MODELS_DIR;
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.OUTPUT_DIR;
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.EvaluationMetric.PearsonAll;
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.EvaluationMetric.PearsonMean;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
 import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
@@ -13,8 +18,6 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
@@ -36,25 +39,18 @@ import weka.filters.Filter;
 import weka.filters.supervised.attribute.AddClassification;
 import weka.filters.unsupervised.attribute.AddID;
 import weka.filters.unsupervised.attribute.Remove;
-
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
+import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Dataset;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.EvaluationMetric;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Mode;
 import de.tudarmstadt.ukp.statistics.correlation.PearsonCorrelation;
-
-import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.OUTPUT_DIR;
-import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.MODELS_DIR;
-import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.EvaluationMetric.*;
-import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Dataset.*;
 
 
 public class Evaluator
@@ -67,7 +63,7 @@ public class Evaluator
 		for (Dataset dataset : test)
 		{
 			CollectionReader reader = createCollectionReader(SemEvalCorpusReader.class,
-					SemEvalCorpusReader.PARAM_INPUT_FILE, "classpath:/datasets/semeval/test/STS.input." + dataset.toString() + ".txt",
+					SemEvalCorpusReader.PARAM_INPUT_FILE, DATASET_DIR + "/test/STS.input." + dataset.toString() + ".txt",
 					SemEvalCorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
 			
 			AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);

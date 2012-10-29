@@ -1,5 +1,8 @@
 package de.tudarmstadt.ukp.similarity.semeval2013;
 
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.DATASET_DIR;
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.FEATURES_DIR;
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.UTILS_DIR;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
 import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
@@ -18,45 +21,28 @@ import org.apache.uima.collection.CollectionReader;
 import org.uimafit.factory.AggregateBuilder;
 import org.uimafit.pipeline.SimplePipeline;
 
-import com.sleepycat.je.utilint.LongStat;
-
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramJaccardMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.GreedyStringTiling;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.JaroSecondStringComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.JaroWinklerSecondStringComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LevenshteinComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.MongeElkanSecondStringComparator;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
+import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.CharacterNGramResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.StopwordNGramContainmentMeasureResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.style.FunctionWordFrequenciesMeasureResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
 import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Dataset;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Mode;
 import de.tudarmstadt.ukp.similarity.semeval2013.util.CharacterNGramIdfValuesGenerator;
 import de.tudarmstadt.ukp.similarity.semeval2013.util.StopwordFilter;
-
-import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.FEATURES_DIR;
-import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.UTILS_DIR;
 
 
 public class FeatureGeneration
@@ -173,85 +159,11 @@ public class FeatureGeneration
 					));			
 		}
 		
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//				    	SimpleTextSimilarityResource.class,
-//				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
-//				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, JaroSecondStringComparator.class.getName()),
-//				Document.class.getName(),
-//				false,
-//				"string",
-//				"Jaro"
-//				));
-//		
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//				    	SimpleTextSimilarityResource.class,
-//				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
-//				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, JaroWinklerSecondStringComparator.class.getName()),
-//				Document.class.getName(),
-//				false,
-//				"string",
-//				"JaroWinkler"
-//				));
-//		
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//				    	SimpleTextSimilarityResource.class,
-//				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
-//				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, MongeElkanSecondStringComparator.class.getName()),
-//				Document.class.getName(),
-//				false,
-//				"string",
-//				"MongeElkan"
-//				));
-//		
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//				    	SimpleTextSimilarityResource.class,
-//				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
-//				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, LevenshteinComparator.class.getName()),
-//				Document.class.getName(),
-//				false,
-//				"string",
-//				"Levenshtein"
-//				));
-		
-		
-		
-		
-
-		
-
-		// N-Grams
-//		for (int i = 1; i <= 5; i++)
-//		{
-//			configs.add(new FeatureConfig(
-//					createExternalResourceDescription(
-//					    	WordNGramContainmentResource.class,
-//					    	WordNGramContainmentResource.PARAM_N, new Integer(i).toString()),
-//					Token.class.getName(),
-//					false,
-//					"n-grams",
-//					"WordNGramContainmentMeasure_" + i
-//					));
-//			
-//			configs.add(new FeatureConfig(
-//					createExternalResourceDescription(
-//					    	WordNGramJaccardResource.class,
-//					    	WordNGramJaccardResource.PARAM_N, new Integer(i).toString()),
-//					Token.class.getName(),
-//					false,
-//					"n-grams",
-//					"WordNGramJaccardMeasure_" + i
-//					));
-//		}
-		
 		// ESA
 //		configs.add(new FeatureConfig(
 //				createExternalResourceDescription(
 //				    	VectorIndexSourceRelatednessResource.class,
-//				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, "/home/danielb/Projekte/DKPro/Resources/ESA/VectorIndexes/wp_eng_lem_nc_c"),
+//				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, "/ESA/VectorIndexes/wp_eng_lem_nc_c"),
 //				Lemma.class.getName() + "/value",
 //				false,
 //				"esa",
@@ -261,46 +173,13 @@ public class FeatureGeneration
 //		configs.add(new FeatureConfig(
 //				createExternalResourceDescription(
 //				    	VectorIndexSourceRelatednessResource.class,
-//				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, "/home/danielb/Projekte/DKPro/Resources/ESA/VectorIndexes/wiktionary_en"),
+//				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, "/ESA/VectorIndexes/wiktionary_en"),
 //				Lemma.class.getName() + "/value",
 //				false,
 //				"esa",
 //				"ESA_WK"
 //				));
-//		
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//				    	VectorIndexSourceRelatednessResource.class,
-//				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, "/home/danielb/Projekte/DKPro/Resources/ESA/VectorIndexes/wordnet_eng_lem_nc_c"),
-//				Lemma.class.getName() + "/value",
-//				false,
-//				"esa",
-//				"ESA_WN"
-//				));
-		
-		// Structure
-		
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//				    	StopwordNGramContainmentMeasureResource.class,
-//				    	StopwordNGramContainmentMeasureResource.PARAM_N, "3",
-//				    	StopwordNGramContainmentMeasureResource.PARAM_STOPWORD_LIST_LOCATION, "/home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.dkpro.data-asl/src/main/resources/stopwords/stopwords-bnc-stamatatos.txt"),
-//				Lemma.class.getName() + "/value",
-//				false,
-//				"structure",
-//				"StopwordNGramContainmentMeasure_3_stamatatos"
-//				));
-		
-		// Style
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//				    	FunctionWordFrequenciesMeasureResource.class,
-//				    	FunctionWordFrequenciesMeasureResource.PARAM_FUNCTION_WORD_LIST_LOCATION, "/home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.dkpro.data-asl/src/main/resources/stopwords/function-words-mosteller-wallace.txt"),
-//				Lemma.class.getName() + "/value",
-//				false,
-//				"style",
-//				"FunctionWordFrequenciesMeasure"
-//				));	
+
 		
 		// Run the pipeline		
 		for (FeatureConfig config : configs)
@@ -316,7 +195,7 @@ public class FeatureGeneration
 			else
 			{			
 				CollectionReader reader = createCollectionReader(SemEvalCorpusReader.class,
-						SemEvalCorpusReader.PARAM_INPUT_FILE, "classpath:/datasets/semeval/" + mode.toString().toLowerCase() + "/STS.input." + dataset.toString() + ".txt",
+						SemEvalCorpusReader.PARAM_INPUT_FILE, DATASET_DIR + "/" + mode.toString().toLowerCase() + "/STS.input." + dataset.toString() + ".txt",
 						SemEvalCorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
 		
 				AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
@@ -364,7 +243,6 @@ public class FeatureGeneration
 			}
 		}
 		
-		// Read the output and print to the console
 		System.out.println("Successful.");
 	}
 	
