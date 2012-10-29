@@ -22,12 +22,6 @@
     </dependency>
     <dependency>
         <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-        <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl</artifactId>
-        <version>0.8.0</version>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
         <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wikipedia-asl</artifactId>
         <scope>test</scope>
     </dependency>
@@ -44,10 +38,6 @@
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.api-asl</artifactId>
-  	</dependency>
-  	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl</artifactId>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
@@ -108,13 +98,6 @@
   			<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
   			<artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource-asl</artifactId>
   			<version>0.8.0</version>
-  			<type>pom</type>
-  			<scope>import</scope>
-  		</dependency>
-  		<dependency>
-  			<groupId>de.tudarmstadt.ukp.similarity</groupId>
-  			<artifactId>de.tudarmstadt.ukp.similarity-gpl</artifactId>
-  			<version>0.0.1-SNAPSHOT</version>
   			<type>pom</type>
   			<scope>import</scope>
   		</dependency>
