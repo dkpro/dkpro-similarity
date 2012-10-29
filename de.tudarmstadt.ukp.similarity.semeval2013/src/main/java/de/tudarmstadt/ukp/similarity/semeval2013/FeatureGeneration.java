@@ -41,6 +41,7 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.CharacterNGramResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
@@ -51,8 +52,11 @@ import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Dataset;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Mode;
+import de.tudarmstadt.ukp.similarity.semeval2013.util.CharacterNGramIdfValuesGenerator;
+import de.tudarmstadt.ukp.similarity.semeval2013.util.StopwordFilter;
 
 import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.FEATURES_DIR;
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.UTILS_DIR;
 
 
 public class FeatureGeneration
@@ -63,60 +67,21 @@ public class FeatureGeneration
 		// Define the features
 		List<FeatureConfig> configs = new ArrayList<FeatureConfig>();
 		
+		// Prerequisites
+		int[] ngrams_n = new int[] { 2, 3, 4 };
+		for (int n : ngrams_n)
+			CharacterNGramIdfValuesGenerator.computeIdfScores(mode, dataset, n);
+		
 		// String features
 		configs.add(new FeatureConfig(
 				createExternalResourceDescription(
-				    	SimpleTextSimilarityResource.class,
-				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
-				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, JaroSecondStringComparator.class.getName()),
+				    	GreedyStringTilingMeasureResource.class,
+				    	GreedyStringTilingMeasureResource.PARAM_MIN_MATCH_LENGTH, "3"),
 				Document.class.getName(),
 				false,
 				"string",
-				"Jaro"
+				"GreedyStringTiling_3"
 				));
-		
-		configs.add(new FeatureConfig(
-				createExternalResourceDescription(
-				    	SimpleTextSimilarityResource.class,
-				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
-				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, JaroWinklerSecondStringComparator.class.getName()),
-				Document.class.getName(),
-				false,
-				"string",
-				"JaroWinkler"
-				));
-		
-		configs.add(new FeatureConfig(
-				createExternalResourceDescription(
-				    	SimpleTextSimilarityResource.class,
-				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
-				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, MongeElkanSecondStringComparator.class.getName()),
-				Document.class.getName(),
-				false,
-				"string",
-				"MongeElkan"
-				));
-		
-		configs.add(new FeatureConfig(
-				createExternalResourceDescription(
-				    	SimpleTextSimilarityResource.class,
-				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
-				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, LevenshteinComparator.class.getName()),
-				Document.class.getName(),
-				false,
-				"string",
-				"Levenshtein"
-				));
-		
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//				    	GreedyStringTilingMeasureResource.class,
-//				    	GreedyStringTilingMeasureResource.PARAM_MIN_MATCH_LENGTH, "3"),
-//				Document.class.getName(),
-//				false,
-//				"string",
-//				"GreedyStringTiling_3"
-//				));
 		
 		configs.add(new FeatureConfig(
 				createExternalResourceDescription(
@@ -139,7 +104,7 @@ public class FeatureGeneration
 				"string",
 				"LongestCommonSubsequenceNormComparator"
 				));
-
+		
 		configs.add(new FeatureConfig(
 				createExternalResourceDescription(
 				    	SimpleTextSimilarityResource.class,
@@ -150,6 +115,113 @@ public class FeatureGeneration
 				"string",
 				"LongestCommonSubstringComparator"
 				));
+		
+		ngrams_n = new int[] { 2, 3, 4 };
+		for (int n : ngrams_n)
+		{
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+							CharacterNGramResource.class,
+							CharacterNGramResource.PARAM_N, new Integer(n).toString(),
+							CharacterNGramResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/character-ngrams-idf/" + mode.toString().toLowerCase() + "/" + n + "/" + dataset.toString() + ".txt"),
+					Document.class.getName(),
+					false,
+					"n-grams",
+					"CharacterNGramMeasure_" + n
+					));
+		}
+		
+		ngrams_n = new int[] { 1, 2 };
+		for (int n : ngrams_n)
+		{
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+					    	WordNGramContainmentResource.class,
+					    	WordNGramContainmentResource.PARAM_N, new Integer(n).toString()),
+					Token.class.getName(),
+					true,
+					"n-grams",
+					"WordNGramContainmentMeasure_" + n + "_stopword-filtered"
+					));
+		}
+		
+		ngrams_n = new int[] { 1, 3, 4 };
+		for (int n : ngrams_n)
+		{
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+					    	WordNGramJaccardResource.class,
+					    	WordNGramJaccardResource.PARAM_N, new Integer(n).toString()),
+					Token.class.getName(),
+					false,
+					"n-grams",
+					"WordNGramJaccardMeasure_" + n
+					));			
+		}
+		
+		ngrams_n = new int[] { 2, 4 };
+		for (int n : ngrams_n)
+		{
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+					    	WordNGramJaccardResource.class,
+					    	WordNGramJaccardResource.PARAM_N, new Integer(n).toString()),
+					Token.class.getName(),
+					true,
+					"n-grams",
+					"WordNGramJaccardMeasure_" + n + "_stopword-filtered"
+					));			
+		}
+		
+//		configs.add(new FeatureConfig(
+//				createExternalResourceDescription(
+//				    	SimpleTextSimilarityResource.class,
+//				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
+//				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, JaroSecondStringComparator.class.getName()),
+//				Document.class.getName(),
+//				false,
+//				"string",
+//				"Jaro"
+//				));
+//		
+//		configs.add(new FeatureConfig(
+//				createExternalResourceDescription(
+//				    	SimpleTextSimilarityResource.class,
+//				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
+//				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, JaroWinklerSecondStringComparator.class.getName()),
+//				Document.class.getName(),
+//				false,
+//				"string",
+//				"JaroWinkler"
+//				));
+//		
+//		configs.add(new FeatureConfig(
+//				createExternalResourceDescription(
+//				    	SimpleTextSimilarityResource.class,
+//				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
+//				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, MongeElkanSecondStringComparator.class.getName()),
+//				Document.class.getName(),
+//				false,
+//				"string",
+//				"MongeElkan"
+//				));
+//		
+//		configs.add(new FeatureConfig(
+//				createExternalResourceDescription(
+//				    	SimpleTextSimilarityResource.class,
+//				    	SimpleTextSimilarityResource.PARAM_MODE, "text",
+//				    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, LevenshteinComparator.class.getName()),
+//				Document.class.getName(),
+//				false,
+//				"string",
+//				"Levenshtein"
+//				));
+		
+		
+		
+		
+
+		
 
 		// N-Grams
 //		for (int i = 1; i <= 5; i++)
@@ -262,15 +334,15 @@ public class FeatureGeneration
 //				builder.add(tt, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
 //				AnalysisEngine aggr_tt = builder.createAggregate();
 				
-	//			AnalysisEngineDescription stopw = createPrimitiveDescription(
-	//					StopwordFilter.class,
-	//					StopwordFilter.PARAM_STOPWORD_LIST, new File("src/main/resources/stopwords_english_punctuation.txt").getAbsolutePath(),
-	//					StopwordFilter.PARAM_ANNOTATION_TYPE_NAME, Lemma.class.getName(),
-	//					StopwordFilter.PARAM_STRING_REPRESENTATION_METHOD_NAME, "getValue");
-	//			builder = new AggregateBuilder();
-	//			builder.add(stopw, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
-	//			builder.add(stopw, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
-	//			AnalysisEngineDescription aggr_stopw = builder.createAggregateDescription();
+				AnalysisEngineDescription stopw = createPrimitiveDescription(
+						StopwordFilter.class,
+						StopwordFilter.PARAM_STOPWORD_LIST, "classpath:/stopwords/stopwords_english_punctuation.txt",
+						StopwordFilter.PARAM_ANNOTATION_TYPE_NAME, Lemma.class.getName(),
+						StopwordFilter.PARAM_STRING_REPRESENTATION_METHOD_NAME, "getValue");
+				builder = new AggregateBuilder();
+				builder.add(stopw, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
+				builder.add(stopw, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
+				AnalysisEngine aggr_stopw = builder.createAggregate();
 		
 				AnalysisEngine scorer = createPrimitive(SimilarityScorer.class,
 				    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
@@ -283,7 +355,10 @@ public class FeatureGeneration
 					SimilarityScoreWriter.PARAM_OUTPUT_FILE, outputFile.getAbsolutePath(),
 					SimilarityScoreWriter.PARAM_OUTPUT_SCORES_ONLY, true);
 		
-				SimplePipeline.runPipeline(reader, aggr_seg, scorer, writer);
+				if (config.filterStopwords())
+					SimplePipeline.runPipeline(reader, aggr_seg, aggr_stopw, scorer, writer);
+				else
+					SimplePipeline.runPipeline(reader, aggr_seg, scorer, writer);
 				
 				System.out.println(" - done");
 			}
