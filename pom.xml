@@ -30,6 +30,8 @@
   <modules>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.dkpro.core-gpl</module>
   </modules>
   <scm>
   	<url>http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn/trunk</url>
