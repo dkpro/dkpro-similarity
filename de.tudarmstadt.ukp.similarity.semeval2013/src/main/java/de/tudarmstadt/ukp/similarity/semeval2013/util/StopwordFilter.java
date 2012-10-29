@@ -43,7 +43,7 @@ public class StopwordFilter
 	private Class<? extends Annotation> annotationType;
 	private Set<String> stopwords;
 
-
+	@SuppressWarnings("unchecked")
 	@Override
 	public void initialize(UimaContext context)
 		throws ResourceInitializationException
@@ -76,6 +76,7 @@ public class StopwordFilter
 		}
     }
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void process(JCas jcas)
 		throws AnalysisEngineProcessException
