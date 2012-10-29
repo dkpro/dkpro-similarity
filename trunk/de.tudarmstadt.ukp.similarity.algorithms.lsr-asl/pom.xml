@@ -75,11 +75,6 @@
   		<version>0.9.4</version>
   	</dependency>
   	<dependency>
-  		<groupId>org.hua.sr.omiotis</groupId>
-  		<artifactId>org.hua.sr.omiotis</artifactId>
-  		<version>1.0.4</version>
-  	</dependency>
-  	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   		<artifactId>
   			de.tudarmstadt.ukp.dkpro.core.api.frequency-asl
