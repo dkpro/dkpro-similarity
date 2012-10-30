@@ -19,6 +19,7 @@ import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Mode;
 
 import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.FEATURES_DIR;
 import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.MODELS_DIR;
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.GOLDSTANDARD_DIR;
 
 
 public class Features2Arff
@@ -30,7 +31,7 @@ public class Features2Arff
 	{
 		for (Dataset dataset : datasets)
 		{			
-			String path = "classpath:/goldstandards/semeval/" + mode.toString().toLowerCase() + "/STS.gs." + dataset.toString() + ".txt";
+			String path = GOLDSTANDARD_DIR + "/" + mode.toString().toLowerCase() + "/STS.gs." + dataset.toString() + ".txt";
 			
 			PathMatchingResourcePatternResolver r = new PathMatchingResourcePatternResolver();
 	        Resource res = r.getResource(path);
