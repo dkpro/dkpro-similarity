@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
@@ -50,7 +52,6 @@ import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Dataset;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.EvaluationMetric;
 import de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.Mode;
-import de.tudarmstadt.ukp.statistics.correlation.PearsonCorrelation;
 
 
 public class Evaluator
@@ -229,7 +230,11 @@ public class Evaluator
 					concatGS.add(Double.parseDouble(line));
 			}
 			
-			Double correl = PearsonCorrelation.computeCorrelation(concatExp, concatGS);
+			double[] concatExpArray = ArrayUtils.toPrimitive(concatExp.toArray(new Double[concatExp.size()])); 
+			double[] concatGSArray = ArrayUtils.toPrimitive(concatGS.toArray(new Double[concatGS.size()]));
+
+			PearsonsCorrelation pearson = new PearsonsCorrelation();
+			Double correl = pearson.correlation(concatExpArray, concatGSArray);
 			
 			sb.append(correl.toString());
 		}
@@ -279,8 +284,12 @@ public class Evaluator
 			expScores.add(Double.parseDouble(expLines.get(i)));
 			gsScores.add(Double.parseDouble(gsLines.get(i)));
 		}
+		
+		double[] expArray = ArrayUtils.toPrimitive(expScores.toArray(new Double[expScores.size()])); 
+		double[] gsArray = ArrayUtils.toPrimitive(gsScores.toArray(new Double[gsScores.size()]));
 
-		Double correl = PearsonCorrelation.computeCorrelation(expScores, gsScores);
+		PearsonsCorrelation pearson = new PearsonsCorrelation();
+		Double correl = pearson.correlation(expArray, gsArray);
 		
 		FileUtils.writeStringToFile(
 				new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt"),
