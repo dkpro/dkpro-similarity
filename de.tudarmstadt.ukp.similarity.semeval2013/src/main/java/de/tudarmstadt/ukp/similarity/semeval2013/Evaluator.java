@@ -3,6 +3,8 @@ package de.tudarmstadt.ukp.similarity.semeval2013;
 import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.DATASET_DIR;
 import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.MODELS_DIR;
 import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.OUTPUT_DIR;
+import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.GOLDSTANDARD_DIR;
+
 import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.EvaluationMetric.PearsonAll;
 import static de.tudarmstadt.ukp.similarity.semeval2013.SemEval2013Baseline.EvaluationMetric.PearsonMean;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
@@ -217,7 +219,7 @@ public class Evaluator
 			// Concat the gold standard
 			for (Dataset dataset : datasets)
 			{
-				String gsScoresFilePath = "classpath:/goldstandards/semeval/" + mode.toString().toLowerCase() + "/" + 
+				String gsScoresFilePath = GOLDSTANDARD_DIR + "/" + mode.toString().toLowerCase() + "/" + 
 						"STS.gs." + dataset.toString() + ".txt";
 				
 				PathMatchingResourcePatternResolver r = new PathMatchingResourcePatternResolver();
@@ -266,7 +268,7 @@ public class Evaluator
 	{
 		File expScoresFile = new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".csv");
 		
-		String gsScoresFilePath = "classpath:/goldstandards/semeval/" + mode.toString().toLowerCase() + "/" + 
+		String gsScoresFilePath = GOLDSTANDARD_DIR + "/" + mode.toString().toLowerCase() + "/" + 
 				"STS.gs." + dataset.toString() + ".txt";
 		
 		PathMatchingResourcePatternResolver r = new PathMatchingResourcePatternResolver();
