@@ -26,5 +26,40 @@
   			de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl
   		</artifactId>
   	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.graph-asl
+  		</artifactId>
+  		<version>0.8.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.wikipedia-asl
+  		</artifactId>
+  		<version>0.8.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl
+  		</artifactId>
+  		<version>0.8.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl
+  		</artifactId>
+  		<version>0.8.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl
+  		</artifactId>
+  		<version>0.8.0</version>
+  	</dependency>
   </dependencies>
 </project>
