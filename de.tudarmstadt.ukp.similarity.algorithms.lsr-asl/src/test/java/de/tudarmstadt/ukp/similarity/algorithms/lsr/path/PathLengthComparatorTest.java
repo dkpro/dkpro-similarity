@@ -47,11 +47,12 @@ public class PathLengthComparatorTest {
     @BeforeClass
     public static void initialize() throws ResourceLoaderException  {
         wordnet    = ResourceFactory.getInstance().get("wordnet", "en");
-        germanet   = ResourceFactory.getInstance().get("germanet7", "de");
+//        germanet   = ResourceFactory.getInstance().get("germanet7", "de");
         wikipedia  = ResourceFactory.getInstance().get("wikipedia", "test");
 //        wiktionary = ResourceFactory.getInstance().get("wiktionary", "en");
     }
 
+    @Ignore("The original GermaNet API is not Apache licensed.")
     @Test
 	public void testGermaNetUsingResourceLoader()
 		throws Exception
