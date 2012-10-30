@@ -5,7 +5,7 @@
     <artifactId>de.tudarmstadt.ukp.similarity-gpl</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl</groupId>
+  <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl</artifactId>
   <dependencies>
   	<dependency>
@@ -62,4 +62,5 @@
   		<version>0.8.0</version>
   	</dependency>
   </dependencies>
+  <version>0.0.1-SNAPSHOT</version>
 </project>
