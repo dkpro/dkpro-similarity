@@ -23,6 +23,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.Set;
 
 import org.junit.Assume;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity;
@@ -93,11 +94,12 @@ public class JiangConrathComparatorTest
         assertEquals(0.66515, comparator.getSimilarity(entitiesEntity, entitiesCar), epsilon);
     }
 
+    @Ignore("The original GermaNet API is not Apache licensed.")
     @Test
 	public void testJiangConrathGermaNet()
 		throws Exception
 	{
-        LexicalSemanticResource germaNet = ResourceFactory.getInstance().get("germanet7", "de");
+        LexicalSemanticResource germaNet = ResourceFactory.getInstance().get("germanet", "de");
 
         LexSemResourceComparator comparator = new JiangConrathComparator(germaNet, germaNet.getRoot());
         assertEquals("JiangConrathComparator", comparator.getName());
