@@ -68,10 +68,5 @@
   		<artifactId>weka</artifactId>
   		<version>3.7.5</version>
   	</dependency>
-  	<dependency>
-  		<groupId>de.tudarmstadt.ukp.statistics</groupId>
-  		<artifactId>de.tudarmstadt.ukp.statistics</artifactId>
-  		<version>0.0.2</version>
-  	</dependency>
   </dependencies>
 </project>
