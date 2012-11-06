@@ -37,9 +37,7 @@
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   	<dependency>
-  		<groupId>
-  			de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl
-  		</groupId>
+  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   		<artifactId>
   			de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl
   		</artifactId>
