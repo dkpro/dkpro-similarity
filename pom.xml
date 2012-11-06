@@ -32,6 +32,7 @@
   	<module>de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.dkpro.core-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.experiments.semeval2013</module>
   </modules>
   <scm>
   	<url>http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn/trunk</url>
