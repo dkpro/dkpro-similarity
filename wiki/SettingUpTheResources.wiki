@@ -1,6 +1,6 @@
 #summary Setting up the resources
 
-Some text similarity measures implemented in our framework operate on lexical-semantic resources, e.g. measures which determine pairwise word similarity on WordNet. In the following, we describe which resources are required by which measures, and how they can be obtained and installed.
+Some text similarity measures implemented in our framework operate on lexical-semantic resources, e.g. measures which determine pairwise word similarity on !WordNet. In the following, we describe which resources are required by which measures, and how they can be obtained and installed.
 
 = Explicit Semantic Analysis: Vector Indexes =
 
@@ -8,4 +8,4 @@ Explicit Semantic Analysis (ESA) (Gabrilovich and Markovitch, 2007) is a method 
 
 The vector indexes can be downloaded here for Wiktionary, Wikipedia, and WordNet.
 
-After the download has finished, unzip the whole folder indexes into $DKPRO_HOME\ESA\VectorIndexes\<subdir>, where {{{subdir}}} is an arbitrary name for each of the three resources, e.g. "wikipedia".
+After the download has finished, unzip the whole folder indexes into $DKPRO_HOME\ESA\VectorIndexes\{{{<subdir>}}}, where {{{subdir}}} is an arbitrary name for each of the three resources, e.g. "wikipedia".
