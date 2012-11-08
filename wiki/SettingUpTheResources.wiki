@@ -12,4 +12,4 @@ Explicit Semantic Analysis (ESA) (Gabrilovich and Markovitch, 2007) is a method 
 
 The vector indexes can be downloaded [http://code.google.com/p/dkpro-similarity-asl/downloads/list here] for Wiktionary, Wikipedia, and !WordNet.
 
-After the download has finished, unzip the whole folder indexes into $DKPRO_HOME\ESA\!VectorIndexes\{{{<subdir>}}}, where {{{subdir}}} is an arbitrary name for each of the three resources, e.g. "wikipedia".
+After the download has finished, unzip the whole folder into $DKPRO_HOME\ESA\!VectorIndexes\{{{<subdir>}}}, where {{{subdir}}} is an arbitrary name for each of the three resources, e.g. "wikipedia".
