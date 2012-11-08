@@ -29,3 +29,7 @@ In order to set up your Eclipse installation properly and use this repository, w
 </dependency>
 }}}
   * With other Maven modules which you intend to use, repeat these steps. These may be, for example, string-based relatedness measures in the module *`*`.lexical*, or measures based on lexical-semantic resources such as !WordNet in the module *`*`.lsr*.
+
+= Step 4: Additional Resources =
+
+Several measures in DKPro Similarity require additional resources, e.g. !WordNet. Continue reading [SettingUpTheResources here] for details on how to obtain and install them.
