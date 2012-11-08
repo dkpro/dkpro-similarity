@@ -12,7 +12,7 @@ Explicit Semantic Analysis (ESA) (Gabrilovich and Markovitch, 2007) is a method 
 
 The vector indexes can be downloaded [http://code.google.com/p/dkpro-similarity-asl/downloads/list here] for [http://dkpro-similarity-asl.googlecode.com/files/esa_vector_index_wiktionary_en.zip Wiktionary] or [http://dkpro-similarity-asl.googlecode.com/files/esa_vector_index_wordnet_en.zip WordNet]. As the Wikipedia index is too large (about 1.3 GB) to offer here, please contact us if you want to use it.
 
-After the download has finished, unzip the whole folder into {{{$DKPRO_HOME\ESA\VectorIndexes\<subdir>}}}, where {{{subdir}}} is an arbitrary name for each resource, e.g. "wordnet".
+After the download has finished, unzip the whole folder into {{{$DKPRO_HOME/ESA/VectorIndexes/<subdir>}}}, where {{{subdir}}} is an arbitrary name for each resource, e.g. "wordnet".
 
 Please note that the indexes have been created on lemmatized texts. So please also lemmatize your input texts first, before passing them to the similarity measure.
 
@@ -22,10 +22,10 @@ There are a number of word similarity measures which compute similarity based on
 
 The resource graphs can be downloaded [http://code.google.com/p/dkpro-similarity-asl/downloads/list here] for [http://dkpro-similarity-asl.googlecode.com/files/lsr_wiktionary_en.zip Wiktionary] and [http://dkpro-similarity-asl.googlecode.com/files/lsr_wordnet_en.zip WordNet].
 
-After the download has finished, unzip the whole folder into {{{$DKPRO_HOME\ESA\LexSemResources\<subdir>}}}, where {{{subdir}}} is an arbitrary name for each resource, e.g. "wordnet".
+After the download has finished, unzip the whole folder into {{{$DKPRO_HOME/ESA/LexSemResources/<subdir>}}}, where {{{subdir}}} is an arbitrary name for each resource, e.g. "wordnet".
 
 Please note that these resources have been created on lemmatized texts. So please also lemmatize your input texts first, before passing them to the similarity measure.
 
 For these resources, you further need to create the folder {{{$DKPRO_HOME/de.tudarmstadt.ukp.dkpro.lexsemresource.core.ResourceFactory}}}. Copy the [http://dkpro-similarity-asl.googlecode.com/files/resources.xml resources.xml] here. Then edit the XML file and set the absolute paths for the beans {{{wordnet-en}}} and {{{wiktionary-en}}} according to your system.
 
-For !WordNet, please also edit the file {{{wordnet_properties.xml}}} in  {{{$DKPRO_HOME/LexSemResources\<wordnet>\}}}. Here, set the {{{dictionary_path}}} at the end of the file according to your system.
+For !WordNet, please also edit the file {{{wordnet_properties.xml}}} in  {{{$DKPRO_HOME/LexSemResources/<wordnet>/}}}. Here, set the {{{dictionary_path}}} at the end of the file according to your system.
