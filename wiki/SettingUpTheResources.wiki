@@ -4,8 +4,8 @@ Some text similarity measures implemented in our framework operate on lexical-se
 
 = Explicit Semantic Analysis: Vector Indexes =
 
-Explicit Semantic Analysis (ESA) (Gabrilovich and Markovitch, 2007) is a method which computes similarity based on word occurrences in a given document collection. While it was originally proposed on Wikipedia, other document collections with similar properties have also been found to work well, e.g. Wiktionary or WordNet.
+Explicit Semantic Analysis (ESA) (Gabrilovich and Markovitch, 2007) is a method which computes similarity based on word occurrences in a given document collection. While it was originally proposed on Wikipedia, other document collections with similar properties have also been found to work well, e.g. Wiktionary or !WordNet.
 
-The vector indexes can be downloaded here for Wiktionary, Wikipedia, and WordNet.
+The vector indexes can be downloaded here for Wiktionary, Wikipedia, and !WordNet.
 
-After the download has finished, unzip the whole folder indexes into $DKPRO_HOME\ESA\VectorIndexes\{{{<subdir>}}}, where {{{subdir}}} is an arbitrary name for each of the three resources, e.g. "wikipedia".
+After the download has finished, unzip the whole folder indexes into $DKPRO_HOME\ESA\!VectorIndexes\{{{<subdir>}}}, where {{{subdir}}} is an arbitrary name for each of the three resources, e.g. "wikipedia".
