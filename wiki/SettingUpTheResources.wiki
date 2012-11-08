@@ -28,4 +28,4 @@ Please note that these resources have been created on lemmatized texts. So pleas
 
 For these resources, you further need to create the folder {{{$DKPRO_HOME/de.tudarmstadt.ukp.dkpro.lexsemresource.core.ResourceFactory}}}. Copy the [http://dkpro-similarity-asl.googlecode.com/files/resources.xml resources.xml] here. Then edit the XML file and set the absolute paths for the beans {{{wordnet-en}}} and {{{wiktionary-en}}} according to your system.
 
-For !WordNet, please also edit the file {{{wordnet_properties.xml}}} in  {{{$DKPRO_HOME/!LexSemResources\<wordnet>\}}}. Here, set the {{{dictionary_path}}} at the end of the file according to your system.
+For !WordNet, please also edit the file {{{wordnet_properties.xml}}} in  {{{$DKPRO_HOME/LexSemResources\<wordnet>\}}}. Here, set the {{{dictionary_path}}} at the end of the file according to your system.
