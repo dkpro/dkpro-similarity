@@ -15,7 +15,16 @@ The system presented here differs from the original implementation at !SemEval-2
 
 The !SemEval-2013 Baseline System is implemented as part of _DKPro Similarity_, a collection of software components for similarity computation between texts of any length, which is intended to be used in conjunction with DKPro Core and Apache UIMA.
 
-The project is implemented as a Java Maven project. Instructions on how to get the code up and running is available in our [GettingStarted Getting Started guide].
+=== Step 1: Maven Setup ===
+
+The project is implemented as a Java Maven project. It makes use of some libraries that are not readily available in public Maven repositories. Therefore we have set up a Maven repository which provides these libraries as well as releases of this project.
+
+In order to set up your Eclipse installation properly and use this repository, we ask you to follow
+[http://code.google.com/p/dkpro-core-asl/wiki/UserSetup these instructions].
+
+=== Step 2: Checkout ===
+
+Next, check out the subproject {{{trunk/de.tudarmstadt.ukp.similarity.experiments.semeval2013}}}, which resides in the [http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn%2Ftrunk%2Fde.tudarmstadt.ukp.similarity.experiments.semeval2013 GPL variant] of the similarity package.
 
 == Extend the system ==
 
