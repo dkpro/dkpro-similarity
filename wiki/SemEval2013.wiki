@@ -20,9 +20,9 @@ The performance of the presented system for the 2012 data is:
 == Reference ==
 
 If you plan to refer to our original system in your publications, please cite
-{{{
+<code language="txt">
 Daniel Bär, Chris Biemann, Iryna Gurevych, and Torsten Zesch. *UKP: Computing Semantic Textual Similarity by Combining Multiple Content Similarity Measures*, in _Proceedings of the 6th International Workshop on Semantic Evaluation, in conjunction with the 1st Joint Conference on Lexical and Computational Semantics_, pages 435-440, June 2012, Montreal, Canada.
-}}}
+</code>
 
 == Installation Instructions ==
 
