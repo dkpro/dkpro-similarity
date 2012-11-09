@@ -81,7 +81,7 @@ public class MyTextSimilarityResource
         
         this.mode = TextSimilarityResourceMode.list;
         
-		measure = new MyTextSimilarityMeasure(n);
+	measure = new MyTextSimilarityMeasure(n);
         
         return true;
     }
