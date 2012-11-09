@@ -38,9 +38,7 @@ You should now be able to run the system. Therefore, execute the {{{Pipeline}}} 
 
 In general, a new text similarity measure can be added by doing two things: (a) setting up a concrete class for implementing the measure, which subclasses {{{TextSimilarityMeasureBase}}}, and (b) adding a wrapper class which subclasses {{{TextSimilarityResourceBase}}} which allows to use the measure in a DKPro language processing pipeline.
 
-Please refer to the reference implementations in the {{{*.example}}} package to learn more about how to use them.
-
-For illustration purposes, your custom measure might look like this:
+Please refer to the reference implementations in the {{{*.example}}} package to learn more about how to use them. For a first glance, we also list the code for the two classes below.
 {{{
 public class MyTextSimilarityMeasure
 	extends TextSimilarityMeasureBase
@@ -62,6 +60,31 @@ public class MyTextSimilarityMeasure
 		// Your similarity computation goes here.
 		return 1.0;
 	}
+}
+}}}
+{{{
+public class MyTextSimilarityResource
+	extends TextSimilarityResourceBase
+{
+	public static final String PARAM_N = "N";
+	@ConfigurationParameter(name=PARAM_N, mandatory=true)
+	private int n;
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+    @Override
+    public boolean initialize(ResourceSpecifier specifier, Map additionalParams)
+        throws ResourceInitializationException
+    {
+        if (!super.initialize(specifier, additionalParams)) {
+            return false;
+        }
+        
+        this.mode = TextSimilarityResourceMode.list;
+        
+		measure = new MyTextSimilarityMeasure(n);
+        
+        return true;
+    }
 }
 }}}
 
