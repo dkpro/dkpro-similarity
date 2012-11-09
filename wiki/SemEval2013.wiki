@@ -9,7 +9,7 @@ This page is intended for all participants of the [http://www.cs.york.ac.uk/seme
 The system described here uses a simple linear regression model, trained on the training data, to combine multiple text similarity measures of varying complexity. These range from simple character and word n-grams and common subsequences to complex features such as Explicit Semantic Analysis vector comparisons and aggregation of word similarity based on lexical-semantic resources. Our ﬁnal models, one per dataset, consist of a linear combination of about 20 features.
 For details, please refer to our [http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2012/STARSEM-SEMEVAL059.pdf system description paper].
 
-The system presented here differs from the original implementation at !SemEval-2012 in that it uses a regular linear regression classifier, does not use a distributional thesaurus and no text expansion mechanisms (lexical substitution system, statistical machine translation), as the corresponding code and the accompanying resources cannot be readily made available to the public.
+The system presented here differs from the original implementation at !SemEval-2012 in that it uses a regular linear regression classifier and does not use a distributional thesaurus and no text expansion mechanisms (lexical substitution system, statistical machine translation), as the corresponding code and the accompanying resources cannot be readily made available to the public.
 
 The performance of the presented system for the 2012 data is:
 
