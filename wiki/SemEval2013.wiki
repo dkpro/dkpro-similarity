@@ -40,6 +40,30 @@ In general, a new text similarity measure can be added by doing two things: (a) 
 
 Please refer to the reference implementations in the {{{*.example}}} package to learn more about how to use them.
 
+For illustration purposes, your custom measure might look like this:
+{{{
+public class MyTextSimilarityMeasure
+	extends TextSimilarityMeasureBase
+{
+	@SuppressWarnings("unused")
+	private int n;
+	
+	public MyTextSimilarityMeasure(int n)
+	{
+		// The configuration parameter is not used right now and intended for illustration purposes only.
+		this.n = n;
+	}
+	
+	@Override
+	public double getSimilarity(Collection<String> stringList1,
+			Collection<String> stringList2)
+		throws SimilarityException
+	{
+		return 1.0;
+	}
+}
+}}}
+
 === Use a different classifier ===
 
 In case you do not want to use a Linear Regression classifier, but experiment with your own, please go to the {{{*.util.Evaluator}}} class, and just modify the line
