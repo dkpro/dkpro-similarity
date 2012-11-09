@@ -2,7 +2,7 @@
 
 = !SemEval-2013 STS Baseline System =
 
-This page is intended for all participants of the [http://www.cs.york.ac.uk/semeval-2013/task6/ SemEval-2013 STS Task]. We describe the task's offical baseline system, which is roughly the system ranked best in the 2012 exercises.
+This page is intended for all participants of the [http://www.cs.york.ac.uk/semeval-2013/task6/ SemEval-2013 STS Task]. We describe the task's offical baseline system, which is roughly the system ranked best in the [http://ixa2.si.ehu.es/starsem/proc/pdf/STARSEM-SEMEVAL051.pdf 2012 exercises].
 
 == System Description ==
 
