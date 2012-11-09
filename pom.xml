@@ -39,6 +39,21 @@
   <dependencyManagement>
   	<dependencies>
   		<dependency>
+				<groupId>xerces</groupId>
+				<artifactId>xercesImpl</artifactId>
+				<version>2.9.1</version>
+			</dependency>
+			<dependency>
+				<groupId>xalan</groupId>
+				<artifactId>xalan</artifactId>
+				<version>2.7.1</version>
+			</dependency>
+			<dependency>
+				<groupId>xalan</groupId>
+				<artifactId>serializer</artifactId>
+				<version>2.7.1</version>
+			</dependency>
+  		<dependency>
   			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   			<artifactId>de.tudarmstadt.ukp.dkpro.core-asl</artifactId>
   			<version>1.4.0</version>
