@@ -94,4 +94,4 @@ In case you do not want to use a Linear Regression classifier, but experiment wi
 {{{
 Classifier baseClassifier = new LinearRegression();
 }}}
-to suit your needs. WEKA is already available through the Maven dependencies, so feel free to experiment with any other classifier from that package.
+to suit your needs. [http://weka.wikispaces.com/ Weka] is already available through the Maven dependencies, so feel free to experiment with any other classifier from that package.
