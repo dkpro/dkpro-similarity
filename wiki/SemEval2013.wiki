@@ -11,6 +11,20 @@ For details, please refer to our [http://www.ukp.tu-darmstadt.de/fileadmin/user_
 
 The system presented here differs from the original implementation at !SemEval-2012 in that it does not use a distributional thesaurus and no text expansion mechanisms (lexical substitution system, statistical machine translation), as the corresponding code and the accompanying resources cannot be readily made available to the public.
 
+The performance of the presented system for the 2012 data is:
+
+|| Mode || Dataset || ALL || Mean ||
+|| Train || MSRpar || || ||
+||  || MSRvid || || ||
+||  || SMTeuroparl || || ||
+||  || All || || ||
+|| Test || MSRpar || || ||
+||  || MSRvid || || ||
+||  || SMTeuroparl || || ||
+||  || OnWN || || ||
+||  || SMTnews || || ||
+||  || All || || ||
+
 == Installation Instructions ==
 
 The !SemEval-2013 Baseline System is implemented as part of _DKPro Similarity_, a collection of software components for similarity computation between texts of any length, which is intended to be used in conjunction with DKPro Core and Apache UIMA.
