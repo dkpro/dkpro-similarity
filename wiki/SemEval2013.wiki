@@ -59,6 +59,7 @@ public class MyTextSimilarityMeasure
 			Collection<String> stringList2)
 		throws SimilarityException
 	{
+		// Your similarity computation goes here.
 		return 1.0;
 	}
 }
