@@ -2,7 +2,7 @@
 
 Some text similarity measures implemented in our framework operate on lexical-semantic resources, e.g. measures which determine pairwise word similarity on !WordNet. In the following, we describe which resources are required by which measures, and how they can be obtained and installed.
 
-= Prerequisite: DKPRO_HOME environment variable =
+== Prerequisite: DKPRO_HOME environment variable ==
 
 Before continuing, please make sure that you have set up an environment_variable *DKPRO_HOME* either system-wide or per-project in the Eclipse run configuration. The variable should point to a (possibly yet empty) directory which is intended to store any sort of resources which are to be used by any DKPro component.
 
