@@ -5,7 +5,7 @@
     <artifactId>de.tudarmstadt.ukp.similarity-gpl</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>de.tudarmstadt.ukp.similarity.dkpro.core-gpl</groupId>
+  <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity.dkpro.core-gpl</artifactId>
   <dependencies>
   	<dependency>

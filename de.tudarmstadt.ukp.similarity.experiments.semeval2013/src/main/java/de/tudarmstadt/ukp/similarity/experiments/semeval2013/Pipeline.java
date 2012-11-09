@@ -48,6 +48,7 @@ public class Pipeline
 	public static final String OUTPUT_DIR = "target/output";
 	
 	public static void main(String[] args)
+		throws Exception
 	{
 		Options options = new Options();
 		options.addOption("D", "train", false, "run train mode");
@@ -79,10 +80,6 @@ public class Pipeline
 		}
 		catch (ParseException e) {
 			new HelpFormatter().printHelp(Pipeline.class.getSimpleName(), options);
-		}
-		catch (Exception e) {
-			System.err.println("An exception occurred when running the system.");
-			System.err.println(e);
 		}
 	}
 	

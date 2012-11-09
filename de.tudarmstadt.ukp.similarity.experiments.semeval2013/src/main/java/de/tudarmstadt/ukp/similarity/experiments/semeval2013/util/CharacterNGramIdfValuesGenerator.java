@@ -22,13 +22,13 @@ import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Mode;
 
 public class CharacterNGramIdfValuesGenerator
 {
+	static final String LF = System.getProperty("line.separator");
+	
 	@SuppressWarnings("unchecked")
 	public static void computeIdfScores(Mode mode, Dataset dataset, int n)
-			throws Exception
-	{			
-		final String LF = System.getProperty("line.separator");
-		
-		URL inputUrl = ResourceUtils.resolveLocation(DATASET_DIR + "/test/STS.input." + dataset.toString() + ".txt");
+		throws Exception
+	{					
+		URL inputUrl = ResourceUtils.resolveLocation(DATASET_DIR + "/" + mode.toString().toLowerCase() + "/STS.input." + dataset.toString() + ".txt");
 		List<String> lines = FileUtils.readLines(new File(inputUrl.getPath())); 
 
 		System.out.println("Computing character " + n + "-grams");

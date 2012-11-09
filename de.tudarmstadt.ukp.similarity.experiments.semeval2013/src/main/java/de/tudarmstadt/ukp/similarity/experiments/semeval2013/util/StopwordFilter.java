@@ -122,9 +122,17 @@ public class StopwordFilter
 		assert item.length() > 0;
 
 	    // item is in the stopword list
-	    if (stopwords.contains(item.toLowerCase())) {
-            return true;
-        }
+		try
+		{
+			if (stopwords.contains(item.toLowerCase())) {
+				return true;
+			}
+		}
+		catch (NullPointerException e)
+		{
+			// Ignore this token
+			return true;
+		}
 
 	    // does not start with a letter
 	    if (!firstCharacterIsLetter(item)) {

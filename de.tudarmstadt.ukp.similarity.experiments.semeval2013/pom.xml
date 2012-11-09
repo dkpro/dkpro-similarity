@@ -80,6 +80,62 @@
   		<artifactId>commons-cli</artifactId>
   		<version>1.2</version>
   	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl
+  		</artifactId>
+  		<version>1.4.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.core.opennlp-model-tagger-en-maxent
+  		</artifactId>
+  		<version>20120616.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl
+  		</artifactId>
+  		<version>0.8.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl
+  		</artifactId>
+  		<version>0.8.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.wikipedia-asl
+  		</artifactId>
+  		<version>0.8.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.core-asl
+  		</artifactId>
+  		<version>0.8.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.api-asl
+  		</artifactId>
+  		<version>0.8.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.lexsemresource.graph-asl
+  		</artifactId>
+  		<version>0.8.0</version>
+  	</dependency>
   </dependencies>
   <dependencyManagement>
   	<dependencies>
