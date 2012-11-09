@@ -36,4 +36,11 @@ You should now be able to run the system. Therefore, execute the {{{Pipeline}}} 
 
 === Add a custom similarity measure ===
 
+In general, a new text similarity measure can be added by doing two things: (a) setting up a concrete class for implementing the measure, which subclasses {{{TextSimilarityMeasureBase}}}, and (b) adding a wrapper class which subclasses {{{TextSimilarityResourceBase}}} which allows to use the measure in a DKPro language processing pipeline.
+
+Please refer to the reference implementations in the {{{*.example}}} package to learn more about how to use them.
+
 === Use a different classifier ===
+
+In case you do not want to use a Linear Regression classifier, but experiment with your own, please go to the {{{*.util.Evaluator}}} class, and just modify the line {{{Classifier baseClassifier = new LinearRegression();}}} to suit your needs. WEKA is already available through the Maven dependencies, so feel free to experiment with any other classifier from that package.
+
