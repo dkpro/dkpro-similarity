@@ -20,7 +20,7 @@ The !SemEval-2013 Baseline System is implemented as part of _DKPro Similarity_, 
 The project is implemented as a Java Maven project. It makes use of some libraries that are not readily available in public Maven repositories. Therefore we have set up a Maven repository which provides these libraries as well as releases of this project.
 
 In order to set up your Eclipse installation properly and use this repository, we ask you to follow
-[http://code.google.com/p/dkpro-core-asl/wiki/UserSetup these instructions].
+[http://code.google.com/p/dkpro-core-asl/wiki/UserSetup these instructions]. You also need to make sure, that you have set up our open source Maven repository properly [http://code.google.com/p/dkpro-core-asl/wiki/UkpMavenRepository (Instructions)].
 
 === Step 2: Checkout ===
 
@@ -43,4 +43,3 @@ Please refer to the reference implementations in the {{{*.example}}} package to 
 === Use a different classifier ===
 
 In case you do not want to use a Linear Regression classifier, but experiment with your own, please go to the {{{*.util.Evaluator}}} class, and just modify the line {{{Classifier baseClassifier = new LinearRegression();}}} to suit your needs. WEKA is already available through the Maven dependencies, so feel free to experiment with any other classifier from that package.
-
