@@ -1,6 +1,6 @@
 #summary SemEval-2013 STS baseline system
 
-= SemEval-2013 STS Baseline system =
+= !SemEval-2013 STS Baseline system =
 
 Add your content here.
 
