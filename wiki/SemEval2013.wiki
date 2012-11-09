@@ -42,4 +42,8 @@ Please refer to the reference implementations in the {{{*.example}}} package to 
 
 === Use a different classifier ===
 
-In case you do not want to use a Linear Regression classifier, but experiment with your own, please go to the {{{*.util.Evaluator}}} class, and just modify the line {{{Classifier baseClassifier = new LinearRegression();}}} to suit your needs. WEKA is already available through the Maven dependencies, so feel free to experiment with any other classifier from that package.
+In case you do not want to use a Linear Regression classifier, but experiment with your own, please go to the {{{*.util.Evaluator}}} class, and just modify the line
+{{{
+Classifier baseClassifier = new LinearRegression();
+}}}
+to suit your needs. WEKA is already available through the Maven dependencies, so feel free to experiment with any other classifier from that package.
