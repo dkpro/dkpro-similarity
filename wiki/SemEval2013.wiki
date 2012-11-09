@@ -13,6 +13,7 @@ The system presented here differs from the original implementation at !SemEval-2
 
 The performance of the presented system for the 2012 data is:
 
+|| Mode || Dataset || 2012 ||
 || Mode || Dataset || ALL || Mean ||
 || Train || MSRpar || || ||
 ||  || MSRvid || || ||
