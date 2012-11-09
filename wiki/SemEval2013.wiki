@@ -26,6 +26,10 @@ In order to set up your Eclipse installation properly and use this repository, w
 
 Next, check out the subproject as a Maven project in Eclipse {{{trunk/de.tudarmstadt.ukp.similarity.experiments.semeval2013}}}, which resides in the [http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn%2Ftrunk%2Fde.tudarmstadt.ukp.similarity.experiments.semeval2013 GPL variant] of the similarity package. [http://code.google.com/p/dkpro-core-asl/wiki/DeveloperSetup Need help with the checkout?]
 
+== Step 3: Run ===
+
+You should now be able to run the system. Therefore, execute the {{{Pipeline}}} with the {{{-D}}} program argument, to start in training mode.
+
 == Extend the system ==
 
 === Add a custom similarity measure ===
