@@ -32,6 +32,8 @@ You should now be able to run the system. Therefore, execute the {{{Pipeline}}} 
 
 == Extend the system ==
 
+*We explicitly encourage you to extend the system.* New similarity measures can be added with ease by subclassing {{{TextSimilarityMeasureBase}}}. We added an example for a custom measure called {{{MyTextSimilarityMeasure}}} to the {{{*.example}}} package, and added the corresponding calls to the {{{FeatureGeneration}}} class.
+
 === Add a custom similarity measure ===
 
 === Use a different classifier ===
