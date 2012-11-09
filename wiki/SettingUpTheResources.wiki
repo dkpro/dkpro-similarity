@@ -1,12 +1,14 @@
 #summary Setting up the resources
 
+= Setting Up The Resources =
+
 Some text similarity measures implemented in our framework operate on lexical-semantic resources, e.g. measures which determine pairwise word similarity on !WordNet. In the following, we describe which resources are required by which measures, and how they can be obtained and installed.
 
 == Prerequisite: DKPRO_HOME environment variable ==
 
 Before continuing, please make sure that you have set up an environment_variable *DKPRO_HOME* either system-wide or per-project in the Eclipse run configuration. The variable should point to a (possibly yet empty) directory which is intended to store any sort of resources which are to be used by any DKPro component.
 
-= Explicit Semantic Analysis: Vector Indexes =
+== Explicit Semantic Analysis: Vector Indexes ==
 
 Explicit Semantic Analysis (ESA) (Gabrilovich and Markovitch, 2007) is a method which computes similarity based on word occurrences in a given document collection. While it was originally proposed on Wikipedia, other document collections with similar properties have also been found to work well, e.g. Wiktionary and !WordNet.
 
@@ -16,7 +18,7 @@ After the download has finished, unzip the whole folder into {{{$DKPRO_HOME/ESA/
 
 Please note that the indexes have been created on lemmatized texts. So please also lemmatize your input texts first, before passing them to the similarity measure.
 
-= Lexical Semantic Resources for Word Aggregation Measures =
+== Lexical Semantic Resources for Word Aggregation Measures ==
 
 There are a number of word similarity measures which compute similarity based on their distance in a lexical-semantic resource graph, e.g. !WordNet. By applying an aggregation strategy such as the one by Mihalcea et al. (2006), these scores are then aggregated to the document level. While !WordNet is a classic example, we also constructed graphs on Wiktionary. Note: These resource graphs are different from the vector indexes above!
 
