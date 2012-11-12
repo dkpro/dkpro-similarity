@@ -1,11 +1,15 @@
 package de.tudarmstadt.ukp.similarity.dkpro.resource;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.resource.ResourceSpecifier;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase.TextSimilarityResourceMode;
 
 
 public class JCasTextSimilarityResourceBase
