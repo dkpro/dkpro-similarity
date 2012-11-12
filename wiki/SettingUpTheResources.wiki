@@ -36,4 +36,4 @@ For !WordNet, please also edit the file {{{wordnet_properties.xml}}} in  {{{$DKP
 
 The lexical substitution system based on supervised word sense disambiguation (Biemann, 2012) automatically provides substitutions for a set of about 1,000 frequent English nouns with high precision.
 
-In order to use this system, download the word models here (1.x GB), and extract it to {{{$DKPRO_HOME/TWSI2}}}. In a final step, edit {{{$DKPRO_HOME/TWSI2/conf/TWSI2_config.conf}}} and set the correct absolute path for {{{mainDir}}}.
+In order to use this system, download the word models [http://dkpro-similarity-asl.googlecode.com/files/TWSI2.zip here], and extract it to {{{$DKPRO_HOME/TWSI2}}}. In a final step, edit {{{$DKPRO_HOME/TWSI2/conf/TWSI2_config.conf}}} and set the correct absolute path for {{{mainDir}}}.
