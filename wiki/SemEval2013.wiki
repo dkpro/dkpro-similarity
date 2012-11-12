@@ -14,7 +14,7 @@ The system presented here differs from the original implementation at !SemEval-2
 The performance of the presented system for the 2012 data is:
 
 || Mode || ALL || Mean || MSRpar || MSRvid || SMTeuroparl || OnWN || SMTnews ||
-|| Train || .886 || .764 || .702 || .858 || .730 || - || - ||
+|| Train || .888 || .766 || .700 || .861 || .737 || - || - ||
 || Test || .706 || .566 || .608 || .839 || .254 || .682 || .447 ||
 
 If you plan to refer to our original system in your publications, please cite
