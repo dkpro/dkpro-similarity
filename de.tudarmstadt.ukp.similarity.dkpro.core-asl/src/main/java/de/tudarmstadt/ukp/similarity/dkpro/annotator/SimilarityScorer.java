@@ -94,6 +94,19 @@ public class SimilarityScorer
                 default: 
                     List<String> f1 = getFeatures(view1);
                     List<String> f2 = getFeatures(view2);
+                    
+                    // Remove "_" tokens
+                    for (int i = f1.size() - 1; i >= 0; i--)
+                    {
+                   		if (f1.get(i) == null || f1.get(i).equals("_"))
+                   			f1.remove(i);
+                    }
+                    for (int i = f2.size() - 1; i >= 0; i--)
+                    {
+                   		if (f2.get(i) == null || f2.get(i).equals("_"))
+                   			f2.remove(i);
+                    }
+                    
                     similarity = textSimilarityResource.getSimilarity(f1, f2);
 			}
 			

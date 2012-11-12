@@ -30,7 +30,7 @@ public class SentenceRatioComparator
 		double no1 = new Integer(JCasUtil.select(jcas1, Sentence.class).size()).doubleValue(); 
 		double no2 = new Integer(JCasUtil.select(jcas2, Sentence.class).size()).doubleValue();
 		
-		double sim = no1 / no2;
+		double sim = (no2 == 0.0) ? 0.0 : no1 / no2;
 		
 		return sim;
 	}

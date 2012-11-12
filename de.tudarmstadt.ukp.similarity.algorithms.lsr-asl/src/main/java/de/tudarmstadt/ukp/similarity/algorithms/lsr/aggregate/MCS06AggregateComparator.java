@@ -99,27 +99,42 @@ public class MCS06AggregateComparator
 	
 		for (String w1 : stringList1)
 		{
-			w1 = w1.toLowerCase();
+			try
+			{
+				w1 = w1.toLowerCase();
+			}
+			catch (NullPointerException e)
+			{
+				// Ignore
+				continue;
+			}
 			
 			Set<Double> subscores = new HashSet<Double>();
 			
 			for (String w2 : stringList2)
 			{
-				w2 = w2.toLowerCase();
-
-				Set<String> wordset = new HashSet<String>();
-				wordset.add(w1);
-				wordset.add(w2);
-				
-				double score;
-				if (cache.containsKey(wordset)) {
-					score = cache.get(wordset);
-				} else { 
-					score = measure.getSimilarity(w1, w2);
-					cache.put(wordset, score);
+				try
+				{
+					w2 = w2.toLowerCase();
+	
+					Set<String> wordset = new HashSet<String>();
+					wordset.add(w1);
+					wordset.add(w2);
+					
+					double score;
+					if (cache.containsKey(wordset)) {
+						score = cache.get(wordset);
+					} else { 
+						score = measure.getSimilarity(w1, w2);
+						cache.put(wordset, score);
+					}
+					
+					subscores.add(score);
 				}
-				
-				subscores.add(score);
+				catch (NullPointerException e)
+				{
+					// Ignore
+				}
 			}
 			
 			// Get best score for the pair (w1, w2)
@@ -151,7 +166,7 @@ public class MCS06AggregateComparator
 			else
 			{
 				// Well, ignore this token.
-				System.out.println("Ignoring token: \"" + w1 + "\"");
+				//System.out.println("Ignoring token: \"" + w1 + "\"");
 			}
 		}
 		

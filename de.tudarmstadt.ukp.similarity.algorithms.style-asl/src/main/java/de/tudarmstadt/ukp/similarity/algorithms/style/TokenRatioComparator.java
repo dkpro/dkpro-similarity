@@ -30,7 +30,7 @@ public class TokenRatioComparator
 		double no1 = new Integer(JCasUtil.select(jcas1, Token.class).size()).doubleValue(); 
 		double no2 = new Integer(JCasUtil.select(jcas2, Token.class).size()).doubleValue();
 		
-		double sim = no1 / no2;
+		double sim = (no2 == 0.0) ? 0.0 : no1 / no2;
 		
 		return sim;
 	}
