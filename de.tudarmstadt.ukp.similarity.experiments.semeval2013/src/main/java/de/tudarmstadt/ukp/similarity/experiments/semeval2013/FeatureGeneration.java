@@ -193,59 +193,59 @@ public class FeatureGeneration
 		 * http://code.google.com/p/dkpro-similarity-asl/wiki/SettingUpTheResources
 		 */
 		
-		// Resnik word similarity measure, aggregated according to Mihalcea et al. (2006)
-		configs.add(new FeatureConfig(
-				createExternalResourceDescription(
-				    	MCS06AggregateResource.class,
-				    	MCS06AggregateResource.PARAM_TERM_SIMILARITY_RESOURCE, createExternalResourceDescription(
-				    			ResnikRelatednessResource.class,
-				    			ResnikRelatednessResource.PARAM_RESOURCE_NAME, "wordnet",
-				    			ResnikRelatednessResource.PARAM_RESOURCE_LANGUAGE, "en"
-				    			),
-				    	MCS06AggregateResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/word-idf/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt"),
-				Lemma.class.getName() + "/value",
-				false,
-				"word-sim",
-				"MCS06_Resnik_WordNet"
-				));
-		
-		// Lexical Substitution System wrapper for 
-		// Resnik word similarity measure, aggregated according to Mihalcea et al. (2006)
-		configs.add(new FeatureConfig(
-				createExternalResourceDescription(
-						TWSISubstituteWrapperResource.class,
-						TWSISubstituteWrapperResource.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
-						    	MCS06AggregateResource.class,
-						    	MCS06AggregateResource.PARAM_TERM_SIMILARITY_RESOURCE, createExternalResourceDescription(
-						    			ResnikRelatednessResource.class,
-						    			ResnikRelatednessResource.PARAM_RESOURCE_NAME, "wordnet",
-						    			ResnikRelatednessResource.PARAM_RESOURCE_LANGUAGE, "en"
-						    			),
-						    	MCS06AggregateResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/word-idf/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt")),
-				"word-sim",
-				"TWSI_MCS06_Resnik_WordNet"
-				));
-				
-		// Explicit Semantic Analysis
-		configs.add(new FeatureConfig(
-				createExternalResourceDescription(
-				    	VectorIndexSourceRelatednessResource.class,
-				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wordnet_eng_lem_nc_c"),
-				Lemma.class.getName() + "/value",
-				false,
-				"esa",
-				"ESA_WordNet"
-				));
-		
-		configs.add(new FeatureConfig(
-				createExternalResourceDescription(
-				    	VectorIndexSourceRelatednessResource.class,
-				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wiktionary_en"),
-				Lemma.class.getName() + "/value",
-				false,
-				"esa",
-				"ESA_Wiktionary"
-				));
+//		// Resnik word similarity measure, aggregated according to Mihalcea et al. (2006)
+//		configs.add(new FeatureConfig(
+//				createExternalResourceDescription(
+//				    	MCS06AggregateResource.class,
+//				    	MCS06AggregateResource.PARAM_TERM_SIMILARITY_RESOURCE, createExternalResourceDescription(
+//				    			ResnikRelatednessResource.class,
+//				    			ResnikRelatednessResource.PARAM_RESOURCE_NAME, "wordnet",
+//				    			ResnikRelatednessResource.PARAM_RESOURCE_LANGUAGE, "en"
+//				    			),
+//				    	MCS06AggregateResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/word-idf/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt"),
+//				Lemma.class.getName() + "/value",
+//				false,
+//				"word-sim",
+//				"MCS06_Resnik_WordNet"
+//				));
+//		
+//		// Lexical Substitution System wrapper for 
+//		// Resnik word similarity measure, aggregated according to Mihalcea et al. (2006)
+//		configs.add(new FeatureConfig(
+//				createExternalResourceDescription(
+//						TWSISubstituteWrapperResource.class,
+//						TWSISubstituteWrapperResource.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
+//						    	MCS06AggregateResource.class,
+//						    	MCS06AggregateResource.PARAM_TERM_SIMILARITY_RESOURCE, createExternalResourceDescription(
+//						    			ResnikRelatednessResource.class,
+//						    			ResnikRelatednessResource.PARAM_RESOURCE_NAME, "wordnet",
+//						    			ResnikRelatednessResource.PARAM_RESOURCE_LANGUAGE, "en"
+//						    			),
+//						    	MCS06AggregateResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/word-idf/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt")),
+//				"word-sim",
+//				"TWSI_MCS06_Resnik_WordNet"
+//				));
+//				
+//		// Explicit Semantic Analysis
+//		configs.add(new FeatureConfig(
+//				createExternalResourceDescription(
+//				    	VectorIndexSourceRelatednessResource.class,
+//				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wordnet_eng_lem_nc_c"),
+//				Lemma.class.getName() + "/value",
+//				false,
+//				"esa",
+//				"ESA_WordNet"
+//				));
+//		
+//		configs.add(new FeatureConfig(
+//				createExternalResourceDescription(
+//				    	VectorIndexSourceRelatednessResource.class,
+//				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wiktionary_en"),
+//				Lemma.class.getName() + "/value",
+//				false,
+//				"esa",
+//				"ESA_Wiktionary"
+//				));
 
 		
 		// Run the pipeline		
