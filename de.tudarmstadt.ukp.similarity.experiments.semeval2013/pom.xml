@@ -143,6 +143,13 @@
   		</artifactId>
   		<version>1.4.0</version>
   	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.similarity.dkpro.core-gpl
+  		</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
   <dependencyManagement>
   	<dependencies>
