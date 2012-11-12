@@ -43,5 +43,12 @@
   		</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.similarity.algorithms.lexsub-gpl
+  		</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
 </project>
