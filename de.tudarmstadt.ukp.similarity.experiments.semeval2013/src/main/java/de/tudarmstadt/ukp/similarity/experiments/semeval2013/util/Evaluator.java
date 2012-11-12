@@ -53,6 +53,7 @@ import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Dataset;
 import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.EvaluationMetric;
 import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Mode;
+import de.tudarmstadt.ukp.similarity.experiments.semeval2013.filter.LogFilter;
 
 
 public class Evaluator
@@ -128,6 +129,13 @@ public class Evaluator
 		    {
 		    	Instances train = data.trainCV(folds, n, random);
 		        Instances test = data.testCV(folds, n);
+		        
+		        // Apply log filter
+			    Filter logFilter = new LogFilter();
+		        logFilter.setInputFormat(train);
+		        train = Filter.useFilter(train, logFilter);        
+		        logFilter.setInputFormat(test);
+		        test = Filter.useFilter(test, logFilter);
 		        
 		        // Copy the classifier
 		        Classifier classifier = AbstractClassifier.makeCopy(baseClassifier);

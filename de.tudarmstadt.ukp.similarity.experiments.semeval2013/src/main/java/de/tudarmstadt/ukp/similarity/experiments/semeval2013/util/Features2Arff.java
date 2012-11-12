@@ -90,6 +90,10 @@ public class Features2Arff
 				{
 					double value = Double.parseDouble(line);	// There's just the score on the line, nothing else.
 					
+					// Limit to [0;5] interval
+					if (value > 5.0) value = 5.0;
+					if (value < 0.0) value = 0.0;
+					
 					// Get doc object in data list
 					List<Double> docObj;
 					if (data.containsKey(doc))

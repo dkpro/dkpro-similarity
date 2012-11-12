@@ -25,6 +25,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
@@ -40,6 +41,7 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.CharacterNGra
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.lexsub.TWSISubstituteWrapperResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.ResnikRelatednessResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.aggregate.MCS06AggregateResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
@@ -206,8 +208,25 @@ public class FeatureGeneration
 				"word-sim",
 				"MCS06_Resnik_WordNet"
 				));
+		
+		// Lexical Substitution System wrapper for 
+		// Resnik word similarity measure, aggregated according to Mihalcea et al. (2006)
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						TWSISubstituteWrapperResource.class,
+						TWSISubstituteWrapperResource.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
+						    	MCS06AggregateResource.class,
+						    	MCS06AggregateResource.PARAM_TERM_SIMILARITY_RESOURCE, createExternalResourceDescription(
+						    			ResnikRelatednessResource.class,
+						    			ResnikRelatednessResource.PARAM_RESOURCE_NAME, "wordnet",
+						    			ResnikRelatednessResource.PARAM_RESOURCE_LANGUAGE, "en"
+						    			),
+						    	MCS06AggregateResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/word-idf/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt")),
+				"word-sim",
+				"TWSI_MCS06_Resnik_WordNet"
+				));
 				
-		// ESA
+		// Explicit Semantic Analysis
 		configs.add(new FeatureConfig(
 				createExternalResourceDescription(
 				    	VectorIndexSourceRelatednessResource.class,
@@ -265,7 +284,8 @@ public class FeatureGeneration
 				
 				// Lemmatization
 				AnalysisEngineDescription lem = createPrimitiveDescription(
-						StanfordLemmatizer.class);		
+//						StanfordLemmatizer.class);
+						GateLemmatizer.class);
 				builder = new AggregateBuilder();
 				builder.add(lem, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
 				builder.add(lem, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
