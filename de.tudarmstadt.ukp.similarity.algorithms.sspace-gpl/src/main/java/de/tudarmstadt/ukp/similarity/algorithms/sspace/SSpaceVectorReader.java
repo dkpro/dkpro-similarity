@@ -119,7 +119,7 @@ public class SSpaceVectorReader
 			sspace.processDocument(reader);
 		}
 
-		int dimensions = Math.max(documents.size(), aMaxDimensions <= 0 ? 300 : aMaxDimensions);
+		int dimensions = Math.min(documents.size(), aMaxDimensions <= 0 ? 300 : aMaxDimensions);
 
 		Properties props = new Properties();
 		props.setProperty(LatentSemanticAnalysis.LSA_DIMENSIONS_PROPERTY, Integer.toString(dimensions));
