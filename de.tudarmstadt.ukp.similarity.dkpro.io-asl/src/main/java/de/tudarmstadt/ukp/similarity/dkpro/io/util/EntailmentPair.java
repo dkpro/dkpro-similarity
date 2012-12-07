@@ -19,17 +19,17 @@ package de.tudarmstadt.ukp.similarity.dkpro.io.util;
 
 public class EntailmentPair extends CombinationPair {
 
-	private boolean classificationOutcome;
+	private String entailmentOutcome;
 	
 	public EntailmentPair(String collectionID) {
 		super(collectionID);
 	}
 
-	public boolean getClassificationOutcome() {
-		return classificationOutcome;
+	public String getEntailmentOutcome() {
+		return entailmentOutcome;
 	}
 
-	public void setClassificationOutcome(boolean classificationOutcome) {
-		this.classificationOutcome = classificationOutcome;
+	public void setEntailmentOutcome(String entailmentOutcome) {
+		this.entailmentOutcome = entailmentOutcome;
 	}
 }

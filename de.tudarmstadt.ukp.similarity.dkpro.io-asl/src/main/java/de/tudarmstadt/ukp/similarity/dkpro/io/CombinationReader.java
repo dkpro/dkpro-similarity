@@ -74,6 +74,9 @@ public abstract class CombinationReader
 
 	private List<CombinationPair> alignedPairs = new ArrayList<CombinationPair>();
 	private List<CombinationPair> secondIndexPairs = new ArrayList<CombinationPair>();
+	
+	protected CombinationPair currentPair1;
+    protected CombinationPair currentPair2;
 
 	protected Random randomGenerator = new Random();
 	
@@ -84,6 +87,9 @@ public abstract class CombinationReader
 	{
 		super.initialize(aContext);
 
+		this.currentPair1 = null;
+        this.currentPair2 = null;
+		
 		// Read pairs
 		alignedPairs = getAlignedPairs();
 		if (combinationStrategy.equals(CombinationStrategy.EACH_ROW_WITH_EVERY_OTHER_DISTINCT_ROW)) {
@@ -160,24 +166,24 @@ public abstract class CombinationReader
 			}
 
 			// Get item 1
-			CombinationPair pair = alignedPairs.get(firstPairIndex);
+			currentPair1 = alignedPairs.get(firstPairIndex);
 
 			// Prepare view 1
-			view1.setDocumentText(pair.getText1());
+			view1.setDocumentText(currentPair1.getText1());
 
 			DocumentMetaData md1 = DocumentMetaData.create(view1);
-			md1.setCollectionId(pair.getCollectionID());
-			md1.setDocumentId(pair.getID1());
+			md1.setCollectionId(currentPair1.getCollectionID());
+			md1.setDocumentId(currentPair1.getID1());
 
 			// Get item 2
-			pair = secondIndexPairs.get(secondPairIndex);
+			currentPair2 = secondIndexPairs.get(secondPairIndex);
 
 			// Prepare view 2
-			view2.setDocumentText(pair.getText2());
+			view2.setDocumentText(currentPair2.getText2());
 
 			DocumentMetaData md2 = DocumentMetaData.create(view2);
-			md2.setCollectionId(pair.getCollectionID());
-			md2.setDocumentId(pair.getID2());
+			md2.setCollectionId(currentPair2.getCollectionID());
+			md2.setDocumentId(currentPair2.getID2());
 		}
 		catch (CASException e) {
 			throw new CollectionException(e);
