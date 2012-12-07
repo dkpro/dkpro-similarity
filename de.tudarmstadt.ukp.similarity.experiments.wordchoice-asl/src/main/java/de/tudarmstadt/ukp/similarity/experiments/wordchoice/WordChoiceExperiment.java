@@ -9,12 +9,11 @@ import org.apache.uima.collection.CollectionReader;
 import org.uimafit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.api.io.ResourceCollectionReaderBase;
-import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
+import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
+import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.JiangConrathRelatednessResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.LSRRelatednessResourceBase;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.LinRelatednessResource;
-import de.tudarmstadt.ukp.similarity.experiments.wordchoice.WordChoiceResourceBasedSemRelAnnotator;
-import de.tudarmstadt.ukp.similarity.experiments.wordchoice.WordChoiceWordPairAnnotator;
 import de.tudarmstadt.ukp.similarity.experiments.wordchoice.io.WordChoiceProblemReader;
 import de.tudarmstadt.ukp.similarity.experiments.wordchoice.io.WordChoiceProblemsEvaluator;
 
@@ -31,10 +30,14 @@ public class WordChoiceExperiment
         );
         
         AnalysisEngineDescription tagger = createPrimitiveDescription(
-                TreeTaggerPosLemmaTT4J.class,
-                TreeTaggerPosLemmaTT4J.PARAM_LANGUAGE_CODE, "en"
+                OpenNlpPosTagger.class,
+                OpenNlpPosTagger.PARAM_LANGUAGE, "en"
         );
                 
+        AnalysisEngineDescription lemmatizer = createPrimitiveDescription(
+                GateLemmatizer.class
+        );
+
         AnalysisEngineDescription pairAnnotator = createPrimitiveDescription(
                 WordChoiceWordPairAnnotator.class
         );
@@ -64,6 +67,7 @@ public class WordChoiceExperiment
         SimplePipeline.runPipeline(
                 reader,
                 tagger,
+                lemmatizer,
                 pairAnnotator,
                 semRel1,
                 semRel2,
