@@ -25,6 +25,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.uima.cas.CAS;
+import org.apache.uima.cas.CASException;
+import org.apache.uima.collection.CollectionException;
+import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
@@ -38,12 +42,14 @@ import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
+import de.tudarmstadt.ukp.similarity.dkpro.io.util.EntailmentPair;
+import de.tudarmstadt.ukp.similarity.entailment.type.EntailmentClassificationOutcome;
 
 public class RTECorpusReader
 	extends CombinationReader
 {
 	
-	public static final String PARAM_INPUT_FILE = "InputFile";
+    public static final String PARAM_INPUT_FILE = "InputFile";
 	@ConfigurationParameter(name=PARAM_INPUT_FILE, mandatory=true)
 	private String inputFile;
 	
@@ -70,6 +76,7 @@ public class RTECorpusReader
             	i++;
                 String text1 = "";
                 String text2 = "";
+                String entailmentOutcome = "";
             	if (element instanceof Element) {
                     Element node = (Element) element;
                     
@@ -95,16 +102,18 @@ public class RTECorpusReader
                         Attribute attribute = (Attribute) o;  
                         String name = attribute.getName().toLowerCase();
                         if (name.equals("value") || name.equals("entailment")) {                    	
-                        	System.out.println(i + ":" + attribute.getValue());
+                        	entailmentOutcome = attribute.getValue();
+                            System.out.println(i + ":" + entailmentOutcome);
                         }
                     }
                 }
 
-                CombinationPair pair = new CombinationPair(url.toString());
+                EntailmentPair pair = new EntailmentPair(url.toString());
     			pair.setID1("t1-" + i);
     			pair.setID2("t2-" + i);
     			pair.setText1(text1);
     			pair.setText2(text2);
+    			pair.setEntailmentOutcome(entailmentOutcome);
     			
     			pairs.add(pair);
             }
@@ -124,4 +133,28 @@ public class RTECorpusReader
 		
 		return pairs;
 	}
+
+    @Override
+    public void getNext(CAS aCAS)
+        throws IOException, CollectionException
+    {
+        super.getNext(aCAS);
+
+        String entailmentOutcome1 = ((EntailmentPair) this.currentPair1).getEntailmentOutcome();
+        String entailmentOutcome2 = ((EntailmentPair) this.currentPair1).getEntailmentOutcome();
+
+        if (!entailmentOutcome1.equals(entailmentOutcome2)) {
+            throw new CollectionException(new Throwable("Paring strategy is not valid for entailment pairs."));
+        }
+        
+        try {
+            JCas jcas = aCAS.getJCas();
+            EntailmentClassificationOutcome outcome = new EntailmentClassificationOutcome(jcas);
+            outcome.setOutcome(entailmentOutcome1);
+            outcome.addToIndexes();
+        }
+        catch (CASException e) {
+            throw new CollectionException(e);
+        }
+    }
 }
