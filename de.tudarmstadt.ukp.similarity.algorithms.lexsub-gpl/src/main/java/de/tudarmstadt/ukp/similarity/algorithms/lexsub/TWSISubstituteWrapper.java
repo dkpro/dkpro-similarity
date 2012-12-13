@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.langtech.substituter.MLSenseSubstituter;
@@ -47,6 +48,17 @@ public class TWSISubstituteWrapper
 		return measure.getSimilarity(subst1, subst2);
 	}
 	
+    @Override
+    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
+        throws SimilarityException
+    {
+        List<String> subst1 = getSubstitutions(jcas1, coveringAnnotation1);
+        List<String> subst2 = getSubstitutions(jcas2, coveringAnnotation2);
+        
+        return measure.getSimilarity(subst1, subst2);
+    }
+	 
 	public List<String> getSubstitutions(JCas jcas)
 	{
 		List<String> tokens = new ArrayList<String>();
@@ -67,7 +79,27 @@ public class TWSISubstituteWrapper
 		return getSubstitutions(tokens, postags);
 	}
 	
-	public List<String> getSubstitutions(List<String> tokens, List<String> postags)
+    public List<String> getSubstitutions(JCas jcas, Annotation coveringAnnotation)
+    {
+        List<String> tokens = new ArrayList<String>();
+        List<String> postags = new ArrayList<String>();;
+        
+        for (Token t : JCasUtil.selectCovered(jcas, Token.class, coveringAnnotation))
+        {
+            try
+            {
+                tokens.add(t.getLemma().getValue().toLowerCase());
+                postags.add(t.getPos().getPosValue());
+            }
+            catch (NullPointerException e) {
+                System.err.println("Couldn't read lemma value for token \"" + t.getCoveredText() + "\"");
+            }
+        }
+        
+        return getSubstitutions(tokens, postags);
+    }
+
+    public List<String> getSubstitutions(List<String> tokens, List<String> postags)
 	{	
 		// Append BOS + EOS tags
 		tokens.add(0, "%^%");
