@@ -1,15 +1,12 @@
 package de.tudarmstadt.ukp.similarity.dkpro.resource;
 
 import java.util.Collection;
-import java.util.Map;
 
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.resource.ResourceInitializationException;
-import org.apache.uima.resource.ResourceSpecifier;
+import org.apache.uima.jcas.tcas.Annotation;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase.TextSimilarityResourceMode;
 
 
 public class JCasTextSimilarityResourceBase
@@ -25,6 +22,14 @@ public class JCasTextSimilarityResourceBase
 		return measure.getSimilarity(jcas1, jcas2);
 	}
 
+    @Override
+    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
+        throws SimilarityException
+    {
+        return measure.getSimilarity(jcas1, jcas2, coveringAnnotation1, coveringAnnotation2);
+    }
+	
 	@Override
 	public double getSimilarity(Collection<String> stringList1,
 			Collection<String> stringList2)
@@ -63,5 +68,4 @@ public class JCasTextSimilarityResourceBase
 	{
 		return measure.isDistanceMeasure();
 	}
-
 }

@@ -1,6 +1,7 @@
 package de.tudarmstadt.ukp.similarity.algorithms.style;
 
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
@@ -27,11 +28,25 @@ public class SentenceRatioComparator
 	public double getSimilarity(JCas jcas1, JCas jcas2)
 		throws SimilarityException
 	{		
-		double no1 = new Integer(JCasUtil.select(jcas1, Sentence.class).size()).doubleValue(); 
-		double no2 = new Integer(JCasUtil.select(jcas2, Sentence.class).size()).doubleValue();
-		
-		double sim = (no2 == 0.0) ? 0.0 : no1 / no2;
-		
-		return sim;
+		int no1 = JCasUtil.select(jcas1, Sentence.class).size(); 
+		int no2 = JCasUtil.select(jcas2, Sentence.class).size();
+
+		return computeSentenceRatio(no1, no2);
 	}
+
+    @Override
+    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
+        throws SimilarityException
+    {
+        int no1 = JCasUtil.selectCovered(jcas1, Sentence.class, coveringAnnotation1).size(); 
+        int no2 = JCasUtil.selectCovered(jcas2, Sentence.class, coveringAnnotation2).size();
+
+        return computeSentenceRatio(no1, no2);
+    }
+
+    private double computeSentenceRatio(int no1, int no2) {
+        double sim = (no2 == 0) ? 0.0 : (double) no1 / no2;
+        return sim;
+    }
 }
