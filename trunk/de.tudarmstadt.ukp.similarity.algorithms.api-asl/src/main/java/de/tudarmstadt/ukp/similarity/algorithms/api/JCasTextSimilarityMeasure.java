@@ -18,8 +18,7 @@
 package de.tudarmstadt.ukp.similarity.algorithms.api;
 
 import org.apache.uima.jcas.JCas;
-
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
+import org.apache.uima.jcas.tcas.Annotation;
 
 
 public interface JCasTextSimilarityMeasure
@@ -27,4 +26,8 @@ public interface JCasTextSimilarityMeasure
 {
 	double getSimilarity(JCas jcas1, JCas jcas2)
 		throws SimilarityException;
+
+    double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1, Annotation coveringAnnotation2)
+            throws SimilarityException;
+
 }

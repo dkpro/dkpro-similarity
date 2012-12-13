@@ -13,6 +13,7 @@ import java.util.Map;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
@@ -45,8 +46,9 @@ public class FunctionWordFrequenciesMeasure
             is = url.openStream();
             String content = IOUtils.toString(is, "UTF-8");
             for (String line : Arrays.asList(content.split("\n"))) {
-                if (line.length() > 0)
+                if (line.length() > 0) {
                     functionWords.add(line);
+                }
             }
         }
         finally{
@@ -64,37 +66,58 @@ public class FunctionWordFrequenciesMeasure
 		PearsonsCorrelation p = new PearsonsCorrelation();
 		return p.correlation(v1, v2);
 	}
+    
+    @Override
+    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
+        throws SimilarityException
+    {
+        double[] v1 = getDocumentVector(jcas1, coveringAnnotation1);
+        double[] v2 = getDocumentVector(jcas2, coveringAnnotation2);
+        
+        PearsonsCorrelation p = new PearsonsCorrelation();
+        return p.correlation(v1, v2);
+    }
+
 	
 	private double[] getDocumentVector(JCas jcas)
 	{
-		double[] v = new double[functionWords.size()];
-		
-		Collection<Token> tokens = JCasUtil.select(jcas, Token.class);
-		Map<String,Integer> freq = new HashMap<String,Integer>();
-		
-		for (Token token : tokens)
-		{
-			String str = token.getCoveredText().toLowerCase();
-			
-			if (freq.containsKey(str)) {
-				int count = freq.get(str);
-				count++;
-				freq.put(str, count);
-			} else {
-				freq.put(str, 1);
-			}
-		}
-		
-		for (int i = 0; i < functionWords.size(); i++)
-		{
-			String functionWord = functionWords.get(i);
-			
-			if (freq.containsKey(functionWord))
-				v[i] = new Double(freq.get(functionWord));
-			else
-				v[i] = 0.0;
-		}
-		
-		return v;
+		return createVector(JCasUtil.select(jcas, Token.class));
 	}
+	
+    private double[] getDocumentVector(JCas jcas, Annotation coveringAnnotation) {
+        return createVector(JCasUtil.selectCovered(jcas, Token.class, coveringAnnotation));
+    }
+    
+    private double[] createVector(Collection<Token> tokens) {
+        Map<String,Integer> freq = new HashMap<String,Integer>();
+        
+        for (Token token : tokens)
+        {
+            String str = token.getCoveredText().toLowerCase();
+            
+            if (freq.containsKey(str)) {
+                int count = freq.get(str);
+                count++;
+                freq.put(str, count);
+            } else {
+                freq.put(str, 1);
+            }
+        }
+        
+        double[] v = new double[functionWords.size()];
+        for (int i = 0; i < functionWords.size(); i++)
+        {
+            String functionWord = functionWords.get(i);
+            
+            if (freq.containsKey(functionWord)) {
+                v[i] = new Double(freq.get(functionWord));
+            }
+            else {
+                v[i] = 0.0;
+            }
+        }
+        
+        return v;
+    }
 }

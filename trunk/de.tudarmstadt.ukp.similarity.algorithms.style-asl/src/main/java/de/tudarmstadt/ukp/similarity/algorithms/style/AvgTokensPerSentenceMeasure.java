@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.jcas.tcas.DocumentAnnotation;
 import org.uimafit.util.JCasUtil;
 
@@ -41,4 +42,13 @@ public class AvgTokensPerSentenceMeasure
 		
 		return avgNoOfTokensPerSentence;
 	}
+	
+	   // FIXME this should be properly implemented
+    @Override
+    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
+        throws SimilarityException
+    {
+        return getSimilarity(jcas1, jcas2);
+    }
 }

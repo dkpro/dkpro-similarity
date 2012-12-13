@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.jcas.tcas.DocumentAnnotation;
 import org.uimafit.util.JCasUtil;
 
@@ -49,13 +50,24 @@ public class MTLDComparator
 		double mtld2 = 0.5 * (getMTLD(jcas2, false) + getMTLD(jcas2, true));
 		
 		double distance;
-		if (mtld1 > mtld2)
-			distance = mtld1 - mtld2;
-		else
-			distance = mtld2 - mtld1;
+		if (mtld1 > mtld2) {
+            distance = mtld1 - mtld2;
+        }
+        else {
+            distance = mtld2 - mtld1;
+        }
 		
 		return distance;
 	}
+	
+    // FIXME this should be properly implemented 
+    @Override
+    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
+        throws SimilarityException
+    {
+        return getSimilarity(jcas1, jcas2);
+    }
 	
 	private double getMTLD(JCas jcas, boolean reverse)
 	{
@@ -69,8 +81,9 @@ public class MTLDComparator
 		Set<String> types = new HashSet<String>();
 		
 		// Reverse lemmas if flag is set
-		if (reverse)
-			Collections.reverse(lemmas);
+		if (reverse) {
+            Collections.reverse(lemmas);
+        }
 		
 		for (int i = 0; i < lemmas.size(); i++)
 		{

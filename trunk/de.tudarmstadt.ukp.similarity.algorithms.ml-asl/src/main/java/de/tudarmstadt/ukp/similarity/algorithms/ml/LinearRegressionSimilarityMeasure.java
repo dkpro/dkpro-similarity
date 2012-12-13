@@ -1,13 +1,10 @@
 package de.tudarmstadt.ukp.similarity.algorithms.ml;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.uima.jcas.JCas;
-import org.uimafit.util.JCasUtil;
+import org.apache.uima.jcas.tcas.Annotation;
 
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
@@ -16,14 +13,9 @@ import weka.classifiers.functions.LinearRegression;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
-import weka.filters.Filter;
-
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
-import de.tudarmstadt.ukp.similarity.ml.filters.LogFilter;
-import de.tudarmstadt.ukp.similarity.ml.util.ArffConverter;
 
 
 public class LinearRegressionSimilarityMeasure
@@ -149,4 +141,12 @@ public class LinearRegressionSimilarityMeasure
 		}
 	}
 
+    // FIXME this should be properly implemented
+    @Override
+    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
+        throws SimilarityException
+    {
+        return getSimilarity(jcas1, jcas2);
+    }	
 }

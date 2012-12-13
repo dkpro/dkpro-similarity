@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.jcas.tcas.DocumentAnnotation;
 import org.uimafit.util.JCasUtil;
 
@@ -30,13 +31,24 @@ public class TypeTokenRatioComparator
 		double ttr2 = getTTR(jcas2);
 		
 		double distance;
-		if (ttr1 > ttr2)
-			distance = ttr1 - ttr2;
-		else
-			distance = ttr2 - ttr1;
+		if (ttr1 > ttr2) {
+            distance = ttr1 - ttr2;
+        }
+        else {
+            distance = ttr2 - ttr1;
+        }
 		
 		return 1.0 - distance;
 	}
+	
+    // FIXME this should be properly implemented
+    @Override
+    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
+        throws SimilarityException
+    {
+        return getSimilarity(jcas1, jcas2);
+    }
 	
 	private double getTTR(JCas jcas)
 	{
@@ -51,11 +63,13 @@ public class TypeTokenRatioComparator
 			List<Token> theseTokens = JCasUtil.selectCovered(jcas, Token.class, sentence);
 			List<Lemma> theseLemmas = JCasUtil.selectCovered(jcas, Lemma.class, sentence);
 			
-			for (Token token : theseTokens)
-				tokens.add(token.getCoveredText().toLowerCase());
+			for (Token token : theseTokens) {
+                tokens.add(token.getCoveredText().toLowerCase());
+            }
 			
-			for (Lemma lemma : theseLemmas)
-				types.add(lemma.getValue().toLowerCase());
+			for (Lemma lemma : theseLemmas) {
+                types.add(lemma.getValue().toLowerCase());
+            }
 		}
 		
 		// Compute property

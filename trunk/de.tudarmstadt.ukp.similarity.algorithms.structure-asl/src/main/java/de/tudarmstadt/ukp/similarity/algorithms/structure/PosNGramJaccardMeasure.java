@@ -8,6 +8,7 @@ import java.util.Set;
 
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
@@ -32,23 +33,40 @@ public class PosNGramJaccardMeasure
 		throw new SimilarityException(new NotImplementedException());
 	}
 	
-	public double getSimilarity(JCas jcas1, JCas jcas2)
+	@Override
+    public double getSimilarity(JCas jcas1, JCas jcas2)
 		throws SimilarityException
 	{
 		// Get POS
 		Collection<POS> pos1 = JCasUtil.select(jcas1, POS.class);
 		Collection<POS> pos2 = JCasUtil.select(jcas2, POS.class);
 		
-		// Get n-grams
-		Set<List<String>> ngrams1 = getPosNGrams(new ArrayList<POS>(pos1));
-		Set<List<String>> ngrams2 = getPosNGrams(new ArrayList<POS>(pos2));
-		
-		double sim = getNormalizedSimilarity(ngrams1, ngrams2);
-		
-		return sim;
+		return getPosNGramSimilarity(pos1, pos2);
 	}
 	
-	private Set<List<String>> getPosNGrams(List<POS> pos)
+    @Override
+    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
+        throws SimilarityException
+    {
+        // Get POS
+        Collection<POS> pos1 = JCasUtil.selectCovered(jcas1, POS.class, coveringAnnotation1);
+        Collection<POS> pos2 = JCasUtil.selectCovered(jcas2, POS.class, coveringAnnotation2);
+        
+        return getPosNGramSimilarity(pos1, pos2);
+    }
+	
+    private double getPosNGramSimilarity(Collection<POS> pos1, Collection<POS> pos2) {
+        // Get n-grams
+        Set<List<String>> ngrams1 = getPosNGrams(new ArrayList<POS>(pos1));
+        Set<List<String>> ngrams2 = getPosNGrams(new ArrayList<POS>(pos2));
+        
+        double sim = getNormalizedSimilarity(ngrams1, ngrams2);
+
+        return sim;
+    }
+
+    private Set<List<String>> getPosNGrams(List<POS> pos)
 	{
 		Set<List<String>> ngrams = new HashSet<List<String>>();
 		
@@ -83,8 +101,9 @@ public class PosNGramJaccardMeasure
 		double norm = unionNGrams.size();
 		double sim = 0.0;
 		
-		if (norm > 0.0)
-			sim = commonNGrams.size() / norm;
+		if (norm > 0.0) {
+            sim = commonNGrams.size() / norm;
+        }
 		
 		return sim;
 	}
