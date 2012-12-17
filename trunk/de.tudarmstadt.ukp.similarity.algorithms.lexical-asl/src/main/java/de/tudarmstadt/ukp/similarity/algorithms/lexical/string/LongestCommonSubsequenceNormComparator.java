@@ -28,6 +28,7 @@ public class LongestCommonSubsequenceNormComparator
 	{
 		String lcs = getLCS(string1.toLowerCase(), string2.toLowerCase());
 		
+		// FIXME why normalize only with the length of the first text - this is not documented
 		// Normalize only by the length of the suspicious text
 		double score = new Integer(lcs.length()).doubleValue() / new Integer(string1.length()).doubleValue();
 		

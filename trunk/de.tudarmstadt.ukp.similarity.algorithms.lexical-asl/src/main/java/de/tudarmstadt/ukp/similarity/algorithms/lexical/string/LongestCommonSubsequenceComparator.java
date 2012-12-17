@@ -19,20 +19,21 @@ package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
 
 import java.util.Collection;
 
-import org.apache.commons.lang.NotImplementedException;
+import org.apache.commons.lang.StringUtils;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
+import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 public class LongestCommonSubsequenceComparator
 	extends TextSimilarityMeasureBase
 {	
+
 	@Override
 	public double getSimilarity(Collection<String> stringList1,
 			Collection<String> stringList2)
 		throws SimilarityException
 	{
-		throw new SimilarityException(new NotImplementedException());
+	    return getSimilarity(StringUtils.join(stringList1,  " "), StringUtils.join(stringList2,  " "));
 	}
 	
 	/**
@@ -68,10 +69,12 @@ public class LongestCommonSubsequenceComparator
         // compute length of LCS and all subproblems via dynamic programming
         for (int i = M-1; i >= 0; i--) {
             for (int j = N-1; j >= 0; j--) {
-                if (x.charAt(i) == y.charAt(j))
+                if (x.charAt(i) == y.charAt(j)) {
                     opt[i][j] = opt[i+1][j+1] + 1;
-                else 
+                }
+                else {
                     opt[i][j] = Math.max(opt[i+1][j], opt[i][j+1]);
+                }
             }
         }
 
@@ -86,8 +89,12 @@ public class LongestCommonSubsequenceComparator
                 i++;
                 j++;
             }
-            else if (opt[i+1][j] >= opt[i][j+1]) i++;
-            else                                 j++;
+            else if (opt[i+1][j] >= opt[i][j+1]) {
+                i++;
+            }
+            else {
+                j++;
+            }
         }
         
         return sb.toString();
