@@ -1,4 +1,4 @@
-#summary SemEval-2013 STS baseline system
+#summary *SEM 2013 Shared Task Baseline System
 
 = !SemEval-2013 STS Baseline System =
 
