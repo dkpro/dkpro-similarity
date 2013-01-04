@@ -1,6 +1,6 @@
 #summary *SEM 2013 Shared Task Baseline System
 
-= *SEM 2013 Shared Task Baseline System =
+= {{{*SEM}}} 2013 Shared Task Baseline System =
 
 This page is intended for all participants of the [http://ixa2.si.ehu.es/sts/ shared task of the *SEM 2013 conference]. We describe one of the task's offical baseline systems, which is roughly the system ranked best in the [http://ixa2.si.ehu.es/starsem/proc/pdf/STARSEM-SEMEVAL051.pdf SemEval-2012 exercises].
 
