@@ -24,7 +24,7 @@ There are a number of word similarity measures which compute similarity based on
 
 The resource graphs can be downloaded [http://code.google.com/p/dkpro-similarity-asl/downloads/list here] for [http://dkpro-similarity-asl.googlecode.com/files/lsr_wiktionary_en.zip Wiktionary] and [http://dkpro-similarity-asl.googlecode.com/files/lsr_wordnet_en.zip WordNet].
 
-After the download has finished, unzip the whole folder into {{{$DKPRO_HOME/ESA/LexSemResources/<subdir>}}}, where {{{subdir}}} is an arbitrary name for each resource, e.g. "wordnet".
+After the download has finished, unzip the whole folder into {{{$DKPRO_HOME/LexSemResources/<subdir>}}}, where {{{subdir}}} is an arbitrary name for each resource, e.g. "wordnet".
 
 Please note that these resources have been created on lemmatized texts. So please also lemmatize your input texts first, before passing them to the similarity measure.
 
