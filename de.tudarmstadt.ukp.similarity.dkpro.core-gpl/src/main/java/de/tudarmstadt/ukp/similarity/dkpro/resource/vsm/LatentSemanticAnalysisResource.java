@@ -15,6 +15,8 @@ import de.tudarmstadt.ukp.similarity.algorithms.vsm.VectorComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.CachingVectorReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
 import edu.ucla.sspace.common.SemanticSpace;
+import edu.ucla.sspace.common.SemanticSpaceIO;
+import edu.ucla.sspace.common.SemanticSpaceIO.SSpaceFormat;
 
 
 public class LatentSemanticAnalysisResource
@@ -32,6 +34,14 @@ public class LatentSemanticAnalysisResource
     @ConfigurationParameter(name = PARAM_CACHE_SIZE, mandatory = true, defaultValue="100")
     protected String cacheSize;
     
+    public static final String PARAM_PERSISTENTLY_STORE_MODEL = "PersistentlyStoreModel";
+    @ConfigurationParameter(name = PARAM_PERSISTENTLY_STORE_MODEL, mandatory = true)
+    protected boolean storeModelPersistently;
+    
+    public static final String PARAM_MODEL_DIR = "ModelDir";
+    @ConfigurationParameter(name = PARAM_MODEL_DIR, mandatory = true)
+    protected File modelDir;
+    
 	
 	@Override
 	public boolean initialize(ResourceSpecifier aSpecifier,
@@ -48,14 +58,35 @@ public class LatentSemanticAnalysisResource
 		try {
 			inputUrl = ResourceUtils.resolveLocation(inputDirName);
 			
-			SemanticSpace sspace = SSpaceVectorReader.createSemanticSpace(
-					new File(inputUrl.getFile()),
-					dimensions);
+			File inputDir = new File(inputUrl.getFile());
+			File modelFile = new File(modelDir + "/" + inputDir.getName() + ".sspace");
 			
+			SemanticSpace sspace;
+			
+			if (modelFile.exists())
+			{
+				// Load from persistent model
+				sspace = SemanticSpaceIO.load(modelFile); 
+			}
+			else
+			{
+				// No persistent model found, so create one			
+				sspace = SSpaceVectorReader.createSemanticSpace(
+						inputDir,
+						dimensions);
+				
+				// Store it persistently if requested
+				if (storeModelPersistently)
+				{
+					modelDir.mkdirs();
+					SemanticSpaceIO.save(sspace, modelFile, SSpaceFormat.BINARY);
+				}
+			}
+				
 			measure = new VectorComparator(new CachingVectorReader(
 	                new SSpaceVectorReader(sspace),
 	                Integer.parseInt(cacheSize))); 
-		}
+	}
 		catch (IOException e) {
 			throw new ResourceInitializationException(e);
 		}
