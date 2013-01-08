@@ -18,6 +18,7 @@
 package de.tudarmstadt.ukp.similarity.dkpro.io;
 
 import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -30,6 +31,8 @@ import org.apache.uima.cas.CASException;
 import org.apache.uima.collection.CollectionException;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.xml.resolver.CatalogManager;
+import org.apache.xml.resolver.tools.CatalogResolver;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -39,6 +42,9 @@ import org.jaxen.JaxenException;
 import org.jaxen.XPath;
 import org.jaxen.dom4j.Dom4jXPath;
 import org.uimafit.descriptor.ConfigurationParameter;
+import org.xml.sax.EntityResolver;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
@@ -64,7 +70,12 @@ public class RTECorpusReader
 		InputStream is = null;
 		URL url;
 		try {
-			reader = new SAXReader();
+			reader = new SAXReader(false);
+			
+			// Disable DTD resolution (which fails due to relative path to DTD file)
+			NullEntityResolver resolver = new NullEntityResolver();  
+			reader.setEntityResolver(resolver);  
+			
 			url = ResourceUtils.resolveLocation(inputFile, this, this.getUimaContext());
 			Document document = reader.read(new BufferedInputStream(url.openStream()));
 			Element root = document.getRootElement();
@@ -156,5 +167,17 @@ public class RTECorpusReader
         catch (CASException e) {
             throw new CollectionException(e);
         }
+    }
+    
+    private class NullEntityResolver
+    	implements EntityResolver  
+    {
+    	static final String emptyDtd = ""; 
+    	
+    	public InputSource resolveEntity (String publicId, String systemId)
+    		throws SAXException, IOException
+    	{
+    		return new InputSource(new ByteArrayInputStream(emptyDtd.getBytes()));
+    	}
     }
 }
