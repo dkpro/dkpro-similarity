@@ -14,7 +14,7 @@ In order to set up your Eclipse installation properly and use this repository, w
   * In Eclipse, choose to create new a *Maven Project*.
   * On the first page of the properties dialog, tick *Create a simple project (skip archetype selection)*.
   * On the next page, choose a *Group ID* and an *Artifact ID* for your project. We suggest to use *com.yourdomain.yourname* as the Group ID and *com.yourdomain.yourname.sandbox* as the Artifact ID.
-  * Set the parent project to *de.tudarmstadt.ukp.dkpro.core* (Group ID), *dkpro-parent-pom* (Artifact ID), in the latest version (*3* or above)
+  * Set the parent project to *de.tudarmstadt.ukp.dkpro.core* (Group ID), *dkpro-parent-pom* (Artifact ID), in the latest version (*2* or above)
   * Select this one, leave all other options on default and click *Finish*.
 
 == Step 3: Add the Dependencies ==
