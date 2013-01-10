@@ -17,6 +17,16 @@ In order to set up your Eclipse installation properly and use this repository, w
   * Set the parent project to *de.tudarmstadt.ukp.dkpro.core* (Group ID), *dkpro-parent-pom* (Artifact ID), in the latest version (*2* or above)
   * Select this one, leave all other options on default and click *Finish*.
 
+In case you run into problems (i.e. dependencies are not resolvable), try adding these lines to your *pom.xml*:
+{{{
+<repositories>
+  <repository>
+    <id>ukp-oss-model-snapshots</id>
+    <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-snapshots-local</url>
+   </repository>
+</repositories>
+}}}
+
 == Step 3: Add the Dependencies ==
 
   * In your newly created project, open the *pom.xml* file with the Maven POM editor.
