@@ -23,7 +23,7 @@ In case you run into problems (i.e. dependencies are not resolvable), try adding
   <repository>
     <id>ukp-oss-model-snapshots</id>
     <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-snapshots-local</url>
-   </repository>
+  </repository>
 </repositories>
 }}}
 
