@@ -1,6 +1,7 @@
 package de.tudarmstadt.ukp.similarity.experiments.rte;
 
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset.*;
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.*;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -8,6 +9,7 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
+import org.bouncycastle.asn1.tsp.Accuracy;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
 import de.tudarmstadt.ukp.similarity.experiments.rte.util.Evaluator;
@@ -29,6 +31,11 @@ public class Pipeline
 		RTE4_test,
 		RTE5_dev,
 		RTE5_test
+	}
+
+	public enum EvaluationMetric
+	{
+		Accuracy
 	}
 	
 	public static String DATASET_DIR;
@@ -52,14 +59,14 @@ public class Pipeline
 		try {
 			CommandLine cmd = parser.parse( options, args);
 			
-			if (cmd.hasOption("d") && !cmd.hasOption("t"))
-			{
-				Dataset devset = Dataset.valueOf(cmd.getOptionValue("d"));
-				
-				System.out.println("*** " + devset.toString() + " ***");
-				
-				runDev(devset);
-			}
+//			if (cmd.hasOption("d") && !cmd.hasOption("t"))
+//			{
+//				Dataset devset = Dataset.valueOf(cmd.getOptionValue("d"));
+//				
+//				System.out.println("*** " + devset.toString() + " ***");
+//				
+//				runDev(devset);
+//			}
 			if (cmd.hasOption("t") && cmd.hasOption("d"))
 			{
 				Dataset devset = Dataset.valueOf(cmd.getOptionValue("d"));
@@ -78,25 +85,25 @@ public class Pipeline
 		}
 	}
 	
-	public static void runDev(Dataset devset)
-		throws Exception
-	{
-		// Generate the features
-		FeatureGeneration.generateFeatures(devset);
-
-		// Output the gold standard
-		GoldstandardCreator.outputGoldstandard(devset);
-		
-		// Packages features in arff files
-		Features2Arff.toArffFile(devset);
-
+//	public static void runDev(Dataset devset)
+//		throws Exception
+//	{
+//		// Generate the features
+//		FeatureGeneration.generateFeatures(devset);
+//
+//		// Output the gold standard
+//		GoldstandardCreator.outputGoldstandard(devset);
+//		
+//		// Packages features in arff files
+//		Features2Arff.toArffFile(devset);
+//
 //		// Run the classifier
 //		Evaluator.runLinearRegressionCV(TRAIN, MSRpar, MSRvid, SMTeuroparl);
 //		
 //		// Evaluate
 //		Evaluator.runEvaluationMetric(TRAIN, PearsonAll, MSRpar, MSRvid, SMTeuroparl);
 //		Evaluator.runEvaluationMetric(TRAIN, PearsonMean, MSRpar, MSRvid, SMTeuroparl);
-	}
+//	}
 
 	public static void runTest(Dataset devset, Dataset testset)
 		throws Exception
@@ -114,15 +121,9 @@ public class Pipeline
 		Features2Arff.toArffFile(testset);
 
 		// Run the classifer
-//		Evaluator.runLinearRegression(ALL, MSRpar, MSRvid, SMTeuroparl, OnWN, SMTnews);
-//		
-//		// Evaluate
-//		// Note: For submission scenario, comment the lines below, as 
-//		// there is no gold standard present then to compare with.
-//		if (runEvaluation)
-//		{
-//			Evaluator.runEvaluationMetric(TEST, PearsonAll, MSRpar, MSRvid, SMTeuroparl, OnWN, SMTnews);
-//			Evaluator.runEvaluationMetric(TEST, PearsonMean, MSRpar, MSRvid, SMTeuroparl, OnWN, SMTnews);
-//		}
+		Evaluator.runClassifier(devset, testset);
+
+		// Evaluate
+		Evaluator.runEvaluationMetric(Accuracy, testset);
 	}
 }

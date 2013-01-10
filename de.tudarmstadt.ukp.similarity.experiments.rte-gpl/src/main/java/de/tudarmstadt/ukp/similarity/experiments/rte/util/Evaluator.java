@@ -4,6 +4,7 @@ import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.DATASET_DIR
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.MODELS_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.OUTPUT_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.GOLD_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.*;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
 import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
@@ -41,57 +42,63 @@ import weka.filters.unsupervised.attribute.AddID;
 import weka.filters.unsupervised.attribute.Remove;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
+import de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
+import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.ClassifierResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Mode;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.filter.LogFilter;
+import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric;
 
 
 public class Evaluator
 {
-//	public static final String LF = System.getProperty("line.separator");
-//	
-//	public static void runLinearRegression(Dataset train, Dataset... test)
-//		throws UIMAException, IOException
-//	{
-//		for (Dataset dataset : test)
-//		{
-//			CollectionReader reader = createCollectionReader(SemEvalCorpusReader.class,
-//					SemEvalCorpusReader.PARAM_INPUT_FILE, DATASET_DIR + "/test/STS.input." + dataset.toString() + ".txt",
-//					SemEvalCorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
-//			
-//			AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
-//			
-//			AggregateBuilder builder = new AggregateBuilder();
-//			builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
-//			builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
-//			AnalysisEngine aggr_seg = builder.createAggregate();
-//	
-//			AnalysisEngine scorer = createPrimitive(SimilarityScorer.class,
-//				    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
-//				    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
-//				    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, Document.class.getName(),
-//				    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
-//				    	LinearRegressionResource.class,
-//				    	LinearRegressionResource.PARAM_TRAIN_ARFF, MODELS_DIR + "/train/" + train.toString() + ".arff",
-//				    	LinearRegressionResource.PARAM_TEST_ARFF, MODELS_DIR + "/test/" + dataset.toString() + ".arff")
-//				    );
-//			
-//			AnalysisEngine writer = createPrimitive(SimilarityScoreWriter.class,
-//					SimilarityScoreWriter.PARAM_OUTPUT_FILE, OUTPUT_DIR + "/test/" + dataset.toString() + ".csv",
-//					SimilarityScoreWriter.PARAM_OUTPUT_SCORES_ONLY, true,
-//					SimilarityScoreWriter.PARAM_OUTPUT_GOLD_SCORES, false);
-//	
-//			SimplePipeline.runPipeline(reader, aggr_seg, scorer, writer);
-//		}
-//	}
-//	
+	public static final String LF = System.getProperty("line.separator");
+	
+	public static void runClassifier(Dataset train, Dataset test)
+		throws UIMAException, IOException
+	{
+		CollectionReader reader = createCollectionReader(
+				RTECorpusReader.class,
+				RTECorpusReader.PARAM_INPUT_FILE, RteUtil.getInputFilePathForDataset(DATASET_DIR, test),
+				RTECorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
+		
+		AnalysisEngineDescription seg = createPrimitiveDescription(
+				BreakIteratorSegmenter.class);
+		
+		AggregateBuilder builder = new AggregateBuilder();
+		builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
+		builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
+		AnalysisEngine aggr_seg = builder.createAggregate();
+
+		AnalysisEngine scorer = createPrimitive(
+				SimilarityScorer.class,
+			    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
+			    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
+			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, Document.class.getName(),
+			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
+			    	ClassifierResource.class,
+			    	ClassifierResource.PARAM_CLASSIFIER, ClassifierSimilarityMeasure.WekaClassifier.NAIVE_BAYES.toString(),
+			    	ClassifierResource.PARAM_TRAIN_ARFF, MODELS_DIR + "/" + train.toString() + ".arff",
+			    	ClassifierResource.PARAM_TEST_ARFF, MODELS_DIR + "/" + test.toString() + ".arff")
+			    );
+		
+		AnalysisEngine writer = createPrimitive(
+				SimilarityScoreWriter.class,
+				SimilarityScoreWriter.PARAM_OUTPUT_FILE, OUTPUT_DIR + "/" + test.toString() + ".csv",
+				SimilarityScoreWriter.PARAM_OUTPUT_SCORES_ONLY, true,
+				SimilarityScoreWriter.PARAM_OUTPUT_GOLD_SCORES, false);
+
+		SimplePipeline.runPipeline(reader, aggr_seg, scorer, writer);
+	}
+	
 //	public static void runLinearRegressionCV(Mode mode, Dataset... datasets)
 //		throws Exception
 //	{
@@ -192,81 +199,53 @@ public class Evaluator
 //		    	sb.toString());
 //		}
 //	}
-//	
-//	@SuppressWarnings("unchecked")
-//	public static void runEvaluationMetric(Mode mode, EvaluationMetric metric, Dataset... datasets)
-//		throws IOException
-//	{
-//		StringBuilder sb = new StringBuilder();
-//		
-//		// Compute Pearson correlation for the specified datasets
-//		for (Dataset dataset : datasets)
-//		{
-//			computePearsonCorrelation(mode, dataset);
-//		}
-//		
-//		if (metric == PearsonAll)
-//		{
-//			List<Double> concatExp = new ArrayList<Double>();
-//			List<Double> concatGS = new ArrayList<Double>();
-//			
-//			// Concat the scores
-//			for (Dataset dataset : datasets)
-//			{
-//				File expScoresFile = new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".csv");
-//				
-//				List<String> lines = FileUtils.readLines(expScoresFile);
-//				
-//				for (String line : lines)
-//					concatExp.add(Double.parseDouble(line));
-//			}
-//			
-//			// Concat the gold standard
-//			for (Dataset dataset : datasets)
-//			{
-//				String gsScoresFilePath = GOLDSTANDARD_DIR + "/" + mode.toString().toLowerCase() + "/" + 
-//						"STS.gs." + dataset.toString() + ".txt";
-//				
-//				PathMatchingResourcePatternResolver r = new PathMatchingResourcePatternResolver();
-//		        Resource res = r.getResource(gsScoresFilePath);				
-//				File gsScoresFile = res.getFile();
-//				
-//				List<String> lines = FileUtils.readLines(gsScoresFile);
-//				
-//				for (String line : lines)
-//					concatGS.add(Double.parseDouble(line));
-//			}
-//			
-//			double[] concatExpArray = ArrayUtils.toPrimitive(concatExp.toArray(new Double[concatExp.size()])); 
-//			double[] concatGSArray = ArrayUtils.toPrimitive(concatGS.toArray(new Double[concatGS.size()]));
-//
-//			PearsonsCorrelation pearson = new PearsonsCorrelation();
-//			Double correl = pearson.correlation(concatExpArray, concatGSArray);
-//			
-//			sb.append(correl.toString());
-//		}
-//		else if (metric == PearsonMean)
-//		{
-//			List<Double> scores = new ArrayList<Double>();
-//			
-//			for (Dataset dataset : datasets)
-//			{
-//				File resultFile = new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt");
-//				double score = Double.parseDouble(FileUtils.readFileToString(resultFile));
-//				
-//				scores.add(score);
-//			}
-//			
-//			double mean = 0.0;
-//			for (Double score : scores)
-//				mean += score;
-//			mean = mean / scores.size();
-//			
-//			sb.append(mean);
-//		}
-//
-//		FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + metric.toString() + ".txt"), sb.toString());
-//	}
+
+	@SuppressWarnings("unchecked")
+	public static void runEvaluationMetric(EvaluationMetric metric, Dataset dataset)
+		throws IOException
+	{
+		StringBuilder sb = new StringBuilder();
+			
+		if (metric == Accuracy)
+		{
+			List<Double> concatExp = new ArrayList<Double>();
+			List<Double> concatGS = new ArrayList<Double>();
+			
+			// Read gold scores
+			List<String> goldLines = FileUtils.readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"));
+			
+			// Transform string into double values (i.e. TRUE into 1.0)
+			List<Double> goldScores = new ArrayList<Double>();
+			for (String line : goldLines)
+			{
+				if (line.equals("TRUE"))			
+					goldScores.add(1.0);
+				else
+					goldScores.add(0.0);
+			}
+			
+			// Read the output
+			List<String> expLines = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + ".csv"));
+			
+			// Transform to doubles
+			List<Double> expScores = new ArrayList<Double>();
+			for (String line : expLines)
+				expScores.add(Double.parseDouble(line));
+			
+			// Compute the accuracy
+			double acc = 0.0;
+			for (int i = 0; i < goldScores.size(); i++)
+			{
+				if (goldScores.get(i).equals(expScores.get(i)))
+					acc++;
+			}
+			acc = acc / goldScores.size();
+			
+			sb.append(acc);
+		}
+
+		FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + dataset.toString() + "_" + metric.toString() + ".txt"), sb.toString());
+	}
 //	
 //	@SuppressWarnings("unchecked")
 //	private static void computePearsonCorrelation(Mode mode, Dataset dataset)
