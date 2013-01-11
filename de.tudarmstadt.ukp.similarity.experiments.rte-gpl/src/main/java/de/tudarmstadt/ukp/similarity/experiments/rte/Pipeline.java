@@ -1,6 +1,5 @@
 package de.tudarmstadt.ukp.similarity.experiments.rte;
 
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset.*;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.*;
 
 import org.apache.commons.cli.CommandLine;
@@ -9,7 +8,6 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
-import org.bouncycastle.asn1.tsp.Accuracy;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
 import de.tudarmstadt.ukp.similarity.experiments.rte.util.Evaluator;

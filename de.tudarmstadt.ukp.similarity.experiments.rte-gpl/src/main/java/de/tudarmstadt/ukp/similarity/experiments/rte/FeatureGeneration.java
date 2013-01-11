@@ -47,6 +47,8 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelated
 import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
+import de.tudarmstadt.ukp.similarity.experiments.rte.util.CharacterNGramIdfValuesGenerator;
+import de.tudarmstadt.ukp.similarity.experiments.rte.util.WordIdfValuesGenerator;
 //import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.CharacterNGramIdfValuesGenerator;
 import de.tudarmstadt.ukp.similarity.experiments.rte.util.StopwordFilter;
 //import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.WordIdfValuesGenerator;
@@ -62,11 +64,11 @@ public class FeatureGeneration
 		List<FeatureConfig> configs = new ArrayList<FeatureConfig>();
 		 
 		// Prerequisites
-//		int[] ngrams_n = new int[] { 2, 3, 4 };
-//		for (int n : ngrams_n)
-//			CharacterNGramIdfValuesGenerator.computeIdfScores(mode, dataset, n);
-//		
-//		WordIdfValuesGenerator.computeIdfScores(mode, dataset);
+		int[] ngrams_n = new int[] { 2, 3, 4 };
+		for (int n : ngrams_n)
+			CharacterNGramIdfValuesGenerator.computeIdfScores(dataset, n);
+		
+		WordIdfValuesGenerator.computeIdfScores(dataset);
 		
 		/* TODO: YOUR CUSTOM MEASURES GOES HERE
 		 * The example code snippet instantiates MyTextSimilarityMeasure using its wrapper
@@ -128,62 +130,62 @@ public class FeatureGeneration
 				"LongestCommonSubstringComparator"
 				));
 		
-//		ngrams_n = new int[] { 2, 3, 4 };
-//		for (int n : ngrams_n)
-//		{
-//			configs.add(new FeatureConfig(
-//					createExternalResourceDescription(
-//							CharacterNGramResource.class,
-//							CharacterNGramResource.PARAM_N, new Integer(n).toString(),
-//							CharacterNGramResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/character-ngrams-idf/" + mode.toString().toLowerCase() + "/" + n + "/" + dataset.toString() + ".txt"),
-//					Document.class.getName(),
-//					false,
-//					"n-grams",
-//					"CharacterNGramMeasure_" + n
-//					));
-//		}
-//		
-//		ngrams_n = new int[] { 1, 2 };
-//		for (int n : ngrams_n)
-//		{
-//			configs.add(new FeatureConfig(
-//					createExternalResourceDescription(
-//					    	WordNGramContainmentResource.class,
-//					    	WordNGramContainmentResource.PARAM_N, new Integer(n).toString()),
-//					Token.class.getName(),
-//					true,
-//					"n-grams",
-//					"WordNGramContainmentMeasure_" + n + "_stopword-filtered"
-//					));
-//		}
-//		
-//		ngrams_n = new int[] { 1, 3, 4 };
-//		for (int n : ngrams_n)
-//		{
-//			configs.add(new FeatureConfig(
-//					createExternalResourceDescription(
-//					    	WordNGramJaccardResource.class,
-//					    	WordNGramJaccardResource.PARAM_N, new Integer(n).toString()),
-//					Token.class.getName(),
-//					false,
-//					"n-grams",
-//					"WordNGramJaccardMeasure_" + n
-//					));			
-//		}
-//		
-//		ngrams_n = new int[] { 2, 4 };
-//		for (int n : ngrams_n)
-//		{
-//			configs.add(new FeatureConfig(
-//					createExternalResourceDescription(
-//					    	WordNGramJaccardResource.class,
-//					    	WordNGramJaccardResource.PARAM_N, new Integer(n).toString()),
-//					Token.class.getName(),
-//					true,
-//					"n-grams",
-//					"WordNGramJaccardMeasure_" + n + "_stopword-filtered"
-//					));			
-//		}
+		ngrams_n = new int[] { 2, 3, 4 };
+		for (int n : ngrams_n)
+		{
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+							CharacterNGramResource.class,
+							CharacterNGramResource.PARAM_N, new Integer(n).toString(),
+							CharacterNGramResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/character-ngrams-idf/" + n + "/" + dataset.toString() + ".txt"),
+					Document.class.getName(),
+					false,
+					"n-grams",
+					"CharacterNGramMeasure_" + n
+					));
+		}
+		
+		ngrams_n = new int[] { 1, 2 };
+		for (int n : ngrams_n)
+		{
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+					    	WordNGramContainmentResource.class,
+					    	WordNGramContainmentResource.PARAM_N, new Integer(n).toString()),
+					Token.class.getName(),
+					true,
+					"n-grams",
+					"WordNGramContainmentMeasure_" + n + "_stopword-filtered"
+					));
+		}
+		
+		ngrams_n = new int[] { 1, 3, 4 };
+		for (int n : ngrams_n)
+		{
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+					    	WordNGramJaccardResource.class,
+					    	WordNGramJaccardResource.PARAM_N, new Integer(n).toString()),
+					Token.class.getName(),
+					false,
+					"n-grams",
+					"WordNGramJaccardMeasure_" + n
+					));			
+		}
+		
+		ngrams_n = new int[] { 2, 4 };
+		for (int n : ngrams_n)
+		{
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+					    	WordNGramJaccardResource.class,
+					    	WordNGramJaccardResource.PARAM_N, new Integer(n).toString()),
+					Token.class.getName(),
+					true,
+					"n-grams",
+					"WordNGramJaccardMeasure_" + n + "_stopword-filtered"
+					));			
+		}
 		
 		/* TODO: If you plan to use the following measures, make sure that you have the
 		 * necessary resources installed. 
