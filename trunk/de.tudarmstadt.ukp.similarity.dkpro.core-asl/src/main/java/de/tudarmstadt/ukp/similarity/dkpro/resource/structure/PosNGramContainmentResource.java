@@ -7,11 +7,12 @@ import org.apache.uima.resource.ResourceSpecifier;
 import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.algorithms.structure.PosNGramContainmentMeasure;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
 
 
 public class PosNGramContainmentResource
-	extends TextSimilarityResourceBase
+	extends JCasTextSimilarityResourceBase
 {
     public static final String PARAM_N = "N";
     @ConfigurationParameter(name=PARAM_N, mandatory=true)
@@ -26,7 +27,7 @@ public class PosNGramContainmentResource
             return false;
         }
 
-        this.mode = TextSimilarityResourceMode.list;
+        this.mode = TextSimilarityResourceMode.jcas;
         
         try {
             int n = Integer.parseInt(nString); 

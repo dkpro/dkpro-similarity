@@ -11,6 +11,7 @@ import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.LinearRegression;
+import weka.classifiers.functions.SMO;
 import weka.classifiers.trees.J48;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -28,7 +29,8 @@ public class ClassifierSimilarityMeasure
 	public enum WekaClassifier
 	{
 		NAIVE_BAYES,
-		J48
+		J48,
+		SMO
 	}
 	
 	Classifier filteredClassifier;
@@ -47,6 +49,10 @@ public class ClassifierSimilarityMeasure
 			case J48:
 				CLASSIFIER = new J48();
 				// TODO: any parameters for J48?
+				break;
+			case SMO:
+				CLASSIFIER = new SMO();
+				// TODO: any parameters for SMO?
 				break;
 			default:
 				throw new IllegalArgumentException("Classifier " + classifier + " not found!");
