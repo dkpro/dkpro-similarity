@@ -41,22 +41,7 @@ public class ClassifierSimilarityMeasure
 	public ClassifierSimilarityMeasure(WekaClassifier classifier, File trainArff, File testArff)
 		throws Exception
 	{
-		switch (classifier)
-		{
-			case NAIVE_BAYES:
-				CLASSIFIER = new NaiveBayes();
-				break;
-			case J48:
-				CLASSIFIER = new J48();
-				// TODO: any parameters for J48?
-				break;
-			case SMO:
-				CLASSIFIER = new SMO();
-				// TODO: any parameters for SMO?
-				break;
-			default:
-				throw new IllegalArgumentException("Classifier " + classifier + " not found!");
-		}
+		CLASSIFIER = getClassifier(classifier);
 		
 		// Get all instances
 		Instances train = getTrainInstances(trainArff);	
@@ -86,6 +71,34 @@ public class ClassifierSimilarityMeasure
 		catch (Exception e) {
 			throw new SimilarityException(e);
 		}
+	}
+	
+	public static Classifier getClassifier(WekaClassifier classifier)
+		throws IllegalArgumentException
+	{
+		Classifier cl;
+		
+		try {
+			switch (classifier)
+			{
+				case NAIVE_BAYES:
+					return new NaiveBayes();
+				case J48:
+					J48 j48 = new J48();			
+					j48.setOptions(new String[] { "-C", "0.25", "-M", "2" });
+					return j48;
+				case SMO:
+					cl = new SMO();
+					// TODO: any parameters for SMO?
+					return cl;
+				default:
+					throw new IllegalArgumentException("Classifier " + classifier + " not found!");
+			}
+		}
+		catch (Exception e) {
+			throw new IllegalArgumentException(e);
+		}
+
 	}
 	
 	private Instances getTrainInstances(File trainArff)
