@@ -9,7 +9,6 @@ import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.algorithms.style.FunctionWordFrequenciesMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase.TextSimilarityResourceMode;
 
 
 public class FunctionWordFrequenciesMeasureResource
@@ -19,7 +18,7 @@ public class FunctionWordFrequenciesMeasureResource
 	@ConfigurationParameter(name=PARAM_FUNCTION_WORD_LIST_LOCATION, mandatory=false)
 	private String functionWordListLocation;
 	
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public boolean initialize(ResourceSpecifier aSpecifier, Map aAdditionalParams)
         throws ResourceInitializationException
