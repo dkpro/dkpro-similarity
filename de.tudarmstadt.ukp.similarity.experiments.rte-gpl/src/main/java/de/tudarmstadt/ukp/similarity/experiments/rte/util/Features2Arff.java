@@ -94,6 +94,10 @@ public class Features2Arff
 				{
 					String value = line;	// There's just the score on the line, nothing else.
 					
+					// Transform "NaN" to 0.0
+					if (value.equals("NaN"))
+						value = "0.0";
+					
 					// Limit to [0;5] interval
 					if (Double.parseDouble(value) > 5.0) value = "5.0";
 					if (Double.parseDouble(value) < 0.0) value = "0.0";

@@ -33,6 +33,7 @@ import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubs
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.structure.PosNGramContainmentMeasure;
+import de.tudarmstadt.ukp.similarity.algorithms.style.MTLDComparator;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
@@ -51,12 +52,19 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.PosNGramJaccardRes
 import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.StopwordNGramContainmentMeasureResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.TokenPairDistanceResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.TokenPairOrderingResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.style.AvgCharactersPerTokenResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.style.AvgTokensPerSentenceResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.style.FunctionWordFrequenciesMeasureResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.style.MTLDResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.style.SentenceRatioResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.style.TokenRatioResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.style.TypeTokenRatioResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
 import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
 import de.tudarmstadt.ukp.similarity.experiments.rte.util.CharacterNGramIdfValuesGenerator;
+import de.tudarmstadt.ukp.similarity.experiments.rte.util.ConvertToPlainText;
 import de.tudarmstadt.ukp.similarity.experiments.rte.util.WordIdfValuesGenerator;
 //import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.CharacterNGramIdfValuesGenerator;
 import de.tudarmstadt.ukp.similarity.experiments.rte.util.StopwordFilter;
@@ -72,28 +80,20 @@ public class FeatureGeneration
 		// Define the features
 		List<FeatureConfig> configs = new ArrayList<FeatureConfig>();
 		 
-		// Prerequisites
-		int[] ngrams_n = new int[] { 2, 3, 4 };
+		// ** PREREQUISITES **
+		
+		// Convert texts to plain text (may be omitted depending on the nature of the dataset)
+		ConvertToPlainText.convert(dataset);
+		
+		// Generate character n-gram idf values
+		int[] ngrams_n = new int[] { 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 		for (int n : ngrams_n)
 			CharacterNGramIdfValuesGenerator.computeIdfScores(dataset, n);
 		
+		// Generate word idf values
 		WordIdfValuesGenerator.computeIdfScores(dataset);
 		
-		/* TODO: YOUR CUSTOM MEASURES GOES HERE
-		 * The example code snippet instantiates MyTextSimilarityMeasure using its wrapper
-		 * component MyTextSimilarityResource, and passes it a configuration parameter N.
-		 * The measure here is intended to operate on lists of lemmas without any stopword
-		 * filtering. 
-		 */
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//				    	MyTextSimilarityResource.class,
-//				    	MyTextSimilarityResource.PARAM_N, "3"),
-//				Lemma.class.getName(),
-//				false,
-//				"custom",
-//				"MyTextSimilarityMeasure_3"
-//				));
+		// ** FEATURES **
 		
 		// String features
 		configs.add(new FeatureConfig(
@@ -139,6 +139,7 @@ public class FeatureGeneration
 				"LongestCommonSubstringComparator"
 				));
 		
+		// n-gram models
 		ngrams_n = new int[] { 2, 3, 4 };
 		for (int n : ngrams_n)
 		{
@@ -256,6 +257,16 @@ public class FeatureGeneration
 				"ESA_Wiktionary"
 				));
 		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	VectorIndexSourceRelatednessResource.class,
+				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wp_eng_lem_nc_c"),
+				Lemma.class.getName() + "/value",
+				false,
+				"esa",
+				"ESA_Wikipedia"
+				));
+		
 		// ** Structure **
 		
 		configs.add(new FeatureConfig(
@@ -339,25 +350,60 @@ public class FeatureGeneration
 		
 		// ** Style **
 
-//		configs.add(new SemEvalConfig(
-//				new MTLDComparator(),
-//				"style/text-statistics"));
-//		configs.add(new SemEvalConfig(
-//				new TypeTokenRatioComparator(),
-//				"style/text-statistics"));
-//		configs.add(new SemEvalConfig(
-//				new AvgCharactersPerTokenMeasure(),
-//				"style/text-statistics"));
-//		configs.add(new SemEvalConfig(
-//				new AvgTokensPerSentenceMeasure(),
-//				"style/text-statistics"));
-//		configs.add(new SemEvalConfig(
-//				new SentenceRatioComparator(),
-//				"style/text-statistics"));
-//		configs.add(new SemEvalConfig(
-//				new TokenRatioComparator(),
-//				"style/text-statistics"));
-
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						MTLDResource.class),
+				null,
+				false,
+				"style",
+				"MTLDComparator"
+				));
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						TypeTokenRatioResource.class),
+				null,
+				false,
+				"style",
+				"TypeTokenRatioComparator"
+				));
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						AvgCharactersPerTokenResource.class),
+				null,
+				false,
+				"style",
+				"AvgCharactersPerTokenComparator"
+				));
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						AvgTokensPerSentenceResource.class),
+				null,
+				false,
+				"style",
+				"AvgTokensPerSentenceComparator"
+				));
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						SentenceRatioResource.class),
+				null,
+				false,
+				"style",
+				"SentenceRatioComparator"
+				));
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						TokenRatioResource.class),
+				null,
+				false,
+				"style",
+				"TokenRatioComparator"
+				));
+		
 		configs.add(new FeatureConfig(
 				createExternalResourceDescription(
 						FunctionWordFrequenciesMeasureResource.class,

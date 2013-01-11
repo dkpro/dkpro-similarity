@@ -6,6 +6,7 @@ import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.DATASET_DIR
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -26,10 +27,7 @@ public class CharacterNGramIdfValuesGenerator
 	@SuppressWarnings("unchecked")
 	public static void computeIdfScores(Dataset dataset, int n)
 		throws Exception
-	{					
-		URL inputUrl = ResourceUtils.resolveLocation(RteUtil.getInputFilePathForDataset(DATASET_DIR, dataset));
-		List<String> lines = FileUtils.readLines(new File(inputUrl.getPath())); 
-
+	{	
 		System.out.println("Computing character " + n + "-grams");
 			
 		File outputFile = new File(UTILS_DIR + "/character-ngrams-idf/" + n + "/" + dataset.toString() + ".txt");
@@ -39,7 +37,16 @@ public class CharacterNGramIdfValuesGenerator
 			System.out.println(" - skipping, already exists");
 		}
 		else
-		{			
+		{
+			// Input data
+			File inputDir = new File(UTILS_DIR + "/plaintexts/" + dataset.toString());
+			
+			Collection<File> files = FileUtils.listFiles(
+					inputDir,
+					new String[] { "txt" },
+					false);
+
+			// Map to hold the idf values
 			Map<String, Double> idfValues = new HashMap<String, Double>();
 			
 			CharacterNGramMeasure measure = new CharacterNGramMeasure(n, new HashMap<String, Double>());
@@ -47,9 +54,9 @@ public class CharacterNGramIdfValuesGenerator
 			// Get n-gram representations of texts
 			List<Set<String>> docs = new ArrayList<Set<String>>();
 			
-			for (String line : lines)
+			for (File file : files)
 			{			
-				Set<String> ngrams = measure.getNGrams(line);
+				Set<String> ngrams = measure.getNGrams(FileUtils.readFileToString(file));
 				
 				docs.add(ngrams);
 			}
@@ -74,7 +81,7 @@ public class CharacterNGramIdfValuesGenerator
 			// Compute the idf
 			for (String lemma : idfValues.keySet())
 			{
-				double idf = Math.log10(lines.size() / idfValues.get(lemma));
+				double idf = Math.log10(files.size() / idfValues.get(lemma));
 				idfValues.put(lemma, idf);
 			}
 			

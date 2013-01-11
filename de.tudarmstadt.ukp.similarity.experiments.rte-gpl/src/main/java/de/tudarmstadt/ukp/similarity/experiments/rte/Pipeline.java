@@ -57,14 +57,14 @@ public class Pipeline
 		try {
 			CommandLine cmd = parser.parse( options, args);
 			
-//			if (cmd.hasOption("d") && !cmd.hasOption("t"))
-//			{
-//				Dataset devset = Dataset.valueOf(cmd.getOptionValue("d"));
-//				
-//				System.out.println("*** " + devset.toString() + " ***");
-//				
-//				runDev(devset);
-//			}
+			if (cmd.hasOption("d") && !cmd.hasOption("t"))
+			{
+				Dataset devset = Dataset.valueOf(cmd.getOptionValue("d"));
+				
+				System.out.println("*** " + devset.toString() + " ***");
+				
+				runDev(devset);
+			}
 			if (cmd.hasOption("t") && cmd.hasOption("d"))
 			{
 				Dataset devset = Dataset.valueOf(cmd.getOptionValue("d"));
@@ -83,25 +83,24 @@ public class Pipeline
 		}
 	}
 	
-//	public static void runDev(Dataset devset)
-//		throws Exception
-//	{
-//		// Generate the features
-//		FeatureGeneration.generateFeatures(devset);
-//
-//		// Output the gold standard
-//		GoldstandardCreator.outputGoldstandard(devset);
-//		
-//		// Packages features in arff files
-//		Features2Arff.toArffFile(devset);
-//
-//		// Run the classifier
-//		Evaluator.runLinearRegressionCV(TRAIN, MSRpar, MSRvid, SMTeuroparl);
-//		
-//		// Evaluate
-//		Evaluator.runEvaluationMetric(TRAIN, PearsonAll, MSRpar, MSRvid, SMTeuroparl);
-//		Evaluator.runEvaluationMetric(TRAIN, PearsonMean, MSRpar, MSRvid, SMTeuroparl);
-//	}
+	public static void runDev(Dataset devset)
+		throws Exception
+	{
+		// Generate the features
+		FeatureGeneration.generateFeatures(devset);
+
+		// Output the gold standard
+		GoldstandardCreator.outputGoldstandard(devset);
+		
+		// Packages features in arff files
+		Features2Arff.toArffFile(devset, true);
+
+		// Run the classifier
+		Evaluator.runClassifierCV(devset);
+		
+		// Evaluate
+		Evaluator.runEvaluationMetric(Accuracy, devset);
+	}
 
 	public static void runTest(Dataset devset, Dataset testset)
 		throws Exception

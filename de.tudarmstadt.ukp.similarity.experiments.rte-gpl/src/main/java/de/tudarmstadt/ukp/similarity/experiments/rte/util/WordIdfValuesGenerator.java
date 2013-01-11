@@ -1,6 +1,7 @@
 package de.tudarmstadt.ukp.similarity.experiments.rte.util;
 
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.DATASET_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.FEATURES_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.UTILS_DIR;
 
 import java.io.File;
@@ -16,8 +17,10 @@ import java.util.Set;
 import org.apache.commons.io.FileUtils;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
+import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.jcas.JCas;
 import org.uimafit.factory.AnalysisEngineFactory;
+import org.uimafit.pipeline.SimplePipeline;
 import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
@@ -25,10 +28,15 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
+import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
+import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
+import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 
+import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
 import static org.uimafit.factory.AnalysisEngineFactory.createAggregateDescription;
+import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
 
 
 public class WordIdfValuesGenerator
@@ -38,12 +46,7 @@ public class WordIdfValuesGenerator
 	@SuppressWarnings("unchecked")
 	public static void computeIdfScores(Dataset dataset)
 		throws Exception
-	{	
-		URL inputUrl = ResourceUtils.resolveLocation(RteUtil.getInputFilePathForDataset(DATASET_DIR, dataset));
-		List<String> lines = FileUtils.readLines(new File(inputUrl.getPath()));
-		
-		Map<String,Double> idfValues = new HashMap<String,Double>();
-		
+	{							
 		File outputFile = new File(UTILS_DIR + "/word-idf/" + dataset.toString() + ".txt");
 		
 		System.out.println("Computing word idf values");
@@ -56,14 +59,25 @@ public class WordIdfValuesGenerator
 		{	
 			System.out.println(" - this may take a while...");
 			
+			// Input data
+			File inputDir = new File(UTILS_DIR + "/plaintexts/" + dataset.toString());
+			
+			Collection<File> files = FileUtils.listFiles(
+					inputDir,
+					new String[] { "txt" },
+					false);
+			
+			// Map to hold the idf values
+			Map<String,Double> idfValues = new HashMap<String,Double>();
+			
 			// Build up token representations of texts
 			Set<List<String>> docs = new HashSet<List<String>>();
 		
-			for (String line : lines)
+			for (File file : files)
 			{
 				List<String> doc = new ArrayList<String>();
 				
-				Collection<Lemma> lemmas = getLemmas(line);
+				Collection<Lemma> lemmas = getLemmas(FileUtils.readFileToString(file));
 				
 				for (Lemma lemma : lemmas)
 				{
@@ -101,7 +115,7 @@ public class WordIdfValuesGenerator
 			// Compute the idf
 			for (String lemma : idfValues.keySet())
 			{
-				double idf = Math.log10(lines.size() / idfValues.get(lemma));
+				double idf = Math.log10(files.size() / idfValues.get(lemma));
 				idfValues.put(lemma, idf);
 			}
 			

@@ -43,6 +43,7 @@ import weka.filters.unsupervised.attribute.Remove;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure;
+import de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
@@ -61,6 +62,8 @@ import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric;
 public class Evaluator
 {
 	public static final String LF = System.getProperty("line.separator");
+	
+	private static final WekaClassifier wekaClassifier = WekaClassifier.J48;
 	
 	public static void runClassifier(Dataset train, Dataset test)
 		throws UIMAException, IOException
@@ -85,7 +88,7 @@ public class Evaluator
 			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, Document.class.getName(),
 			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
 			    	ClassifierResource.class,
-			    	ClassifierResource.PARAM_CLASSIFIER, ClassifierSimilarityMeasure.WekaClassifier.SMO.toString(),
+			    	ClassifierResource.PARAM_CLASSIFIER, wekaClassifier.toString(),
 			    	ClassifierResource.PARAM_TRAIN_ARFF, MODELS_DIR + "/" + train.toString() + ".arff",
 			    	ClassifierResource.PARAM_TEST_ARFF, MODELS_DIR + "/" + test.toString() + ".arff")
 			    );
@@ -99,106 +102,103 @@ public class Evaluator
 		SimplePipeline.runPipeline(reader, aggr_seg, scorer, writer);
 	}
 	
-//	public static void runLinearRegressionCV(Mode mode, Dataset... datasets)
-//		throws Exception
-//	{
-//		for (Dataset dataset : datasets)
-//		{
-//			// Set parameters
-//			int folds = 10;
-//			Classifier baseClassifier = new LinearRegression();
-//			
-//			// Set up the random number generator
-//	    	long seed = new Date().getTime();			
-//			Random random = new Random(seed);	
-//	    	
-//			// Add IDs to the instances
-//			AddID.main(new String[] {"-i", MODELS_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".arff",
-// 								 	 "-o", MODELS_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + "-plusIDs.arff" });
-//			Instances data = DataSource.read(MODELS_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + "-plusIDs.arff");
-//			data.setClassIndex(data.numAttributes() - 1);				
-//			
-//	        // Instantiate the Remove filter
-//	        Remove removeIDFilter = new Remove();
-//        	removeIDFilter.setAttributeIndices("first");
-//			
-//			// Randomize the data
-//			data.randomize(random);
-//		
-//			// Perform cross-validation
-//		    Instances predictedData = null;
-//		    Evaluation eval = new Evaluation(data);
-//		    
-//		    for (int n = 0; n < folds; n++)
-//		    {
-//		    	Instances train = data.trainCV(folds, n, random);
-//		        Instances test = data.testCV(folds, n);
-//		        
-//		        // Apply log filter
-//			    Filter logFilter = new LogFilter();
-//		        logFilter.setInputFormat(train);
-//		        train = Filter.useFilter(train, logFilter);        
-//		        logFilter.setInputFormat(test);
-//		        test = Filter.useFilter(test, logFilter);
-//		        
-//		        // Copy the classifier
-//		        Classifier classifier = AbstractClassifier.makeCopy(baseClassifier);
-//		        	         		        
-//		        // Instantiate the FilteredClassifier
-//		        FilteredClassifier filteredClassifier = new FilteredClassifier();
-//		        filteredClassifier.setFilter(removeIDFilter);
-//		        filteredClassifier.setClassifier(classifier);
-//		        	 
-//		        // Build the classifier
-//		        filteredClassifier.buildClassifier(train);
-//		         
-//		        // Evaluate
-//		        eval.evaluateModel(classifier, test);
-//		        
-//		        // Add predictions
-//		        AddClassification filter = new AddClassification();
-//		        filter.setClassifier(classifier);
-//		        filter.setOutputClassification(true);
-//		        filter.setOutputDistribution(false);
-//		        filter.setOutputErrorFlag(true);
-//		        filter.setInputFormat(train);
-//		        Filter.useFilter(train, filter);  // trains the classifier
-//		        
-//		        Instances pred = Filter.useFilter(test, filter);  // performs predictions on test set
-//		        if (predictedData == null)
-//		        	predictedData = new Instances(pred, 0);
-//		        for (int j = 0; j < pred.numInstances(); j++)
-//		        	predictedData.add(pred.instance(j));		        
-//		    }
-//		    
-//		    // Prepare output scores
-//		    double[] scores = new double[predictedData.numInstances()];
-//		    
-//		    for (Instance predInst : predictedData)
-//		    {
-//		    	int id = new Double(predInst.value(predInst.attribute(0))).intValue() - 1;
-//		    	
-//		    	int valueIdx = predictedData.numAttributes() - 2;
-//		    	
-//		    	double value = predInst.value(predInst.attribute(valueIdx));
-//		    	
-//		    	scores[id] = value;
-//		    	
-//		    	// Limit to interval [0;5]
-//				if (scores[id] > 5.0) 	scores[id] = 5.0;
-//				if (scores[id] < 0.0)	scores[id] = 0.0;
-//		    }
-//		    
-//		    // Output
-//		    StringBuilder sb = new StringBuilder();
-//		    for (Double score : scores)
-//		    	sb.append(score.toString() + LF);
-//		    
-//		    FileUtils.writeStringToFile(
-//		    	new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".csv"),
-//		    	sb.toString());
-//		}
-//	}
+	public static void runClassifierCV(Dataset dataset)
+		throws Exception
+	{
+		// Set parameters
+		int folds = 10;
+		Classifier baseClassifier = ClassifierSimilarityMeasure.getClassifier(wekaClassifier);
+		
+		// Set up the random number generator
+    	long seed = new Date().getTime();			
+		Random random = new Random(seed);	
+    	
+		// Add IDs to the instances
+		AddID.main(new String[] {"-i", MODELS_DIR + "/" + dataset.toString() + ".arff",
+							 	 "-o", MODELS_DIR + "/" + dataset.toString() + "-plusIDs.arff" });
+		Instances data = DataSource.read(MODELS_DIR + "/" + dataset.toString() + "-plusIDs.arff");
+		data.setClassIndex(data.numAttributes() - 1);				
+		
+        // Instantiate the Remove filter
+        Remove removeIDFilter = new Remove();
+    	removeIDFilter.setAttributeIndices("first");
+		
+		// Randomize the data
+		data.randomize(random);
+	
+		// Perform cross-validation
+	    Instances predictedData = null;
+	    Evaluation eval = new Evaluation(data);
+	    
+	    for (int n = 0; n < folds; n++)
+	    {
+	    	Instances train = data.trainCV(folds, n, random);
+	        Instances test = data.testCV(folds, n);
+	        
+	        // Apply log filter
+//		    Filter logFilter = new LogFilter();
+//	        logFilter.setInputFormat(train);
+//	        train = Filter.useFilter(train, logFilter);        
+//	        logFilter.setInputFormat(test);
+//	        test = Filter.useFilter(test, logFilter);
+	        
+	        // Copy the classifier
+	        Classifier classifier = AbstractClassifier.makeCopy(baseClassifier);
+	        	         		        
+	        // Instantiate the FilteredClassifier
+	        FilteredClassifier filteredClassifier = new FilteredClassifier();
+	        filteredClassifier.setFilter(removeIDFilter);
+	        filteredClassifier.setClassifier(classifier);
+	        	 
+	        // Build the classifier
+	        filteredClassifier.buildClassifier(train);
+	         
+	        // Evaluate
+	        eval.evaluateModel(classifier, test);
+	        
+	        // Add predictions
+	        AddClassification filter = new AddClassification();
+	        filter.setClassifier(classifier);
+	        filter.setOutputClassification(true);
+	        filter.setOutputDistribution(false);
+	        filter.setOutputErrorFlag(true);
+	        filter.setInputFormat(train);
+	        Filter.useFilter(train, filter);  // trains the classifier
+	        
+	        Instances pred = Filter.useFilter(test, filter);  // performs predictions on test set
+	        if (predictedData == null)
+	        	predictedData = new Instances(pred, 0);
+	        for (int j = 0; j < pred.numInstances(); j++)
+	        	predictedData.add(pred.instance(j));		        
+	    }
+	    
+	    // Prepare output scores
+	    double[] scores = new double[predictedData.numInstances()];
+	    
+	    for (Instance predInst : predictedData)
+	    {
+	    	int id = new Double(predInst.value(predInst.attribute(0))).intValue() - 1;
+	    	
+	    	int valueIdx = predictedData.numAttributes() - 2;
+	    	
+	    	double value = predInst.value(predInst.attribute(valueIdx));
+	    	
+	    	scores[id] = value;
+	    	
+	    	// Limit to interval [0;5]
+			if (scores[id] > 5.0) 	scores[id] = 5.0;
+			if (scores[id] < 0.0)	scores[id] = 0.0;
+	    }
+	    
+	    // Output
+	    StringBuilder sb = new StringBuilder();
+	    for (Double score : scores)
+	    	sb.append(score.toString() + LF);
+	    
+	    FileUtils.writeStringToFile(
+	    	new File(OUTPUT_DIR + "/" + dataset.toString() + ".csv"),
+	    	sb.toString());
+	}
 
 	@SuppressWarnings("unchecked")
 	public static void runEvaluationMetric(EvaluationMetric metric, Dataset dataset)
