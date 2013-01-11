@@ -85,7 +85,7 @@ public class Evaluator
 			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, Document.class.getName(),
 			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
 			    	ClassifierResource.class,
-			    	ClassifierResource.PARAM_CLASSIFIER, ClassifierSimilarityMeasure.WekaClassifier.NAIVE_BAYES.toString(),
+			    	ClassifierResource.PARAM_CLASSIFIER, ClassifierSimilarityMeasure.WekaClassifier.SMO.toString(),
 			    	ClassifierResource.PARAM_TRAIN_ARFF, MODELS_DIR + "/" + train.toString() + ".arff",
 			    	ClassifierResource.PARAM_TEST_ARFF, MODELS_DIR + "/" + test.toString() + ".arff")
 			    );

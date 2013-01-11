@@ -21,6 +21,7 @@ import org.apache.uima.collection.CollectionReader;
 import org.uimafit.factory.AggregateBuilder;
 import org.uimafit.pipeline.SimplePipeline;
 
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
@@ -31,6 +32,7 @@ import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
+import de.tudarmstadt.ukp.similarity.algorithms.structure.PosNGramContainmentMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
@@ -41,8 +43,15 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.CharacterNGra
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.lexsub.TWSISubstituteWrapperResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.ResnikRelatednessResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.aggregate.MCS06AggregateResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.PosNGramContainmentResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.PosNGramJaccardResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.StopwordNGramContainmentMeasureResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.TokenPairDistanceResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.TokenPairOrderingResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.style.FunctionWordFrequenciesMeasureResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
 import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
@@ -193,59 +202,191 @@ public class FeatureGeneration
 		 * http://code.google.com/p/dkpro-similarity-asl/wiki/SettingUpTheResources
 		 */
 		
-//		// Resnik word similarity measure, aggregated according to Mihalcea et al. (2006)
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//				    	MCS06AggregateResource.class,
-//				    	MCS06AggregateResource.PARAM_TERM_SIMILARITY_RESOURCE, createExternalResourceDescription(
-//				    			ResnikRelatednessResource.class,
-//				    			ResnikRelatednessResource.PARAM_RESOURCE_NAME, "wordnet",
-//				    			ResnikRelatednessResource.PARAM_RESOURCE_LANGUAGE, "en"
-//				    			),
-//				    	MCS06AggregateResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/word-idf/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt"),
-//				Lemma.class.getName() + "/value",
-//				false,
-//				"word-sim",
-//				"MCS06_Resnik_WordNet"
-//				));
-//		
-//		// Lexical Substitution System wrapper for 
-//		// Resnik word similarity measure, aggregated according to Mihalcea et al. (2006)
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//						TWSISubstituteWrapperResource.class,
-//						TWSISubstituteWrapperResource.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
-//						    	MCS06AggregateResource.class,
-//						    	MCS06AggregateResource.PARAM_TERM_SIMILARITY_RESOURCE, createExternalResourceDescription(
-//						    			ResnikRelatednessResource.class,
-//						    			ResnikRelatednessResource.PARAM_RESOURCE_NAME, "wordnet",
-//						    			ResnikRelatednessResource.PARAM_RESOURCE_LANGUAGE, "en"
-//						    			),
-//						    	MCS06AggregateResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/word-idf/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt")),
-//				"word-sim",
-//				"TWSI_MCS06_Resnik_WordNet"
-//				));
-//				
-//		// Explicit Semantic Analysis
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//				    	VectorIndexSourceRelatednessResource.class,
-//				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wordnet_eng_lem_nc_c"),
-//				Lemma.class.getName() + "/value",
-//				false,
-//				"esa",
-//				"ESA_WordNet"
-//				));
-//		
-//		configs.add(new FeatureConfig(
-//				createExternalResourceDescription(
-//				    	VectorIndexSourceRelatednessResource.class,
-//				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wiktionary_en"),
-//				Lemma.class.getName() + "/value",
-//				false,
-//				"esa",
-//				"ESA_Wiktionary"
-//				));
+		// Resnik word similarity measure, aggregated according to Mihalcea et al. (2006)
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	MCS06AggregateResource.class,
+				    	MCS06AggregateResource.PARAM_TERM_SIMILARITY_RESOURCE, createExternalResourceDescription(
+				    			ResnikRelatednessResource.class,
+				    			ResnikRelatednessResource.PARAM_RESOURCE_NAME, "wordnet",
+				    			ResnikRelatednessResource.PARAM_RESOURCE_LANGUAGE, "en"
+				    			),
+				    	MCS06AggregateResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/word-idf/" + dataset.toString() + ".txt"),
+				Lemma.class.getName() + "/value",
+				false,
+				"word-sim",
+				"MCS06_Resnik_WordNet"
+				));
+		
+		// Lexical Substitution System wrapper for 
+		// Resnik word similarity measure, aggregated according to Mihalcea et al. (2006)
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						TWSISubstituteWrapperResource.class,
+						TWSISubstituteWrapperResource.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
+						    	MCS06AggregateResource.class,
+						    	MCS06AggregateResource.PARAM_TERM_SIMILARITY_RESOURCE, createExternalResourceDescription(
+						    			ResnikRelatednessResource.class,
+						    			ResnikRelatednessResource.PARAM_RESOURCE_NAME, "wordnet",
+						    			ResnikRelatednessResource.PARAM_RESOURCE_LANGUAGE, "en"
+						    			),
+						    	MCS06AggregateResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/word-idf/" + dataset.toString() + ".txt")),
+				"word-sim",
+				"TWSI_MCS06_Resnik_WordNet"
+				));
+				
+		// Explicit Semantic Analysis
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	VectorIndexSourceRelatednessResource.class,
+				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wordnet_eng_lem_nc_c"),
+				Lemma.class.getName() + "/value",
+				false,
+				"esa",
+				"ESA_WordNet"
+				));
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	VectorIndexSourceRelatednessResource.class,
+				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wiktionary_en"),
+				Lemma.class.getName() + "/value",
+				false,
+				"esa",
+				"ESA_Wiktionary"
+				));
+		
+		// ** Structure **
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						TokenPairDistanceResource.class),
+				Token.class.getName(),
+				false,
+				"structure",
+				"TokenPairDistanceMeasure"
+				));
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						TokenPairOrderingResource.class),
+				Token.class.getName(),
+				false,
+				"structure",
+				"TokenPairOrderingMeasure"
+				));
+		
+		for (int n = 2; n <= 7; n++)
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+							StopwordNGramContainmentMeasureResource.class,
+							StopwordNGramContainmentMeasureResource.PARAM_N, new Integer(n).toString(),
+							StopwordNGramContainmentMeasureResource.PARAM_STOPWORD_LIST_LOCATION, "classpath:/stopwords/stopwords_english_punctuation.txt"),
+					Token.class.getName(),
+					false,
+					"structure",
+					"StopwordNGramContainmentMeasure_" + n + "_english-punctuation"
+					));
+		
+		for (int n = 2; n <= 7; n++)
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+							StopwordNGramContainmentMeasureResource.class,
+							StopwordNGramContainmentMeasureResource.PARAM_N, new Integer(n).toString(),
+							StopwordNGramContainmentMeasureResource.PARAM_STOPWORD_LIST_LOCATION, "classpath:/stopwords/function-words-mosteller-wallace.txt"),
+					Token.class.getName(),
+					false,
+					"structure",
+					"StopwordNGramContainmentMeasure_" + n + "_mosteller-wallace"
+					));
+		
+		for (int n = 2; n <= 7; n++)
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+							StopwordNGramContainmentMeasureResource.class,
+							StopwordNGramContainmentMeasureResource.PARAM_N, new Integer(n).toString(),
+							StopwordNGramContainmentMeasureResource.PARAM_STOPWORD_LIST_LOCATION, "classpath:/stopwords/stopwords-bnc-stamatatos.txt"),
+					Token.class.getName(),
+					false,
+					"structure",
+					"StopwordNGramContainmentMeasure_" + n + "_stamatatos"
+					));
+		
+		for (int n = 1; n <= 7; n++)
+		{
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+							PosNGramJaccardResource.class,
+							PosNGramJaccardResource.PARAM_N, new Integer(n).toString()),
+					POS.class.getName(),
+					false,
+					"structure",
+					"PosNGramJaccardMeasure_" + n
+					));
+		}
+			
+		for (int n = 1; n <= 7; n++)
+		{
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+							PosNGramContainmentResource.class,
+							PosNGramContainmentResource.PARAM_N, new Integer(n).toString()),
+					POS.class.getName(),
+					false,
+					"structure",
+					"PosNGramContainmentMeasure_" + n
+					));
+		}
+		
+		// ** Style **
+
+//		configs.add(new SemEvalConfig(
+//				new MTLDComparator(),
+//				"style/text-statistics"));
+//		configs.add(new SemEvalConfig(
+//				new TypeTokenRatioComparator(),
+//				"style/text-statistics"));
+//		configs.add(new SemEvalConfig(
+//				new AvgCharactersPerTokenMeasure(),
+//				"style/text-statistics"));
+//		configs.add(new SemEvalConfig(
+//				new AvgTokensPerSentenceMeasure(),
+//				"style/text-statistics"));
+//		configs.add(new SemEvalConfig(
+//				new SentenceRatioComparator(),
+//				"style/text-statistics"));
+//		configs.add(new SemEvalConfig(
+//				new TokenRatioComparator(),
+//				"style/text-statistics"));
+
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						FunctionWordFrequenciesMeasureResource.class,
+						FunctionWordFrequenciesMeasureResource.PARAM_FUNCTION_WORD_LIST_LOCATION, "classpath:/stopwords/stopwords_english_punctuation.txt"),
+				Token.class.getName(),
+				false,
+				"style",
+				"FunctionWordFrequenciesMeasure_english-punctuation"
+				));
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						FunctionWordFrequenciesMeasureResource.class,
+						FunctionWordFrequenciesMeasureResource.PARAM_FUNCTION_WORD_LIST_LOCATION, "classpath:/stopwords/function-words-mosteller-wallace.txt"),
+				Token.class.getName(),
+				false,
+				"style",
+				"FunctionWordFrequenciesMeasure_mosteller-wallace"
+				));
+		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+						FunctionWordFrequenciesMeasureResource.class,
+						FunctionWordFrequenciesMeasureResource.PARAM_FUNCTION_WORD_LIST_LOCATION, "classpath:/stopwords/stopwords-bnc-stamatatos.txt"),
+				Token.class.getName(),
+				false,
+				"style",
+				"FunctionWordFrequenciesMeasure_stamatatos"
+				));
 
 		
 		// Run the pipeline		

@@ -115,8 +115,8 @@ public class Pipeline
 		GoldstandardCreator.outputGoldstandard(testset);
 
 		// Packages features in arff files
-		Features2Arff.toArffFile(devset);
-		Features2Arff.toArffFile(testset);
+		Features2Arff.toArffFile(devset, true);
+		Features2Arff.toArffFile(testset, false);
 
 		// Run the classifer
 		Evaluator.runClassifier(devset, testset);

@@ -25,18 +25,22 @@ public class Features2Arff
 {
 	public static final String LF = System.getProperty("line.separator");
 	
-	public static void toArffFile(Dataset... datasets)
+	public static void toArffFile(Dataset dataset, boolean writeGold)
 		throws IOException
-	{
-		for (Dataset dataset : datasets)
-		{			
+	{					
+		if (writeGold)
+		{
 			String path = GOLD_DIR + "/" + dataset.toString() + ".txt";
-			
+		
 //			PathMatchingResourcePatternResolver r = new PathMatchingResourcePatternResolver();
-//	        Resource res = r.getResource(path);			
+//		    Resource res = r.getResource(path);			
 //			toArffFile(dataset, res.getFile());
 			
 			toArffFile(dataset, new File(path));
+		}
+		else
+		{
+			toArffFile(dataset, null);
 		}
 	}
 		
@@ -91,8 +95,8 @@ public class Features2Arff
 					String value = line;	// There's just the score on the line, nothing else.
 					
 					// Limit to [0;5] interval
-//					if (value > 5.0) value = 5.0;
-//					if (value < 0.0) value = 0.0;
+					if (Double.parseDouble(value) > 5.0) value = "5.0";
+					if (Double.parseDouble(value) < 0.0) value = "0.0";
 					
 					// Get doc object in data list
 					List<String> docObj;
@@ -122,7 +126,7 @@ public class Features2Arff
 		{
 			lines = new ArrayList<String>();
 			for (int i = 0; i < FileUtils.readLines(csvFiles.iterator().next()).size(); i++)
-				lines.add("0.0");
+				lines.add("FALSE");
 		}
 			
 		for (int doc = 1; doc <= lines.size(); doc++)
