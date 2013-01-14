@@ -63,7 +63,7 @@ public class Evaluator
 {
 	public static final String LF = System.getProperty("line.separator");
 	
-	private static final WekaClassifier wekaClassifier = WekaClassifier.J48;
+	private static final WekaClassifier wekaClassifier = WekaClassifier.NAIVE_BAYES;
 	
 	public static void runClassifier(Dataset train, Dataset test)
 		throws UIMAException, IOException
@@ -122,7 +122,7 @@ public class Evaluator
         // Instantiate the Remove filter
         Remove removeIDFilter = new Remove();
     	removeIDFilter.setAttributeIndices("first");
-		
+				
 		// Randomize the data
 		data.randomize(random);
 	
@@ -152,9 +152,9 @@ public class Evaluator
 	        	 
 	        // Build the classifier
 	        filteredClassifier.buildClassifier(train);
-	         
+	        
 	        // Evaluate
-	        eval.evaluateModel(classifier, test);
+	        eval.evaluateModel(filteredClassifier, test);
 	        
 	        // Add predictions
 	        AddClassification filter = new AddClassification();
@@ -171,6 +171,9 @@ public class Evaluator
 	        for (int j = 0; j < pred.numInstances(); j++)
 	        	predictedData.add(pred.instance(j));		        
 	    }
+	    
+	    System.out.println(eval.toSummaryString());
+	    System.out.println(eval.toMatrixString());
 	    
 	    // Prepare output scores
 	    double[] scores = new double[predictedData.numInstances()];
