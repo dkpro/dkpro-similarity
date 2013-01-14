@@ -35,6 +35,7 @@ import weka.classifiers.functions.LinearRegression;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.Instance;
 import weka.core.Instances;
+import weka.core.converters.ConverterUtils.DataSink;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.supervised.attribute.AddClassification;
@@ -51,6 +52,7 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.ClassifierResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
+import de.tudarmstadt.ukp.similarity.ml.filters.LogFilter;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric;
@@ -63,7 +65,7 @@ public class Evaluator
 {
 	public static final String LF = System.getProperty("line.separator");
 	
-	private static final WekaClassifier wekaClassifier = WekaClassifier.NAIVE_BAYES;
+	private static final WekaClassifier wekaClassifier = WekaClassifier.SMO;
 	
 	public static void runClassifier(Dataset train, Dataset test)
 		throws UIMAException, IOException
@@ -136,11 +138,11 @@ public class Evaluator
 	        Instances test = data.testCV(folds, n);
 	        
 	        // Apply log filter
-//		    Filter logFilter = new LogFilter();
-//	        logFilter.setInputFormat(train);
-//	        train = Filter.useFilter(train, logFilter);        
-//	        logFilter.setInputFormat(test);
-//	        test = Filter.useFilter(test, logFilter);
+		    Filter logFilter = new LogFilter();
+	        logFilter.setInputFormat(train);
+	        train = Filter.useFilter(train, logFilter);        
+	        logFilter.setInputFormat(test);
+	        test = Filter.useFilter(test, logFilter);
 	        
 	        // Copy the classifier
 	        Classifier classifier = AbstractClassifier.makeCopy(baseClassifier);
@@ -176,7 +178,7 @@ public class Evaluator
 	    System.out.println(eval.toMatrixString());
 	    
 	    // Prepare output scores
-	    double[] scores = new double[predictedData.numInstances()];
+	    String[] scores = new String[predictedData.numInstances()];
 	    
 	    for (Instance predInst : predictedData)
 	    {
@@ -184,23 +186,24 @@ public class Evaluator
 	    	
 	    	int valueIdx = predictedData.numAttributes() - 2;
 	    	
-	    	double value = predInst.value(predInst.attribute(valueIdx));
+	    	String value = predInst.stringValue(predInst.attribute(valueIdx));
 	    	
 	    	scores[id] = value;
-	    	
-	    	// Limit to interval [0;5]
-			if (scores[id] > 5.0) 	scores[id] = 5.0;
-			if (scores[id] < 0.0)	scores[id] = 0.0;
 	    }
 	    
-	    // Output
+	    // Output classifications
 	    StringBuilder sb = new StringBuilder();
-	    for (Double score : scores)
+	    for (String score : scores)
 	    	sb.append(score.toString() + LF);
 	    
 	    FileUtils.writeStringToFile(
 	    	new File(OUTPUT_DIR + "/" + dataset.toString() + ".csv"),
 	    	sb.toString());
+	    
+	    // Output prediction arff
+	    DataSink.write(
+	    	OUTPUT_DIR + "/" + dataset.toString() + ".predicted.arff",
+	    	predictedData);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -211,30 +214,12 @@ public class Evaluator
 			
 		if (metric == Accuracy)
 		{
-			List<Double> concatExp = new ArrayList<Double>();
-			List<Double> concatGS = new ArrayList<Double>();
-			
 			// Read gold scores
-			List<String> goldLines = FileUtils.readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"));
-			
-			// Transform string into double values (i.e. TRUE into 1.0)
-			List<Double> goldScores = new ArrayList<Double>();
-			for (String line : goldLines)
-			{
-				if (line.equals("TRUE"))			
-					goldScores.add(1.0);
-				else
-					goldScores.add(0.0);
-			}
-			
-			// Read the output
-			List<String> expLines = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + ".csv"));
-			
-			// Transform to doubles
-			List<Double> expScores = new ArrayList<Double>();
-			for (String line : expLines)
-				expScores.add(Double.parseDouble(line));
-			
+			List<String> goldScores = FileUtils.readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"));
+						
+			// Read the experimental scores
+			List<String> expScores = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + ".csv"));
+						
 			// Compute the accuracy
 			double acc = 0.0;
 			for (int i = 0; i < goldScores.size(); i++)
@@ -248,6 +233,8 @@ public class Evaluator
 		}
 
 		FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + dataset.toString() + "_" + metric.toString() + ".txt"), sb.toString());
+		
+		System.out.println("Accuracy: " + sb.toString());
 	}
 //	
 //	@SuppressWarnings("unchecked")
