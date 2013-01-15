@@ -29,6 +29,9 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.CosineSimilarity;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.CosineSimilarity.NormalizationMode;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.CosineSimilarity.WeightingModeTf;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
@@ -43,6 +46,7 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.CharacterNGramResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.CosineSimilarityResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexsub.TWSISubstituteWrapperResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.ResnikRelatednessResource;
@@ -59,6 +63,7 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.style.MTLDResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.style.SentenceRatioResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.style.TokenRatioResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.style.TypeTokenRatioResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.LatentSemanticAnalysisResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
 import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
@@ -139,8 +144,17 @@ public class FeatureGeneration
 				"LongestCommonSubstringComparator"
 				));
 		
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	CosineSimilarityResource.class),
+				Lemma.class.getName() + "/value",
+				false,
+				"string",
+				"CosineSimilarity"
+				));
+		
 		// n-gram models
-		ngrams_n = new int[] { 2, 3, 4 };
+		ngrams_n = new int[] { 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 		for (int n : ngrams_n)
 		{
 			configs.add(new FeatureConfig(
@@ -155,7 +169,21 @@ public class FeatureGeneration
 					));
 		}
 		
-		ngrams_n = new int[] { 1, 2 };
+		ngrams_n = new int[] { 1, 2, 3, 4, 5 };
+		for (int n : ngrams_n)
+		{
+			configs.add(new FeatureConfig(
+					createExternalResourceDescription(
+					    	WordNGramContainmentResource.class,
+					    	WordNGramContainmentResource.PARAM_N, new Integer(n).toString()),
+					Token.class.getName(),
+					false,
+					"n-grams",
+					"WordNGramContainmentMeasure_" + n
+					));
+		}
+		
+		ngrams_n = new int[] { 1, 2, 3, 4, 5 };
 		for (int n : ngrams_n)
 		{
 			configs.add(new FeatureConfig(
@@ -169,7 +197,7 @@ public class FeatureGeneration
 					));
 		}
 		
-		ngrams_n = new int[] { 1, 3, 4 };
+		ngrams_n = new int[] { 1, 2, 3, 4, 5 };
 		for (int n : ngrams_n)
 		{
 			configs.add(new FeatureConfig(
@@ -183,7 +211,7 @@ public class FeatureGeneration
 					));			
 		}
 		
-		ngrams_n = new int[] { 2, 4 };
+		ngrams_n = new int[] { 1, 2, 3, 4, 5 };
 		for (int n : ngrams_n)
 		{
 			configs.add(new FeatureConfig(
@@ -265,6 +293,17 @@ public class FeatureGeneration
 				false,
 				"esa",
 				"ESA_Wikipedia"
+				));
+		
+		// LSA
+		configs.add(new FeatureConfig(
+				createExternalResourceDescription(
+				    	LatentSemanticAnalysisResource.class,
+				    	LatentSemanticAnalysisResource.PARAM_INPUT_DIR, UTILS_DIR + "/plaintexts/" + dataset.toString()),
+				Token.class.getName(),
+				false,
+				"lsa",
+				"LSA"
 				));
 		
 		// ** Structure **

@@ -1,0 +1,116 @@
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: TRUE, FALSE
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.2528 * (normalized) n-grams/WordNGramContainmentMeasure_5_stopword-filtered
+ +      -0.4982 * (normalized) n-grams/CharacterNGramMeasure_4
+ +      -0.594  * (normalized) n-grams/WordNGramContainmentMeasure_2
+ +      -0.3748 * (normalized) n-grams/WordNGramJaccardMeasure_2
+ +      -0.5815 * (normalized) n-grams/CharacterNGramMeasure_6
+ +       0.0016 * (normalized) n-grams/CharacterNGramMeasure_10
+ +      -0.6493 * (normalized) n-grams/WordNGramContainmentMeasure_1
+ +       0.0068 * (normalized) n-grams/WordNGramContainmentMeasure_4_stopword-filtered
+ +      -0.8057 * (normalized) n-grams/WordNGramJaccardMeasure_1
+ +      -0.3748 * (normalized) n-grams/WordNGramJaccardMeasure_2_stopword-filtered
+ +      -0.3374 * (normalized) n-grams/CharacterNGramMeasure_7
+ +      -0.5819 * (normalized) n-grams/CharacterNGramMeasure_3
+ +      -0.594  * (normalized) n-grams/WordNGramContainmentMeasure_2_stopword-filtered
+ +      -0.187  * (normalized) n-grams/WordNGramContainmentMeasure_3_stopword-filtered
+ +      -0.1108 * (normalized) n-grams/CharacterNGramMeasure_8
+ +      -0.5961 * (normalized) n-grams/CharacterNGramMeasure_5
+ +      -1.0309 * (normalized) n-grams/CharacterNGramMeasure_2
+ +       0.1118 * (normalized) n-grams/WordNGramJaccardMeasure_5
+ +      -0.6493 * (normalized) n-grams/WordNGramContainmentMeasure_1_stopword-filtered
+ +      -0.0715 * (normalized) n-grams/CharacterNGramMeasure_9
+ +       0.0236 * (normalized) n-grams/WordNGramJaccardMeasure_4
+ +       0.0236 * (normalized) n-grams/WordNGramJaccardMeasure_4_stopword-filtered
+ +      -0.0814 * (normalized) n-grams/WordNGramJaccardMeasure_3_stopword-filtered
+ +       0.2528 * (normalized) n-grams/WordNGramContainmentMeasure_5
+ +       0.1118 * (normalized) n-grams/WordNGramJaccardMeasure_5_stopword-filtered
+ +      -0.8057 * (normalized) n-grams/WordNGramJaccardMeasure_1_stopword-filtered
+ +      -0.187  * (normalized) n-grams/WordNGramContainmentMeasure_3
+ +       0.0068 * (normalized) n-grams/WordNGramContainmentMeasure_4
+ +      -0.0814 * (normalized) n-grams/WordNGramJaccardMeasure_3
+ +       1.0205 * (normalized) word-sim/TWSI_MCS06_Resnik_WordNet
+ +      -1.6524 * (normalized) word-sim/MCS06_Resnik_WordNet
+ +       1.2417 * (normalized) lsa/LSA
+ +       0.8513 * (normalized) style/FunctionWordFrequenciesMeasure_mosteller-wallace
+ +      -1.3404 * (normalized) style/TokenRatioComparator
+ +       1.8338 * (normalized) style/SentenceRatioComparator
+ +      -0.4372 * (normalized) style/MTLDComparator
+ +       0.6536 * (normalized) style/AvgCharactersPerTokenComparator
+ +      -0.3867 * (normalized) style/FunctionWordFrequenciesMeasure_english-punctuation
+ +      -1.4802 * (normalized) style/TypeTokenRatioComparator
+ +       0.0208 * (normalized) style/FunctionWordFrequenciesMeasure_stamatatos
+ +       0.461  * (normalized) string/CosineSimilarity
+ +       0.6912 * (normalized) string/LongestCommonSubsequenceNormComparator
+ +       0.4271 * (normalized) string/GreedyStringTiling_3
+ +       0.3226 * (normalized) string/LongestCommonSubstringComparator
+ +       0.4749 * (normalized) string/LongestCommonSubsequenceComparator
+ +       0.3017 * (normalized) esa/ESA_Wiktionary
+ +       0.0937 * (normalized) esa/ESA_WordNet
+ +       0.0764 * (normalized) esa/ESA_Wikipedia
+ +       0.0813 * (normalized) structure/StopwordNGramContainmentMeasure_3_english-punctuation
+ +       0.1963 * (normalized) structure/TokenPairDistanceMeasure
+ +      -0.7182 * (normalized) structure/PosNGramJaccardMeasure_2
+ +       0.0174 * (normalized) structure/StopwordNGramContainmentMeasure_5_english-punctuation
+ +       0.0194 * (normalized) structure/StopwordNGramContainmentMeasure_6_stamatatos
+ +       0.5084 * (normalized) structure/StopwordNGramContainmentMeasure_4_stamatatos
+ +      -0.0698 * (normalized) structure/StopwordNGramContainmentMeasure_6_mosteller-wallace
+ +      -0.0282 * (normalized) structure/StopwordNGramContainmentMeasure_7_stamatatos
+ +       1.8572 * (normalized) structure/PosNGramContainmentMeasure_1
+ +      -0.4978 * (normalized) structure/TokenPairOrderingMeasure
+ +      -0.2782 * (normalized) structure/StopwordNGramContainmentMeasure_5_mosteller-wallace
+ +      -0.4914 * (normalized) structure/PosNGramContainmentMeasure_3
+ +      -0.9814 * (normalized) structure/PosNGramContainmentMeasure_2
+ +      -0.1234 * (normalized) structure/StopwordNGramContainmentMeasure_7_mosteller-wallace
+ +       0.6094 * (normalized) structure/PosNGramJaccardMeasure_5
+ +      -0.5618 * (normalized) structure/StopwordNGramContainmentMeasure_7_english-punctuation
+ +       1.108  * (normalized) structure/PosNGramJaccardMeasure_1
+ +       0.0552 * (normalized) structure/StopwordNGramContainmentMeasure_5_stamatatos
+ +       0.6543 * (normalized) structure/PosNGramContainmentMeasure_5
+ +       0.443  * (normalized) structure/PosNGramContainmentMeasure_7
+ +       0.2712 * (normalized) structure/StopwordNGramContainmentMeasure_2_mosteller-wallace
+ +       0.8501 * (normalized) structure/PosNGramContainmentMeasure_6
+ +       0.214  * (normalized) structure/PosNGramContainmentMeasure_4
+ +       0.2806 * (normalized) structure/StopwordNGramContainmentMeasure_4_mosteller-wallace
+ +      -0.8265 * (normalized) structure/StopwordNGramContainmentMeasure_2_english-punctuation
+ +       0.6391 * (normalized) structure/PosNGramJaccardMeasure_6
+ +      -0.6477 * (normalized) structure/StopwordNGramContainmentMeasure_6_english-punctuation
+ +       0.2441 * (normalized) structure/StopwordNGramContainmentMeasure_4_english-punctuation
+ +       0.3131 * (normalized) structure/PosNGramJaccardMeasure_7
+ +      -0.0029 * (normalized) structure/StopwordNGramContainmentMeasure_3_mosteller-wallace
+ +      -0.3162 * (normalized) structure/StopwordNGramContainmentMeasure_2_stamatatos
+ +      -0.2405 * (normalized) structure/PosNGramJaccardMeasure_3
+ +       0.438  * (normalized) structure/PosNGramJaccardMeasure_4
+ +      -0.3682 * (normalized) structure/StopwordNGramContainmentMeasure_3_stamatatos
+ +       1.3472
+
+Number of kernel evaluations: 26655 (88.841% cached)
+
+
+
+Correctly Classified Instances         421               52.625  %
+Incorrectly Classified Instances       379               47.375  %
+Kappa statistic                          0.0525
+Mean absolute error                      0.4738
+Root mean squared error                  0.6883
+Relative absolute error                 94.75   %
+Root relative squared error            137.6582 %
+Coverage of cases (0.95 level)          52.625  %
+Mean rel. region size (0.95 level)      50      %
+Total Number of Instances              800     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 214 186 |   a = TRUE
+ 193 207 |   b = FALSE
+

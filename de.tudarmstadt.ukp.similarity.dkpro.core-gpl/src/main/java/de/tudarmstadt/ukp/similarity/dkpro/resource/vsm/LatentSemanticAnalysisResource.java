@@ -35,11 +35,11 @@ public class LatentSemanticAnalysisResource
     protected String cacheSize;
     
     public static final String PARAM_PERSISTENTLY_STORE_MODEL = "PersistentlyStoreModel";
-    @ConfigurationParameter(name = PARAM_PERSISTENTLY_STORE_MODEL, mandatory = true)
+    @ConfigurationParameter(name = PARAM_PERSISTENTLY_STORE_MODEL, mandatory = true, defaultValue="false")
     protected boolean storeModelPersistently;
     
     public static final String PARAM_MODEL_DIR = "ModelDir";
-    @ConfigurationParameter(name = PARAM_MODEL_DIR, mandatory = true)
+    @ConfigurationParameter(name = PARAM_MODEL_DIR, mandatory = true, defaultValue="")
     protected File modelDir;
     
 	

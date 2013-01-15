@@ -33,7 +33,8 @@ public class Pipeline
 
 	public enum EvaluationMetric
 	{
-		Accuracy
+		Accuracy,
+		CWS
 	}
 	
 	public static String DATASET_DIR;
@@ -100,6 +101,7 @@ public class Pipeline
 		
 		// Evaluate
 		Evaluator.runEvaluationMetric(Accuracy, devset);
+		Evaluator.runEvaluationMetric(CWS, devset);
 	}
 
 	public static void runTest(Dataset devset, Dataset testset)
@@ -115,12 +117,13 @@ public class Pipeline
 
 		// Packages features in arff files
 		Features2Arff.toArffFile(devset, true);
-		Features2Arff.toArffFile(testset, false);
+		Features2Arff.toArffFile(testset, true);
 
 		// Run the classifer
 		Evaluator.runClassifier(devset, testset);
 
 		// Evaluate
 		Evaluator.runEvaluationMetric(Accuracy, testset);
+		Evaluator.runEvaluationMetric(CWS, testset);
 	}
 }

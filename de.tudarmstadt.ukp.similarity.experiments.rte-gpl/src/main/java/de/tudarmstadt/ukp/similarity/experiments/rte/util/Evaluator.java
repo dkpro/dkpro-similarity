@@ -13,12 +13,15 @@ import static org.uimafit.factory.ExternalResourceFactory.createExternalResource
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
@@ -31,10 +34,13 @@ import org.uimafit.pipeline.SimplePipeline;
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
+import weka.classifiers.evaluation.output.prediction.AbstractOutput;
+import weka.classifiers.evaluation.output.prediction.PlainText;
 import weka.classifiers.functions.LinearRegression;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.Instance;
 import weka.core.Instances;
+import weka.core.converters.ArffSaver;
 import weka.core.converters.ConverterUtils.DataSink;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
@@ -67,41 +73,165 @@ public class Evaluator
 	
 	private static final WekaClassifier wekaClassifier = WekaClassifier.SMO;
 	
-	public static void runClassifier(Dataset train, Dataset test)
-		throws UIMAException, IOException
+//	public static void runClassifier(Dataset train, Dataset test)
+//		throws UIMAException, IOException
+//	{
+//		CollectionReader reader = createCollectionReader(
+//				RTECorpusReader.class,
+//				RTECorpusReader.PARAM_INPUT_FILE, RteUtil.getInputFilePathForDataset(DATASET_DIR, test),
+//				RTECorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
+//		
+//		AnalysisEngineDescription seg = createPrimitiveDescription(
+//				BreakIteratorSegmenter.class);
+//		
+//		AggregateBuilder builder = new AggregateBuilder();
+//		builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
+//		builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
+//		AnalysisEngine aggr_seg = builder.createAggregate();
+//
+//		AnalysisEngine scorer = createPrimitive(
+//				SimilarityScorer.class,
+//			    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
+//			    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
+//			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, Document.class.getName(),
+//			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
+//			    	ClassifierResource.class,
+//			    	ClassifierResource.PARAM_CLASSIFIER, wekaClassifier.toString(),
+//			    	ClassifierResource.PARAM_TRAIN_ARFF, MODELS_DIR + "/" + train.toString() + ".arff",
+//			    	ClassifierResource.PARAM_TEST_ARFF, MODELS_DIR + "/" + test.toString() + ".arff")
+//			    );
+//		
+//		AnalysisEngine writer = createPrimitive(
+//				SimilarityScoreWriter.class,
+//				SimilarityScoreWriter.PARAM_OUTPUT_FILE, OUTPUT_DIR + "/" + test.toString() + ".csv",
+//				SimilarityScoreWriter.PARAM_OUTPUT_SCORES_ONLY, true,
+//				SimilarityScoreWriter.PARAM_OUTPUT_GOLD_SCORES, false);
+//
+//		SimplePipeline.runPipeline(reader, aggr_seg, scorer, writer);
+//	}
+	
+	public static void runClassifier(Dataset trainDataset, Dataset testDataset)
+			throws Exception
 	{
-		CollectionReader reader = createCollectionReader(
-				RTECorpusReader.class,
-				RTECorpusReader.PARAM_INPUT_FILE, RteUtil.getInputFilePathForDataset(DATASET_DIR, test),
-				RTECorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
+		Classifier baseClassifier = ClassifierSimilarityMeasure.getClassifier(wekaClassifier);
 		
-		AnalysisEngineDescription seg = createPrimitiveDescription(
-				BreakIteratorSegmenter.class);
+		// Set up the random number generator
+    	long seed = new Date().getTime();			
+		Random random = new Random(seed);	
+				
+		// Add IDs to the train instances and get the instances
+		AddID.main(new String[] {"-i", MODELS_DIR + "/" + trainDataset.toString() + ".arff",
+							 	 "-o", MODELS_DIR + "/" + trainDataset.toString() + "-plusIDs.arff" });
+		Instances train = DataSource.read(MODELS_DIR + "/" + trainDataset.toString() + "-plusIDs.arff");
+		train.setClassIndex(train.numAttributes() - 1);	
 		
-		AggregateBuilder builder = new AggregateBuilder();
-		builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
-		builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
-		AnalysisEngine aggr_seg = builder.createAggregate();
+		// Add IDs to the test instances and get the instances
+		AddID.main(new String[] {"-i", MODELS_DIR + "/" + testDataset.toString() + ".arff",
+							 	 "-o", MODELS_DIR + "/" + testDataset.toString() + "-plusIDs.arff" });
+		Instances test = DataSource.read(MODELS_DIR + "/" + testDataset.toString() + "-plusIDs.arff");
+		test.setClassIndex(test.numAttributes() - 1);		
+		
+		// Instantiate the Remove filter
+        Remove removeIDFilter = new Remove();
+    	removeIDFilter.setAttributeIndices("first");
+				
+		// Randomize the data
+		test.randomize(random);
+		
+		// Apply log filter
+//	    Filter logFilter = new LogFilter();
+//	    logFilter.setInputFormat(train);
+//	    train = Filter.useFilter(train, logFilter);        
+//	    logFilter.setInputFormat(test);
+//	    test = Filter.useFilter(test, logFilter);
+        
+        // Copy the classifier
+        Classifier classifier = AbstractClassifier.makeCopy(baseClassifier);
+        	
+        // Instantiate the FilteredClassifier
+        FilteredClassifier filteredClassifier = new FilteredClassifier();
+        filteredClassifier.setFilter(removeIDFilter);
+        filteredClassifier.setClassifier(classifier);
+        	 
+        // Build the classifier
+        filteredClassifier.buildClassifier(train);
+		
+        // Prepare the output buffer 
+        AbstractOutput output = new PlainText();
+        output.setBuffer(new StringBuffer());
+        output.setHeader(test);
+        output.setAttributes("first");
+        
+		Evaluation eval = new Evaluation(train);
+        eval.evaluateModel(filteredClassifier, test, output);
+        
+        // Convert predictions to CSV
+        // Format: inst#, actual, predicted, error, probability, (ID)
+        String[] scores = new String[new Double(eval.numInstances()).intValue()];
+        double[] probabilities = new double[new Double(eval.numInstances()).intValue()];
+        for (String line : output.getBuffer().toString().split("\n"))
+        {
+        	String[] linesplit = line.split("\\s+");
 
-		AnalysisEngine scorer = createPrimitive(
-				SimilarityScorer.class,
-			    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
-			    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
-			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, Document.class.getName(),
-			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
-			    	ClassifierResource.class,
-			    	ClassifierResource.PARAM_CLASSIFIER, wekaClassifier.toString(),
-			    	ClassifierResource.PARAM_TRAIN_ARFF, MODELS_DIR + "/" + train.toString() + ".arff",
-			    	ClassifierResource.PARAM_TEST_ARFF, MODELS_DIR + "/" + test.toString() + ".arff")
-			    );
-		
-		AnalysisEngine writer = createPrimitive(
-				SimilarityScoreWriter.class,
-				SimilarityScoreWriter.PARAM_OUTPUT_FILE, OUTPUT_DIR + "/" + test.toString() + ".csv",
-				SimilarityScoreWriter.PARAM_OUTPUT_SCORES_ONLY, true,
-				SimilarityScoreWriter.PARAM_OUTPUT_GOLD_SCORES, false);
-
-		SimplePipeline.runPipeline(reader, aggr_seg, scorer, writer);
+        	// If there's been an error, the length of linesplit is 6, otherwise 5,
+        	// due to the error flag "+"
+        	
+        	int id;
+        	String expectedValue, classification;
+        	double probability;
+        	
+        	if (line.contains("+"))
+        	{
+        	   	id = Integer.parseInt(linesplit[6].substring(1, linesplit[6].length() - 1));
+	        	expectedValue = linesplit[2].substring(2);
+	        	classification = linesplit[3].substring(2);
+	        	probability = Double.parseDouble(linesplit[5]);
+        	} else {
+        		id = Integer.parseInt(linesplit[5].substring(1, linesplit[5].length() - 1));
+	        	expectedValue = linesplit[2].substring(2);
+	        	classification = linesplit[3].substring(2);
+	        	probability = Double.parseDouble(linesplit[4]);
+        	}
+        	
+        	scores[id - 1] = classification;
+        	probabilities[id - 1] = probability;
+        }
+                
+        System.out.println(eval.toSummaryString());
+	    System.out.println(eval.toMatrixString());
+	    
+	    // Output classifications
+	    StringBuilder sb = new StringBuilder();
+	    for (String score : scores)
+	    	sb.append(score.toString() + LF);
+	    
+	    FileUtils.writeStringToFile(
+	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + ".csv"),
+	    	sb.toString());
+	    
+	    // Output probabilities
+	    sb = new StringBuilder();
+	    for (Double probability : probabilities)
+	    	sb.append(probability.toString() + LF);
+	    
+	    FileUtils.writeStringToFile(
+	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + ".probabilities.csv"),
+	    	sb.toString());
+	    
+	    // Output predictions
+	    FileUtils.writeStringToFile(
+	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + ".predictions.txt"),
+	    	output.getBuffer().toString());
+	    
+	    // Output meta information
+	    sb = new StringBuilder();
+	    sb.append(classifier.toString() + LF);
+	    sb.append(eval.toSummaryString() + LF);
+	    sb.append(eval.toMatrixString() + LF);
+	    
+	    FileUtils.writeStringToFile(
+	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + ".meta.txt"),
+	    	sb.toString());
 	}
 	
 	public static void runClassifierCV(Dataset dataset)
@@ -138,11 +268,11 @@ public class Evaluator
 	        Instances test = data.testCV(folds, n);
 	        
 	        // Apply log filter
-		    Filter logFilter = new LogFilter();
-	        logFilter.setInputFormat(train);
-	        train = Filter.useFilter(train, logFilter);        
-	        logFilter.setInputFormat(test);
-	        test = Filter.useFilter(test, logFilter);
+//		    Filter logFilter = new LogFilter();
+//	        logFilter.setInputFormat(train);
+//	        train = Filter.useFilter(train, logFilter);        
+//	        logFilter.setInputFormat(test);
+//	        test = Filter.useFilter(test, logFilter);
 	        
 	        // Copy the classifier
 	        Classifier classifier = AbstractClassifier.makeCopy(baseClassifier);
@@ -204,6 +334,16 @@ public class Evaluator
 	    DataSink.write(
 	    	OUTPUT_DIR + "/" + dataset.toString() + ".predicted.arff",
 	    	predictedData);
+	    
+	    // Output meta information
+	    sb = new StringBuilder();
+	    sb.append(baseClassifier.toString() + LF);
+	    sb.append(eval.toSummaryString() + LF);
+	    sb.append(eval.toMatrixString() + LF);
+	    
+	    FileUtils.writeStringToFile(
+	    	new File(OUTPUT_DIR + "/" + dataset.toString() + ".meta.txt"),
+	    	sb.toString());
 	}
 
 	@SuppressWarnings("unchecked")
@@ -231,11 +371,104 @@ public class Evaluator
 			
 			sb.append(acc);
 		}
+		if (metric == CWS)
+		{
+			// Read gold scores
+			List<String> goldScores = FileUtils.readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"));
+						
+			// Read the experimental scores
+			List<String> expScores = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + ".csv"));
+			
+			// Read the confidence scores
+			List<String> probabilities = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + ".probabilities.csv"));
+			
+			// Combine the data
+			List<CwsData> data = new ArrayList<CwsData>();
+			
+			for (int i = 0; i < goldScores.size(); i++)
+			{
+				CwsData cws = (new Evaluator()).new CwsData(
+						Double.parseDouble(probabilities.get(i)),
+						goldScores.get(i),
+						expScores.get(i));
+				data.add(cws);
+			}
+			
+			// Sort in descending order
+			Collections.sort(data, Collections.reverseOrder());
+			
+			// Compute the CWS score
+			double cwsScore = 0.0;
+			for (int i = 0; i < data.size(); i++)
+			{
+				double cws_sub = 0.0;
+				for (int j = 0; j <= i; j++)
+				{
+					if (data.get(j).isCorrect())
+						cws_sub++;
+				}
+				cws_sub /= (i+1);
+				
+				cwsScore += cws_sub;
+			}
+			cwsScore /= data.size();
+						
+			sb.append(cwsScore);
+		}
 
 		FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + dataset.toString() + "_" + metric.toString() + ".txt"), sb.toString());
 		
-		System.out.println("Accuracy: " + sb.toString());
+		System.out.println(metric.toString() + ": " + sb.toString());
 	}
+	
+	private class CwsData
+		implements Comparable
+	{
+		private double confidence;
+		private String goldScore;
+		private String expScore;
+		
+		public CwsData(double confidence, String goldScore, String expScore)
+		{
+			this.confidence = confidence;
+			this.goldScore = goldScore;
+			this.expScore = expScore;
+		}
+		
+		public boolean isCorrect()
+		{
+			return goldScore.equals(expScore);
+		}
+
+		public int compareTo(Object other)
+		{
+			CwsData otherObj = (CwsData)other;
+			
+			if (this.getConfidence() == otherObj.getConfidence()) {
+				return 0;
+			} else if (this.getConfidence() > otherObj.getConfidence()) {
+				return 1;
+			} else {
+				return -1;
+			}
+		}
+
+		public double getConfidence()
+		{
+			return confidence;
+		}
+
+		public String getGoldScore()
+		{
+			return goldScore;
+		}
+
+		public String getExpScore()
+		{
+			return expScore;
+		}
+	}
+	
 //	
 //	@SuppressWarnings("unchecked")
 //	private static void computePearsonCorrelation(Mode mode, Dataset dataset)
