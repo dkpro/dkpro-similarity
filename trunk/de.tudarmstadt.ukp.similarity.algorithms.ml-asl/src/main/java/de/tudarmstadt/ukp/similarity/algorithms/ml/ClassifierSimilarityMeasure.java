@@ -11,14 +11,20 @@ import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.LinearRegression;
+import weka.classifiers.functions.Logistic;
 import weka.classifiers.functions.SMO;
+import weka.classifiers.functions.SimpleLogistic;
 import weka.classifiers.trees.J48;
 import weka.core.Instance;
 import weka.core.Instances;
+import weka.core.Utils;
+import weka.core.converters.ConverterUtils.DataSink;
 import weka.core.converters.ConverterUtils.DataSource;
+import weka.filters.Filter;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
+import de.tudarmstadt.ukp.similarity.ml.filters.LogFilter;
 
 
 public class ClassifierSimilarityMeasure
@@ -30,7 +36,8 @@ public class ClassifierSimilarityMeasure
 	{
 		NAIVE_BAYES,
 		J48,
-		SMO
+		SMO,
+		LOGISTIC
 	}
 	
 	Classifier filteredClassifier;
@@ -48,11 +55,11 @@ public class ClassifierSimilarityMeasure
 		test = getTestInstances(testArff);
 		
 		// Apply log filter
-	    /*Filter logFilter = new LogFilter();
+	    Filter logFilter = new LogFilter();
         logFilter.setInputFormat(train);
         train = Filter.useFilter(train, logFilter);        
         logFilter.setInputFormat(test);
-        test = Filter.useFilter(test, logFilter);*/		         
+        test = Filter.useFilter(test, logFilter);		         
         
         Classifier clsCopy;
 		try {
@@ -66,7 +73,8 @@ public class ClassifierSimilarityMeasure
 			Evaluation eval = new Evaluation(train);
 	        eval.evaluateModel(filteredClassifier, test);
 	        
-	        System.out.println(filteredClassifier.toString());
+	        System.out.println(eval.toSummaryString());
+		    System.out.println(eval.toMatrixString());
 		}
 		catch (Exception e) {
 			throw new SimilarityException(e);
@@ -76,8 +84,6 @@ public class ClassifierSimilarityMeasure
 	public static Classifier getClassifier(WekaClassifier classifier)
 		throws IllegalArgumentException
 	{
-		Classifier cl;
-		
 		try {
 			switch (classifier)
 			{
@@ -88,9 +94,13 @@ public class ClassifierSimilarityMeasure
 					j48.setOptions(new String[] { "-C", "0.25", "-M", "2" });
 					return j48;
 				case SMO:
-					cl = new SMO();
-					// TODO: any parameters for SMO?
-					return cl;
+					SMO smo = new SMO();
+					smo.setOptions(Utils.splitOptions("-C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0\""));
+					return smo;
+				case LOGISTIC:
+					Logistic logistic = new Logistic();
+					logistic.setOptions(Utils.splitOptions("-R 1.0E-8 -M -1"));
+					return logistic;
 				default:
 					throw new IllegalArgumentException("Classifier " + classifier + " not found!");
 			}
