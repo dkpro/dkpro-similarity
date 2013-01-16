@@ -446,12 +446,36 @@ public class Evaluator
 		{
 			// Read gold scores
 			List<String> goldScores = FileUtils.readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"));
-						
+
+			// Trim to 8 characters
+			for (int i = 0; i < goldScores.size(); i++)
+				if (goldScores.get(i).length() > 8)
+					goldScores.set(i, goldScores.get(i).substring(0, 8));
+			
 			// Read the experimental scores
 			List<String> expScores = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".csv"));
 			
+			// Trim to 8 characters
+			for (int i = 0; i < expScores.size(); i++)
+				if (expScores.get(i).length() > 8)
+					expScores.set(i, expScores.get(i).substring(0, 8));
+			
 			// Read the confidence scores
 			List<String> probabilities = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".probabilities.csv"));
+			
+			// Conflate UNKONWN + CONTRADICTION classes for 3-way classifications
+			if (RteUtil.hasThreeWayClassification(dataset))
+			{
+				// Gold
+				for (int i = 0; i < goldScores.size(); i++)
+					if (goldScores.get(i).equals("CONTRADI") || goldScores.get(i).equals("NO") || goldScores.get(i).equals("FALSE"))
+						goldScores.set(i, "FALSE");
+				
+				// Experimental
+				for (int i = 0; i < expScores.size(); i++)
+					if (expScores.get(i).equals("CONTRADI") || expScores.get(i).equals("NO") || expScores.get(i).equals("FALSE"))
+						expScores.set(i, "FALSE");
+			}
 			
 			// Combine the data
 			List<CwsData> data = new ArrayList<CwsData>();
@@ -532,7 +556,7 @@ public class Evaluator
 		
 		public boolean isPositivePair()
 		{
-			return this.goldScore.equals("TRUE");
+			return this.goldScore.equals("TRUE") || this.goldScore.equals("YES") || this.goldScore.equals("ENTAILMENT") || this.goldScore.equals("ENTAILME");
 		}
 
 		public double getConfidence()
