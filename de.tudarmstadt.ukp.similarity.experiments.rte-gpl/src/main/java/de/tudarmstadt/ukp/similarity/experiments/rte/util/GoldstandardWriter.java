@@ -16,6 +16,7 @@ import org.uimafit.util.JCasUtil;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.entailment.type.EntailmentClassificationOutcome;
+import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
 
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.GOLD_DIR;
 
@@ -66,13 +67,28 @@ public class GoldstandardWriter
 			
 			if (gold.containsKey(key))
 			{
-				// Transform YES/NO to TRUE/FALSE, if necessary
-				if (gold.get(key).equals("YES"))
-					sb.append("TRUE" + LF);
-				else if (gold.get(key).equals("NO"))
-					sb.append("FALSE" + LF);
-				else			
-					sb.append(gold.get(key) + LF);
+				// Transform YES/NO to TRUE/FALSE, and
+				// YES/NO/UNKNOWN to ENTAILMENT/CONTRADICTION/UNKNOWN
+				// if necessary
+				
+				if (RteUtil.hasThreeWayClassification(Dataset.valueOf(datasetName)))
+				{
+					if (gold.get(key).equals("YES"))
+						sb.append("ENTAILMENT" + LF);
+					else if (gold.get(key).equals("NO"))
+						sb.append("CONTRADICTION" + LF);
+					else			
+						sb.append(gold.get(key) + LF);
+				}
+				else
+				{
+					if (gold.get(key).equals("YES"))
+						sb.append("TRUE" + LF);
+					else if (gold.get(key).equals("NO"))
+						sb.append("FALSE" + LF);
+					else			
+						sb.append(gold.get(key) + LF);
+				}
 			}
 		}
 		

@@ -27,11 +27,17 @@ public class RteUtil
 			return datasetDir + "/RTE2/Dev/RTE2_dev.xml";
 		case RTE2_test:
 			return datasetDir + "/RTE2/Test/RTE2_test.annotated.xml";
-		case RTE3_dev:
+		case RTE3_dev_2way:
 			return datasetDir + "/RTE3/Dev/RTE3_pairs_dev-set-final.xml";
-		case RTE3_test:
+		case RTE3_dev_3way:
+			return datasetDir + "/RTE3/Dev/RTE3_dev_3class.xml";
+		case RTE3_test_2way:
 			return datasetDir + "/RTE3/Test/RTE3-TEST-GOLD.xml";
-		case RTE4_test:
+		case RTE3_test_3way:
+			return datasetDir + "/RTE3/Test/RTE3_test_3class_gold.xml";
+		case RTE4_test_2way:
+			return datasetDir + "/RTE4/Test/RTE4_TEST-SET-GOLD-TWO-WAY.xml";
+		case RTE4_test_3way:
 			return datasetDir + "/RTE4/Test/RTE4_TEST-SET_GOLD.xml";
 		case RTE5_dev_2way:
 			return datasetDir + "/RTE5/Main/Dev/RTE5_MainTask_DevSet-2Way.xml";
@@ -63,14 +69,7 @@ public class RteUtil
 	
 	public static boolean hasThreeWayClassification(Dataset dataset)
 	{
-		switch (dataset)
-		{
-			case RTE5_dev_3way:
-			case RTE5_test_3way:
-				return true;
-			default:
-				return false;
-		}
+		return dataset.toString().endsWith("_3way");
 	}
 	
 	public static String getCommonDatasetName(Dataset dataset)
