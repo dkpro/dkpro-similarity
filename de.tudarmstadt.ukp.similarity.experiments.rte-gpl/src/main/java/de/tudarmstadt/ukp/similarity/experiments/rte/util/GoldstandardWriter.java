@@ -66,7 +66,13 @@ public class GoldstandardWriter
 			
 			if (gold.containsKey(key))
 			{
-				sb.append(gold.get(key) + LF);
+				// Transform YES/NO to TRUE/FALSE, if necessary
+				if (gold.get(key).equals("YES"))
+					sb.append("TRUE" + LF);
+				else if (gold.get(key).equals("NO"))
+					sb.append("FALSE" + LF);
+				else			
+					sb.append(gold.get(key) + LF);
 			}
 		}
 		

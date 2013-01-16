@@ -11,15 +11,19 @@ import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader
 import static org.uimafit.factory.ExternalResourceFactory.createExternalResourceDescription;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.FileFilterUtils;
+import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.uima.UIMAException;
@@ -28,6 +32,7 @@ import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.util.CollectionUtils;
 import org.uimafit.factory.AggregateBuilder;
 import org.uimafit.pipeline.SimplePipeline;
 
@@ -71,8 +76,6 @@ public class Evaluator
 {
 	public static final String LF = System.getProperty("line.separator");
 	
-	private static final WekaClassifier wekaClassifier = WekaClassifier.SMO;
-	
 //	public static void runClassifier(Dataset train, Dataset test)
 //		throws UIMAException, IOException
 //	{
@@ -110,7 +113,7 @@ public class Evaluator
 //		SimplePipeline.runPipeline(reader, aggr_seg, scorer, writer);
 //	}
 	
-	public static void runClassifier(Dataset trainDataset, Dataset testDataset)
+	public static void runClassifier(WekaClassifier wekaClassifier, Dataset trainDataset, Dataset testDataset)
 			throws Exception
 	{
 		Classifier baseClassifier = ClassifierSimilarityMeasure.getClassifier(wekaClassifier);
@@ -206,7 +209,7 @@ public class Evaluator
 	    	sb.append(score.toString() + LF);
 	    
 	    FileUtils.writeStringToFile(
-	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + ".csv"),
+	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + "/" + wekaClassifier.toString() + "/" + testDataset.toString() + ".csv"),
 	    	sb.toString());
 	    
 	    // Output probabilities
@@ -215,12 +218,12 @@ public class Evaluator
 	    	sb.append(probability.toString() + LF);
 	    
 	    FileUtils.writeStringToFile(
-	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + ".probabilities.csv"),
+	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + "/" + wekaClassifier.toString() + "/" + testDataset.toString() + ".probabilities.csv"),
 	    	sb.toString());
 	    
 	    // Output predictions
 	    FileUtils.writeStringToFile(
-	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + ".predictions.txt"),
+	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + "/" + wekaClassifier.toString() + "/" + testDataset.toString() + ".predictions.txt"),
 	    	output.getBuffer().toString());
 	    
 	    // Output meta information
@@ -230,11 +233,11 @@ public class Evaluator
 	    sb.append(eval.toMatrixString() + LF);
 	    
 	    FileUtils.writeStringToFile(
-	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + ".meta.txt"),
+	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + "/" + wekaClassifier.toString() + "/" + testDataset.toString() + ".meta.txt"),
 	    	sb.toString());
 	}
 	
-	public static void runClassifierCV(Dataset dataset)
+	public static void runClassifierCV(WekaClassifier wekaClassifier, Dataset dataset)
 		throws Exception
 	{
 		// Set parameters
@@ -327,12 +330,12 @@ public class Evaluator
 	    	sb.append(score.toString() + LF);
 	    
 	    FileUtils.writeStringToFile(
-	    	new File(OUTPUT_DIR + "/" + dataset.toString() + ".csv"),
+	    	new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".csv"),
 	    	sb.toString());
 	    
 	    // Output prediction arff
 	    DataSink.write(
-	    	OUTPUT_DIR + "/" + dataset.toString() + ".predicted.arff",
+	    	OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".predicted.arff",
 	    	predictedData);
 	    
 	    // Output meta information
@@ -342,13 +345,35 @@ public class Evaluator
 	    sb.append(eval.toMatrixString() + LF);
 	    
 	    FileUtils.writeStringToFile(
-	    	new File(OUTPUT_DIR + "/" + dataset.toString() + ".meta.txt"),
+	    	new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".meta.txt"),
 	    	sb.toString());
 	}
 
 	@SuppressWarnings("unchecked")
 	public static void runEvaluationMetric(EvaluationMetric metric, Dataset dataset)
 		throws IOException
+	{
+		// Get all subdirectories (i.e. all classifiers)
+		File outputDir = new File(OUTPUT_DIR + "/" + dataset.toString() + "/");
+		File[] dirsArray = outputDir.listFiles((FileFilter) FileFilterUtils.directoryFileFilter());
+		
+		List<File> dirs = CollectionUtils.arrayToList(dirsArray);
+		
+		// Don't list hidden dirs (such as .svn)
+		for (int i = dirs.size() - 1; i >= 0; i--)
+			if (dirs.get(i).getName().startsWith("."))
+					dirs.remove(i);
+		
+		// Iteratively evaluate all classifiers' results
+		for (File dir : dirs)
+			runEvaluationMetric(
+					WekaClassifier.valueOf(dir.getName()),
+					metric,
+					dataset);
+	}
+	
+	public static void runEvaluationMetric(WekaClassifier wekaClassifier, EvaluationMetric metric, Dataset dataset)
+			throws IOException
 	{
 		StringBuilder sb = new StringBuilder();
 			
@@ -358,7 +383,7 @@ public class Evaluator
 			List<String> goldScores = FileUtils.readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"));
 						
 			// Read the experimental scores
-			List<String> expScores = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + ".csv"));
+			List<String> expScores = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".csv"));
 						
 			// Compute the accuracy
 			double acc = 0.0;
@@ -377,10 +402,10 @@ public class Evaluator
 			List<String> goldScores = FileUtils.readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"));
 						
 			// Read the experimental scores
-			List<String> expScores = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + ".csv"));
+			List<String> expScores = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".csv"));
 			
 			// Read the confidence scores
-			List<String> probabilities = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + ".probabilities.csv"));
+			List<String> probabilities = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".probabilities.csv"));
 			
 			// Combine the data
 			List<CwsData> data = new ArrayList<CwsData>();
@@ -415,10 +440,60 @@ public class Evaluator
 						
 			sb.append(cwsScore);
 		}
+		if (metric == AveragePrecision)
+		{
+			// Read gold scores
+			List<String> goldScores = FileUtils.readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"));
+						
+			// Read the experimental scores
+			List<String> expScores = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".csv"));
+			
+			// Read the confidence scores
+			List<String> probabilities = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".probabilities.csv"));
+			
+			// Combine the data
+			List<CwsData> data = new ArrayList<CwsData>();
+			
+			for (int i = 0; i < goldScores.size(); i++)
+			{
+				CwsData cws = (new Evaluator()).new CwsData(
+						Double.parseDouble(probabilities.get(i)),
+						goldScores.get(i),
+						expScores.get(i));
+				data.add(cws);
+			}
+			
+			// Sort in descending order
+			Collections.sort(data, Collections.reverseOrder());
+			
+			// Compute the average precision
+			double avgPrec = 0.0;
+			int numPositive = 0;
+			for (int i = 0; i < data.size(); i++)
+			{
+				double ap_sub = 0.0;
+				if (data.get(i).isPositivePair())
+				{
+					numPositive++;
+					
+					for (int j = 0; j <= i; j++)
+					{
+						if (data.get(j).isCorrect())
+							ap_sub++;
+					}
+					ap_sub /= (i+1);
+				}
+				
+				avgPrec += ap_sub;					
+			}
+			avgPrec /= numPositive;
+						
+			sb.append(avgPrec);
+		}
 
-		FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + dataset.toString() + "_" + metric.toString() + ".txt"), sb.toString());
+		FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + "_" + metric.toString() + ".txt"), sb.toString());
 		
-		System.out.println(metric.toString() + ": " + sb.toString());
+		System.out.println("[" + wekaClassifier.toString() + "] " + metric.toString() + ": " + sb.toString());
 	}
 	
 	private class CwsData
@@ -451,6 +526,11 @@ public class Evaluator
 			} else {
 				return -1;
 			}
+		}
+		
+		public boolean isPositivePair()
+		{
+			return this.goldScore.equals("TRUE");
 		}
 
 		public double getConfidence()

@@ -1,6 +1,7 @@
 package de.tudarmstadt.ukp.similarity.experiments.rte;
 
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.*;
+import static de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier.*;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -34,7 +35,8 @@ public class Pipeline
 	public enum EvaluationMetric
 	{
 		Accuracy,
-		CWS
+		CWS,
+		AveragePrecision
 	}
 	
 	public static String DATASET_DIR;
@@ -97,11 +99,13 @@ public class Pipeline
 		Features2Arff.toArffFile(devset, true);
 
 		// Run the classifier
-		Evaluator.runClassifierCV(devset);
+		Evaluator.runClassifierCV(SMO, devset);
+		Evaluator.runClassifierCV(LOGISTIC, devset);
 		
 		// Evaluate
 		Evaluator.runEvaluationMetric(Accuracy, devset);
 		Evaluator.runEvaluationMetric(CWS, devset);
+		Evaluator.runEvaluationMetric(AveragePrecision, devset);
 	}
 
 	public static void runTest(Dataset devset, Dataset testset)
@@ -110,7 +114,7 @@ public class Pipeline
 		// Generate the features for training data
 		FeatureGeneration.generateFeatures(devset);
 		FeatureGeneration.generateFeatures(testset);
-
+		
 		// Output the gold standard
 		GoldstandardCreator.outputGoldstandard(devset);
 		GoldstandardCreator.outputGoldstandard(testset);
@@ -120,10 +124,12 @@ public class Pipeline
 		Features2Arff.toArffFile(testset, true);
 
 		// Run the classifer
-		Evaluator.runClassifier(devset, testset);
+		Evaluator.runClassifier(SMO, devset, testset);
+		Evaluator.runClassifier(LOGISTIC, devset, testset);
 
 		// Evaluate
 		Evaluator.runEvaluationMetric(Accuracy, testset);
 		Evaluator.runEvaluationMetric(CWS, testset);
+		Evaluator.runEvaluationMetric(AveragePrecision, testset);
 	}
 }
