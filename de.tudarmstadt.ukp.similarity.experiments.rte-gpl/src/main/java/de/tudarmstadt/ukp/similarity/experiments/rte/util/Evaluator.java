@@ -389,7 +389,9 @@ public class Evaluator
 			double acc = 0.0;
 			for (int i = 0; i < goldScores.size(); i++)
 			{
-				if (goldScores.get(i).equals(expScores.get(i)))
+				// The predictions have a max length of 8 characters...
+				if (goldScores.get(i).substring(0, Math.min(goldScores.get(i).length(), 8)).equals(
+						expScores.get(i).substring(0, Math.min(expScores.get(i).length(), 8))))
 					acc++;
 			}
 			acc = acc / goldScores.size();

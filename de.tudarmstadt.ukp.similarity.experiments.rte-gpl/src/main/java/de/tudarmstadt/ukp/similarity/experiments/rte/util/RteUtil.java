@@ -1,10 +1,12 @@
 package de.tudarmstadt.ukp.similarity.experiments.rte.util;
 
+import java.io.File;
 import java.io.IOException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
 
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.FEATURES_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset.*;
 
 
@@ -31,12 +33,57 @@ public class RteUtil
 			return datasetDir + "/RTE3/Test/RTE3-TEST-GOLD.xml";
 		case RTE4_test:
 			return datasetDir + "/RTE4/Test/RTE4_TEST-SET_GOLD.xml";
-		case RTE5_dev:
+		case RTE5_dev_2way:
+			return datasetDir + "/RTE5/Main/Dev/RTE5_MainTask_DevSet-2Way.xml";
+		case RTE5_test_2way:
+			return datasetDir + "/RTE5/Main/Test/RTE5_MainTask_TestSet_Gold_2way.ascii.xml";
+		case RTE5_dev_3way:
 			return datasetDir + "/RTE5/Main/Dev/RTE5_MainTask_DevSet.xml";
-		case RTE5_test:
+		case RTE5_test_3way:
 			return datasetDir + "/RTE5/Main/Test/RTE5_MainTask_TestSet_Gold.xml";
 		default:
 			throw new IllegalArgumentException("Dataset " + dataset.toString() + " not found.");
+		}
+	}
+	
+	public static boolean hasTwoSetsOfClassifications(Dataset dataset)
+	{
+		switch (dataset)
+		{
+			case RTE1_dev:
+			case RTE1_dev2:
+			case RTE1_test:
+			case RTE2_dev:
+			case RTE2_test:
+				return false;
+			default:
+				return true;
+		}
+	}
+	
+	public static boolean hasThreeWayClassification(Dataset dataset)
+	{
+		switch (dataset)
+		{
+			case RTE5_dev_3way:
+			case RTE5_test_3way:
+				return true;
+			default:
+				return false;
+		}
+	}
+	
+	public static String getCommonDatasetName(Dataset dataset)
+	{
+		if (RteUtil.hasTwoSetsOfClassifications(dataset))
+		{
+			int endIndex = Math.max(dataset.toString().indexOf("_2way"), dataset.toString().indexOf("_3way"));
+			
+			return dataset.toString().substring(0, endIndex);
+		}
+		else
+		{
+			return dataset.toString();
 		}
 	}
 }

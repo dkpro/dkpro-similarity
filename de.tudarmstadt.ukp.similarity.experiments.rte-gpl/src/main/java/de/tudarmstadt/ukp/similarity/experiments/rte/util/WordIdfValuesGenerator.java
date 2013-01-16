@@ -47,7 +47,7 @@ public class WordIdfValuesGenerator
 	public static void computeIdfScores(Dataset dataset)
 		throws Exception
 	{							
-		File outputFile = new File(UTILS_DIR + "/word-idf/" + dataset.toString() + ".txt");
+		File outputFile = new File(UTILS_DIR + "/word-idf/" + RteUtil.getCommonDatasetName(dataset) + ".txt");
 		
 		System.out.println("Computing word idf values");
 		
@@ -60,7 +60,7 @@ public class WordIdfValuesGenerator
 			System.out.println(" - this may take a while...");
 			
 			// Input data
-			File inputDir = new File(UTILS_DIR + "/plaintexts/" + dataset.toString());
+			File inputDir = new File(UTILS_DIR + "/plaintexts/" + RteUtil.getCommonDatasetName(dataset));
 			
 			Collection<File> files = FileUtils.listFiles(
 					inputDir,

@@ -28,8 +28,10 @@ public class Pipeline
 		RTE3_dev,
 		RTE3_test,
 		RTE4_test,
-		RTE5_dev,
-		RTE5_test
+		RTE5_dev_2way,
+		RTE5_dev_3way,
+		RTE5_test_2way,
+		RTE5_test_3way,
 	}
 
 	public enum EvaluationMetric

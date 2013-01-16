@@ -51,11 +51,11 @@ public class Features2Arff
 		System.out.println("Generating ARFF file");
 		
 		Collection<File> files = FileUtils.listFiles(
-				new File(FEATURES_DIR + "/" + dataset.toString()),
+				new File(FEATURES_DIR + "/" + RteUtil.getCommonDatasetName(dataset)),
 				new String[] { "txt" },
 				true); 
 		
-		String arffString = toArffString(files, goldStandard);
+		String arffString = toArffString(dataset, files, goldStandard);
 		
 		FileUtils.writeStringToFile(
 				new File(MODELS_DIR + "/" + dataset.toString() + ".arff"),
@@ -65,7 +65,7 @@ public class Features2Arff
 	}
 	
 	@SuppressWarnings("unchecked")
-	private static String toArffString(Collection<File> csvFiles, File goldFile)
+	private static String toArffString(Dataset dataset, Collection<File> csvFiles, File goldFile)
 		throws IOException
 	{
 		// Create the Arff header
@@ -118,7 +118,10 @@ public class Features2Arff
 		
 		// Add gold attribute to attribute list in header
 		// We also need to do this for unlabeled data
-		arff.append("@attribute gold { TRUE, FALSE } " + LF);
+		if (RteUtil.hasThreeWayClassification(dataset))
+			arff.append("@attribute gold { ENTAILMENT, UNKNOWN, CONTRADICTION } " + LF);
+		else
+			arff.append("@attribute gold { TRUE, FALSE } " + LF);
 		
 		// Add gold similarity score 
 		List<String> lines;

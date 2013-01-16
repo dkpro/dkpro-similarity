@@ -30,7 +30,7 @@ public class CharacterNGramIdfValuesGenerator
 	{	
 		System.out.println("Computing character " + n + "-grams");
 			
-		File outputFile = new File(UTILS_DIR + "/character-ngrams-idf/" + n + "/" + dataset.toString() + ".txt");
+		File outputFile = new File(UTILS_DIR + "/character-ngrams-idf/" + n + "/" + RteUtil.getCommonDatasetName(dataset) + ".txt");
 		
 		if (outputFile.exists())
 		{
@@ -39,7 +39,7 @@ public class CharacterNGramIdfValuesGenerator
 		else
 		{
 			// Input data
-			File inputDir = new File(UTILS_DIR + "/plaintexts/" + dataset.toString());
+			File inputDir = new File(UTILS_DIR + "/plaintexts/" + RteUtil.getCommonDatasetName(dataset));
 			
 			Collection<File> files = FileUtils.listFiles(
 					inputDir,

@@ -21,7 +21,7 @@ public class ConvertToPlainText
 	public static void convert(Dataset dataset)
 		throws Exception
 	{
-		File outputDir = new File(UTILS_DIR + "/plaintexts/" + dataset.toString() + "/");
+		File outputDir = new File(UTILS_DIR + "/plaintexts/" + RteUtil.getCommonDatasetName(dataset) + "/");
 		
 		if (!outputDir.exists())
 		{

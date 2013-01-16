@@ -479,7 +479,7 @@ public class FeatureGeneration
 		{			
 			System.out.println("[" + dataset.toString() + "]" + config.getMeasureName());
 			
-			File outputFile = new File(FEATURES_DIR + "/" + dataset.toString() + "/" + config.getTargetPath() + "/" + config.getMeasureName() + ".txt");
+			File outputFile = new File(FEATURES_DIR + "/" + RteUtil.getCommonDatasetName(dataset) + "/" + config.getTargetPath() + "/" + config.getMeasureName() + ".txt");
 			
 			if (outputFile.exists())
 			{
