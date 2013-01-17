@@ -7,7 +7,6 @@
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <dependencies>
   	<dependency>
   		<groupId>uk.ac.shef.wit.simmetrics</groupId>
@@ -21,5 +20,10 @@
   		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.api-asl</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	<dependency>
+        <groupId>hultiglib</groupId>
+        <artifactId>hultiglib</artifactId>
+        <version>1.1</version>
+    </dependency>
   </dependencies>
 </project>
