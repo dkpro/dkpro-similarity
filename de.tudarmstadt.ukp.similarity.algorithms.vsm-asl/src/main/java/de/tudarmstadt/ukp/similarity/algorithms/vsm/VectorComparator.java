@@ -27,9 +27,9 @@ import org.apache.commons.logging.LogFactory;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
-import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.VectorReader;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeIdf;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeTf;
+import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.VectorReader;
 import edu.ucla.sspace.common.Similarity;
 import edu.ucla.sspace.vector.DenseVector;
 
@@ -59,8 +59,8 @@ import edu.ucla.sspace.vector.DenseVector;
  * wikipediaReader.setNorm(VectorNorm.L2);
  * wikipediaReader.setWeightingModeTf(WeightingModeTf.normalized);
  * wikipediaReader.WeightingModeIdf(WeightingModeIdf.constantOne);
- * wikipediaReader.setWeightingThreshold(0.0);
- * wikipediaReader.setVectorLengthThreshold(1.0);
+ * wikipediaReader.setWeightingThreshold(0.0f);
+ * wikipediaReader.setVectorLengthThreshold(1.0f);
  * TextRelatednessMeasure cmp = new VectorComparator(wikipediaReader);
  * cmp.setInnerProduct(InnerVectorProduct.AVERAGE_PRODUCT);
  * cmp.setNormalization(VectorNorm.NONE); // Vectors already normalized by vector reader
