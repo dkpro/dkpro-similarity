@@ -68,14 +68,14 @@ public class PathLengthComparatorTest {
         assertEquals(6.0, comparator.getSimilarity(entitiesAuto, entitiesSchnell), epsilon);
     }
 
-    @Ignore("The path from 'tree' to 'tree' should be 0 but is 13! - See bug 163")
+//    @Ignore("The path from 'tree' to 'tree' should be 0 but is 13! - See bug 163")
     @Test
 	public void testWordNet()
 		throws Exception
 	{
         Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
 
-		LexSemResourceComparator comparator = new PathLengthComparator(wordnet, false);
+		LexSemResourceComparator comparator = new PathLengthComparator(wordnet);
 
         Set<Entity> entitiesTree  = wordnet.getEntity("tree", PoS.n);
         Set<Entity> entitiesPlant = wordnet.getEntity("plant", PoS.n);
@@ -93,7 +93,7 @@ public class PathLengthComparatorTest {
 	{
         Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
 
-		LexSemResourceComparator comparator = new PathLengthComparator(wikipedia, false);
+		LexSemResourceComparator comparator = new PathLengthComparator(wikipedia);
 
         // this are pages
         // we have to find a way to cast the path length between pages to the path length between
@@ -131,7 +131,7 @@ public class PathLengthComparatorTest {
 	public void testWiktionary()
 		throws Exception
 	{
-        LexSemResourceComparator comparator = new PathLengthComparator(wiktionary, false);
+        LexSemResourceComparator comparator = new PathLengthComparator(wiktionary);
 
         Set<Entity> entitiesFahrzeug = wiktionary.getEntity("Fahrzeug");
         Set<Entity> entitiesAuto     = wiktionary.getEntity("Auto");
