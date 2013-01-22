@@ -84,7 +84,7 @@
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lsr</artifactId>
+            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lsr-asl</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -199,8 +199,7 @@
     	de.tudarmstadt.ukp.similarity.experiments.wordchoice-asl
     </module>
     <module>de.tudarmstadt.ukp.similarity.experiments.api-asl</module>
-
-    
+    <module>de.tudarmstadt.ukp.similarity.experiments.rte-asl</module>
   </modules>
   <scm>
   	<url>http://code.google.com/p/dkpro-similarity-asl/source/browse/#svn/trunk</url>
