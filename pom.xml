@@ -199,7 +199,6 @@
     	de.tudarmstadt.ukp.similarity.experiments.wordchoice-asl
     </module>
     <module>de.tudarmstadt.ukp.similarity.experiments.api-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.experiments.rte-asl</module>
   </modules>
   <scm>
   	<url>http://code.google.com/p/dkpro-similarity-asl/source/browse/#svn/trunk</url>
