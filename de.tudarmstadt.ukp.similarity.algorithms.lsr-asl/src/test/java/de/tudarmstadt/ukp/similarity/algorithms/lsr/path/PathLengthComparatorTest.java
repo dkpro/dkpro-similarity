@@ -29,8 +29,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity;
-import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity.PoS;
+import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.core.ResourceFactory;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.ResourceLoaderException;
 import de.tudarmstadt.ukp.similarity.algorithms.lsr.LexSemResourceComparator;
@@ -75,7 +75,7 @@ public class PathLengthComparatorTest {
 	{
         Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
 
-		LexSemResourceComparator comparator = new PathLengthComparator(wordnet);
+		LexSemResourceComparator comparator = new PathLengthComparator(wordnet, false);
 
         Set<Entity> entitiesTree  = wordnet.getEntity("tree", PoS.n);
         Set<Entity> entitiesPlant = wordnet.getEntity("plant", PoS.n);
@@ -93,7 +93,7 @@ public class PathLengthComparatorTest {
 	{
         Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
 
-		LexSemResourceComparator comparator = new PathLengthComparator(wikipedia);
+		LexSemResourceComparator comparator = new PathLengthComparator(wikipedia, false);
 
         // this are pages
         // we have to find a way to cast the path length between pages to the path length between
@@ -131,7 +131,7 @@ public class PathLengthComparatorTest {
 	public void testWiktionary()
 		throws Exception
 	{
-        LexSemResourceComparator comparator = new PathLengthComparator(wiktionary);
+        LexSemResourceComparator comparator = new PathLengthComparator(wiktionary, false);
 
         Set<Entity> entitiesFahrzeug = wiktionary.getEntity("Fahrzeug");
         Set<Entity> entitiesAuto     = wiktionary.getEntity("Auto");
