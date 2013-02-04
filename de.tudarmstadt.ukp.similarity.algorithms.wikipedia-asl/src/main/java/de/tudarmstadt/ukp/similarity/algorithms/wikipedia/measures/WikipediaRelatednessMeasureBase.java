@@ -31,7 +31,6 @@ import org.apache.commons.logging.LogFactory;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TermSimilarityMeasureBase;
-import de.tudarmstadt.ukp.similarity.algorithms.wikipedia.cache.RelatednessCache;
 import de.tudarmstadt.ukp.wikipedia.api.Page;
 import de.tudarmstadt.ukp.wikipedia.api.Wikipedia;
 import de.tudarmstadt.ukp.wikipedia.api.exception.WikiApiException;
@@ -47,14 +46,12 @@ public abstract class WikipediaRelatednessMeasureBase
 	private final Log logger = LogFactory.getLog(getClass());
 
     protected Wikipedia wiki;
-    protected RelatednessCache relatednessCache;
     protected Measure measure;
     protected CombinationStrategy strategy;
     protected boolean useCache; // indicates whether to use built-in cache or not
 
     public WikipediaRelatednessMeasureBase(Wikipedia pWiki, Measure pMeasure, CombinationStrategy pStrategy) {
         this.wiki             = pWiki;
-        this.relatednessCache = new RelatednessCache(wiki);
         this.measure  = pMeasure;
         this.strategy = pStrategy;
         this.useCache = true;
@@ -111,9 +108,6 @@ public abstract class WikipediaRelatednessMeasureBase
         for (Page page1 : pageSet1) {
             for (Page page2 : pageSet2) {
                 double relatedness = -1.0;
-                if (useCache) {
-                    relatedness = relatednessCache.getCachedRelatedness(page1.getPageId(), page2.getPageId(), measure);
-                }
 
                 // if a relatedness value < 0 is returned, no cached value has been found => compute it
                 if (relatedness < 0) {
@@ -123,10 +117,6 @@ public abstract class WikipediaRelatednessMeasureBase
 
                     // Combines the relatedness values that have been computed between the categories of an article using a given combination strategy.
                     relatedness = combineRelatedness(computedValues);
-
-                    if (useCache) {
-                        relatednessCache.setCachedRelatedness(page1.getPageId(), page2.getPageId(), measure, relatedness);
-                    }
                 }
 
                 logger.debug(measure + " - " + page1.getTitle() + " / " + page2.getTitle() + ": " + relatedness);
