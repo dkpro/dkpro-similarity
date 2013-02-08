@@ -30,7 +30,7 @@ In case you run into problems (i.e. dependencies are not resolvable), try adding
 == Step 3: Add the Dependencies ==
 
   * In your newly created project, open the *pom.xml* file with the Maven POM editor.
-  * On the *Dependencies tab*, choose *Add* next to the Dependencies list. Search for *similarity.algorithms.api-asl* and add *de.tudarmstadt.ukp.similarity.algorithms.api-asl* from the result list. Make sure that in the *dependency details* section, the _type_ is set to an empty string (which corresponds to the default and means: JAR), and the scope is _compile_.
+  * On the *Dependencies tab*, choose *Add* next to the Dependencies list. Search for *similarity.algorithms.api-asl* and add *de.tudarmstadt.ukp.similarity.algorithms.api-asl* from the result list. Make sure that in the *dependency properties* section, the _type_ is set to an empty string (which corresponds to the default and means: JAR), and the scope is _compile_.
   * In case the above step doesn't work (as the search index may not be up-to-date), edit the *pom.xml* with a plain text editor. Add the following child to the *dependencies* element:
 {{{
 <dependency>
