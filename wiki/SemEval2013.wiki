@@ -28,8 +28,8 @@ The !SemEval-2013 Baseline System is implemented as part of _DKPro Similarity_, 
 
 The project is implemented as a Java Maven project. It makes use of some libraries that are not readily available in public Maven repositories. Therefore we have set up a Maven repository which provides these libraries as well as releases of this project.
 
-In order to set up your Eclipse installation properly and use this repository, we ask you to follow
-[http://code.google.com/p/dkpro-core-asl/wiki/UkpMavenRepository these instructions] ("Configuring Maven for full access to the UKP Maven Repository"). You also need to make sure that you have set up our open source Maven repository properly.
+In order to set up your Eclipse installation properly, we ask you to follow [http://code.google.com/p/dkpro-core-asl/wiki/UserSetup these instructions] ("Eclipse Setup")
+ where you find details on all required plugins. You also need to make sure that you have set up our open source Maven repository properly [http://code.google.com/p/dkpro-core-asl/wiki/UkpMavenRepository these instructions] ("Configuring Maven for full access to the UKP Maven Repository").
 
 === Step 2: Checkout ===
 
