@@ -22,7 +22,7 @@ Please note that the indexes have been created on lemmatized texts. So please al
 
 There are a number of word similarity measures which compute similarity based on their distance in a lexical-semantic resource graph, e.g. !WordNet. By applying an aggregation strategy such as the one by Mihalcea et al. (2006), these scores are then aggregated to the document level. While !WordNet is a classic example, we also constructed graphs on Wiktionary. Note: These resource graphs are different from the vector indexes above!
 
-The resource graphs can be downloaded [http://code.google.com/p/dkpro-similarity-asl/downloads/list here] for [http://dkpro-similarity-asl.googlecode.com/files/lsr_wiktionary_en.zip Wiktionary] and [http://dkpro-similarity-asl.googlecode.com/files/lsr_wordnet_en.zip WordNet].
+The resource graphs can be downloaded here: [http://uby.ukp.informatik.tu-darmstadt.de/wiktionary/jwktl_0.15.2_en20100403.7z Wiktionary] and [http://dkpro-similarity-asl.googlecode.com/files/lsr_wordnet_en.zip WordNet].
 
 After the download has finished, unzip the whole folder into {{{$DKPRO_HOME/LexSemResources/<subdir>}}}, where {{{subdir}}} is an arbitrary name for each resource, e.g. "wordnet".
 
