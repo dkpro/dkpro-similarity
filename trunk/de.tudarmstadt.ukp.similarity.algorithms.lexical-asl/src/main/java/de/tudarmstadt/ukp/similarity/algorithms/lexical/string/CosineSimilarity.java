@@ -17,6 +17,8 @@
  *******************************************************************************/
 package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -28,12 +30,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 import no.uib.cipr.matrix.DenseVector;
 import no.uib.cipr.matrix.Vector;
 
+import org.apache.commons.io.FileUtils;
+
 import com.google.common.base.Function;
 
-import de.tudarmstadt.ukp.similarity.algorithms.vsm.InnerVectorProduct;
-import de.tudarmstadt.ukp.similarity.algorithms.vsm.VectorNorm;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
+import de.tudarmstadt.ukp.similarity.algorithms.vsm.InnerVectorProduct;
+import de.tudarmstadt.ukp.similarity.algorithms.vsm.VectorNorm;
 
 public class CosineSimilarity
 	extends TextSimilarityMeasureBase
@@ -68,7 +72,7 @@ public class CosineSimilarity
 	{
 		initialize(WeightingModeTf.FREQUENCY, null, NormalizationMode.L2, null);
 	}
-	
+
 	public CosineSimilarity(WeightingModeTf modeTf, NormalizationMode normMode)
 	{
 		initialize(modeTf, null, normMode, null);
@@ -85,6 +89,69 @@ public class CosineSimilarity
 	{
 		initialize(modeTf, modeIdf, normMode, idfScores);
 	}
+
+	public CosineSimilarity(WeightingModeIdf modeIdf, NormalizationMode normMode,
+			String idfScoresFile)
+	{
+		HashMap<String, Double> idfValues = null;
+		if(idfScoresFile != null)
+		{
+		idfValues = new HashMap<String,Double>();
+		try {
+			for (String line : FileUtils.readLines(new File(idfScoresFile)))
+			{
+				if (line.length() > 0)
+				{
+					String[] cols = line.split("\t");
+					idfValues.put(cols[0], Double.parseDouble(cols[1]));
+				}
+			}
+		}
+		catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		}
+		else
+		{
+			idfValues = null;
+		}
+		initialize(null, modeIdf, normMode, idfValues);
+	}
+
+	public CosineSimilarity(WeightingModeTf modeTf, WeightingModeIdf modeIdf,
+			NormalizationMode normMode, String idfScoresFile)
+	{
+		HashMap<String, Double> idfValues ;
+		if(idfScoresFile != null)
+		{
+		idfValues = new HashMap<String,Double>();
+		try {
+			for (String line : FileUtils.readLines(new File(idfScoresFile)))
+			{
+				if (line.length() > 0)
+				{
+					String[] cols = line.split("\t");
+					idfValues.put(cols[0], Double.parseDouble(cols[1]));
+				}
+			}
+		}
+		catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		}
+		else
+		{
+			idfValues = null;
+		}
+		initialize(modeTf, modeIdf, normMode, idfValues);
+	}
+
 
 	private void initialize(WeightingModeTf modeTf, WeightingModeIdf modeIdf,
 			NormalizationMode normMode, Map<String, Double> idfScores)
@@ -114,7 +181,7 @@ public class CosineSimilarity
 		//Collection<String> terms2 = Collections2.transform(aTerms2, toLowerCase);
 		Collection<String> terms1 = aTerms1;
 		Collection<String> terms2 = aTerms2;
-		
+
 		// Get common term list
 		Set<String> unionTermSet = new HashSet<String>(terms1);
 		unionTermSet.addAll(terms2);
@@ -125,7 +192,6 @@ public class CosineSimilarity
 
 		// Numerator
 		double num = InnerVectorProduct.COSINE.apply(vector1, vector2);
-
 		double norm;
 		switch (normalizationMode) {
 		case L1:
@@ -137,7 +203,6 @@ public class CosineSimilarity
 		default:
 			throw new IllegalStateException("Unsupported norm: "+normalizationMode);
 		}
-
 		// Normalized score
 		return num / norm;
 	}
