@@ -19,19 +19,23 @@ public class CosineSimilarityResource
 	public static final String PARAM_WEIGHTING_TF = "WeightingTf";
 	@ConfigurationParameter(name=PARAM_WEIGHTING_TF, mandatory=true, defaultValue="FREQUENCY")
 	private WeightingModeTf weightingTf;
-	
+
 	public static final String PARAM_WEIGHTING_IDF = "WeightingIdf";
 	@ConfigurationParameter(name=PARAM_WEIGHTING_IDF, mandatory=false)
 	private WeightingModeIdf weightingIdf;
-	
+
 	public static final String PARAM_NORMALIZATION = "Normalization";
 	@ConfigurationParameter(name=PARAM_NORMALIZATION, mandatory=true, defaultValue="L2")
 	private NormalizationMode normalization;
-	
-	public static final String PARAM_IDF_SCORES = "IdfScores";
-	@ConfigurationParameter(name=PARAM_IDF_SCORES, mandatory=false)
-	private Map<String, Double> idfScores;
-	
+
+//	public static final String PARAM_IDF_SCORES = "IdfScores";
+//	@ConfigurationParameter(name=PARAM_IDF_SCORES, mandatory=false)
+//	private Map<String, Double> idfScores;
+
+	public static final String PARAM_IDF_VALUES_FILE = "IdfValuesFile";
+	@ConfigurationParameter(name=PARAM_IDF_VALUES_FILE, mandatory=false)
+	private String idfValuesFile;
+
     @SuppressWarnings("unchecked")
     @Override
     public boolean initialize(ResourceSpecifier aSpecifier, Map aAdditionalParams)
@@ -40,14 +44,14 @@ public class CosineSimilarityResource
         if (!super.initialize(aSpecifier, aAdditionalParams)) {
             return false;
         }
-        
-        this.mode = TextSimilarityResourceMode.list;
-        
-        if (weightingIdf != null && idfScores == null)
-        	throw new ResourceInitializationException(new IllegalArgumentException("IDF weighting scheme needs a map with (token, idf score)-pairs."));
-        
-       	measure = new CosineSimilarity(weightingTf, weightingIdf, normalization, idfScores);        	
-        
+
+        if (weightingIdf != null  && (idfValuesFile == null)) {
+			throw new ResourceInitializationException(new IllegalArgumentException("IDF weighting scheme needs a map with (token, idf score)-pairs."));
+		}
+
+        this.mode = TextSimilarityResourceMode.text;
+        measure = new CosineSimilarity(weightingTf, weightingIdf, normalization, idfValuesFile);
+
         return true;
     }
 }
