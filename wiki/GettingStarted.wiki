@@ -40,7 +40,7 @@ In case you run into problems (i.e. dependencies are not resolvable), try adding
   <scope>compile</scope>
 </dependency>
 }}}
-  * With other Maven modules which you intend to use, repeat these steps. These may be, for example, string-based relatedness measures in the module *`*`.lexical*, or measures based on lexical-semantic resources such as !WordNet in the module *`*`.lsr*.
+  * With other Maven modules which you intend to use, repeat these steps. These may be, for example, string-based relatedness measures in the module *`*`.algorithms.lexical-asl*, or measures based on lexical-semantic resources such as !WordNet in the module *`*`.algorithms.lsr-asl*.
 
 == Step 4: Additional Resources ==
 
