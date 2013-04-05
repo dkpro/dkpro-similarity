@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
@@ -89,8 +90,14 @@ public class MTLDComparator
 		{
 			Lemma lemma = lemmas.get(i);
 			
-			tokens.add(lemma.getCoveredText().toLowerCase());
-			types.add(lemma.getValue().toLowerCase());
+			try {
+				types.add(lemma.getValue().toLowerCase());
+				tokens.add(lemma.getCoveredText().toLowerCase());
+			}
+			catch (NullPointerException e)
+			{
+				System.out.println("Couldn't add token: " + lemma.getCoveredText());
+			}
 			
 			double ttr = new Integer(types.size()).doubleValue() / new Integer(tokens.size()).doubleValue();
 			
