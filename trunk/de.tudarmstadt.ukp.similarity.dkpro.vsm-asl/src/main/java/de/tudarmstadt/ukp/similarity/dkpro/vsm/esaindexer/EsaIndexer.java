@@ -38,7 +38,7 @@ import de.tudarmstadt.ukp.wikipedia.api.WikiConstants.Language;
  * @author Mateusz Parzonka
  *
  */
-public class EsaWikipedia {
+public class EsaIndexer {
 	
 	private final static String luceneIndexPath = "target/lucene";
 	private final static String esaIndexPath = "target/esa";
