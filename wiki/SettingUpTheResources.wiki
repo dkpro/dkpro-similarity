@@ -18,7 +18,7 @@ After the download has finished, unzip the whole folder into {{{$DKPRO_HOME/ESA/
 
 Please note that the indexes have been created on lemmatized texts. So please also lemmatize your input texts first, before passing them to the similarity measure.
 
-=== Build Your Own Index ===
+==== Build Your Own Index ====
 
 If you want to create your own index to be used with ESA, you can do so with a few simple steps:
 
