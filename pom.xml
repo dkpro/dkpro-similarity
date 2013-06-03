@@ -53,7 +53,7 @@
   	<module>de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.dkpro.core-gpl</module>
-  	<module>de.tudarmstadt.ukp.similarity.experiments.semeval2013</module>
+  	<module>de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl</module>
   	
   	<module>
   		de.tudarmstadt.ukp.similarity.algorithms.lexsub-gpl
