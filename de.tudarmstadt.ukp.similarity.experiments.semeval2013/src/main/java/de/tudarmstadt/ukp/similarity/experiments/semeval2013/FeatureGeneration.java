@@ -70,7 +70,7 @@ public class FeatureGeneration
 		
 		WordIdfValuesGenerator.computeIdfScores(mode, dataset);
 		
-		/* TODO: YOUR CUSTOM MEASURES GOES HERE
+		/* TODO: YOUR CUSTOM MEASURE GOES HERE
 		 * The example code snippet instantiates MyTextSimilarityMeasure using its wrapper
 		 * component MyTextSimilarityResource, and passes it a configuration parameter N.
 		 * The measure here is intended to operate on lists of lemmas without any stopword
