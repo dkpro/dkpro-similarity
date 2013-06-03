@@ -1,8 +1,8 @@
-package de.tudarmstadt.ukp.similarity.experiments.semeval2013;
+package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline;
 
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Dataset.*;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Mode.*;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.EvaluationMetric.*;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.*;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric.*;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode.*;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -11,8 +11,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.Evaluator;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.Features2Arff;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util.Evaluator;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util.Features2Arff;
 
 
 public class Pipeline

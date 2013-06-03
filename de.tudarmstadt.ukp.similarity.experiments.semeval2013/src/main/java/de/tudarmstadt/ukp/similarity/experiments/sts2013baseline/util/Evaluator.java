@@ -1,11 +1,11 @@
-package de.tudarmstadt.ukp.similarity.experiments.semeval2013.util;
+package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util;
 
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.DATASET_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.MODELS_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.OUTPUT_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.GOLDSTANDARD_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.EvaluationMetric.PearsonAll;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.EvaluationMetric.PearsonMean;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.DATASET_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.GOLDSTANDARD_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.MODELS_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.OUTPUT_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric.PearsonAll;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric.PearsonMean;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
 import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
@@ -50,10 +50,10 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrat
 import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.EvaluationMetric;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Mode;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.filter.LogFilter;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.filter.LogFilter;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode;
 
 
 public class Evaluator

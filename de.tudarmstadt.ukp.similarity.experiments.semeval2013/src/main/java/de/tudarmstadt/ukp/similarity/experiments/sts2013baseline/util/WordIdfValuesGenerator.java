@@ -1,7 +1,7 @@
-package de.tudarmstadt.ukp.similarity.experiments.semeval2013.util;
+package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util;
 
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.DATASET_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.UTILS_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.DATASET_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.UTILS_DIR;
 
 import java.io.File;
 import java.net.URL;
@@ -25,8 +25,8 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Mode;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode;
 
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
 import static org.uimafit.factory.AnalysisEngineFactory.createAggregateDescription;

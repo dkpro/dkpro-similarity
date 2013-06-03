@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.experiments.semeval2013.util;
+package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util;
 
 import java.io.File;
 
@@ -14,12 +14,12 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Mode;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode;
 
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.FEATURES_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.MODELS_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.GOLDSTANDARD_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.FEATURES_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.GOLDSTANDARD_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.MODELS_DIR;
 
 
 public class Features2Arff

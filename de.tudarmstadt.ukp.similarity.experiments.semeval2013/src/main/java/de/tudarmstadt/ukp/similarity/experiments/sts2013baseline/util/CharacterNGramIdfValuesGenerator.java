@@ -1,7 +1,7 @@
-package de.tudarmstadt.ukp.similarity.experiments.semeval2013.util;
+package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util;
 
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.UTILS_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.DATASET_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.DATASET_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.UTILS_DIR;
 
 import java.io.File;
 import java.net.URL;
@@ -16,8 +16,8 @@ import org.apache.commons.io.FileUtils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Mode;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode;
 
 
 public class CharacterNGramIdfValuesGenerator

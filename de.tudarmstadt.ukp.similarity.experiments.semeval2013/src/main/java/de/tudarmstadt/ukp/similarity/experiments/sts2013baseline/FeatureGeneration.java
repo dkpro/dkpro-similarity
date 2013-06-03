@@ -1,8 +1,8 @@
-package de.tudarmstadt.ukp.similarity.experiments.semeval2013;
+package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline;
 
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.DATASET_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.FEATURES_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.UTILS_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.DATASET_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.FEATURES_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.UTILS_DIR;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
 import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
@@ -47,12 +47,12 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.aggregate.MCS06Aggregate
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
 import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.Pipeline.Mode;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.example.MyTextSimilarityResource;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.CharacterNGramIdfValuesGenerator;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.StopwordFilter;
-import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.WordIdfValuesGenerator;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.example.MyTextSimilarityResource;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util.CharacterNGramIdfValuesGenerator;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util.StopwordFilter;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util.WordIdfValuesGenerator;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode;
 
 
 public class FeatureGeneration

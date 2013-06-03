@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.experiments.semeval2013.util;
+package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util;
 
 import java.io.BufferedReader;
 import java.io.File;

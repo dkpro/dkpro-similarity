@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.experiments.semeval2013.example;
+package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.example;
 
 import java.util.Map;
 

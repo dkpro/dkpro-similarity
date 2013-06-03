@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.experiments.semeval2013.filter;
+package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.filter;
 
 import weka.core.Capabilities;
 import weka.core.DenseInstance;
