@@ -32,7 +32,7 @@ In order to set up your Eclipse installation properly, we ask you to follow [htt
 
 === Step 2: Checkout ===
 
-Next, check out the project ("Check out as Maven project" in Eclipse). It is enough to check out only the module {{{trunk/de.tudarmstadt.ukp.similarity.experiments.semeval2013}}}, which resides in the [http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn%2Ftrunk%2Fde.tudarmstadt.ukp.similarity.experiments.semeval2013 GPL variant] of the similarity package. [http://code.google.com/p/dkpro-core-asl/wiki/DeveloperSetup#Checking_out Need help with the checkout?]
+Next, check out the project ("Check out as Maven project" in Eclipse). It is enough to check out only the module {{{trunk/de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl}}}, which resides in the [http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn%2Ftrunk%2Fde.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl GPL variant] of the similarity package. [http://code.google.com/p/dkpro-core-asl/wiki/DeveloperSetup#Checking_out Need help with the checkout?]
 
 == Step 3: Run ===
 
