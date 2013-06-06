@@ -74,8 +74,7 @@ public class MTLDComparator
 	{
 		double factors = 0.0;
 		
-		DocumentAnnotation doc1 = new ArrayList<DocumentAnnotation>(JCasUtil.select(jcas, DocumentAnnotation.class)).get(0);
-		List<Lemma> lemmas = new ArrayList<Lemma>(JCasUtil.selectCovered(jcas, Lemma.class, doc1));
+		List<Lemma> lemmas = new ArrayList<Lemma>(JCasUtil.select(jcas, Lemma.class));
 
 		// Initialize tokens and types
 		List<String> tokens = new ArrayList<String>();

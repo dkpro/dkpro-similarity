@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2012
+ * Copyright 2013
  * Ubiquitous Knowledge Processing (UKP) Lab
  * Technische Universität Darmstadt
  *
@@ -14,20 +14,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.api;
+ ******************************************************************************/
 
-import org.apache.uima.jcas.JCas;
-import org.apache.uima.jcas.tcas.Annotation;
-
-
-public interface JCasTextSimilarityMeasure
-	extends TextSimilarityMeasure
-{
-	double getSimilarity(JCas jcas1, JCas jcas2)
-		throws SimilarityException;
-
-    double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1, Annotation coveringAnnotation2)
-    	throws SimilarityException;
-
-}
+/**
+ * Components which allow the creation of custom indexes to be used
+ * in conjunction with Explicit Semantic Analysis.
+ */
+package de.tudarmstadt.ukp.similarity.dkpro.vsm.esaindexer;
