@@ -29,6 +29,7 @@ public interface TermSimilarityMeasure
 	 * @see #getSimilarity(String, String)
 	 */
 	static final double NOT_FOUND = -1.0;
+	static double EQUALITY_SCORE = 1.0;
 
 	// TODO what is this actually used for?
 	void beginMassOperation();

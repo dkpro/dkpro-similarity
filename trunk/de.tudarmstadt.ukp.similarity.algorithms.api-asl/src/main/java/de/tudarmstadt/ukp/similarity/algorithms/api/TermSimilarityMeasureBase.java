@@ -23,7 +23,6 @@ public abstract class TermSimilarityMeasureBase
 {
 	protected boolean distanceMeasure = false;
 
-
 	@Override
 	public void beginMassOperation()
 	{
@@ -42,11 +41,8 @@ public abstract class TermSimilarityMeasureBase
 			return NOT_FOUND;
 		}
 
-		// Not all comparators are normalized to a range from 0-1 - so for now we disable this.
-		// See bug 692
-		// FIXME I think this bug is still valid and returning 1.0 here is not valid for some measures
 		if (term1 == term2 || term1.equals(term2)) {
-			return 1.0;
+			return EQUALITY_SCORE;
 		}
 
 		return null;
@@ -63,5 +59,4 @@ public abstract class TermSimilarityMeasureBase
 	{
 		return distanceMeasure;
 	}
-
 }
