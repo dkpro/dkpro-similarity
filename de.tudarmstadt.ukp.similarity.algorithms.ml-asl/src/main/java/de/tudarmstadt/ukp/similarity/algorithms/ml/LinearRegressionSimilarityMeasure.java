@@ -18,6 +18,13 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasureBas
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 
 
+/**
+ * Runs a linear regression classifier on the provided test data on a model
+ * that is trained on the given training data. Mind that <pre>getSimilarity()</pre>
+ * classifies the input texts by their ID, not their textual contents. The
+ * <pre>DocumentID</pre> of the <pre>DocumentMetaData</pre> is expected to denote
+ * the corresponding input line in the test data.
+ */
 public class LinearRegressionSimilarityMeasure
 	extends JCasTextSimilarityMeasureBase
 {
@@ -97,34 +104,12 @@ public class LinearRegressionSimilarityMeasure
 		return data;
 	}
 	
-//	private List<String> getFeatures()
-//		throws IOException
-//	{
-//		List<String> lines = FileUtils.readLines(trainArff);
-//		
-//		for (int i = lines.size() - 1; i >= 0; i--)
-//		{
-//			if (!lines.get(i).startsWith("@attribute ") ||
-//				lines.get(i).startsWith("@attribute gold"))
-//			{
-//				lines.remove(i);
-//			} else {
-//				String ln = lines.get(i).split(" ")[1];
-//				lines.remove(i);
-//				lines.add(i, ln);
-//			}				
-//		}
-//		
-//		System.out.println(lines);
-//		
-//		return lines;
-//	}
-	
 	@Override
-	public double getSimilarity(JCas jcas1, JCas jcas2)
+	public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
 		throws SimilarityException
 	{
-		// The feature generation needs to have happend before!
+		// The feature generation needs to have happened before!
 		
 		DocumentMetaData md = DocumentMetaData.get(jcas1);
 		int id = Integer.parseInt(md.getDocumentId());
@@ -140,13 +125,4 @@ public class LinearRegressionSimilarityMeasure
 			throw new SimilarityException(e);
 		}
 	}
-
-    // FIXME this should be properly implemented
-    @Override
-    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
-            Annotation coveringAnnotation2)
-        throws SimilarityException
-    {
-        return getSimilarity(jcas1, jcas2);
-    }	
 }
