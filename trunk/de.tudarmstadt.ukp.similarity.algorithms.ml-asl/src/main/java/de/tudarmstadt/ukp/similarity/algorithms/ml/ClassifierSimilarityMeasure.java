@@ -10,15 +10,12 @@ import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
-import weka.classifiers.functions.LinearRegression;
 import weka.classifiers.functions.Logistic;
 import weka.classifiers.functions.SMO;
-import weka.classifiers.functions.SimpleLogistic;
 import weka.classifiers.trees.J48;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.Utils;
-import weka.core.converters.ConverterUtils.DataSink;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
@@ -146,29 +143,6 @@ public class ClassifierSimilarityMeasure
 		
 		return data;
 	}
-	
-//	private List<String> getFeatures()
-//		throws IOException
-//	{
-//		List<String> lines = FileUtils.readLines(trainArff);
-//		
-//		for (int i = lines.size() - 1; i >= 0; i--)
-//		{
-//			if (!lines.get(i).startsWith("@attribute ") ||
-//				lines.get(i).startsWith("@attribute gold"))
-//			{
-//				lines.remove(i);
-//			} else {
-//				String ln = lines.get(i).split(" ")[1];
-//				lines.remove(i);
-//				lines.add(i, ln);
-//			}				
-//		}
-//		
-//		System.out.println(lines);
-//		
-//		return lines;
-//	}
 	
 	@Override
 	public double getSimilarity(JCas jcas1, JCas jcas2)
