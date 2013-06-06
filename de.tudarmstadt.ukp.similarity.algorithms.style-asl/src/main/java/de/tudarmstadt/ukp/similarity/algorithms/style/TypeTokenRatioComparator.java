@@ -52,8 +52,7 @@ public class TypeTokenRatioComparator
 	
 	private double getTTR(JCas jcas)
 	{
-		DocumentAnnotation doc1 = new ArrayList<DocumentAnnotation>(JCasUtil.select(jcas, DocumentAnnotation.class)).get(0);
-		List<Sentence> sentences = JCasUtil.selectCovered(jcas, Sentence.class, doc1);
+		List<Sentence> sentences = new ArrayList<Sentence>(JCasUtil.select(jcas, Sentence.class));
 		
 		List<String> tokens = new ArrayList<String>();
 		Set<String> types = new HashSet<String>();

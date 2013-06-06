@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2012
+ * Copyright 2013
  * Ubiquitous Knowledge Processing (UKP) Lab
  * Technische Universität Darmstadt
  *
@@ -16,23 +16,18 @@
  * limitations under the License.
  *******************************************************************************/
 /**
- * <p>
- * JLRM is a framework for comparing strings, terms or texts. Often, the comparators will involve
- * some external knowledge source such as an ontology, an traditional index (e.g. Lucene) or a
- * semantic index (e.g. an LSA model or ESA model).
- * <p>
- * We define two categories of comparators:
+ * This package includes the interfaces for similarity measures. We thereby allow
+ * to compare terms, texts, or JCAS text representations.
+ *
+ * We define these categories of comparators:
  * <ul>
  * <li>{@link TermSimilarityMeasure} - comparison of two terms, e.g.
  *     [<a href="http://portal.acm.org/citation.cfm?id=657297">Lin, 1998</a>]</li>
- * <li>{@link TextSimilarityMeasure} - comparison of two lists of terms, e.g. LSA
+ * <li>{@link TextSimilarityMeasure} - comparison of two texts, e.g. LSA
  * 	   [<a href="http://lsa.colorado.edu/papers/dp1.LSAintro.pdf">Landauer et. al, 1998</a>]</li>
+ * <li>{@link JCasTextSimilarityMeasure} - comparison of two texts in JCAS format</li>
  * </ul>
- * <p>
+ * 
  * All comparators are case-sensitive.
- * <p>
- * Term-based measures can be used for texts by wrapping them in an {@link AggregatorBase aggregator}.
- * There are several aggregator implementations available. Score aggregation is a slow process (O(n^2))
- * because it requires to calculate the pair-wise similarity between each term in the two term lists.
  */
 package de.tudarmstadt.ukp.similarity.algorithms.api;

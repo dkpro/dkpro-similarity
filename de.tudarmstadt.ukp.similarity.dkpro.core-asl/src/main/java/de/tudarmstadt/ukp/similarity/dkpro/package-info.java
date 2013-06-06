@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2012
+ * Copyright 2013
  * Ubiquitous Knowledge Processing (UKP) Lab
  * Technische Universität Darmstadt
  *
@@ -14,20 +14,13 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.api;
+ ******************************************************************************/
 
-import org.apache.uima.jcas.JCas;
-import org.apache.uima.jcas.tcas.Annotation;
-
-
-public interface JCasTextSimilarityMeasure
-	extends TextSimilarityMeasure
-{
-	double getSimilarity(JCas jcas1, JCas jcas2)
-		throws SimilarityException;
-
-    double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1, Annotation coveringAnnotation2)
-    	throws SimilarityException;
-
-}
+/**
+ * Contains the core DKPro components for text similarity computation
+ * which are necessary to integration text similarity measures with a
+ * DKPro pipeline. This includes DKPro annotators such as the Similarity Scorer
+ * and external resources which wrap the text similarity algorithms for
+ * use in a DKPro pipeline. 
+ */
+package de.tudarmstadt.ukp.similarity.dkpro;
