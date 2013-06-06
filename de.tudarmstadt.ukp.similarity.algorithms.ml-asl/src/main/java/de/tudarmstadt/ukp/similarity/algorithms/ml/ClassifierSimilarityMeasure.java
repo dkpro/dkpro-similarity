@@ -145,10 +145,11 @@ public class ClassifierSimilarityMeasure
 	}
 	
 	@Override
-	public double getSimilarity(JCas jcas1, JCas jcas2)
+	public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
 		throws SimilarityException
 	{
-		// The feature generation needs to have happend before!
+		// The feature generation needs to have happened before!
 		
 		DocumentMetaData md = DocumentMetaData.get(jcas1);
 		int id = Integer.parseInt(md.getDocumentId().substring(md.getDocumentId().indexOf("-") + 1));
@@ -164,13 +165,4 @@ public class ClassifierSimilarityMeasure
 			throw new SimilarityException(e);
 		}
 	}
-
-    // FIXME this should be properly implemented
-    @Override
-    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
-            Annotation coveringAnnotation2)
-        throws SimilarityException
-    {
-        return getSimilarity(jcas1, jcas2);
-    }	
 }

@@ -179,7 +179,7 @@
     <module>de.tudarmstadt.ukp.similarity.algorithms.core-asl</module>
     <module>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</module>
     <module>de.tudarmstadt.ukp.similarity.algorithms.lsr-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.ml-asl</module>
+    
     <module>de.tudarmstadt.ukp.similarity.algorithms.sound-asl</module>
     <module>de.tudarmstadt.ukp.similarity.algorithms.structure-asl</module>
     <module>de.tudarmstadt.ukp.similarity.algorithms.style-asl</module>
@@ -200,6 +200,7 @@
     </module>
     <module>de.tudarmstadt.ukp.similarity.experiments.api-asl</module>
     <module>de.tudarmstadt.ukp.similarity.dkpro.vsm-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.ml-asl</module>
   </modules>
   <scm>
   	<url>http://code.google.com/p/dkpro-similarity-asl/source/browse/#svn/trunk</url>
