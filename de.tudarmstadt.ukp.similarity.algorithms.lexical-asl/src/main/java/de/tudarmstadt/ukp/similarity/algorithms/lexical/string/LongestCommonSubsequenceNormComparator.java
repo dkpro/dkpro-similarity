@@ -19,6 +19,15 @@ package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 
+/**
+ * Computes the similarity between two strings based on the longest
+ * common subsequence. The implementation normalizes by the first
+ * string, as proposed by Clough and Stevenson (2011).
+ * 
+ * Paul Clough and Mark Stevenson. 2011. In Language Resources and
+ * Evaluation: Special Issue on Plagiarism and Authorship Analysis,
+ * 45(1):5-24.
+ */
 public class LongestCommonSubsequenceNormComparator
 	extends LongestCommonSubsequenceComparator
 {
@@ -28,10 +37,6 @@ public class LongestCommonSubsequenceNormComparator
 	{
 		String lcs = getLCS(string1.toLowerCase(), string2.toLowerCase());
 		
-		// FIXME why normalize only with the length of the first text - this is not documented
-		// Normalize only by the length of the suspicious text
-		double score = new Integer(lcs.length()).doubleValue() / new Integer(string1.length()).doubleValue();
-		
-		return score;
+		return new Integer(lcs.length()).doubleValue() / new Integer(string1.length()).doubleValue();
 	}
 }
