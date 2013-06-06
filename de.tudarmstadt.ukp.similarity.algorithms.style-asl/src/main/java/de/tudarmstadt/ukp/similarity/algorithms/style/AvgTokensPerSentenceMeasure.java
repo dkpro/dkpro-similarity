@@ -14,41 +14,26 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasureBas
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 
 /**
- * This measure ignores the second parameters which are given to the getRelatedness
- * methods.
- * @author Daniel Bär
+ * Computes the average number of tokens per sentence.
  *
  */
 public class AvgTokensPerSentenceMeasure
 	extends JCasTextSimilarityMeasureBase
 {
-	@Override
-	public double getSimilarity(JCas jcas1, JCas jcas2)
-		throws SimilarityException
-	{		
-		DocumentAnnotation doc1 = new ArrayList<DocumentAnnotation>(JCasUtil.select(jcas1, DocumentAnnotation.class)).get(0);
-		List<Sentence> sentences = JCasUtil.selectCovered(jcas1, Sentence.class, doc1);
+	public double getSimilarity(JCas jcas1, JCas jcas2,
+    		Annotation coveringAnnotation1, Annotation coveringAnnotation2)
+        throws SimilarityException
+    {
+		List<Sentence> s1 = JCasUtil.selectCovered(jcas1, Sentence.class, coveringAnnotation1);
+		List<Sentence> s2 = JCasUtil.selectCovered(jcas2, Sentence.class, coveringAnnotation2);
 		
 		int noOfTokens = 0;
 		
-		for (Sentence sentence : sentences)
-		{
-			List<Token> theseTokens = JCasUtil.selectCovered(jcas1, Token.class, sentence);
-			noOfTokens += theseTokens.size();
-		}
+		for (Sentence sentence : s1)
+			noOfTokens += JCasUtil.selectCovered(jcas1, Token.class, sentence).size();
+		for (Sentence sentence : s2)
+			noOfTokens += JCasUtil.selectCovered(jcas1, Token.class, sentence).size();
 		
-		// Compute property
-		double avgNoOfTokensPerSentence = new Double(noOfTokens) / new Double(sentences.size());
-		
-		return avgNoOfTokensPerSentence;
-	}
-	
-	   // FIXME this should be properly implemented
-    @Override
-    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
-            Annotation coveringAnnotation2)
-        throws SimilarityException
-    {
-        return getSimilarity(jcas1, jcas2);
+		return new Double(noOfTokens) / new Double(s1.size() + s2.size());
     }
 }

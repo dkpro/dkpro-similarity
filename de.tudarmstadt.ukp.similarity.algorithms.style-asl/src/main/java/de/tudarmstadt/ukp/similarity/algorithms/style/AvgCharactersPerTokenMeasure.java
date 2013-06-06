@@ -14,40 +14,25 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 
 
 /**
- * This measure ignores the second parameters which are given to the getRelatedness
- * methods.
- * @author Daniel Bär
- *
+ * Computes the average number of characters per token.
  */
 public class AvgCharactersPerTokenMeasure
 	extends JCasTextSimilarityMeasureBase
 {
-	@Override
-	public double getSimilarity(JCas jcas1, JCas jcas2)
-		throws SimilarityException
-	{		
-		DocumentAnnotation doc1 = new ArrayList<DocumentAnnotation>(JCasUtil.select(jcas1, DocumentAnnotation.class)).get(0);
-		List<Token> tokens = JCasUtil.selectCovered(jcas1, Token.class, doc1);
+    public double getSimilarity(JCas jcas1, JCas jcas2,
+    		Annotation coveringAnnotation1, Annotation coveringAnnotation2)
+        throws SimilarityException
+    {
+		List<Token> t1 = JCasUtil.selectCovered(jcas1, Token.class, coveringAnnotation1);
+		List<Token> t2 = JCasUtil.selectCovered(jcas2, Token.class, coveringAnnotation2);
 		
 		int noOfCharacters = 0;
 		
-		for (Token token : tokens)
-		{
+		for (Token token : t1)
 			noOfCharacters += token.getCoveredText().length();
-		}
+		for (Token token : t2)
+			noOfCharacters += token.getCoveredText().length();
 		
-		// Compute property
-		double avgNoOfCharactersPerToken = new Double(noOfCharacters) / new Double(tokens.size());
-		
-		return avgNoOfCharactersPerToken;
-	}
-
-	// FIXME this should be properly implemented 
-    @Override
-    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
-            Annotation coveringAnnotation2)
-        throws SimilarityException
-    {
-        return getSimilarity(jcas1, jcas2);
+		return new Double(noOfCharacters) / new Double(t1.size() + t2.size());
     }
 }
