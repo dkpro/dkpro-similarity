@@ -1,21 +1,16 @@
 package de.tudarmstadt.ukp.similarity.experiments.rte.util;
 
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.DATASET_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.GOLD_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.MODELS_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.OUTPUT_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.GOLD_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.*;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
-import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
-import static org.uimafit.factory.ExternalResourceFactory.createExternalResourceDescription;
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.Accuracy;
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.AveragePrecision;
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.CWS;
 
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -23,53 +18,29 @@ import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.FileFilterUtils;
-import org.apache.commons.io.filefilter.TrueFileFilter;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
-import org.apache.uima.UIMAException;
-import org.apache.uima.analysis_engine.AnalysisEngine;
-import org.apache.uima.analysis_engine.AnalysisEngineDescription;
-import org.apache.uima.collection.CollectionReader;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.util.CollectionUtils;
-import org.uimafit.factory.AggregateBuilder;
-import org.uimafit.pipeline.SimplePipeline;
 
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.evaluation.output.prediction.AbstractOutput;
 import weka.classifiers.evaluation.output.prediction.PlainText;
-import weka.classifiers.functions.LinearRegression;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.Instance;
 import weka.core.Instances;
-import weka.core.converters.ArffSaver;
 import weka.core.converters.ConverterUtils.DataSink;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.supervised.attribute.AddClassification;
 import weka.filters.unsupervised.attribute.AddID;
 import weka.filters.unsupervised.attribute.Remove;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
-import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier;
-import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
-import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
-import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.ClassifierResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
-import de.tudarmstadt.ukp.similarity.ml.filters.LogFilter;
-import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
+import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Mode;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.filter.LogFilter;
-import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric;
 
 
 public class Evaluator

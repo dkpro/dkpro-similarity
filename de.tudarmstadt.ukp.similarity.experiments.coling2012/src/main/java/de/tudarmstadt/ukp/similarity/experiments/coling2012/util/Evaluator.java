@@ -1,17 +1,7 @@
 package de.tudarmstadt.ukp.similarity.experiments.coling2012.util;
 
-import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.DATASET_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.MODELS_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.OUTPUT_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.GOLDSTANDARD_DIR;
-
-import de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.EvaluationMetric;
-
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
-import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
-import static org.uimafit.factory.ExternalResourceFactory.createExternalResourceDescription;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,43 +13,22 @@ import java.util.Random;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
-import org.apache.uima.UIMAException;
-import org.apache.uima.analysis_engine.AnalysisEngine;
-import org.apache.uima.analysis_engine.AnalysisEngineDescription;
-import org.apache.uima.collection.CollectionReader;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.uimafit.factory.AggregateBuilder;
-import org.uimafit.pipeline.SimplePipeline;
 
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
-import weka.classifiers.functions.LinearRegression;
-import weka.classifiers.functions.Logistic;
-import weka.classifiers.functions.SMO;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.classifiers.trees.J48;
 import weka.core.Instance;
 import weka.core.Instances;
-import weka.core.Utils;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.supervised.attribute.AddClassification;
 import weka.filters.unsupervised.attribute.AddID;
 import weka.filters.unsupervised.attribute.Remove;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
-import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier;
-import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
-import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
-import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
-import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
+import de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.Dataset;
+import de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.EvaluationMetric;
 
 
 public class Evaluator
