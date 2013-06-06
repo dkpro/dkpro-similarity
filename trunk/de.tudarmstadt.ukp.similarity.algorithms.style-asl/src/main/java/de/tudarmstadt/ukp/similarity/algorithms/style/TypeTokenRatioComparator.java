@@ -7,7 +7,6 @@ import java.util.Set;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
-import org.apache.uima.jcas.tcas.DocumentAnnotation;
 import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
@@ -23,12 +22,12 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 public class TypeTokenRatioComparator
 	extends JCasTextSimilarityMeasureBase
 {
-	@Override
-	public double getSimilarity(JCas jcas1, JCas jcas2)
+	public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
 		throws SimilarityException
 	{				
-		double ttr1 = getTTR(jcas1);
-		double ttr2 = getTTR(jcas2);
+		double ttr1 = getTTR(jcas1, coveringAnnotation1);
+		double ttr2 = getTTR(jcas2, coveringAnnotation2);
 		
 		double distance;
 		if (ttr1 > ttr2) {
@@ -41,18 +40,9 @@ public class TypeTokenRatioComparator
 		return 1.0 - distance;
 	}
 	
-    // FIXME this should be properly implemented
-    @Override
-    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
-            Annotation coveringAnnotation2)
-        throws SimilarityException
-    {
-        return getSimilarity(jcas1, jcas2);
-    }
-	
-	private double getTTR(JCas jcas)
+	private double getTTR(JCas jcas, Annotation coveringAnnotation)
 	{
-		List<Sentence> sentences = new ArrayList<Sentence>(JCasUtil.select(jcas, Sentence.class));
+		List<Sentence> sentences = new ArrayList<Sentence>(JCasUtil.selectCovered(jcas, Sentence.class, coveringAnnotation));
 		
 		List<String> tokens = new ArrayList<String>();
 		Set<String> types = new HashSet<String>();

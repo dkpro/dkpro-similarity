@@ -44,11 +44,12 @@ public class MTLDComparator
 	}
 	
 	@Override
-	public double getSimilarity(JCas jcas1, JCas jcas2)
+	public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+            Annotation coveringAnnotation2)
 		throws SimilarityException
 	{				
-		double mtld1 = 0.5 * (getMTLD(jcas1, false) + getMTLD(jcas1, true));
-		double mtld2 = 0.5 * (getMTLD(jcas2, false) + getMTLD(jcas2, true));
+		double mtld1 = 0.5 * (getMTLD(jcas1, coveringAnnotation1, false) + getMTLD(jcas1, coveringAnnotation1, true));
+		double mtld2 = 0.5 * (getMTLD(jcas2, coveringAnnotation2, false) + getMTLD(jcas2, coveringAnnotation2, true));
 		
 		double distance;
 		if (mtld1 > mtld2) {
@@ -61,20 +62,11 @@ public class MTLDComparator
 		return distance;
 	}
 	
-    // FIXME this should be properly implemented 
-    @Override
-    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
-            Annotation coveringAnnotation2)
-        throws SimilarityException
-    {
-        return getSimilarity(jcas1, jcas2);
-    }
-	
-	private double getMTLD(JCas jcas, boolean reverse)
+	private double getMTLD(JCas jcas, Annotation coveringAnnotation, boolean reverse)
 	{
 		double factors = 0.0;
 		
-		List<Lemma> lemmas = new ArrayList<Lemma>(JCasUtil.select(jcas, Lemma.class));
+		List<Lemma> lemmas = new ArrayList<Lemma>(JCasUtil.selectCovered(jcas, Lemma.class, coveringAnnotation));
 
 		// Initialize tokens and types
 		List<String> tokens = new ArrayList<String>();
