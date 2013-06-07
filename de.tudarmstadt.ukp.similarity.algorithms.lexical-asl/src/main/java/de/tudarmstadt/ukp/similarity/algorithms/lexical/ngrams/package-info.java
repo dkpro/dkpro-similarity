@@ -17,6 +17,7 @@
  ******************************************************************************/
 
 /**
- * Contains text similarity measures for lexical similarity. 
+ * Contains text similarity measures that operate on character or word n-gram
+ * text representations. 
  */
-package de.tudarmstadt.ukp.similarity.algorithms.lexical;
+package de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams;
