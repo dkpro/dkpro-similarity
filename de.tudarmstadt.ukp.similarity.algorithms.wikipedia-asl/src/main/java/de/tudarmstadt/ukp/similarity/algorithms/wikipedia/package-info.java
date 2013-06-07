@@ -17,7 +17,7 @@
  ******************************************************************************/
 
 /**
- * Contains text similarity algorithms that are based on Wikipedia, e.g. the
+ * Contains text similarity measures that are based on Wikipedia, e.g. the
  * WLM measure which operates on the hyperlinks in Wikipedia.
  */
 package de.tudarmstadt.ukp.similarity.algorithms.wikipedia;
