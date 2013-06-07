@@ -17,7 +17,7 @@
  ******************************************************************************/
 
 /**
- * Contains text similarity measures that are based on lexical-semantic
- * resources such as WordNet. 
+ * Contains text similarity measures that are based on comparisons of the
+ * connecting paths of two words within a given lexical-semantic resources. 
  */
-package de.tudarmstadt.ukp.similarity.algorithms.lsr;
+package de.tudarmstadt.ukp.similarity.algorithms.lsr.path;

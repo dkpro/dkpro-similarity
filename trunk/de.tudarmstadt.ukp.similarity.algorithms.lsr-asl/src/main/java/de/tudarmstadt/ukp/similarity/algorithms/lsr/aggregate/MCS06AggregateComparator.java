@@ -35,6 +35,11 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.util.Cache;
 
 
+/**
+ * Implements the aggregation strategy by
+ * <a href="http://www.cse.unt.edu/~rada/papers/mihalcea.aaai06.pdf">Mihalcea et al. (2006)</a>. 
+ *
+ */
 public class MCS06AggregateComparator
 	extends TextSimilarityMeasureBase
 {

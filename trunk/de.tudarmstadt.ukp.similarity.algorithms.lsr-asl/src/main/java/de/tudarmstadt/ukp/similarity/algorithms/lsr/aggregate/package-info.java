@@ -17,7 +17,8 @@
  ******************************************************************************/
 
 /**
- * Contains text similarity measures that are based on lexical-semantic
- * resources such as WordNet. 
+ * Contains aggregation strategies which allow to aggregate the scores of
+ * term similarity measures to the text level in order to get a single overall
+ * text similarity score. 
  */
-package de.tudarmstadt.ukp.similarity.algorithms.lsr;
+package de.tudarmstadt.ukp.similarity.algorithms.lsr.aggregate;
