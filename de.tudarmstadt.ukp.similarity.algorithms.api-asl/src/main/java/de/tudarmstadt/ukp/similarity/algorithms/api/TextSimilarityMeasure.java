@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2012
+ * Copyright 2013
  * Ubiquitous Knowledge Processing (UKP) Lab
  * Technische Universität Darmstadt
  *
@@ -20,15 +20,15 @@ package de.tudarmstadt.ukp.similarity.algorithms.api;
 import java.util.Collection;
 
 /**
- * Similarity measure on bags of words.
+ * Similarity measure on two bag of words text representations, e.g. already
+ * lemmatized texts.
  */
 public interface TextSimilarityMeasure
 	extends TermSimilarityMeasure
 {
 	/**
-	 * Gets the similarity between two bags of words.
+	 * Computes the similarity between two bags of words text representations.
 	 */
-    // TODO rename stringlist to stringcollection after everything was moved
-	double getSimilarity(Collection<String> stringList1, Collection<String> stringList2)
+	double getSimilarity(Collection<String> strings1, Collection<String> strings2)
 		throws SimilarityException;
 }

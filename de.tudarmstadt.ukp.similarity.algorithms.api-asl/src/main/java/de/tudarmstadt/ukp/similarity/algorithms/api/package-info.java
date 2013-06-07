@@ -19,13 +19,13 @@
  * This package includes the interfaces for similarity measures. We thereby allow
  * to compare terms, texts, or JCAS text representations.
  *
- * We define these categories of comparators:
+ * We define three categories of comparators:
  * <ul>
  * <li>{@link TermSimilarityMeasure} - comparison of two terms, e.g.
- *     [<a href="http://portal.acm.org/citation.cfm?id=657297">Lin, 1998</a>]</li>
+ *     <a href="http://portal.acm.org/citation.cfm?id=657297">Lin (1998)</a></li>
  * <li>{@link TextSimilarityMeasure} - comparison of two texts, e.g. LSA
- * 	   [<a href="http://lsa.colorado.edu/papers/dp1.LSAintro.pdf">Landauer et. al, 1998</a>]</li>
- * <li>{@link JCasTextSimilarityMeasure} - comparison of two texts in JCAS format</li>
+ * 	   <a href="http://lsa.colorado.edu/papers/dp1.LSAintro.pdf">Landauer et. al (1998)</a></li>
+ * <li>{@link JCasTextSimilarityMeasure} - comparison of two texts in JCas format</li>
  * </ul>
  * 
  * All comparators are case-sensitive.

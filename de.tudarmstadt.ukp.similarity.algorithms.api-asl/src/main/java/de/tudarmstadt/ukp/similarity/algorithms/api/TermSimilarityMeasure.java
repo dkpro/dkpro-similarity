@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2012
+ * Copyright 2013
  * Ubiquitous Knowledge Processing (UKP) Lab
  * Technische Universität Darmstadt
  *
@@ -18,7 +18,7 @@
 package de.tudarmstadt.ukp.similarity.algorithms.api;
 
 /**
- * Similarity measure on terms (lexical units).
+ * Similarity measure on two terms.
  */
 public interface TermSimilarityMeasure
     extends SimilarityMeasure
@@ -35,6 +35,9 @@ public interface TermSimilarityMeasure
 	void beginMassOperation();
 	void endMassOperation();
 
+	/**
+	 * Computes the similarity between two terms.
+	 */
 	double getSimilarity(String string1, String string2)
 		throws SimilarityException;
 }
