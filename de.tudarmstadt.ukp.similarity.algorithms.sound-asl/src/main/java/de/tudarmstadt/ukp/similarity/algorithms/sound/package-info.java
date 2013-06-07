@@ -17,7 +17,6 @@
  ******************************************************************************/
 
 /**
- * Contains text similarity algorithms that compare texts based on their
- * phonetic representations.
+ * Contains text similarity measures that are based on phonetic representations.
  */
 package de.tudarmstadt.ukp.similarity.algorithms.sound;
