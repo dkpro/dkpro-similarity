@@ -17,7 +17,6 @@
  ******************************************************************************/
 
 /**
- * Contains text similarity algorithms that are based on structural comparisons
- * of two texts.
+ * Contains text similarity measures that are based on structural comparisons.
  */
 package de.tudarmstadt.ukp.similarity.algorithms.structure;
