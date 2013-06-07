@@ -11,6 +11,7 @@
 
 
 /**
- * Contains text similarity algorithms for lexical similarity. 
+ * Contains text similarity measures that operate solely on the string
+ * representations of texts (GPL variant).
  */
 package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
