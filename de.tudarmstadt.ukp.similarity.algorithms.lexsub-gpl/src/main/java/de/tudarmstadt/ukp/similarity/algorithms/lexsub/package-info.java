@@ -10,6 +10,6 @@
  ******************************************************************************/
 
 /**
- * Contains text similarity algorithms that are based on lexical substitution. 
+ * Contains text similarity measures that are based on lexical substitution. 
  */
 package de.tudarmstadt.ukp.similarity.algorithms.lexsub;

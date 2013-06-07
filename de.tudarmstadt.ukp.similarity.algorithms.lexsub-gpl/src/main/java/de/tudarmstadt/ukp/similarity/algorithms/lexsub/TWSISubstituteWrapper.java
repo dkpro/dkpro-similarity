@@ -20,6 +20,11 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 
 
+/**
+ * Similarity measure based on the lexical substitution system
+ * based on supervised word sense disambiguation
+ * <a href="http://link.springer.com/article/10.1007%2Fs10579-012-9180-5">(Biemann, 2012)</a>.
+ */
 public class TWSISubstituteWrapper
 	extends JCasTextSimilarityMeasureBase
 {
