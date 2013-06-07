@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2012
+ * Copyright 2013
  * Ubiquitous Knowledge Processing (UKP) Lab
  * Technische Universität Darmstadt
  *
@@ -17,6 +17,9 @@
  *******************************************************************************/
 package de.tudarmstadt.ukp.similarity.algorithms.api;
 
+/**
+ * Common interface for all similarity measures.
+ */
 public interface SimilarityMeasure
 {
 	String getName();
