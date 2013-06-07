@@ -17,6 +17,8 @@
  ******************************************************************************/
 
 /**
- * Contains text similarity measures for lexical similarity. 
+ * Contains a variety of text similarity measures that operate solely
+ * on the string representations of texts, e.g. a measure based on the longest
+ * common subsequence. 
  */
-package de.tudarmstadt.ukp.similarity.algorithms.lexical;
+package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
