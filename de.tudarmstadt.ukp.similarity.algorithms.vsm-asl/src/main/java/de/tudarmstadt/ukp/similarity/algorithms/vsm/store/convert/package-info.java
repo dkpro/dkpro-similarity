@@ -17,7 +17,6 @@
  ******************************************************************************/
 
 /**
- * Contains text similarity measures that are based on vector comparisons,
- * e.g. Explicit Semantic Analysis.
+ * Contains classes for converting vector indexes.
  */
-package de.tudarmstadt.ukp.similarity.algorithms.vsm;
+package de.tudarmstadt.ukp.similarity.algorithms.vsm.store.convert;
