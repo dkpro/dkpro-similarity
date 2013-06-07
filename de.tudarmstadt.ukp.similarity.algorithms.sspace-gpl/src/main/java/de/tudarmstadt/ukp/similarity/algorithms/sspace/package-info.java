@@ -10,10 +10,8 @@
  ******************************************************************************/
 
 /**
- * Contains text similarity algorithms that are based the S-Space Package:
- * 
- * David Jurgens and Keith Stevens. 2010. The S-Space Package: An Open Source
- * Package for Word Space Models. In Proceedings of the ACL 2010 System
- * Demonstrations, pages 30--35, Uppsala, Sweden. 
+ * Contains text similarity measures that are based the S-Space Package
+ * <a href="http://aclweb.org/anthology/P/P10/P10-4006.pdf">(David Jurgens
+ * and Keith Stevens, 2010)</a>.
  */
 package de.tudarmstadt.ukp.similarity.algorithms.sspace;
