@@ -22,10 +22,13 @@ import java.util.Collection;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 
+/**
+ * A random baseline measure which returns random scores in a
+ * [0,1[ interval.
+ */
 public class RandomBaselineTextSimilarityMeasure
 	extends TextSimilarityMeasureBase
 {
-
 	@Override
 	public double getSimilarity(Collection<String> aDocument1,
 			Collection<String> aDocument2)
