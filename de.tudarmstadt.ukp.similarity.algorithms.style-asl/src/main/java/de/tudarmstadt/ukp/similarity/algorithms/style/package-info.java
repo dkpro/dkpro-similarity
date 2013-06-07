@@ -17,7 +17,6 @@
  ******************************************************************************/
 
 /**
- * Contains text similarity algorithms that are based on stylistic comparisons
- * of two texts. 
+ * Contains text similarity algorithms that are based on stylistic comparisons.
  */
 package de.tudarmstadt.ukp.similarity.algorithms.style;
