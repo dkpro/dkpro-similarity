@@ -26,6 +26,9 @@ import org.uimafit.descriptor.ConfigurationParameter;
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 
+/**
+ * This resource wraps any parameter-free {@link TextSimilarityMeasure}}.
+ */
 
 public class SimpleTextSimilarityResource
     extends TextSimilarityResourceBase

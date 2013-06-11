@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.uima.UimaContext;
+import org.apache.uima.analysis_component.AnalysisComponent;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.text.AnnotationFS;
@@ -41,6 +42,10 @@ import de.tudarmstadt.ukp.similarity.dkpro.api.type.ExperimentalTextSimilaritySc
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
 
 
+/**
+ * Main component which integrates similarity computation with a
+ * DKPro pipeline, implemented as a UIMA {@link AnalysisComponent}.
+ */
 public class SimilarityScorer
 	extends JCasAnnotator_ImplBase
 {
