@@ -34,6 +34,15 @@ import org.uimafit.descriptor.ConfigurationParameter;
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 
 
+/**
+ * Reader for the METER Corpus (Gaizauskas et al., 2001)
+ * 
+ * Gaizauskas R., Foster J., Wilks Y., Arundel J., Clough P. and Piao S.
+ * (2001). The METER Corpus: A corpus for analysing journalistic text reuse.
+ * In Proceedings of the Corpus Linguistics 2001 Conference, pages 214-233,
+ * Bailrigg, UK.
+ * <a href="https://wiki.dcs.shef.ac.uk/wiki/pub/Darwin2008/2008T6_Literature/cl2001.pdf">(pdf)</a>
+ */
 public class MeterCorpusReader
 	extends CombinationReader
 {	

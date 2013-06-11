@@ -31,6 +31,11 @@ import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 
 
+/**
+ * Reader which combines the contents of plain text files. Each file is
+ * expected to comprise two lines whereas the first line is considered
+ * to be the first text, and the second line the second text.
+ */
 public class PlainTextCombinationReader
 	extends CombinationReader
 {

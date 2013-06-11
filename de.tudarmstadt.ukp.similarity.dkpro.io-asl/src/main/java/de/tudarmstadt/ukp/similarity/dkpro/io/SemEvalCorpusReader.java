@@ -32,6 +32,24 @@ import org.uimafit.descriptor.ConfigurationParameter;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 
+/**
+ * Reader for the datasets used in the Semantic Textual Similarity (STS)
+ * Task at SemEval-2012 (Agirre et al., 2012) and <pre>*</pre>SEM-2013
+ * (Agirre et al., 2013). 
+ * 
+ * Agirre E., Cer D., Diab M., and Gonzalez-Agirre A. (2012). SemEval-2012
+ * Task 6: A Pilot on Semantic Textual Similarity. In Proceedings of the
+ * 6th International Workshop on Semantic Evaluation, in conjunction with
+ * the 1st Joint Conference on Lexical and Computational Semantics, pages
+ * 385-393, Montreal, Canada.
+ * <a href="http://aclweb.org/anthology-new/S/S12/S12-1051.pdf">(pdf)</a>
+ * 
+ * Agirre E., Cer D., Diab M., Gonzalez-Agirre A., and Guo W. (2013).
+ * <pre>*</pre>SEM 2013 Shared Task: Semantic Textual Similarity. In
+ * Proceedings of the 2nd Joint Conference on Lexical and Computational
+ * Semantics, pages 32-43, Atlanta, GA, USA.
+ * <a href="http://aclweb.org/anthology-new/S/S13/S13-1004.pdf">(pdf)</a>
+ */
 public class SemEvalCorpusReader
 	extends CombinationReader
 {
