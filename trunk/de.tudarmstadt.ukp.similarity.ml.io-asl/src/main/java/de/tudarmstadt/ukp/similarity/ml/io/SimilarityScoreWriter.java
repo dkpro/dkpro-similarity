@@ -38,6 +38,10 @@ import de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 
 
+/**
+ * Writer which outputs text similarity scores along with their goldstandard
+ * scores (optional).
+ */
 public class SimilarityScoreWriter
 	extends JCasConsumer_ImplBase
 {
