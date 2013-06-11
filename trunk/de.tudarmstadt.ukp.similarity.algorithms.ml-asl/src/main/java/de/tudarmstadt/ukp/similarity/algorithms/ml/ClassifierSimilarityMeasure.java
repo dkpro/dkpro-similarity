@@ -24,6 +24,16 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.ml.filters.LogFilter;
 
 
+/**
+ * Runs a machine learning classifier on the provided test data on a model
+ * that is trained on the given training data. The available classifiers
+ * are Naive Bayes, J48, SMO, and Logistic. Mind that the
+ * {@link #getSimilarity(JCas,JCas) getSimilarity} method
+ * classifies the input texts by their ID, not their textual contents. The
+ * <pre>DocumentID</pre> of the <pre>DocumentMetaData</pre> is expected to denote
+ * the corresponding input line in the test data.
+ */
+
 public class ClassifierSimilarityMeasure
 	extends JCasTextSimilarityMeasureBase
 {

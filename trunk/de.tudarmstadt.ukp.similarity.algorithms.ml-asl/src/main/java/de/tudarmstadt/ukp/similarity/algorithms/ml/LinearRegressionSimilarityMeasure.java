@@ -20,7 +20,8 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 
 /**
  * Runs a linear regression classifier on the provided test data on a model
- * that is trained on the given training data. Mind that <pre>getSimilarity()</pre>
+ * that is trained on the given training data. Mind that the
+ * {@link #getSimilarity(JCas,JCas) getSimilarity} method
  * classifies the input texts by their ID, not their textual contents. The
  * <pre>DocumentID</pre> of the <pre>DocumentMetaData</pre> is expected to denote
  * the corresponding input line in the test data.
