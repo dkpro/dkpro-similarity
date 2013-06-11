@@ -8,6 +8,9 @@ import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
 
+/**
+ * This resource wraps any parameter-free {@link JCasTextSimilarityMeasure}}.
+ */
 public class SimpleJCasTextSimilarityResource
 	extends JCasTextSimilarityResourceBase
 {
