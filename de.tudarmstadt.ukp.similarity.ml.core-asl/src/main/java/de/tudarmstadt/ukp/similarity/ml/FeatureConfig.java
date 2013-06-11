@@ -20,6 +20,10 @@ package de.tudarmstadt.ukp.similarity.ml;
 import org.apache.uima.resource.ExternalResourceDescription;
 
 
+/**
+ * Convenience class for setting up text similarity measures for use
+ * in a preconfigured experimental setup.
+ */
 public class FeatureConfig
 {
 	private ExternalResourceDescription resource;

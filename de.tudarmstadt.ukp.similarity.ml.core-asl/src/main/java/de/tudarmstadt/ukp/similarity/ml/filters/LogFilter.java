@@ -4,10 +4,12 @@ import weka.core.Capabilities;
 import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
-import weka.core.SparseInstance;
 import weka.core.Capabilities.Capability;
 import weka.filters.SimpleStreamFilter;
 
+/**
+ * Applies a log-transformation on the input scores.
+ */
 public class LogFilter
 	extends SimpleStreamFilter
 {

@@ -12,6 +12,11 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 
 
+/**
+ * Converts text similarity scores from a number of plain text files
+ * (one similarity score per line) into an ARFF file for use with
+ * machine learning algorithms.
+ */
 public class ArffConverter
 {	
 	public static final String LF = System.getProperty("line.separator");
