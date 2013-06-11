@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.ml.example.mm09;
+package de.tudarmstadt.ukp.similarity.example.ml.mm09;
 
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
 import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
