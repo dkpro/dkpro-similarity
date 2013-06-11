@@ -20,6 +20,15 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 import uk.ac.shef.wit.simmetrics.similaritymetrics.AbstractStringMetric;
 
 
+/**
+ * Abstract base class for all similarity measures that are based
+ * on the SimMetrics library (Chapman, Norton, and Ciravegna, 2005).
+ *
+ * Chapman S., Norton B., and Ciravegna F. (2005). Armadillo: Integrating
+ * Knowledge for the Semantic Web. In Proceedings of the Dagstuhl Seminar
+ * in Machine Learning for the Semantic Web, Wadern, Germany.
+ * <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.60.5185&rep=rep1&type=pdf">(pdf)</a>
+ */
 public abstract class SimMetricsComparator_ImplBase
 	extends TextSimilarityMeasureBase
 {

@@ -12,6 +12,11 @@ package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
 
 import uk.ac.shef.wit.simmetrics.similaritymetrics.DiceSimilarity;
 
+/**
+ * Dice similarity as implemented by the 
+ * {@link SimMetricsComparator_ImplBase SimMetrics} library.
+ */
+
 public class DiceSimMetricComparator
 	extends SimMetricsComparator_ImplBase
 {

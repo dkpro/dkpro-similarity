@@ -13,6 +13,11 @@ package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
 import uk.ac.shef.wit.simmetrics.similaritymetrics.OverlapCoefficient;
 
 
+/**
+ * OverlapCoefficient similarity as implemented by the 
+ * {@link SimMetricsComparator_ImplBase SimMetrics} library.
+ */
+
 public class OverlapCoefficientSimMetricComparator
 	extends SimMetricsComparator_ImplBase
 {
