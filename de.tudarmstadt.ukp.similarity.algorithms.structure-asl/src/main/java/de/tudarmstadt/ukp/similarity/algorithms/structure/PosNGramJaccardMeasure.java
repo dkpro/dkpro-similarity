@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.lang.NotImplementedException;
+import org.apache.commons.lang.WordUtils;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
@@ -15,6 +16,11 @@ import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 
+/**
+ * Computes the overlap of part-of-speech n-grams using the
+ * Jaccard measure, similarly as for the word n-grams
+ * in the {@link WordNGramJaccardMeasure}. 
+ */
 public class PosNGramJaccardMeasure
 	extends JCasTextSimilarityMeasureBase
 {
