@@ -15,6 +15,9 @@ import de.tudarmstadt.ukp.similarity.experiments.sts2013.util.Evaluator;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013.util.Features2Arff;
 
 
+/**
+ * Full-featured experimental setup.
+ */
 public class Pipeline
 {
 	public enum Mode

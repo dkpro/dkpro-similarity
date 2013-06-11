@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright 2013
+ * Ubiquitous Knowledge Processing (UKP) Lab
+ * Technische Universität Darmstadt
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the GNU Public License v3.0
+ * which accompanies this distribution, and is available at
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.rte;
 
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.DATASET_DIR;
@@ -9,12 +19,9 @@ import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader
 import static org.uimafit.factory.ExternalResourceFactory.createExternalResourceDescription;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
@@ -29,19 +36,13 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.CosineSimilarity;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.CosineSimilarity.NormalizationMode;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.CosineSimilarity.WeightingModeTf;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.structure.PosNGramContainmentMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.style.MTLDComparator;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
-import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
+import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.CharacterNGramResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
@@ -65,18 +66,21 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.style.TokenRatioResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.style.TypeTokenRatioResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.LatentSemanticAnalysisResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
-import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
-import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
 import de.tudarmstadt.ukp.similarity.experiments.rte.util.CharacterNGramIdfValuesGenerator;
 import de.tudarmstadt.ukp.similarity.experiments.rte.util.ConvertToPlainText;
-import de.tudarmstadt.ukp.similarity.experiments.rte.util.WordIdfValuesGenerator;
-//import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.CharacterNGramIdfValuesGenerator;
-import de.tudarmstadt.ukp.similarity.experiments.rte.util.StopwordFilter;
-//import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.WordIdfValuesGenerator;
 import de.tudarmstadt.ukp.similarity.experiments.rte.util.RteUtil;
+import de.tudarmstadt.ukp.similarity.experiments.rte.util.StopwordFilter;
+import de.tudarmstadt.ukp.similarity.experiments.rte.util.WordIdfValuesGenerator;
+import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
+import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
+//import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.CharacterNGramIdfValuesGenerator;
+//import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.WordIdfValuesGenerator;
 
 
+/**
+ * Pipline for the text similarity feature generation.
+ */
 public class FeatureGeneration
 {
 	public static void generateFeatures(Dataset dataset)

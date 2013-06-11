@@ -28,6 +28,9 @@ import de.tudarmstadt.ukp.similarity.experiments.coling2012.util.Features2Arff;
 import edu.stanford.nlp.util.StringUtils;
 
 
+/**
+ * Full-featured experimental setup
+ */
 public class Pipeline
 {	
 	public enum Dataset

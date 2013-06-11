@@ -55,6 +55,9 @@ import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Datase
 import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode;
 
 
+/**
+ * Pipeline for generating the text similarity features.
+ */
 public class FeatureGeneration
 {
 	public static void generateFeatures(Dataset dataset, Mode mode)

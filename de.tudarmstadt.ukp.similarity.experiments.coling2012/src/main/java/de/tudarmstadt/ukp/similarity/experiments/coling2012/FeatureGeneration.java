@@ -60,6 +60,9 @@ import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 
 
+/**
+ * Pipeline that generates the text similarity features. 
+ */
 public class FeatureGeneration
 {
 	public static void generateFeatures(Dataset... datasets)
