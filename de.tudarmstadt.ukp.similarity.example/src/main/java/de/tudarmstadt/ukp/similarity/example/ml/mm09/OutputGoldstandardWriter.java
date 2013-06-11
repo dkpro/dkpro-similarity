@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.ml.example.mm09;
+package de.tudarmstadt.ukp.similarity.example.ml.mm09;
 
 import java.io.BufferedWriter;
 import java.io.File;

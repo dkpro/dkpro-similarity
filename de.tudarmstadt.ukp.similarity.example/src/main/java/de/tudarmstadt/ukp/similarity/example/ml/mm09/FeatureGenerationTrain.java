@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.ml.example.mm09;
+package de.tudarmstadt.ukp.similarity.example.ml.mm09;
 
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
@@ -15,11 +15,11 @@ import org.apache.uima.collection.CollectionReader;
 import org.uimafit.factory.AggregateBuilder;
 import org.uimafit.pipeline.SimplePipeline;
 
-import com.sleepycat.je.utilint.LongStat;
-
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
+import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpSegmenter;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramJaccardMeasure;
@@ -34,12 +34,12 @@ import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.MongeElkanSecondS
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
+import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.StopwordNGramContainmentMeasureResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.style.FunctionWordFrequenciesMeasureResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
@@ -47,9 +47,9 @@ import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 
 
-public class FeatureGenerationTest
+public class FeatureGenerationTrain
 {
-	private static final String OUTPUT_FEATURE_DIR = "src/main/resources/mm09-features"; 
+	private static final String OUTPUT_FEATURE_DIR = "src/main/resources/semeval-train-all-combined-features"; 
 	
 	public static void main(String[] args)
 		throws Exception
@@ -226,7 +226,6 @@ public class FeatureGenerationTest
 		
 		
 		
-		
 		// Run the pipeline		
 		for (FeatureConfig config : configs)
 		{			
@@ -234,11 +233,12 @@ public class FeatureGenerationTest
 			{
 				System.out.println("Skipping: " + config.getMeasureName());
 			} else {			
-				CollectionReader reader = createCollectionReader(ShortAnswerGradingReader.class,
-						ShortAnswerGradingReader.PARAM_INPUT_DIR, "classpath:/datasets/mm09",
-						ShortAnswerGradingReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
+				CollectionReader reader = createCollectionReader(SemEvalCorpusReader.class,
+						SemEvalCorpusReader.PARAM_INPUT_FILE, "classpath:/datasets/semeval/train/STS.input.ALLcombined.txt",
+						SemEvalCorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
 		
-				AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
+				AnalysisEngineDescription seg = createPrimitiveDescription(
+						BreakIteratorSegmenter.class);
 				
 				AggregateBuilder builder = new AggregateBuilder();
 				builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
