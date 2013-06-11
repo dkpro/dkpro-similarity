@@ -1,19 +1,25 @@
+/*******************************************************************************
+ * Copyright 2013
+ * Ubiquitous Knowledge Processing (UKP) Lab
+ * Technische Universität Darmstadt
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the GNU Public License v3.0
+ * which accompanies this distribution, and is available at
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.coling2012;
 
 import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.FEATURES_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.UTILS_DIR;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
-import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
 import static org.uimafit.factory.ExternalResourceFactory.createExternalResourceDescription;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
@@ -31,15 +37,10 @@ import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.JaroSecondStringC
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.structure.TokenPairOrderingMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.style.FunctionWordFrequenciesMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
-import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.CharacterNGramResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.ResnikRelatednessResource;
@@ -50,13 +51,13 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.style.FunctionWordFrequencie
 import de.tudarmstadt.ukp.similarity.dkpro.resource.style.MTLDResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.style.TokenRatioResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
-import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
-import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.Dataset;
 import de.tudarmstadt.ukp.similarity.experiments.coling2012.util.CharacterNGramIdfValuesGenerator;
 import de.tudarmstadt.ukp.similarity.experiments.coling2012.util.ColingUtils;
 import de.tudarmstadt.ukp.similarity.experiments.coling2012.util.StopwordFilter;
 import de.tudarmstadt.ukp.similarity.experiments.coling2012.util.WordIdfValuesGenerator;
+import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
+import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 
 
 public class FeatureGeneration

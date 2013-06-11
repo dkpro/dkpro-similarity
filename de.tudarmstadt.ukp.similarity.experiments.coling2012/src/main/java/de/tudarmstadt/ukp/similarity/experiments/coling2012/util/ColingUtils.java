@@ -1,9 +1,18 @@
+/*******************************************************************************
+ * Copyright 2013
+ * Ubiquitous Knowledge Processing (UKP) Lab
+ * Technische Universität Darmstadt
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the GNU Public License v3.0
+ * which accompanies this distribution, and is available at
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.coling2012.util;
 
 import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.DATASET_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.GOLDSTANDARD_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.UTILS_DIR;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,9 +29,9 @@ import org.uimafit.factory.CollectionReaderFactory;
 import org.uimafit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.similarity.dkpro.io.CloughCorpusReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.MeterCorpusReader;
+import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.Dataset;
 
 
@@ -99,6 +108,7 @@ public class ColingUtils
 		SimplePipeline.runPipeline(reader, writer);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public static List<String> readGoldstandard(Dataset dataset)
 		throws IOException
 	{

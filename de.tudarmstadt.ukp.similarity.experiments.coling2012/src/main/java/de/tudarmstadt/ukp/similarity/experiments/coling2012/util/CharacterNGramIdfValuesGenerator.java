@@ -1,12 +1,20 @@
+/*******************************************************************************
+ * Copyright 2013
+ * Ubiquitous Knowledge Processing (UKP) Lab
+ * Technische Universität Darmstadt
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the GNU Public License v3.0
+ * which accompanies this distribution, and is available at
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.coling2012.util;
 
 import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.UTILS_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.DATASET_DIR;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
 import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
 
 import java.io.File;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -21,9 +29,6 @@ import org.apache.uima.collection.CollectionReader;
 import org.uimafit.factory.AggregateBuilder;
 import org.uimafit.pipeline.SimplePipeline;
 
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
-import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
-import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;

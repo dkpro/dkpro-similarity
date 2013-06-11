@@ -1,7 +1,19 @@
+/*******************************************************************************
+ * Copyright 2013
+ * Ubiquitous Knowledge Processing (UKP) Lab
+ * Technische Universität Darmstadt
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the GNU Public License v3.0
+ * which accompanies this distribution, and is available at
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.coling2012.util;
 
-import java.io.File;
+import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.FEATURES_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.MODELS_DIR;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,14 +25,8 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.Dataset;
-
-import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.FEATURES_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.MODELS_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.GOLDSTANDARD_DIR;
 
 
 public class Features2Arff

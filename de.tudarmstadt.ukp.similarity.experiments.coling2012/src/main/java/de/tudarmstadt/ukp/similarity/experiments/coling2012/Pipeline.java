@@ -1,8 +1,17 @@
+/*******************************************************************************
+ * Copyright 2013
+ * Ubiquitous Knowledge Processing (UKP) Lab
+ * Technische Universität Darmstadt
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the GNU Public License v3.0
+ * which accompanies this distribution, and is available at
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.coling2012;
 
-import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.Dataset.*;
-import static de.tudarmstadt.ukp.similarity.experiments.coling2012.util.Evaluator.WekaClassifier.*;
-import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.EvaluationMetric.*;
+import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.EvaluationMetric.Accuracy;
+import static de.tudarmstadt.ukp.similarity.experiments.coling2012.Pipeline.EvaluationMetric.AverageF1;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -11,13 +20,11 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 
-import com.sleepycat.je.rep.elections.Protocol.Accept;
-
 import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
 import de.tudarmstadt.ukp.similarity.experiments.coling2012.util.ColingUtils;
 import de.tudarmstadt.ukp.similarity.experiments.coling2012.util.Evaluator;
-import de.tudarmstadt.ukp.similarity.experiments.coling2012.util.Features2Arff;
 import de.tudarmstadt.ukp.similarity.experiments.coling2012.util.Evaluator.WekaClassifier;
+import de.tudarmstadt.ukp.similarity.experiments.coling2012.util.Features2Arff;
 import edu.stanford.nlp.util.StringUtils;
 
 
