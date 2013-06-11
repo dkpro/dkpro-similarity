@@ -17,6 +17,6 @@
  ******************************************************************************/
 
 /**
- * Contains components which are fundamental for all algorithms.
+ * Contains components which are fundamental for all similarity measures.
  */
 package de.tudarmstadt.ukp.similarity.algorithms;
