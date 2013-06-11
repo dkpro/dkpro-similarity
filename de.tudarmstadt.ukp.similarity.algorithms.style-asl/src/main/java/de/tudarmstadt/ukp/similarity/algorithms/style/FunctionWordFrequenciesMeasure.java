@@ -21,6 +21,14 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 
+/**
+ * This measure (Dinu and Popescu, 2009) operates on a set of function
+ * words and compares their word frequency vectors using Pearson correlation.
+ *
+ * Liviu P. Dinu and Marius Popescu. 2009. Ordinal measures in authorship
+ * identiﬁcation. In Proceedings of the 3rd PAN Workshop. Uncovering
+ * Plagiarism, Authorship and Social Software Misuse, pages 62–66.
+ */
 public class FunctionWordFrequenciesMeasure
 	extends JCasTextSimilarityMeasureBase
 {
