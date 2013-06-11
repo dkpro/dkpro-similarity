@@ -38,6 +38,7 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
  * detection of copying between texts, and its practical implementation in
  * the ferrett plagiarism and collusion detector. In Plagiarism: Prevention,
  * Practice and Policies Conference, 2004.
+ * <a href="http://uhra.herts.ac.uk/bitstream/handle/2299/2114/902216.pdf;jsessionid=11177E6A9862D9230203197CF13EE950?sequence=1">(pdf)</a>
  */
 public class WordNGramJaccardMeasure
 	extends TextSimilarityMeasureBase

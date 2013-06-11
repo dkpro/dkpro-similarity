@@ -38,7 +38,8 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
  * 
  * A. Barrón-Cedeño, P. Rosso, E. Agirre, and G. Labaka: Plagiarism
  * Detection across Distant Language Pairs, in: Proceedings of COLING,
- * pages 37-45, 2010.
+ * pages 37-45, 2010. 
+ * <a href="http://aclweb.org/anthology-new/C/C10/C10-1005.pdf">(pdf)</a>
  * 
  * Originally, they used n-grams of length 3.
  */
