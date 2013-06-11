@@ -31,8 +31,6 @@ import org.apache.uima.cas.CASException;
 import org.apache.uima.collection.CollectionException;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
-import org.apache.xml.resolver.CatalogManager;
-import org.apache.xml.resolver.tools.CatalogResolver;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -51,6 +49,15 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.EntailmentPair;
 import de.tudarmstadt.ukp.similarity.entailment.type.EntailmentClassificationOutcome;
 
+/**
+ * Reader for the Recognizing Textual Entailment (RTE) datasets
+ * (Dagan, Glickman, and Magnini, 2006).
+ * 
+ * Dagan I., Glickman O., and Magnini B. (2006). The PASCAL Recognising
+ * Textual Entailment Challenge. In Machine Learning Challenges, Lecture
+ * Notes in Computer Science, pages 177-190, Springer.
+ * <a href="http://eprints.pascal-network.org/archive/00001298/01/dagan_et_al_rte05.pdf">(pdf)</a>
+ */
 public class RTECorpusReader
 	extends CombinationReader
 {

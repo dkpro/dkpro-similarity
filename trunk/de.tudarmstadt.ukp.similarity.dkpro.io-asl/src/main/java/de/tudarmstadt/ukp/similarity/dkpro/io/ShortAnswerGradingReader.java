@@ -19,6 +19,13 @@ import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.similarity.dkpro.api.type.GoldTextSimilarityScore;
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 
+/**
+ * Reader for the dataset by Mohler and Mihalcea (2009).
+ * 
+ * Michael Mohler and Rada Mihalcea. 2009. Text-to-text Semantic
+ * Similarity for Automatic Short Answer Grading. In Proceedings
+ * of the European Chapter of the ACL, pages 567–575.
+ */
 public class ShortAnswerGradingReader
 	extends CombinationReader
 {

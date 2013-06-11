@@ -39,6 +39,12 @@ import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 
 
+/**
+ * Abstract reader which allows to combine the texts of two views within a
+ * JCas in a number of ways, e.g. each text with every other one. This class
+ * serves as the base for any concrete reader that only have to overwrite the
+ * {@link #getAlignedPairs()} method.
+ */
 public abstract class CombinationReader
 	extends CasCollectionReader_ImplBase
 {

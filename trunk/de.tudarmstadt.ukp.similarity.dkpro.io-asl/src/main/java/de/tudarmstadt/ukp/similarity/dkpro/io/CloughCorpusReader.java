@@ -29,6 +29,14 @@ import org.uimafit.descriptor.ConfigurationParameter;
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 
 
+/**
+ * Reader for the Wikipedia Rewrite Corpus (Clough and Stevenson, 2011)
+ * 
+ * Clough P. and Stevenson M. (2011). Developing a Corpus of Plagiarised
+ * Short Answers. Language Resources and Evaluation: Special Issue on
+ * Plagiarism and Authorship Analysis, 45(1):5-24.
+ * <a href="http://link.springer.com/article/10.1007/s10579-009-9112-1">(pdf)</a>
+ */
 public class CloughCorpusReader
 	extends CombinationReader
 {

@@ -35,6 +35,10 @@ import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.similarity.dkpro.api.type.ExperimentalTextSimilarityScore;
 import de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore;
 
+/**
+ * Writer which outputs text similarity scores along with their goldstandard
+ * scores (optional).
+ */
 public class CsvWriter
 	extends JCasConsumer_ImplBase
 {

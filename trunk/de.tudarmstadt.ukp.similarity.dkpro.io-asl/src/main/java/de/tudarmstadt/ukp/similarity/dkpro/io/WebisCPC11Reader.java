@@ -28,7 +28,14 @@ import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 
-
+/**
+ * Reader for the Webis Crowd Paraphrase Corpus (Burrows, Potthast,
+ * and Stein, 2012)
+ * 
+ * Burrows S., Potthast M., and Stein B. (2012). Paraphrase Acquisition
+ * via Crowdsourcing and Machine Learning. Transactions on Intelligent
+ * Systems and Technology, V(January):1-22.
+ */
 public class WebisCPC11Reader
 	extends CombinationReader
 {
