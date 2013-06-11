@@ -17,11 +17,17 @@
  *******************************************************************************/
 package de.tudarmstadt.ukp.similarity.algorithms.api;
 
+/**
+ * Signals that the similarity computation by a similarity measure has
+ * failed. It is thrown by the
+ * {@link TermSimilarityMeasure#getSimilarity(String, String) getSimilarity}
+ * methods.
+ */
 public class SimilarityException
 	extends Exception
 {
 	private static final long serialVersionUID = -2855287805931261418L;
-	
+
 	public SimilarityException() {
         super();
     }
