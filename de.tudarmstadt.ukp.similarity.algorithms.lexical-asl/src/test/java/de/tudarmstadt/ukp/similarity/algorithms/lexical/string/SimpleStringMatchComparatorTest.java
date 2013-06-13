@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.lexical;
+package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
 
 import static org.junit.Assert.assertEquals;
 
