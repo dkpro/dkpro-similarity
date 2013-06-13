@@ -5,7 +5,7 @@ import java.util.Map;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
-import de.tudarmstadt.ukp.similarity.algorithms.style.AvgTokensPerSentenceMeasure;
+import de.tudarmstadt.ukp.similarity.algorithms.style.AvgTokensPerSentenceMeasureTest;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
 
 
@@ -23,7 +23,7 @@ public class AvgTokensPerSentenceResource
 
         this.mode = TextSimilarityResourceMode.jcas;
         
-        measure = new AvgTokensPerSentenceMeasure();
+        measure = new AvgTokensPerSentenceMeasureTest();
         
         return true;
     }
