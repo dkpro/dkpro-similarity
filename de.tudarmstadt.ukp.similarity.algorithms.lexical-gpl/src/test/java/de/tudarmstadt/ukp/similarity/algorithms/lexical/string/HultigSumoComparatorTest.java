@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.algorithms.lexical;
+package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,7 +10,7 @@ import org.junit.Test;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.HultigSumoComparator;
 
-public class HultigSumoTest
+public class HultigSumoComparatorTest
 {
 
     @Test
