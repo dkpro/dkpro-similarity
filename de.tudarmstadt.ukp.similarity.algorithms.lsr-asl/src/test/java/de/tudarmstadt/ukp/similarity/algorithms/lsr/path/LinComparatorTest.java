@@ -37,7 +37,6 @@ public class LinComparatorTest
 {
     private static final double epsilon = 0.0001;
 
-    @Ignore("Wikipedia Category Resource not available")
     @Test
 	public void testLinWikipediaCategory()
 		throws Exception
@@ -49,7 +48,6 @@ public class LinComparatorTest
         runWikipediaCategoryTests(comparator, wikiResource);
     }
 
-    @Ignore("Wikipedia Category Resource not available")
     @Test
 	public void testLinWikipediaCategorySetRoot()
 		throws Exception
