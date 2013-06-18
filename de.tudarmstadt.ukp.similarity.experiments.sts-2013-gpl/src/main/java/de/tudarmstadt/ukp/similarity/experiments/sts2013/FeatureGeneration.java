@@ -32,6 +32,7 @@ import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
+import de.tudarmstadt.ukp.similarity.algorithms.lexsub.BingSMTWrapper.Language;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
@@ -41,6 +42,7 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.CharacterNGra
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
+import de.tudarmstadt.ukp.similarity.dkpro.resource.lexsub.BingSMTWrapperResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexsub.TWSISubstituteWrapperResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.ResnikRelatednessResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.aggregate.MCS06AggregateResource;
@@ -211,6 +213,27 @@ public class FeatureGeneration
 				"word-sim",
 				"TWSI_MCS06_Resnik_WordNet"
 				));
+		
+		// Bing SMT wrapper for 
+		// Resnik word similarity measure, aggregated according to Mihalcea et al. (2006)
+		// In our original system, we used MOSES for machine translation.
+//		configs.add(new FeatureConfig(
+//				createExternalResourceDescription(
+//						BingSMTWrapperResource.class,
+//						BingSMTWrapperResource.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
+//						    	MCS06AggregateResource.class,
+//						    	MCS06AggregateResource.PARAM_TERM_SIMILARITY_RESOURCE, createExternalResourceDescription(
+//						    			ResnikRelatednessResource.class,
+//						    			ResnikRelatednessResource.PARAM_RESOURCE_NAME, "wordnet",
+//						    			ResnikRelatednessResource.PARAM_RESOURCE_LANGUAGE, "en"
+//						    			),
+//						    	MCS06AggregateResource.PARAM_IDF_VALUES_FILE, UTILS_DIR + "/word-idf/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt"
+//						    	),
+//						BingSMTWrapperResource.PARAM_ORIGINAL_LANGUAGE, Language.EN.toString(),
+//						BingSMTWrapperResource.PARAM_BRIDGE_LANGUAGE, Language.ES.toString()),
+//				"word-sim",
+//				"BingSMT_MCS06_Resnik_WordNet"
+//				));
 				
 		// Explicit Semantic Analysis
 		configs.add(new FeatureConfig(
