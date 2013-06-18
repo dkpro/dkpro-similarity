@@ -207,4 +207,7 @@
   	<connection>http://dkpro-similarity-asl.googlecode.com/svn/trunk/dkpro-similarity-asl</connection>
   	<developerConnection>scm:svn:https://dkpro-similarity-asl.googlecode.com/svn/trunk/dkpro-similarity-asl</developerConnection>
   </scm>
+  <name>DKPro Similarity</name>
+  <url>https://code.google.com/p/dkpro-similarity-asl/</url>
+  <description>DKPro Similarity is an open source framework for text similarity. Our goal is to provide a comprehensive repository of text similarity measures which are implemented using standardized interfaces. The framework is designed to complement DKPro Core, a collection of software components for natural language processing based on the Apache UIMA framework. </description>
 </project>
