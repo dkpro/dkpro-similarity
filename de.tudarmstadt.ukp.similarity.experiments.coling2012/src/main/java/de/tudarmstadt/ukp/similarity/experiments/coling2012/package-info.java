@@ -10,12 +10,7 @@
  ******************************************************************************/
 
 /**
- * Contains the experimental setup as used in (Bär, Zesch, and Gurevych, 2012)
- * 
- * Bär D., Zesch T., and Gurevych I. (2012). Text Reuse Detection Using a
- * Composition of Text Similarity Measures. In Proceedings of the 24th
- * International Conference on Computational Linguistics, pages 167-184,
- * Mumbai, India.
- * <a href="http://www.aclweb.org/anthology/C/C12/C12-1011.pdf">(pdf)</a>
+ * Contains the experimental setup as used in
+ * <a href="http://www.aclweb.org/anthology/C/C12/C12-1011.pdf">(Bär, Zesch, and Gurevych, 2012)</a>.
  */
 package de.tudarmstadt.ukp.similarity.experiments.coling2012;
