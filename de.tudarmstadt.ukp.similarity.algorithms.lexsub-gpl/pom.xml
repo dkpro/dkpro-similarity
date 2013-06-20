@@ -13,7 +13,6 @@
   		<artifactId>
   			de.tudarmstadt.ukp.similarity.algorithms.api-asl
   		</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.langtech.substituter.twsi</groupId>

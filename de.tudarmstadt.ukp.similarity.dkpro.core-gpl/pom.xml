@@ -13,7 +13,6 @@
   		<artifactId>
   			de.tudarmstadt.ukp.similarity.dkpro.api-asl
   		</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
@@ -34,7 +33,6 @@
   		<artifactId>
   			de.tudarmstadt.ukp.similarity.dkpro.core-asl
   		</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
@@ -55,7 +53,6 @@
   		<artifactId>
   			de.tudarmstadt.ukp.similarity.algorithms.vsm-asl
   		</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
