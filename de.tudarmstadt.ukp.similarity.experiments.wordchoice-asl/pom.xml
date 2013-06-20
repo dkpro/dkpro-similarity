@@ -3,7 +3,7 @@
   <parent>
     <groupId>de.tudarmstadt.ukp.similarity</groupId>
     <artifactId>de.tudarmstadt.ukp.similarity-asl</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity.experiments</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity.experiments.wordchoice-asl</artifactId>
@@ -49,7 +49,7 @@
     	<artifactId>
     		de.tudarmstadt.ukp.similarity.experiments.api-asl
     	</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
+    	<version>1.0.0</version>
     </dependency>
     <dependency>
     	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
