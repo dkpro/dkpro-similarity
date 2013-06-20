@@ -20,7 +20,7 @@
   <parent>
     <artifactId>de.tudarmstadt.ukp.similarity-asl</artifactId>
     <groupId>de.tudarmstadt.ukp.similarity</groupId>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity.dkpro.io-asl</artifactId>
