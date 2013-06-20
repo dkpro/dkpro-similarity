@@ -7,7 +7,7 @@
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity-gpl</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <dependencies>
   	<dependency>
@@ -64,9 +64,9 @@
   	<module>de.tudarmstadt.ukp.similarity.experiments.sts-2013-gpl</module>
   </modules>
   <scm>
-  	<url>http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn/tags/de.tudarmstadt.ukp.similarity-gpl-1.0.0</url>
-  	<connection>http://dkpro-similarity-gpl.googlecode.com/svn/tags/de.tudarmstadt.ukp.similarity-gpl-1.0.0</connection>
-  	<developerConnection>scm:svn:https://dkpro-similarity-gpl.googlecode.com/svn/tags/de.tudarmstadt.ukp.similarity-gpl-1.0.0</developerConnection>
+  	<url>http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn/trunk</url>
+  	<connection>http://dkpro-similarity-gpl.googlecode.com/svn/trunk/</connection>
+  	<developerConnection>scm:svn:https://dkpro-similarity-gpl.googlecode.com/svn/trunk/</developerConnection>
   </scm>
   <name>DKPro Similarity</name>
   <description>DKPro Similarity is an open source framework for text similarity. Our goal is to provide a comprehensive repository of text similarity measures which are implemented using standardized interfaces. The framework is designed to complement DKPro Core, a collection of software components for natural language processing based on the Apache UIMA framework.</description>
