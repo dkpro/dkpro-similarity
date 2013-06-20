@@ -23,6 +23,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.Set;
 
 import org.junit.Assume;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity;
@@ -34,6 +35,7 @@ public class WuPalmerComparatorTest
 {
     private static final double epsilon = 0.0001;
 
+    @Ignore("There seems to be something wrong with the test database. Error: No category with name Anime-influenced_animatio_(non-commercial) was found.")
     @Test
 	public void testWuPalmerWikipediaCategory()
 		throws Exception
