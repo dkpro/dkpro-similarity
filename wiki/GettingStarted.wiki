@@ -36,7 +36,7 @@ In case you run into problems (i.e. dependencies are not resolvable), try adding
 <dependency>
   <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity.algorithms.api-asl</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <scope>compile</scope>
 </dependency>
 }}}
