@@ -20,11 +20,11 @@
   <parent>
     <artifactId>de.tudarmstadt.ukp.similarity-asl</artifactId>
     <groupId>de.tudarmstadt.ukp.similarity</groupId>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</artifactId>
-  <version>1.0.0</version>
+  <version>0.0.1-SNAPSHOT</version>
   <dependencies>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
