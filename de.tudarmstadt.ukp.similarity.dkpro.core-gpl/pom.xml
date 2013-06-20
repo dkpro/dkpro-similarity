@@ -3,7 +3,7 @@
   <parent>
     <groupId>de.tudarmstadt.ukp.similarity</groupId>
     <artifactId>de.tudarmstadt.ukp.similarity-gpl</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity.dkpro.core-gpl</artifactId>
@@ -39,14 +39,14 @@
   		<artifactId>
   			de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl
   		</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
+  		<version>1.0.0</version>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   		<artifactId>
   			de.tudarmstadt.ukp.similarity.algorithms.lexsub-gpl
   		</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
+  		<version>1.0.0</version>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
@@ -59,7 +59,7 @@
   		<artifactId>
   			de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl
   		</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
+  		<version>1.0.0</version>
   	</dependency>
   </dependencies>
 </project>
