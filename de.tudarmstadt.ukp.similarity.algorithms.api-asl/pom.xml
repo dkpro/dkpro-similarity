@@ -24,4 +24,10 @@
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity.algorithms.api-asl</artifactId>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.uima</groupId>
+  		<artifactId>uimaj-document-annotation</artifactId>
+  	</dependency>
+  </dependencies>
 </project>
