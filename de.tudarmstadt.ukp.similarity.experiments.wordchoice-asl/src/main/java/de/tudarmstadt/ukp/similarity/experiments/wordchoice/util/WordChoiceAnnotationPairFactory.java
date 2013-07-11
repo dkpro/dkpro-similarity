@@ -17,12 +17,11 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.wordchoice.util;
 
-import static org.uimafit.util.JCasUtil.selectCovered;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
@@ -38,7 +37,7 @@ public class WordChoiceAnnotationPairFactory {
         List<WordChoiceAnnotationPair> wpcList = new ArrayList<WordChoiceAnnotationPair>();
 
         // get the sentences => they represent target and candidates
-        List<Sentence> sentenceList = selectCovered(jcas, Sentence.class, wcp);
+        List<Sentence> sentenceList = JCasUtil.selectCovered(jcas, Sentence.class, wcp);
 
         if (sentenceList.size() != 5) {
             throw new AnalysisEngineProcessException(new Throwable("Expected five sentence annotations, but only " + sentenceList.size() + " were found."));
@@ -46,7 +45,7 @@ public class WordChoiceAnnotationPairFactory {
 
         Sentence target = sentenceList.get(0);
 
-        List<Lemma> targetAnnotationList = selectCovered(jcas, Lemma.class, target);
+        List<Lemma> targetAnnotationList = JCasUtil.selectCovered(jcas, Lemma.class, target);
         if (targetAnnotationList.size() != 1) {
             System.out.println("'" + target.getCoveredText() + "'");
             throw new AnalysisEngineProcessException(new Throwable(targetAnnotationList.size() + " Lemma annotations for the target found, but expected only one."));
@@ -56,7 +55,7 @@ public class WordChoiceAnnotationPairFactory {
 
         for (int i=1; i<=4; i++) {
             Sentence candidate = sentenceList.get(i);
-            List<Lemma> candidateLemmaList = selectCovered(jcas, Lemma.class, candidate);
+            List<Lemma> candidateLemmaList = JCasUtil.selectCovered(jcas, Lemma.class, candidate);
             List<POS> candidatePosList = getPosList(jcas, candidateLemmaList);
             wpcList.add( new WordChoiceAnnotationPair(targetLemma, targetPos, candidateLemmaList, candidatePosList, wcp.getCorrectAnswer()));
         }
@@ -68,7 +67,7 @@ public class WordChoiceAnnotationPairFactory {
     public static List<POS> getPosList(JCas jcas, List<Lemma> annotations) throws AnalysisEngineProcessException {
         List<POS> posList = new ArrayList<POS>();
         for (Annotation a : annotations) {
-            List<POS> posAnnotations = selectCovered(jcas, POS.class, a);
+            List<POS> posAnnotations = JCasUtil.selectCovered(jcas, POS.class, a);
             if (posAnnotations.size() != 1) {
                 throw new AnalysisEngineProcessException(new Throwable(posAnnotations.size() + " POS annotations for one annotation found."));
             }
