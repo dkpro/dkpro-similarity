@@ -26,12 +26,12 @@ import org.apache.uima.analysis_component.AnalysisComponent;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.text.AnnotationFS;
+import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
+import org.apache.uima.fit.descriptor.ExternalResource;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
-import org.uimafit.component.JCasAnnotator_ImplBase;
-import org.uimafit.descriptor.ConfigurationParameter;
-import org.uimafit.descriptor.ExternalResource;
-import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.featurepath.FeaturePathException;
 import de.tudarmstadt.ukp.dkpro.core.api.featurepath.FeaturePathFactory;
@@ -103,13 +103,15 @@ public class SimilarityScorer
                     // Remove "_" tokens
                     for (int i = f1.size() - 1; i >= 0; i--)
                     {
-                   		if (f1.get(i) == null || f1.get(i).equals("_"))
-                   			f1.remove(i);
+                   		if (f1.get(i) == null || f1.get(i).equals("_")) {
+                            f1.remove(i);
+                        }
                     }
                     for (int i = f2.size() - 1; i >= 0; i--)
                     {
-                   		if (f2.get(i) == null || f2.get(i).equals("_"))
-                   			f2.remove(i);
+                   		if (f2.get(i) == null || f2.get(i).equals("_")) {
+                            f2.remove(i);
+                        }
                     }
                     
                     similarity = textSimilarityResource.getSimilarity(f1, f2);

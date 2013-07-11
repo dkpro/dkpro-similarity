@@ -19,7 +19,7 @@ package de.tudarmstadt.ukp.similarity.dkpro.resource;
 
 import java.util.Collection;
 
-import org.uimafit.component.Resource_ImplBase;
+import org.apache.uima.fit.component.Resource_ImplBase;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;

@@ -23,8 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
-import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 
@@ -86,12 +86,14 @@ public class CloughCorpusReader
 		{
 			if (file.isDirectory())
 			{
-				if (recursively && !file.getName().startsWith("."))
-					files.addAll(listFiles(file, prefix, recursively));
+				if (recursively && !file.getName().startsWith(".")) {
+                    files.addAll(listFiles(file, prefix, recursively));
+                }
 			} else {
 				if (!file.getName().startsWith(".") && 
-					file.getName().startsWith(prefix))
-					files.add(file);
+					file.getName().startsWith(prefix)) {
+                    files.add(file);
+                }
 			}
 		}
 		
