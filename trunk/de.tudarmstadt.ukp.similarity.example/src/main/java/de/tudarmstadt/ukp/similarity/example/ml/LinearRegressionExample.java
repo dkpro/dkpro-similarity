@@ -11,7 +11,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
-import org.uimafit.component.xwriter.CASDumpWriter;
 import org.uimafit.factory.AggregateBuilder;
 import org.uimafit.pipeline.SimplePipeline;
 
@@ -19,10 +18,8 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
+import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 

@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
+import org.apache.uima.fit.descriptor.ExternalResource;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
-import org.uimafit.descriptor.ConfigurationParameter;
-import org.uimafit.descriptor.ExternalResource;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lsr.aggregate.MCS06AggregateComparator;
@@ -41,6 +41,7 @@ public class MCS06AggregateResource
 	
 	@Override
 	public void afterResourcesInitialized()
+	        throws ResourceInitializationException
 	{
 		super.afterResourcesInitialized();
 		

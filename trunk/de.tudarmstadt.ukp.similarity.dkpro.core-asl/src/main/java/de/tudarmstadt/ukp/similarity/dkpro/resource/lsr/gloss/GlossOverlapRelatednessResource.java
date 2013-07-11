@@ -19,9 +19,9 @@ package de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.gloss;
 
 import java.util.Map;
 
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
-import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
 import de.tudarmstadt.ukp.similarity.algorithms.lsr.gloss.GlossOverlapComparator;
