@@ -24,11 +24,11 @@ import java.util.Map;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Level;
-import org.uimafit.component.JCasAnnotator_ImplBase;
-import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.similarity.experiments.wordchoice.util.WCProblem;
 import de.tudarmstadt.ukp.similarity.experiments.wordchoice.util.WordChoiceProblemFactory;
