@@ -23,6 +23,7 @@ import org.apache.commons.lang.NotImplementedException;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+import org.apache.uima.jcas.tcas.DocumentAnnotation;
 
 public abstract class JCasTextSimilarityMeasureBase
 	extends TextSimilarityMeasureBase
