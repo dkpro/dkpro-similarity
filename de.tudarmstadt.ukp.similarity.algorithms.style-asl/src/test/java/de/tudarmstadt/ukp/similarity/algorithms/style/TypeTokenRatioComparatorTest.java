@@ -61,7 +61,9 @@ public class TypeTokenRatioComparatorTest
         cb2.close();
         
         JCas jcas1 = cb1.getJCas();
+        jcas1.setDocumentLanguage("en");
         JCas jcas2 = cb2.getJCas();
+        jcas2.setDocumentLanguage("en");
         
         ae.process(jcas1);
         ae.process(jcas2);
