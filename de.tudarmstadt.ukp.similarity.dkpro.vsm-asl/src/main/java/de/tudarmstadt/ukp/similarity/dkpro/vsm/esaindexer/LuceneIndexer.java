@@ -16,7 +16,6 @@
 package de.tudarmstadt.ukp.similarity.dkpro.vsm.esaindexer;
 
 import static org.apache.commons.io.FileUtils.deleteQuietly;
-import static org.uimafit.util.JCasUtil.select;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,10 +33,11 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
-import org.uimafit.component.JCasAnnotator_ImplBase;
-import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Stem;
@@ -92,7 +92,7 @@ public class LuceneIndexer extends JCasAnnotator_ImplBase {
 	public void process(JCas jCas) throws AnalysisEngineProcessException {
 		final List<String> terms = new ArrayList<String>();
 		// aggregate relevant terms
-		for (Stem stem : select(jCas, Stem.class)) {
+		for (Stem stem : JCasUtil.select(jCas, Stem.class)) {
 			final String term = stem.getValue();
 			if (isRelevant(term)) {
 				terms.add(term);

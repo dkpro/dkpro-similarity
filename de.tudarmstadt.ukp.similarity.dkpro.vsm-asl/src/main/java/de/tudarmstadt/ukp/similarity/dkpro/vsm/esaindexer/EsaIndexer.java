@@ -15,17 +15,16 @@
  *******************************************************************************/
 package de.tudarmstadt.ukp.similarity.dkpro.vsm.esaindexer;
 
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
-import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createPrimitive;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.createCollectionReader;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Locale;
 
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.collection.CollectionReader;
-import org.uimafit.pipeline.SimplePipeline;
+import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.io.jwpl.WikipediaReaderBase;
 import de.tudarmstadt.ukp.dkpro.core.snowball.SnowballStemmer;
@@ -46,7 +45,7 @@ public class EsaIndexer {
 	public static void main(String[] args)
 		throws Exception
 	{
-		createLuceneWikipediaIndex();
+		createLuceneWikipediaIndex("de");
 		createInvertedIndex();
 	}
 
@@ -56,7 +55,7 @@ public class EsaIndexer {
 	 * @throws UIMAException
 	 * @throws IOException
 	 */
-	private static void createLuceneWikipediaIndex()
+	private static void createLuceneWikipediaIndex(String language)
 		throws UIMAException, IOException
 	{
 		CollectionReader reader = createCollectionReader(
@@ -69,11 +68,11 @@ public class EsaIndexer {
 		
 		AnalysisEngine segmenter = createPrimitive(
 				BreakIteratorSegmenter.class,
-				BreakIteratorSegmenter.PARAM_LOCALE, Locale.GERMAN);
+				BreakIteratorSegmenter.PARAM_LANGUAGE, language);
 		
 		AnalysisEngine stemmer = createPrimitive(
 				SnowballStemmer.class,
-				SnowballStemmer.PARAM_LANGUAGE, "de",
+				SnowballStemmer.PARAM_LANGUAGE, language,
 				SnowballStemmer.PARAM_LOWER_CASE, true);
 		
 		AnalysisEngine indexTermGenerator = createPrimitive(
