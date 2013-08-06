@@ -1,9 +1,9 @@
 package de.tudarmstadt.ukp.similarity.experiments.wordpairs.io;
 
-import static org.apache.uima.fit.factory.CollectionReaderFactory.createCollectionReader;
 import static org.junit.Assert.assertEquals;
 
-import org.apache.uima.collection.CollectionReader;
+import org.apache.uima.collection.CollectionReaderDescription;
+import org.apache.uima.fit.factory.CollectionReaderFactory;
 import org.apache.uima.fit.pipeline.JCasIterable;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
@@ -21,7 +21,7 @@ public class WordPairReaderTest
     public void wordpairTest()
         throws Exception
     {
-        CollectionReader reader = createCollectionReader(
+        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 WordPairReader.class,
                 WordPairReader.PARAM_PATH, "src/test/resources/datasets/wordpairs/",
                 WordPairReader.PARAM_PATTERNS, new String[] {
@@ -60,7 +60,7 @@ public class WordPairReaderTest
         throws Exception
     {
 
-        CollectionReader reader = createCollectionReader(
+        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 WordPairReader.class,
                 WordPairReader.PARAM_PATH, "src/test/resources/datasets/wordpairs/",
                 WordPairReader.PARAM_COMMENT, "%",
