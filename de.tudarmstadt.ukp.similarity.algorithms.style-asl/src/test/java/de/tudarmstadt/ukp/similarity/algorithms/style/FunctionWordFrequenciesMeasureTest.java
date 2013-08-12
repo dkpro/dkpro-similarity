@@ -20,9 +20,9 @@ package de.tudarmstadt.ukp.similarity.algorithms.style;
 import static org.junit.Assert.assertEquals;
 
 import org.apache.uima.analysis_engine.AnalysisEngine;
-import org.apache.uima.fit.factory.AnalysisEngineFactory;
-import org.apache.uima.fit.factory.JCasBuilder;
 import org.junit.Test;
+import org.uimafit.factory.AnalysisEngineFactory;
+import org.uimafit.factory.JCasBuilder;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;

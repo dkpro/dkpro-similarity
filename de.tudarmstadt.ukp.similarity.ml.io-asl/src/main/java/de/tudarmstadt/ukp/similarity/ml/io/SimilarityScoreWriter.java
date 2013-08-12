@@ -25,11 +25,11 @@ import java.io.IOException;
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.CASException;
-import org.apache.uima.fit.component.JCasConsumer_ImplBase;
-import org.apache.uima.fit.descriptor.ConfigurationParameter;
-import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.uimafit.component.JCasConsumer_ImplBase;
+import org.uimafit.descriptor.ConfigurationParameter;
+import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.similarity.dkpro.api.type.ExperimentalTextSimilarityScore;
@@ -99,19 +99,16 @@ public class SimilarityScoreWriter
 		TextSimilarityScore score = JCasUtil.selectSingle(jcas, ExperimentalTextSimilarityScore.class);
 		
 		TextSimilarityScore goldScore = null;
-		if (outputGoldScores) {
-            goldScore = JCasUtil.selectSingle(jcas, GoldTextSimilarityScore.class);
-        } 
+		if (outputGoldScores)
+			goldScore = JCasUtil.selectSingle(jcas, GoldTextSimilarityScore.class); 
 		
 		try {
 			if (outputScoresOnly)
 			{
-				if (outputGoldScores) {
-                    writer.write(score.getScore() + "\t" + goldScore.getScore() + LF);
-                }
-                else {
-                    writer.write(score.getScore() + LF);
-                }
+				if (outputGoldScores)
+					writer.write(score.getScore() + "\t" + goldScore.getScore() + LF);
+				else
+					writer.write(score.getScore() + LF);
 			} else {
 				if (outputGoldScores) {
 					writer.write(md1.getDocumentId() + "\t" + 

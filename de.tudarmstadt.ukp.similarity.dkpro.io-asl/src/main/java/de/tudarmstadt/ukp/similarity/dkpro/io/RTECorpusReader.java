@@ -29,7 +29,6 @@ import org.apache.commons.io.IOUtils;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.collection.CollectionException;
-import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.dom4j.Attribute;
@@ -40,6 +39,7 @@ import org.dom4j.io.SAXReader;
 import org.jaxen.JaxenException;
 import org.jaxen.XPath;
 import org.jaxen.dom4j.Dom4jXPath;
+import org.uimafit.descriptor.ConfigurationParameter;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -181,8 +181,7 @@ public class RTECorpusReader
     {
     	static final String emptyDtd = ""; 
     	
-    	@Override
-        public InputSource resolveEntity (String publicId, String systemId)
+    	public InputSource resolveEntity (String publicId, String systemId)
     		throws SAXException, IOException
     	{
     		return new InputSource(new ByteArrayInputStream(emptyDtd.getBytes()));

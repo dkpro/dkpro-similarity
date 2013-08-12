@@ -7,9 +7,10 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.lang.NotImplementedException;
-import org.apache.uima.fit.util.JCasUtil;
+import org.apache.commons.lang.WordUtils;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasureBase;

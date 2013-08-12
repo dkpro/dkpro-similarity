@@ -189,16 +189,9 @@ public class CosineSimilarity
 		// Get TF/IDF/TFIDF vectors
 		Vector vector1 = getVector(unionTermSet, terms1);
 		Vector vector2 = getVector(unionTermSet, terms2);
-		
+
 		// Numerator
 		double num = InnerVectorProduct.COSINE.apply(vector1, vector2);
-		
-		// shortcut regarding http://code.google.com/p/dkpro-similarity-asl/issues/detail?id=11
-		// TODO are therer side effects when different weighting modes are used?
-		if (num == terms1.size() && num == terms2.size()) {
-		    return 1.0;
-		}
-		
 		double norm;
 		switch (normalizationMode) {
 		case L1:

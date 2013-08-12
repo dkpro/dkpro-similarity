@@ -28,8 +28,8 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.FileFilterUtils;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.StringUtils;
-import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 
@@ -83,14 +83,12 @@ public class MeterCorpusReader
 				try {
 					// Source files has a 13-line header. Remove it first.
 					List<String> sourceLines = FileUtils.readLines(sourceFile);
-					for (int i = 0; i < 13; i++) {
-                        sourceLines.remove(0);
-                    }
+					for (int i = 0; i < 13; i++)
+						sourceLines.remove(0);
 					
 					// Also remove the 5-line footer
-					for (int i = 0; i < 5; i++) {
-                        sourceLines.remove(sourceLines.size() - 1);
-                    }
+					for (int i = 0; i < 5; i++)
+						sourceLines.remove(sourceLines.size() - 1);
 					
 					// Besides that, lines may end with a "<" character. Remove it, too.
 					for (int i = 0; i < sourceLines.size(); i++)
@@ -150,9 +148,8 @@ public class MeterCorpusReader
 				{
 					Collection<File> txtFiles = FileUtils.listFiles(file, new String[] {"sgml", "txt"}, false);
 					
-					if (txtFiles.size() == 1) {
-                        files.add(file);
-                    }
+					if (txtFiles.size() == 1)
+						files.add(file);
 				}
 				else {
 					// TODO Well, implement this if necessary
