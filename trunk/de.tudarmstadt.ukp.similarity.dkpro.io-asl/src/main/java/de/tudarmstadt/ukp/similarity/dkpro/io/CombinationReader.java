@@ -53,7 +53,7 @@ public abstract class CombinationReader
 	private CombinationStrategy combinationStrategy;
 
 	public static final String PARAM_NUMBER_OF_OTHER_ROWS = "NumberOfOtherRows";
-	@ConfigurationParameter(name=PARAM_NUMBER_OF_OTHER_ROWS)
+	@ConfigurationParameter(name=PARAM_NUMBER_OF_OTHER_ROWS, mandatory=false)
 	private int numberOfOtherRows;
 
 	public enum CombinationStrategy
