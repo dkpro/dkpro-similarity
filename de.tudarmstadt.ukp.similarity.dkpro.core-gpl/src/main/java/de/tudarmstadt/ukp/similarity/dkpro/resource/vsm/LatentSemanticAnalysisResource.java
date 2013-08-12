@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
-import org.uimafit.descriptor.ConfigurationParameter;
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.similarity.algorithms.sspace.SSpaceVectorReader;

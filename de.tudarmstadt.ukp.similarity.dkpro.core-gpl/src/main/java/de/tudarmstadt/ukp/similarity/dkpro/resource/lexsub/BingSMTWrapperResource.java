@@ -4,8 +4,8 @@ import java.util.Map;
 
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
-import org.uimafit.descriptor.ConfigurationParameter;
-import org.uimafit.descriptor.ExternalResource;
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
+import org.apache.uima.fit.descriptor.ExternalResource;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lexsub.BingSMTWrapper;
@@ -44,6 +44,7 @@ public class BingSMTWrapperResource
 	
 	@Override
 	public void afterResourcesInitialized()
+		throws ResourceInitializationException
 	{
 		super.afterResourcesInitialized();
 		

@@ -1,17 +1,14 @@
 package de.tudarmstadt.ukp.similarity.dkpro.resource.ml;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Map;
 
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
-import org.uimafit.descriptor.ConfigurationParameter;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier;
-import de.tudarmstadt.ukp.similarity.algorithms.ml.LinearRegressionSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
 
 
@@ -30,8 +27,8 @@ public class ClassifierResource
 	@ConfigurationParameter(name=PARAM_TEST_ARFF, mandatory=true)
 	private File testArff;
 	
-	
-	@SuppressWarnings("unchecked")
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public boolean initialize(ResourceSpecifier aSpecifier, Map aAdditionalParams)
         throws ResourceInitializationException

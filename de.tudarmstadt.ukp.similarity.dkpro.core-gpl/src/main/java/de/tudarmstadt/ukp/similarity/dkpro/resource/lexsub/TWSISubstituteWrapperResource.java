@@ -4,7 +4,7 @@ import java.util.Map;
 
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
-import org.uimafit.descriptor.ExternalResource;
+import org.apache.uima.fit.descriptor.ExternalResource;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lexsub.TWSISubstituteWrapper;
@@ -34,6 +34,7 @@ public class TWSISubstituteWrapperResource
 	
 	@Override
 	public void afterResourcesInitialized()
+		throws ResourceInitializationException
 	{
 		super.afterResourcesInitialized();
 		
