@@ -17,13 +17,15 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.wordchoice.util;
 
+import static org.uimafit.util.JCasUtil.selectCovered;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
-import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
+import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
@@ -37,7 +39,7 @@ public class WordChoiceProblemFactory {
 
         for (WordChoiceProblem wcp : JCasUtil.select(jcas, WordChoiceProblem.class)) {
             // get the sentences => they represent target and candidates
-            List<Sentence> candidateList = JCasUtil.selectCovered(jcas, Sentence.class, wcp);
+            List<Sentence> candidateList = selectCovered(jcas, Sentence.class, wcp);
 
             if (candidateList.size() != 5) {
                 throw new AnalysisEngineProcessException(new Throwable("Expected five sentence annotations, but only " + candidateList.size() + " were found."));
@@ -45,7 +47,7 @@ public class WordChoiceProblemFactory {
 
             Sentence target = candidateList.get(0);
 
-            List<Lemma> targetAnnotationList = JCasUtil.selectCovered(jcas, Lemma.class, target);
+            List<Lemma> targetAnnotationList = selectCovered(jcas, Lemma.class, target);
             if (targetAnnotationList.size() != 1) {
                 System.out.println("'" + target.getCoveredText() + "'");
                 throw new AnalysisEngineProcessException(new Throwable(targetAnnotationList.size() + " Lemma annotations for the target found, but expected only one."));
@@ -72,7 +74,7 @@ public class WordChoiceProblemFactory {
     }
 
     private static List<String> getCandidateList(JCas jcas, Sentence candidateAnnotation) {
-        List<Lemma> candidateAnnotationList = JCasUtil.selectCovered(jcas, de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma.class, candidateAnnotation);
+        List<Lemma> candidateAnnotationList = selectCovered(jcas, de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma.class, candidateAnnotation);
         return getLemmaList(candidateAnnotationList);
 
     }

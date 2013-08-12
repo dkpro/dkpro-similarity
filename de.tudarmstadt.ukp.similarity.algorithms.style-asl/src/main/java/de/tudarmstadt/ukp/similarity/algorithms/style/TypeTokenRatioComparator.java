@@ -5,9 +5,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
@@ -22,8 +22,7 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 public class TypeTokenRatioComparator
 	extends JCasTextSimilarityMeasureBase
 {
-	@Override
-    public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
+	public double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1,
             Annotation coveringAnnotation2)
 		throws SimilarityException
 	{				

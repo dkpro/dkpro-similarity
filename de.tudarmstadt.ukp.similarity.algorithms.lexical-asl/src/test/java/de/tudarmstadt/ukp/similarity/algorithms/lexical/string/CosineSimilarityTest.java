@@ -19,14 +19,13 @@ package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.similarity.algorithms.api.TermSimilarityMeasure;
+import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.CosineSimilarity;
    
 public class CosineSimilarityTest {
 
@@ -168,19 +167,4 @@ public class CosineSimilarityTest {
 		assertEquals(Double.NaN, comparator1.getSimilarity(a1, a2), epsilon);
 		assertEquals(0.89442d,   comparator2.getSimilarity(b1, b2), epsilon);
 	}
-	
-	@Test
-	public void precisionTest() throws Exception {
-	    CosineSimilarity measure = new CosineSimilarity();
-	    List<String> tokens1 = Arrays.asList("This is a sentence with seven tokens".split(" "));    
-	    List<String> tokens2 = Arrays.asList("This is a sentence with seven tokens".split(" "));    
-
-	    assertEquals(1.0, measure.getSimilarity(tokens1, tokens2), 0.00000000000000001);
-	          
-	    List<String> tokens3 = Arrays.asList("This is a sentence which results in an invalid cosine similarity score .");     
-        List<String> tokens4 = Arrays.asList("This is a sentence which results in an invalid cosine similarity score .");     
-
-        assertEquals(1.0, measure.getSimilarity(tokens3, tokens4), 0.00000000000000001);
-	}
-	
 }

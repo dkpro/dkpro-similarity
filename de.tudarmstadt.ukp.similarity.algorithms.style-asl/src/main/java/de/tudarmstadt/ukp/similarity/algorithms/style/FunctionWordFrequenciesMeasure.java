@@ -12,9 +12,9 @@ import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
-import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;

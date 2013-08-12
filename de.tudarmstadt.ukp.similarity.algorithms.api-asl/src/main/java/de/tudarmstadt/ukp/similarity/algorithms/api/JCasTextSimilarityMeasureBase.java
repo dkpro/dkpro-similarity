@@ -20,10 +20,10 @@ package de.tudarmstadt.ukp.similarity.algorithms.api;
 import java.util.Collection;
 
 import org.apache.commons.lang.NotImplementedException;
-import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.jcas.tcas.DocumentAnnotation;
+import org.uimafit.util.JCasUtil;
 
 public abstract class JCasTextSimilarityMeasureBase
 	extends TextSimilarityMeasureBase
@@ -49,7 +49,7 @@ public abstract class JCasTextSimilarityMeasureBase
 		throws SimilarityException
 	{		
 		Annotation a1 = JCasUtil.selectSingle(jcas1, DocumentAnnotation.class);
-		Annotation a2 = JCasUtil.selectSingle(jcas2, DocumentAnnotation.class);
+		Annotation a2 = JCasUtil.selectSingle(jcas2, DocumentAnnotation.class);;
 		
 		return getSimilarity(jcas1, jcas2, a1, a2);
 	}

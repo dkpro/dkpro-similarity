@@ -2,9 +2,9 @@ package de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams;
 
 import java.util.Map;
 
-import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
+import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;

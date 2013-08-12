@@ -17,6 +17,8 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.wordpairs.io;
 
+import static org.uimafit.util.JCasUtil.select;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -31,10 +33,9 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
 import org.apache.commons.math3.stat.correlation.SpearmansCorrelation;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
-import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
-import org.apache.uima.fit.descriptor.ConfigurationParameter;
-import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
+import org.uimafit.component.JCasAnnotator_ImplBase;
+import org.uimafit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.similarity.type.SemRelWordPair;
@@ -55,7 +56,7 @@ public class SemanticRelatednessResultWriter extends JCasAnnotator_ImplBase {
     {
 
         Result result = new Result();
-        for (SemanticRelatedness sr : JCasUtil.select(jcas, SemanticRelatedness.class)) {
+        for (SemanticRelatedness sr : select(jcas, SemanticRelatedness.class)) {
             String measureName = sr.getMeasureName();
             String measureType = sr.getMeasureType();
             String term1 = sr.getTerm1();
