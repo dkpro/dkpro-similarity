@@ -1,0 +1,252 @@
+#############################################################################
+		Question: What does a function signature include?
+		Answer: The name of the function and the types of the parameters.
+
+4.5	[6]	It includes the name of the program, the type of parameters it can take. It should also include a brief description of what the function does.
+3	[5]	it includes the specific information about the function such as input and output variable types and how many of each.
+5	[8]	The function signature includes the name of the function and the types of its arguments.
+4.5	[3]	A function signature consists of the function prototype.  This tells you the general information about a function, its name, parameters, what scope it is in, and other miscellaneous information.
+5	[4]	It includes the name of the function and the types of its arguments.
+4.5	[24]	Name, paramaters, scope, and other general function information
+5	[9]	It includes a function name and parameter list. Does not include return type. Function signatures must be different.
+3	[22]	input parameters and return type
+5	[23]	The portion of the function prototyp tha has the function name and the arguments but NOT the return type.
+5	[2]	Name of the function and the types of it's arguments
+5	[29]	The name of the function and the types of its arguments.
+5	[31]	Includes the name of the function and the types of its arguments.
+5	[12]	identification of a function and the data types of its parameters, it has the name, and the data type variables 
+3	[21]	a return type, and input parameters
+5	[13]	The function signature includes the method name and the input types. 
+5	[11]	A function signature includes the name of the function and types of arguments, but not the return type.<br><br>
+2	[17]	The signature can include a result type and thrown errors. 
+5	[7]	function name, and input paramaters
+5	[10]	The name of the function and the types of its arguments.<br>This includes the number, type, and order the parameters appear in.
+5	[27]	the name of the function and the types of its arguments
+5	[25]	A function signature includes the name of the function and the types of its arguments
+3	[20]	A function signature includes a function's return type, parameters and semi-colon.
+5	[18]	the name of the function and the types of its arguments
+5	[19]	the function's name and parameters
+5	[30]	The name of the function and the types of its arguments.
+5	[16]	The portion of a function prototype that includes the name of the function and the types of its arguments
+5	[26]	the name of the function and its parameters
+5	[1]	The function name and parameters
+5	[28]	name of function and types of arguments
+3	[15]	a function's return type and parameter list
+5	[14]	it includes the name of the function, and the types of its arguments. it does not specify the function return type. Function in the same scope must have unqiue signatures. 
+
+#############################################################################
+		Question:  What is the scope of global variables?
+		Answer: File scope.
+
+5	[6]	Any functions that follows their deceleration that  are in the source code file are allowed to have access the variables.  Also global scope variables retrain their value throughout the execution of the program.
+2.5	[5]	they can be accessed by any C++ file anywhere.
+5	[8]	Global variables have file scope.
+2.5	[3]	The scope of global variables are created by placing variable declarations outside any class or function definition.  Global variables retain their values throughout the execution of the program and they can be referenced by any function that follows their declarations or definitions in the source file.
+5	[4]	A global variable is an identifier that retains it's value throughout the execution of the program. It has file scope.
+4	[24]	Global Variables can be used in any function as long as the appropriate .h file that holds the variable is included
+5	[9]	They can be accessed by any part of the program. It can be referenced by any function that follows the declarations or definitions in the source file.
+3	[22]	can be accesed by any classes that have and object of that variables class in it
+5	[23]	Global variables have file-scope.  The variable is know to all functions throught the file
+4.5	[2]	The entire program
+5	[29]	They have file scope when placed outside a function.
+5	[31]	File scope.
+4.5	[12]	They can be used throughout the program
+3	[21]	Global variable can b accessed by any class wit an object in the variables class
+5	[13]	The scope of global variables is at the file level.
+5	[11]	Global variables all have file scope.
+4.5	[17]	it is accessible by all functions within a program
+4.5	[7]	variables accessible anywhere in the program, as long as they are public.
+5	[10]	They can be referenced by any function following their declaration or definition inside the source file.
+4.5	[27]	globally, anywhere in the program.
+5	[25]	Global variables have a file scope
+4.5	[20]	The entire program.
+4.5	[18]	throughout the execution of the program
+4.5	[19]	If a variable is declared global, any function or class can use that variable.
+5	[30]	The entire program or file.
+4.5	[16]	throught the programm
+4.5	[26]	the whole code
+5	[1]	File scope
+5	[28]	can be referenced by any function that follows their declarations or definitions in the source file
+4.5	[15]	global variables have program scope (accessible anywhere in program)
+4.5	[14]	variables that exist throught the entire script. their values can be changed anytime in the code and fucntions. 
+
+#############################################################################
+		Question:  How does the compiler handle inline functions?
+		Answer: It makes a copy of the function code in every place where a function call is made.
+
+4.5	[6]	It expands the function's definition in that place.  Once the functions is called you can use it as many times as you need.  The compiler just expands on the function.
+4.5	[5]	When the compiler inline-expands a function call, the function's code gets inserted into the caller's code stream (conceptually similar to what happens with a #define macro). This can, depending on a zillion other things, improve performance, because the optimizer can procedurally integrate the called code â€” optimize the called code into the caller. <br><br>
+5	[8]	The inline keyword advises the compiler to copy the function's code in place to avoid function calls; however the compiler can and typically does ignore the inline qualifier for all but the smallest functions.
+3	[3]	The compiler can ignore the inline qualifier and typically does so for all but the smallest functions.
+5	[4]	Placing the qualifier inline before a function's return type in the function definition "advises" the compiler to generate a copy of the function's code in place to avoid a function call.
+2	[24]	You declare your inline function in the header or before your int main(). You then can call that function at anytime in your main program quickly and easily.
+4	[9]	It expands a small function out... making your code longer, but also makes it run faster.
+3.5	[22]	the function is not treated as a separate unit like other functions
+5	[23]	When the program compiles,it will copy the function inplace, avoiding a function call.
+5	[2]	It replaces all instances of that function call with the inline code itself, resulting in longer but faster programs.
+3	[29]	The compiler can ignore the inline qualifier and typically does so for all but the smallest functions.
+3	[31]	Ignores the inline qualifier and typically does so for all but the smallest functions.
+4.5	[12]	If the function is small enough it will expand it but it will run faster as it will avoid making so many calls to the function.
+2	[21]	it treats them as the same function
+5	[13]	Inline functions are copied in place, instead of being referenced.
+5	[11]	For inline functions, the compiler creates a copy of the function's code in place so it doesn't have to make a function call and add to the function call stack.
+5	[17]	it generates a copy of the function's coding which eliminates calling the function
+0	[7]	not answered
+4.5	[10]	It generates a copy of the function's code by by inserting it in the program.
+5	[27]	tells the compiler to make a copy of function's code in place to avoid a function call.  it typically ignores it, except for the smallest functions.
+2	[25]	The compiler can ignore the inline qualifier and typically does so for all but the smallest functions.
+4.5	[20]	Multiple copies of the function code are inserted into the program, making it bigger.
+2.5	[18]	compiler ignores inline qualifier
+3.5	[19]	It generates a copy of the function, if it is needed again.
+5	[30]	The complier includes copies of inline functions instead of making function calls, but usually only with very small functions.
+5	[16]	Compiler generate a copy of the function's code in place (when appropriate) to avoid a function call
+5	[26]	instead of calling the function every time it is invoked, the compiler will replace the function call with a copy of the function body
+4	[1]	Expands the function into the program
+5	[28]	it generates a copy of the functions code in place to avoid a function call
+5	[15]	the function call will be replaced by the code that was defined in the inline function
+4.5	[14]	When the compiler inline-expands a function call, the function's code gets inserted into the caller's code stream (conceptually similar to what happens with a #define macro). This can, depending on a zillion other things, improve performance, because the optimizer can procedurally integrate the called code â€” optimize the called code into the caller. 
+
+#############################################################################
+		Question:  What is the main advantage associated with function arguments that are passed by reference? 
+		Answer: It avoids making copies of large data structures when calling functions.
+
+5	[6]	Overall the program has better performance (means it is faster) because it does not have to copy large amounts of data.
+4.5	[5]	because you can't change the original and passing by reference limits memory needed for the program.
+5	[8]	Passing by reference can eliminate the pass-by-value overhead of copying large amounts of data.
+5	[3]	It is often more efficient to pass references, rather than large objects, to functions. This allows the compiler to pass the address of the object while maintaining the syntax that would have been used to access the object.
+5	[4]	Pass by reference is good for performance reasons, because it can eliminate the pass by value overhead of copying large amounts of data.
+3	[24]	You do not alter the original value of the variable that was passed.
+4.5	[9]	Don't have to make copies of stuff.
+5	[22]	you do not use unessesary memory space to copy variables between functions
+5	[23]	It elimitates the need to copy large amonts of data
+3.5	[2]	The function can change the data stored in a variable passed by reference directly.
+3.5	[29]	Gives called function the ability to access and modify the callerâ€™s argument data.
+3.5	[31]	Gives called function the ability to access and modify the callerâ€™s argument data directly.
+3	[12]	It is more efficient and it changes the variable not online inside the function but outside so that the new value can be used elsewhere.
+5	[21]	you don't make another copy and waste memory
+5	[13]	Passing by reference eliminates the copying of large amounts of data, typical with pass by value.
+5	[11]	If a function's arguments are large in size, computing time and memory space is not wasted copying down the argument and passing it to the function.  Also pass by reference gives the function called the permission to read edit the argument directly.
+3.5	[17]	Gives access to the caller data directly, also it allows for modifying the data.
+3.5	[7]	less overhead overall, and you modify the variable directly.
+3	[10]	The original variable being referenced can be modified directly by the called function.  
+3.5	[27]	gives function ability to access and modify the caller's argument data directly
+3	[25]	Gives the called function the ability to access and modify the caller's argument data directly.
+3.5	[20]	Less overhead than passed by value, especially when using large numbers.
+5	[18]	large data items can be passed without copying the entire data point, reducing execution time and the amout of memory space needed<br>
+4	[19]	The data can be modified directly instead of making a copy of the data. Improves execution time with large amounts of data.
+3.5	[30]	Functions can directly modify arguments that are passed by reference.
+5	[16]	It gives access and modify the caller's argument data directly. It eliminate the pass by value overhead of copying large amounts ofdata
+4	[26]	it takes less memory, thus it would make the program faster
+3.5	[1]	You are able to modify the variable that is referenced directly.
+3.5	[28]	if you pass by reference, you can modify the value as opposed to passing by value where you cannot change the value
+5	[15]	only the memory address is sent to the function, so no copy of the object sent needs to be made. It makes the function run faster, and saves memory.
+3	[14]	Actual arguments are associated with dummy arguments when a function or subroutine is referenced. In a procedure reference, the actual argument list identifies the correspondence between the actual arguments provided in the list and the dummy arguments of the subprogram
+
+#############################################################################
+		Question: How are overloaded functions differentiated by the compiler?
+		Answer: Based on the function signature. When an overloaded function is called, the compiler will find the function whose signature is closest to the given function call.
+
+5	[6]	The compiler selects the proper functions to execute based on number, types and order of arguments in the function call.
+3	[5]	They differentiated by the compiler by the conditions/inputs used for one of the overloaded functions.
+5	[8]	The compiler distinguishes overloaded functions by their signatures. It encodes each function identifier with the number and types of its parameters to generate type-safe linkage, which ensures the proper overloaded function is called.
+5	[3]	Overloaded functions are distinguished by their signatures, Name mangling or name decoration, and type-safe linkage ensures that proper overloaded functions is called and types of the arguments conform to tpes to the parameters.
+5	[4]	The compiler selects proper function to execute based on number, types and order of arguments in the function call.
+3	[24]	By the type they are initilized with (int, char, etc.)
+5	[9]	It selects the proper function to execute based on number, types and order of arguments in the function call.
+3	[22]	overloaded functions must have the same return type but different input parameters
+5	[23]	It examines the names, types, and order of arguments on each function.
+5	[2]	unique function signatures
+5	[29]	Is based on number, types, and order of arguments in the function call.
+5	[31]	Compiler selects proper function to execute based on number, types and order of arguments in the function call.
+0	[12]	not answered
+3	[21]	they have to have same return type, but different input parameters
+4.5	[13]	Overloaded functions are differentiated by their parameters.
+5	[11]	The compiler selects the right function to execute from the number, types and order of arguments in the function call.
+3	[17]	it creates a set of candidate functions then a set of viable functions
+5	[7]	their function signature.
+5	[10]	The number and type of its parameters.
+5	[27]	by their function signature
+3.5	[25]	They have the same name, just different parameters.
+5	[20]	They are differntiated by number, types and order of arguments in the function call.
+5	[18]	it looks at the number, types, and order of arguments in the function call<br>
+5	[19]	The compiler differentiates overloaded functions by their signature.
+5	[30]	By the number, types, and order of their arguments
+5	[16]	Compiler selects proper function to execute based on number, types and order of arguments in the function call.
+4.5	[26]	paremeters
+5	[1]	By the number, and the types and order of the  parameters.
+5	[28]	by the number and type of arguments
+4	[15]	by their signature (return type, argument list)
+3	[14]	overloaded function simply invovles haing a method with the same name within the class. is used to implement a method for subclass which overrides in other words replaces the implementation of the super class. Overloading the concept of providing different meaning to a object based on the context of its presence. Overloading is one type of polymorphism and this is also a feature in programing. 
+
+#############################################################################
+		Question: When defining a recursive function, what are possible causes for infinite recursion?
+		Answer: If the recursion step is defined incorrectly, or if the base case is not included.
+
+5	[6]	A base case that is the simplest case for a problem so that the function will lead to it, if this does not happen then it will end up as an infinite loop. And a condition to know when to terminate.   
+2.5	[5]	badly designed algorithyms. using recursion for a non recursive problem.
+5	[8]	Infinite recursion can occur when the base case is omitted or the recursion step is written incorrectly so that it never converges on the base case.
+5	[3]	Infinite recursion is an infinite loop if the condition is not met.  Either omitting the base case, or writing the recursion step incorrectly so that it does not converge on the base case causes "indefinite" recursion, eventually exhausting memory.  
+5	[4]	Either omitting the base case or writing the recursion step incorrectly so that it does not converge on the base case can cause an infinite recursion. 
+4	[24]	Not having a base case that returns a base value.
+5	[9]	Incorrect or missing base case. Must reduce to the base case. The function must get simpler each time it is run (converge to the base case).
+4.5	[22]	no base case<br>no change in values.
+5	[23]	If at each recursive call the problem does not diminish or if it does not diminish to a base case, can cause infinite recursion.
+5	[2]	Omitting the base case or incorrectly calling the recursive step.
+4.5	[29]	The recursive problem cannot be reduced to reach the base case.
+5	[31]	Lack of defining a base case, or writing the recursion step incorrectly so that it does not converge on the base case
+4	[12]	Not having the proper case to leave the recursion
+5	[21]	no base case, or the recursive calls do not converge to the base case
+5	[13]	No base case, or an incorrectly written recursion step that does not converge on the base case will lead to infinite recursion.
+5	[11]	If the recursion function never reaches or successfully defines the base case it will recurse forever.<br><br>This happens many ways, such as the function doesn't progress towards the base case, or the function is coded poorly and doesn't even contain a base case.
+5	[17]	<br>not creating a base case, or in the case where the base case will never be met.
+3.5	[7]	improper handling of cases such that not all possible values are able to be handled.
+4.5	[10]	There is no base case.<br>The recursion step doesn't reduce the problem during each recursive call.
+3.5	[27]	no base case, as in a single return that does not include calling the function again.  a static value to end at.
+5	[25]	Either omitting the base case, or writing the recursion step incorrectly so the it does not reach the base case can cause infinite recursion.
+5	[20]	omitting the base case or writing the recursive call so that it does not converge upon the base case.
+5	[18]	Either omitting the base case, or writing the recursion step incorrectly so that it does not converge on the base case
+4.5	[19]	Infinite recursion may occur if no base case is defined or if the call is not varied.
+5	[30]	Not having a base case, or building a recursion process that doesn't converge on the base case.
+5	[16]	Either omitting the base case, or writing the recursion step incorerectly 
+5	[26]	no base case<br>or if the programmar does not define the base case as the simplest case and it never gets reached
+5	[1]	No easily reached base case and no base case at all
+5	[28]	function is never allowed to reach the 'base case'
+5	[15]	it has no base case, or the base case is never met
+3	[14]	recursion refers to situations in which functions call themselves. These types of functions are known as recursive functions. That being said Infinite recursion occurs when the function is designed in such a way as to call it self forever without stopping possible causes
+
+#############################################################################
+		Question:  What are the similarities between iteration and recursion?
+		Answer: They both involve repetition; they both have termination tests; they can both occur infinitely.
+
+5	[6]	Both involve a controlled repetition structures, and they both have a termination test.  Also both of them can loop forever. 
+2	[5]	As discussed earlier, recursion may be used to process iterative actions. Recursion is used for calculations where the answer can be described in a function that relates to itself.
+5	[8]	Both iteration and recursion are based on control statements and involve repetition. They can both also occur indefinitely.
+5	[3]	Both are based on a control statement<br>        - Iteration-repetition structure<br>        - Recursion-selection structure<br><br>      Both involve repetition<br>        -Iteration-explicitly uses repetition structure<br>        -Recursion-repeated function calls<br><br>      Both involve a termination test<br>        -Iteration-loop-termination test<br>        -Recursion-base case <br><br>      Both gradually approach termination<br>        -Iteration-modifies counter until loop-termination test fails<br>        -Recursion-produces progressively simpler versions of problem<br><br>      Both can occur indefinitely<br>        -Iteration-if loop-continuation condition never fails<br>        -Recursion-if recursion step does not simplify the problem
+5	[4]	Iteration and recursion have many similarities: both are based on a control statement, involve repetition, involve a termination test, gradually approach termination and can occur infinitely.
+5	[24]	Both rely on repetition, both have a base case, both can become an infinite loop. Anything recursive can also be solved with iteration.
+4	[9]	Both will repeat (loop) until a condition is met, and exit the loop. Both are capable of entering an infinite loop.
+3	[22]	anything you can do iterativly you can do recursively
+4.5	[23]	Both are repetative and both have a end test.
+3.5	[2]	Incorrectly writing either can result in infinite loops, both perform the same task over and over.
+5	[29]	Both are based on a control statement.<br>Both involve repetition.<br>Both involve a termination test.<br>Both gradually approach termination.<br>Both can occur infinitely.<br><br>
+5	[31]	Both are based on a control statement, Both involve repetition, Both involve a termination test, Both gradually approach termination, Both can occur infinitely
+0	[12]	not answered
+3	[21]	anything you can do recursively you can do iteratively
+3.5	[13]	Many problems can be solved by both iteration and recursion, and either may go into a condition of infinite execution if a termination test is omitted.
+5	[11]	Iteration and recursion both use repetition and perform several simple operations and algorithms successively until they reach a certain limit.  So both involve a termination test to find that limit and both slowly approach that termination limit.  Both are based on a control statement as well.  <br><br>If coded poorly, both can continue on for forever until the compiler or the computer either locks up, shuts down or halts the operation.
+5	[17]	both based on control statement, involve repetition, and involve a termination test within loops
+2	[7]	they are methods of repeating the same task.
+5	[10]	Both involve a termination test.  <br>They use a control statement and repition to solve the problem. <br>They can also result in an infinite loop.
+5	[27]	based on a control statement, involve repetition, involve a termination test.
+5	[25]	Both are bases on a control statement. Both involve repetition. Both involve a termination test. Both gradually approach termination. Both can occur infinitely.
+5	[20]	both based on a control statement, both involve repitition, both involve a termination test, both gradually approach termination, both can potentially occur infinetly.
+5	[18]	they are both based on a control statement, both involve repetition, both involve a termination case, both graduatlly approach that termination case, and both can occur infinitely
+5	[19]	They both use repetition, a control or test to terminate, and both can infinitely repeat if not defined correctly.
+5	[30]	Both are based on a control statement; both gradually approach termination ending with a termination test; both involve repetition, and can both repeat infinitely if their  termination requirements are not met.
+5	[16]	both are based on a control statement, involve repetition and involve a termination test. both gradually approach termination, both can occur infinitely
+3.5	[26]	they are used to solve the same type of problems. they do a task over and over again until a cirtain conditional statement is reached (its called the base case in recursion).
+5	[1]	Based on control statement;  involve repetition; involve a terminal test; both can occur infinitly<br>  
+5	[28]	repetition, termination test, eventually terminate, occur infinately
+3	[15]	both need to have some kind of base case to tell when the loop needs to stop.
+3.5	[14]	they both are able to do repetiive tasks. however recurisve calls itself with different parameters and defines and exit clause that is guaranteeed to be reached. Iterative includes a loop which iterates a pre-determined number of times, or checks for an exit clause every time through
+

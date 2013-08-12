@@ -1,0 +1,213 @@
+<!--
+    Copyright 2012
+    Ubiquitous Knowledge Processing (UKP) Lab
+    Technische Universität Darmstadt
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+      http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>dkpro-parent-pom</artifactId>
+    <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+    <version>2</version>
+  </parent>
+  <groupId>de.tudarmstadt.ukp.similarity</groupId>
+  <artifactId>de.tudarmstadt.ukp.similarity-asl</artifactId>
+  <version>1.0.1</version>
+  <packaging>pom</packaging>
+  <dependencies>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.uimafit</groupId>
+  		<artifactId>uimafit</artifactId>
+  	</dependency>
+  </dependencies>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+				<groupId>xerces</groupId>
+				<artifactId>xercesImpl</artifactId>
+				<version>2.9.1</version>
+			</dependency>
+			<dependency>
+				<groupId>xalan</groupId>
+				<artifactId>xalan</artifactId>
+				<version>2.7.1</version>
+			</dependency>
+			<dependency>
+				<groupId>xalan</groupId>
+				<artifactId>serializer</artifactId>
+				<version>2.7.1</version>
+			</dependency>
+  		<dependency>
+  			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+  			<artifactId>de.tudarmstadt.ukp.dkpro.core-asl</artifactId>
+  			<version>1.4.0</version>
+  			<type>pom</type>
+  			<scope>import</scope>
+  		</dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.lab</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.lab</artifactId>
+            <version>0.8.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+  		<dependency>
+  			<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  			<artifactId>de.tudarmstadt.ukp.similarity.algorithms.api-asl</artifactId>
+  			<version>1.0.1</version>
+  		</dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.core-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lsr-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.ml-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.sound-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.structure-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.style-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.wikipedia-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.dkpro.api-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.dkpro.core-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+                <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.dkpro.data-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+                <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.dkpro.io-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+                <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.ml</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.ml.core-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity.ml</groupId>
+            <artifactId>de.tudarmstadt.ukp.similarity.ml.io-asl</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.6</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>jaxen</groupId>
+            <artifactId>jaxen</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+  	</dependencies>
+  </dependencyManagement>
+  <modules>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.api-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.core-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.lsr-asl</module>
+    
+    <module>de.tudarmstadt.ukp.similarity.algorithms.sound-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.structure-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.style-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.wikipedia-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.dkpro.api-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.dkpro.core-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.dkpro.data-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.dkpro.io-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.example</module>
+    <module>de.tudarmstadt.ukp.similarity.ml.core-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.ml.io-asl</module>
+    <module>
+    	de.tudarmstadt.ukp.similarity.experiments.wordpairs-asl
+    </module>
+    <module>
+    	de.tudarmstadt.ukp.similarity.experiments.wordchoice-asl
+    </module>
+    <module>de.tudarmstadt.ukp.similarity.experiments.api-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.dkpro.vsm-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.ml-asl</module>
+  </modules>
+  <scm>
+  	<url>http://code.google.com/p/dkpro-similarity-asl/source/browse/#svn/tags/de.tudarmstadt.ukp.similarity-asl-1.0.1</url>
+  	<connection>http://dkpro-similarity-asl.googlecode.com/svn/tags/de.tudarmstadt.ukp.similarity-asl-1.0.1</connection>
+  	<developerConnection>scm:svn:https://dkpro-similarity-asl.googlecode.com/svn/tags/de.tudarmstadt.ukp.similarity-asl-1.0.1</developerConnection>
+  </scm>
+  <name>DKPro Similarity</name>
+  <url>https://code.google.com/p/dkpro-similarity-asl/</url>
+  <description>DKPro Similarity is an open source framework for text similarity. Our goal is to provide a comprehensive repository of text similarity measures which are implemented using standardized interfaces. The framework is designed to complement DKPro Core, a collection of software components for natural language processing based on the Apache UIMA framework. </description>
+</project>
