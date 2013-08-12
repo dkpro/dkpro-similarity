@@ -24,7 +24,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.jcas.JCas;
@@ -52,7 +51,7 @@ public class WordIdfValuesGenerator
 		throws Exception
 	{	
 		URL inputUrl = ResourceUtils.resolveLocation(DATASET_DIR + "/" + mode.toString().toLowerCase() + "/STS.input." + dataset.toString() + ".txt");
-		List<String> lines = IOUtils.readLines(inputUrl.openStream(), "utf-8");
+		List<String> lines = FileUtils.readLines(new File(inputUrl.getPath()));
 		
 		Map<String,Double> idfValues = new HashMap<String,Double>();
 		
