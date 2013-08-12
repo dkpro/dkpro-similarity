@@ -16,6 +16,10 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBa
 public class LinearRegressionResource
 	extends JCasTextSimilarityResourceBase
 {
+	public static final String PARAM_LOG_FILTER = "LogFilter";
+	@ConfigurationParameter(name=PARAM_LOG_FILTER, mandatory=true)
+	private boolean logFilter;
+	
 	public static final String PARAM_TRAIN_ARFF = "TRAIN_ARFF";
 	@ConfigurationParameter(name=PARAM_TRAIN_ARFF, mandatory=true)
 	private File trainArff;
@@ -36,7 +40,7 @@ public class LinearRegressionResource
         
         try {
         	this.setMode(TextSimilarityResourceMode.jcas);
-            measure = new LinearRegressionSimilarityMeasure(trainArff, testArff);
+            measure = new LinearRegressionSimilarityMeasure(trainArff, testArff, logFilter);
         }
         catch (Exception e) {
             throw new ResourceInitializationException(e);
