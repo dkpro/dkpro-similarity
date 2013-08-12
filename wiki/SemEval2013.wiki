@@ -23,7 +23,7 @@ The performance of the presented system for the 2012 data is:
 || Test || .695 || .591 || .621 || .802 || .390 || .659 || .485 ||
 
 If you plan to refer to our original system in your publications, please cite
- Daniel Bär, Chris Biemann, Iryna Gurevych, and Torsten Zesch. *UKP: Computing Semantic Textual Similarity by Combining Multiple Content Similarity Measures*, in _Proceedings of the 6th International Workshop on Semantic Evaluation, in conjunction with the 1st Joint Conference on Lexical and Computational Semantics_, pages 435-440, June 2012, Montreal, Canada. [http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2012/STARSEM-SEMEVAL059.pdf (pdf)] [http://ixa2.si.ehu.es/starsem/proc/bib/STARSEM-SEMEVAL059.bib (bib)]
+ Daniel Bär, Chris Biemann, Iryna Gurevych, and Torsten Zesch. *UKP: Computing Semantic Textual Similarity by Combining Multiple Content Similarity Measures*, in _Proceedings of the 6th International Workshop on Semantic Evaluation, in conjunction with the 1st Joint Conference on Lexical and Computational Semantics_, pages 435-440, June 2012, Montreal, Canada. [http://aclweb.org/anthology/S/S12/S12-1059.pdf (pdf)] [http://aclweb.org/anthology/S/S12/S12-1059.bib (bib)]
 
 == Installation Instructions ==
 
