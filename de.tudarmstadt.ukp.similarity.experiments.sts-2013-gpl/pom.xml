@@ -3,7 +3,7 @@
   <parent>
     <groupId>de.tudarmstadt.ukp.similarity</groupId>
     <artifactId>de.tudarmstadt.ukp.similarity-gpl</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
   </parent>
   <artifactId>de.tudarmstadt.ukp.similarity.experiments.sts-2013-gpl</artifactId>
   <dependencies>
@@ -140,7 +140,7 @@
   		<artifactId>
   			de.tudarmstadt.ukp.similarity.dkpro.core-gpl
   		</artifactId>
-  		<version>1.0.1</version>
+  		<version>1.0.2-SNAPSHOT</version>
   	</dependency>
   </dependencies>
 </project>
