@@ -23,6 +23,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
@@ -39,7 +40,7 @@ public class CharacterNGramIdfValuesGenerator
 		throws Exception
 	{					
 		URL inputUrl = ResourceUtils.resolveLocation(DATASET_DIR + "/" + mode.toString().toLowerCase() + "/STS.input." + dataset.toString() + ".txt");
-		List<String> lines = FileUtils.readLines(new File(inputUrl.getPath())); 
+		List<String> lines = IOUtils.readLines(inputUrl.openStream(), "utf-8"); 
 
 		System.out.println("Computing character " + n + "-grams");
 			

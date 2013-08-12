@@ -91,6 +91,7 @@ public class Evaluator
 				    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, Document.class.getName(),
 				    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
 				    	LinearRegressionResource.class,
+				    	LinearRegressionResource.PARAM_LOG_FILTER, "true",
 				    	LinearRegressionResource.PARAM_TRAIN_ARFF, MODELS_DIR + "/train/" + train.toString() + ".arff",
 				    	LinearRegressionResource.PARAM_TEST_ARFF, MODELS_DIR + "/test/" + dataset.toString() + ".arff")
 				    );
