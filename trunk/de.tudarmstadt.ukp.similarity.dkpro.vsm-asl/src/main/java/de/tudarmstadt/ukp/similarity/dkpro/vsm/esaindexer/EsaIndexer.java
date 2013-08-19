@@ -15,8 +15,8 @@
  *******************************************************************************/
 package de.tudarmstadt.ukp.similarity.dkpro.vsm.esaindexer;
 
-import static org.apache.uima.fit.factory.AnalysisEngineFactory.createPrimitive;
-import static org.apache.uima.fit.factory.CollectionReaderFactory.createCollectionReader;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
 
 import java.io.File;
 import java.io.IOException;
@@ -58,7 +58,7 @@ public class EsaIndexer {
 	private static void createLuceneWikipediaIndex(String language)
 		throws UIMAException, IOException
 	{
-		CollectionReader reader = createCollectionReader(
+		CollectionReader reader = createReader(
 				ExtendedWikipediaArticleReader.class,
 				WikipediaReaderBase.PARAM_HOST, "YOUR_HOST",
 				WikipediaReaderBase.PARAM_DB, "YOUR_DB",
@@ -66,16 +66,16 @@ public class EsaIndexer {
 				WikipediaReaderBase.PARAM_PASSWORD, "YOUR_PASSWORD",
 				WikipediaReaderBase.PARAM_LANGUAGE, Language.german);
 		
-		AnalysisEngine segmenter = createPrimitive(
+		AnalysisEngine segmenter = createEngine(
 				BreakIteratorSegmenter.class,
 				BreakIteratorSegmenter.PARAM_LANGUAGE, language);
 		
-		AnalysisEngine stemmer = createPrimitive(
+		AnalysisEngine stemmer = createEngine(
 				SnowballStemmer.class,
 				SnowballStemmer.PARAM_LANGUAGE, language,
 				SnowballStemmer.PARAM_LOWER_CASE, true);
 		
-		AnalysisEngine indexTermGenerator = createPrimitive(
+		AnalysisEngine indexTermGenerator = createEngine(
 				LuceneIndexer.class,
 				LuceneIndexer.PARAM_INDEX_PATH, luceneIndexPath,
 				LuceneIndexer.PARAM_MIN_TERMS_PER_DOCUMENT, 50);
