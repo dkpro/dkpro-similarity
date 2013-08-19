@@ -16,10 +16,10 @@ import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline
 import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.OUTPUT_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric.PearsonAll;
 import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric.PearsonMean;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
-import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
-import static org.uimafit.factory.ExternalResourceFactory.createExternalResourceDescription;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
+import static org.apache.uima.fit.factory.ExternalResourceFactory.createExternalResourceDescription;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,10 +35,10 @@ import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
+import org.apache.uima.fit.factory.AggregateBuilder;
+import org.apache.uima.fit.pipeline.SimplePipeline;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.uimafit.factory.AggregateBuilder;
-import org.uimafit.pipeline.SimplePipeline;
 
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
@@ -59,11 +59,11 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
-import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.filter.LogFilter;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.filter.LogFilter;
+import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 
 
 public class Evaluator
@@ -75,29 +75,28 @@ public class Evaluator
 	{
 		for (Dataset dataset : test)
 		{
-			CollectionReader reader = createCollectionReader(SemEvalCorpusReader.class,
+			CollectionReader reader = createReader(SemEvalCorpusReader.class,
 					SemEvalCorpusReader.PARAM_INPUT_FILE, DATASET_DIR + "/test/STS.input." + dataset.toString() + ".txt",
 					SemEvalCorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
 			
-			AnalysisEngineDescription seg = createPrimitiveDescription(BreakIteratorSegmenter.class);
+			AnalysisEngineDescription seg = createEngineDescription(BreakIteratorSegmenter.class);
 			
 			AggregateBuilder builder = new AggregateBuilder();
 			builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
 			builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
 			AnalysisEngine aggr_seg = builder.createAggregate();
 	
-			AnalysisEngine scorer = createPrimitive(SimilarityScorer.class,
+			AnalysisEngine scorer = createEngine(SimilarityScorer.class,
 				    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
 				    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
 				    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, Document.class.getName(),
 				    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
 				    	LinearRegressionResource.class,
-				    	LinearRegressionResource.PARAM_LOG_FILTER, "true",
 				    	LinearRegressionResource.PARAM_TRAIN_ARFF, MODELS_DIR + "/train/" + train.toString() + ".arff",
 				    	LinearRegressionResource.PARAM_TEST_ARFF, MODELS_DIR + "/test/" + dataset.toString() + ".arff")
 				    );
 			
-			AnalysisEngine writer = createPrimitive(SimilarityScoreWriter.class,
+			AnalysisEngine writer = createEngine(SimilarityScoreWriter.class,
 					SimilarityScoreWriter.PARAM_OUTPUT_FILE, OUTPUT_DIR + "/test/" + dataset.toString() + ".csv",
 					SimilarityScoreWriter.PARAM_OUTPUT_SCORES_ONLY, true,
 					SimilarityScoreWriter.PARAM_OUTPUT_GOLD_SCORES, false);
@@ -172,10 +171,12 @@ public class Evaluator
 		        Filter.useFilter(train, filter);  // trains the classifier
 		        
 		        Instances pred = Filter.useFilter(test, filter);  // performs predictions on test set
-		        if (predictedData == null)
-		        	predictedData = new Instances(pred, 0);
-		        for (int j = 0; j < pred.numInstances(); j++)
-		        	predictedData.add(pred.instance(j));		        
+		        if (predictedData == null) {
+                    predictedData = new Instances(pred, 0);
+                }
+		        for (int j = 0; j < pred.numInstances(); j++) {
+                    predictedData.add(pred.instance(j));
+                }		        
 		    }
 		    
 		    // Prepare output scores
@@ -192,14 +193,19 @@ public class Evaluator
 		    	scores[id] = value;
 		    	
 		    	// Limit to interval [0;5]
-				if (scores[id] > 5.0) 	scores[id] = 5.0;
-				if (scores[id] < 0.0)	scores[id] = 0.0;
+				if (scores[id] > 5.0) {
+                    scores[id] = 5.0;
+                }
+				if (scores[id] < 0.0) {
+                    scores[id] = 0.0;
+                }
 		    }
 		    
 		    // Output
 		    StringBuilder sb = new StringBuilder();
-		    for (Double score : scores)
-		    	sb.append(score.toString() + LF);
+		    for (Double score : scores) {
+                sb.append(score.toString() + LF);
+            }
 		    
 		    FileUtils.writeStringToFile(
 		    	new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".csv"),
@@ -207,7 +213,6 @@ public class Evaluator
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
 	public static void runEvaluationMetric(Mode mode, EvaluationMetric metric, Dataset... datasets)
 		throws IOException
 	{
@@ -231,8 +236,9 @@ public class Evaluator
 				
 				List<String> lines = FileUtils.readLines(expScoresFile);
 				
-				for (String line : lines)
-					concatExp.add(Double.parseDouble(line));
+				for (String line : lines) {
+                    concatExp.add(Double.parseDouble(line));
+                }
 			}
 			
 			// Concat the gold standard
@@ -247,8 +253,9 @@ public class Evaluator
 				
 				List<String> lines = FileUtils.readLines(gsScoresFile);
 				
-				for (String line : lines)
-					concatGS.add(Double.parseDouble(line));
+				for (String line : lines) {
+                    concatGS.add(Double.parseDouble(line));
+                }
 			}
 			
 			double[] concatExpArray = ArrayUtils.toPrimitive(concatExp.toArray(new Double[concatExp.size()])); 
@@ -272,8 +279,9 @@ public class Evaluator
 			}
 			
 			double mean = 0.0;
-			for (Double score : scores)
-				mean += score;
+			for (Double score : scores) {
+                mean += score;
+            }
 			mean = mean / scores.size();
 			
 			sb.append(mean);
@@ -282,7 +290,6 @@ public class Evaluator
 		FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + metric.toString() + ".txt"), sb.toString());
 	}
 	
-	@SuppressWarnings("unchecked")
 	private static void computePearsonCorrelation(Mode mode, Dataset dataset)
 		throws IOException
 	{
