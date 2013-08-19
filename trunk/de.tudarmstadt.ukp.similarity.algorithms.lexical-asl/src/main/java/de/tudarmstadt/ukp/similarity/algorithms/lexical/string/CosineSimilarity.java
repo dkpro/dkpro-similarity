@@ -191,11 +191,15 @@ public class CosineSimilarity
 		Vector vector2 = getVector(unionTermSet, terms2);
 
 		// fix for issue #11
+		int equalElements = 0;
 		for (int i=0; i<vector1.size(); i++) {
-		    if (vector1.get(i) != vector2.get(i)) {
-		        break;
+		    if (vector1.get(i) == vector2.get(i)) {
+		        equalElements++;
 		    }
-            return 1.0;
+		}
+		// all equal, return 1.0
+		if (equalElements == unionTermSet.size()) {
+		    return 1.0;
 		}
 		
 		// Numerator
