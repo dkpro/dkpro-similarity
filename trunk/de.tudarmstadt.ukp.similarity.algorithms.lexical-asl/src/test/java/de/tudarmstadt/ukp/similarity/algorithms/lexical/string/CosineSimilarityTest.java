@@ -183,4 +183,13 @@ public class CosineSimilarityTest {
         assertEquals(1.0, measure.getSimilarity(tokens3, tokens4), 0.00000000000000001);
 	}
 	
+   @Test
+    public void test() throws Exception {
+        CosineSimilarity measure = new CosineSimilarity();
+
+        List<String> tokens1 = Arrays.asList("1 3 4 5 6 7 8 9 3 10 7 11 .".split(" "));    
+        List<String> tokens2 = Arrays.asList("2 3 12 13 5 3 7 11 14 15 3 7 .".split(" "));    
+
+        assertEquals(0.688033, measure.getSimilarity(tokens1, tokens2), 0.000001);
+    }
 }
