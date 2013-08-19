@@ -19,8 +19,8 @@ The performance of the presented system for the 2012 data is:
 || Test || .706 || .566 || .608 || .839 || .254 || .682 || .447 ||
 </wiki:comment>
 || Mode || ALL || Mean || MSRpar || MSRvid || SMTeuroparl || OnWN || SMTnews ||
-|| Train || .863 || .742 || .687 || .802 || .737 || - || - ||
-|| Test || .695 || .591 || .621 || .802 || .390 || .659 || .485 ||
+|| Train || .863 || .742 || .688 || .801 || .736 || - || - ||
+|| Test || .694 || .584 || .620 || .808 || .376 || .657 || .462 ||
 
 If you plan to refer to our original system in your publications, please cite
  Daniel Bär, Chris Biemann, Iryna Gurevych, and Torsten Zesch. *UKP: Computing Semantic Textual Similarity by Combining Multiple Content Similarity Measures*, in _Proceedings of the 6th International Workshop on Semantic Evaluation, in conjunction with the 1st Joint Conference on Lexical and Computational Semantics_, pages 435-440, June 2012, Montreal, Canada. [http://aclweb.org/anthology/S/S12/S12-1059.pdf (pdf)] [http://aclweb.org/anthology/S/S12/S12-1059.bib (bib)]
