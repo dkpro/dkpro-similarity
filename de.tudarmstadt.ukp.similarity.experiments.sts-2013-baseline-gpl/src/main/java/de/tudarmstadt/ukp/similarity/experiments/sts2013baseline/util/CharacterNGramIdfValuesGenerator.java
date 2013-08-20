@@ -35,7 +35,6 @@ public class CharacterNGramIdfValuesGenerator
 {
 	static final String LF = System.getProperty("line.separator");
 	
-	@SuppressWarnings("unchecked")
 	public static void computeIdfScores(Mode mode, Dataset dataset, int n)
 		throws Exception
 	{					
@@ -68,8 +67,9 @@ public class CharacterNGramIdfValuesGenerator
 			
 			// Get all ngrams
 			Set<String> allNGrams = new HashSet<String>();
-			for (Set<String> doc : docs)
-				allNGrams.addAll(doc);
+			for (Set<String> doc : docs) {
+                allNGrams.addAll(doc);
+            }
 			
 			// Compute idf values			
 			for (String ngram : allNGrams)
@@ -77,8 +77,9 @@ public class CharacterNGramIdfValuesGenerator
 				double count = 0;
 				for (Set<String> doc : docs)
 				{					
-					if (doc.contains(ngram))
-						count++;
+					if (doc.contains(ngram)) {
+                        count++;
+                    }
 				}
 				idfValues.put(ngram, count);
 			}
