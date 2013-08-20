@@ -48,6 +48,10 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 public abstract class CombinationReader
 	extends CasCollectionReader_ImplBase
 {
+    public static final String PARAM_LANGUAGE = "Language";
+    @ConfigurationParameter(name=PARAM_LANGUAGE, mandatory=true)
+    private String language;
+    
 	public static final String PARAM_COMBINATION_STRATEGY = "CombinationStrategy";
 	@ConfigurationParameter(name=PARAM_COMBINATION_STRATEGY, mandatory=true)
 	private CombinationStrategy combinationStrategy;
@@ -92,7 +96,7 @@ public abstract class CombinationReader
 		throws ResourceInitializationException
 	{
 		super.initialize(aContext);
-
+		
 		this.currentPair1 = null;
         this.currentPair2 = null;
 		
@@ -176,6 +180,7 @@ public abstract class CombinationReader
 
 			// Prepare view 1
 			view1.setDocumentText(currentPair1.getText1());
+			view1.setDocumentLanguage(language);
 
 			DocumentMetaData md1 = DocumentMetaData.create(view1);
 			md1.setCollectionId(currentPair1.getCollectionID());
@@ -186,6 +191,7 @@ public abstract class CombinationReader
 
 			// Prepare view 2
 			view2.setDocumentText(currentPair2.getText2());
+            view2.setDocumentLanguage(language);
 
 			DocumentMetaData md2 = DocumentMetaData.create(view2);
 			md2.setCollectionId(currentPair2.getCollectionID());
