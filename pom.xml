@@ -31,21 +31,6 @@
   </dependencies>
   <dependencyManagement>
   	<dependencies>
-  	<dependency>
-				<groupId>xerces</groupId>
-				<artifactId>xercesImpl</artifactId>
-				<version>2.9.1</version>
-			</dependency>
-			<dependency>
-				<groupId>xalan</groupId>
-				<artifactId>xalan</artifactId>
-				<version>2.7.1</version>
-			</dependency>
-			<dependency>
-				<groupId>xalan</groupId>
-				<artifactId>serializer</artifactId>
-				<version>2.7.1</version>
-			</dependency>
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   			<artifactId>de.tudarmstadt.ukp.dkpro.core-asl</artifactId>
@@ -53,6 +38,13 @@
   			<type>pom</type>
   			<scope>import</scope>
   		</dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core-gpl</artifactId>
+            <version>1.5.0-SNAPSHOT</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity</groupId>
   			<artifactId>de.tudarmstadt.ukp.similarity-asl</artifactId>
@@ -61,12 +53,89 @@
   			<scope>import</scope>
   		</dependency>
   		<dependency>
-  			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-  			<artifactId>de.tudarmstadt.ukp.dkpro.core-gpl</artifactId>
-  			<version>1.5.0-SNAPSHOT</version>
-  			<type>pom</type>
-  			<scope>import</scope>
+  			<groupId>
+  				de.tudarmstadt.ukp.similarity.algorithms
+  			</groupId>
+  			<artifactId>
+  				de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl
+  			</artifactId>
+  			<version>1.1.0-SNAPSHOT</version>
   		</dependency>
+  		<dependency>
+  			<groupId>
+  				de.tudarmstadt.ukp.similarity.algorithms
+  			</groupId>
+  			<artifactId>
+  				de.tudarmstadt.ukp.similarity.algorithms.lexsub-gpl
+  			</artifactId>
+  			<version>1.1.0-SNAPSHOT</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>
+  				de.tudarmstadt.ukp.similarity.algorithms
+  			</groupId>
+  			<artifactId>
+  				de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl
+  			</artifactId>
+  			<version>1.1.0-SNAPSHOT</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>
+  				de.tudarmstadt.ukp.similarity.algorithms
+  			</groupId>
+  			<artifactId>
+  				de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl
+  			</artifactId>
+  			<version>1.1.0-SNAPSHOT</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+  			<artifactId>
+  				de.tudarmstadt.ukp.similarity.dkpro.core-gpl
+  			</artifactId>
+  			<version>1.1.0-SNAPSHOT</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>de.tudarmstadt.ukp.similarity</groupId>
+  			<artifactId>
+  				de.tudarmstadt.ukp.similarity.experiments.rte-gpl
+  			</artifactId>
+  			<version>1.1.0-SNAPSHOT</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>de.tudarmstadt.ukp.similarity</groupId>
+  			<artifactId>
+  				de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl
+  			</artifactId>
+  			<version>1.1.0-SNAPSHOT</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>de.tudarmstadt.ukp.similarity</groupId>
+  			<artifactId>
+  				de.tudarmstadt.ukp.similarity.experiments.sts-2013-gpl
+  			</artifactId>
+  			<version>1.1.0-SNAPSHOT</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>nz.ac.waikato.cms.weka</groupId>
+  			<artifactId>weka-dev</artifactId>
+  			<version>3.7.5</version>
+  		</dependency>
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>xalan</artifactId>
+            <version>2.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>serializer</artifactId>
+            <version>2.7.1</version>
+        </dependency>
   	</dependencies>
   </dependencyManagement>
   <modules>
