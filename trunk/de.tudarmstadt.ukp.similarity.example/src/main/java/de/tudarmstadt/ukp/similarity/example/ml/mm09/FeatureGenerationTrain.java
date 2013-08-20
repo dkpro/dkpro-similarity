@@ -1,9 +1,9 @@
 package de.tudarmstadt.ukp.similarity.example.ml.mm09;
 
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
-import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
-import static org.uimafit.factory.ExternalResourceFactory.createExternalResourceDescription;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
+import static org.apache.uima.fit.factory.ExternalResourceFactory.createExternalResourceDescription;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -12,8 +12,8 @@ import java.util.List;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
-import org.uimafit.factory.AggregateBuilder;
-import org.uimafit.pipeline.SimplePipeline;
+import org.apache.uima.fit.factory.AggregateBuilder;
+import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
@@ -226,11 +226,11 @@ public class FeatureGenerationTrain
 			{
 				System.out.println("Skipping: " + config.getMeasureName());
 			} else {			
-				CollectionReader reader = createCollectionReader(SemEvalCorpusReader.class,
+				CollectionReader reader = createReader(SemEvalCorpusReader.class,
 						SemEvalCorpusReader.PARAM_INPUT_FILE, "classpath:/datasets/semeval/train/STS.input.ALLcombined.txt",
 						SemEvalCorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
 		
-				AnalysisEngineDescription seg = createPrimitiveDescription(
+				AnalysisEngineDescription seg = createEngineDescription(
 						BreakIteratorSegmenter.class);
 				
 				AggregateBuilder builder = new AggregateBuilder();
@@ -256,14 +256,14 @@ public class FeatureGenerationTrain
 	//			builder.add(stopw, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_2);
 	//			AnalysisEngineDescription aggr_stopw = builder.createAggregateDescription();
 		
-				AnalysisEngine scorer = createPrimitive(SimilarityScorer.class,
+				AnalysisEngine scorer = createEngine(SimilarityScorer.class,
 				    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
 				    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
 				    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, config.getSegmentFeaturePath(),
 				    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, config.getResource()
 				    );
 				
-				AnalysisEngine writer = createPrimitive(SimilarityScoreWriter.class,
+				AnalysisEngine writer = createEngine(SimilarityScoreWriter.class,
 					SimilarityScoreWriter.PARAM_OUTPUT_FILE, OUTPUT_FEATURE_DIR + "/" + config.getTargetPath() + "/" + config.getMeasureName() + ".txt",
 					SimilarityScoreWriter.PARAM_OUTPUT_SCORES_ONLY, true);
 		
