@@ -10,6 +10,8 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.rte.util;
 
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.GOLD_DIR;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -18,17 +20,15 @@ import java.util.Map;
 import org.apache.commons.io.FileUtils;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.CASException;
+import org.apache.uima.fit.component.JCasConsumer_ImplBase;
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
-import org.uimafit.component.JCasConsumer_ImplBase;
-import org.uimafit.descriptor.ConfigurationParameter;
-import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.entailment.type.EntailmentClassificationOutcome;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
-
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.GOLD_DIR;
 
 
 public class GoldstandardWriter
@@ -83,21 +83,27 @@ public class GoldstandardWriter
 				
 				if (RteUtil.hasThreeWayClassification(Dataset.valueOf(datasetName)))
 				{
-					if (gold.get(key).equals("YES"))
-						sb.append("ENTAILMENT" + LF);
-					else if (gold.get(key).equals("NO"))
-						sb.append("CONTRADICTION" + LF);
-					else			
-						sb.append(gold.get(key) + LF);
+					if (gold.get(key).equals("YES")) {
+                        sb.append("ENTAILMENT" + LF);
+                    }
+                    else if (gold.get(key).equals("NO")) {
+                        sb.append("CONTRADICTION" + LF);
+                    }
+                    else {
+                        sb.append(gold.get(key) + LF);
+                    }
 				}
 				else
 				{
-					if (gold.get(key).equals("YES"))
-						sb.append("TRUE" + LF);
-					else if (gold.get(key).equals("NO"))
-						sb.append("FALSE" + LF);
-					else			
-						sb.append(gold.get(key) + LF);
+					if (gold.get(key).equals("YES")) {
+                        sb.append("TRUE" + LF);
+                    }
+                    else if (gold.get(key).equals("NO")) {
+                        sb.append("FALSE" + LF);
+                    }
+                    else {
+                        sb.append(gold.get(key) + LF);
+                    }
 				}
 			}
 		}

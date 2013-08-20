@@ -10,9 +10,15 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util;
 
-import java.io.File;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.FEATURES_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.GOLDSTANDARD_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.MODELS_DIR;
 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -26,10 +32,6 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode;
-
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.FEATURES_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.GOLDSTANDARD_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.MODELS_DIR;
 
 
 public class Features2Arff
@@ -46,12 +48,11 @@ public class Features2Arff
 			PathMatchingResourcePatternResolver r = new PathMatchingResourcePatternResolver();
 	        Resource res = r.getResource(path);
 			
-			toArffFile(mode, dataset, res.getFile());
+			toArffFile(mode, dataset, res.getInputStream());
 		}
 	}
 		
-	@SuppressWarnings("unchecked")
-	private static void toArffFile(Mode mode, Dataset dataset, File goldStandard)
+	private static void toArffFile(Mode mode, Dataset dataset, InputStream goldStandardInputStream)
 		throws IOException
 	{
 		System.out.println("Generating ARFF file");
@@ -61,7 +62,7 @@ public class Features2Arff
 				new String[] { "txt" },
 				true); 
 		
-		String arffString = toArffString(files, goldStandard);
+		String arffString = toArffString(files, goldStandardInputStream);
 		
 		FileUtils.writeStringToFile(
 				new File(MODELS_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".arff"),
@@ -70,8 +71,7 @@ public class Features2Arff
 		System.out.println(" - done");
 	}
 	
-	@SuppressWarnings("unchecked")
-	private static String toArffString(Collection<File> csvFiles, File goldFile)
+	private static String toArffString(Collection<File> csvFiles, InputStream goldStandardInputStream)
 		throws IOException
 	{
 		// Create the Arff header
@@ -101,15 +101,21 @@ public class Features2Arff
 					double value = Double.parseDouble(line);	// There's just the score on the line, nothing else.
 					
 					// Limit to [0;5] interval
-					if (value > 5.0) value = 5.0;
-					if (value < 0.0) value = 0.0;
+					if (value > 5.0) {
+                        value = 5.0;
+                    }
+					if (value < 0.0) {
+                        value = 0.0;
+                    }
 					
 					// Get doc object in data list
 					List<Double> docObj;
-					if (data.containsKey(doc))
-						docObj = data.get(doc);
-					else
-						docObj = new ArrayList<Double>();
+					if (data.containsKey(doc)) {
+                        docObj = data.get(doc);
+                    }
+                    else {
+                        docObj = new ArrayList<Double>();
+                    }
 					
 					// Put data
 					docObj.add(value);
@@ -123,16 +129,20 @@ public class Features2Arff
 		arff.append("@attribute gold real" + LF);
 		
 		// Add gold similarity score 
-		List<String> lines;
-		if (goldFile != null)
+		List<String> lines = new ArrayList<String>();
+		if (goldStandardInputStream != null)
 		{
-			lines = FileUtils.readLines(goldFile);
+            String line;
+            BufferedReader br = new BufferedReader(new InputStreamReader(goldStandardInputStream, "UTF-8"));
+            while ((line = br.readLine()) != null) {
+                lines.add(line);
+            }
 		}
 		else
 		{
-			lines = new ArrayList<String>();
-			for (int i = 0; i < FileUtils.readLines(csvFiles.iterator().next()).size(); i++)
-				lines.add("0.0");
+			for (int i = 0; i < FileUtils.readLines(csvFiles.iterator().next()).size(); i++) {
+                lines.add("0.0");
+            }
 		}
 			
 		for (int doc = 1; doc <= lines.size(); doc++)

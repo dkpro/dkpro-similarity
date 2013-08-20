@@ -25,14 +25,14 @@ import java.util.Set;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.uimafit.component.JCasAnnotator_ImplBase;
-import org.uimafit.descriptor.ConfigurationParameter;
-import org.uimafit.util.JCasUtil;
 
 
 public class StopwordFilter
@@ -86,7 +86,6 @@ public class StopwordFilter
 		}
     }
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void process(JCas jcas)
 		throws AnalysisEngineProcessException
@@ -94,7 +93,7 @@ public class StopwordFilter
 		List<Annotation> itemsToRemove = new ArrayList<Annotation>();
 
     	// Check all annotations if they are stopwords
-		for (Annotation annotation : JCasUtil.iterate(jcas, annotationType))
+		for (Annotation annotation : JCasUtil.select(jcas, annotationType))
 		{
 			try {
 				String word = (String) annotation.getClass().getMethod(stringRepresentationMethodName, new Class[]{}).invoke(annotation, new Object[]{});

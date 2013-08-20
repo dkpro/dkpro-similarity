@@ -3,10 +3,10 @@ package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline;
 import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.DATASET_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.FEATURES_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.UTILS_DIR;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
-import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
-import static org.uimafit.factory.ExternalResourceFactory.createExternalResourceDescription;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
+import static org.apache.uima.fit.factory.ExternalResourceFactory.createExternalResourceDescription;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,16 +18,14 @@ import org.apache.commons.io.FileUtils;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
-import org.uimafit.factory.AggregateBuilder;
-import org.uimafit.pipeline.SimplePipeline;
+import org.apache.uima.fit.factory.AggregateBuilder;
+import org.apache.uima.fit.pipeline.SimplePipeline;
 
-import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
-import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
@@ -41,18 +39,13 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.CharacterNGra
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexsub.TWSISubstituteWrapperResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.ResnikRelatednessResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.aggregate.MCS06AggregateResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
-import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
-import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.example.MyTextSimilarityResource;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util.CharacterNGramIdfValuesGenerator;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util.StopwordFilter;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util.WordIdfValuesGenerator;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode;
+import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
+import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 
 
 /**
@@ -68,8 +61,9 @@ public class FeatureGeneration
 		 
 		// Prerequisites
 		int[] ngrams_n = new int[] { 2, 3, 4 };
-		for (int n : ngrams_n)
-			CharacterNGramIdfValuesGenerator.computeIdfScores(mode, dataset, n);
+		for (int n : ngrams_n) {
+            CharacterNGramIdfValuesGenerator.computeIdfScores(mode, dataset, n);
+        }
 		
 		WordIdfValuesGenerator.computeIdfScores(mode, dataset);
 		
@@ -264,12 +258,12 @@ public class FeatureGeneration
 			} 
 			else
 			{			
-				CollectionReader reader = createCollectionReader(SemEvalCorpusReader.class,
+				CollectionReader reader = createReader(SemEvalCorpusReader.class,
 						SemEvalCorpusReader.PARAM_INPUT_FILE, DATASET_DIR + "/" + mode.toString().toLowerCase() + "/STS.input." + dataset.toString() + ".txt",
-						SemEvalCorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
+						SemEvalCorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString(), SemEvalCorpusReader.PARAM_LANGUAGE, "en");
 		
 				// Tokenization
-				AnalysisEngineDescription seg = createPrimitiveDescription(
+				AnalysisEngineDescription seg = createEngineDescription(
 						BreakIteratorSegmenter.class);
 				AggregateBuilder builder = new AggregateBuilder();
 				builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
@@ -277,7 +271,7 @@ public class FeatureGeneration
 				AnalysisEngine aggr_seg = builder.createAggregate();
 				
 				// POS Tagging
-				AnalysisEngineDescription pos = createPrimitiveDescription(
+				AnalysisEngineDescription pos = createEngineDescription(
 						OpenNlpPosTagger.class,
 						OpenNlpPosTagger.PARAM_LANGUAGE, "en");		
 				builder = new AggregateBuilder();
@@ -286,7 +280,7 @@ public class FeatureGeneration
 				AnalysisEngine aggr_pos = builder.createAggregate();
 				
 				// Lemmatization
-				AnalysisEngineDescription lem = createPrimitiveDescription(
+				AnalysisEngineDescription lem = createEngineDescription(
 //						StanfordLemmatizer.class);
 						GateLemmatizer.class);
 				builder = new AggregateBuilder();
@@ -295,7 +289,7 @@ public class FeatureGeneration
 				AnalysisEngine aggr_lem = builder.createAggregate();
 				
 				// Stopword Filter (if applicable)
-				AnalysisEngineDescription stopw = createPrimitiveDescription(
+				AnalysisEngineDescription stopw = createEngineDescription(
 						StopwordFilter.class,
 						StopwordFilter.PARAM_STOPWORD_LIST, "classpath:/stopwords/stopwords_english_punctuation.txt",
 						StopwordFilter.PARAM_ANNOTATION_TYPE_NAME, Lemma.class.getName(),
@@ -306,7 +300,7 @@ public class FeatureGeneration
 				AnalysisEngine aggr_stopw = builder.createAggregate();
 		
 				// Similarity Scorer
-				AnalysisEngine scorer = createPrimitive(SimilarityScorer.class,
+				AnalysisEngine scorer = createEngine(SimilarityScorer.class,
 				    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
 				    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
 				    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, config.getSegmentFeaturePath(),
@@ -314,14 +308,16 @@ public class FeatureGeneration
 				    );
 				
 				// Output Writer
-				AnalysisEngine writer = createPrimitive(SimilarityScoreWriter.class,
+				AnalysisEngine writer = createEngine(SimilarityScoreWriter.class,
 					SimilarityScoreWriter.PARAM_OUTPUT_FILE, outputFile.getAbsolutePath(),
 					SimilarityScoreWriter.PARAM_OUTPUT_SCORES_ONLY, true);
 		
-				if (config.filterStopwords())
-					SimplePipeline.runPipeline(reader, aggr_seg, aggr_pos, aggr_lem, aggr_stopw, scorer, writer);
-				else
-					SimplePipeline.runPipeline(reader, aggr_seg, aggr_pos, aggr_lem, scorer, writer);
+				if (config.filterStopwords()) {
+                    SimplePipeline.runPipeline(reader, aggr_seg, aggr_pos, aggr_lem, aggr_stopw, scorer, writer);
+                }
+                else {
+                    SimplePipeline.runPipeline(reader, aggr_seg, aggr_pos, aggr_lem, scorer, writer);
+                }
 				
 				System.out.println(" - done");
 			}
@@ -330,7 +326,6 @@ public class FeatureGeneration
 		System.out.println("Successful.");
 	}
 	
-	@SuppressWarnings("unchecked")
 	public static void combineFeatureSets(Mode mode, Dataset target, Dataset... sources)
 			throws IOException
 	{	
@@ -359,8 +354,9 @@ public class FeatureGeneration
 				
 				for (int i = 1; i < sources.length; i++)
 				{
-					if (!new File(feature.getAbsolutePath().replace(sources[0].toString(), sources[i].toString())).exists())
-						shared = false;
+					if (!new File(feature.getAbsolutePath().replace(sources[0].toString(), sources[i].toString())).exists()) {
+                        shared = false;
+                    }
 				}
 				
 				if (shared)

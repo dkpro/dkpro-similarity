@@ -10,30 +10,19 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.rte.util;
 
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
-import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.DATASET_DIR;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
 
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
-import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
-import org.apache.uima.cas.CASException;
 import org.apache.uima.collection.CollectionReader;
-import org.apache.uima.jcas.JCas;
-import org.uimafit.component.JCasAnnotator_ImplBase;
-import org.uimafit.component.JCasConsumer_ImplBase;
-import org.uimafit.pipeline.SimplePipeline;
-import org.uimafit.util.JCasUtil;
+import org.apache.uima.fit.pipeline.SimplePipeline;
 
-import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
-import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
-import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
-import de.tudarmstadt.ukp.similarity.entailment.type.EntailmentClassificationOutcome;
+import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
-
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.DATASET_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.FEATURES_DIR;
 
 
 public class GoldstandardCreator
@@ -41,19 +30,19 @@ public class GoldstandardCreator
 	public static void outputGoldstandard(Dataset dataset)
 		throws Exception
 	{	        
-		CollectionReader reader = createCollectionReader(
+		CollectionReader reader = createReader(
                 RTECorpusReader.class,
                 RTECorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY,
                 RTECorpusReader.PARAM_INPUT_FILE, RteUtil.getInputFilePathForDataset(DATASET_DIR, dataset));
         
-        AnalysisEngineDescription tagger = createPrimitiveDescription(
+        AnalysisEngineDescription tagger = createEngineDescription(
                 OpenNlpPosTagger.class,
                 OpenNlpPosTagger.PARAM_LANGUAGE, "en");
                 
-        AnalysisEngineDescription lemmatizer = createPrimitiveDescription(
+        AnalysisEngineDescription lemmatizer = createEngineDescription(
                 GateLemmatizer.class);
         
-        AnalysisEngineDescription printer = createPrimitiveDescription(
+        AnalysisEngineDescription printer = createEngineDescription(
                 GoldstandardWriter.class,
                 GoldstandardWriter.PARAM_DATASET_NAME, dataset.toString());
 

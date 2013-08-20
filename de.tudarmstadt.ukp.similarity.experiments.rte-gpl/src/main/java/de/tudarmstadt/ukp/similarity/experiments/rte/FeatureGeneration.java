@@ -13,10 +13,10 @@ package de.tudarmstadt.ukp.similarity.experiments.rte;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.DATASET_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.FEATURES_DIR;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.UTILS_DIR;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
-import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
-import static org.uimafit.factory.ExternalResourceFactory.createExternalResourceDescription;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
+import static org.apache.uima.fit.factory.ExternalResourceFactory.createExternalResourceDescription;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -25,8 +25,8 @@ import java.util.List;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
-import org.uimafit.factory.AggregateBuilder;
-import org.uimafit.pipeline.SimplePipeline;
+import org.apache.uima.fit.factory.AggregateBuilder;
+import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
@@ -96,8 +96,9 @@ public class FeatureGeneration
 		
 		// Generate character n-gram idf values
 		int[] ngrams_n = new int[] { 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-		for (int n : ngrams_n)
-			CharacterNGramIdfValuesGenerator.computeIdfScores(dataset, n);
+		for (int n : ngrams_n) {
+            CharacterNGramIdfValuesGenerator.computeIdfScores(dataset, n);
+        }
 		
 		// Generate word idf values
 		WordIdfValuesGenerator.computeIdfScores(dataset);
@@ -329,8 +330,8 @@ public class FeatureGeneration
 				"TokenPairOrderingMeasure"
 				));
 		
-		for (int n = 2; n <= 7; n++)
-			configs.add(new FeatureConfig(
+		for (int n = 2; n <= 7; n++) {
+            configs.add(new FeatureConfig(
 					createExternalResourceDescription(
 							StopwordNGramContainmentMeasureResource.class,
 							StopwordNGramContainmentMeasureResource.PARAM_N, new Integer(n).toString(),
@@ -340,9 +341,10 @@ public class FeatureGeneration
 					"structure",
 					"StopwordNGramContainmentMeasure_" + n + "_english-punctuation"
 					));
+        }
 		
-		for (int n = 2; n <= 7; n++)
-			configs.add(new FeatureConfig(
+		for (int n = 2; n <= 7; n++) {
+            configs.add(new FeatureConfig(
 					createExternalResourceDescription(
 							StopwordNGramContainmentMeasureResource.class,
 							StopwordNGramContainmentMeasureResource.PARAM_N, new Integer(n).toString(),
@@ -352,9 +354,10 @@ public class FeatureGeneration
 					"structure",
 					"StopwordNGramContainmentMeasure_" + n + "_mosteller-wallace"
 					));
+        }
 		
-		for (int n = 2; n <= 7; n++)
-			configs.add(new FeatureConfig(
+		for (int n = 2; n <= 7; n++) {
+            configs.add(new FeatureConfig(
 					createExternalResourceDescription(
 							StopwordNGramContainmentMeasureResource.class,
 							StopwordNGramContainmentMeasureResource.PARAM_N, new Integer(n).toString(),
@@ -364,6 +367,7 @@ public class FeatureGeneration
 					"structure",
 					"StopwordNGramContainmentMeasure_" + n + "_stamatatos"
 					));
+        }
 		
 		for (int n = 1; n <= 7; n++)
 		{
@@ -491,13 +495,13 @@ public class FeatureGeneration
 			} 
 			else
 			{			
-				CollectionReader reader = createCollectionReader(
+				CollectionReader reader = createReader(
 						 RTECorpusReader.class,
 			             RTECorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY,
 			             RTECorpusReader.PARAM_INPUT_FILE, RteUtil.getInputFilePathForDataset(DATASET_DIR, dataset));
 		
 				// Tokenization
-				AnalysisEngineDescription seg = createPrimitiveDescription(
+				AnalysisEngineDescription seg = createEngineDescription(
 						BreakIteratorSegmenter.class);
 				AggregateBuilder builder = new AggregateBuilder();
 				builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
@@ -505,7 +509,7 @@ public class FeatureGeneration
 				AnalysisEngine aggr_seg = builder.createAggregate();
 				
 				// POS Tagging
-				AnalysisEngineDescription pos = createPrimitiveDescription(
+				AnalysisEngineDescription pos = createEngineDescription(
 						OpenNlpPosTagger.class,
 						OpenNlpPosTagger.PARAM_LANGUAGE, "en");		
 				builder = new AggregateBuilder();
@@ -514,7 +518,7 @@ public class FeatureGeneration
 				AnalysisEngine aggr_pos = builder.createAggregate();
 				
 				// Lemmatization
-				AnalysisEngineDescription lem = createPrimitiveDescription(
+				AnalysisEngineDescription lem = createEngineDescription(
 						GateLemmatizer.class);
 				builder = new AggregateBuilder();
 				builder.add(lem, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);
@@ -522,7 +526,7 @@ public class FeatureGeneration
 				AnalysisEngine aggr_lem = builder.createAggregate();
 				
 				// Stopword Filter (if applicable)
-				AnalysisEngineDescription stopw = createPrimitiveDescription(
+				AnalysisEngineDescription stopw = createEngineDescription(
 						StopwordFilter.class,
 						StopwordFilter.PARAM_STOPWORD_LIST, "classpath:/stopwords/stopwords_english_punctuation.txt",
 						StopwordFilter.PARAM_ANNOTATION_TYPE_NAME, Lemma.class.getName(),
@@ -533,7 +537,7 @@ public class FeatureGeneration
 				AnalysisEngine aggr_stopw = builder.createAggregate();
 		
 				// Similarity Scorer
-				AnalysisEngine scorer = createPrimitive(SimilarityScorer.class,
+				AnalysisEngine scorer = createEngine(SimilarityScorer.class,
 				    SimilarityScorer.PARAM_NAME_VIEW_1, CombinationReader.VIEW_1,
 				    SimilarityScorer.PARAM_NAME_VIEW_2, CombinationReader.VIEW_2,
 				    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, config.getSegmentFeaturePath(),
@@ -541,14 +545,16 @@ public class FeatureGeneration
 				    );
 				
 				// Output Writer
-				AnalysisEngine writer = createPrimitive(SimilarityScoreWriter.class,
+				AnalysisEngine writer = createEngine(SimilarityScoreWriter.class,
 					SimilarityScoreWriter.PARAM_OUTPUT_FILE, outputFile.getAbsolutePath(),
 					SimilarityScoreWriter.PARAM_OUTPUT_SCORES_ONLY, true);
 		
-				if (config.filterStopwords())
-					SimplePipeline.runPipeline(reader, aggr_seg, aggr_pos, aggr_lem, aggr_stopw, scorer, writer);
-				else
-					SimplePipeline.runPipeline(reader, aggr_seg, aggr_pos, aggr_lem, scorer, writer);
+				if (config.filterStopwords()) {
+                    SimplePipeline.runPipeline(reader, aggr_seg, aggr_pos, aggr_lem, aggr_stopw, scorer, writer);
+                }
+                else {
+                    SimplePipeline.runPipeline(reader, aggr_seg, aggr_pos, aggr_lem, scorer, writer);
+                }
 				
 				System.out.println(" - done");
 			}

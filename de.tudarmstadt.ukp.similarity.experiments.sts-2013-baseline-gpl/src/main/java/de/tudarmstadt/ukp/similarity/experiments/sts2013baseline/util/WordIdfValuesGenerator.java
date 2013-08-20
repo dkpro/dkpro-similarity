@@ -143,6 +143,7 @@ public class WordIdfValuesGenerator
 		AnalysisEngine ae = AnalysisEngineFactory.createEngine(aed);
 		
 		JCas jcas = ae.newJCas();
+		jcas.setDocumentLanguage("en");
 		jcas.setDocumentText(fileContents);
 		
 		ae.process(jcas);

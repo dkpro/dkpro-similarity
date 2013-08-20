@@ -10,12 +10,12 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.rte.attic;
 
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
-import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
 
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
-import org.uimafit.pipeline.SimplePipeline;
+import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
@@ -30,21 +30,21 @@ public class RteExperiments
     {
         String context = DKProContext.getContext().getWorkspace("RTE").getAbsolutePath();
         
-        CollectionReader reader = createCollectionReader(
+        CollectionReader reader = createReader(
                 RTECorpusReader.class,
                 RTECorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY,
                 RTECorpusReader.PARAM_INPUT_FILE, context + "/RTE1/Test/annotated_test.xml"
         );
         
-        AnalysisEngineDescription tagger = createPrimitiveDescription(
+        AnalysisEngineDescription tagger = createEngineDescription(
                 OpenNlpPosTagger.class,
                 OpenNlpPosTagger.PARAM_LANGUAGE, "en"
         );
                 
-        AnalysisEngineDescription lemmatizer = createPrimitiveDescription(
+        AnalysisEngineDescription lemmatizer = createEngineDescription(
                 GateLemmatizer.class
         );
-        AnalysisEngineDescription printer = createPrimitiveDescription(
+        AnalysisEngineDescription printer = createEngineDescription(
                 RteResultsPrinter.class
         );
 

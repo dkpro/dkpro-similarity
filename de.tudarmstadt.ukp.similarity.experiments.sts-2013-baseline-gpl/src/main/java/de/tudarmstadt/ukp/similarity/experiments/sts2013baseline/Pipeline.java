@@ -10,9 +10,16 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline;
 
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.*;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric.*;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode.*;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.ALL;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.MSRpar;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.MSRvid;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.OnWN;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.SMTeuroparl;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.SMTnews;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric.PearsonAll;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric.PearsonMean;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode.TEST;
+import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode.TRAIN;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -88,8 +95,9 @@ public class Pipeline
 				runTest(false);
 			}
 			
-			if (cmd.getOptions().length == 0)
-				new HelpFormatter().printHelp(Pipeline.class.getSimpleName(), options, true);
+			if (cmd.getOptions().length == 0) {
+                new HelpFormatter().printHelp(Pipeline.class.getSimpleName(), options, true);
+            }
 		}
 		catch (ParseException e) {
 			new HelpFormatter().printHelp(Pipeline.class.getSimpleName(), options);

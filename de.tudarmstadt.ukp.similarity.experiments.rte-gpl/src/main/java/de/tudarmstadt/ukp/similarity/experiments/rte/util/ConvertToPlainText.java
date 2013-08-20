@@ -10,20 +10,20 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.rte.util;
 
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.DATASET_DIR;
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.UTILS_DIR;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
+
 import java.io.File;
 
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.collection.CollectionReader;
-import org.uimafit.pipeline.SimplePipeline;
+import org.apache.uima.fit.pipeline.SimplePipeline;
 
-import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
+import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
-
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.DATASET_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.UTILS_DIR;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitive;
-import static org.uimafit.factory.CollectionReaderFactory.createCollectionReader;
 
 
 public class ConvertToPlainText
@@ -35,12 +35,12 @@ public class ConvertToPlainText
 		
 		if (!outputDir.exists())
 		{
-			CollectionReader reader = createCollectionReader(
+			CollectionReader reader = createReader(
 					 RTECorpusReader.class,
 		             RTECorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY,
 		             RTECorpusReader.PARAM_INPUT_FILE, RteUtil.getInputFilePathForDataset(DATASET_DIR, dataset));
 			
-			AnalysisEngine writer = createPrimitive(
+			AnalysisEngine writer = createEngine(
 					PlainTextWriter.class,
 					PlainTextWriter.PARAM_OUTPUT_DIR, outputDir.getAbsolutePath());
 		
