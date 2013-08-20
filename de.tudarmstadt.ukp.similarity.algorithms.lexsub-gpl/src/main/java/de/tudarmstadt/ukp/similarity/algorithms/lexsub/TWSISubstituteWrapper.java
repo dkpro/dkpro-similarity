@@ -6,9 +6,9 @@ import java.util.Collection;
 import java.util.List;
 
 import org.apache.commons.lang.NotImplementedException;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
-import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.langtech.substituter.MLSenseSubstituter;
 import de.tudarmstadt.langtech.substituter.SenseSubstituter;

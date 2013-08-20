@@ -1,7 +1,6 @@
 package de.tudarmstadt.ukp.similarity.algorithms.lexsub;
 
-import static org.uimafit.factory.AnalysisEngineFactory.createAggregateDescription;
-import static org.uimafit.factory.AnalysisEngineFactory.createPrimitiveDescription;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,12 +9,12 @@ import java.util.Collection;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.fit.factory.AnalysisEngineFactory;
+import org.apache.uima.fit.factory.JCasBuilder;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
-import org.uimafit.factory.AnalysisEngineFactory;
-import org.uimafit.factory.JCasBuilder;
-import org.uimafit.util.JCasUtil;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
@@ -108,12 +107,12 @@ public class BingSMTWrapper
     private Collection<String> getLemmas(String text)
     	throws ResourceInitializationException, AnalysisEngineProcessException
     {
-    	AnalysisEngine ae = AnalysisEngineFactory.createAggregate(
-            createAggregateDescription(
-            	createPrimitiveDescription(BreakIteratorSegmenter.class),
-            	createPrimitiveDescription(OpenNlpPosTagger.class,
+    	AnalysisEngine ae = AnalysisEngineFactory.createEngine(
+            createEngineDescription(
+                    createEngineDescription(BreakIteratorSegmenter.class),
+                    createEngineDescription(OpenNlpPosTagger.class,
             		OpenNlpPosTagger.PARAM_LANGUAGE, originalLanguage.toString().toLowerCase()),
-            	createPrimitiveDescription(GateLemmatizer.class)));
+            		createEngineDescription(GateLemmatizer.class)));
 
         JCasBuilder cb = new JCasBuilder(ae.newJCas());
         cb.add(text);
@@ -128,8 +127,9 @@ public class BingSMTWrapper
         
         // Convert to strings
         Collection<String> strings = new ArrayList<String>();
-        for (Lemma lemma : lemmas)
-        	strings.add(lemma.getValue().toLowerCase());
+        for (Lemma lemma : lemmas) {
+            strings.add(lemma.getValue().toLowerCase());
+        }
         
         return strings;
     }
