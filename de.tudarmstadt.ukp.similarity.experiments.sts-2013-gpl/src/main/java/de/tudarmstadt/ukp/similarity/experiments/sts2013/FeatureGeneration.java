@@ -21,18 +21,16 @@ import org.apache.uima.collection.CollectionReader;
 import org.uimafit.factory.AggregateBuilder;
 import org.uimafit.pipeline.SimplePipeline;
 
-import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
+import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
-import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.lexsub.BingSMTWrapper.Language;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
@@ -42,18 +40,17 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.CharacterNGra
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexsub.BingSMTWrapperResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexsub.TWSISubstituteWrapperResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.ResnikRelatednessResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.aggregate.MCS06AggregateResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
-import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
-import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Dataset;
+import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Mode;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013.util.CharacterNGramIdfValuesGenerator;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013.util.StopwordFilter;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013.util.WordIdfValuesGenerator;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Mode;
+import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
+import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 
 
 /**
@@ -69,8 +66,9 @@ public class FeatureGeneration
 		 
 		// Prerequisites
 		int[] ngrams_n = new int[] { 2, 3, 4 };
-		for (int n : ngrams_n)
-			CharacterNGramIdfValuesGenerator.computeIdfScores(mode, dataset, n);
+		for (int n : ngrams_n) {
+            CharacterNGramIdfValuesGenerator.computeIdfScores(mode, dataset, n);
+        }
 		
 		WordIdfValuesGenerator.computeIdfScores(mode, dataset);
 		
@@ -239,7 +237,7 @@ public class FeatureGeneration
 		configs.add(new FeatureConfig(
 				createExternalResourceDescription(
 				    	VectorIndexSourceRelatednessResource.class,
-				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wordnet_eng_lem_nc_c"),
+				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DkproContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wordnet_eng_lem_nc_c"),
 				Lemma.class.getName() + "/value",
 				false,
 				"esa",
@@ -249,7 +247,7 @@ public class FeatureGeneration
 		configs.add(new FeatureConfig(
 				createExternalResourceDescription(
 				    	VectorIndexSourceRelatednessResource.class,
-				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wiktionary_en"),
+				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DkproContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wiktionary_en"),
 				Lemma.class.getName() + "/value",
 				false,
 				"esa",
@@ -324,10 +322,12 @@ public class FeatureGeneration
 					SimilarityScoreWriter.PARAM_OUTPUT_FILE, outputFile.getAbsolutePath(),
 					SimilarityScoreWriter.PARAM_OUTPUT_SCORES_ONLY, true);
 		
-				if (config.filterStopwords())
-					SimplePipeline.runPipeline(reader, aggr_seg, aggr_pos, aggr_lem, aggr_stopw, scorer, writer);
-				else
-					SimplePipeline.runPipeline(reader, aggr_seg, aggr_pos, aggr_lem, scorer, writer);
+				if (config.filterStopwords()) {
+                    SimplePipeline.runPipeline(reader, aggr_seg, aggr_pos, aggr_lem, aggr_stopw, scorer, writer);
+                }
+                else {
+                    SimplePipeline.runPipeline(reader, aggr_seg, aggr_pos, aggr_lem, scorer, writer);
+                }
 				
 				System.out.println(" - done");
 			}
@@ -365,8 +365,9 @@ public class FeatureGeneration
 				
 				for (int i = 1; i < sources.length; i++)
 				{
-					if (!new File(feature.getAbsolutePath().replace(sources[0].toString(), sources[i].toString())).exists())
-						shared = false;
+					if (!new File(feature.getAbsolutePath().replace(sources[0].toString(), sources[i].toString())).exists()) {
+                        shared = false;
+                    }
 				}
 				
 				if (shared)

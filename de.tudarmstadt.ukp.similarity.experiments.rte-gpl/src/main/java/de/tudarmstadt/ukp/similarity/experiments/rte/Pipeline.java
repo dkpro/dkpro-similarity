@@ -10,8 +10,11 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.rte;
 
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.*;
-import static de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier.*;
+import static de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier.LOGISTIC;
+import static de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier.SMO;
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.Accuracy;
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.AveragePrecision;
+import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.CWS;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -20,7 +23,7 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 
-import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
+import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
 import de.tudarmstadt.ukp.similarity.experiments.rte.util.Evaluator;
 import de.tudarmstadt.ukp.similarity.experiments.rte.util.Features2Arff;
 import de.tudarmstadt.ukp.similarity.experiments.rte.util.GoldstandardCreator;
@@ -68,7 +71,7 @@ public class Pipeline
 	public static void main(String[] args)
 		throws Exception
 	{
-		DATASET_DIR = DKProContext.getContext().getWorkspace("RTE").getAbsolutePath();
+		DATASET_DIR = DkproContext.getContext().getWorkspace("RTE").getAbsolutePath();
 		
 		Options options = new Options();
 		options.addOption("d", "devset", true, "run the given dev-set");
@@ -96,8 +99,9 @@ public class Pipeline
 				runTest(devset, testset);
 			}
 			
-			if (cmd.getOptions().length == 0)
-				new HelpFormatter().printHelp(Pipeline.class.getSimpleName(), options, true);
+			if (cmd.getOptions().length == 0) {
+                new HelpFormatter().printHelp(Pipeline.class.getSimpleName(), options, true);
+            }
 		}
 		catch (ParseException e) {
 			new HelpFormatter().printHelp(Pipeline.class.getSimpleName(), options);

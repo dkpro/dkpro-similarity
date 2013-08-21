@@ -17,7 +17,7 @@ import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
-import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
+import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
@@ -28,7 +28,7 @@ public class RteExperiments
 
     public static void main(String[] args) throws Exception
     {
-        String context = DKProContext.getContext().getWorkspace("RTE").getAbsolutePath();
+        String context = DkproContext.getContext().getWorkspace("RTE").getAbsolutePath();
         
         CollectionReader reader = createReader(
                 RTECorpusReader.class,

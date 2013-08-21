@@ -29,7 +29,7 @@ import org.apache.uima.fit.factory.AggregateBuilder;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
+import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
@@ -273,7 +273,7 @@ public class FeatureGeneration
 		configs.add(new FeatureConfig(
 				createExternalResourceDescription(
 				    	VectorIndexSourceRelatednessResource.class,
-				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wordnet_eng_lem_nc_c"),
+				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DkproContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wordnet_eng_lem_nc_c"),
 				Lemma.class.getName() + "/value",
 				false,
 				"esa",
@@ -283,7 +283,7 @@ public class FeatureGeneration
 		configs.add(new FeatureConfig(
 				createExternalResourceDescription(
 				    	VectorIndexSourceRelatednessResource.class,
-				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wiktionary_en"),
+				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DkproContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wiktionary_en"),
 				Lemma.class.getName() + "/value",
 				false,
 				"esa",
@@ -293,7 +293,7 @@ public class FeatureGeneration
 		configs.add(new FeatureConfig(
 				createExternalResourceDescription(
 				    	VectorIndexSourceRelatednessResource.class,
-				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DKProContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wp_eng_lem_nc_c"),
+				    	VectorIndexSourceRelatednessResource.PARAM_MODEL_LOCATION, DkproContext.getContext().getWorkspace().getAbsolutePath() + "/ESA/VectorIndexes/wp_eng_lem_nc_c"),
 				Lemma.class.getName() + "/value",
 				false,
 				"esa",

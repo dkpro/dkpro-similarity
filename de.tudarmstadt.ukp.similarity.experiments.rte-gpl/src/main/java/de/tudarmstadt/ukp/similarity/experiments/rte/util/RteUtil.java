@@ -10,14 +10,9 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.rte.util;
 
-import java.io.File;
 import java.io.IOException;
 
-import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
-
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.FEATURES_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset.*;
 
 
 public class RteUtil
