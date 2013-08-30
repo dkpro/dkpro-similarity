@@ -23,7 +23,7 @@ public class WordChoiceProblemReaderTest
     {
         CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 WordChoiceProblemReader.class,
-                WordChoiceProblemReader.PARAM_PATH, "src/test/resources/datasets/wordchoice/",
+                WordChoiceProblemReader.PARAM_SOURCE_LOCATION, "src/test/resources/datasets/wordchoice/",
                 WordChoiceProblemReader.PARAM_PATTERNS, new String[] {
                     ResourceCollectionReaderBase.INCLUDE_PREFIX + "test.wcp"
                 }
