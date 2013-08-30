@@ -17,8 +17,8 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.wordpairs;
 
-import static org.apache.uima.fit.factory.AnalysisEngineFactory.createPrimitiveDescription;
-import static org.apache.uima.fit.factory.CollectionReaderFactory.createCollectionReader;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
 import static org.apache.uima.fit.factory.ExternalResourceFactory.createExternalResourceDescription;
 
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
@@ -38,14 +38,14 @@ public class WordPairExperiment
     public static void main(String[] args)
         throws Exception
     {
-        CollectionReader reader = createCollectionReader(
+        CollectionReader reader = createReader(
                 WordPairReader.class,
-                WordPairReader.PARAM_PATH, "classpath:/datasets/wordpairs/en/",
+                WordPairReader.PARAM_SOURCE_LOCATION, "classpath:/datasets/wordpairs/en/",
                 WordPairReader.PARAM_PATTERNS,
-                new String[] { ResourceCollectionReaderBase.INCLUDE_PREFIX + "*.gold.pos.txt" }
+                new String[] { ResourceCollectionReaderBase.INCLUDE_PREFIX + "*.txt" }
         );
 
-        AnalysisEngineDescription semRel1 = createPrimitiveDescription(
+        AnalysisEngineDescription semRel1 = createEngineDescription(
                 ResourceBasedAnnotator.class,
                 ResourceBasedAnnotator.SR_RESOURCE, createExternalResourceDescription(
                         JiangConrathRelatednessResource.class,
@@ -54,7 +54,7 @@ public class WordPairExperiment
                 )
         );
 
-        AnalysisEngineDescription semRel2 = createPrimitiveDescription(
+        AnalysisEngineDescription semRel2 = createEngineDescription(
                 ResourceBasedAnnotator.class,
                 ResourceBasedAnnotator.SR_RESOURCE, createExternalResourceDescription(
                         LinRelatednessResource.class,
@@ -64,7 +64,7 @@ public class WordPairExperiment
         );
 
         
-        AnalysisEngineDescription writer = createPrimitiveDescription(
+        AnalysisEngineDescription writer = createEngineDescription(
                 SemanticRelatednessResultWriter.class,
                 SemanticRelatednessResultWriter.PARAM_SHOW_DETAILS, true
         );

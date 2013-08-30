@@ -23,7 +23,7 @@ public class WordPairReaderTest
     {
         CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 WordPairReader.class,
-                WordPairReader.PARAM_PATH, "src/test/resources/datasets/wordpairs/",
+                WordPairReader.PARAM_SOURCE_LOCATION, "src/test/resources/datasets/wordpairs/",
                 WordPairReader.PARAM_PATTERNS, new String[] {
                     ResourceCollectionReaderBase.INCLUDE_PREFIX + "test.srd"
                 }
@@ -62,7 +62,7 @@ public class WordPairReaderTest
 
         CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 WordPairReader.class,
-                WordPairReader.PARAM_PATH, "src/test/resources/datasets/wordpairs/",
+                WordPairReader.PARAM_SOURCE_LOCATION, "src/test/resources/datasets/wordpairs/",
                 WordPairReader.PARAM_COMMENT, "%",
                 WordPairReader.PARAM_SEPARATOR, ";", 
                 WordPairReader.PARAM_PATTERNS, new String[] {
