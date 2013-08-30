@@ -17,8 +17,8 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.wordchoice;
 
-import static org.apache.uima.fit.factory.AnalysisEngineFactory.createPrimitiveDescription;
-import static org.apache.uima.fit.factory.CollectionReaderFactory.createCollectionReader;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
+import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
 import static org.apache.uima.fit.factory.ExternalResourceFactory.createExternalResourceDescription;
 
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
@@ -38,28 +38,28 @@ public class WordChoiceExperiment
 {
     public static void main(String[] args) throws Exception
     {
-        CollectionReader reader = createCollectionReader(
+        CollectionReader reader = createReader(
                 WordChoiceProblemReader.class,
-                WordChoiceProblemReader.PARAM_PATH, "classpath:/datasets/en/",
+                WordChoiceProblemReader.PARAM_SOURCE_LOCATION, "classpath:/datasets/en/",
                 WordChoiceProblemReader.PARAM_PATTERNS, new String[] {
                         ResourceCollectionReaderBase.INCLUDE_PREFIX + "*.txt"
                 }
         );
         
-        AnalysisEngineDescription tagger = createPrimitiveDescription(
+        AnalysisEngineDescription tagger = createEngineDescription(
                 OpenNlpPosTagger.class,
                 OpenNlpPosTagger.PARAM_LANGUAGE, "en"
         );
                 
-        AnalysisEngineDescription lemmatizer = createPrimitiveDescription(
+        AnalysisEngineDescription lemmatizer = createEngineDescription(
                 GateLemmatizer.class
         );
 
-        AnalysisEngineDescription pairAnnotator = createPrimitiveDescription(
+        AnalysisEngineDescription pairAnnotator = createEngineDescription(
                 WordChoiceWordPairAnnotator.class
         );
         
-        AnalysisEngineDescription semRel1 = createPrimitiveDescription(
+        AnalysisEngineDescription semRel1 = createEngineDescription(
                 WordChoiceResourceBasedSemRelAnnotator.class,
                 WordChoiceResourceBasedSemRelAnnotator.SR_RESOURCE, createExternalResourceDescription(
                         JiangConrathRelatednessResource.class,
@@ -68,7 +68,7 @@ public class WordChoiceExperiment
                 )
         );
         
-        AnalysisEngineDescription semRel2 = createPrimitiveDescription(
+        AnalysisEngineDescription semRel2 = createEngineDescription(
                 WordChoiceResourceBasedSemRelAnnotator.class,
                 WordChoiceResourceBasedSemRelAnnotator.SR_RESOURCE, createExternalResourceDescription(
                         LinRelatednessResource.class,
@@ -77,7 +77,7 @@ public class WordChoiceExperiment
                 )
         );
 
-        AnalysisEngineDescription evaluator = createPrimitiveDescription(
+        AnalysisEngineDescription evaluator = createEngineDescription(
                 WordChoiceProblemsEvaluator.class
         );
 
