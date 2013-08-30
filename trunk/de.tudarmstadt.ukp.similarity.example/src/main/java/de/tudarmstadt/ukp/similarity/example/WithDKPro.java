@@ -11,7 +11,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
-import org.apache.uima.fit.component.xwriter.CasDumpWriter;
+import org.apache.uima.fit.component.CasDumpWriter;
 import org.apache.uima.fit.factory.AggregateBuilder;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
