@@ -2,7 +2,7 @@
 underwear:lingerie:3.94118:n:n
 digital camera:photographer:3.85294:n:n
 tuition:fee:3.84706:n:n
-leave:rake:3.81781:n:n
+leaf:rake:3.81781:n:n
 symptom:fever:3.79412:n:n
 fertility:ovary:3.78235:n:n
 beef:slaughterhouse:3.77727:n:n
