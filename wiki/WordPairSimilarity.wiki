@@ -23,10 +23,10 @@ The following datasets are included in the experiment
       * http://adapt.seiee.sjtu.edu.cn/similarity/
     * Yang & Powers (YP130)
       * verb similarity
-      * _﻿Yang, D., & Powers, D. M. W. (2006). Verb Similarity on the Taxonomy of WordNet. Proceedings of the Third International !WordNet Conference (GWC-06) (pp. 121-128). Jeju Island, Korea.
+      * _﻿Yang, D., & Powers, D. M. W. (2006). Verb Similarity on the Taxonomy of !WordNet. Proceedings of the Third International !WordNet Conference (GWC-06) (pp. 121-128). Jeju Island, Korea.
     * Szumlanski et al. (2013) (SGS130)
       * relatedness dataset
-      * Note: leaves/rake has been changed to leaf/rake as the plural is not found in WordNet and most other pairs are singular, too.
+      * Note: leaves/rake has been changed to leaf/rake as the plural is not found in !WordNet and most other pairs are singular, too.
       * _Szumlanski, S., Gomez, F. & Sims, V. K. (2013). A New Set of Norms for Semantic Relatedness Measures. Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers) (pp. 890-895). Sofia, Bulgaria._
   * German
     * Translated and re-annotated data for Miller & Charles (Gur30) and Rubenstein & Goodenough (Gur65), as well as 350 cross POS word pairs (Gur350)
