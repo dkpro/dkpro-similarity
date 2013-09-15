@@ -58,5 +58,11 @@
   			de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl
   		</artifactId>
   	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.similarity.algorithms.ml-asl
+  		</artifactId>
+  	</dependency>
   </dependencies>
 </project>
