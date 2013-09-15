@@ -152,6 +152,8 @@
   	<module>de.tudarmstadt.ukp.similarity.experiments.sts-2013-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.example-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.ml-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.ml.core-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.ml.io-gpl</module>
   </modules>
   <scm>
   	<url>http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn/trunk</url>
