@@ -51,15 +51,15 @@
   		<version>1.4.0</version>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.ml</groupId>
+  		<groupId>de.tudarmstadt.ukp.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.ml.core-asl
+  			de.tudarmstadt.ukp.similarity.ml.core-gpl
   		</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.ml</groupId>
+  		<groupId>de.tudarmstadt.ukp.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.ml.io-asl
+  			de.tudarmstadt.ukp.similarity.ml.io-gpl
   		</artifactId>
   	</dependency>
   	<dependency>

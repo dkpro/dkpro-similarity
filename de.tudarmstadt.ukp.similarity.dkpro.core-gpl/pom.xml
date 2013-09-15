@@ -61,7 +61,7 @@
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.algorithms.ml-asl
+  			de.tudarmstadt.ukp.similarity.algorithms.ml-gpl
   		</artifactId>
   	</dependency>
   </dependencies>
