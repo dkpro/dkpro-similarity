@@ -107,11 +107,6 @@
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.ml-asl</artifactId>
-            <version>1.1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.sound-asl</artifactId>
             <version>1.1.0-SNAPSHOT</version>
         </dependency>
@@ -163,16 +158,6 @@
             <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.ml</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.ml.core-asl</artifactId>
-            <version>1.1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.ml</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.ml.io-asl</artifactId>
-            <version>1.1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>1.6</version>
@@ -213,8 +198,7 @@
     <module>de.tudarmstadt.ukp.similarity.dkpro.core-asl</module>
     <module>de.tudarmstadt.ukp.similarity.dkpro.data-asl</module>
     <module>de.tudarmstadt.ukp.similarity.dkpro.io-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.ml.core-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.ml.io-asl</module>
+    <module>de.tudarmstadt.ukp.similarity.dkpro.vsm-asl</module>
     <module>
     	de.tudarmstadt.ukp.similarity.experiments.wordpairs-asl
     </module>
@@ -222,8 +206,6 @@
     	de.tudarmstadt.ukp.similarity.experiments.wordchoice-asl
     </module>
     <module>de.tudarmstadt.ukp.similarity.experiments.api-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.dkpro.vsm-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.ml-asl</module>
   </modules>
   <scm>
   	<url>http://code.google.com/p/dkpro-similarity-asl/source/browse/#svn/trunk</url>
