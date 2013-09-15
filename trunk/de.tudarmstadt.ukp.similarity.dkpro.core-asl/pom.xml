@@ -39,7 +39,9 @@
     </dependency>
     <dependency>
         <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-        <artifactId>de.tudarmstadt.ukp.similarity.algorithms.ml-asl</artifactId>
+        <artifactId>
+            de.tudarmstadt.ukp.similarity.algorithms.lsr-asl
+        </artifactId>
     </dependency>
     <dependency>
         <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
@@ -75,12 +77,6 @@
   		<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
   		<artifactId>
   			de.tudarmstadt.ukp.dkpro.lexsemresource.core-asl
-  		</artifactId>
-  	</dependency>
-  	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  		<artifactId>
-  			de.tudarmstadt.ukp.similarity.algorithms.lsr-asl
   		</artifactId>
   	</dependency>
   </dependencies>
