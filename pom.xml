@@ -150,6 +150,7 @@
   	</module>
   	<module>de.tudarmstadt.ukp.similarity.experiments.rte-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.experiments.sts-2013-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.example-gpl</module>
   </modules>
   <scm>
   	<url>http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn/trunk</url>
