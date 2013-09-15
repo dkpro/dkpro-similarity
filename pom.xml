@@ -79,6 +79,15 @@
   			</artifactId>
   			<version>1.1.0-SNAPSHOT</version>
   		</dependency>
+        <dependency>
+            <groupId>
+                de.tudarmstadt.ukp.similarity.algorithms
+            </groupId>
+            <artifactId>
+                de.tudarmstadt.ukp.similarity.algorithms.ml-gpl
+            </artifactId>
+            <version>1.1.0-SNAPSHOT</version>
+        </dependency>
   		<dependency>
   			<groupId>
   				de.tudarmstadt.ukp.similarity.algorithms
@@ -116,6 +125,20 @@
   			</artifactId>
   			<version>1.1.0-SNAPSHOT</version>
   		</dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity</groupId>
+            <artifactId>
+                de.tudarmstadt.ukp.similarity.ml.core-gpl
+            </artifactId>
+            <version>1.1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.similarity</groupId>
+            <artifactId>
+                de.tudarmstadt.ukp.similarity.ml.io-gpl
+            </artifactId>
+            <version>1.1.0-SNAPSHOT</version>
+        </dependency>
   		<dependency>
   			<groupId>nz.ac.waikato.cms.weka</groupId>
   			<artifactId>weka-dev</artifactId>
@@ -140,18 +163,15 @@
   </dependencyManagement>
   <modules>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.lexsub-gpl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.ml-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl</module>
-  	<module>de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.dkpro.core-gpl</module>
+    <module>de.tudarmstadt.ukp.similarity.example-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl</module>
-  	
-  	<module>
-  		de.tudarmstadt.ukp.similarity.algorithms.lexsub-gpl
-  	</module>
   	<module>de.tudarmstadt.ukp.similarity.experiments.rte-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.experiments.sts-2013-gpl</module>
-  	<module>de.tudarmstadt.ukp.similarity.example-gpl</module>
-  	<module>de.tudarmstadt.ukp.similarity.algorithms.ml-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.ml.core-gpl</module>
   	<module>de.tudarmstadt.ukp.similarity.ml.io-gpl</module>
   </modules>
