@@ -41,6 +41,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Stem;
+import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.LuceneVectorReader;
 
 /**
  * Creates an external Lucene index created based on stems.
@@ -65,8 +66,6 @@ public class LuceneIndexer extends JCasAnnotator_ImplBase {
 	@ConfigurationParameter(name = PARAM_MIN_TERMS_PER_DOCUMENT, mandatory = false, defaultValue = "50")
 	private int minTermsPerDocument;
 
-	// has to be equal to the private static field LuceneVectorReader.FIELD_NAME
-	private final static String FIELD_NAME = "token";
 	private final static Matcher characterPattern = Pattern.compile("[a-zA-Z]*").matcher("");
 
 	private File indexDir;
@@ -102,7 +101,7 @@ public class LuceneIndexer extends JCasAnnotator_ImplBase {
 		if (terms.size() > minTermsPerDocument) {
 			final Document doc = new Document();
 			for (String term : terms) {
-				doc.add(new Field(FIELD_NAME, term, Field.Store.YES, Field.Index.NOT_ANALYZED));
+				doc.add(new Field(LuceneVectorReader.FIELD_NAME, term, Field.Store.YES, Field.Index.NOT_ANALYZED));
 			}
 			doc.add(new Field("id", DocumentMetaData.get(jCas).getDocumentTitle(), Field.Store.YES,
 					Field.Index.NOT_ANALYZED));
@@ -142,5 +141,4 @@ public class LuceneIndexer extends JCasAnnotator_ImplBase {
 		matcher.reset(string);
 		return matcher.matches();
 	}
-
 }

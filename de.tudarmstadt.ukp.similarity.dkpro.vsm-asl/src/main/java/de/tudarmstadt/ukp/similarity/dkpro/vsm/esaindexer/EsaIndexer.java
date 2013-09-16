@@ -93,7 +93,7 @@ public class EsaIndexer {
 		throws Exception
 	{
 		IndexInverter indexInverter = new IndexInverter(new File(luceneIndexPath), new File(esaIndexPath));
+		indexInverter.setMinDocumentFrequency(1);
 		indexInverter.createInvertedIndex();
 	}
-
 }
