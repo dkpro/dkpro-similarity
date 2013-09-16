@@ -41,7 +41,7 @@ import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 public class LuceneVectorReader
 	extends IndexedDocumentsVectorReaderBase
 {
-	private static final String FIELD_NAME = "token";
+	public static final String FIELD_NAME = "token";
 
 	private final File path;
 
