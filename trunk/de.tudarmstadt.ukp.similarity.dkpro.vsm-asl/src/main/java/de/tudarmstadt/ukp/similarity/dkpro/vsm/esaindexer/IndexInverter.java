@@ -47,8 +47,7 @@ public class IndexInverter {
 	private final File luceneIndexDir;
 	private final File invertedIndexDir;
 
-	private double maxCorpusDistribution = 0.1f;
-	private int minDocumentFrequency = 3;
+	private int minDocumentFrequency = 1;
 
 	public IndexInverter() {
 		super();
@@ -72,7 +71,6 @@ public class IndexInverter {
 		invertedIndexDir.mkdirs();
 
 		final IndexReader reader = IndexReader.open(FSDirectory.open(luceneIndexDir));
-		final int maxDocumentDistributionCount = (int) Math.ceil(maxCorpusDistribution * reader.numDocs());
 		final TermEnum termEnum = reader.terms();
 		final Set<String> terms = new HashSet<String>();
 
@@ -80,7 +78,7 @@ public class IndexInverter {
 		while (termEnum.next()) {
 			final String term = termEnum.term().text();
 			final int termDocFreq = termEnum.docFreq();
-			if (minDocumentFrequency <= termDocFreq && termDocFreq < maxDocumentDistributionCount) {
+			if (minDocumentFrequency <= termDocFreq) {
 				terms.add(term);
 			}
 			totalTerms++;
@@ -91,6 +89,7 @@ public class IndexInverter {
 		System.out.println("Input Lucene index: " + luceneIndexDir);
 		final LuceneVectorReader luceneVectorReader = new LuceneVectorReader(luceneIndexDir);
 		configureLuceneVectorReader(luceneVectorReader);
+		
 		System.out.println("Output inverted index: " + invertedIndexDir);
 		final VectorIndexWriter vectorIndexWriter = new VectorIndexWriter(invertedIndexDir,
 				luceneVectorReader.getConceptCount());
@@ -103,24 +102,6 @@ public class IndexInverter {
 			System.out.println("[" + term + "] " + progressMeter);
 		}
 		vectorIndexWriter.close();
-	}
-
-	public double getMaxCorpusDistribution() {
-		return maxCorpusDistribution;
-	}
-
-	/**
-	 * Terms which appear in more then the given percentage of documents in the
-	 * corpus are ignored.
-	 * 
-	 * @param maxCorpusDistribution
-	 *            must be in [0, 1]
-	 */
-	public void setMaxCorpusDistribution(double maxCorpusDistribution) {
-		if (!(0 <= maxCorpusDistribution && maxCorpusDistribution <= 1)) {
-			throw new IllegalArgumentException("maxCorpusDistribution must be in [0, 1]");
-		}
-		this.maxCorpusDistribution = maxCorpusDistribution;
 	}
 
 	public int getMinDocumentFrequency() {
