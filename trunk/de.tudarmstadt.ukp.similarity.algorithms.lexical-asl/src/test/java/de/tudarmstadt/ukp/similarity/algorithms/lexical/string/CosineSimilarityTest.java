@@ -19,6 +19,7 @@ package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -183,7 +184,7 @@ public class CosineSimilarityTest {
         assertEquals(1.0, measure.getSimilarity(tokens3, tokens4), 0.00000000000000001);
 	}
 	
-   @Test
+    @Test
     public void test() throws Exception {
         CosineSimilarity measure = new CosineSimilarity();
 
@@ -191,5 +192,15 @@ public class CosineSimilarityTest {
         List<String> tokens2 = Arrays.asList("2 3 12 13 5 3 7 11 14 15 3 7 .".split(" "));    
 
         assertEquals(0.688033, measure.getSimilarity(tokens1, tokens2), 0.000001);
+    }
+    
+    @Test
+    public void emptyListTest() throws Exception {
+        CosineSimilarity measure = new CosineSimilarity();
+
+        List<String> tokens1 = new ArrayList<String>();    
+        List<String> tokens2 = new ArrayList<String>();    
+
+        assertEquals(1.0, measure.getSimilarity(tokens1, tokens2), 0.000001);
     }
 }
