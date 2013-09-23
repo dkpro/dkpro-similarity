@@ -1,0 +1,238 @@
+################################################################################################################################
+		Question: What is the role of a prototype program in problem solving?
+		Answer: To simulate the behaviour of portions of the desired software product. 
+
+3.5	[6]	High risk problems are address in the prototype program to make sure that the program is feasible.  A prototype may also be used to show a company that the software can be possibly programmed.<br><br>
+5	[5]	To simulate portions of the desired final product with a quick and easy program that does a small specific job. It is a way to help see what the problem is and how you may solve it in the final project.
+4	[8]	A prototype program simulates the behaviors of portions of the desired software product to allow for error checking.
+5	[3]	Defined in the Specification phase a prototype stimulates the behavior of portions of the desired software product.  Meaning, the role of a prototype is a temporary solution until the program itself is refined to be used extensively in problem solving.
+3	[4]	It is used to let the users have a first idea of the completed program and allow the clients to evaluate the program. This can generate much feedback including software specifications and project estimations of the total project.
+2	[24]	To find problem and errors in a program before it is finalized
+2.5	[9]	To address major issues in the creation of the program. There is no way to account for all possible bugs in the program, but it is possible to prove the program is tangible. 
+5	[22]	you can break the whole program into prototype programs to simulate parts of the final program
+3.5	[23]	-To provide an example or model of how the finished program should perfom.<br> -Provides forsight of some of the challanges that would be encountered.<br> -Provides opportunity To introduce changes To the finished program.
+5	[2]	Simulating the behavior of only a portion of the desired software product.
+5	[29]	  A program that stimulates the behavior of portions of the desired software product.
+5	[31]	A program that simulates the behavior of portions of the desired software product.
+2	[12]	To lay out the basics and give you a starting point in the actual problem solving.
+4.5	[21]	To simulate problem solving for parts of the problem
+2	[13]	A prototype program provides a basic groundwork from which to further enhance and improve a solution to a problem.
+4.5	[11]	A prototype program is a part of the Specification phase of Software Problem Solvin.  It's employed to illustrate how the key problem or problems will be solved in a program, and sometimes serves as a base program to expand upon.
+5	[17]	Program that simulates the behavior of portions of the desired software product
+2	[7]	it provides a limited proof of concept to verify with the client before actually programming the whole application.<br>
+2	[10]	It tests the main function of the program while leaving out the finer details.<br>
+2.5	[27]	To get early feedback from users in early stages of development.  To show users a first idea of what the program will do/look like.  To make sure the program will meet requirements before intense programming begins.
+5	[20]	it simulates the behavior of portions of the desired software product
+5	[18]	It simulates the behavior of portions of the desired software product.
+1.5	[19]	A prototype program is used in problem solving to collect data for the problem.
+2.5	[16]	To ease the understanding of problem under discussion and to ease the understanding of the program itself
+5	[26]	it simulates the behavior of portions of the desired software product
+2	[1]	The role of a prototype program is to help spot key problems that may arise during the actual programing. 
+3	[28]	the prototype program gives a general idea of what the end product will do, <br><br>without the time and effort to write out the entire program.
+3	[15]	to show that a certain part of the program works as it is supposed to
+2.5	[14]	Prototype programming is an approach to programming that enables one to take an organized approach to developing an effective program with minimal errors and a strategic pattern when solving a problem. i.e. book gave an example of a costumer withdrawing money from a bank, the approach that was taking on a pseudo code level during the OOA/Design lvl before proceeding into creating a solution. 
+
+################################################################################################################################
+		Question: What stages in the software life cycle are influenced by the testing stage?
+		Answer: The testing stage can influence both the coding stage (phase 5) and the solution refinement stage (phase 7) 
+
+3.5	[6]	Refining and possibly the design if the testing phase reveals problems in the design. Production can be affected if the program is unworkable in its current form which will lead to a later production time than originally estimated. Also affects coding because after testing you may need to rewrite the code for the program to remove errors.
+4	[5]	The implementation phase and the maintenance phase are effected
+4.5	[8]	Verification, coding, refining the solution and maintenance are all influenced by the testing stage.
+3	[3]	In RUP the stages in the software life cycle are influenced by the testing stage is:<br><br>Elaboration phase- refined progject vision, iterative devilopment of core system, development of system requirements, more accurate time and cost estimates.<br><br>Construction phase- iterative development of remaining system.<br><br>Transition phase-testing and deployment of the system.
+3	[4]	Refining the solution, Production and Maintenance are all influenced by the Testing stage. 
+2	[24]	Elaboration, Construction, and Transition are all affected by testing
+3.5	[9]	Refining, Production, Maintenance
+4	[22]	Refining the solution
+2	[23]	-Verification<br> -Debugging
+5	[2]	Refining and Coding
+2.5	[29]	The second half of the Elaboration phase, Construction phase, and the Transition phase.<br>
+3.5	[31]	The refining step, the production step, and the maintenance stage.<br> 
+2	[12]	Elaboration, Construction, Transition
+3	[21]	Refining.
+1.5	[13]	The testing stage has a direct influence on the final version of a program, being as it is the debugging and finalization of a software revision.
+5	[11]	Directly: Refining, coding.  Because Refining is right before the Testing Phase and Coding is right after the Testing Phase.<br><br>Indirectly: Production, Maintenance.  Because Refining occurs before these last two stages in the Software Life Cycle.
+3.5	[17]	Testing, refining, production, and maintenance.
+1.5	[7]	Depending on how the work is done, Testing is spread throughout the <br>process as to prevent errors from showing up later on due to lack of<br>foresight.<br>
+2.5	[10]	Elaboration, construction, and transition.
+1.5	[27]	All stages are influenced except setting the program requirements.  If a test fails, it can change the whole design, implementation, etc of a program as well as the final outcome.
+3	[20]	Refining, production, and maintenance
+5	[18]	coding and refining
+3.5	[19]	refining, production, maintenance.
+1	[16]	Removing logical errors, testing for valid data, random data and actual data.
+2.5	[26]	1- specification<br>2- design<br>3- risk analysis<br>4- verification<br>5- coding<br>6- testing<br>7- refining<br>8- production<br>9- maintenance
+3.5	[1]	Refining stage, Production stage, and Maintenance stage.<br><br>
+2	[28]	Testing could affect all parts of the life cycle; it could make you go back <br><br>to specification if it does not test well.
+3	[15]	coding
+1.5	[14]	The Individual components and steps such as  analysis, design, and implementing code  as well as the entire system are tested for execution of the requirements identified during the analysis stage. i.e. Main output 
+
+################################################################################################################################
+		Question: What are the main advantages associated with object-oriented programming?
+		Answer: Abstraction and reusability.
+
+4.5	[6]	Modularability, the ability to reuse parts of the program later in another program sometimes with completely different goals for the program. Also it makes it easier to debug code by dividing up the code into classes that each do a specific job and when the program fails at one job you only have one class to debug. Good for security purposes because it allows you to let someone use a program which sorts lists without having to give them access to the source code. ALso allows you to use inheritance and polymorphism.
+5	[5]	This type of programming is more flexible, making it easier to add and modify the program.  It is also a type of a fail safe program, you check each individual module.  This eliminates redundant code and makes the program easier to read for other programmers.  When debugging the program it is easier to track down the source of a problem within a module rather than a 2 million line program.
+3.5	[8]	The main advantages to object-oriented programming are that existing classes can be reused and program maintenance and verification are easier.<br>
+2.5	[3]	The advantages is that OOP allows us to build classes of objects.  Three principles that make up OOP are:<br><br>Encapsulation- Objects combine data and operations.<br><br>Inheritance- Classes can inherit properties from other classes.<br><br>Polymorphism- Objects can determine appropriate operations at execution time.
+3.5	[4]	Some advantages are existing classes can be reused and program maintenance and verification are easier to accomplish.
+1	[24]	Object oriented programming allows programmers to use an object with classes that can be changed and manipulated while not affecting the entire object at once. The classes all hold attrubutes that affect the object.
+4	[9]	Reusable components, Extensibility, Maintainability, it reduces large problems into smaller more manageable problems.
+2.5	[22]	Encapsulation-objects combine data and operations<br>Inheritance- classes can inherit properties from other classes<br>Polymorphism- Objects can determine appropriate operations at execution time
+3	[23]	 -Easier to debugg<br>  -Reusability
+4	[2]	Re-usability  and ease of maintenance
+5	[29]	  One of the main advantages is you can hide inner details a technique known by encapsulation. Objects combine the data and operations but you cannot see how it works.<br>  Another advantage is you can reuse classes that have been defined earlier in the program, a method known as inheritance.<br>  Finally another advantage is objects can determine appropriate operations at execution time a technique known as polymorphism.<br>
+3.5	[31]	Existing classes can be reused, and program maintenance and verification are easier.
+2	[12]	Using different modules allows for easier debugging
+3.5	[21]	Data encapsulation concept,the use of functions or methods to manipulate data.
+4.5	[13]	Modular, reusable code, allowing faster deployment of solutions, and a more general view of a solution.
+5	[11]	Coding and Debugging programs are usually easier, as either the compiler will specify the object that is working incorrectly, or the function an object was assigned to will be easier to identify.  The code itself also looks more organized and is easier to read and will help to avoid redundant coding.  Post-programming maintenance is also easier.<br><br>Also, modules can be reused several times in other programs without too much hassle.   Abstraction is the art of breaking down one big problem into smaller, simpler problems and solving them.  Many of the smaller problems are shared between unique complex problems, and creating modules to these solve these smaller repeated problems can save time when you encounter them again.
+4.5	[17]	Variables can remain private. The code is easily modified and reusable, as well as easily implemented. Not to mention easier to read and follow along as an observer.
+3.5	[7]	Data Abstraction and control... it is possible to isolate elements<br>from other elements a lot easier and prevent tampering of data.<br>
+4	[10]	Encapsulation - Objects use operations without knowing how the operation works.<br>Inheritance - cuts redundancy by reusing earlier classes.<br>Polymorphism - objects select the correct operation to use in the situation.
+4.5	[27]	They make it easier to reuse and adapt previously written code and they separate complex programs into smaller, easier to understand classes.
+3.5	[20]	Existing classes can be reused, Program maintenance and verification are easier<br>
+3.5	[18]	Existing classes can be feused, Program maintenance and verification are easier
+5	[19]	the main advantages to object-oriented programming  is data abstraction, easier maintenance, and re-usability.
+4	[16]	Existing classes can be reused<br>Program maintenance and verifications are easy
+3.5	[26]	1- Existing classes can be reused<br>2- Program maintenance and verification are easier <br>
+3.5	[1]	Information can be hidden. It is easier to debug. Programming is easier and more manageable. 
+3.5	[28]	Existing classes can be reused, program maintenance and verification are <br><br>easier.
+3.5	[15]	existing classes can be reused<br>program maintenance and verification are easier
+3.5	[14]	Well for one encapsulation the values of the variables inside an object are private, unless methods are written to pass info outside of the object. As well as Inheritance where each subclass inherits all variables and methods of its super class.  Example in the book included obj clock and how obj alarm would still use clock from the first class. 
+
+################################################################################################################################
+		Question: Where do C++ programs begin to execute?
+		Answer: At the main function.
+
+5	[6]	At function â€˜int main ()â€™
+5	[5]	the Function main().
+5	[8]	c++ programs begin to execute in the main method.
+5	[3]	A C++ program will begin to execute at the main() function.<br>
+5	[4]	They begin in the main() function.
+5	[24]	Int main()
+5	[9]	main method
+0	[22]	in the testing phase
+5	[23]	-At the MAIN function
+5	[2]	main
+5	[29]	 They begin to execute at the funcion main().
+5	[31]	The main method.
+2.5	[12]	At the root
+5	[21]	In the main() function.
+5	[13]	C++ programs begin execution at main.
+5	[11]	In the Main function..?
+5	[17]	At the "main()" function
+5	[7]	The main function.
+5	[10]	The function main
+5	[27]	After loading the required include statements and libraries, the main method begins the execution.
+5	[20]	main function
+5	[18]	main
+5	[19]	C++ programs begin execution at the main function.
+5	[16]	At main
+5	[26]	they beging to excute at main
+5	[1]	at the main function<br><br>int main() {}
+5	[28]	C++ programs begin execution at the main function.
+5	[15]	in the "main" function
+5	[14]	Within the main function
+
+################################################################################################################################
+		Question: What is a variable?
+		Answer: A location in memory that can store a value.
+
+2	[6]	Variable can be a integer or a string in a program.
+4.5	[5]	In programming, a structure that holds data and is uniquely named by the programmer. It holds the data assigned to it until a new value is assigned or the program is finished.<br>
+5	[8]	A variable is a location in memory where a value can be stored.
+5	[3]	 Variable is a location in the computer's memory, in which a value can be stored and later can retrieve that value.
+5	[4]	A variable is a location in the computer's memory where a value can be stored for use by a program. Each variable has a name, a value, a type and a size.
+3.5	[24]	A named object that can hold a numerical or letter value
+4	[9]	It's a sybol or name for a value/number. Example: 'a_used_number' can stand for any given number, and the programmer can refer to that number by using the variable name.
+5	[22]	A variable is a location in the computers memory where a value can be stored for use by a program
+4	[23]	 -An identifier that holds a location in memory.
+5	[2]	a block of memory that holds a specific type of data
+5	[29]	  It is a location in the computer's memory where it can be stored for use by a program.
+5	[31]	A location in memory where value can be stored.
+3	[12]	a value/word that can assume any of a set of values
+4	[21]	A pointer to a location in memory.
+5	[13]	A variable is the memory address for a specific type of stored data, or from a mathematical perspective, a symbol representing a fixed definition with changing values.
+5	[11]	A variable is a value that is subject to change in a computer's memory that can be used by programs.  Programs can change the value of the variable and recall it later or act on it directly.
+4	[17]	a symbol that stands in for a value that may or may not change depending on the program. 
+4.5	[7]	a placeholder to hold information used in the program...<br>for example:<br>int can hold: 1, 2, 3, 4, 68, 72, 256, etc.<br>float can hold: 1.54, 55.55, 1.24, 5.657, 8.8123, et.<br>char can hold: A, B, C, D, E, F, !, 4, 5, 6, P, etc.<br>
+4.5	[10]	a stored value used by the program
+4.5	[27]	A way to store different values into the program, such as numbers, words, letters, etc.
+3.5	[20]	An object with a location in memory where value can be stored<br>
+5	[18]	location in memory where a value can be stored
+3.5	[19]	a variable is an object where data is stored.
+5	[16]	Location in memory where a value can be stored.
+5	[26]	it is a location in memory where value can be stored<br>
+5	[1]	A variable is the location in a computer's memory where a value can be stored for use by a program.
+5	[28]	A variable is a location in a computers memory where a value can be stored <br><br>for use by a program.
+5	[15]	a location in memory where data can be stored and retrieved
+5	[14]	Is a method or identifier I would say,  we use to bind a data object to memory location; which is then stored in a location that can be accessed when and manipulated later when the variable name is called. 
+
+################################################################################################################################
+		Question: Where are variables declared in a C++ program?
+		Answer: Variables can be declared anywhere in a program. They can be declared inside a function (local variables) or outside the functions (global variables)
+
+2	[6]	They can be declared right before they are used, but it is a good practice to declare them at the beginning of the program and label what they are food.
+3	[5]	In the Function main() before using the variable.
+5	[8]	Local variables are declared inside the method or function they will be used in at the beginning of the method. Global variables are declared outside of any function or method, generally before functions are defined.
+4.5	[3]	Variables are declared where ever it is defined either inside a block locally or outside a block globally.
+4	[4]	Variables are declared before they are actually used. They can be declared before main() to use globally
+2.5	[24]	For good programing practice they should be declared before main(), but should at least be declared before they are used.
+5	[9]	They can be declared globally just before the main method (but also outside of it)... or variables can be subject to only the method they're scoped within, but would still be declared at the beginning of that method (but inside of it).
+5	[22]	local variables are declared inside the method while global variables are declared in the body.
+2	[23]	 -Any where in the main function.
+4.5	[2]	Globally for an entire program, and locally for individual functions (including FOR statements)
+3	[29]	 They are usually declared at the beginning before they can be used in the program. They always contain a name and a data type.<br>
+2.5	[31]	Inside the method.
+1.5	[12]	at the top
+5	[21]	Global variables are declared in the body of the code. Local variables are declared in the function they are to be used (unless the function is being passed a variable). Variables should always be declared before use.
+2.5	[13]	Variables are usually declared at the beginning of a module of C++ code.
+3.5	[11]	In the main function, usually at the top of code.<br><br>They can be declared almost anywhere, but must be declared before the code can use or act upon them.
+2	[17]	in the very beginning of the program. Before the main() starts. 
+2.5	[7]	In the declaration of Functions, for statements, and while statements.<br>in the body of If, For, while, do while, statements, in namespaces, headers, etc  ( almost anywhere. )<br>anywhere in the program, as long as it is on it's own line.
+1	[10]	After declaration of the variable's data type.
+3	[27]	anywhere in the code, can be at the top, or in the middle of the code, or anywhere.
+2	[20]	Before they are used.
+3.5	[18]	Anywhere in the same scope before they are used
+2.5	[19]	variables can be declared in classes and methods.
+5	[16]	inside the function scope and outside of the function scope in case of global variables
+4	[26]	global variables are declared in the main function<br>local variables are declared in any other function
+4	[1]	Variables are usually declared at the very beginning of a C++ program, but can be declared any in the program as long as they appear before they are called upon.
+2	[28]	Variables are declared in the main function, before any operation is <br><br>attempted with the variables.
+4.5	[15]	anywhere, but where you declare them depends on where you want them to be accessible (their scope)
+4.5	[14]	It depends if itâ€™s a global then they have to be declared out side the source code to be used in every scope however a local variable is one declared in a local function etc. which obviously doesnâ€™t need to be declared outside the variable seeing how it is used for the function or block its being called for. 
+
+################################################################################################################################
+		Question: What is the main difference between a while and a do...while statement?
+		Answer: The block inside a do...while statement will execute at least once.
+
+4.5	[6]	"The â€œdoâ€ statement first evaluates the condition and then executes the lines of code in the statement 0 or more times.<br>	The â€œdo whileâ€ statement executes the lines of code and then it evaluates the condition.<br>"
+5	[5]	do...while statements evaluate whether or not to loop after running the block contained within it at least once. So the main differance is that while statements have a possibility of never being used. Do ... while statements on the other hand are always run at least once before evaluating whether to run again.
+5	[8]	The main difference between a while and a do...while loop is that the do...while loop always cycles through the loop at least once, but the while loop does not always do so.
+5	[3]	While loop used to execute a block of code as long as some condition is true.  A do...while loop used to execute a block of code as long as some condition is satisfied.  The difference between while and do...while is while loop tests its condition before the execution of its contents and the do...while loop tests its condition after the execution of its contents at least once.
+5	[4]	The termination condition of a do...while statement is usually at the end of the loop so it will run at least once. As for the while statement, if the condition is false to begin with, then the loop will never run.
+5	[24]	A while loop will check the statement to make sure it is true before executing. A do while loop will execute before checking the statement to see if it should run again.
+5	[9]	A while statement will test the condition of the while loop FIRST - there is a chance the loop will never run. A do...while loop will ALWAYS run once, and then the while test will determine if it will run again.
+5	[22]	a do while loop always executes once. A while loop's conditional statement has to be true for it to run.
+5	[23]	-WHILE statement --The condition is checked for validity, then is repeated until the conditon is false.<br><br>  -Do...WHILE statement--The code is performed at least once then checked for valid condition.  Will continue to <br>                           
+5	[2]	while statements will evaluate the statement BEFORE executing a cycle of the loop, including the first cycle, meaning that a while loop will not always execute. A do...while will run evaluate the statement AFTER running through a cycle of the loop, ensuring that the loop always executes at least one time.
+5	[29]	  The main difference between a do and a do...while statement is in a do...while statement is the statements in a do block are always executed atleast once.<br>  The while statement will only execute if its condition is true.
+4.5	[31]	The loop of a do...while statement always executes once.
+5	[12]	a while statement will only process if the statement is met, while a do...while will always process once, then only continue if the statement is met.
+4	[21]	Do ...while runs the embedded code at least once, the do command does not necessarily
+5	[13]	While tests for true first before running, do...while runs once first before checking.
+5	[11]	A do...while statement's body always executes at least once.  Where as a while statement will not execute at all unless the condition for the while is true.
+5	[17]	The statements within the block of the do while loop will always be executed at least once regardless of the conditions. Whereas the while loops may never be executed if the conditions are not met. 
+5	[7]	a do... while loop will always run through once, while an while loop<br>performs a test before running through the loop.
+5	[10]	A while statement tests the condition before it can start.<br>A do...while statement loops through once before the condition is tested.
+3.5	[27]	A while loop terminates at the beginning of the loop, a do/while terminates at the end of the loop.
+3.5	[20]	the loop body always executes at least once<br>
+5	[18]	While loop evaluates its expression at the top of its loop and decides if it needs to execute, and the do-while always executes at least once and then evaluates its expression at the bottom of its loop.
+5	[19]	A do...while statement will always execute the "do" piece of code at least once before checking the condition. A while statement will always check the condition first.
+5	[16]	A do-while passes atleast 1 time before checking the condition, however, a while would fail to enter the loop if the condition fails in its first place.
+5	[26]	a while loop checks if the condition is true or not first, if it was true, it excutes the statement.<br>a do.. while loop executes the statement before it checks the condition. if the condition was true it would excute the statement again. so a do...while loop would excute the statement atleast once.
+0	[1]	NO ANSWER
+5	[28]	A do...while loop will always execute atleast once, a while loop may never <br><br>execute depending on teh conditions.
+5	[15]	a while loop is pre-check (it checks the condition statement before it executes the code within the while block)<br><br>a do while loop is post-check (it checks the condition AFTER the block executes, it runs at least once no matter what the condition statement is)
+5	[14]	))     What is the main difference between a while and a do...while statement?<br>The do while construct consists of a block of code and a condition. First, the code within the block is executed, and then the condition is evaluated, this is done until it is proven false. The difference between the While loop is it tests the condition before the code within the block is executed.<br>
+
