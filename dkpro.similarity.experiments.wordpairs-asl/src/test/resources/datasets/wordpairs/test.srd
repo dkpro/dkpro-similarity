@@ -1,0 +1,3 @@
+#word1:word2:gold:pos1:pos2
+car:automobile:1.0:n:n
+go:fast:0.8:v:a
