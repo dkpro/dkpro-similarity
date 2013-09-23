@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+    Copyright 2012
+    Ubiquitous Knowledge Processing (UKP) Lab
+    Technische Universität Darmstadt
+   
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+   
+      http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<lexicon version="1.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://www.w3.org/2005/01/pronunciation-lexicon 
+                             http://www.w3.org/TR/2007/CR-pronunciation-lexicon-20071212/pls.xsd"
+         alphabet="ipa" 
+         xml:lang="de-DE">
+<metadata>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+       <rdf:Description rdf:about="" dc:title="A sample PLS German dictionary" dc:description="Pronunciation of Standard German words" dc:publisher="Tristan Miller" dc:date="2012-02-15" dc:format="application/pls+xml">
+       <dc:creator>Tristan Miller</dc:creator>
+     </rdf:Description>
+</rdf:RDF>
+</metadata>
+ <lexeme role="Zahlwort">
+  <grapheme>10.</grapheme>
+   <phoneme>t͡seːntə</phoneme>
+   <phoneme>t͡seːntɐ</phoneme>
+   <phoneme>t͡seːntəm</phoneme>
+   <phoneme>t͡seːntəs</phoneme>
+   <phoneme>t͡seːntən</phoneme>
+ </lexeme>
+ <lexeme role="Adjektiv">
+  <grapheme>rau</grapheme>
+  <grapheme>rauh</grapheme>
+   <phoneme>ʔʀaʊ̯</phoneme>
+ </lexeme>
+ <lexeme role="Substantiv">
+  <grapheme>Vorträge</grapheme>
+   <phoneme>foːɐ̯trɛːgə</phoneme>
+ </lexeme>
+</lexicon>
+
