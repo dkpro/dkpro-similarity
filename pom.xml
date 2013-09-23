@@ -7,7 +7,7 @@
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity-gpl</artifactId>
-  <version>1.1.0-SNAPSHOT</version>
+  <version>1.1.0</version>
   <packaging>pom</packaging>
   <dependencies>
   	<dependency>
@@ -48,7 +48,7 @@
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl
   			</artifactId>
-  			<version>1.1.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
   		<dependency>
   			<groupId>
@@ -57,7 +57,7 @@
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.algorithms.lexsub-gpl
   			</artifactId>
-  			<version>1.1.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
   		<dependency>
   			<groupId>
@@ -66,7 +66,7 @@
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl
   			</artifactId>
-  			<version>1.1.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
         <dependency>
             <groupId>
@@ -75,7 +75,7 @@
             <artifactId>
                 de.tudarmstadt.ukp.similarity.algorithms.ml-gpl
             </artifactId>
-            <version>1.1.0-SNAPSHOT</version>
+            <version>1.1.0</version>
         </dependency>
   		<dependency>
   			<groupId>
@@ -84,49 +84,49 @@
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl
   			</artifactId>
-  			<version>1.1.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.dkpro.core-gpl
   			</artifactId>
-  			<version>1.1.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity</groupId>
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.experiments.rte-gpl
   			</artifactId>
-  			<version>1.1.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity</groupId>
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl
   			</artifactId>
-  			<version>1.1.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity</groupId>
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.experiments.sts-2013-gpl
   			</artifactId>
-  			<version>1.1.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity</groupId>
             <artifactId>
                 de.tudarmstadt.ukp.similarity.ml.core-gpl
             </artifactId>
-            <version>1.1.0-SNAPSHOT</version>
+            <version>1.1.0</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity</groupId>
             <artifactId>
                 de.tudarmstadt.ukp.similarity.ml.io-gpl
             </artifactId>
-            <version>1.1.0-SNAPSHOT</version>
+            <version>1.1.0</version>
         </dependency>
   		<dependency>
   			<groupId>nz.ac.waikato.cms.weka</groupId>
@@ -165,9 +165,9 @@
   	<module>de.tudarmstadt.ukp.similarity.ml.io-gpl</module>
   </modules>
   <scm>
-  	<url>http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn/trunk</url>
-  	<connection>http://dkpro-similarity-gpl.googlecode.com/svn/trunk/</connection>
-  	<developerConnection>scm:svn:https://dkpro-similarity-gpl.googlecode.com/svn/trunk/</developerConnection>
+  	<url>http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn/tags/de.tudarmstadt.ukp.similarity-gpl-1.1.0</url>
+  	<connection>http://dkpro-similarity-gpl.googlecode.com/svn/tags/de.tudarmstadt.ukp.similarity-gpl-1.1.0</connection>
+  	<developerConnection>scm:svn:https://dkpro-similarity-gpl.googlecode.com/svn/tags/de.tudarmstadt.ukp.similarity-gpl-1.1.0</developerConnection>
   </scm>
   <name>DKPro Similarity</name>
   <description>DKPro Similarity is an open source framework for text similarity. Our goal is to provide a comprehensive repository of text similarity measures which are implemented using standardized interfaces. The framework is designed to complement DKPro Core, a collection of software components for natural language processing based on the Apache UIMA framework.</description>
