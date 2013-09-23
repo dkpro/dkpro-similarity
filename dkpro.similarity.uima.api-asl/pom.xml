@@ -22,5 +22,5 @@
     <groupId>dkpro.similarity</groupId>
     <version>2.0.0-SNAPSHOT</version>
   </parent>
-  <artifactId>dkpro.similarity.dkpro.api-asl</artifactId>
+  <artifactId>dkpro.similarity.uima.api-asl</artifactId>
 </project>

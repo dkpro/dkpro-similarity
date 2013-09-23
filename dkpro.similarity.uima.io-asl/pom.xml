@@ -22,7 +22,7 @@
     <groupId>dkpro.similarity</groupId>
     <version>2.0.0-SNAPSHOT</version>
   </parent>
-  <artifactId>dkpro.similarity.dkpro.io-asl</artifactId>
+  <artifactId>dkpro.similarity.uima.io-asl</artifactId>
   <dependencies>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
