@@ -1,12 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>de.tudarmstadt.ukp.similarity</groupId>
-    <artifactId>de.tudarmstadt.ukp.similarity-asl</artifactId>
+    <groupId>dkpro.similarity</groupId>
+    <artifactId>dkpro.similarity-asl</artifactId>
     <version>2.0.0-SNAPSHOT</version>
   </parent>
-  <artifactId>de.tudarmstadt.ukp.similarity.dkpro.vsm-asl</artifactId>
-  <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+  <artifactId>dkpro.similarity.dkpro.vsm-asl</artifactId>
   <dependencies>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
