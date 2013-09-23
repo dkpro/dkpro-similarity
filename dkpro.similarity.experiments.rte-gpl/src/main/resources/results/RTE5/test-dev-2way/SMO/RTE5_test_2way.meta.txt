@@ -1,0 +1,109 @@
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: TRUE, FALSE
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.2845 * (normalized) n-grams/WordNGramContainmentMeasure_5_stopword-filtered
+ +      -1.2878 * (normalized) n-grams/CharacterNGramMeasure_4
+ +       0.9177 * (normalized) n-grams/WordNGramContainmentMeasure_2
+ +       0.9539 * (normalized) n-grams/WordNGramJaccardMeasure_2
+ +      -0.3885 * (normalized) n-grams/CharacterNGramMeasure_6
+ +      -0.2849 * (normalized) n-grams/CharacterNGramMeasure_10
+ +      -0.7314 * (normalized) n-grams/WordNGramContainmentMeasure_1
+ +      -0.386  * (normalized) n-grams/WordNGramContainmentMeasure_4_stopword-filtered
+ +      -0.8059 * (normalized) n-grams/WordNGramJaccardMeasure_1
+ +       0.9539 * (normalized) n-grams/WordNGramJaccardMeasure_2_stopword-filtered
+ +       0.105  * (normalized) n-grams/CharacterNGramMeasure_7
+ +      -0.739  * (normalized) n-grams/CharacterNGramMeasure_3
+ +       0.9177 * (normalized) n-grams/WordNGramContainmentMeasure_2_stopword-filtered
+ +       0.0459 * (normalized) n-grams/WordNGramContainmentMeasure_3_stopword-filtered
+ +       0.369  * (normalized) n-grams/CharacterNGramMeasure_8
+ +      -0.2206 * (normalized) n-grams/CharacterNGramMeasure_5
+ +      -0.0807 * (normalized) n-grams/CharacterNGramMeasure_2
+ +      -0.2905 * (normalized) n-grams/WordNGramJaccardMeasure_5
+ +      -0.7314 * (normalized) n-grams/WordNGramContainmentMeasure_1_stopword-filtered
+ +      -0.0894 * (normalized) n-grams/CharacterNGramMeasure_9
+ +      -0.3907 * (normalized) n-grams/WordNGramJaccardMeasure_4
+ +      -0.3907 * (normalized) n-grams/WordNGramJaccardMeasure_4_stopword-filtered
+ +       0.0355 * (normalized) n-grams/WordNGramJaccardMeasure_3_stopword-filtered
+ +      -0.2845 * (normalized) n-grams/WordNGramContainmentMeasure_5
+ +      -0.2905 * (normalized) n-grams/WordNGramJaccardMeasure_5_stopword-filtered
+ +      -0.8059 * (normalized) n-grams/WordNGramJaccardMeasure_1_stopword-filtered
+ +       0.0459 * (normalized) n-grams/WordNGramContainmentMeasure_3
+ +      -0.386  * (normalized) n-grams/WordNGramContainmentMeasure_4
+ +       0.0355 * (normalized) n-grams/WordNGramJaccardMeasure_3
+ +      -1.1049 * (normalized) word-sim/TWSI_MCS06_Resnik_WordNet
+ +      -0.5433 * (normalized) word-sim/MCS06_Resnik_WordNet
+ +      -0.5297 * (normalized) lsa/LSA
+ +       0.4881 * (normalized) style/FunctionWordFrequenciesMeasure_mosteller-wallace
+ +      -0.881  * (normalized) style/TokenRatioComparator
+ +      -0.3216 * (normalized) style/SentenceRatioComparator
+ +      -0.9513 * (normalized) style/MTLDComparator
+ +      -0.073  * (normalized) style/AvgCharactersPerTokenComparator
+ +      -0.1721 * (normalized) style/FunctionWordFrequenciesMeasure_english-punctuation
+ +      -0.7272 * (normalized) style/TypeTokenRatioComparator
+ +      -0.0672 * (normalized) style/FunctionWordFrequenciesMeasure_stamatatos
+ +      -1.3111 * (normalized) string/CosineSimilarity
+ +       1.6882 * (normalized) string/LongestCommonSubsequenceNormComparator
+ +      -1.0783 * (normalized) string/GreedyStringTiling_3
+ +       0.0461 * (normalized) string/LongestCommonSubstringComparator
+ +       1.665  * (normalized) string/LongestCommonSubsequenceComparator
+ +       0.6176 * (normalized) esa/ESA_Wiktionary
+ +      -0.2096 * (normalized) esa/ESA_WordNet
+ +      -0.9426 * (normalized) esa/ESA_Wikipedia
+ +       0.7828 * (normalized) structure/StopwordNGramContainmentMeasure_3_english-punctuation
+ +      -0.212  * (normalized) structure/TokenPairDistanceMeasure
+ +      -0.0456 * (normalized) structure/PosNGramJaccardMeasure_2
+ +      -0.5909 * (normalized) structure/StopwordNGramContainmentMeasure_5_english-punctuation
+ +      -0.0508 * (normalized) structure/StopwordNGramContainmentMeasure_4_stamatatos
+ +       0.8582 * (normalized) structure/PosNGramContainmentMeasure_1
+ +      -0.0716 * (normalized) structure/TokenPairOrderingMeasure
+ +      -0.3689 * (normalized) structure/PosNGramContainmentMeasure_3
+ +      -0.0825 * (normalized) structure/PosNGramContainmentMeasure_2
+ +       0.095  * (normalized) structure/PosNGramJaccardMeasure_5
+ +       1.0432 * (normalized) structure/PosNGramJaccardMeasure_1
+ +       0.1045 * (normalized) structure/PosNGramContainmentMeasure_5
+ +       0.166  * (normalized) structure/PosNGramContainmentMeasure_7
+ +      -0.0847 * (normalized) structure/StopwordNGramContainmentMeasure_2_mosteller-wallace
+ +       0.0715 * (normalized) structure/PosNGramContainmentMeasure_6
+ +      -0.2164 * (normalized) structure/PosNGramContainmentMeasure_4
+ +      -0.0273 * (normalized) structure/StopwordNGramContainmentMeasure_4_mosteller-wallace
+ +      -0.2277 * (normalized) structure/StopwordNGramContainmentMeasure_2_english-punctuation
+ +       0.0745 * (normalized) structure/PosNGramJaccardMeasure_6
+ +      -0.2832 * (normalized) structure/StopwordNGramContainmentMeasure_6_english-punctuation
+ +      -0.3071 * (normalized) structure/StopwordNGramContainmentMeasure_4_english-punctuation
+ +       0.1676 * (normalized) structure/PosNGramJaccardMeasure_7
+ +       0.3563 * (normalized) structure/StopwordNGramContainmentMeasure_3_mosteller-wallace
+ +      -0.4801 * (normalized) structure/StopwordNGramContainmentMeasure_2_stamatatos
+ +      -0.3229 * (normalized) structure/PosNGramJaccardMeasure_3
+ +      -0.1928 * (normalized) structure/PosNGramJaccardMeasure_4
+ +       0.5444 * (normalized) structure/StopwordNGramContainmentMeasure_3_stamatatos
+ +       4.2716
+
+Number of kernel evaluations: 77337 (84.314% cached)
+
+
+
+Correctly Classified Instances         376               62.6667 %
+Incorrectly Classified Instances       224               37.3333 %
+Kappa statistic                          0.2533
+Mean absolute error                      0.3733
+Root mean squared error                  0.611 
+Relative absolute error                 74.6667 %
+Root relative squared error            122.202  %
+Coverage of cases (0.95 level)          62.6667 %
+Mean rel. region size (0.95 level)      50      %
+Total Number of Instances              600     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 234  66 |   a = TRUE
+ 158 142 |   b = FALSE
+
