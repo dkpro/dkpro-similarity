@@ -1,0 +1,984 @@
+Bijou:Spitzbube:Spielkarte:Schmuckstück:Gaststätte:3
+Biotop:hautfreundliches Oberteil:Umweltexperte:Humusboden:Lebensraum:4
+Fan:Autogrammjäger:Lobredner:begeisterter Anhänger:Unterhaltungsexperte:3
+indiskret:taktlos:unaufdringlich:undurchschaubar:rücksichtslos:1
+Kaprice:Niedertracht:Laune:Schelmenstreich:Luftsprung:2
+Logo:Ort Stelle:Schiffstagebuch:Einverständnis:Markenzeichen:4
+Sponsor:impulsiver Mensch:Veranstalter:Förderer:Schmarotzer:3
+Stethoskop:Blutdruckmesser:Hörrohr:Augenspiegel:Spatel:2
+phrasieren:Worte formen:sinngemäß gliedern:Sätze drechseln:drauflos reden:2
+Stabelle:Sitzmöbel:Metallplastik:Zierpflanze:Stabreim:1
+Tailleur:Samtgürtel:Etuikleid:Schneiderkostüm:kleines Schwarzes:3
+Tobel:Marderart:Jagdrevier:Waldlichtung:enge Schlucht:4
+Weichbild:Horizont:Silhouette:Luftspiegelung:Stadtgebiet:4
+Zabaione:Weincreme:Zitrusfrucht:Fremdenführer:Liebeslied:1
+beidrehen:Segel kürzen:Fahrt verlangsamen:ausweichen:wenden:2
+Dolle:Seezeichen:Segelboot:Rudergabel:hohe Welle:3
+Rigg:Signalflagge:Takelung:Steuerruder:Fangnetz:2
+Schot:Schiffswand:Mastspitze:Haltetau:Segelleine:4
+Bibliomanie:Literaturverzeichnis:Verlagstätigkeit:Buchstabengläubigkeit:Büchersammelwut:4
+Compliance:Verwirrung:Vereinbarkeit:Vertrauen:Therapietreue:4
+desaströs:verhängnisvoll:verlockend:abenteuerlich:respektlos:1
+exzellieren:frohlocken:sich hervortun:sich ereifern:übertreiben:2
+Honorar:Zuwendung:Künstlergehalt:Vergütung:Ehrengrab:3
+inferior:zweitrangig:ansteckend:unfruchtbar:gut gemeint:1
+konsequent:zuständig:sachverständig:gebieterisch:unbeirrbar:4
+Lemming:Spukgeist:Geheimagent:Nagetier:Rebsorte:3
+Muffin:Kleingebäck:Spenglerwerkzeug:Miesepeter:Wildschaf:1
+Optimum:Erscheinungsbild:Wunschvorstellung:Wahlmöglichkeit:höchstes erreichbares Maß:4
+Orgie:Klangfarbe:ausschweifendes Fest:Höhepunkt:Schwärmerei:2
+Outlaw:Außenseiter:Steuersünder:Geächteter:Flüchtling:3
+Reverie:Träumerei:Ehrerbietung:Einkommen:Wiederkehr:1
+Rucola:Glücksspiel:Laubengang:Salatpflanze:Fleischrolle:3
+unkonventionell:vertragswidrig:steif förmlich:ungezwungen:landläufig:3
+Urbanität:Bodenständigkeit:Bildung:Tatendrang:Starrsinn:2
+Zyniker:Spaßmacher:Widerspruchsgeist:Spötter:Wortklauber:3
+abchecken:sich fortmachen:abgefertigt werden:überprüfen:begutachten:3
+angesagt:von oben verordnet:im Schwange:erwartet:unausbleiblich:2
+ausgereizt:raffiniert:fein abgestimmt:fest ausgemacht:ausgeschöpft:4
+aussitzen:verbüßen:zurücktreten:aktiv werden:abwarten:4
+caramba:verstanden:Donnerwetter:schneller:noch einmal:2
+durchgeknallt:überspannt:fassungslos:wütend:zahlungsunfähig:1
+etepetete:begriffsstutzig:wichtigtuerisch:zimperlich:schüchtern:3
+flippig:aufbrausend:ausschweifend:sportlich:kess flott:4
+Girlie:frühreifes Mädchen:moderner Frauentyp:junge Revuetänzerin:Liebesdienerin:2
+kujonieren:quälen plagen:zurechtweisen:unterhalten:belobigen:1
+Latinlover:Altsprachler:Kunstschwärmer:Heiratsschwindler:temperamentvoller Liebhaber:4
+Sündenbock:Schandpfahl:Anklagebank:Lebemann:Prügelknabe:4
+Ticker:Schnellmerker:Wirrkopf:Schaltelement:Fernschreiber:4
+zappen:picheln:das Licht löschen:hin und her schalten:aufgeben:3
+Prozessor:Umformer:Laufwerk:Rechen- und Steuerwerk:Gebläse:3
+Festplatte:Stellfläche:Hauptplatine:Siliciumchip:Dauerspeicher:4
+RAM:Arbeitsspeicher:Tastatur:Gehäusetyp:Datenbank:1
+Byte:Systemabsturz:Raubkopie:Maßzahl für Speicherkapazität:Schriftgröße:3
+Monitor:Lesestift:Bildschirm:Blendfilter:Drucker:2
+Pixel:Bildröhre:Bildschärfe:Bildpunkt:Einbrennfleck:3
+Scanner:Bildabtaster:Farbpatrone:Suchmaschine:Flachbildschirm:1
+Netzwerk:Kabelsalat:Tischcomputer:Rechnerverbund:Fernsehkanal:3
+Server:Stromquelle:Zentralcomputer:Nothelfer:Regler:2
+Notebook:Notiz:Handbuch:Papierrolle:mobiler PC:4
+Software:Computerprogramme:Zusatzgeräte:Ersatzteile:Drähte:1
+booten:ausschalten:neu starten:Text eingeben:speichern:2
+Cursor:EDV-Lehrer:Zeigegerät:Pfeiltaste:Einfügemarke:4
+herunterladen:markieren:kopieren:verkleinern:löschen:2
+Internet:Breitbandkabel:Steckverbindung:betriebsinternes Netz:weltweiter Verbund:4
+E-Mail:Datensuche:Netzadresse:elektronische Post:Fernkopie:3
+Chat:Plausch per PC:Kurzmitteilung:Computerspiel:Bauelement:1
+Smiley:Warnsignal:Abkürzung:Bildsymbol:Strahlung:3
+Adamsapfel:Sinnbild des Erdballs:Streitobjekt:Knorpel am Hals:Kahlschädel:3
+Alraune:Blutstiller:Zauberwesen:Rutengänger:Rankenornament:2
+Altarblatt:Bibeltext:Tagesspruch:Gemälde:Schnitzwerk:3
+Bandsalat:Nudelspeise:Bänderriss:Kurzwellenempfang:Tonbandgewirr:4
+Bessemerbirne:Leuchtkörper:Stahlbehälter:Hochofen:Schnaps:2
+Blätterwald:Tabakplantage:Laubdach:Lesesaal:Presse:4
+Damenflor:Samtband:Schleier:anmutige Frauen:Kränzchen:3
+Einbaum:Rindenboot:Holzkahn:Einmaster:Surfbrett:2
+Federbusch:Staubbesen:schmaler Schal:zarte Wolke:Hutschmuck:4
+Feigenblatt:Würzmittel:Säulenschmuck:schamhafte Verhüllung:Siegestrophäe:3
+Gerstenkorn:Mitesser:Lidentzündung:Kaffeeersatz:Schrotkugel:2
+Mimose:Kleinmut:Mienenspiel:Primadonna:empfindsamer Mensch:4
+Peanuts:Intrige:Schmiergeld:Kleinigkeit:große Summe:3
+Rosette:Schmuckform:Rundbeet:Kirchenkuppel:Wasserpflanze:1
+Schellenbaum:Pranger:Signalmast:Spielkarte:Rasselinstrument:4
+Stilblüte:Redeschmuck:Mustersatz:missglückte Formulierung:Schwulst:3
+unverblümt:aufgeregt:ohne Umschweife:diplomatisch:ruppig:2
+Windrose:Krankheit:Irrlicht:Wirbelsturm:Kompassscheibe:4
+Agnostiker:Eiferer:Ungläubiger:Nichtswisser:Querkopf:2
+anachronistisch:sonderbar:originell:zeitbedingt:zeitwidrig:4
+avancieren:vorprellen:sich ändern:aufrücken:vorangehen:3
+Desillusion:Erhellung:Verblendung:Ernüchterung:Entspannung:3
+Dogma:Schlagwort:Glaubenssatz:Theorie:Erkenntnis:2
+Duplikat:Einzelstück:Doppelkinn:Nachbildung:Zweitschrift:4
+Exkursion:Abschweifung:Lehrausflug:Erläuterung:Entschuldigung:2
+fingieren:erdichten:belasten:gestalten:begründen:1
+Handikap:Mobiltelefon-Etui:Einschaltverbot:Störanfälligkeit:Benachteiligung:4
+Kollaps:Zusammenstoß:Anhäufung:Schwächeanfall:Wutausbruch:3
+kompatibel:zusammenpassend:vergleichbar:zuständig:erheblich:1
+konsultieren:begutachten:zurate ziehen:beschließen:sich verschwören:2
+Nonchalance:Lässigkeit:Schüchternheit:Trägheit:Heftigkeit:1
+Ovation:Eiablage:Lobrede:Beifallssturm:Höhepunkt:3
+Protektion:Vormundschaft:Gönnerschaft:Obhut:Bestechung:2
+Renegat:Heimkehrer:Aufrührer:Neinsager:Abtrünniger:4
+tolerieren:übersehen:beschränken:gelten lassen:bevorzugen:3
+Annexion:Befriedung:Verwüstung:Aneignung:Aufteilung:3
+autoritär:bodenständig:unabhängig:maßgebend:diktatorisch:4
+Demagoge:Miesmacher:guter Redner:skrupelloser Hetzer:Meinungsforscher:3
+Dirigismus:Staatskunst:Wirtschaftslenkung:Freizügigkeit:Gängelung:2
+Exekutive:Regierung Verwaltung:Parlament:Gerichtsbarkeit:Amtseid:1
+instrumentalisieren:planen:ausführen:als Mittel benutzen:verfälschen:3
+Koalition:Parteienbündnis:Beratung:Zusammenstoß:Abkommen:1
+Lobby:Pressestelle:Interessengruppe:Parteislogan:Wahlbüro:2
+Migration:Menschenschmuggel:Zuwanderung:Eingliederung:Abschiebung:2
+Opportunist:Gegenkandidat:Widerständler:Anpasser:Wirrkopf:3
+Plenum:Haushaltsplan:Vollmacht:Sitzungssaal:Vollversammlung:4
+pluralistisch:gleichförmig:auf Vielfalt gegründet:rechtmäßig:parteiisch:2
+progressiv:planmäßig:modebewusst:fortschrittlich:herausfordernd:3
+Prosperität:Einfluss:Wohlstand:Sparpolitik:Unnachgiebigkeit:2
+Resolution:Tatkraft:Rechtfertigung:Antrag:Entschließung:4
+telegen:fernsehwirksam:weitblickend:hübsch:volkstümlich:1
+Ultimatum:Denkschrift:Protestnote:letzte Aufforderung:Kriegserklärung:3
+Zivilcourage:Wegschauen:Mut:flottes Auftreten:Streitsucht:2
+Tratte:Kranichvogel:gezogener Wechsel:Gebissteil des Pferdezaumzeugs:starkes Tau:2
+Autarkie:staatliche Selbständigkeit:Widerspruch zwischen zwei Grundregeln:vom Ausland unabhängige Wirtschaftsform:das Gebiet des Südpols:3
+Fraktion:Bruchstück:Rechnung:gotische Schrift:Parteivertretung im Parlament:4
+lapidar:wuchtig:schlüpfrig:seitlich:weinerlich:1
+Basilika:Kaufhalle:frühmittelalterliche Kirchenbauform:aromatisches Kraut:schlangenähnliches Fabelwesen:2
+Zyklon:Gerät der Atomphysik:Riese der griechischen Sage:Wirbelsturm:Kreislauf:3
+spationieren:einzeln aufzählen:gewagte Geschäfte machen:sich für etwas Besonderes ausbilden:mit Zwischenraum versehe n:4
+indolent:unduldsam:ohne Teilnahme:unverschämt:zahlungsunfähig:2
+Opportunismus:Neigung den Mantel nach dem Wind zu hängen:Herrschaft der Dunkelmänner:Glaube dass alles gut ist geht:Lehre von unerklärlichen Erscheinungen:1
+Bajadere:Angehörige eines germanischen Stammes:griechische Quellnymphe:eine unbedeutende Kleinigkeit:indische Tänzerin:4
+offizinell:Kennzeichnung der Heilmittel die das amtliche Arzneibuch aufführt:anzüglich:so viel wie halbamtlich:so viel wie amtlich:1
+Dragoman:leichter Ritter der Kavallerie:orientalischer Dolmetscher:Angehöriger einer indischen Völkergruppe:griechische Münze:2
+Mispel:Schmarotzerpflanze:eine Pappelart:besondere Form eines Blütestandes:Frucht eines Obstbaumes:4
+Kalebasse:altes Segelschiff:großes Boot für den Hafenverkehr:Gefäß aus einem Flaschenkürbis:Schiffsküche:3
+konsternieren:im Gegensatz stehen:verstopfen:verblüffen:sich verschwören:3
+Paladin:Inder mit akademischer Bildung:ritterlicher Beschützer:Edelmetall:hoher Schutzzaun aus spitzen Pfählen:2
+permanent:hervorragend und berühmt:eingelagerter Farbstoff:tierische Haut zum Beschreiben:dauerhaft anhaltend:4
+Luv:Spitze eines Schiffes:die Windgeschützte Seite:dem Wind ausgesetzte Schiffsseite:hinterer Teil des Schiffes:3
+Ranunkel:Hahnenfußgewächs:Salatpflanze:roter Edelstein:äußerliches Geschwür:1
+Kabale:Heiligtum der Muslime:Intrige bei Hofe:jüdische Geheimlehre:Menschenfresser:2
+Achillesferse:Geschwulst:Kennzeichen:wunder Punkt:Fluchttrieb:3
+Ägide:Leitspruch:Richtschnur:Zeitalter:Schirmherrschaft:4
+Aphrodisiakum:Aroma:Anregungsmittel:Liebesschwur:Lebensweisheit:2
+Apoll:schöner Mann:Draufgänger:Künstlernatur:Fantast:1
+Bacchanal:Siegessprache:Weinprobe:Trinkgelage:Festmahl:3
+Elysium:Töchterschule:Künstlerkolonie:einsame Insel:Paradies:4
+Flora:kleines Insekt:Tierreich:Pflanzenwelt:Blütenpracht:3
+herkulisch:riesenstark:wohlbeleibt:schwerfällig:schöpferisch:1
+Hermaphrodit:Schöngeist:Frauenliebling:Solotänzer:Zwitter:4
+junonisch:jugendlich:stattlich:temperamentvoll:vergeistigt:2
+martialisch:märzlich:gebieterisch:kriegerisch:quälend:3
+Mnemonik:Hörvermögen:Gedächtniskunst:Ausdruckskraft:Spürsinn:2
+narzisstisch:verträumt:uneigennützig:genusssüchtig:selbstverliebt:4
+Panik:Kümmernis:Durcheinander:große Angst:Mutlosigkeit:3
+Schimäre:Dichterross:Hirngespinst:böse Frau:Rätselfrage:2
+Thanatologie:Sterbekunde:Traumdeutung:Erblehre:Zukunftsforschung:1
+titanisch:feenhaft:metallen:gewaltig:rebellisch:3
+Zerberus:Leibwächter:Türhüter:Zankteufel:Wundermann:2
+antiquiert:ehrwürdig:alt:unbrauchbar:überholt:4
+Atheist:Glaubensstreiter:Gottesleugner:Frömmler:Spötter:2
+chronologisch:zeitlos:zeitlich geordnet:abgekürzt:dauernd:2
+Demenz:Abwesenheit:Anstand:Fehlbetrag:Geistesschwäche:4
+Eklat:Gebäckstück:Paukenschlag:Skandal:Applaus:3
+etabliert:aufstrebend:anerkannt:parteiisch:kämpferisch:2
+frequentieren:bestrahlen:behelligen:häufig besuchen:verändern:3
+fulminant:wohlbeleibt:zornentbrannt:hochexplosiv:mitreißend:4
+Intermezzo:Datennetz:lustiger Zwischenfall:Einmischung:Pause:2
+kolportieren:melden:behaupten:Gerüchte verbreiten:farbig ausmalen:3
+Maxime:langes Kleid:Förmlichkeit:Höchstmaß:Leitsatz:4
+Nonsens:Unsinn:Meinungsverschiedenheit:Irrtum:Wortwitz:1
+optimal:eindrucksvoll:wünschenswert:bestmöglich:übersteigert:3
+Pokergesicht:undurchdringliche Miene:vornehme Blässe:gekränkter Ausdruck:Kennerblick:1
+Positur:berufliche Stellung:Körperhaltung:Standpunkt:Situation:2
+resolut:zurückhaltend:bärbeißig:berechnend:tatkräftig:4
+sporadisch:ständig:vereinzelt:ungeplant:formlos:2
+Voyeur:Fernsehnarr:Wachmann:Schlüssellochgucker:Erpresser:3
+Auszeit:Polizeistunde:blauer Montag:Langzeiturlaub:Blackout:3
+Bachelor:junger Soldat:Gelehrter:Prüfling:akademischer Grad:4
+Bionik:Wissenschaftszweig:Umwelt:Bodensatz:Komposthaufen:1
+Blockbuster:Prellbock:Eckhaus:Kassenschlager:Betonkopf:3
+Fake:Nagelbrett:Tatsache:Fälschung:Kunstgriff:3
+Guarana:Freischärlerin:Aufputschmittel:Abwehrzauber:Dünger:2
+Gyros:Wurfscheibe:Umlaufbahn:Imbissstube:Fleischgericht:4
+Headhunter:Meisterdetektiv:Kopfballspieler:Personalberater:Großwildjäger:3
+IT:Informationstechnik:Instrumententafel:Intelligenztest:Außerirdischer:1
+Kickboard:Trittbrett:Tretroller:Anschlagtafel:Computertastatur:2
+Luftnummer:Wutanfall:Freudensprung:Zukunftsplan:leeres Gerede:4
+mega-in:völlig veraltet:akzeptabel:hoch aktuell:leicht verrückt:3
+Organizer:Taschencomputer:Kirchenmusiker:Chirurg:Manager:1
+Pager:flotte Frisur:Zählwerk:Funkrufempfänger:Autotelefon:3
+Piercing:Rakete:Hautschmuck:Liebkosung:Heilmethode:2
+Truck:Zugmaschine:Lastkraftwagen:Werkzeugkasten:Reisekoffer:2
+underdressed:benachteiligt:unbedarft:ungepflegt:zu schlecht angezogen:4
+Update:Verabredung:Modetrend:Aktualisierung:neuer Termin:3
+Absinth:Bewusstlosigkeit:Abwesenheit:grünlicher Schnaps:Trugbild:3
+Abstinenz:Aufmüpfigkeit:Ausdauer:Genusssucht:Enthaltsamkeit:4
+allergisch:abgebrüht:misstrauisch:überempfindlich:hilflos:3
+austarieren:erkunden:aussondern:austauschen:ins Gleichgewicht bringen:4
+Brückentag:Neujahr:spezieller Arbeitstag:Reisetermin:Versöhnungsfest:2
+Creole:Handtrommel:Strandgewand:Ohrring:Schmuckspange:3
+erodieren:ermitteln:zerfressen:abrunden:ausstrahlen:2
+Fiasko:Misserfolg:Wirrwarr:Wandgemälde:Wollgewebe:1
+Häresie:Glaubenseifer:Zweifelsucht:Ketzerei:Empörung:3
+imaginär:imagebewusst:nachahmenswert:mikroskopisch klein:nur in der Vorstellung vorhanden:4
+inkognito:ahnungslos:begriffsstutzig:unerkannt:insgeheim:3
+irisieren:schillern:schimmern:zwinkern:begeistern:1
+Kalauer:leichte Kutsche:steifer Hut:Merkspruch:billiger Witz:4
+kursorisch:lehrhaft:rasch flüchtig:gründlich:in Schrägschrift:2
+Magnolie:Zierbaum:Südfrucht:Töpferware:Zupfinstrument:1
+Parzelle:Gewahrsam:Schicksalsgöttin:Grundstück:Anwesen:3
+Polemik:Redekunst:Beweisführung:scharfer Angriff:Entschuldigung:3
+Repression:Hotelbüro:Wirtschaftsflaute:Zurückhaltung:Unterdrückung:4
+Ajatollah:Haar- und Barttracht:Minister:Oppositionsführer:hoher religiöser Würdenträger:4
+Basar:Marktbereich:Teppichhandel:Wechselstube:Armenfürsorge:1
+Dschihad:Segelschiff:Pfad der Tugend:Heiliger Krieg:Friedensschluss:3
+Dschinn:Volksmusik:Geist Dämon:Engelsbild:gute Fee:2
+Fatwa:Tochter Mohammeds:Vision:Rechtsgutachten:Todesurteil:3
+Harem:Küche und Keller:Frauengemächer:Mädchenschule:Fürstenschloss:2
+Henna:rotgelber Farbstoff:Umhang:Schmuckstein:Zuckerwerk:1
+Huri:Ausgestoßene:Nebenfrau:Jungfrau im Paradies:Heilige:3
+Imam:Gebetsrufer:Vorbeter:Gebetsrichtung:Glaubensbekenntnis:2
+Islamismus:Islamkunde:Koranwissenschaft:islamische Besonderheit:ideologische Strömung:4
+Kaaba:süßes Getränk:Kapuzenmantel:Gebetsnische:Hauptheiligtum:4
+Kismet:Zufall:Schicksal:Illusion:Prophezeiung:2
+Minarett:Speiseplatte:Spitzsäule:Turm:Musikinstrument:3
+Mudschaheddin:Nomaden:Söldner:Freischärler:Leibwächter:3
+Ramadan:Freitagspredigt:Fastenmonat:Sittenwächter:Festmahl:2
+Scharia:islamische Glaubensrichtung:islamisches Recht:Reformbewegung:Märchenschatz Sagenschatz:2
+Sure:Korankapitel:Testauslegung:sittliche Forderung:Geldgeschenk:1
+Aktrice:Aktmodell:Archivarin:Börsenmaklerin:Schauspielerin:4
+Blessur:Stirnfleck:Blutarmut:Verletzung:Abgestumpftheit:3
+Boudoir:häusliches Büro:Duschkabine:Empfangsraum:Damenzimmer:4
+Bredouille:Blindenschrift:Bedrängnis:Kontrollgang:Rettungsaktion:2
+Causeur:gewiegter Kenner:amüsanter Plauderer:Rechtsgelehrter:Wichtigtuer:2
+Entourage:Gefolge:Reisegruppe:Drehzahl:Umhüllung:1
+Gusto:Widerwille:Temperament:Geschmack Neigung:Schönheitssinn:3
+Insubordination:Organschwäche:ärztliche Verordnung:Gehorsamsverweigerung:Unterwürfigkeit:3
+konterfeien:beschreiben:porträtieren:nachmachen fälschen:hintertreiben:2
+mirakulös:wundersam:peinlich genau:verbürgt:unglaubwürdig:1
+Odeur:Ausstrahlung:Wohlgeruch:Atemschutzgerät:Zerstäuber:2
+räsonieren:Erfolg haben:seinen Gedanken nachhängen:logische Schlüsse ziehen:nörgeln und schimpfen:4
+Skribifax:Fernkopierer:Geheimfach:Schreiberling:Drehbuchautor:3
+soigniert:gepflegt:gut aufgelegt:gebildet:eher versnobt:1
+spinös:spindeldürr:scharfsinnig:schwierig im Umgang:kränklich:3
+Trouvaille:Ärgernis:Ausrede:Schwerarbeit:glücklicher Fund:4
+Basics:Fangspiel:Art Schlagballspiel:Kellergeschoss:Standardkleidungsstücke:4
+Blinddate:Fangspiel:Verabredung:taube Nuss:verpasste Gelegenheit:2
+Callcenter:Rotlichtbezirk:Mietwagenzentrale:Büro für Kundenanrufe:Einsatzleitung:3
+Fingerfood:Übungsstück:belegtes Brötchen:Gichtknoten:Handcreme:2
+Fleece:Pelzart:weiches Leder:Lammwolle:synthetischer Flausch:4
+hypen:heruntermachen:beschreiben:analysieren:hochjubeln:4
+Inliner:Rollschuhläufer:Linienrichter:Internetnutzer:Jasager:1
+Loft:Außentreppe:ausgebauter Dachboden:Lastenaufzug:Abstellraum:2
+Netiquette:Computerspiel:Internetadresse:spezieller Knigge:Nettigkeit:3
+Patchworkfamilie:Bastlergruppe:junge Ehe:"zusammengewürfelte ""Stieffamilie""":verzweigte Sippe:3
+Sabbatical:Sabbatruhe:Legendensammlung:exotische Frucht:längere berufliche Auszeit:4
+SMS:Kurzmitteilung:Manuskript:Motorschiff:Rinderseuche:1
+Sneakers:Reptilien:Agenten:modische Turnschuhe:Hosenform:3
+Start-up:neu gegründete Firma:Grundkapital:Anlaufzeit:Gewinnschwelle:1
+toppen:abschneiden:in Schwung bringen:bewerkstelligen:übertreffen:4
+Trainee:Sportschüler:Art Praktikant:Einpauker:Jugendleiter:2
+Trash:Zusammenstoß:Feuerwerkskörper:Droge:Ramsch Schund:4
+Affinität:Getue:Gegensätzlichkeit:Wesenverwandtschaft:Gleichheit:3
+amorph:schwerfällig:formlos:ohne Gefühl:schmerzfrei:2
+apodiktisch:entschuldigend:teilnahmslos:klipp und klar:keinen Widerspruch duldend:4
+Authentizität:Ansehen:Herrschsucht:Echtheit:Fragwürdigkeit:3
+dekuvrieren:entlarven:entschlüsseln:enttäuschen:entstellen:1
+eruieren:aussieben:auswerten:austüfteln:herausfinden:4
+Eskapismus:Friedensliebe:Flucht vor der Wirklichkeit:schrittweise Steigerung:Taschenspielerei:2
+Inkarnation:Verkörperung:Idee:Beeinflussung:Wiedereingliederung:1
+konzis:klar:überzeugend:kurz gefasst:ausführlich:3
+Logorrhö:Leseschwäche:krankhafte Geschwätzigkeit:verlegenes Stammeln:Denkhemmung:2
+Metamorphose:schlafähnlicher Zustand:sinnbildlicher Ausdruck:Zerfall:Verwandlung:4
+Präferenz:Vorbesprechung:Vorliebe:Vordringlichkeit:Vorsprung:2
+sakrosankt:gottesdienstlich:verborgen:unantastbar:allgemein anerkannt:3
+touchieren:leicht berühren:packen:liebvoll ausmalen:aufbauschen:1
+transitorisch:durchsichtig:vorübergehend:fortgesetzt:unvergänglich:2
+virulent:betont männlich:rechtschaffen:geschäftig:krankheitserregend:4
+Xenophobie:Platzangst:Frauenhass:Fremdenfeindlichkeit:Verfolgungswahn:3
+Backschisch:Mantel:Verbeugung:kleines Geldgeschenk:Süßigkeit:3
+Bistro:Erfrischungsgetränk:Speiseeis:einfaches Lokal:Zeitungskiosk:3
+Bordcase:Schiffsgeländer:Pilotenkabine:Serviertisch:Gepäckstück:4
+Check-in:Reservierung:Fluggastabfertigung am Boden:Reisegepäckversicherung:Begrüßungscocktail:2
+Dünung:gleichmäßiger Seegang:tosende Brandung:Sandsturm:Strand:1
+fakultativ:verbindlich:eigenem Ermessen überlassen:sachkundig:unentgeltlich:2
+Finca:spanisches Landhaus:Weinschenke:Zierstrauch:Laubengang:1
+Gangway:Führungslinie:Promenade:Fluggasttreppe:Landebahn:3
+Kinetose:Muskelkrampf:Reisekrankheit:Lockerungsübung:Fiebermittel:2
+Lagune:verzweigte Flussmündung:fruchtbare Niederung:abgeschnittener Meeresteil:einsame Bucht:3
+Maut:Beförderungssteuer:Straßengebühr:Zollgrenze:Geldbuße:2
+Nehrung:tiefe Schlucht:Steilküste:Wanderdüne:Landzunge:4
+Papagallo:aufdringlicher Fotograf:fliegender Händler:Möchtegernliebhaber:Dolmetscher:3
+Pier:Landungsbrücke:Ankerplatz:Wellenbrecher:Seezeichen:1
+Piktogramm:Reiseprospekt:SMS-Nachricht:Muttermal:Bildsymbol:4
+Repellent:Insektenschutzmittel:Kurtaxe:spanische Wand:Nörgler:1
+Rezeption:Hotelhalle:Empfangsbüro:Postablage:Gesellschaftssaal:2
+Siesta:Volksfest:Sommerregen:Zwischenmahlzeit:Mittagsruhe:4
+Altweibersommer:Hundstage:Erntezeit:launischer September:Spätsommertage:4
+Aureole:Morgenröte:Alpenglühen:Hof um Sonne oder Mond:Wetterleuchten:3
+Eisheillige:Schlittschuhläufer:Ötzi & Co:vereiste Berge:kritische Maitage:4
+Föhn:Frühlingshauch:warmer Fallwind:trockene Luft:Hochgebirgsklima:2
+Inversion:Temperaturumkehr:Wettersturz:Mondwechsel:Treibhauseffekt:1
+Isobaren:Eiskristalle:Höhenwinde:Wärmekurven:Gleichdrucklinien:4
+Kumulonimbus:Regenmesser:Gewitterwolke:Hochdrucklage:Lichterscheinung:2
+Meteorologie:Raumforschung:Erdgeschichte:Wetterkunde:Strömungslehre:3
+Mure:Schneeschmelze:Schlammstrom:Gletscherschutt:Versumpfung:2
+Schafskälte:Abendkühle:Winterwetter:Frost:Kaltlufteinbruch im Juni:4
+Schirokko:Wüstenklima:Meeresströmung:Mittelmeerwind:Schneesturm:3
+Siebenschläfer:Hitzeperiode:Wetterfühliger:Mondphase:Kalendertag:4
+Smog:verqualmte Luft:Rauchfahne:Nebelbank:dicke Dunstschicht:4
+Sommertag:Höchsttemperatur von mindestens 20°C:Höchsttemperatur von mindestens 25°C:Höchsttemperatur von mindestens 28°C:Höchsttemperatur von mindestens 30°C:2
+Stratus:Wetterballon:stabile Witterung:niedrige Schichtwolke:Tropenwind:3
+thermisch:Wärme:Bewölkung:Luftfeuchte:Verdunstung:1
+Tornado:Luftelektrizität:Kondensstreifen:Wirbelsturm:Erdstoß:3
+Zirrus:Tau:Federwolke:Luftfeuchte:Wolkenwand:2
+Trauma:Erinnerungslücke:Wahngebilde:Traum:seelischer Schock:4
+Herbarium:Komposthaufen:Pflanzensammlung:Wintergarten:Vogelbauer:2
+Devise:Wahlspruch:Bekenntnis:abweichende Meinung:Vorschrift:1
+Dissertation:wissenschaftliches Streitgespräch:längere Abhandlung:Doktorarbeit:mündliche Prüfung:3
+ticken:funktionieren:versagen:verlautbaren:denken und handeln:4
+obligat:widerspenstig:verbindlich:pflichtgemäß:unerlässlich:4
+Dealer:illegaler Drogenhändler:Menschenschmuggler:Glückspieler:Agentenführer:1
+Portiere:Eingangshalle:Empfangsdame:Türvorhang:Brieftasche:3
+Shrimp:Flussboot:kleine Garnele:Muschelart:Fangvorrichtung:2
+Basilikum:Gewürzpflanze:Fabeleiter:Bischofssitze:stechender Blick:1
+hektisch:aufgeregt:gelassen:geistesgegenwärtig:leidenschaftlich:1
+Junkie:Müllschlucker:Drogenabhängiger:Schleckermaul:Dickwanst:2
+melodramatisch:feierlich:heiter beschwingt:eher verkrampft:rührselig:4
+fixen:nachlässig arbeiten:eifrig üben:starr blicken:sich Drogen spritzen:4
+euphorisch:wohl bedacht:hochgestimmt:geistreich:harmonisch:2
+Desaster:Enttäuschung:Missverständnis:Durcheinander:Katastrophe:4
+Gratin:Zuckerguss:Mürbebraten:überbackene Speise:Fettgebäck:3
+altruistisch:selbstsüchtig:weltfremd:aufrichtig:uneigennützig:4
+Benefiz:Wohltätigkeitsveranstaltung:Beihilfe:Lobgesang:Segen:1
+ekstatisch:sprunghaft:rauschhaft:aufgebracht:zurückgezogen:2
+Elan:Zurückhaltung:Anpassungsfähigkeit:Ehrgeiz:Schwung:4
+Faszination:Verblüffung:Verwirrung:Eingebung:Bezauberung:4
+Generosität:Erbeigenschaft:Vorurteilslosigkeit:Großzügigkeit:Allgemeingültigkeit:3
+kredenzen:ausleihen:gutschreiben:umfüllen:darreichen:4
+Kredo:innere Stimme:Glaubensbekenntnis:Zuversicht:Bürgschaft:2
+moderat:maßvoll:unnachgiebig:unterhaltsam:zeitgemäß:1
+Ökumene:Naturschutz:Landbau:religiöse Minderheit:gesamte Christenheit:4
+Petition:Wiederholung:Erklärung:Forderung:Bittschrift:4
+philanthropisch:kleinbürgerlich:menschenfreundlich:wissensdurstig:mitteilsam:2
+Pietät:Frömmigkeit:Feierlichkeit:ehrfürchtiger Respekt:Kultbild in Kirchen:3
+sanguinisch:leichtblütig:leichtsinnig:lebenstüchtig:geistreich:1
+Schalom:Wohlergehen:Frieden:Dankbarkeit:Sicherheit:2
+spirituell:gespenstisch:berauschend:erfrischend:geistig:4
+stimulieren:anregen:vereinbaren:befriedigen:rückgängig machen:1
+Bonvivant:Charakterspieler:Bösewicht:Lebemann:Naturbursche:3
+chargieren:einspringen:Regie führen:andeutend spielen:übertreiben:4
+Choreografie:Tanztheorie:Ballettregie:Chorpartitur:Sprechchortext:2
+Couplet:witziges Liedchen:komische Szene:Tanzpose:Lichteffekt:1
+Debüt:tragende Rolle:erstes Auftreten:Gastspiel:Spitzentanz:2
+Drücker:Platzanweiser:Stichwortgeber:theatralische Umarmung:Ausdruckssteigerung:4
+Figurine:Anfängerin:Maskenbildnerin:Kostümentwurf:Bühnenmodell:3
+Gag:Anstellung am Theater:Künstlergehalt:Kurzszene:witziger Einfall:4
+Hosenrolle:Eine Frau in Männerkleidung:shakespearescher Narr:wilder Draufgänger:Spaßmacher:1
+Inspizient:Verwaltungschef:Beleuchtungsmeister:Spielwart:Regisseur:3
+Komparse:Hilfsregisseur:Bühnetechniker:Vorhangzieher:Statist:4
+Libretto:Versdrama:freie Bearbeitung:Operntext:Klavierauszug:3
+Off-Off-Bühne:Festspielhaus:Freilichttheater:kleine alternative Bühne:Kabarett:3
+Pantomime:Allesspieler:Spiel ohne Worte:Stegreifspiel:Schattentheater:2
+Premiere:Generalprobe:erste öffentliche Aufführung:Galavorstellung:Wiederaufnahme:2
+Rampe:Balkonbrüstung:Beleuchterbrücke:schräge Spielfläche:Bühnenrand:4
+Soubrette:Drehbühne:Orchestergraben:Sängerin:Tänzerin:3
+Tutu:Ballettschuh:kurzes Röckchen:hautfarbenes Trikot:Luftsprung:2
+Ambiente:Wasservogel:Krankenstation:Doppelsinn:Umgebung:4
+Aquaplaning:Wellenreiten:Wasserglätte auf der Straße:Dauerregen:Maltechnik:2
+clever:gewissenhaft:wohlhabend:klug gewitzt:verlogen:3
+exklusiv:hochwirksam:vornehm:ausschweifend:überspannt:2
+Indolenz:Dreistigkeit:Eigensinn:Unredlichkeit:Stumpfheit:4
+Kalkül:Chemikalie:Arbeitsplan:Überlegung:Vorbehalt:3
+kaschieren:verbergen:nachbessern:ausschmücken:ableugnen:1
+kollabieren:mitarbeiten:abprallen:zusammenbrechen:sich erholen:3
+Kreativität:Gelehrigkeit:vielseitiges Wissen:handwerkliches Geschick:schöpferische Kraft:4
+Larmoyanz:Schmähsucht:Lärmempfindlichkeit:Weinerlichkeit:Schamgefühl:3
+Potentat:Machthaber:Geldmann:Großgrundbesitzer:Sexprotz:1
+punktuell:ohne Ausnahme:in einzelnen Punkten:mit großem Nachdruck:je nach Standpunkt:2
+provokant:vorsorglich:fortschrittlich:anklagend:herausfordernd:4
+Sensorium:Sinnlichkeit:Empfindungsvermögen:Sensation:Sehschule:2
+Snobismus:Vornehmtuerei:Ritterlichkeit:Schönheitssinn:Hang zur Muße:1
+Tristesse:Dreimaster:Rangabzeichen:Traurigkeit:Langeweile:3
+ubiquitär:überall verbreitet:ortsgebunden:rar:nicht vorhanden:1
+Utopie:Kurzsichtigkeit:Seherblick:wirklichkeitsfremde Idee:Abenteuer:3
+Alzheimer:Militärmarsch:Magenbitter:Schmelzkäse:Gedächtnisschwund:4
+Beaufortskala:Wasserhärte:Windstärke:Regenmenge:UV-Strahlung:2
+Clivia:Tasteninstrument:Hirtenflöte:Zimmerpflanze:Schmuckstein:3
+Dobermann:Hunderasse:Schnapsflasche:Arbeitsanzug:Vertrauensperson:1
+Eulenspiegelei:Delikatesse:Selbstbespiegelung:Schelmenstreich:Täuschungsmanöver:3
+Grog:Zirkuskünstler:grober Wollstoff:heißes Getränk:K.-o.-Schlag K.O. Schlag:3
+Kalaschnikow:Schusswaffe:Gulaschkanone:Düsenjäger:Rakete:1
+Kir:Jahrmarkt:Obstbranntwein:Mischgetränk:Modetanz:3
+Methusalem:Stammvater:sehr alter Mensch:Feuergeist:Kraftmensch:2
+Molotow-Cocktail:Diplomatenempfang:Kartoffelschnaps:Unheil bringendes Geschenk:Benzinbombe:4
+Müller-Thurgau:Tafelapfel:Weißweinsorte:Teemischung:Barttracht:2
+Nansenpass:Steilvorlage im Fußball:finanzieller Engpass:Ausweis für Staatenlose:Durchreiseerlaubnis:3
+Pascal:Schmähschrift:Stoffart:altes Gewicht:Einheit des Drucks:4
+Quisling:"""Wortschatz"" Fan":Moderator:Drahtzieher:Verräter:4
+Récamiere:Liegesofa:Tafelsatz:Damenzimmer:Abstellraum:1
+salomonisch:selbstherrlich:verschlagen:klug erwägend:prunksüchtig:3
+Wedgwood:Tropenholz:feines Steingut:Biskuitporzellan:Kristallglas:2
+Xanthippe:Mimose:Froschnatur:Fanatikerin:zänkische Frau:4
+backstage:hinter der Bühne:bei offenem Vorhang:am grünen Tisch:im Verborgenen:1
+Carver:Schnitzmesser:kurzer Ski:Rennschlitten:Rollschuh:2
+Couchpotato:Langschläfer:Nackenkissen:Knabbergebäck:Dauergucker:4
+Denglisch:Tropenfieber:Zubereitungsweise:Sprachgemisch:Mundart:3
+DVD:Datenträger:Erbsubstanz:Dienstvorschrift:Laufwerk:1
+Flipflops:Hausschuhe:Ringelstrümpfe:Knieschützer:Sandalen:4
+Hype:Vermutung:Behauptung:Reklamerummel:Verleumdung:3
+Mediator:Jogalehrer:Meinungsbildner:Werbefachmann:Vermittler:4
+Messie:Modegeck:chaotischer Mensch:Haarspalter:Landmesser:2
+optional:wahlweise:wünschenswert:unentgeltlich:bestmöglich:1
+PET-Flasche:Tropffläschchen:Kunststoffflasche:Flachmann:Karaffe:2
+Pumpgun:Damenschuh:Saugglocke:Injektionsspitze:Schusswaffe:4
+schönreden:gut schildern:berichtigen:beschönigen:aufbauschen:3
+Sharon:Dattelpflaume:Zitrusfrucht:Kürbisart:Quittensorte:1
+simsen:durchwalken:militärisch drillen:intensiv lernen:Kurznachrichten verschicken:4
+Telestation:Rundfunksender Fernsehsender:Mobilfunkmast:öffentlicher Fernsprecher:Anrufzentrale:3
+top:durchschnittlich:ansprechend:hervorragend:übertrieben:3
+Beckmesser:Streithahn:Sachverständiger:kleinlicher Kritiker:Schwarzseher:3
+Belami:Frauenliebling:Abenteurer:Kämpfernatur:Schöngeist:1
+bezirzen:bändigen:belästigen:betören:betrügen:3
+bramarbasieren:Pflanzen sammeln:leise vor sich hin reden:Missfallen äußern:aufschneiden prahlen:4
+Dulzinea:Dienerin:Geliebte:Anstandswauwau:Schindmähre:2
+Figaro:Haarkünstler:Opernsänger:Liebhaber:Page:1
+Gretchenfrage:Scherzrätsel:naive Frage:Erkundigung:Teenagerproblem:3
+Hamletnatur:Querkopf:Zauderer:Einsiedler:Mann der Tat:2
+Kassandraruf:Wecksignal:Warnung:Freudenschrei:Totenklage:2
+Lolita:Seemannsbraut:Animierdame:kesse Göre:Kindfrau:4
+mephistophelisch:erfinderisch:Wissens und tatendurstig:teuflisch:übersinnlich:3
+Nestor:Anfänger:Gehilfe:Lehrmeister:Ältester:4
+Oblomowerei:Spitzfindigkeit:Draufgängertum:tatenloses Träumen:Hinterlist:3
+Odyssee:Irrfahrt:Kreuzfahrt:Forschungsreise:Lügengeschichte:1
+Paparazzo:Genießer:Dolmetscher:Pressefotograf:Schnorrer:3
+Schmock:Feinschmecker:Bücherwurm:Schwätzer:Pedant:3
+Tartüff:Fehlersucher:Ehrenmann:Gernegross:Heuchler:4
+Arroganz:Vornehmlichkeit:Dünkel:Halsstarrigkeit:Neugier:2
+Avantgarde:Künstlermilieu:Kunst von gestern:herrschende Richtung:Vorkämpfer einer neuen Strömung:4
+Ballistik:Flugbahnen:Tanzfiguren:Ballspielen:Zählmaßen:1
+Bastion:Hobbykeller:Truppeneinheit:Bollwerk:Aussichtsturm:3
+Dementi:Zeitungsente:Richtigstellung:Widerspruch:Ablehnung:2
+favorisieren:auszeichnen:umschmeicheln:bevorzugen:übervorteilen:3
+Hansdampf:Miesepeter:umtriebiger Mensch:Antreiber:Schlappmacher:2
+hedonistisch:selbstlos:heldenhaft:sittenstreng:genusssüchtig:4
+insolvent:zahlungsunfähig:dreist:frech:beharrlich:1
+konstant:grundlegend:folgerichtig:gleich bleibend:vorübergehend:3
+lethargisch:antriebslos:vergesslich:starrköpfig:reizbar:1
+Mainstream:Mainlinie:Höhenströmung:elitäres Denken:aktueller Trend:4
+prägnant:tiefgründig:weitschweifig:kurz und treffend:eindrucksvoll:3
+prekär:unbedenklich:misslich heikel:klar umrissen:trügerisch:2
+Prokrustesbett:Schlafsofa:Liebeslager:Denkmalsockel:starres Schema:4
+Ritual:Gottesdienst:Chorgesang:Handlungsmuster:Tagesordnung:3
+Sakrileg:Grabkammer:Frevel:Zwangsmaßnahme:Fehlurteil:2
+signifikant:bildlich:einleuchtend:wichtig erheblich:befriedigend:3
+abgefeimt:Altersweise:rundum gesichert:stark geschwächt:durchtrieben:4
+Achillesferse:Sehnenzerrung:Schuheinlage:schwache Seite:Schandfleck:3
+anmachen:ungeniert ansprechen:belästigen:langweilen:beschimpfen:1
+blauäugig:vorurteilslos:zuverlässig:unkritisch:gefühlvoll:3
+Erbsenzähler:Statistiker:Mann von Charakter:Langweiler:Pedant:4
+Furore:Aufsehen erregen:vorwärts kommen:protestieren:toben:1
+verballhornen:veralbern:verreißen:verschlimmbessern:widerlegen:3
+Anthologie:Nachschlagewerk:Kurzfassung:ausgewählte Gedichte:Ausdruck:3
+Aphorismus:Sinnspruch:Gedenkblatt:Anmerkung:kurze Geschichte:1
+Blankvers:Strophenschema:rhythmische Prosa:Verszeilen des Dramas:Schüttelreim:3
+Diktion:Ausdrucksweise:Wortschwall:Niederschrift:Satzbau:1
+Distichon:Sprichwort:Zweizeiler:Doppellaut:Schmähschrift:2
+Elegie:Sprachgewalt:Beschönigung:Wohlklang:Klagelied:4
+Epigone:Neutöner:Nachahmer:Satiriker:Sprachgenie:2
+episch:treffend:einförmig:erzählend:gefühlsbetont:3
+Essay:kürzere Abhandlung:erster Entwurf:Inhaltsangabe:Drehbuch:1
+Hermeneutik:Rätselhaftigkeit:Gleichnishaftigkeit:Auslegekunst:Weltgeschichte:3
+Klappentext:Kurzinformation:Werbeprospekt:Einleitung:Anhang:1
+Monolog:Icherzählung:Einpersonenstück:Vorrede:Selbstgespräch:4
+Parabel:kurzer Einschub:Gleichnis:Kunstmärchen:Heiligenlegende:2
+Parodie:Satzgefüge:Verfremdung:Form der Satire:Streitschrift:3
+Plagiat:Erstlingswerk:Eingebung:scharfe Kritik:geistiger Diebstahl:4
+postum:nachgelassen:unvollendet:schwer verständlich:sinnentleert:1
+rezensieren:überarbeiten:kritisch würdigen:auswählen:ablehnen:2
+Sonett:Sprachmelodie:Versmaß:Schlummerlied:Gedichtsform:4
+Anstecker:Beleuchter:Moderator:Manuskriptverfasser:Mikrofon:4
+Aufsager:Korrespondentenbericht:offizielle Erklärung:Zitat:Kommentar:1
+Bumper:Schlagzeuger:Tonmeister:Musikteppich:Basslautsprecher:3
+Call-in:Verkehrsfunk:Anrufsendung:Überspielung:Rückkopplung:2
+E-Musik:Elektronische:ernste:effektvolle:exotische Musik:2
+Fake:Tondokument:Vulgärsprache:Fälschung:Richtigstellung:3
+Insert:Einblendung:Unterbrechung:Rückblende:Bildausschnitt:1
+Jingle:Schallplatte:Solistenkonzert:Ansage:Erkennungsmelodie:4
+Melodram:Musikdrama:Tanzfilm:Rührstück:Burleske:3
+Off:Sendeschluss:Abblende:Szenenwechsel:nicht sichtbarer Bereich:4
+Primetime:Erstsendung:Hauptsendezeit:Sendebeginn:Sendedatum:2
+Realityshow:Presseschau:Diskussion:Reportage:Unterhaltungssendung:4
+Sitcom:Fernsehsatellit:Serie:Schlagersendung:Programmkonferenz:2
+Spot:Werbefilm:Testbild:Standfoto:Großaufnahme:1
+switchen:einschalten:sauber einstellen:hin und her schalten:abstellen:3
+Teleprompter:Uhrzeiger:Zeitraffer:Bildspeicher:Souffliergerät:4
+Thriller:Koloraturarie:Pausenzeichen:Geräuschkulisse:Reißer:4
+Zoom:Scheinwerfer:Farbfilter:Gummilinse:Kamerafahrt:3
+Apéro:Eingangstür:Öffnungszeit:Getränk vorm Essen:Schmerzstiller:3
+Balneario:Bademeister:Strandabschnitt:Schwimmbecken:Rettungsschwimmer:2
+Bodden:Landzunge:Wanderdüne:flache Meeresbucht:Steilküste:3
+caldo:kalkhaltig:mit Chlor behandelt:kalt frostig:warm heiß:4
+Coperto:Speisekarte:Tischgedeck:Bedienung:Mehrwertsteuer:2
+Corrida:Stierkampf:Reitturnier:Grillparty:Autokorso:1
+Couscous:herzliche Begrüßung:Halsschmuck:Fladenbrot:arabisches Gericht:4
+Gabinetto:Empfangsbüro:Garderobe:Toilette:Zeitungskiosk:3
+Glace:Speiseeis:glasierte Torte:Schaumgebäck:Konfekt:1
+Kren:Wacholderbeere:Kräuterpaste:Ziegenkäse:Meerrettich:4
+Obatzter:Brotaufstrich:Moorbad:Gebirgssteig:Alpenblume:1
+Obers:Dachgeschoss:Weinkeller:Schlagsahne:Spielkarte:3
+Paradeiser:Platzhirsch:Sonnenschirm:Aprikose:Tomate:4
+Pharisäer:Anglerlateiner:Kaffeespezialität:steifer Grog:Teepunsch:2
+Soldes:Preisnachlass:Ausverkauf:Trinkgeld:kleine Münzen:2
+Tapas:Badeschlappen:Nichtschwimmer:kleine Gerichte:Muscheln:3
+Velo:Geschwindigkeit:Windrose:Wasserfahrzeug:Fahrrad:4
+Antipasti:Vorspeisen:Nudelgerichte:Insektenschutzmittel:Sonnensegel:1
+Buhne:Landungssteg:Wellenbrecher:verstecktes Riff:Sandbank:2
+Caffelatte:Espressobar:Erfrischungsstand:Cappuccino:Milchkaffe:4
+Croissant:Stangenbrot:Hörnchen:Straßenkreuzung:Drehtür:2
+Datschi:Wochenendhaus:Eierspeise:Blechkuchen:Obstsalat:3
+Ferragosto:Feiertag:Küchengewürz:Eisenbahnlinie:Ausflug:1
+Geselchtes:Röstbrot:Fettgebäck:Erbswurst:geräuchertes Fleisch:4
+Jus:Jugendherberge:Kleidungsstück:Fruchtsaft:Trinkspruch:3
+Paella:Kopfbedeckung:Sonnenschirm:Strandgewand:Reisgericht:4
+Panaché:Mineralwasser:Mischgetränk:paniertes Schnitzel:Frikadelle:2
+Patisserie:Konditorei:Spitzendecke:Mehlspeise:Konfekt:1
+Pickerl:Proviantkorb:Taschendieb:Autobahnvignette:Giftpilz:3
+Playa:großer Platz:Promenade:Meeresbucht:Strand:4
+Priel:eingedeichtes Land:Deichschleuse:Wasserlauf im Watt:Dünengürtel:3
+Sangria:Art Rotweinbowle:Kaltschale:Weinschenke:Strandfest:1
+Suk:Hammelbraten:Frauenmantel:Kopfputz:Markt:4
+schukran:einverstanden:danke:Entschuldigung!:so Gott will:2
+Asket:Wettkämpfer:Gelehrter:Einzelgänger:enthaltsamer Mensch:4
+Aversion:Abwandlung:Abweichung:Abneigung:Vorurteil:3
+avisieren:beobachten:sichtbar machen:ins Auge fassen:ankündigen:4
+Button:Fischgericht:Ansteckplakette:Kragenform:Ohrschmuck:2
+devot:unterwürfig:anhänglich:zuverlässig:ehrgeizig:1
+Dornfelder:Landmaschine:Heckenrose:Rebsorte:Branntwein:3
+Eunuch:Schönfärber:Wohltäter:Kammerdiener:Kastrat:4
+Goatee:Wuschelkopf:Ziegenbart:Pferdeschwanz:Schlabberhose:2
+Hooligan:Intelligenzler:Freund der Popmusik:Randalierer:Herumtreiber:3
+Ignoranz:Unwissenheit:Vergesslichkeit:Wurstigkeit:Dünkel:1
+lamentieren:Kritik üben:jammern:lange Reden halten:betteln:2
+ominös:Unheil kündend:viel versprechend:ungewiss:lächerlich:1
+prosaisch:unterhaltsam:originell:eher nüchtern:nichts sagend:3
+prüde:zartfühlend:zimperlich:heuchlerisch:denkfaul:2
+Trampolin:Kamelart:Nervensäge:Schrittzähler:Sprunggerät:4
+Vakanz:innere Leere:Abwesenheit:freie Stelle:Wartezeit:3
+variabel:vorübergehend:verschieden:anpassungsfähig:veränderlich:4
+Zikade:Zuckerlösung:kandierte Frucht:kleines Insekt:Wortschwall:3
+Bizeps:Flaschenzug:Drohgebärde:Oberarmmuskel:Kraftprotz:3
+Dekalog:Preisliste:Wechselrede:Nachwort:die Zehn Gebote:4
+Dezennium:Gedenktag:Jahrzehnt:Studienbeihilfe:Taktgefühl:2
+Dilemma:verzwickte Lage:Streitfrage:Unwissenheit:Geheimnis:1
+Diphthong:Kloß im Hals:Zwielaut:Dehnungszeichen:Sprachmelodie:2
+dubios:fabelhaft:vorteilhaft:glaubhaft:zweifelhaft:4
+Dublette:Nachbildung:Zweitfrisur:Doppelstück:alte Münze:3
+Hemisphäre:Erdhälfte:Lufthülle:Wolkenschicht:Längengrad:1
+Millefleurs:Blütenteppich:Sommersprossen:Blumenmuster:Mosaikglas:3
+Primadonna:Tollkirsche:Powerfrau:gern gesehene Person:launischer Star:4
+Priorität:Klostergut:Verhaltensmaßregel:Vorrang:Überlegenheit:3
+Quadriga:Viergespann:Quadratwurzel:behauener Stein:alter Tanz:1
+Quarantäne:Freihafen:Beschlagnahme:Gewahrsam:Isolierung:4
+sekundär:augenblicklich:entscheidend:zweitrangig:überflüssig:3
+Tetra:Getränkepackung:Lösungsmittel:Erdzeitalter:Versform:2
+Trigeminus:Sternbild:Landmesser:Gesichtsnerv:Kleeblatt:3
+trivial:dreiteilig:anspruchslos:hoch geistig:erheiternd:2
+Unikum:Hochschulreife:Kinderhilfswerk:einfarbiger Stoff:Sonderling:4
+Albatros:Segelschiff:Sturmvogel:Raubfisch:Kobold:2
+Albino:italienisches Gasthaus:feine Wolle:Zwitter:Weißling:4
+blanko:blitzsauber:portofrei:unvollständig ausgefüllt:fehlerhaft:3
+Blaumann:Adelsprotz:Uno-Soldat:Polizeiauto:Monteuranzug:4
+Erythem:Hautrötung:Eiterherd:Platzwunde:Blutpfropf:1
+Falbe:Faltensaum:Schmuckspange:Wildkatze:Pferd:4
+Flavonoide:pflanzliche Pigmente:Ballaststoffe:Fettstoffe:Mineralien:1
+Greenback:Hinterwäldler:Neuling:Arbeitserlaubnis:Dollarnote:4
+Leukämie:Wundverband:Harnvergiftung:Blutkrankheit:Muskelschwund:3
+Melatonin:Traubenzucker:Hormon:Beruhigungspille:Schimmelpilz:2
+Trikolore:Wiesenblume:buntes Trikot:Dreigespann:Fahne:4
+Weißmacher:Staranwalt:Geldwäscher:optischer Aufheller:Kalkfarbe:3
+Balalaika:alter Volkstanz:Holzpuppe:Zupfinstrument:Glockenspiel:3
+Barsoi:Glücksbringer:Windhund:Seidengewebe:Zwergbaum:2
+Baude:Jahrmarktszelt:Imbissstube:Berggasthof:Kneipe:3
+Beluga:Wasserpflanze:Gewürzpilz:essbare Muschel:Kaviar:4
+Borschtsch:Salatgewürz:Kohlsuppe:Rinderbraten:Süßspeise:2
+Datsche:Zwetschgenkuchen:Streichinstrument:Sommerfrische:Wochenendhaus:4
+Glasnost:Friedensliebe:freie Wirtschaft:Transparenz:Kontrolle:3
+Jause:Rast beim Wandern:Zwischenmahlzeit:Festivität:Zechtour:2
+Klitsche:ländliches Anwesen:Ladefläche:Schaukelbrett:hartes Lager:1
+Opanke:Kakteenart:exotische Frucht:Halbedelstein:leichter Schuh:4
+Pogrom:Ränkespiel:gewalttätige Hetze:Volksaufstand:Hilfsaktion:2
+Polka:Grasstreppe:Ziehbrunnen:schneller Paartanz:Gedichtform:3
+Samowar:Teemaschine:Kohlenpfanne:Kacheloffen:Taschenlampe:1
+Slibowitz:Schnupftabak:Schaffskäse:Obstschnaps:Sauermilch:3
+Trabant:Gebälkträger:Herrenreiter:Arbeitstier:Gefolgsmann:4
+Troika:Gleichgewicht:Dreigespann:Geheimvertrag:Schlaginstrument:2
+Ukas:Erkundigung:Ratschlag:strikte Anordnung:Verbot:3
+Zander:Schiffsflagge:Landmaschine:Apfelwein:Speisefisch:4
+Anti-Aging:Hungerkur:Jugendkult:Kurzstudium:Verzögerung des Alterns:4
+Caipirinha:exotische Frucht:Mixgetränk:Duftstoff:Orchidee:2
+Chill-out:Kältegefühl:Ernüchterung:Entmutigung:Entspannung:4
+EBIT:Zahlungssystem:Jahresumsatz:Jahresgewinn:Rentabilität:3
+Flatrate:Pauschaltarif:Wohnungsmiete:Erdgeschoss:Preisnachlass:1
+Hokkaido:Heilmethode:Blumensteckkunst:Kürbissorte:Bogenschießen:3
+Powerfrau:Elektrikerin:Schwergewicht:Fanatikerin:Tüchtigkeit in Person:4
+Rally:Sumpfhuhn:Kursanstieg:Kraftfahrzeugsport:Schnitzeljagd:2
+Retrolook:Rückspiegel:Erinnerungsbild:Modestil:Kunstausstellung:3
+Rezyklat:Rohstoff:aufbereiteter Altstoff:Chemiefaser:Spinnerei:2
+SARS:Lungenkrankheit:Grippe-Epidemie:Isolierstation:Hilfsorganisation:1
+scoren:Münzen zählen:Rollschuh laufen:Punkte sammeln:nummerieren:3
+Stent:Herzschrittmacher:Kranzgefäßstütze:Blutbahnumleitung:Hohlnadel:2
+Tai-Chi:Wirbelsturm:Lebenskraft:Körpertraining:Ernährungsweise:3
+Timer:Kapellmeister:Zeitschaltuhr:Nachrichtensprecher:Kontrolleur:2
+trendig:unauffällig:ausgefallen:topaktuell:zukunftweisend:3
+Womanizer:Schürzenjäger:Hausmann:Pantoffelheld:Frauenfeind:1
+ambitioniert:ehrgeizig:großzügig:überheblich:widersprüchlich:1
+Amuse-Gueule:Ohrensessel:Stimmungskanone:Appetithäppchen:Süßspeise:3
+Campus:frei stehender Turm:Hochschulgelände:militärischer Stützpunkt:Zeltlager:2
+Charisma:Aufrichtigkeit:Umgänglichkeit:Scharfsinn:Ausstrahlung:4
+Diskurs:Kursverlust:Erörterung:abweichende Meinung:Schlussfolgerung:2
+flexibel:temperamentvoll:wankelmütig:anpassungsfähig:starrsinnig:3
+inkompatibel:nicht zusammenpassend:beispiellos:unlogisch:zahlungsunfähig:1
+Inspiration:Atemspende:Sinnestäuschung:Eingebung:Enthusiasmus:3
+Know-how:bloße Theorie:praktisches Wissen:Erfahrungsbericht:Lehrmethode:2
+konspirieren:Atem holen:Verbindung aufnehmen:beratschlagen:sich verschwören:4
+makaber:grausig-düster:geheimnisvoll:affenartig:exotisch:1
+Megäre:Fantasievorstellung:bösartige Frau:Fanatikerin:Rätselfrage:2
+opportun:nützlich angebracht:unzweckmäßig:entgegengesetzt:zwiespältig:1
+Reputation:Zurückweisung:Wiederholung:Entschließung:Ruf Ansehen:4
+Spontaneität:Besonnenheit:impulsives Wesen:kühle Berechnung:Begeisterung:2
+stoisch:lebensbejahend:hitzköpfig:unerschütterlich:wortkarg:3
+Suizid:schwerer Unfall:Gehirnschädigung:Selbsttötung:Völkermord:3
+Topografie:Altertumskunde:Ortsbeschreibung:Röntgenbild:Messtechnik:2
+Adoleszenz:Leidenschaft:Selbstgefälligkeit:Jugendalter:Studienzeit:3
+Affekt:Ziererei:Erregung:Einfluss:Wirkung:2
+Antipathie:Schmerzbekämpfung:Heilverfahren:Misstrauen:Abneigung:4
+Assoziation:Eingebung:Aufmerksamkeit:Gedankenverknüpfung:Verwechslung:3
+Déjà-vu:Liebe auf den ersten Blick:Geistesblitz:Beklemmung:Scheinerinnerung:4
+Dogmatismus:Gottesfrucht:starre Denkweise:Gedankentiefe:Zweifelsucht:2
+egoman:uneigennützlich:selbstbewusst:krankhaft selbstbezogen:gewissenlos:3
+Eustress:anregender Stress:Erschöpfung:Abstumpfung:Nervenzusammenbruch:1
+extravertiert:in sich gekehrt:nach außen gerichtet:herablassend:überspannt:2
+Fanatismus:Pflichttreue:Entschlusskraft:Begeisterung:Verbohrtheit:4
+Feedback:Rückerinnerung:Vorschlag:Echo Reaktion:Beifall:3
+Halluzination:Sinnestäuschung:Wunschvorstellung:Vorahnung:Erleuchtung:1
+Libido:Liebensfähigkeit:sinnliches Verlangen:Eifersucht:Zügellosigkeit:2
+motivieren:zu etwas anregen:unterweisen:bevormunden:aufheitern:1
+Phlegmatisch:heißblütig:empfindlich:gleichmütig:schwerfällig:4
+psychogen:unwirklich nur vorgestellt:seelisch bedingt:ruhelos:anfällig:2
+Ressentiment:Besorgnis:Rücksichtnahme:heimlicher Groll:Auflehnung:3
+Aktenwolf:Kleinigkeitskrämer:Archivar:Ablagebox:Papierzerreißmaschine:4
+Bottleparty:Flaschenpost:Weinprobe:Spareinladung:Kinderkrippe:3
+Büchsenspanner:Gehilfe:Komplize:Einpeitscher:Drogenhändler:1
+Eiertanz:Geschicklichkeitsübung:gewundenes Verhalten:Ränkespiel:Geldgier:2
+Elchtest:Tempokontrolle:Alkoholnachweis:Genanalyse:Bewährungsprobe:4
+Eselsbrücke:schmaler Steg.:falscher Weg:Turnübung:Gedächtnisstütze:4
+Fachidiot:berufliche Niete:Arbeitstier:engstirniger Spezialist:Weltverbesserer:3
+Henkelmann:Speisebehälter:Krug mit Henkeln:Becherform:Vogelscheuche:1
+Irokesenschnitt:Operationsmethode:Haartracht:Betrugsmanöver:Siegestrophäe:2
+Junkfood:nährwertarme Kost:deftige Nahrung:feine Küche:Rauschgift:1
+Kurschatten:Lungenbefund:Brunnenhaus:Nebenwirkung:Freund auf Zeit:4
+Paperback:dicker Wälzer:kartoniertes Buch:Papierformat:Brieftasche:2
+Schattenwirtschaft:Biergarten:Heimindustrie:Kleinhandel:Schwarzarbeit:4
+Schulterschluss:Ringergriff:loser Kontakte:festes Zusammenstehen:Bündnis:3
+Schwabenstreich:Heldentat:törichte Handlung:Schabernack:Gemeinheit:2
+Schlitzohr:Einfaltspinsel:Tollpatsch:Lauscher an der Wand:gerissener Bursche:4
+Silberblick:Augenflirt:Schmeichelei:leichtes Schielen:Optimismus:3
+Sommerloch:Ozondefizit:ereignisarme Zeit des Hochsommers:Regenperiode:Ferienwohnung:2
+Allotria:Musikkomödie:Gewinnspiel:vergnüglicher Unfug:Schurkerei:3
+Bonmot:flotter Flitzer:geistreiche Bemerkung:Lebemann:Zwergbaum:2
+Buffo:Examenskandidat:Miesepeter:Opernsänger:tiefe Männerstimme:3
+Burleske:Bauerntanz:Maskerade:Betrugsmanöver:Schwank:4
+Capriccio:Caprifischer:Seitensprung:Musikstück:bunte Mischung:3
+Cartoon:Bildergeschichte:Taschenbuch:Getränkepackung:Kartoffelchip:1
+Esprit:geistiges Getränk:Geist und Witz:Gelehrsamkeit:Ökotreibstoff:2
+Gaudi:Automarke:Kirchensonntag:Spaß Vergnügen:Festivität:3
+Harlekin:Frisurenkünstler:Zupfinstrument:Schöntuer:Bühnefigur:4
+Humoreske:kurze Erzählung:Maskenkostüm:Meeresfrucht:Haremssklavin:1
+Ironie:Schlagfertigkeit:versteckter Spott:plumper Scherz:Schadenfreude:2
+Jux:Segelkommando:Jurastudent:Juckpulver:lustiger Streich:4
+Kalauer:Sprücheklopfer:fader Wortwitz:Lebensweisheit:Militärmarsch:2
+Limerick:Kurzgedicht:Zitrusgewächs:Glücksbringer:Reklametrick:1
+Parodie:Fallschirmsport:Zahnfleischschwund:Form der Satire:Widersinn:3
+Pointe:Richtungspfeil:Maltechnik:Schlusseffekt:Nadelstrich:3
+Sketch:Geländeskizze:witzige Szene:Segeljacht:Fangnetz:2
+Zote:zottige Pfote:chaotische Person:Herumtreiberin:schlüpfriger Witz:4
+ambivalent:milieubedingt:zwiespältig:oberflächlich:schwankend:2
+Bagatelle:Fleischklößchen:Handkoffer:unbedeutende Kleinigkeit:Geschwätz:3
+dealen:mit Rauschgift handeln:Schulden machen:riskant spielen:schmuggeln:1
+Duplizität:Zweierbeziehung:Zweimaligkeit:Verdoppelung:Nachahmung:2
+effizient:offenkundig:auffallend:einflussreich:leistungsfähig:4
+generieren:verallgemeinern:hervorbringen:weitergeben:verkümmern lassen:2
+Genom:kleiner Kobold:Halswirbel:Erbsubstanz:Sinnspruch:3
+illuster:festlich erleuchtet:anschaulich:bilderreich:glanzvoll erlaucht:4
+irrelevant:unerheblich:leicht verwirrend:hoch bedeutsam:respektlos:1
+Kontext:Wettbewerb:Zusammenhang:Anmerkung:Schlussfolgerung:2
+nuancieren:beschreiben:auf den neusten Stand bringen:steigern:abstufen:4
+prätentiös:bescheiden:sachlich-nüchtern:anspruchvoll:großsprecherisch:3
+Rezension:Volkszählung:Empfangsbüro:kritische Besprechung:Umarbeitung:3
+saturiert:gesättigt:bevorrechtigt:wohlhabend:bildungshungrig:1
+Stimulus:Blutstiller:Regenwolke:Reiz Antrieb:innerer Wilderstand:3
+Überflieger:Düsenmaschine:Luftikus:flüchtiger Leser:besonders begabter Mensch:4
+verbalisieren:in Worte fassen:hervorheben:verballhornen:zerreden:1
+Alki:Meeresvogel:Getränkediscounter:Alkoholiker:Batteriesorte:3
+Azubi:Anwesenheitsnachweis:Deckname:Ausbilder:Lehrling:4
+Bazi:Badezimmer:Bazillenträger:durchtriebener Bursche:Ausländerfeind:3
+Bussi:modisches Wäschestück:Küsschen:Schulbus:Raubvogel:2
+Chauvi:Pantoffelheld:Brausenkopf:Männlichkeitsapostel:Spießer:3
+Chichi:scharfes Gewürz:Getue Gehabe:gepflegte Ausdrucksweise:Eleganz:2
+Fundi:Grundstücksmakler:Spendensammler:Realpolitiker:sturer Dogmatiker:4
+Fuzzi:leicht komischer Typ:Nervenbündel:Modegeck:Spielautomat:1
+groggy:hart im Nehmen:wankelmütig:verträumt:zerschlagen erschöpft:4
+Groupie:kleine Gruppe:WG-Bewohnerin:weiblicher Fan:Demonstrantin:3
+Junkie:junger Adelsspross:Genussmensch:Kettenraucher:Drogensüchtiger:4
+Klemmi:Klammeraffe:Ohrschmuck:verklemmter Charakter:Kleptomane:3
+Knacki:Computerpirat:Gefängnisinsasse:Geizkragen:Problemlöser:2
+Nicki:Empfangschef:Jasager:Plüschpullover:Troddelmütze:3
+Oldie:Altertumsforscher:bewährter Könner:altes Automodell:Schlager von einst:4
+Profi:Berufssportler:Hochschullehrer:Profitjäger:Nutznießer:1
+Promi:Promillesünder:Weiberheld:Prominenter Prominente:Sportveranstalter:3
+Schicki:Gesandter:Verhaltenskodex:attraktive junge Dame:modebewusste Person:4
+Affront:Selbstbespiegelung:Überraschung:Zudringlichkeit:Beleidigung:4
+Apercu:Appetithäppchen:Getränk vorm Essen:geistreiche Bemerkung:fader Witz:3
+bigott:zwei Göttern dienend:frömmlerisch:rechtschaffen:verschroben:2
+brisant:windig:schnell dahinrasend:konfliktträchtig:zersetzend:3
+Chanson:Kabarettlied:Konzertarie:komische Szene:Singspiel:1
+Charmeuse:Schmeichelkatze:Plaudertasche:Klosterlikör:Wirkware:4
+Degout:Wohlbefinden:Verbitterung:Widerwille:Misstrauen:3
+eklatant:ins Auge springend:zweifelhaft:herausfordernd:Ekel erregend:1
+gaga:leicht angetrunken:alt uns weise:vertrottelt:nicht unterzukriegen:3
+Kaskade:erhöhter Platz:Wasserfall:Springbrunnen:Säulengang:2
+Marge:Firmenzeichen:Lagerraum:Handelsspanne:Preisnachlass:3
+moussieren:durchkneten:schillern:perlen schäumen:munden:3
+nonchalant:gedankenverloren:zurückhaltend:steif förmlich:ungezwungen:4
+Parvenü:Emporkömmling:Bildungsprotz:Hochstapler:Nichtskönner:1
+resümieren:Erfolg haben:zusammenfassen:widersprechen:zurücktreten:2
+süffisant:genusssüchtig:trinkfest:kontaktfreudig:spöttisch-arrogant:4
+Trotteur:Straßenschuh:Tollpatsch:Spaziergänger:Weltenbummler:1
+vis-a-vis:auf lange Sicht:auf gleicher Augenhöhe:gegenüber:in der Ferne:3
+alert:schwer von Begriff:flink aufgeweckt:ehrgeizig:überheblich:2
+Bustier:Reiseveranstalter:Porträtbildhauer:Sittenstrolch:Wäschestück:4
+Collage:Kunstsammlung:Säulenreihe:Klebebild:Staffelei:3
+Desinformation:Wissenslücke:Nachrichtensperre:Zeitungsente:Täuschungsmanöver:4
+domestizieren:ausschmücken:den Ton angeben:zähmen:unterjochen:3
+exorbitant:gewaltig enorm:abenteuerlich:fremdländisch:außerirdisch:1
+Fazit:Voraussetzung:abschließendes Urteil:Begründung:Zustimmung:2
+fragil:wendig:widerstandsfähig:fraglich:zerbrechlich:4
+illusorisch:anschaulich:trügerisch:unverständlich:unerklärlich:2
+insistieren:sich einschreiben:aufbegehren:auf etwas bestehen:klein beigeben:3
+Kakophonie:Durcheinander:Missklang:Unstimmigkeit:Zerwürfnis:2
+Lamento:Gejammer:Trauermarsch:Mahnung:Anklage:1
+obligatorisch:wahlfrei:vorgeschrieben:zweckmäßig:überflüssig:2
+obsolet:geheimnisvoll:undurchsichtig:unentbehrlich:veraltet:4
+Querelen:Erkundigungen:Vorurteile:Streitigkeiten:Quertreibereien:3
+rigide:starr unnachgiebig:entgegenkommend:behutsam:nachlässig:1
+skandieren:Anstoß erregen:taktmäßig sprechen:anordnen:erläutern:2
+Zertifikat:Nachbildung:Gutachten:Bescheinigung:Unterschrift:3
+Baisse:Sauregurkenzeit:Preissturz:sinkende Börsenkurse:Aufwärtstrend:3
+Bluechips:Telefonkarten:erstklassige Aktien:20-Euro-Noten:Plastikgeld:2
+Bond:Firmenpartnerschaft:Warengutschein:Kassenzettel:Wertpapier:4
+Bonität:Kreditwürdigkeit:Gewinnbeteiligung:Sondervergütung:Gutschrift:1
+Bulle:Symbol für Geldentwertung:Symbol für Börsenflaute:Symbol für steigende Kurse:Symbol für Wirtschaftsblüte:3
+Cashflow:Barzahlung:Zinstermin:Jahresumsatz:Überschuss:4
+DAX:Wertpapierhandel:Börsensaal:Aktienindex:Kursermittlung:3
+Defizit:Voranschlag:Rechenfehler:Warenschwund:Fehlbetrag:4
+Discounter:Billiganbieter:Großhändler:Versender:Leihhaus:1
+Dividende:Aktienkauf:Gewinnanteil:Zinszahlung:Kursgewinn:2
+Dumping:Massenproduktion:Verkaufsförderung:Preisunterbietung:Entsorgung:3
+Fusion:Ausgliederung:Zusammenschluss:Kreditspritze:Anleihe:2
+Limit:Zahlungsaufschub:Preisgrenze:Schätzwert:Patentschutz:2
+lukrativ:Verlust bringend:Erfolg versprechend:einträglich:risikoreich:3
+Portfolio:Wertpapierbestand:Geheimkonto:Haushaltsplan:Bilanz:1
+Rendite:Sparguthaben:Zinsfuß:Kapitalertrag:Rückzahlung:3
+Skonto:Spesenkonto:Vorauszahlung:Rückbuchung:Preisnachlass:4
+Aureole:Strahlenkranz:Goldborte:Luftspiegelung:Morgenröte:1
+Barbarazweig:Tannengrün:Blütenwunder:Nikolausrute:Friedenszeichen:2
+Chanukka:Gewürzpflanze:Kopfbedeckung:jüdisches Lichterfest:Palmzweig:3
+Gloria:lateinischer Gruß:Lobgesang:Andachtsbild:Festschmuck:2
+Jesse:Erzengel:Prophet des Alten Testaments:Jesus von Nazareth:Ahnherr Jesu:4
+Julklapp:kleines Geschenk:Gesellschaftsspiel:Schneeballschlacht:Silvesterbrauch:1
+Kandelaber:Säulenschaft:Stövchen:Armleuchter:Lichterkette:3
+Komet:Sternschnuppe:Kugelblitz:Erdtrabant:Schweifstern:4
+Kontemplation:Betriebsamkeit:Beschaulichkeit:Zerstreuung:Langeweile:2
+Lametta:dünne Metallstreifen:künstlicher Schnee:italienische Messe:Motorroller:1
+Mistel:eitriger Pickel:Dornstrauch:Schmarotzerpflanze:Zwergbaum:3
+Myrrhe:duftendes Harz:Kuchengewürz:edler Schmuck:Weihnachtsstern:1
+nobel:preiswürdig:prahlerisch protzig:vornehm großzügig:gut gemeint:3
+Oratorium:Zahlungsaufschub:Spendensammlung:Bittgebet:Musikwerk:4
+Panettone:Filzpantoffel:Hosenrock:Früchtekuchen:Hirtenflöte:3
+Printe:Flüssigkeitsmaß:Pfefferkuchenart:Buchstabenspiel:Wunschzettel:2
+Quempas:Krippenspiel:Rauschgoldengel:Orgelmusik:Wechselgesang:4
+Spekulatius:flaches Gebäck:Grüblernatur:Glücksspieler:Begleiter des Nikolaus:1
+Amnestie:Gedächtnisverlust:Preisverfall:Fruchtwasseruntersuchung in der Schwangerschaft:Straferlass:4
+Demographie:Porträtzeichnung:Ahnenforschung:zweiter Bildungsweg:Bevölkerungsstatistik:4
+Exzellenzinitiative:bischöflicher Hirtenbrief:Förderprogramm für Universitäten:Treffen verdienter Professoren:Ordensverleihung:2
+Filibuster:jemand der etwas durch langes Reden verzögert:Pedant:Feuerteufel:Wichtigtuer:1
+Föderalismus:politischer Zustand in dem innerhalb eines Gesamtstaates die einzelnen Länder keine Befugnisse haben:politischer Zustand in dem innerhalb eines Gesamtstaates die einzelnen Länder bestimmte Rechte besitzen:politischer Zustand in dem innerhalb eines Gesamtstaates die einzelnen Länder unabhängig sind:politischer Zustand in dem innerhalb eines Gesamtstaates die einzelnen Länder eine Exklave bilden:3
+Glare:Fruchtcreme:glanzvoller öffentlicher Empfang:letzte Eiszeit:neu entwickelter Werkstoff:4
+Manifest:Bierzeit:Grundsatzerklärung:Ball der Handwerker:Druckmessgerät:2
+Partikel:Päckchen:Grundstück:kleines Teilchen:Schiffseigner:3
+Referendum:Gutachten:Volksbefragung:Ausbildungszeit:Rückzugsort:2
+Sedisvakanz:Zeitraum in dem in der Schule hitzefrei ist:Zeitraum in dem ausverkauft ist:Zeitraum in dem die Behörden geöffnet haben:Zeitraum in dem es keinen Papst gibt:4
+Sondierung:Beruhigung:Umkehrung:Erkundigung:Abfallverwertung:3
+Stagnation:Stillstand:Geldaufwertung:wirtschaftliche Entwicklung:Tropfseinbindung:1
+Stele:Pferderennen in England:Pfeiler:Knochen im Unterarm:hohes Weinglas:2
+antizipieren:bei jemandem vorsprechen:etwas vorwegnehmen:etwas nicht mögen:vornehm tun:2
+Balustrade:eleganter Tanzschuh:festliche Beleuchtung:steile Treppe:verziertes Geländer:4
+Duxelles:Würzmischung:Fürstin:Frauenzeitschrift:Faltenrock:1
+filigran:ausgebeint:mädchenhaft:feingliedrig:von rechtmäßiger Abstammung:3
+Generikum:Altenheim:preiswertes Arzneimittel:großzügiges Geschenk:grammatisches Geschlecht:2
+Harpune:Speer:japanisches Kleidungsstück:Greifvogel:Gestalt der griechischen Mythologie:1
+indifferent:anders:fehlerhaft:gleichgültig:abhängig:3
+Klementine:habgierige Person:Mildtätigkeit:Zitrusfrucht:Klagelied:3
+Kohorte:Personengruppe:Verbrecherbande:Kuhstahl:Abzeichen an der Uniform:1
+Miszellen:Brutkäfige:Holzlatten:kleine schriftliche Beiträge:kranke Körperzellen:3
+Oblast:Sackkarren:Bezirk:Gegengewicht an Baukränen:Schulden:2
+Ornament:flehendes Gebet:Amtstracht:Verzierung:Vogelwarte:3
+prekär:schwierig:anwesend:pünktlich:wertvoll:1
+Schaluppe:Pantoffel:Blasinstrument:ungepflegte Person:Küstenschiff:4
+volatil:unwillig:stark schwankend:in Falten gelegt:gestohlen:2
+Wenge:englisches Porzellan:indonesisches Figurentheater:Fischart in der Südsee:afrikanische Holzart:4
+Zoonose:moderne Aufzuchtsanlage:Angst vor Tieren:Krankheit:Zellverbund:3
+Äquinoktien:die letzten warmen Tagen:Tagundnachtgleichen:erste Nachtfröste:blühende Wasserpflanzen:2
+autumnal:schattig:vermodernd:in gedeckten Farben:herbstlich:4
+Federweiße:neuer Wein:reinweiße Entenart:Hut mit heller Feder:Bleichmittel:1
+Fitis:Zugvogel:junge Katze:handlicher Spaten:Kohlbeet:1
+Georgine:Sternbild im Herbst:Gartenpflanze:Jagdhorn:Länder die früher auf Erntefesten getanzt wurde:2
+Kombine:Jagdanzug:Kiepe der Winzer:herbstliche Kräutermischung für Tee:Erntemaschine:4
+Myzel:Vogelschwarm:Pilzgeflecht:Schneckenköder:exotisches Harz:2
+Nimrod:Holzfäller:Geländerwagen:Niederwild:biblische Gestalt:4
+Önologie:Olivenöl-Gewinnung:Umweltkunde:Lehre vom Weinbau:Landwirtschaftsbetrieb:3
+Öchslegrad:höchste Herbsttemperatur:Prämierung junger Rinder:Maßeinheit für Mostgewicht:steiler Pfad durch die Weinberge:3
+Pointer:Hochsitz:Jagdhund:Wanderstab:Pilz mit braunen Pünktchen:2
+Pomona:römische Göttin:fruchtbare Ebene in Norditalien:Kartoffelspeise:Fruchtfliege:1
+Saisonnier:Erntehelfer:Hüttenwirt:Großhändler für Obst und Gemüse:Senner:1
+Sukkot:Feuchtigkeit speichernde Pflanze:Heuwagen:jüdisches Fest:Rohrzucker:3
+Trester:derbe Schuhe:fahrender Händler:Unkraut:Rückstände beim Keltern:4
+akribisch:landwirtschaftlich:sorgfältig:angepasst:spitzfindig:2
+blasiert:mit Luftbläschen durchzogen:fahl aussehend:hochnäsig:abgebrüht:3
+düpiert:überlistet:in Falten gelegt:verdoppelt:vorteilhaft hergerichtet:1
+eminent:im Ruhestand:hervorragend:ehrwürdig:frei verfügbar:2
+fatal:tödlich:albern:verhängnisvoll:überdrüssig:3
+hanebüchen:bunt schillernd:in Runenschrift:zaghaft:unerhört:4
+intuitiv:auf Eingebung fußend:überfüllt:feierlich:in kaufmännischen Dingen unerfahren:1
+konfus:kurz gefasst:philosophisch betrachtet:ausgeschlossen:verwirrt:4
+kryptisch:unter der Erde gelegen:rätselhaft:fest gemauert:fehlerhaft:2
+martialisch:im März stattfindend:schmerzhaft:kriegerisch:märchenhaft:3
+moderat:zeitgenössisch:flott gekleidet:dumpf riechend:gemäßigt:4
+ominös:Unheil verkündet:großelterlich:zum Schweigen verpflichtet:schattig:1
+perfide:gut gelungen:niederträchtig:lang anhaltend:vertrauensvoll:2
+pikiert:beleidigt:schalkhaft:in Beize gelegt:aufgespießt:1
+renitent:einträglich:widerspenstig:hoch angesehen:erinnerungswürdig:2
+süffisant:betrunken:in bester Laune:leidend:selbstgefällig:4
+taupe:unwillig:von braungrauer Farbe:hochmodern:gut in Form:2
+verquast:zu Quark verarbeitet:ähnlich:unverständlich:mit Troddeln behängt:3
+Agility:Aufwärmgymnastik:Hundesport:Sackhüpfen:Formationstanz:2
+Badminton:Tauchen in Hallenbad:Federballspiel:Langstreckschwimmen:Schiessen mit dem Luftgewehr:2
+Bouldern:Kegeln:Strandspiel mit Holzkugeln:Freistil-Ringen:Klettern:4
+Caddie:Golfschläger:Golfwägelchen:Golfplatz:Golf-Abschlag:2
+Casting:Vorturnen:Ballweitwurf:Trocken-Angeln:spezielle Hochsprungtechnik:3
+Court:Trainer:Fan-Kurve:Tennisplatz:Teilnahmegebühr für einen Wettkampf:3
+Eskimorolle:Drehung eines Kanus:kalter Umschlag bei Sportverletzungen:Purzelbaum:nordische Tanzgymnastik:1
+Frisbee:Mitspieler beim Schlagball:Auslinie beim Völkerball:Erfrischung nach dem Sport:Wurfscheibe:4
+Halfpipe:halbröhrenförmige Fahrbahn:Halbzeit-Pfiff:kurzer Tusch zur Siegehrung:Hindernis beim Springreiten:1
+Indiaca:Fährtensuchen nach Art der Indianer:Querfeldeinrennen in Indien:alter Mannschaftssport:den Eskimokanus nachgebautes Sportboot:3
+Par:Turngerät für zwei Personen:festgelegte Schlagzahl beim Golf:Fallschirm:Bodenbelag eines Sportplatzes:2
+Parcours:Hindernis-Strecke:vornehmer Sportclub:Rundlauf:Trabrennbahn:1
+Penholder:Staffelläufe:Schlägerhaltung:Fang-Hand-Schuh:Speerwerfer:2
+Tiebreak:Knöchelbruch:guter Kordball-Wurf:Ruderriemen:Zählart beim Tennis:4
+Triathlon:Dreier-Team:dreitägiges Sportfest:Dreikampf:dreieckiges Spielfeld:3
+Animosität:Empfindlichkeit:Seelenwanderung:Ermunterung:Feindseligkeit:4
+Chuzpe:Wutanfall:kleine Schmähschrift:Unverfrorenheit:Ärgernis:3
+Feature:Schicksal:Dokumentarbericht:Börsenkurs:Füllung:2
+Finesse:Endausscheidung:Bilderausstellung:kleines Musikstück:Kunstgriff:4
+Futon:Matratze:Wertmarke:Prügelstrafe:asiatischer Wirbelsturm:1
+implementieren:eindringen:einbeziehen:verpflanzen:durchführen:4
+Kamarilla:Zimmerflucht:einflussreiche Gruppe:Ungeziefer:Kartenspiel:2
+Magenta:Farbe:Gesteinsschmelze:Eisenbahnlinie:Titel hoher Würdenträger:1
+Malaise:missliche Lage:dunkler Schmuckstein:unheilbare Krankheit:Arglist:1
+Monsun:Luftströmung:Bergmassiv:Fabelwesen:japanischer Tempel:1
+Nanobereich:verbotenes Terrain:Zone kleinster Abmessung:Nacktbadestrand:extreme Vergrößerung:2
+Off:enges Büro:Dachfenster:Keller:Hintergrund:4
+Ombudsmann:böser Onkel:Lumpensammler:Bürgervertreter:buddhistischer Mönch:3
+partizipieren:Partei nehmen:aufteilen:Brüche durcheinander teilen:teilhaben:4
+Propusk:langer Hausflur:orthodoxer Geistlicher:Kniefall:Ausweis:4
+Ranking:Parkaufsicht:Floßfahrt:Rangliste:Gitter für Kletterpflanze:3
+Segment:Teilstück:Ablagerung:Drüsenabsonderung:Zentrum eines Erdbebens:1
+Tara:vereinbartes Entgelt:Verpackungsgewicht:Rennbahnbelag:Riesenaufwand:2
+Amerikaner:Cowboyhut:Wirtschaftszeitung:Feingebäck:Hochhausvariante:3
+Budapester:Herrenschuh:Krawattenmuster:Husarenuniform:Wurstgulasch:1
+Engländer:Kaschmirpulli:Klappfahrrad:Vanillepudding:Werkzeug:4
+Hannoveraner:Wolldecke:derbe Arbeitshose:Pferderasse:Messe-Fachmann:3
+Holländer:Bucheinband:Sturmmütze:Kinderfahrzeug:klarer Schnaps:3
+Kalabreser:unförmiger Mensch:Filzhut:Unglücksrabe:Tiefseefisch:2
+Kalauer:geistloser Witz:dunkle Biersorte:Heizöfchen:Fischspeise:1
+Kanadier:wasserabweisender Umhang:Sportboot:Schutzhütte:Rucksack:2
+Korinthe:Säulenschaft:alter Mädchenname:Chorsängerin:Rosine:4
+Landauer:Überschwemmungswiese:Überlandfahrt:Kutschenwagen:großer Regenschirm:3
+Leonberger:Hunderasse:schweres Tunnelbaugerät:Sprung beim Eiskunstlauf:warme Jacke:1
+Lesbe:römische Sagengestalt:homosexuelle Frau:leichte Sandale:alte griechische Münze:2
+Nassauer:neugieriger Mensch:leidenschaftlicher Wassersportler:Faschingsfigur:Schnorrer:4
+Portugieser:mittelalterlicher Schiffstyp:Rebsorte:Flaschenform:Seeräuber:2
+Rheinländer:deftiger Eintopf:Schunkellied:spritziger Cocktail:Tanz:4
+Römer:Weinglas:massives Stadttor:Eisenkasserolle:hoher Geistlicher:1
+Schweizer:Bankdirektor:Großbauer:Melker:Reserveoffizier:3
+Appretur:Zulassung zum Apotheker:Ausrüstung von Textilien:Abkürzung:Hundeschule:2
+Famulatur:Gerüchteküche:Ministerium für Familienfragen:Praktikum eines Medizinstudenten:Angeberei:3
+Inventur:Inneneinrichtung:Empfindsamkeit:Erfindung:Bestandsaufnahme:4
+Kontur:Büro:Umriss:hoher Beamter:Sparstrumpf:2
+Mensur:Zweikampf:Maßstab:Mondfase:Kantine:1
+Montur:Zusammenbau:Bergsteiger-Team:Arbeitskleidung:kleines Bildschirm:3
+Nomenklatur:Nonnenkloster:Erinnerung:Ordensverleihung:Begriffsverzeichnis:4
+Partitur:Teilhabe:alter Gesellschaftstanz:Partnervermittlung:Noten eines Musikstücks:4
+Positur:Haltung:Sockel:Besitz:Forderung:1
+Prozedur:Gerichtsverfahren:Vorbild:Vorgang:Demonstration:3
+Registratur:Aktenlager:Kasse:Katalog:Vormundschaft:1
+Remedur:Käsesorte:Zurückweisung:Entlassung:Heilung:4
+Ruptur:Verdorbenheit:Riss:Trümmer:abgehackte Sprechweise:2
+Signatur:Stromzähler:Steckbrief:Dokumentenmappe:Unterschrift:4
+Statur:gesellschaftliche Stellung:Gestalt:Erstarrung:Standbild:2
+Tinktur:flüssige Lösung:Getränk:Waschmittel:Tintenersatz:1
+Tonsur:kahle Stelle auf dem Kopf:Musikwerk:Muskelspannung:Farbmischung:1
+Tortur:kurvenreiche Strecke:kunstvoll verzierter Kuchen:Quälerei:Krebstier:3
+Argusaugen:aufmerksame Augen:betörender Blick:Augenkrankheit:lebhaftes Stoffmuster:1
+Bessemerbirne:Obstschnaps:kleiner Leuchtkörper:Behälter für die Stahlgewinnung:Heimwerkgerät:3
+Draisine:exotische Frucht:Würfelspiel:nobles Restaurant:Fortbewegungsmittel:4
+Fuchsie:kleines Jagdgewehr:keifende Frau:blühende Gartenpflanze:rötlich braune Pelzstola:3
+Hiobsbotschaft:aktuelle Nachrichten:Sondermeldung:Gesandtschaft der Dritten Welt:Unglücksbotschaft:4
+lukullisch:gemütlich kuschelig:üppig und schmackhaft:komfortabel:Gewinn bringend:2
+Mozartkugel:Praline:Pistolenmunition:medizinballähnliches Gymnastikgerät:Klavierstück:1
+Pyrrhussieg:glorreicher Sieg:zu teuer erkaufter Sieg:Sieg der auf eine schmähliche Niederlage folgt:leichtsinnig verspielter Sieg:2
+Stalinorgel:Waffensystem:Hintergrundmusik kommunistischer Parteitage:tiefe Bassstimme:Ziehharmonika:1
+Stresemann:Hunderasse:Herrenanzug:TV-Kriminalkommissar:Rückenleiden:2
+Tattersall:Tollpatsch:Chaos Durcheinander:Rätselaufgabe:Reithalle:4
+Weckapparat:Gerät zum Konservieren:Aufwachhilfe:altmodische Brötchenbackmaschine:mittelalterliches Folterinstrument:1
+Agenda:Spionin:Maklerbüro:Leibwächterin:Tagesordnung:4
+akut:pingelig:sehr hoch:vordringlich:hautnah:3
+Biometrie:Landschaftsschutz:Vermessung von Lebewesen:Schriftlänger:Müllverwertung:2
+destruktiv:zerstörerisch:nicht gegliedert:findig:beunruhigend:1
+Ethnie:Sittsamkeit:Klosterhof:Kreisausschnitt:Volksstamm:4
+Euphemismus:Kreditwürdigkeit:Freiheitsliebe:radikale Ansicht:Beschönung:4
+Fluktuation:Flugfähigkeit:Schwankung:Schwimmbewegung:Untergang:2
+haptisch:unruhig:schwer von Begriff:den Tastsinn betreffend:habgierig:3
+Konvolut:Sammelmappe:Vulkanausbruch:Zuckung:Internat:1
+merkantil:tänzerisch:aufmerksam:kaufmännisch:mit zarter Stimme:3
+Offerte:Einladung:Angebot:Aufforderung:ebene Landschaft:2
+Perforation:Waschmittel:chemische Reaktion:Durchlöcherung:Dankbarkeit:3
+Pusher:Antreiber:Anstoß:Spielsüchtiger:Drogenhändler:4
+Quorum:Mindestanzahl:Rechenaufgabe:Anteil:Wahlurne:1
+solenn:vereinsamt:lautstark:feierlich:fast erwachsen:3
+Surrogat:Ersatz:Auszug:dringliche Bitte:schwirrendes Geräusch:1
+Supervision:scharfer blick:TV-Ausstrahlung:Erscheinung:Überprüfung:4
+tough:raschelnd:frech:tüchtig:leichtfüßig:3
+alaaf:eitel affig:karnevalistischer Hochruf:hoch gestimmt in Feierlaune:Ausruf des Erstaunens:2
+Bütt:Haartracht weiblicher Narren:Fastnachtmaskottchen:Küsschen:Rednerpult auf Karnevalssitzungen:4
+Estomihi:Arznei gegen den Kater:Fastnachtsonntag:Verwechselungskomödie:festliches Faschingsbüffet:2
+Funken:Wunderkerzen:Höherpunkt einer Faschingsfeier:Karnevalsgarde:eifrige Tänzer:3
+Gugel:Karneval online:mit Glöckchen besetztes Kleid:Faschingskuchen:Narrenkappe:4
+Harlekin:Narrenfigur:eleganter Tanzschuh:verkleidetes Kind:Mauerblümchen:1
+Hemdglonker:Ratsche Narrenschelle:bunte Verzierung an der Hemdbrust:traditionelle alemannische Verkleidung:Nackedei:3
+Karbatsche:Peitsche:Pauke:Teilnehmerin an der Weiberfastnacht:Paradewagen:1
+Konfetti:Faschingskrapfen:Papierschnipsel:kräftige Mahlzeit:Spielschulden:2
+Larve:Karnevalkostüm für Mädchen:Maske:alte Närrin:leerer Geldbeutel:2
+Morgenstreich:Fastnachtsauftrag:Absacker:Zahlungsfrist:Lausbubenscherz:1
+Mummenschanz:warmer Überzieher:Mutprobe:Geistertanz:Maskerade:4
+Sambaschule:Singkurse für Fastnachtslieder:Karnevalsverein:Faschingsclub für Kinder:Tanzkreis:2
+Saturnalien:altrömisches Fest:Faschingssamstag:Hexensabbat:karnevalistische Schwanke:1
+Abzocke:räuberische Erpressung:Geldschneiderei:Bettelbrief:Bestechung:2
+Alcopop:Richtung der Popmusik:Promilletest:ausgelassene Fete:Mixgetränk:4
+Chai-Tea:leichter Imbiss:Teespezialität:fernöstliche Zeremonie:Heiltrank:2
+Cross-over:Zebrastreifen:Schifferknoten:Stilmischung:Potpourri:3
+Daytrader:Börsenspekulant:Müßiggänger:Schichtarbeiter:Träumer:1
+Deadline:Todesstreifen:geerdete Leitung:letzter Termin:Hochwassermarke:3
+einstielen:in der Wege leiten:zu Ende führen:überprüfen:abblocken:1
+flippig:schlagfertig:elegant:leicht verrückt:steif förmlich:3
+Gelbsperre:Ampelphase:Farbfilter:Leberkrankheit:Spielverbot:4
+Jo-Jo-Effekt:Bühnengang:Beleuchtungstrick:Seekrankheit:Schaukelgewicht:4
+Kita:Kopfbedeckung:Tragkorb:Kindertagesstätte:Kirchentag:3
+kultig:religiös bedingt:modern und in:altgewohnt:feierlich:2
+Luftnummer:Kopfballtor:Freudensprung:Seifenblase:leeres Gerede:4
+Migrant:Abwanderer:Wahrsager:Messinstrument:Zapfstelle:1
+pampern:sich aufplustern:kritisieren:bei Laune halten:bevormunden:3
+Ranger:Landschaftspfleger:Eisenbahner:Treckerfahrer:Schlägertyp:1
+Sprayer:Kammerjäger:Graffitimaler:Duschkopf:Springbrunnen:2

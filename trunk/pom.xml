@@ -80,69 +80,69 @@
   			<version>2.0.0-SNAPSHOT</version>
   		</dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.core-asl</artifactId>
+            <groupId>dkpro.similarity</groupId>
+            <artifactId>dkpro.similarity.algorithms.core-asl</artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</artifactId>
+            <groupId>dkpro.similarity</groupId>
+            <artifactId>dkpro.similarity.algorithms.lexical-asl</artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lsr-asl</artifactId>
+            <groupId>dkpro.similarity</groupId>
+            <artifactId>dkpro.similarity.algorithms.lsr-asl</artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.sound-asl</artifactId>
+            <groupId>dkpro.similarity</groupId>
+            <artifactId>dkpro.similarity.algorithms.sound-asl</artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.structure-asl</artifactId>
+            <groupId>dkpro.similarity</groupId>
+            <artifactId>dkpro.similarity.algorithms.structure-asl</artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.style-asl</artifactId>
+            <groupId>dkpro.similarity</groupId>
+            <artifactId>dkpro.similarity.algorithms.style-asl</artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</artifactId>
+            <groupId>dkpro.similarity</groupId>
+            <artifactId>dkpro.similarity.algorithms.vsm-asl</artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.algorithms.wikipedia-asl</artifactId>
+            <groupId>dkpro.similarity</groupId>
+            <artifactId>dkpro.similarity.algorithms.wikipedia-asl</artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.dkpro.api-asl</artifactId>
+            <groupId>dkpro.similarity</groupId>
+            <artifactId>dkpro.similarity.dkpro.api-asl</artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.dkpro.core-asl</artifactId>
+            <groupId>dkpro.similarity</groupId>
+            <artifactId>dkpro.similarity.uima.core-asl</artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
                 <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.dkpro.data-asl</artifactId>
+            <groupId>dkpro.similarity</groupId>
+            <artifactId>dkpro.similarity.dkpro.data-asl</artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
                 <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
-            <artifactId>de.tudarmstadt.ukp.similarity.dkpro.io-asl</artifactId>
+            <groupId>dkpro.similarity</groupId>
+            <artifactId>dkpro.similarity.uima.io-asl</artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.similarity.experiments</groupId>
+            <groupId>dkpro.similarity</groupId>
             <artifactId>
-                de.tudarmstadt.ukp.similarity.experiments.api-asl
+                dkpro.similarity.experiments.api-asl
             </artifactId>
             <version>2.0.0-SNAPSHOT</version>
         </dependency>
@@ -175,26 +175,22 @@
   </dependencyManagement>
   <modules>
     <module>dkpro.similarity.algorithms.api-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.core-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.lsr-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.sound-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.structure-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.style-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.algorithms.wikipedia-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.dkpro.api-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.dkpro.core-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.dkpro.data-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.dkpro.io-asl</module>
-    <module>de.tudarmstadt.ukp.similarity.dkpro.vsm-asl</module>
-    <module>
-    	de.tudarmstadt.ukp.similarity.experiments.wordpairs-asl
-    </module>
-    <module>
-    	de.tudarmstadt.ukp.similarity.experiments.wordchoice-asl
-    </module>
-    <module>de.tudarmstadt.ukp.similarity.experiments.api-asl</module>
+    <module>dkpro.similarity.algorithms.core-asl</module>
+    <module>dkpro.similarity.algorithms.lexical-asl</module>
+    <module>dkpro.similarity.algorithms.lsr-asl</module>
+    <module>dkpro.similarity.algorithms.sound-asl</module>
+    <module>dkpro.similarity.algorithms.structure-asl</module>
+    <module>dkpro.similarity.algorithms.style-asl</module>
+    <module>dkpro.similarity.algorithms.vsm-asl</module>
+    <module>dkpro.similarity.algorithms.wikipedia-asl</module>
+    <module>dkpro.similarity.dkpro.api-asl</module>
+    <module>dkpro.similarity.dkpro.core-asl</module>
+    <module>dkpro.similarity.dkpro.data-asl</module>
+    <module>dkpro.similarity.dkpro.io-asl</module>
+    <module>dkpro.similarity.dkpro.vsm-asl</module>
+    <module>dkpro.similarity.experiments.wordpairs-asl</module>
+    <module>dkpro.similarity.experiments.wordchoice-asl</module>
+    <module>dkpro.similarity.experiments.api-asl</module>
   </modules>
   <scm>
   	<url>http://code.google.com/p/dkpro-similarity-asl/source/browse/#svn/trunk</url>
