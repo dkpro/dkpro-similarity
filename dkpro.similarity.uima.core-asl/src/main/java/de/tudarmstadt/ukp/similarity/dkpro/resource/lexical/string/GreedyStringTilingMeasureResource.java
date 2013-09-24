@@ -6,8 +6,8 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.GreedyStringTiling;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
+import dkpro.similarity.algorithms.lexical.string.GreedyStringTiling;
 
 public class GreedyStringTilingMeasureResource
 	extends TextSimilarityResourceBase
