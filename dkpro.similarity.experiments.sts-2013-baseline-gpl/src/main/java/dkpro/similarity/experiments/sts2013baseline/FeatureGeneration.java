@@ -36,7 +36,6 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.CharacterNGra
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
-import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
@@ -46,6 +45,7 @@ import dkpro.similarity.experiments.sts2013baseline.util.CharacterNGramIdfValues
 import dkpro.similarity.experiments.sts2013baseline.util.StopwordFilter;
 import dkpro.similarity.experiments.sts2013baseline.util.WordIdfValuesGenerator;
 import dkpro.similarity.ml.FeatureConfig;
+import dkpro.similarity.ml.io.SimilarityScoreWriter;
 
 
 /**

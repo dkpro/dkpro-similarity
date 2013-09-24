@@ -21,7 +21,7 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
-import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
+import dkpro.similarity.ml.io.SimilarityScoreWriter;
 
 public class LinearRegressionExample
 {

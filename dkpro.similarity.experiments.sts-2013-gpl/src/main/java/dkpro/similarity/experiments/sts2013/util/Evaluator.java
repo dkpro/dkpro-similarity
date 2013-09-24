@@ -60,11 +60,11 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
-import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import dkpro.similarity.experiments.sts2013.Pipeline.Dataset;
 import dkpro.similarity.experiments.sts2013.Pipeline.EvaluationMetric;
 import dkpro.similarity.experiments.sts2013.Pipeline.Mode;
 import dkpro.similarity.experiments.sts2013.filter.LogFilter;
+import dkpro.similarity.ml.io.SimilarityScoreWriter;
 
 
 public class Evaluator

@@ -63,7 +63,6 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.style.TokenRatioResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.style.TypeTokenRatioResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.LatentSemanticAnalysisResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
-import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 //import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.CharacterNGramIdfValuesGenerator;
 //import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.WordIdfValuesGenerator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
@@ -76,6 +75,7 @@ import dkpro.similarity.experiments.rte.util.RteUtil;
 import dkpro.similarity.experiments.rte.util.StopwordFilter;
 import dkpro.similarity.experiments.rte.util.WordIdfValuesGenerator;
 import dkpro.similarity.ml.FeatureConfig;
+import dkpro.similarity.ml.io.SimilarityScoreWriter;
 
 
 /**

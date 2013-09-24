@@ -20,4 +20,4 @@
  * Components for input/output in combination with machine learning
  * algorithms.
  */
-package de.tudarmstadt.ukp.similarity.ml.io;
+package dkpro.similarity.ml.io;
