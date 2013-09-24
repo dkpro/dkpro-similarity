@@ -23,7 +23,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
-import de.tudarmstadt.ukp.similarity.algorithms.lsr.path.PathLengthComparator;
+import dkpro.similarity.algorithms.lsr.path.PathLengthComparator;
 
 public final class PathLengthRelatednessResource
 	extends LSRRelatednessResourceBase
