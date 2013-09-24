@@ -16,8 +16,8 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import de.tudarmstadt.ukp.similarity.dkpro.api.type.GoldTextSimilarityScore;
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
+import dkpro.similarity.uima.api.type.GoldTextSimilarityScore;
 
 /**
  * Reader for the dataset by Mohler and Mihalcea (2009).

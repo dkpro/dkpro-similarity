@@ -1,6 +1,6 @@
 
 /* First created by JCasGen Fri Dec 07 15:43:31 CET 2012 */
-package de.tudarmstadt.ukp.similarity.entailment.type;
+package dkpro.similarity.uima.entailment.type;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;

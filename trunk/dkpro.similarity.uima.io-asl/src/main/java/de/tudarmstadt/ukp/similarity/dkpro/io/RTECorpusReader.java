@@ -47,7 +47,7 @@ import org.xml.sax.SAXException;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.CombinationPair;
 import de.tudarmstadt.ukp.similarity.dkpro.io.util.EntailmentPair;
-import de.tudarmstadt.ukp.similarity.entailment.type.EntailmentClassificationOutcome;
+import dkpro.similarity.uima.entailment.type.EntailmentClassificationOutcome;
 
 /**
  * Reader for the Recognizing Textual Entailment (RTE) datasets

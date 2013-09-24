@@ -32,8 +32,8 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import de.tudarmstadt.ukp.similarity.dkpro.api.type.ExperimentalTextSimilarityScore;
-import de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore;
+import dkpro.similarity.uima.api.type.ExperimentalTextSimilarityScore;
+import dkpro.similarity.uima.api.type.TextSimilarityScore;
 
 /**
  * Writer which outputs text similarity scores along with their goldstandard

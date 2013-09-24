@@ -20,4 +20,4 @@
  * Contains DKPro components which are fundamental for all text similarity
  * computations, e.g. data types. 
  */
-package de.tudarmstadt.ukp.similarity;
+package dkpro.similarity.uima;
