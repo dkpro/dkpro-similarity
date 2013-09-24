@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.style;
+package dkpro.similarity.algorithms.style;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createAggregateDescription;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createPrimitiveDescription;
@@ -31,6 +31,7 @@ import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import dkpro.similarity.algorithms.api.JCasTextSimilarityMeasure;
+import dkpro.similarity.algorithms.style.TypeTokenRatioComparator;
 
 public class TypeTokenRatioComparatorTest
 {

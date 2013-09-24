@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.algorithms.style;
+package dkpro.similarity.algorithms.style;
 
 import java.util.ArrayList;
 import java.util.HashSet;

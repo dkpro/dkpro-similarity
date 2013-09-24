@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.algorithms.style;
+package dkpro.similarity.algorithms.style;
 
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;

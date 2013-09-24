@@ -5,8 +5,8 @@ import java.util.Map;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
-import de.tudarmstadt.ukp.similarity.algorithms.structure.TokenPairDistanceMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
+import dkpro.similarity.algorithms.structure.TokenPairDistanceMeasure;
 
 
 public class TokenPairDistanceResource
