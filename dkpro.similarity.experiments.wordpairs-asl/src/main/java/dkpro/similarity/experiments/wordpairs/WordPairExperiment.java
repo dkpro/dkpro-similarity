@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.wordpairs;
+package dkpro.similarity.experiments.wordpairs;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
@@ -29,8 +29,8 @@ import de.tudarmstadt.ukp.dkpro.core.api.io.ResourceCollectionReaderBase;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.JiangConrathRelatednessResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.LSRRelatednessResourceBase;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.LinRelatednessResource;
-import de.tudarmstadt.ukp.similarity.experiments.wordpairs.io.SemanticRelatednessResultWriter;
-import de.tudarmstadt.ukp.similarity.experiments.wordpairs.io.WordPairReader;
+import dkpro.similarity.experiments.wordpairs.io.SemanticRelatednessResultWriter;
+import dkpro.similarity.experiments.wordpairs.io.WordPairReader;
 
 public class WordPairExperiment
 {

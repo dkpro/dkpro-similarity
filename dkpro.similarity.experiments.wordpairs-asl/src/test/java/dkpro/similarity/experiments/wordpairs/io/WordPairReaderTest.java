@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.experiments.wordpairs.io;
+package dkpro.similarity.experiments.wordpairs.io;
 
 import static org.junit.Assert.assertEquals;
 
@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.core.api.io.ResourceCollectionReaderBase;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
+import dkpro.similarity.experiments.wordpairs.io.WordPairReader;
 import dkpro.similarity.type.SemRelWordPair;
 
 public class WordPairReaderTest
