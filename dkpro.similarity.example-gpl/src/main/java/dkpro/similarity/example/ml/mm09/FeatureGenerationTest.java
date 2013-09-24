@@ -19,16 +19,9 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.StopwordNGramContainmentMeasureResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.style.FunctionWordFrequenciesMeasureResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
 import dkpro.similarity.algorithms.lexical.string.JaroSecondStringComparator;
 import dkpro.similarity.algorithms.lexical.string.JaroWinklerSecondStringComparator;
 import dkpro.similarity.algorithms.lexical.string.LevenshteinComparator;
@@ -38,6 +31,13 @@ import dkpro.similarity.algorithms.lexical.string.LongestCommonSubstringComparat
 import dkpro.similarity.algorithms.lexical.string.MongeElkanSecondStringComparator;
 import dkpro.similarity.ml.FeatureConfig;
 import dkpro.similarity.ml.io.SimilarityScoreWriter;
+import dkpro.similarity.uima.annotator.SimilarityScorer;
+import dkpro.similarity.uima.resource.SimpleTextSimilarityResource;
+import dkpro.similarity.uima.resource.lexical.ngrams.WordNGramContainmentResource;
+import dkpro.similarity.uima.resource.lexical.ngrams.WordNGramJaccardResource;
+import dkpro.similarity.uima.resource.structure.StopwordNGramContainmentMeasureResource;
+import dkpro.similarity.uima.resource.style.FunctionWordFrequenciesMeasureResource;
+import dkpro.similarity.uima.resource.vsm.VectorIndexSourceRelatednessResource;
 
 
 public class FeatureGenerationTest

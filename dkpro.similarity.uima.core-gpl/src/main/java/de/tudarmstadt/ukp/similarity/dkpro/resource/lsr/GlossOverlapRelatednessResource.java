@@ -25,6 +25,7 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
 import dkpro.similarity.algorithms.lsr.gloss.GlossOverlapComparator;
+import dkpro.similarity.uima.resource.lsr.LSRRelatednessResourceBase;
 
 public final class GlossOverlapRelatednessResource
 	extends LSRRelatednessResourceBase

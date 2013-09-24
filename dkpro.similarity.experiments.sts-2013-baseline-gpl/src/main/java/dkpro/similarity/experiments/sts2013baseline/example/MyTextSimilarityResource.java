@@ -16,7 +16,7 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
-import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
+import dkpro.similarity.uima.resource.TextSimilarityResourceBase;
 
 
 public class MyTextSimilarityResource

@@ -7,9 +7,9 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
-import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
 import dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure;
 import dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier;
+import dkpro.similarity.uima.resource.JCasTextSimilarityResourceBase;
 
 
 public class ClassifierResource

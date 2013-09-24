@@ -16,15 +16,15 @@ import org.apache.uima.fit.factory.AggregateBuilder;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.PlainTextCombinationReader;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleJCasTextSimilarityResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 //import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
 import dkpro.similarity.algorithms.style.TypeTokenRatioComparator;
+import dkpro.similarity.uima.annotator.SimilarityScorer;
+import dkpro.similarity.uima.resource.SimpleJCasTextSimilarityResource;
+import dkpro.similarity.uima.resource.SimpleTextSimilarityResource;
+import dkpro.similarity.uima.resource.lexical.ngrams.WordNGramContainmentResource;
 
 
 public class WithDKPro

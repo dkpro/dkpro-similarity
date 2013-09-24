@@ -16,12 +16,12 @@ import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
 import dkpro.similarity.ml.io.SimilarityScoreWriter;
+import dkpro.similarity.uima.annotator.SimilarityScorer;
 
 public class LinearRegressionExample
 {

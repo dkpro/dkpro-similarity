@@ -27,15 +27,9 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.CharacterNGramResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.string.GreedyStringTilingMeasureResource;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
@@ -46,6 +40,12 @@ import dkpro.similarity.experiments.sts2013baseline.util.StopwordFilter;
 import dkpro.similarity.experiments.sts2013baseline.util.WordIdfValuesGenerator;
 import dkpro.similarity.ml.FeatureConfig;
 import dkpro.similarity.ml.io.SimilarityScoreWriter;
+import dkpro.similarity.uima.annotator.SimilarityScorer;
+import dkpro.similarity.uima.resource.SimpleTextSimilarityResource;
+import dkpro.similarity.uima.resource.lexical.ngrams.CharacterNGramResource;
+import dkpro.similarity.uima.resource.lexical.ngrams.WordNGramContainmentResource;
+import dkpro.similarity.uima.resource.lexical.ngrams.WordNGramJaccardResource;
+import dkpro.similarity.uima.resource.lexical.string.GreedyStringTilingMeasureResource;
 
 
 /**
