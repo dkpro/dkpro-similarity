@@ -1,7 +1,7 @@
 
 
 /* First created by JCasGen Fri Sep 21 09:55:49 CEST 2012 */
-package de.tudarmstadt.ukp.similarity.type;
+package dkpro.similarity.type;
 
 import org.apache.uima.jcas.JCas; 
 import org.apache.uima.jcas.JCasRegistry;
