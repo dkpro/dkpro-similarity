@@ -15,23 +15,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.sound;
+package dkpro.similarity.algorithms.sound;
 
-import org.apache.commons.codec.language.DoubleMetaphone;
+import static org.junit.Assert.assertEquals;
 
-/**
- * For English words.
- * Under most conditions it should be the than {@link MetaphoneComparator} or {@link SoundexComparator}.
- *  
- * @author zesch
- *
- */
-public class DoubleMetaphoneComparator
-    extends SoundComparatorBase
+import org.junit.Test;
+
+import dkpro.similarity.algorithms.api.TermSimilarityMeasure;
+import dkpro.similarity.algorithms.sound.MetaphoneComparator;
+
+public class MetaphoneComparatorTest
 {
+    private static final double epsilon = 0.0001;
 
-    public DoubleMetaphoneComparator()
+    @Test
+    public void metaphoneTest()
+        throws Exception
     {
-        encoder = new DoubleMetaphone();
+        TermSimilarityMeasure comparator = new MetaphoneComparator();
+
+        assertEquals(1.0, comparator.getSimilarity("knight", "knight"), epsilon);
+        assertEquals(1.0, comparator.getSimilarity("knight", "night"), epsilon);
+        assertEquals(0.5, comparator.getSimilarity("goal", "jail"), epsilon);
+        assertEquals(0.0, comparator.getSimilarity("best", "car"), epsilon);
     }
 }

@@ -15,23 +15,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.sound;
+package dkpro.similarity.algorithms.sound;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import dkpro.similarity.algorithms.api.TermSimilarityMeasure;
+import dkpro.similarity.algorithms.sound.DoubleMetaphoneComparator;
 
-public class MetaphoneComparatorTest
+public class DoubleMetaphoneComparatorTest
 {
     private static final double epsilon = 0.0001;
 
     @Test
-    public void metaphoneTest()
+    public void doubleMetaphoneTest()
         throws Exception
     {
-        TermSimilarityMeasure comparator = new MetaphoneComparator();
+        TermSimilarityMeasure comparator = new DoubleMetaphoneComparator();
 
         assertEquals(1.0, comparator.getSimilarity("knight", "knight"), epsilon);
         assertEquals(1.0, comparator.getSimilarity("knight", "night"), epsilon);

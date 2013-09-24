@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2012
+ * Copyright 2013
  * Ubiquitous Knowledge Processing (UKP) Lab
  * Technische Universität Darmstadt
  *
@@ -14,25 +14,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.sound;
-
-import org.apache.commons.codec.language.Metaphone;
+ ******************************************************************************/
 
 /**
- * For English words.
- * Under most conditions {@link DoubleMetaphoneComparator} should be better.
- *  
- * @author zesch
- *
+ * Contains text similarity measures that are based on phonetic representations.
  */
-public class MetaphoneComparator
-    extends SoundComparatorBase
-{
-
-    public MetaphoneComparator()
-    {
-        encoder = new Metaphone();
-    }
-    
-}
+package dkpro.similarity.algorithms.sound;

@@ -15,25 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.sound.dict;
+package dkpro.similarity.algorithms.sound;
+
+import org.apache.commons.codec.language.DoubleMetaphone;
 
 /**
- * @author Tristan Miller <miller@ukp.informatik.tu-darmstadt.de>
+ * For English words.
+ * Under most conditions it should be the than {@link MetaphoneComparator} or {@link SoundexComparator}.
+ *  
+ * @author zesch
  *
  */
-public class PronouncingDictionaryException
-	extends Exception
+public class DoubleMetaphoneComparator
+    extends SoundComparatorBase
 {
-	public PronouncingDictionaryException(Exception e)
-	{
-		super(e);
-	}
 
-	public PronouncingDictionaryException(String message)
-	{
-		super(message);
-	}
-
-	private static final long serialVersionUID = 1L;
-
+    public DoubleMetaphoneComparator()
+    {
+        encoder = new DoubleMetaphone();
+    }
 }
