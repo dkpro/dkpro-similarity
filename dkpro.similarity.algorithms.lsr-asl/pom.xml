@@ -34,23 +34,23 @@
   		<scope>test</scope>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.api-asl</artifactId>
+  		<groupId>dkpro.similarity</groupId>
+  		<artifactId>dkpro.similarity.algorithms.api-asl</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.wikipedia-asl</artifactId>
+  		<groupId>dkpro.similarity</groupId>
+  		<artifactId>dkpro.similarity.algorithms.wikipedia-asl</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.algorithms.core-asl
+  			dkpro.similarity.algorithms.core-asl
   		</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.algorithms.lexical-asl
+  			dkpro.similarity.algorithms.lexical-asl
   		</artifactId>
   	</dependency>
   	<dependency>

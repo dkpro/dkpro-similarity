@@ -19,15 +19,15 @@
         </artifactId>
     </dependency>
     <dependency>
-        <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+        <groupId>dkpro.similarity</groupId>
         <artifactId>
-            de.tudarmstadt.ukp.similarity.algorithms.api-asl
+            dkpro.similarity.algorithms.api-asl
         </artifactId>
     </dependency>
     <dependency>
-        <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+        <groupId>dkpro.similarity</groupId>
         <artifactId>
-            de.tudarmstadt.ukp.similarity.dkpro.core-asl
+            dkpro.similarity.uima.core-asl
         </artifactId>
     </dependency>
     <dependency>
@@ -38,9 +38,9 @@
         <version>0.8.0</version>
     </dependency>
     <dependency>
-    	<groupId>de.tudarmstadt.ukp.similarity.experiments</groupId>
+    	<groupId>dkpro.similarity</groupId>
     	<artifactId>
-    		de.tudarmstadt.ukp.similarity.experiments.api-asl
+    		dkpro.similarity.experiments.api-asl
     	</artifactId>
     </dependency>
     <dependency>

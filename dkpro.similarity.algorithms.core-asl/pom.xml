@@ -25,8 +25,8 @@
   <artifactId>dkpro.similarity.algorithms.core-asl</artifactId>
   <dependencies>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.api-asl</artifactId>
+  		<groupId>dkpro.similarity</groupId>
+  		<artifactId>dkpro.similarity.algorithms.api-asl</artifactId>
   	</dependency>
   </dependencies>
 </project>
