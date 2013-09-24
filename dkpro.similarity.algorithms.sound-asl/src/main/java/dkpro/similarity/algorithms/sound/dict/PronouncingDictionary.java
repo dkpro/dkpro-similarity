@@ -18,7 +18,7 @@
 /**
  *
  */
-package de.tudarmstadt.ukp.similarity.algorithms.sound.dict;
+package dkpro.similarity.algorithms.sound.dict;
 
 import java.util.List;
 

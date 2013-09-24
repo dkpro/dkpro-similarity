@@ -15,37 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.sound.dict;
+package dkpro.similarity.algorithms.sound;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
-import java.io.IOException;
-import java.util.List;
-
-import org.junit.Test;
+import org.apache.commons.codec.language.Soundex;
 
 /**
- *
- * @author Tristan Miller <miller@ukp.informatik.tu-darmstadt.de>
+ * For English words.
+ * Under most conditions performance of {@link MetaphoneComparator} or {@link DoubleMetaphoneComparator} should be better.
+ *  
+ * @author zesch
  *
  */
-public class CMUdictTest
+public class SoundexComparator
+    extends SoundComparatorBase
 {
 
-	@Test
-	public void cmuTest() throws IOException, PronouncingDictionaryException
-	{
-		CMUdict dict = new CMUdict();
-		List<String> result;
-
-		result = dict.getPronunciations("ab");
-		assertEquals(2, result.size());
-		assertEquals("AE1 B", result.get(0));
-		assertEquals("EY1 B IY1", result.get(1));
-
-		result = dict.getPronunciations("foobarbaz");
-		assertNull(result);
-}
-
+    public SoundexComparator()
+    {
+        encoder = new Soundex();
+    }
 }

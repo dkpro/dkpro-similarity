@@ -15,36 +15,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.sound.dict;
+package dkpro.similarity.algorithms.sound.dict;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
+import java.io.IOException;
 import java.util.List;
 
-import org.dom4j.DocumentException;
 import org.junit.Test;
 
-public class PLSTest
+import dkpro.similarity.algorithms.sound.dict.CMUdict;
+import dkpro.similarity.algorithms.sound.dict.PronouncingDictionaryException;
+
+/**
+ *
+ * @author Tristan Miller <miller@ukp.informatik.tu-darmstadt.de>
+ *
+ */
+public class CMUdictTest
 {
 
 	@Test
-	public void testPLS() throws DocumentException, PronouncingDictionaryException
+	public void cmuTest() throws IOException, PronouncingDictionaryException
 	{
-		PLS dict = new PLS("src/test/resources/pls-sample.xml");
+		CMUdict dict = new CMUdict();
 		List<String> result;
 
-		assertEquals("ipa", dict.getAlphabetId());
-		assertEquals("de-DE", dict.getLanguage());
-		assertEquals("A sample PLS German dictionary", dict.getDictionaryId());
+		result = dict.getPronunciations("ab");
+		assertEquals(2, result.size());
+		assertEquals("AE1 B", result.get(0));
+		assertEquals("EY1 B IY1", result.get(1));
 
-		result = dict.getPronunciations("10.");
-		assertEquals(5, result.size());
-		assertEquals("t͡seːntən", result.get(4));
-
-		List<String> rauResult = dict.getPronunciations("rau");
-		List<String> rauhResult = dict.getPronunciations("rauh");
-		assertEquals(rauResult, rauhResult);
-		assertEquals(1, rauResult.size());
-	}
+		result = dict.getPronunciations("foobarbaz");
+		assertNull(result);
+}
 
 }

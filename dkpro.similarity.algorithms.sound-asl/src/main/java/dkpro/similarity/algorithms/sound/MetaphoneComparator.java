@@ -15,23 +15,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.sound;
+package dkpro.similarity.algorithms.sound;
 
-import org.apache.commons.codec.language.ColognePhonetic;
+import org.apache.commons.codec.language.Metaphone;
 
 /**
- * 
- * Specially targeted towards German words.
- * 
+ * For English words.
+ * Under most conditions {@link DoubleMetaphoneComparator} should be better.
+ *  
  * @author zesch
  *
  */
-public class ColognePhoneticComparator
+public class MetaphoneComparator
     extends SoundComparatorBase
 {
 
-    public ColognePhoneticComparator()
+    public MetaphoneComparator()
     {
-        encoder = new ColognePhonetic();
+        encoder = new Metaphone();
     }
+    
 }

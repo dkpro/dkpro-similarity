@@ -15,31 +15,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.sound;
+package dkpro.similarity.algorithms.sound;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import dkpro.similarity.algorithms.api.TermSimilarityMeasure;
+import dkpro.similarity.algorithms.sound.ColognePhoneticComparator;
 
-public class SoundexComparatorTest
+public class ColognePhoneticComparatorTest
 {
     private static final double epsilon = 0.0001;
 
     @Test
-    public void soundexTest()
+    public void colognePhoneticTest()
         throws Exception
     {
+        TermSimilarityMeasure comparator = new ColognePhoneticComparator();
 
-        TermSimilarityMeasure comparator = new SoundexComparator();
-
-        assertEquals(1.0,  comparator.getSimilarity("knigt", "knight"), epsilon);
-        assertEquals(0.0,  comparator.getSimilarity("knight", "night"), epsilon);
-        assertEquals(0.75, comparator.getSimilarity("goal", "jail"), epsilon);
-        assertEquals(1.0,  comparator.getSimilarity("Smith", "Smythe"), epsilon);
-        assertEquals(1.0,  comparator.getSimilarity("phone", "pony"), epsilon);
-        assertEquals(1.0,  comparator.getSimilarity("George", "garage"), epsilon);
-        assertEquals(1.0,  comparator.getSimilarity("benign", "benignant"), epsilon);
+        assertEquals(1.0, comparator.getSimilarity("Auto", "Auto"), epsilon);
+        assertEquals(1.0, comparator.getSimilarity("Mann", "man"), epsilon);
+        assertEquals(1.0, comparator.getSimilarity("Ende", "Ente"), epsilon);
+        assertEquals(0.5, comparator.getSimilarity("Zug",  "Buch"), epsilon);
+        assertEquals(0.0, comparator.getSimilarity("Auto", "Zug"), epsilon);
     }
 }

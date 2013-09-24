@@ -15,23 +15,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.sound;
-
-import org.apache.commons.codec.language.Soundex;
+package dkpro.similarity.algorithms.sound.dict;
 
 /**
- * For English words.
- * Under most conditions performance of {@link MetaphoneComparator} or {@link DoubleMetaphoneComparator} should be better.
- *  
- * @author zesch
+ * @author Tristan Miller <miller@ukp.informatik.tu-darmstadt.de>
  *
  */
-public class SoundexComparator
-    extends SoundComparatorBase
+public class PronouncingDictionaryException
+	extends Exception
 {
+	public PronouncingDictionaryException(Exception e)
+	{
+		super(e);
+	}
 
-    public SoundexComparator()
-    {
-        encoder = new Soundex();
-    }
+	public PronouncingDictionaryException(String message)
+	{
+		super(message);
+	}
+
+	private static final long serialVersionUID = 1L;
+
 }

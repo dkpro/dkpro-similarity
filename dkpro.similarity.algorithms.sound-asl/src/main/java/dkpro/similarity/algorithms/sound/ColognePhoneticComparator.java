@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2013
+ * Copyright 2012
  * Ubiquitous Knowledge Processing (UKP) Lab
  * Technische Universität Darmstadt
  *
@@ -14,9 +14,24 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- ******************************************************************************/
+ *******************************************************************************/
+package dkpro.similarity.algorithms.sound;
+
+import org.apache.commons.codec.language.ColognePhonetic;
 
 /**
- * Contains text similarity measures that are based on phonetic representations.
+ * 
+ * Specially targeted towards German words.
+ * 
+ * @author zesch
+ *
  */
-package de.tudarmstadt.ukp.similarity.algorithms.sound;
+public class ColognePhoneticComparator
+    extends SoundComparatorBase
+{
+
+    public ColognePhoneticComparator()
+    {
+        encoder = new ColognePhonetic();
+    }
+}
