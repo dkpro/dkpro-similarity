@@ -17,7 +17,7 @@
  *******************************************************************************/
 
 /* First created by JCasGen Wed May 23 16:07:44 CEST 2012 */
-package de.tudarmstadt.ukp.similarity.dkpro.api.type;
+package dkpro.similarity.uima.api.type;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -26,67 +26,42 @@ import org.apache.uima.cas.impl.FSGenerator;
 import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
-import org.apache.uima.cas.impl.FeatureImpl;
-import org.apache.uima.cas.Feature;
-import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
  * Updated by JCasGen Thu May 31 16:23:19 CEST 2012
  * @generated */
-public class TextSimilarityScore_Type extends Annotation_Type {
+public class ExperimentalTextSimilarityScore_Type extends TextSimilarityScore_Type {
   /** @generated */
   protected FSGenerator getFSGenerator() {return fsGenerator;}
   /** @generated */
   private final FSGenerator fsGenerator = 
     new FSGenerator() {
       public FeatureStructure createFS(int addr, CASImpl cas) {
-  			 if (TextSimilarityScore_Type.this.useExistingInstance) {
+  			 if (ExperimentalTextSimilarityScore_Type.this.useExistingInstance) {
   			   // Return eq fs instance if already created
-  		     FeatureStructure fs = TextSimilarityScore_Type.this.jcas.getJfsFromCaddr(addr);
+  		     FeatureStructure fs = ExperimentalTextSimilarityScore_Type.this.jcas.getJfsFromCaddr(addr);
   		     if (null == fs) {
-  		       fs = new TextSimilarityScore(addr, TextSimilarityScore_Type.this);
-  			   TextSimilarityScore_Type.this.jcas.putJfsFromCaddr(addr, fs);
+  		       fs = new ExperimentalTextSimilarityScore(addr, ExperimentalTextSimilarityScore_Type.this);
+  			   ExperimentalTextSimilarityScore_Type.this.jcas.putJfsFromCaddr(addr, fs);
   			   return fs;
   		     }
   		     return fs;
-        } else return new TextSimilarityScore(addr, TextSimilarityScore_Type.this);
+        } else return new ExperimentalTextSimilarityScore(addr, ExperimentalTextSimilarityScore_Type.this);
   	  }
     };
   /** @generated */
-  public final static int typeIndexID = TextSimilarityScore.typeIndexID;
+  public final static int typeIndexID = ExperimentalTextSimilarityScore.typeIndexID;
   /** @generated 
      @modifiable */
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore");
- 
-  /** @generated */
-  final Feature casFeat_Score;
-  /** @generated */
-  final int     casFeatCode_Score;
-  /** @generated */ 
-  public double getScore(int addr) {
-        if (featOkTst && casFeat_Score == null)
-      jcas.throwFeatMissing("Score", "de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore");
-    return ll_cas.ll_getDoubleValue(addr, casFeatCode_Score);
-  }
-  /** @generated */    
-  public void setScore(int addr, double v) {
-        if (featOkTst && casFeat_Score == null)
-      jcas.throwFeatMissing("Score", "de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore");
-    ll_cas.ll_setDoubleValue(addr, casFeatCode_Score, v);}
-    
-  
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("de.tudarmstadt.ukp.similarity.dkpro.api.type.ExperimentalTextSimilarityScore");
 
 
 
   /** initialize variables to correspond with Cas Type and Features
 	* @generated */
-  public TextSimilarityScore_Type(JCas jcas, Type casType) {
+  public ExperimentalTextSimilarityScore_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
-
- 
-    casFeat_Score = jcas.getRequiredFeatureDE(casType, "Score", "uima.cas.Double", featOkTst);
-    casFeatCode_Score  = (null == casFeat_Score) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Score).getCode();
 
   }
 }

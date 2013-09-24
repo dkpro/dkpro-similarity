@@ -17,7 +17,7 @@
  *******************************************************************************/
 
 /* First created by JCasGen Wed May 23 16:07:44 CEST 2012 */
-package de.tudarmstadt.ukp.similarity.dkpro.api.type;
+package dkpro.similarity.uima.api.type;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
