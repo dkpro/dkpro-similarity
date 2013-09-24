@@ -23,7 +23,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
-import de.tudarmstadt.ukp.similarity.algorithms.lsr.path.JiangConrathComparator;
+import dkpro.similarity.algorithms.lsr.path.JiangConrathComparator;
 
 public final class JiangConrathRelatednessResource
 	extends LSRRelatednessResourceBase
