@@ -8,18 +8,18 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline;
+package dkpro.similarity.experiments.sts2013baseline;
 
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.ALL;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.MSRpar;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.MSRvid;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.OnWN;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.SMTeuroparl;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset.SMTnews;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric.PearsonAll;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric.PearsonMean;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode.TEST;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode.TRAIN;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.Dataset.ALL;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.Dataset.MSRpar;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.Dataset.MSRvid;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.Dataset.OnWN;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.Dataset.SMTeuroparl;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.Dataset.SMTnews;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric.PearsonAll;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric.PearsonMean;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.Mode.TEST;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.Mode.TRAIN;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -28,8 +28,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 
-import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util.Evaluator;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util.Features2Arff;
+import dkpro.similarity.experiments.sts2013baseline.util.Evaluator;
+import dkpro.similarity.experiments.sts2013baseline.util.Features2Arff;
 
 
 /**

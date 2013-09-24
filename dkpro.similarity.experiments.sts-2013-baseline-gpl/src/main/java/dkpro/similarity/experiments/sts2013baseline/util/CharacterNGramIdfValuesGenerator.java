@@ -8,10 +8,10 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.util;
+package dkpro.similarity.experiments.sts2013baseline.util;
 
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.DATASET_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.UTILS_DIR;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.DATASET_DIR;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.UTILS_DIR;
 
 import java.io.File;
 import java.net.URL;
@@ -26,9 +26,9 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013baseline.Pipeline.Mode;
 import dkpro.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
+import dkpro.similarity.experiments.sts2013baseline.Pipeline.Dataset;
+import dkpro.similarity.experiments.sts2013baseline.Pipeline.Mode;
 
 
 public class CharacterNGramIdfValuesGenerator

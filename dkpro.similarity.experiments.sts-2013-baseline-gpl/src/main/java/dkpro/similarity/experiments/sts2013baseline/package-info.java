@@ -15,4 +15,4 @@
  * on Lexical and Computational Semantics. It comprises roughly the setup which
  * performed best in the STS pilot task in 2012.
  */
-package de.tudarmstadt.ukp.similarity.experiments.sts2013baseline;
+package dkpro.similarity.experiments.sts2013baseline;
