@@ -44,13 +44,13 @@ import weka.filters.Filter;
 import weka.filters.supervised.attribute.AddClassification;
 import weka.filters.unsupervised.attribute.AddID;
 import weka.filters.unsupervised.attribute.Remove;
-import de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Mode;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.filter.LogFilter;
+import dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure;
+import dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier;
 
 
 public class Evaluator

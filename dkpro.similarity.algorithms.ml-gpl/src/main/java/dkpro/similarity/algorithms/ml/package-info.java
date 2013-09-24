@@ -19,4 +19,4 @@
 /**
  * Contains text similarity measures that are based on machine learning.
  */
-package de.tudarmstadt.ukp.similarity.algorithms.ml;
+package dkpro.similarity.algorithms.ml;

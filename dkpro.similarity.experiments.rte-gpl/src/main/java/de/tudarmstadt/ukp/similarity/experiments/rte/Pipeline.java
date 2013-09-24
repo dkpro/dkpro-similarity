@@ -10,11 +10,11 @@
  ******************************************************************************/
 package de.tudarmstadt.ukp.similarity.experiments.rte;
 
-import static de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier.LOGISTIC;
-import static de.tudarmstadt.ukp.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier.SMO;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.Accuracy;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.AveragePrecision;
 import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.CWS;
+import static dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier.LOGISTIC;
+import static dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier.SMO;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
