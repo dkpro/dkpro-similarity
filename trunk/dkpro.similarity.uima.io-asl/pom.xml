@@ -31,8 +31,8 @@
   		<scope>compile</scope>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
-  		<artifactId>de.tudarmstadt.ukp.similarity.dkpro.api-asl</artifactId>
+  		<groupId>dkpro.similarity</groupId>
+  		<artifactId>dkpro.similarity.uima.api-asl</artifactId>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>

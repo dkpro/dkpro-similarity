@@ -25,34 +25,34 @@
   <artifactId>dkpro.similarity.uima.core-asl</artifactId>
   <dependencies>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
-  		<artifactId>de.tudarmstadt.ukp.similarity.dkpro.api-asl</artifactId>
+  		<groupId>dkpro.similarity</groupId>
+  		<artifactId>dkpro.similarity.uima.api-asl</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.api-asl</artifactId>
+  		<groupId>dkpro.similarity</groupId>
+  		<artifactId>dkpro.similarity.algorithms.api-asl</artifactId>
   	</dependency>
     <dependency>
-        <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-        <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</artifactId>
+        <groupId>dkpro.similarity</groupId>
+        <artifactId>dkpro.similarity.algorithms.lexical-asl</artifactId>
     </dependency>
     <dependency>
-        <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+        <groupId>dkpro.similarity</groupId>
         <artifactId>
-            de.tudarmstadt.ukp.similarity.algorithms.lsr-asl
+            dkpro.similarity.algorithms.lsr-asl
         </artifactId>
     </dependency>
     <dependency>
-        <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-        <artifactId>de.tudarmstadt.ukp.similarity.algorithms.structure-asl</artifactId>
+        <groupId>dkpro.similarity</groupId>
+        <artifactId>dkpro.similarity.algorithms.structure-asl</artifactId>
     </dependency>
     <dependency>
-        <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-        <artifactId>de.tudarmstadt.ukp.similarity.algorithms.style-asl</artifactId>
+        <groupId>dkpro.similarity</groupId>
+        <artifactId>dkpro.similarity.algorithms.style-asl</artifactId>
     </dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</artifactId>
+  		<groupId>dkpro.similarity</groupId>
+  		<artifactId>dkpro.similarity.algorithms.vsm-asl</artifactId>
   	</dependency>
     <dependency>
         <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>

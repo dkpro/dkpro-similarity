@@ -14,9 +14,9 @@
   		</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.algorithms.vsm-asl
+  			dkpro.similarity.algorithms.vsm-asl
   		</artifactId>
   	</dependency>
   	<dependency>
