@@ -24,10 +24,10 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.Level;
 
-import de.tudarmstadt.ukp.similarity.type.SemanticRelatedness;
-import de.tudarmstadt.ukp.similarity.type.WordPair;
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
+import dkpro.similarity.type.SemanticRelatedness;
+import dkpro.similarity.type.WordPair;
 
 public class ResourceBasedAnnotator 
     extends JCasAnnotator_ImplBase

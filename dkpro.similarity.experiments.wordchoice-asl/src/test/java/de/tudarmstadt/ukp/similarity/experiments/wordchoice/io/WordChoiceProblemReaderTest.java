@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.core.api.io.ResourceCollectionReaderBase;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import de.tudarmstadt.ukp.similarity.type.WordChoiceProblem;
+import dkpro.similarity.type.WordChoiceProblem;
 
 public class WordChoiceProblemReaderTest
 {

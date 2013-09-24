@@ -31,7 +31,7 @@ import org.apache.uima.util.Level;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
-import de.tudarmstadt.ukp.similarity.type.SemRelWordPair;
+import dkpro.similarity.type.SemRelWordPair;
 
 /**
  * Reads semantic relatedness word pair datasets.

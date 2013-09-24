@@ -28,7 +28,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import de.tudarmstadt.ukp.similarity.type.WordChoiceProblem;
+import dkpro.similarity.type.WordChoiceProblem;
 
 public class WordChoiceAnnotationPairFactory {
 

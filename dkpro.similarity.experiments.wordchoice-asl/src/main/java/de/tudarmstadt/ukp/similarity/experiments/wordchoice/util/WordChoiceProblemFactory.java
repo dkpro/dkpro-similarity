@@ -27,7 +27,7 @@ import org.apache.uima.jcas.JCas;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import de.tudarmstadt.ukp.similarity.type.WordChoiceProblem;
+import dkpro.similarity.type.WordChoiceProblem;
 
 public class WordChoiceProblemFactory {
 
