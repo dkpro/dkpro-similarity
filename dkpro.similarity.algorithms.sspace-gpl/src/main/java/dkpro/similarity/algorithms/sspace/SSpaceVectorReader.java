@@ -24,11 +24,11 @@ import no.uib.cipr.matrix.sparse.SparseVector;
 
 import org.apache.commons.io.FileUtils;
 
-import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.VectorReader;
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.sspace.util.DocumentVectorBuilder;
 import dkpro.similarity.algorithms.sspace.util.LatentSemanticAnalysis;
 import dkpro.similarity.algorithms.sspace.util.VectorAdapter;
+import dkpro.similarity.algorithms.vsm.store.VectorReader;
 import edu.ucla.sspace.common.SemanticSpace;
 
 /**

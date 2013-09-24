@@ -10,10 +10,10 @@ import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
-import de.tudarmstadt.ukp.similarity.algorithms.vsm.VectorComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.CachingVectorReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
 import dkpro.similarity.algorithms.sspace.SSpaceVectorReader;
+import dkpro.similarity.algorithms.vsm.VectorComparator;
+import dkpro.similarity.algorithms.vsm.store.CachingVectorReader;
 import edu.ucla.sspace.common.SemanticSpace;
 import edu.ucla.sspace.common.SemanticSpaceIO;
 import edu.ucla.sspace.common.SemanticSpaceIO.SSpaceFormat;
