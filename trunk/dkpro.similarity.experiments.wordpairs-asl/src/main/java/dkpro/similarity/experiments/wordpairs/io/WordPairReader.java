@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.wordpairs.io;
+package dkpro.similarity.experiments.wordpairs.io;
 
 import java.io.IOException;
 
