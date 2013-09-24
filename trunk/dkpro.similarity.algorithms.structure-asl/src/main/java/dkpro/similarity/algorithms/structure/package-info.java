@@ -19,4 +19,4 @@
 /**
  * Contains text similarity measures that are based on structural comparisons.
  */
-package de.tudarmstadt.ukp.similarity.algorithms.structure;
+package dkpro.similarity.algorithms.structure;

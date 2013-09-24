@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.structure;
+package dkpro.similarity.algorithms.structure;
 
 import static org.junit.Assert.assertEquals;
 
@@ -25,6 +25,7 @@ import java.util.List;
 import org.junit.Test;
 
 import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
+import dkpro.similarity.algorithms.structure.TokenPairDistanceMeasure;
 
 
 public class TokenPairDistanceMeasureTest

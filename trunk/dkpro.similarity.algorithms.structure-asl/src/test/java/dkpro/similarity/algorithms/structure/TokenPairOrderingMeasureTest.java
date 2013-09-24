@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.structure;
+package dkpro.similarity.algorithms.structure;
 
 import static org.junit.Assert.assertEquals;
 
@@ -25,8 +25,10 @@ import java.util.List;
 import org.junit.Test;
 
 import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
+import dkpro.similarity.algorithms.structure.TokenPairDistanceMeasure;
 
-public class StopwordNGramContainmentMeasureTest
+
+public class TokenPairOrderingMeasureTest
 {
 	static final double epsilon = 0.001; 
 	
@@ -34,38 +36,44 @@ public class StopwordNGramContainmentMeasureTest
 	public void run()
 		throws Exception
 	{
+		TextSimilarityMeasure comparator = new TokenPairDistanceMeasure();
+		
+		// Reference document
 		List<String> doc1 = new ArrayList<String>();
+		doc1.add("one");
+		doc1.add("two");
+		doc1.add("three");
+		doc1.add("four");
+		
+		// Test 1
 		List<String> doc2 = new ArrayList<String>();
+		doc2.add("two");
+		doc2.add("one");
 		
-		doc1.add("the");
-		doc1.add("quick");
-		doc1.add("will");
-		doc1.add("fox");
-		doc1.add("be");
-		doc1.add("over");
-		doc1.add("i");
-		doc1.add("lazy");
-		doc1.add("dog");
+		assertEquals(0.0, comparator.getSimilarity(doc1, doc2), epsilon);
 		
-		doc2.add("the");
-		doc2.add("quick");
-		doc2.add("brown");
-		doc2.add("will");
-		doc2.add("jumps");
-		doc2.add("be");
-		doc2.add("the");
-		doc2.add("i");
-		doc2.add("this");
+		// Test 2
+		doc2 = new ArrayList<String>();
+		doc2.add("one");
+		doc2.add("two");
 		
-		// [the, will, be]
-		// [will, be, i]
+		assertEquals(0.0, comparator.getSimilarity(doc1, doc2), epsilon);
 		
-		// [the, will, be]
-		// [will, be, the]
-		// [be, the, i]
-		// [the, i, this]
+		// Test 3
+		doc2 = new ArrayList<String>();
+		doc2.add("one");
+		doc2.add("three");
+		doc2.add("two");
+
+		assertEquals(0.928, comparator.getSimilarity(doc1, doc2), epsilon);
 		
-		TextSimilarityMeasure comparator = new StopwordNGramContainmentMeasure(3, "classpath:/stopwords/stopwords-bnc-stamatatos.txt");
-		assertEquals(0.25, comparator.getSimilarity(doc1, doc2), epsilon);
+		// Test 4
+		doc2 = new ArrayList<String>();
+		doc2.add("one");
+		doc2.add("three");
+		doc2.add("two");
+		doc2.add("four");
+		
+		assertEquals(0.838, comparator.getSimilarity(doc1, doc2), epsilon);
 	}
 }
