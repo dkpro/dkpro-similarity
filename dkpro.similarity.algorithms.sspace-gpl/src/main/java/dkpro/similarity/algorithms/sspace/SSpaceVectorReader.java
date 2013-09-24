@@ -8,7 +8,7 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.sspace;
+package dkpro.similarity.algorithms.sspace;
 
 import static java.util.Arrays.asList;
 
@@ -24,11 +24,11 @@ import no.uib.cipr.matrix.sparse.SparseVector;
 
 import org.apache.commons.io.FileUtils;
 
-import de.tudarmstadt.ukp.similarity.algorithms.sspace.util.DocumentVectorBuilder;
-import de.tudarmstadt.ukp.similarity.algorithms.sspace.util.LatentSemanticAnalysis;
-import de.tudarmstadt.ukp.similarity.algorithms.sspace.util.VectorAdapter;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.VectorReader;
 import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.sspace.util.DocumentVectorBuilder;
+import dkpro.similarity.algorithms.sspace.util.LatentSemanticAnalysis;
+import dkpro.similarity.algorithms.sspace.util.VectorAdapter;
 import edu.ucla.sspace.common.SemanticSpace;
 
 /**

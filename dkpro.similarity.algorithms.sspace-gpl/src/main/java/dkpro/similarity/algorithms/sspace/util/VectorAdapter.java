@@ -8,7 +8,7 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.sspace.util;
+package dkpro.similarity.algorithms.sspace.util;
 
 import no.uib.cipr.matrix.Vector;
 import edu.ucla.sspace.vector.DoubleVector;

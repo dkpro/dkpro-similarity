@@ -14,4 +14,4 @@
  * <a href="http://aclweb.org/anthology/P/P10/P10-4006.pdf">(David Jurgens
  * and Keith Stevens, 2010)</a>.
  */
-package de.tudarmstadt.ukp.similarity.algorithms.sspace;
+package dkpro.similarity.algorithms.sspace;

@@ -19,7 +19,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.tudarmstadt.ukp.similarity.algorithms.sspace.util;
+package dkpro.similarity.algorithms.sspace.util;
 
 import java.util.Collection;
 import java.util.HashMap;
