@@ -26,9 +26,9 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import dkpro.similarity.experiments.rte.Pipeline.Dataset;
 import dkpro.similarity.uima.entailment.type.EntailmentClassificationOutcome;
+import dkpro.similarity.uima.io.CombinationReader;
 
 
 public class GoldstandardWriter

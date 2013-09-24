@@ -20,9 +20,9 @@ import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
-import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
-import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
 import dkpro.similarity.experiments.rte.Pipeline.Dataset;
+import dkpro.similarity.uima.io.RTECorpusReader;
+import dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
 
 
 public class GoldstandardCreator

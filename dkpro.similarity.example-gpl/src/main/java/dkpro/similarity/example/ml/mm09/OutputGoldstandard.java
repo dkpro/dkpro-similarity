@@ -7,8 +7,8 @@ import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
-import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
-import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
+import dkpro.similarity.uima.io.ShortAnswerGradingReader;
+import dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
 
 public class OutputGoldstandard
 {

@@ -26,7 +26,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
+import dkpro.similarity.uima.io.CombinationReader;
 
 public class PlainTextWriter
 	extends JCasConsumer_ImplBase
