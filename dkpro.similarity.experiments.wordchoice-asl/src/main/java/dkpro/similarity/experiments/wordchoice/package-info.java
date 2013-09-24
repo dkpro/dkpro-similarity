@@ -19,4 +19,4 @@
 /**
  * Contains word choice experiments.
  */
-package de.tudarmstadt.ukp.similarity.experiments.wordchoice;
+package dkpro.similarity.experiments.wordchoice;

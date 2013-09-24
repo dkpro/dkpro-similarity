@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.wordchoice;
+package dkpro.similarity.experiments.wordchoice;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
@@ -31,8 +31,8 @@ import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.JiangConrathRelatednessResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.LSRRelatednessResourceBase;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.LinRelatednessResource;
-import de.tudarmstadt.ukp.similarity.experiments.wordchoice.io.WordChoiceProblemReader;
-import de.tudarmstadt.ukp.similarity.experiments.wordchoice.io.WordChoiceProblemsEvaluator;
+import dkpro.similarity.experiments.wordchoice.io.WordChoiceProblemReader;
+import dkpro.similarity.experiments.wordchoice.io.WordChoiceProblemsEvaluator;
 
 public class WordChoiceExperiment
 {

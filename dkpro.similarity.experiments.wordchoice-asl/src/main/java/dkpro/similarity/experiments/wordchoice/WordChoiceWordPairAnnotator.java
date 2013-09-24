@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.wordchoice;
+package dkpro.similarity.experiments.wordchoice;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +29,8 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
-import de.tudarmstadt.ukp.similarity.experiments.wordchoice.util.WordChoiceAnnotationPair;
-import de.tudarmstadt.ukp.similarity.experiments.wordchoice.util.WordChoiceAnnotationPairFactory;
+import dkpro.similarity.experiments.wordchoice.util.WordChoiceAnnotationPair;
+import dkpro.similarity.experiments.wordchoice.util.WordChoiceAnnotationPairFactory;
 import dkpro.similarity.type.WordChoiceProblem;
 import dkpro.similarity.type.WordPair;
 

@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.wordchoice.io;
+package dkpro.similarity.experiments.wordchoice.io;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,8 +30,8 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Level;
 
-import de.tudarmstadt.ukp.similarity.experiments.wordchoice.util.WCProblem;
-import de.tudarmstadt.ukp.similarity.experiments.wordchoice.util.WordChoiceProblemFactory;
+import dkpro.similarity.experiments.wordchoice.util.WCProblem;
+import dkpro.similarity.experiments.wordchoice.util.WordChoiceProblemFactory;
 import dkpro.similarity.type.SemanticRelatedness;
 
 /**
