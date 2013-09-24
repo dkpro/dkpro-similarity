@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.ml.util;
+package dkpro.similarity.ml.util;
 
 import java.io.File;
 import java.io.IOException;

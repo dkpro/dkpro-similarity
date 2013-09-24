@@ -15,9 +15,9 @@ import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import de.tudarmstadt.ukp.similarity.ml.filters.LogFilter;
 import dkpro.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.ml.filters.LogFilter;
 
 
 /**

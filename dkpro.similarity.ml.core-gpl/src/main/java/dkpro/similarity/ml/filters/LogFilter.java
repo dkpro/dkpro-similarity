@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.ml.filters;
+package dkpro.similarity.ml.filters;
 
 import weka.core.Capabilities;
 import weka.core.DenseInstance;

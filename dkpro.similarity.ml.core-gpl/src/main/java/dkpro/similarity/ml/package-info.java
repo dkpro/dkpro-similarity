@@ -20,4 +20,4 @@
  * Components which allow for using machine learning in conjunction with the
  * similarity components.
  */
-package de.tudarmstadt.ukp.similarity.ml;
+package dkpro.similarity.ml;

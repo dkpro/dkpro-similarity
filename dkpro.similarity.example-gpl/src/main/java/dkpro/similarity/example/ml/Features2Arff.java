@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
-import de.tudarmstadt.ukp.similarity.ml.util.ArffConverter;
+import dkpro.similarity.ml.util.ArffConverter;
 
 
 public class Features2Arff

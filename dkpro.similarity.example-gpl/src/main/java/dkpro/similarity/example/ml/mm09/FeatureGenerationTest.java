@@ -29,7 +29,6 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJacc
 import de.tudarmstadt.ukp.similarity.dkpro.resource.structure.StopwordNGramContainmentMeasureResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.style.FunctionWordFrequenciesMeasureResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
-import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import dkpro.similarity.algorithms.lexical.string.JaroSecondStringComparator;
 import dkpro.similarity.algorithms.lexical.string.JaroWinklerSecondStringComparator;
@@ -38,6 +37,7 @@ import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceCompar
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
 import dkpro.similarity.algorithms.lexical.string.MongeElkanSecondStringComparator;
+import dkpro.similarity.ml.FeatureConfig;
 
 
 public class FeatureGenerationTest
