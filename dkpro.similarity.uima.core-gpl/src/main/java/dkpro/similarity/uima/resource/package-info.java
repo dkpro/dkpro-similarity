@@ -20,4 +20,4 @@
  * Contains the external resources which wrap the text similarity measures for
  * use in a DKPro pipeline. 
  */
-package de.tudarmstadt.ukp.similarity.dkpro.resource;
+package dkpro.similarity.uima.resource;

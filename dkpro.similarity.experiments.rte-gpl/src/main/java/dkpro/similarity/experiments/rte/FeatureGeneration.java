@@ -39,8 +39,6 @@ import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lexsub.TWSISubstituteWrapperResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.LatentSemanticAnalysisResource;
 //import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.CharacterNGramIdfValuesGenerator;
 //import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.WordIdfValuesGenerator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
@@ -61,6 +59,7 @@ import dkpro.similarity.uima.resource.lexical.ngrams.WordNGramContainmentResourc
 import dkpro.similarity.uima.resource.lexical.ngrams.WordNGramJaccardResource;
 import dkpro.similarity.uima.resource.lexical.string.CosineSimilarityResource;
 import dkpro.similarity.uima.resource.lexical.string.GreedyStringTilingMeasureResource;
+import dkpro.similarity.uima.resource.lexsub.TWSISubstituteWrapperResource;
 import dkpro.similarity.uima.resource.lsr.ResnikRelatednessResource;
 import dkpro.similarity.uima.resource.lsr.aggregate.MCS06AggregateResource;
 import dkpro.similarity.uima.resource.structure.PosNGramContainmentResource;
@@ -75,6 +74,7 @@ import dkpro.similarity.uima.resource.style.MTLDResource;
 import dkpro.similarity.uima.resource.style.SentenceRatioResource;
 import dkpro.similarity.uima.resource.style.TokenRatioResource;
 import dkpro.similarity.uima.resource.style.TypeTokenRatioResource;
+import dkpro.similarity.uima.resource.vsm.LatentSemanticAnalysisResource;
 import dkpro.similarity.uima.resource.vsm.VectorIndexSourceRelatednessResource;
 
 

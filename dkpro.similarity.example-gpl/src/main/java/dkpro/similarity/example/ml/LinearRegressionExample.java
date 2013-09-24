@@ -19,9 +19,9 @@ import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
 import dkpro.similarity.ml.io.SimilarityScoreWriter;
 import dkpro.similarity.uima.annotator.SimilarityScorer;
+import dkpro.similarity.uima.resource.ml.LinearRegressionResource;
 
 public class LinearRegressionExample
 {

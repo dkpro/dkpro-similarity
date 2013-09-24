@@ -15,4 +15,4 @@
  * DKPro pipeline. This includes external resources which wrap
  * the text similarity algorithms for use in a DKPro pipeline. 
  */
-package de.tudarmstadt.ukp.similarity.dkpro;
+package dkpro.similarity.uima;

@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.dkpro.resource.vsm;
+package dkpro.similarity.uima.resource.vsm;
 
 import java.io.File;
 import java.io.IOException;

@@ -57,13 +57,13 @@ import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
 import dkpro.similarity.experiments.sts2013baseline.Pipeline.Dataset;
 import dkpro.similarity.experiments.sts2013baseline.Pipeline.EvaluationMetric;
 import dkpro.similarity.experiments.sts2013baseline.Pipeline.Mode;
 import dkpro.similarity.experiments.sts2013baseline.filter.LogFilter;
 import dkpro.similarity.ml.io.SimilarityScoreWriter;
 import dkpro.similarity.uima.annotator.SimilarityScorer;
+import dkpro.similarity.uima.resource.ml.LinearRegressionResource;
 
 
 public class Evaluator

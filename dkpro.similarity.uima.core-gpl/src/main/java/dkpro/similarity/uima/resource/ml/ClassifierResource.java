@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.dkpro.resource.ml;
+package dkpro.similarity.uima.resource.ml;
 
 import java.io.File;
 import java.util.Map;
