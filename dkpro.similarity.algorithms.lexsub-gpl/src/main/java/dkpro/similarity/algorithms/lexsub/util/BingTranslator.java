@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.algorithms.lexsub.util;
+package dkpro.similarity.algorithms.lexsub.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;

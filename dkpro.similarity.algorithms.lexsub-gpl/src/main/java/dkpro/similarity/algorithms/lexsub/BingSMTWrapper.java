@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.algorithms.lexsub;
+package dkpro.similarity.algorithms.lexsub;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 
@@ -20,10 +20,10 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.algorithms.lexsub.util.BingTranslator;
 import dkpro.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
+import dkpro.similarity.algorithms.lexsub.util.BingTranslator;
 
 /**
  * Similarity measure which uses the Microsoft Bing translator to translate
