@@ -30,12 +30,12 @@ import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.core.ResourceFactory;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.lsr.LexSemResourceComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.wikipedia.measures.LeskComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.wikipedia.measures.LeskFirstComparator;
 import de.tudarmstadt.ukp.wikipedia.api.Wikipedia;
 import de.tudarmstadt.ukp.wikipedia.api.exception.WikiException;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 
 public class GlossOverlapComparatorTest

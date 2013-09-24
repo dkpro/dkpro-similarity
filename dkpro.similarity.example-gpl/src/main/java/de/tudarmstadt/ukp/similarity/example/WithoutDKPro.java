@@ -3,9 +3,9 @@ package de.tudarmstadt.ukp.similarity.example;
 import java.util.Arrays;
 import java.util.List;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 
 public class WithoutDKPro
 {

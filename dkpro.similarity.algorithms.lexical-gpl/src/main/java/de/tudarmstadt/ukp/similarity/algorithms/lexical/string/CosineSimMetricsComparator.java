@@ -16,7 +16,7 @@ import org.apache.commons.lang.StringUtils;
 
 import uk.ac.shef.wit.simmetrics.similaritymetrics.AbstractStringMetric;
 import uk.ac.shef.wit.simmetrics.similaritymetrics.CosineSimilarity;
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 /**
  * Cosine similarity as implemented by the 

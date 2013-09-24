@@ -14,8 +14,8 @@ import java.util.Collection;
 
 import org.apache.commons.lang.StringUtils;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 import uk.ac.shef.wit.simmetrics.similaritymetrics.AbstractStringMetric;
 

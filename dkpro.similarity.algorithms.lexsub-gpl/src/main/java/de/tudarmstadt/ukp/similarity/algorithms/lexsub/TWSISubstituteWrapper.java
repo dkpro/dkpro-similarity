@@ -15,9 +15,9 @@ import de.tudarmstadt.langtech.substituter.SenseSubstituter;
 import de.tudarmstadt.langtech.substituter.Substitution;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
-import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
+import dkpro.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 
 
 /**

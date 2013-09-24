@@ -7,10 +7,10 @@ import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.descriptor.ExternalResource;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lexsub.BingSMTWrapper;
 import de.tudarmstadt.ukp.similarity.algorithms.lexsub.BingSMTWrapper.Language;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 
 
 public class BingSMTWrapperResource

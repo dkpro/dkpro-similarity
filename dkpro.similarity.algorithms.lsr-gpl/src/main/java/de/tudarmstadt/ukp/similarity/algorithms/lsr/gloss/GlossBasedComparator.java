@@ -19,9 +19,9 @@ package de.tudarmstadt.ukp.similarity.algorithms.lsr.gloss;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.OverlapCoefficientSimMetricComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lsr.LexSemResourceComparator;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 
 
 public abstract class GlossBasedComparator
