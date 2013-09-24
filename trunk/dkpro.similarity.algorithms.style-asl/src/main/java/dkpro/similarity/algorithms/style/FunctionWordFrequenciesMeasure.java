@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.algorithms.style;
+package dkpro.similarity.algorithms.style;
 
 import java.io.IOException;
 import java.io.InputStream;

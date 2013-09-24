@@ -7,8 +7,8 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
-import de.tudarmstadt.ukp.similarity.algorithms.style.FunctionWordFrequenciesMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
+import dkpro.similarity.algorithms.style.FunctionWordFrequenciesMeasure;
 
 
 public class FunctionWordFrequenciesMeasureResource

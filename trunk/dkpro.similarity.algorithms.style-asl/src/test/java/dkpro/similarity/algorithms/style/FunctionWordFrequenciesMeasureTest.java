@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.style;
+package dkpro.similarity.algorithms.style;
 
 import static org.junit.Assert.assertEquals;
 
@@ -27,26 +27,34 @@ import org.junit.Test;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import dkpro.similarity.algorithms.api.JCasTextSimilarityMeasure;
+import dkpro.similarity.algorithms.style.FunctionWordFrequenciesMeasure;
 
-public class AvgCharactersPerTokenMeasureTest
+public class FunctionWordFrequenciesMeasureTest
 {
-	static final double epsilon = 0.001; 
-	
-	@Test
-	public void run()
-		throws Exception
-	{
-		JCasTextSimilarityMeasure comparator = new AvgCharactersPerTokenMeasure();
-		
-		AnalysisEngine ae = AnalysisEngineFactory.createPrimitive(BreakIteratorSegmenter.class);
-		
-		JCasBuilder cb = new JCasBuilder(ae.newJCas());
-        cb.add("one", Token.class);
-        cb.add("two", Token.class);
-        cb.add("three", Token.class);
-        cb.add("four", Token.class);
-        cb.close();
+    static final double epsilon = 0.001;
 
-		assertEquals(3.75, comparator.getSimilarity(cb.getJCas(), cb.getJCas()), epsilon);
-	}	
+    @Test
+    public void run()
+        throws Exception
+    {
+        JCasTextSimilarityMeasure comparator = new FunctionWordFrequenciesMeasure();
+
+        AnalysisEngine ae = AnalysisEngineFactory.createPrimitive(BreakIteratorSegmenter.class);
+
+        // First document
+        JCasBuilder cb1 = new JCasBuilder(ae.newJCas());
+        cb1.add("a", Token.class);
+        cb1.add("your", Token.class);
+        cb1.add("were", Token.class);
+        cb1.close();
+
+        // Second document
+        JCasBuilder cb2 = new JCasBuilder(ae.newJCas());
+        cb2.add("this", Token.class);
+        cb2.add("is", Token.class);
+        cb2.add("a", Token.class);
+        cb2.close();
+
+        assertEquals(0.303, comparator.getSimilarity(cb1.getJCas(), cb2.getJCas()), epsilon);
+    }
 }

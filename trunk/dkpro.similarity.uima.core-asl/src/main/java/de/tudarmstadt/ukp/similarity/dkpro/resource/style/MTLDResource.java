@@ -5,8 +5,8 @@ import java.util.Map;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
-import de.tudarmstadt.ukp.similarity.algorithms.style.MTLDComparator;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.JCasTextSimilarityResourceBase;
+import dkpro.similarity.algorithms.style.MTLDComparator;
 
 
 public class MTLDResource

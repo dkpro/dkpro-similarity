@@ -7,8 +7,8 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
-import de.tudarmstadt.ukp.similarity.algorithms.structure.StopwordNGramContainmentMeasure;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
+import dkpro.similarity.algorithms.structure.StopwordNGramContainmentMeasure;
 
 
 public class StopwordNGramContainmentMeasureResource

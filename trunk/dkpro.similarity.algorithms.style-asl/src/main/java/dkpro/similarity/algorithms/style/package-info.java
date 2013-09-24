@@ -19,4 +19,4 @@
 /**
  * Contains text similarity algorithms that are based on stylistic comparisons.
  */
-package de.tudarmstadt.ukp.similarity.algorithms.style;
+package dkpro.similarity.algorithms.style;
