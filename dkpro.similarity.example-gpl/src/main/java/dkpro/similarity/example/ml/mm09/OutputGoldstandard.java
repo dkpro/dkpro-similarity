@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.example.ml.mm09;
+package dkpro.similarity.example.ml.mm09;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;

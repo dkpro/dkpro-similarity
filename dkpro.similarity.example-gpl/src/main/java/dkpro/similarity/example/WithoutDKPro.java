@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.example;
+package dkpro.similarity.example;
 
 import java.util.Arrays;
 import java.util.List;

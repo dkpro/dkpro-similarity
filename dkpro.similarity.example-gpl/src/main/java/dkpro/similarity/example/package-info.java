@@ -21,4 +21,4 @@
  * in a stand-alone setting, or in conjunction with a DKPro pipeline, as well
  * as machine learning examples. 
  */
-package de.tudarmstadt.ukp.similarity.example;
+package dkpro.similarity.example;

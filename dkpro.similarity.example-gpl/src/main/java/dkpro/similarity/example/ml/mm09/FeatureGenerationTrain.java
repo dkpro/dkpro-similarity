@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.example.ml.mm09;
+package dkpro.similarity.example.ml.mm09;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
@@ -22,7 +22,7 @@ import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
-import de.tudarmstadt.ukp.similarity.dkpro.io.ShortAnswerGradingReader;
+import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.SimpleTextSimilarityResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramContainmentResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lexical.ngrams.WordNGramJaccardResource;
@@ -40,9 +40,9 @@ import dkpro.similarity.algorithms.lexical.string.LongestCommonSubstringComparat
 import dkpro.similarity.algorithms.lexical.string.MongeElkanSecondStringComparator;
 
 
-public class FeatureGenerationTest
+public class FeatureGenerationTrain
 {
-	private static final String OUTPUT_FEATURE_DIR = "src/main/resources/mm09-features"; 
+	private static final String OUTPUT_FEATURE_DIR = "src/main/resources/semeval-train-all-combined-features"; 
 	
 	public static void main(String[] args)
 		throws Exception
@@ -219,7 +219,6 @@ public class FeatureGenerationTest
 		
 		
 		
-		
 		// Run the pipeline		
 		for (FeatureConfig config : configs)
 		{			
@@ -227,11 +226,12 @@ public class FeatureGenerationTest
 			{
 				System.out.println("Skipping: " + config.getMeasureName());
 			} else {			
-				CollectionReader reader = createReader(ShortAnswerGradingReader.class,
-						ShortAnswerGradingReader.PARAM_INPUT_DIR, "classpath:/datasets/mm09",
-						ShortAnswerGradingReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
+				CollectionReader reader = createReader(SemEvalCorpusReader.class,
+						SemEvalCorpusReader.PARAM_INPUT_FILE, "classpath:/datasets/semeval/train/STS.input.ALLcombined.txt",
+						SemEvalCorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
 		
-				AnalysisEngineDescription seg = createEngineDescription(BreakIteratorSegmenter.class);
+				AnalysisEngineDescription seg = createEngineDescription(
+						BreakIteratorSegmenter.class);
 				
 				AggregateBuilder builder = new AggregateBuilder();
 				builder.add(seg, CombinationReader.INITIAL_VIEW, CombinationReader.VIEW_1);

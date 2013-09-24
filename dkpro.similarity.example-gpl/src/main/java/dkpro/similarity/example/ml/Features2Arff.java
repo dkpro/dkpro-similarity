@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.example.ml;
+package dkpro.similarity.example.ml;
 
 import java.io.File;
 import java.util.ArrayList;
