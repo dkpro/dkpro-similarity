@@ -8,9 +8,9 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.rte.util;
+package dkpro.similarity.experiments.rte.util;
 
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.UTILS_DIR;
+import static dkpro.similarity.experiments.rte.Pipeline.UTILS_DIR;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -23,8 +23,8 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 
-import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
 import dkpro.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
+import dkpro.similarity.experiments.rte.Pipeline.Dataset;
 
 
 public class CharacterNGramIdfValuesGenerator

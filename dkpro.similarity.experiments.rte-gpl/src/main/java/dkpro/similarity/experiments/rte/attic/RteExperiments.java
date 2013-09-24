@@ -8,9 +8,8 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.rte.util;
+package dkpro.similarity.experiments.rte.attic;
 
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.DATASET_DIR;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
 
@@ -18,40 +17,42 @@ import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
+import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.RTECorpusReader;
-import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
 
-
-public class GoldstandardCreator
+public class RteExperiments
 {
-	public static void outputGoldstandard(Dataset dataset)
-		throws Exception
-	{	        
-		CollectionReader reader = createReader(
+
+    public static void main(String[] args) throws Exception
+    {
+        String context = DkproContext.getContext().getWorkspace("RTE").getAbsolutePath();
+        
+        CollectionReader reader = createReader(
                 RTECorpusReader.class,
                 RTECorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY,
-                RTECorpusReader.PARAM_INPUT_FILE, RteUtil.getInputFilePathForDataset(DATASET_DIR, dataset));
+                RTECorpusReader.PARAM_INPUT_FILE, context + "/RTE1/Test/annotated_test.xml"
+        );
         
         AnalysisEngineDescription tagger = createEngineDescription(
                 OpenNlpPosTagger.class,
-                OpenNlpPosTagger.PARAM_LANGUAGE, "en");
+                OpenNlpPosTagger.PARAM_LANGUAGE, "en"
+        );
                 
         AnalysisEngineDescription lemmatizer = createEngineDescription(
-                GateLemmatizer.class);
-        
+                GateLemmatizer.class
+        );
         AnalysisEngineDescription printer = createEngineDescription(
-                GoldstandardWriter.class,
-                GoldstandardWriter.PARAM_DATASET_NAME, dataset.toString());
+                RteResultsPrinter.class
+        );
 
         SimplePipeline.runPipeline(
                 reader,
                 tagger,
                 lemmatizer,
-                printer);
-	}
-
-	
+                printer
+        );
+    }
 }

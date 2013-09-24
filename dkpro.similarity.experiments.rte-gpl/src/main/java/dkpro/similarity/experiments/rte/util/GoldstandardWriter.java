@@ -8,9 +8,9 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.rte.util;
+package dkpro.similarity.experiments.rte.util;
 
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.GOLD_DIR;
+import static dkpro.similarity.experiments.rte.Pipeline.GOLD_DIR;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,7 +28,7 @@ import org.apache.uima.jcas.JCas;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.entailment.type.EntailmentClassificationOutcome;
-import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
+import dkpro.similarity.experiments.rte.Pipeline.Dataset;
 
 
 public class GoldstandardWriter

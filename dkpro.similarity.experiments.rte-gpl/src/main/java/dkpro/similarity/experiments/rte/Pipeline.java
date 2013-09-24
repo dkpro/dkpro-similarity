@@ -8,13 +8,13 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.rte;
+package dkpro.similarity.experiments.rte;
 
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.Accuracy;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.AveragePrecision;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.CWS;
 import static dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier.LOGISTIC;
 import static dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier.SMO;
+import static dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric.Accuracy;
+import static dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric.AveragePrecision;
+import static dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric.CWS;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -24,9 +24,9 @@ import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
-import de.tudarmstadt.ukp.similarity.experiments.rte.util.Evaluator;
-import de.tudarmstadt.ukp.similarity.experiments.rte.util.Features2Arff;
-import de.tudarmstadt.ukp.similarity.experiments.rte.util.GoldstandardCreator;
+import dkpro.similarity.experiments.rte.util.Evaluator;
+import dkpro.similarity.experiments.rte.util.Features2Arff;
+import dkpro.similarity.experiments.rte.util.GoldstandardCreator;
 
 
 /**

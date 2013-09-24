@@ -8,11 +8,11 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.rte;
+package dkpro.similarity.experiments.rte;
 
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.DATASET_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.FEATURES_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.UTILS_DIR;
+import static dkpro.similarity.experiments.rte.Pipeline.DATASET_DIR;
+import static dkpro.similarity.experiments.rte.Pipeline.FEATURES_DIR;
+import static dkpro.similarity.experiments.rte.Pipeline.UTILS_DIR;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
@@ -63,12 +63,6 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.style.TokenRatioResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.style.TypeTokenRatioResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.LatentSemanticAnalysisResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
-import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.rte.util.CharacterNGramIdfValuesGenerator;
-import de.tudarmstadt.ukp.similarity.experiments.rte.util.ConvertToPlainText;
-import de.tudarmstadt.ukp.similarity.experiments.rte.util.RteUtil;
-import de.tudarmstadt.ukp.similarity.experiments.rte.util.StopwordFilter;
-import de.tudarmstadt.ukp.similarity.experiments.rte.util.WordIdfValuesGenerator;
 import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 //import de.tudarmstadt.ukp.similarity.experiments.semeval2013.util.CharacterNGramIdfValuesGenerator;
@@ -76,6 +70,12 @@ import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
+import dkpro.similarity.experiments.rte.Pipeline.Dataset;
+import dkpro.similarity.experiments.rte.util.CharacterNGramIdfValuesGenerator;
+import dkpro.similarity.experiments.rte.util.ConvertToPlainText;
+import dkpro.similarity.experiments.rte.util.RteUtil;
+import dkpro.similarity.experiments.rte.util.StopwordFilter;
+import dkpro.similarity.experiments.rte.util.WordIdfValuesGenerator;
 
 
 /**

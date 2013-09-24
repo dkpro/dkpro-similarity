@@ -8,11 +8,11 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.rte.util;
+package dkpro.similarity.experiments.rte.util;
 
 import java.io.IOException;
 
-import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
+import dkpro.similarity.experiments.rte.Pipeline.Dataset;
 
 
 public class RteUtil

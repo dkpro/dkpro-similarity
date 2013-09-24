@@ -13,4 +13,4 @@
  * Contains a full-featured experimental setup for text similarity experiments
  * on the data from the Recognizing Textual Entailment (RTE) Challenges. 
  */
-package de.tudarmstadt.ukp.similarity.experiments.rte;
+package dkpro.similarity.experiments.rte;

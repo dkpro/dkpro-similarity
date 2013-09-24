@@ -8,14 +8,14 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.rte.util;
+package dkpro.similarity.experiments.rte.util;
 
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.GOLD_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.MODELS_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.OUTPUT_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.Accuracy;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.AveragePrecision;
-import static de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric.CWS;
+import static dkpro.similarity.experiments.rte.Pipeline.GOLD_DIR;
+import static dkpro.similarity.experiments.rte.Pipeline.MODELS_DIR;
+import static dkpro.similarity.experiments.rte.Pipeline.OUTPUT_DIR;
+import static dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric.Accuracy;
+import static dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric.AveragePrecision;
+import static dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric.CWS;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -44,13 +44,13 @@ import weka.filters.Filter;
 import weka.filters.supervised.attribute.AddClassification;
 import weka.filters.unsupervised.attribute.AddID;
 import weka.filters.unsupervised.attribute.Remove;
-import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.EvaluationMetric;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Mode;
 //import de.tudarmstadt.ukp.similarity.experiments.rte.filter.LogFilter;
 import dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure;
 import dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier;
+import dkpro.similarity.experiments.rte.Pipeline.Dataset;
+import dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric;
 
 
 public class Evaluator
