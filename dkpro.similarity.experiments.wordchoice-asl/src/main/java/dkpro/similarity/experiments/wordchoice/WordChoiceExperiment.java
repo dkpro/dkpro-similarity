@@ -28,11 +28,11 @@ import org.apache.uima.fit.pipeline.SimplePipeline;
 import de.tudarmstadt.ukp.dkpro.core.api.io.ResourceCollectionReaderBase;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.JiangConrathRelatednessResource;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.LSRRelatednessResourceBase;
-import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.LinRelatednessResource;
 import dkpro.similarity.experiments.wordchoice.io.WordChoiceProblemReader;
 import dkpro.similarity.experiments.wordchoice.io.WordChoiceProblemsEvaluator;
+import dkpro.similarity.uima.resource.lsr.JiangConrathRelatednessResource;
+import dkpro.similarity.uima.resource.lsr.LSRRelatednessResourceBase;
+import dkpro.similarity.uima.resource.lsr.LinRelatednessResource;
 
 public class WordChoiceExperiment
 {
