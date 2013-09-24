@@ -27,9 +27,9 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Dataset;
 import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Mode;
+import dkpro.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
 
 
 public class CharacterNGramIdfValuesGenerator

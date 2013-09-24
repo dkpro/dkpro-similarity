@@ -23,8 +23,8 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
 import de.tudarmstadt.ukp.similarity.experiments.rte.Pipeline.Dataset;
+import dkpro.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
 
 
 public class CharacterNGramIdfValuesGenerator

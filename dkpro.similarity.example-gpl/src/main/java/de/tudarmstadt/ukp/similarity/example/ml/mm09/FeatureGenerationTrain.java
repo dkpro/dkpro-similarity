@@ -19,13 +19,6 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.JaroSecondStringComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.JaroWinklerSecondStringComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LevenshteinComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.MongeElkanSecondStringComparator;
 import de.tudarmstadt.ukp.similarity.dkpro.annotator.SimilarityScorer;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
@@ -38,6 +31,13 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.style.FunctionWordFrequencie
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
 import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
+import dkpro.similarity.algorithms.lexical.string.JaroSecondStringComparator;
+import dkpro.similarity.algorithms.lexical.string.JaroWinklerSecondStringComparator;
+import dkpro.similarity.algorithms.lexical.string.LevenshteinComparator;
+import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
+import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
+import dkpro.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
+import dkpro.similarity.algorithms.lexical.string.MongeElkanSecondStringComparator;
 
 
 public class FeatureGenerationTrain
