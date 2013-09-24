@@ -10,7 +10,7 @@
  ******************************************************************************/
 
 /**
- * Contains text similarity measures that are based on comparisons of the
- * glosses of two words that are part of a given lexical-semantic resources.
+ * Contains text similarity algorithms that are based on lexical-semantic
+ * resources such as WordNet.
  */
-package de.tudarmstadt.ukp.similarity.algorithms.lsr.gloss;
+package dkpro.similarity.algorithms.lsr;
