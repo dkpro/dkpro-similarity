@@ -23,10 +23,10 @@ import java.io.File;
 
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.LuceneVectorReader;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeIdf;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeTf;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 public class NormalizedGoogleDistanceLikeComparatorTest
 {

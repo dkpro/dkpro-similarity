@@ -36,10 +36,10 @@ import org.apache.uima.resource.ResourceInitializationException;
 import de.tudarmstadt.ukp.dkpro.core.api.featurepath.FeaturePathException;
 import de.tudarmstadt.ukp.dkpro.core.api.featurepath.FeaturePathFactory;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.dkpro.api.type.ExperimentalTextSimilarityScore;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
+import dkpro.similarity.algorithms.api.JCasTextSimilarityMeasure;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 
 /**

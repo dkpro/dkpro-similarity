@@ -21,8 +21,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.wikipedia.measures.JiangConrathBestComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.wikipedia.measures.LeacockChodorowBestComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.wikipedia.measures.LeskFirstComparator;
@@ -37,6 +35,8 @@ import de.tudarmstadt.ukp.wikipedia.api.CategoryGraphManager;
 import de.tudarmstadt.ukp.wikipedia.api.Wikipedia;
 import de.tudarmstadt.ukp.wikipedia.api.exception.WikiApiException;
 import de.tudarmstadt.ukp.wikipedia.api.exception.WikiRelatednessException;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 
 /**

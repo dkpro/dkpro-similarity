@@ -24,7 +24,7 @@ import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource.LexicalRelation;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource.SemanticRelation;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 /**
  * Comparator that matches entities that are in direct lexical or semantic relation.

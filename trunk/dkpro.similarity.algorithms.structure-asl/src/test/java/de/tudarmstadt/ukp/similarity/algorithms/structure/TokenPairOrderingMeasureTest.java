@@ -24,7 +24,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 
 
 public class TokenPairOrderingMeasureTest

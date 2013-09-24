@@ -15,20 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.api;
-
-import java.util.Collection;
+package dkpro.similarity.algorithms.api;
 
 /**
- * Similarity measure on two bag of words text representations, e.g. already
- * lemmatized texts.
+ * Common interface for all similarity measures.
  */
-public interface TextSimilarityMeasure
-	extends TermSimilarityMeasure
+public interface SimilarityMeasure
 {
-	/**
-	 * Computes the similarity between two bags of words text representations.
-	 */
-	double getSimilarity(Collection<String> strings1, Collection<String> strings2)
-		throws SimilarityException;
+	String getName();
+	boolean isDistanceMeasure();
+
 }

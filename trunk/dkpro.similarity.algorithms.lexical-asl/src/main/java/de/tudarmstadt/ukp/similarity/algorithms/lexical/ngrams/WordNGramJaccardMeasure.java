@@ -24,8 +24,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 /**
  * This comparator is an n-gram similarity model which employs the Jaccard similarity coefficient.

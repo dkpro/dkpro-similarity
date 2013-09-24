@@ -15,33 +15,48 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.api;
+package dkpro.similarity.algorithms.api;
 
-/**
- * Signals that the similarity computation by a similarity measure has
- * failed. It is thrown by the
- * {@link TermSimilarityMeasure#getSimilarity(String, String) getSimilarity}
- * methods.
- */
-public class SimilarityException
-	extends Exception
+
+public abstract class TermSimilarityMeasureBase
+	implements TermSimilarityMeasure
 {
-	private static final long serialVersionUID = -2855287805931261418L;
+	protected boolean distanceMeasure = false;
 
-	public SimilarityException() {
-        super();
-    }
-    
-    public SimilarityException(String message) {
-        super(message);
-    }
-    
-    public SimilarityException(String message, Throwable cause) {
-        super(message, cause);
-    }
-    
-    public SimilarityException(Throwable cause) {
-        super(cause);
-    }
+	@Override
+	public void beginMassOperation()
+	{
+		// Per default do nothing
+	}
 
+	@Override
+	public void endMassOperation()
+	{
+		// Per default do nothing
+	}
+
+	protected static Double preScore(String term1, String term2)
+	{
+		if (term1.length() == 0 || term2 == null || term2.length() == 0) {
+			return NOT_FOUND;
+		}
+
+		if (term1 == term2 || term1.equals(term2)) {
+			return EQUALITY_SCORE;
+		}
+
+		return null;
+	}
+
+	@Override
+	public String getName()
+	{
+		return this.getClass().getSimpleName();
+	}
+
+	@Override
+	public boolean isDistanceMeasure()
+	{
+		return distanceMeasure;
+	}
 }

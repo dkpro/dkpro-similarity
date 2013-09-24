@@ -26,7 +26,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
    
 
 public class WordNGramMeasureTest

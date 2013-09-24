@@ -32,8 +32,8 @@ import org.apache.commons.io.IOUtils;
 import com.sleepycat.bind.tuple.TupleBinding;
 import com.sleepycat.je.DatabaseException;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.VectorReader;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 /**
  * Reads an ESA vector index.

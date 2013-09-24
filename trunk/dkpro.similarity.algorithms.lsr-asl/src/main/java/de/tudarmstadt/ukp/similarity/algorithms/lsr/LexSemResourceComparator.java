@@ -35,8 +35,8 @@ import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity.PoS;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 public abstract class LexSemResourceComparator
 	extends TextSimilarityMeasureBase

@@ -21,8 +21,8 @@ import java.util.Collection;
 
 import org.apache.commons.lang.NotImplementedException;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 
 /**

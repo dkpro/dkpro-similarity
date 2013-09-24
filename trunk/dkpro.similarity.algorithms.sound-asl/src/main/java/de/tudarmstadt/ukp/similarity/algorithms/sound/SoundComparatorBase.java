@@ -21,8 +21,8 @@ import org.apache.commons.codec.EncoderException;
 import org.apache.commons.codec.StringEncoder;
 
 import de.tudarmstadt.ukp.dkpro.core.api.phonetics.util.SoundUtils;
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TermSimilarityMeasureBase;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TermSimilarityMeasureBase;
 
 /**
  * Base class wrapper for sound based comparators implemented in commons-codec.

@@ -17,7 +17,7 @@
  *******************************************************************************/
 package de.tudarmstadt.ukp.similarity.algorithms.vsm;
 
-import static de.tudarmstadt.ukp.similarity.algorithms.api.TermSimilarityMeasure.NOT_FOUND;
+import static dkpro.similarity.algorithms.api.TermSimilarityMeasure.NOT_FOUND;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
@@ -25,11 +25,11 @@ import java.io.File;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TermSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.LuceneVectorReader;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeIdf;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeTf;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TermSimilarityMeasure;
 
 public class VectorComparatorLuceneVectorSourceTest {
 

@@ -23,7 +23,7 @@ import org.junit.Test;
 
 import com.wcohen.ss.MongeElkan;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.TermSimilarityMeasure;
+import dkpro.similarity.algorithms.api.TermSimilarityMeasure;
    
 
 public class MongeElkanSecondStringComparatorTest

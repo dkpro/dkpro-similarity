@@ -12,8 +12,8 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
-import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 /**
  * Computes the overlap of part-of-speech n-grams using the
