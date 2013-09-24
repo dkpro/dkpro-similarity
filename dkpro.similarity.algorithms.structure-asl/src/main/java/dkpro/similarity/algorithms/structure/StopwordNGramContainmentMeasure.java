@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.structure;
+package dkpro.similarity.algorithms.structure;
 
 import java.io.IOException;
 import java.io.InputStream;
