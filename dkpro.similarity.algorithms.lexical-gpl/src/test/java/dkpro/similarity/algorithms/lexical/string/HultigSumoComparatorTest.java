@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
+package dkpro.similarity.algorithms.lexical.string;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,8 +7,8 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.HultigSumoComparator;
 import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
+import dkpro.similarity.algorithms.lexical.string.HultigSumoComparator;
 
 public class HultigSumoComparatorTest
 {

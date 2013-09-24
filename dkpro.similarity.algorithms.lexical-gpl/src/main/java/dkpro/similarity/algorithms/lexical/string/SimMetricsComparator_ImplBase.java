@@ -8,29 +8,32 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
+package dkpro.similarity.algorithms.lexical.string;
 
 import java.util.Collection;
 
 import org.apache.commons.lang.StringUtils;
 
-import uk.ac.shef.wit.simmetrics.similaritymetrics.AbstractStringMetric;
-import uk.ac.shef.wit.simmetrics.similaritymetrics.CosineSimilarity;
 import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
+
+import uk.ac.shef.wit.simmetrics.similaritymetrics.AbstractStringMetric;
+
 
 /**
- * Cosine similarity as implemented by the 
- * {@link SimMetricsComparator_ImplBase SimMetrics} library.
+ * Abstract base class for all similarity measures that are based
+ * on the SimMetrics library (Chapman, Norton, and Ciravegna, 2005).
+ *
+ * Chapman S., Norton B., and Ciravegna F. (2005). Armadillo: Integrating
+ * Knowledge for the Semantic Web. In Proceedings of the Dagstuhl Seminar
+ * in Machine Learning for the Semantic Web, Wadern, Germany.
+ * <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.60.5185&rep=rep1&type=pdf">(pdf)</a>
  */
-public class CosineSimMetricsComparator
-	extends SimMetricsComparator_ImplBase
+public abstract class SimMetricsComparator_ImplBase
+	extends TextSimilarityMeasureBase
 {
     
-    public CosineSimMetricsComparator() {
-        this.similarityMeasure = new CosineSimilarity();
-    }
-
-	private final AbstractStringMetric similarityMeasure;
+	protected AbstractStringMetric similarityMeasure;
 
     @Override
     public double getSimilarity(String s1, String s2)

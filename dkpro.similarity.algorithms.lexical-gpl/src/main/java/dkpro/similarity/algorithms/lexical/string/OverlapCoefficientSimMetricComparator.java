@@ -8,20 +8,21 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
+package dkpro.similarity.algorithms.lexical.string;
 
-import uk.ac.shef.wit.simmetrics.similaritymetrics.DiceSimilarity;
+import uk.ac.shef.wit.simmetrics.similaritymetrics.OverlapCoefficient;
+
 
 /**
- * Dice similarity as implemented by the 
+ * OverlapCoefficient similarity as implemented by the 
  * {@link SimMetricsComparator_ImplBase SimMetrics} library.
  */
 
-public class DiceSimMetricComparator
+public class OverlapCoefficientSimMetricComparator
 	extends SimMetricsComparator_ImplBase
 {
     
-    public DiceSimMetricComparator() {
-        this.similarityMeasure = new DiceSimilarity();
+    public OverlapCoefficientSimMetricComparator() {
+        this.similarityMeasure = new OverlapCoefficient();
     }
 }

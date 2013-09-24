@@ -1,4 +1,4 @@
-package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
+package dkpro.similarity.algorithms.lexical.string;
 
 import hultig.sumo.Sentence;
 
