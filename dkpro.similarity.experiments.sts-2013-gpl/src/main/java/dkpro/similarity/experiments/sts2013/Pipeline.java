@@ -1,8 +1,8 @@
-package de.tudarmstadt.ukp.similarity.experiments.sts2013;
+package dkpro.similarity.experiments.sts2013;
 
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Dataset.*;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.EvaluationMetric.*;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Mode.*;
+import static dkpro.similarity.experiments.sts2013.Pipeline.Dataset.*;
+import static dkpro.similarity.experiments.sts2013.Pipeline.EvaluationMetric.*;
+import static dkpro.similarity.experiments.sts2013.Pipeline.Mode.*;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -11,8 +11,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.util.Evaluator;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.util.Features2Arff;
+import dkpro.similarity.experiments.sts2013.util.Evaluator;
+import dkpro.similarity.experiments.sts2013.util.Features2Arff;
 
 
 /**

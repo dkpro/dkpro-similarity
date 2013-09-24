@@ -1,8 +1,8 @@
-package de.tudarmstadt.ukp.similarity.experiments.sts2013;
+package dkpro.similarity.experiments.sts2013;
 
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.DATASET_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.FEATURES_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.UTILS_DIR;
+import static dkpro.similarity.experiments.sts2013.Pipeline.DATASET_DIR;
+import static dkpro.similarity.experiments.sts2013.Pipeline.FEATURES_DIR;
+import static dkpro.similarity.experiments.sts2013.Pipeline.UTILS_DIR;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
@@ -41,16 +41,16 @@ import de.tudarmstadt.ukp.similarity.dkpro.resource.lexsub.TWSISubstituteWrapper
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.ResnikRelatednessResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.lsr.aggregate.MCS06AggregateResource;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.vsm.VectorIndexSourceRelatednessResource;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Mode;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.util.CharacterNGramIdfValuesGenerator;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.util.StopwordFilter;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.util.WordIdfValuesGenerator;
 import de.tudarmstadt.ukp.similarity.ml.FeatureConfig;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
+import dkpro.similarity.experiments.sts2013.Pipeline.Dataset;
+import dkpro.similarity.experiments.sts2013.Pipeline.Mode;
+import dkpro.similarity.experiments.sts2013.util.CharacterNGramIdfValuesGenerator;
+import dkpro.similarity.experiments.sts2013.util.StopwordFilter;
+import dkpro.similarity.experiments.sts2013.util.WordIdfValuesGenerator;
 
 
 /**

@@ -8,7 +8,7 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.sts2013.util;
+package dkpro.similarity.experiments.sts2013.util;
 
 import java.io.File;
 
@@ -24,12 +24,12 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Mode;
+import dkpro.similarity.experiments.sts2013.Pipeline.Dataset;
+import dkpro.similarity.experiments.sts2013.Pipeline.Mode;
 
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.FEATURES_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.GOLDSTANDARD_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.MODELS_DIR;
+import static dkpro.similarity.experiments.sts2013.Pipeline.FEATURES_DIR;
+import static dkpro.similarity.experiments.sts2013.Pipeline.GOLDSTANDARD_DIR;
+import static dkpro.similarity.experiments.sts2013.Pipeline.MODELS_DIR;
 
 
 public class Features2Arff

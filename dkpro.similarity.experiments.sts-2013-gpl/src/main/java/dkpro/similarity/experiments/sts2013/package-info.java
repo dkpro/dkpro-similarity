@@ -15,4 +15,4 @@
  * Semantics. It comprises the setup which performed best in the STS pilot task
  * in 2012. The system has been adapted to the 2013 data.
  */
-package de.tudarmstadt.ukp.similarity.experiments.sts2013;
+package dkpro.similarity.experiments.sts2013;

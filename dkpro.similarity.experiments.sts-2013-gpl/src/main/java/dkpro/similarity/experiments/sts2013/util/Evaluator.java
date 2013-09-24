@@ -8,15 +8,15 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.sts2013.util;
+package dkpro.similarity.experiments.sts2013.util;
 
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.DATASET_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.GOLDSTANDARD_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.MODELS_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.OUTPUT_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.EvaluationMetric.PearsonAll;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.EvaluationMetric.PearsonMean;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.EvaluationMetric.PearsonWeightedMean;
+import static dkpro.similarity.experiments.sts2013.Pipeline.DATASET_DIR;
+import static dkpro.similarity.experiments.sts2013.Pipeline.GOLDSTANDARD_DIR;
+import static dkpro.similarity.experiments.sts2013.Pipeline.MODELS_DIR;
+import static dkpro.similarity.experiments.sts2013.Pipeline.OUTPUT_DIR;
+import static dkpro.similarity.experiments.sts2013.Pipeline.EvaluationMetric.PearsonAll;
+import static dkpro.similarity.experiments.sts2013.Pipeline.EvaluationMetric.PearsonMean;
+import static dkpro.similarity.experiments.sts2013.Pipeline.EvaluationMetric.PearsonWeightedMean;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
@@ -60,11 +60,11 @@ import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader.CombinationStrategy;
 import de.tudarmstadt.ukp.similarity.dkpro.io.SemEvalCorpusReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.ml.LinearRegressionResource;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.EvaluationMetric;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Mode;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.filter.LogFilter;
 import de.tudarmstadt.ukp.similarity.ml.io.SimilarityScoreWriter;
+import dkpro.similarity.experiments.sts2013.Pipeline.Dataset;
+import dkpro.similarity.experiments.sts2013.Pipeline.EvaluationMetric;
+import dkpro.similarity.experiments.sts2013.Pipeline.Mode;
+import dkpro.similarity.experiments.sts2013.filter.LogFilter;
 
 
 public class Evaluator

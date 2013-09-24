@@ -8,10 +8,10 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.sts2013.util;
+package dkpro.similarity.experiments.sts2013.util;
 
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.DATASET_DIR;
-import static de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.UTILS_DIR;
+import static dkpro.similarity.experiments.sts2013.Pipeline.DATASET_DIR;
+import static dkpro.similarity.experiments.sts2013.Pipeline.UTILS_DIR;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 
 import java.io.File;
@@ -37,8 +37,8 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Dataset;
-import de.tudarmstadt.ukp.similarity.experiments.sts2013.Pipeline.Mode;
+import dkpro.similarity.experiments.sts2013.Pipeline.Dataset;
+import dkpro.similarity.experiments.sts2013.Pipeline.Mode;
 
 
 public class WordIdfValuesGenerator

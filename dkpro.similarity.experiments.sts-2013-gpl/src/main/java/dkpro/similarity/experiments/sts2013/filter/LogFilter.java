@@ -8,7 +8,7 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl-3.0.txt
  ******************************************************************************/
-package de.tudarmstadt.ukp.similarity.experiments.sts2013.filter;
+package dkpro.similarity.experiments.sts2013.filter;
 
 import weka.core.Capabilities;
 import weka.core.DenseInstance;
