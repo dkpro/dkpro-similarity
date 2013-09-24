@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2013
+ * Copyright 2012
  * Ubiquitous Knowledge Processing (UKP) Lab
  * Technische Universität Darmstadt
  *
@@ -14,9 +14,27 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- ******************************************************************************/
+ *******************************************************************************/
+package dkpro.similarity.algorithms.util;
 
-/**
- * Contains components which are fundamental for all similarity measures.
- */
-package de.tudarmstadt.ukp.similarity.algorithms;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class Cache<K,V>
+	extends LinkedHashMap<K,V>
+{
+	private static final long serialVersionUID = 6896122881488063028L;
+
+	private final int capacity;
+
+	public Cache(int capacity)
+	{
+		super(capacity + 1, 1.1f, true);
+		this.capacity = capacity;
+	}
+	
+	protected boolean removeEldestEntry(Map.Entry<K,V> eldest)
+	{
+		return size() > capacity;
+	}
+}
