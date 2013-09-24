@@ -22,9 +22,9 @@ import no.uib.cipr.matrix.Vector;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TermSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.VectorReader;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TermSimilarityMeasureBase;
 
 
 /**

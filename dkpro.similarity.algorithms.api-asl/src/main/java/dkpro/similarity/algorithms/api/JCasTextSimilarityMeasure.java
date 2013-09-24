@@ -15,14 +15,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.api;
+package dkpro.similarity.algorithms.api;
+
+import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
+
 
 /**
- * Common interface for all similarity measures.
+ * Similarity measure on two JCas text representations.
  */
-public interface SimilarityMeasure
+public interface JCasTextSimilarityMeasure
+	extends TextSimilarityMeasure
 {
-	String getName();
-	boolean isDistanceMeasure();
+	/**
+	 * Computes the similarity between two JCas text representations.
+	 */
+	double getSimilarity(JCas jcas1, JCas jcas2)
+		throws SimilarityException;
+
+	/**
+	 * Computes the similarity between two JCas text representations.
+	 * Processing is limited to the two covering {@link Annotation}s within
+	 * each JCas. 
+	 */
+    double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1, Annotation coveringAnnotation2)
+    	throws SimilarityException;
 
 }

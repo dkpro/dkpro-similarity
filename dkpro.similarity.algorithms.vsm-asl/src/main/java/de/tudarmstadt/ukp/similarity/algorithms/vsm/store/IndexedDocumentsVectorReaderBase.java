@@ -26,8 +26,8 @@ import no.uib.cipr.matrix.Vector;
 import no.uib.cipr.matrix.VectorEntry;
 import no.uib.cipr.matrix.Vector.Norm;
 import no.uib.cipr.matrix.sparse.SparseVector;
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.VectorNorm;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 /**
  * Abstract base class for vector readers using indexed documents from a traditional IR index.

@@ -15,48 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.api;
+package dkpro.similarity.algorithms.api;
 
+import static java.util.Arrays.asList;
 
-public abstract class TermSimilarityMeasureBase
-	implements TermSimilarityMeasure
+public abstract class TextSimilarityMeasureBase
+	extends TermSimilarityMeasureBase
+	implements TextSimilarityMeasure
 {
-	protected boolean distanceMeasure = false;
-
 	@Override
-	public void beginMassOperation()
+	public double getSimilarity(final String aTerm1, final String aTerm2)
+		throws SimilarityException
 	{
-		// Per default do nothing
-	}
-
-	@Override
-	public void endMassOperation()
-	{
-		// Per default do nothing
-	}
-
-	protected static Double preScore(String term1, String term2)
-	{
-		if (term1.length() == 0 || term2 == null || term2.length() == 0) {
-			return NOT_FOUND;
-		}
-
-		if (term1 == term2 || term1.equals(term2)) {
-			return EQUALITY_SCORE;
-		}
-
-		return null;
-	}
-
-	@Override
-	public String getName()
-	{
-		return this.getClass().getSimpleName();
-	}
-
-	@Override
-	public boolean isDistanceMeasure()
-	{
-		return distanceMeasure;
+		return getSimilarity(asList(aTerm1), asList(aTerm2));
 	}
 }

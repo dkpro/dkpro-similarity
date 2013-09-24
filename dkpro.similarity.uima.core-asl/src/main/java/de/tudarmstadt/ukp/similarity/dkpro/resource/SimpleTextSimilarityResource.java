@@ -23,8 +23,8 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
+import dkpro.similarity.algorithms.api.JCasTextSimilarityMeasure;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 
 /**
  * This resource wraps any parameter-free {@link TextSimilarityMeasure}}.

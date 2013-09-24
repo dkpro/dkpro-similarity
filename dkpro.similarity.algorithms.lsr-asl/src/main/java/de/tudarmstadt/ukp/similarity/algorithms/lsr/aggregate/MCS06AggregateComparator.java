@@ -29,10 +29,10 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.util.Cache;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 
 /**

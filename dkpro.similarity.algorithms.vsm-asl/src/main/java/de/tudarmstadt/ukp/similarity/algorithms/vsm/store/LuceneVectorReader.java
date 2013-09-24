@@ -31,7 +31,7 @@ import org.apache.lucene.index.TermFreqVector;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 /**
  * Vector reader using an Lucene index.

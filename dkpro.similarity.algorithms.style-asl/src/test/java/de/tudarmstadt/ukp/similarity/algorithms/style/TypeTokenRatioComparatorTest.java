@@ -30,7 +30,7 @@ import org.junit.Test;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
+import dkpro.similarity.algorithms.api.JCasTextSimilarityMeasure;
 
 public class TypeTokenRatioComparatorTest
 {

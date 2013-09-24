@@ -15,18 +15,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.api;
+package dkpro.similarity.algorithms.api;
 
-import static java.util.Arrays.asList;
-
-public abstract class TextSimilarityMeasureBase
-	extends TermSimilarityMeasureBase
-	implements TextSimilarityMeasure
+/**
+ * Similarity measure on two terms.
+ */
+public interface TermSimilarityMeasure
+    extends SimilarityMeasure
 {
-	@Override
-	public double getSimilarity(final String aTerm1, final String aTerm2)
-		throws SimilarityException
-	{
-		return getSimilarity(asList(aTerm1), asList(aTerm2));
-	}
+	/**
+	 * Returned as similarity if either of two compared terms could not be found.
+	 *
+	 * @see #getSimilarity(String, String)
+	 */
+	static final double NOT_FOUND = -1.0;
+	static double EQUALITY_SCORE = 1.0;
+
+	// TODO what is this actually used for?
+	void beginMassOperation();
+	void endMassOperation();
+
+	/**
+	 * Computes the similarity between two terms.
+	 */
+	double getSimilarity(String string1, String string2)
+		throws SimilarityException;
 }

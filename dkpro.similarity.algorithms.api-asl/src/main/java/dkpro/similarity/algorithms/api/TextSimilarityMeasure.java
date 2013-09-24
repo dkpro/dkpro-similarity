@@ -15,19 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
+package dkpro.similarity.algorithms.api;
+
+import java.util.Collection;
+
 /**
- * This package includes the interfaces for similarity measures. We thereby allow
- * to compare terms, texts, or JCAS text representations.
- *
- * We define three categories of comparators:
- * <ul>
- * <li>{@link TermSimilarityMeasure} - comparison of two terms, e.g.
- *     <a href="http://portal.acm.org/citation.cfm?id=657297">Lin (1998)</a></li>
- * <li>{@link TextSimilarityMeasure} - comparison of two texts, e.g. LSA
- * 	   <a href="http://lsa.colorado.edu/papers/dp1.LSAintro.pdf">Landauer et. al (1998)</a></li>
- * <li>{@link JCasTextSimilarityMeasure} - comparison of two texts in JCas format</li>
- * </ul>
- * 
- * All comparators are case-sensitive.
+ * Similarity measure on two bag of words text representations, e.g. already
+ * lemmatized texts.
  */
-package de.tudarmstadt.ukp.similarity.algorithms.api;
+public interface TextSimilarityMeasure
+	extends TermSimilarityMeasure
+{
+	/**
+	 * Computes the similarity between two bags of words text representations.
+	 */
+	double getSimilarity(Collection<String> strings1, Collection<String> strings2)
+		throws SimilarityException;
+}

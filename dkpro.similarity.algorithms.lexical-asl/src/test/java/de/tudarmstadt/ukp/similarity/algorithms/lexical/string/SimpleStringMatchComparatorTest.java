@@ -24,11 +24,11 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.BoundedSubstringMatchComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.ExactStringMatchComparator;
 import de.tudarmstadt.ukp.similarity.algorithms.lexical.string.SubstringMatchComparator;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 
 public class SimpleStringMatchComparatorTest {
 

@@ -34,10 +34,10 @@ import org.apache.commons.io.FileUtils;
 
 import com.google.common.base.Function;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.InnerVectorProduct;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.VectorNorm;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 public class CosineSimilarity
 	extends TextSimilarityMeasureBase

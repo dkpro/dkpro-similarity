@@ -17,7 +17,7 @@
  *******************************************************************************/
 package de.tudarmstadt.ukp.similarity.algorithms.lexical.string;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 /**
  * SubstringMatch:

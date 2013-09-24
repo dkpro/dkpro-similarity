@@ -18,8 +18,8 @@
 package de.tudarmstadt.ukp.similarity.algorithms.vsm.store;
 
 import no.uib.cipr.matrix.Vector;
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.util.StringKeyCache;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 /**
  * Adds caching to a {@link VectorReader}.

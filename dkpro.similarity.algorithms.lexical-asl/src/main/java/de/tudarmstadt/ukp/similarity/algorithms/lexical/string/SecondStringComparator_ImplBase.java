@@ -17,8 +17,8 @@ import org.apache.commons.lang.StringUtils;
 import com.wcohen.ss.AbstractStringDistance;
 import com.wcohen.ss.api.StringWrapper;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 
 public abstract class SecondStringComparator_ImplBase

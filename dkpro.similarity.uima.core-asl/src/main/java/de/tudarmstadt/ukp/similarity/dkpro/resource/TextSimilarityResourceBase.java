@@ -21,8 +21,8 @@ import java.util.Collection;
 
 import org.apache.uima.fit.component.Resource_ImplBase;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasure;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 
 
 public abstract class TextSimilarityResourceBase

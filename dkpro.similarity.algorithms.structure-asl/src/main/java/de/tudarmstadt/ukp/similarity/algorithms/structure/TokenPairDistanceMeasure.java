@@ -25,8 +25,8 @@ import java.util.Set;
 
 import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 
 /**
  * This measure corresponds to the Composite Feature "Distance" as described in:

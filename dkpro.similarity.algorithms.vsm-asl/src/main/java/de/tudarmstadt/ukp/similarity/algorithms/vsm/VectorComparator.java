@@ -25,11 +25,11 @@ import no.uib.cipr.matrix.Vector;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
-import de.tudarmstadt.ukp.similarity.algorithms.api.TextSimilarityMeasureBase;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeIdf;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeTf;
 import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.VectorReader;
+import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 import edu.ucla.sspace.common.Similarity;
 import edu.ucla.sspace.vector.DenseVector;
 

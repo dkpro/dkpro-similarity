@@ -31,8 +31,8 @@ import de.tudarmstadt.ukp.dkpro.lexsemresource.graph.EntityGraph;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.graph.EntityGraphManager;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.graph.EntityGraph.DirectionMode;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.graph.EntityGraphManager.EntityGraphType;
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
 import de.tudarmstadt.ukp.similarity.algorithms.lsr.LexSemResourceComparator;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 
 public abstract class PathBasedComparator

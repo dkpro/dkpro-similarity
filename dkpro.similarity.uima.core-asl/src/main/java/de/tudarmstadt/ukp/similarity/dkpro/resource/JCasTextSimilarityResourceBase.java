@@ -5,8 +5,8 @@ import java.util.Collection;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.JCasTextSimilarityMeasure;
-import de.tudarmstadt.ukp.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.JCasTextSimilarityMeasure;
+import dkpro.similarity.algorithms.api.SimilarityException;
 
 
 public class JCasTextSimilarityResourceBase

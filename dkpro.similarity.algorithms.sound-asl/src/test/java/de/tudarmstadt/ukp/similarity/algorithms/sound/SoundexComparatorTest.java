@@ -21,7 +21,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.similarity.algorithms.api.TermSimilarityMeasure;
+import dkpro.similarity.algorithms.api.TermSimilarityMeasure;
 
 public class SoundexComparatorTest
 {

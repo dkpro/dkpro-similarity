@@ -15,30 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package de.tudarmstadt.ukp.similarity.algorithms.api;
-
-import org.apache.uima.jcas.JCas;
-import org.apache.uima.jcas.tcas.Annotation;
-
-
 /**
- * Similarity measure on two JCas text representations.
+ * This package includes the interfaces for similarity measures. We thereby allow
+ * to compare terms, texts, or JCAS text representations.
+ *
+ * We define three categories of comparators:
+ * <ul>
+ * <li>{@link TermSimilarityMeasure} - comparison of two terms, e.g.
+ *     <a href="http://portal.acm.org/citation.cfm?id=657297">Lin (1998)</a></li>
+ * <li>{@link TextSimilarityMeasure} - comparison of two texts, e.g. LSA
+ * 	   <a href="http://lsa.colorado.edu/papers/dp1.LSAintro.pdf">Landauer et. al (1998)</a></li>
+ * <li>{@link JCasTextSimilarityMeasure} - comparison of two texts in JCas format</li>
+ * </ul>
+ * 
+ * All comparators are case-sensitive.
  */
-public interface JCasTextSimilarityMeasure
-	extends TextSimilarityMeasure
-{
-	/**
-	 * Computes the similarity between two JCas text representations.
-	 */
-	double getSimilarity(JCas jcas1, JCas jcas2)
-		throws SimilarityException;
-
-	/**
-	 * Computes the similarity between two JCas text representations.
-	 * Processing is limited to the two covering {@link Annotation}s within
-	 * each JCas. 
-	 */
-    double getSimilarity(JCas jcas1, JCas jcas2, Annotation coveringAnnotation1, Annotation coveringAnnotation2)
-    	throws SimilarityException;
-
-}
+package dkpro.similarity.algorithms.api;
