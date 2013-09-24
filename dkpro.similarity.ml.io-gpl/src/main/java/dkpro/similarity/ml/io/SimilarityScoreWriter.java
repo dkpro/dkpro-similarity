@@ -32,10 +32,10 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import de.tudarmstadt.ukp.similarity.dkpro.api.type.ExperimentalTextSimilarityScore;
-import de.tudarmstadt.ukp.similarity.dkpro.api.type.GoldTextSimilarityScore;
-import de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore;
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
+import dkpro.similarity.uima.api.type.ExperimentalTextSimilarityScore;
+import dkpro.similarity.uima.api.type.GoldTextSimilarityScore;
+import dkpro.similarity.uima.api.type.TextSimilarityScore;
 
 
 /**

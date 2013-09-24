@@ -13,7 +13,7 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import de.tudarmstadt.ukp.similarity.dkpro.api.type.GoldTextSimilarityScore;
+import dkpro.similarity.uima.api.type.GoldTextSimilarityScore;
 
 public class OutputGoldstandardWriter
 	extends JCasConsumer_ImplBase

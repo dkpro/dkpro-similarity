@@ -17,7 +17,7 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
 import de.tudarmstadt.ukp.similarity.dkpro.io.CombinationReader;
-import de.tudarmstadt.ukp.similarity.entailment.type.EntailmentClassificationOutcome;
+import dkpro.similarity.uima.entailment.type.EntailmentClassificationOutcome;
 
 public class RteResultsPrinter
     extends JCasAnnotator_ImplBase
