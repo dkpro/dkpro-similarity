@@ -8,9 +8,9 @@
   <artifactId>dkpro.similarity.algorithms.lsr-gpl</artifactId>
   <dependencies>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.algorithms.lsr-asl
+  			dkpro.similarity.algorithms.lsr-asl
   		</artifactId>
   	</dependency>
   	<dependency>
@@ -19,9 +19,9 @@
   		<version>1.6.2.20070207</version>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl
+  			dkpro.similarity.algorithms.lexical-gpl
   		</artifactId>
   	</dependency>
   	<dependency>

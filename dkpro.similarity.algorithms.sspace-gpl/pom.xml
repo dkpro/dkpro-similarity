@@ -8,8 +8,8 @@
   <artifactId>dkpro.similarity.algorithms.sspace-gpl</artifactId>
   <dependencies>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  		<artifactId>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</artifactId>
+  		<groupId>dkpro.similarity</groupId>
+  		<artifactId>dkpro.similarity.algorithms.vsm-asl</artifactId>
   	</dependency>
   </dependencies>
 </project>

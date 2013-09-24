@@ -8,57 +8,57 @@
   <artifactId>dkpro.similarity.experiments.sts-2013-baseline-gpl</artifactId>
   <dependencies>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.algorithms.api-asl
+  			dkpro.similarity.algorithms.api-asl
   		</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.algorithms.vsm-asl
+  			dkpro.similarity.algorithms.vsm-asl
   		</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.algorithms.lexical-asl
+  			dkpro.similarity.algorithms.lexical-asl
   		</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.dkpro.data-asl
+  			dkpro.similarity.uima.data-asl
   		</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.dkpro.io-asl
+  			dkpro.similarity.uima.io-asl
   		</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.dkpro.core-asl
+  			dkpro.similarity.uima.core-asl
   		</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.ml.core-gpl
+  			dkpro.similarity.ml.core-gpl
   		</artifactId>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.ml.io-gpl
+  			dkpro.similarity.ml.io-gpl
   		</artifactId>
   	</dependency>
     <dependency>
-        <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
+        <groupId>dkpro.similarity</groupId>
         <artifactId>
-            de.tudarmstadt.ukp.similarity.dkpro.core-gpl
+            dkpro.similarity.uima.core-gpl
         </artifactId>
     </dependency>
   	<dependency>

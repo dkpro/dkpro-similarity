@@ -8,9 +8,9 @@
   <artifactId>dkpro.similarity.algorithms.lexsub-gpl</artifactId>
   <dependencies>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
+  		<groupId>dkpro.similarity</groupId>
   		<artifactId>
-  			de.tudarmstadt.ukp.similarity.algorithms.api-asl
+  			dkpro.similarity.algorithms.api-asl
   		</artifactId>
   	</dependency>
   	<dependency>

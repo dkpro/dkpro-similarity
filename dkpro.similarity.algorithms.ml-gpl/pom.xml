@@ -8,12 +8,12 @@
   <artifactId>dkpro.similarity.algorithms.ml-gpl</artifactId>
   <dependencies>
     <dependency>
-        <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-        <artifactId>de.tudarmstadt.ukp.similarity.algorithms.api-asl</artifactId>
+        <groupId>dkpro.similarity</groupId>
+        <artifactId>dkpro.similarity.algorithms.api-asl</artifactId>
     </dependency>
     <dependency>
-        <groupId>de.tudarmstadt.ukp.similarity</groupId>
-        <artifactId>de.tudarmstadt.ukp.similarity.ml.core-gpl</artifactId>
+        <groupId>dkpro.similarity</groupId>
+        <artifactId>dkpro.similarity.ml.core-gpl</artifactId>
     </dependency>
     <dependency>
         <groupId>nz.ac.waikato.cms.weka</groupId>
