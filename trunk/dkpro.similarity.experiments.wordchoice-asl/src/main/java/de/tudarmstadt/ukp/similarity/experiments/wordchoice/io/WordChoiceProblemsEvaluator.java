@@ -32,7 +32,7 @@ import org.apache.uima.util.Level;
 
 import de.tudarmstadt.ukp.similarity.experiments.wordchoice.util.WCProblem;
 import de.tudarmstadt.ukp.similarity.experiments.wordchoice.util.WordChoiceProblemFactory;
-import de.tudarmstadt.ukp.similarity.type.SemanticRelatedness;
+import dkpro.similarity.type.SemanticRelatedness;
 
 /**
  * Outputs evaluation data for word choice problem experiments.

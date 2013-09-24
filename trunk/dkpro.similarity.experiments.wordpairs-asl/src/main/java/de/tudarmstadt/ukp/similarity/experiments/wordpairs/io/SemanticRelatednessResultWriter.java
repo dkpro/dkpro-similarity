@@ -37,8 +37,8 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import de.tudarmstadt.ukp.similarity.type.SemRelWordPair;
-import de.tudarmstadt.ukp.similarity.type.SemanticRelatedness;
+import dkpro.similarity.type.SemRelWordPair;
+import dkpro.similarity.type.SemanticRelatedness;
 
 public class SemanticRelatednessResultWriter extends JCasAnnotator_ImplBase {
 

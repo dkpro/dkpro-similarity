@@ -31,8 +31,8 @@ import org.apache.uima.resource.ResourceInitializationException;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 import de.tudarmstadt.ukp.similarity.experiments.wordchoice.util.WordChoiceAnnotationPair;
 import de.tudarmstadt.ukp.similarity.experiments.wordchoice.util.WordChoiceAnnotationPairFactory;
-import de.tudarmstadt.ukp.similarity.type.WordChoiceProblem;
-import de.tudarmstadt.ukp.similarity.type.WordPair;
+import dkpro.similarity.type.WordChoiceProblem;
+import dkpro.similarity.type.WordPair;
 
 /**
  * Writes all unique word pair annotations that can occur in the word choice problems.

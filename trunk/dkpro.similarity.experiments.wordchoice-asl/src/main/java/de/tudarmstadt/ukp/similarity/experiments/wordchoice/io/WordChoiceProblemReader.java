@@ -30,7 +30,7 @@ import org.apache.uima.util.Level;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
-import de.tudarmstadt.ukp.similarity.type.WordChoiceProblem;
+import dkpro.similarity.type.WordChoiceProblem;
 
 /**
  * Reads word choice problem datasets.
