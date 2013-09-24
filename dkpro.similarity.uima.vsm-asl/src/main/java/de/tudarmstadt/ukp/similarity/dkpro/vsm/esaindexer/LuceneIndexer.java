@@ -41,7 +41,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Stem;
-import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.LuceneVectorReader;
+import dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
 
 /**
  * Creates an external Lucene index created based on stems.

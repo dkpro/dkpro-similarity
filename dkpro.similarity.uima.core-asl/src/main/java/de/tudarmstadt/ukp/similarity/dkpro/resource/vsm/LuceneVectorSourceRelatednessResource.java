@@ -25,9 +25,9 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
 import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.similarity.algorithms.vsm.VectorComparator;
-import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.LuceneVectorReader;
 import de.tudarmstadt.ukp.similarity.dkpro.resource.TextSimilarityResourceBase;
+import dkpro.similarity.algorithms.vsm.VectorComparator;
+import dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
 
 public final class LuceneVectorSourceRelatednessResource
 	extends TextSimilarityResourceBase

@@ -32,9 +32,9 @@ import org.junit.Test;
 import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
 import de.tudarmstadt.ukp.dkpro.core.snowball.SnowballStemmer;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-import de.tudarmstadt.ukp.similarity.algorithms.vsm.store.vectorindex.VectorIndexReader;
 import de.tudarmstadt.ukp.similarity.dkpro.vsm.esaindexer.IndexInverter;
 import de.tudarmstadt.ukp.similarity.dkpro.vsm.esaindexer.LuceneIndexer;
+import dkpro.similarity.algorithms.vsm.store.vectorindex.VectorIndexReader;
 
 public class EsaIndexCreatorTest {
 	
