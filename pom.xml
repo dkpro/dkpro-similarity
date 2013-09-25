@@ -5,8 +5,9 @@
     <groupId>de.tudarmstadt.ukp.dkpro.misc</groupId>
     <version>1.0.23</version>
   </parent>
-  <artifactId>dkpro.similarity-gpl</artifactId>
-  <version>2.0.0-SNAPSHOT</version>
+  <groupId>de.tudarmstadt.ukp.similarity</groupId>
+  <artifactId>de.tudarmstadt.ukp.similarity-gpl</artifactId>
+  <version>1.1.0</version>
   <packaging>pom</packaging>
   <dependencies>
   	<dependency>
@@ -34,98 +35,98 @@
             <scope>import</scope>
         </dependency>
   		<dependency>
-  			<groupId>dkpro.similarity</groupId>
-  			<artifactId>dkpro.similarity-asl</artifactId>
-  			<version>2.0.0-SNAPSHOT</version>
+  			<groupId>de.tudarmstadt.ukp.similarity</groupId>
+  			<artifactId>de.tudarmstadt.ukp.similarity-asl</artifactId>
+  			<version>1.1.0</version>
   			<type>pom</type>
   			<scope>import</scope>
   		</dependency>
   		<dependency>
   			<groupId>
-  				dkpro.similarity
+  				de.tudarmstadt.ukp.similarity.algorithms
   			</groupId>
   			<artifactId>
-  				dkpro.similarity.algorithms.lexical-gpl
+  				de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl
   			</artifactId>
-  			<version>2.0.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
   		<dependency>
   			<groupId>
-  				dkpro.similarity
+  				de.tudarmstadt.ukp.similarity.algorithms
   			</groupId>
   			<artifactId>
-  				dkpro.similarity.algorithms.lexsub-gpl
+  				de.tudarmstadt.ukp.similarity.algorithms.lexsub-gpl
   			</artifactId>
-  			<version>2.0.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
   		<dependency>
   			<groupId>
-  				dkpro.similarity
+  				de.tudarmstadt.ukp.similarity.algorithms
   			</groupId>
   			<artifactId>
-  				dkpro.similarity.algorithms.lsr-gpl
+  				de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl
   			</artifactId>
-  			<version>2.0.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
         <dependency>
             <groupId>
-                dkpro.similarity
+                de.tudarmstadt.ukp.similarity.algorithms
             </groupId>
             <artifactId>
-                dkpro.similarity.algorithms.ml-gpl
+                de.tudarmstadt.ukp.similarity.algorithms.ml-gpl
             </artifactId>
-            <version>2.0.0-SNAPSHOT</version>
+            <version>1.1.0</version>
         </dependency>
   		<dependency>
   			<groupId>
-  				dkpro.similarity
+  				de.tudarmstadt.ukp.similarity.algorithms
   			</groupId>
   			<artifactId>
-  				dkpro.similarity.algorithms.sspace-gpl
+  				de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl
   			</artifactId>
-  			<version>2.0.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
   		<dependency>
-  			<groupId>dkpro.similarity</groupId>
+  			<groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
   			<artifactId>
-  				dkpro.similarity.uima.core-gpl
+  				de.tudarmstadt.ukp.similarity.dkpro.core-gpl
   			</artifactId>
-  			<version>2.0.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
   		<dependency>
-  			<groupId>dkpro.similarity</groupId>
+  			<groupId>de.tudarmstadt.ukp.similarity</groupId>
   			<artifactId>
-  				dkpro.similarity.experiments.rte-gpl
+  				de.tudarmstadt.ukp.similarity.experiments.rte-gpl
   			</artifactId>
-  			<version>2.0.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
   		<dependency>
-  			<groupId>dkpro.similarity</groupId>
+  			<groupId>de.tudarmstadt.ukp.similarity</groupId>
   			<artifactId>
-  				dkpro.similarity.experiments.sts-2013-baseline-gpl
+  				de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl
   			</artifactId>
-  			<version>2.0.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
   		<dependency>
-  			<groupId>dkpro.similarity</groupId>
+  			<groupId>de.tudarmstadt.ukp.similarity</groupId>
   			<artifactId>
-  				dkpro.similarity.experiments.sts-2013-gpl
+  				de.tudarmstadt.ukp.similarity.experiments.sts-2013-gpl
   			</artifactId>
-  			<version>2.0.0-SNAPSHOT</version>
+  			<version>1.1.0</version>
   		</dependency>
         <dependency>
-            <groupId>dkpro.similarity</groupId>
+            <groupId>de.tudarmstadt.ukp.similarity</groupId>
             <artifactId>
-                dkpro.similarity.ml.core-gpl
+                de.tudarmstadt.ukp.similarity.ml.core-gpl
             </artifactId>
-            <version>2.0.0-SNAPSHOT</version>
+            <version>1.1.0</version>
         </dependency>
         <dependency>
-            <groupId>dkpro.similarity</groupId>
+            <groupId>de.tudarmstadt.ukp.similarity</groupId>
             <artifactId>
-                dkpro.similarity.ml.io-gpl
+                de.tudarmstadt.ukp.similarity.ml.io-gpl
             </artifactId>
-            <version>2.0.0-SNAPSHOT</version>
+            <version>1.1.0</version>
         </dependency>
   		<dependency>
   			<groupId>nz.ac.waikato.cms.weka</groupId>
@@ -150,26 +151,25 @@
   	</dependencies>
   </dependencyManagement>
   <modules>
-  	<module>dkpro.similarity.algorithms.lexical-gpl</module>
-    <module>dkpro.similarity.algorithms.lexsub-gpl</module>
-    <module>dkpro.similarity.algorithms.lsr-gpl</module>
-    <module>dkpro.similarity.algorithms.ml-gpl</module>
-  	<module>dkpro.similarity.algorithms.sspace-gpl</module>
-    <module>dkpro.similarity.example-gpl</module>
-  	<module>dkpro.similarity.experiments.sts-2013-baseline-gpl</module>
-  	<module>dkpro.similarity.experiments.rte-gpl</module>
-  	<module>dkpro.similarity.experiments.sts-2013-gpl</module>
-  	<module>dkpro.similarity.ml.core-gpl</module>
-  	<module>dkpro.similarity.ml.io-gpl</module>
-    <module>dkpro.similarity.uima.core-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.lexsub-gpl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl</module>
+    <module>de.tudarmstadt.ukp.similarity.algorithms.ml-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.dkpro.core-gpl</module>
+    <module>de.tudarmstadt.ukp.similarity.example-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.experiments.rte-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.experiments.sts-2013-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.ml.core-gpl</module>
+  	<module>de.tudarmstadt.ukp.similarity.ml.io-gpl</module>
   </modules>
   <scm>
-  	<url>http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn/trunk</url>
-  	<connection>http://dkpro-similarity-gpl.googlecode.com/svn/trunk/</connection>
-  	<developerConnection>scm:svn:https://dkpro-similarity-gpl.googlecode.com/svn/trunk/</developerConnection>
+  	<url>http://code.google.com/p/dkpro-similarity-gpl/source/browse/#svn/tags/de.tudarmstadt.ukp.similarity-gpl-1.1.0</url>
+  	<connection>http://dkpro-similarity-gpl.googlecode.com/svn/tags/de.tudarmstadt.ukp.similarity-gpl-1.1.0</connection>
+  	<developerConnection>scm:svn:https://dkpro-similarity-gpl.googlecode.com/svn/tags/de.tudarmstadt.ukp.similarity-gpl-1.1.0</developerConnection>
   </scm>
   <name>DKPro Similarity</name>
   <description>DKPro Similarity is an open source framework for text similarity. Our goal is to provide a comprehensive repository of text similarity measures which are implemented using standardized interfaces. The framework is designed to complement DKPro Core, a collection of software components for natural language processing based on the Apache UIMA framework.</description>
   <url>https://code.google.com/p/dkpro-similarity-gpl/</url>
-  <groupId>dkpro.similarity</groupId>
 </project>
