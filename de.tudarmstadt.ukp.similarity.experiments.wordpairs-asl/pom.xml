@@ -3,7 +3,7 @@
   <parent>
     <groupId>de.tudarmstadt.ukp.similarity</groupId>
     <artifactId>de.tudarmstadt.ukp.similarity-asl</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1-SNAPSHOT</version>
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity.experiments</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity.experiments.wordpairs-asl</artifactId>
