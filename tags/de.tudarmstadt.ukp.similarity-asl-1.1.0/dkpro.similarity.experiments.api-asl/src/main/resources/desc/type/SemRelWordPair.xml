@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>WordPair</name>
+  <description/>
+  <version>1.0</version>
+  <vendor/>
+  <imports>
+    <import name="desc.type.WordPair"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>dkpro.similarity.type.SemRelWordPair</name>
+      <description/>
+      <supertypeName>dkpro.similarity.type.WordPair</supertypeName>
+      <features>
+        <featureDescription>
+          <name>GoldValue</name>
+          <description/>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

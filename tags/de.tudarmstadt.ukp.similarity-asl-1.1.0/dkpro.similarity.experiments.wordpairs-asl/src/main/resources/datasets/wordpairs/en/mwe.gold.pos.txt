@@ -1,0 +1,300 @@
+competitor:rival:0.95:n:n
+rock:stone:0.95:n:n
+domestic animal:grazing animal:0.75:n:n
+lunch:dinner:0.95:n:n
+japanese:chinese:0.75:n:n
+grazing animal:domesticated animal:0.8:n:n
+caged animal:game animal:0.85:n:n
+sri lanka:costa rica:0.9:n:n
+polo:weight lifting:0.6:n:n
+microsoft:apple:0.9:n:n
+rock:jazz:0.9:n:n
+wild animal:native animal:0.65:n:n
+romania:sri lanka:0.9:n:n
+food processing:hospitality:0.15:n:n
+turkey:sierra leone:0.8:n:n
+hospital:school:0.65:n:n
+time:national geographic:0.5:n:n
+orange:red:0.9:n:n
+birth date:credit card number:0.35:n:n
+procter & gamble:apple:0.55:n:n
+supper:dinner:0.95:n:n
+range:appliance:0.7:n:n
+fox:nbc:0.75:n:n
+twitter:facebook:0.75:n:n
+bank:citibank:0.9:n:n
+manufacturing:trading:0.7:n:n
+spring:summer:0.9:n:n
+mouse:prairie dog:0.85:n:n
+general mills:avon:0.45:n:n
+sun:coca-cola:0.7:n:n
+nokia:cisco systems:0.8:n:n
+spirit:cocktail:0.85:n:n
+country:united kingdom:0.85:n:n
+monsanto:sun microsystems:0.6:n:n
+white:cream:0.75:n:n
+chicken:beef:0.85:n:n
+rodent:rat:0.9:n:n
+business:bakery:0.7:n:n
+business:restaurant:0.55:n:n
+fruit:apple:0.8:n:n
+company:coca cola:0.8:n:n
+video:music:0.8:n:n
+country:czech republic:0.85:n:n
+java:perl:0.9:n:n
+company:bank of america:0.8:n:n
+country:united states:0.85:n:n
+company:wells fargo:0.8:n:n
+mild steel:paper towel:0.25:n:n
+sun:wind power:0.9:n:n
+insurance company:big company:0.8:n:n
+company:american express:0.8:n:n
+eu country:western country:0.9:n:n
+worm:ear mite:0.85:n:n
+fresh:egg:0.5:n:n
+store:grocery:0.9:n:n
+company:morgan stanley:0.8:n:n
+company:goldman sachs:0.8:n:n
+country:costa rica:0.85:n:n
+company:cisco systems:0.7:n:n
+company:barclays:0.8:n:n
+spectator sport:professional sport:0.75:n:n
+fox:polar bear:0.7:n:n
+company:oil company:0.8:n:n
+gold:chocolate brown:0.65:n:n
+emerging economy:market:0.7:n:n
+company:general mills:0.5:n:n
+giant:large company:0.6:n:n
+company:hewlett packard:0.75:n:n
+turkey:corned beef:0.8:n:n
+organized sport:sport:0.85:n:n
+company:deutsche bank:0.55:n:n
+company:technology company:0.8:n:n
+apple:ipad:0.2:n:n
+company:icici bank:0.8:n:n
+sport:table tennis:0.8:n:n
+sport:ice hockey:0.8:n:n
+stone:paper towel:0.1:n:n
+dog:sea turtle:0.65:n:n
+bank:bank of america:0.9:n:n
+coal mining:medical device:0.1:n:n
+notebook:laptop computer:0.95:n:n
+company:standard chartered:0.8:n:n
+racquetball:ice skating:0.85:n:n
+liquid:black tea:0.8:n:n
+cold-blooded animal:exotic animal:0.7:n:n
+orange:water melon:0.9:n:n
+country:asian country:0.85:n:n
+firm:large company:0.75:n:n
+sport:sport event:0.9:n:n
+pie:cookie:0.9:n:n
+food:baked good:0.75:n:n
+technology company:microsoft:0.85:n:n
+domesticated animal:pet:0.9:n:n
+high impact sport:competitive sport:0.85:n:n
+blue berry:apple:0.9:n:n
+shell:exxon mobil corp.:0.85:n:n
+animal:exotic animal:0.85:n:n
+domestic pet:domesticated animal:0.9:n:n
+country:hong kong:0.35:n:n
+animal:blue jay:0.75:n:n
+native animal:exotic animal:0.65:n:n
+summer fruit:climacteric fruit:0.7:n:n
+date:anniversary:0.75:n:n
+vegetable:turnip:0.8:n:n
+company:international company:0.85:n:n
+small country:neighboring country:0.7:n:n
+feral animal:grazing animal:0.65:n:n
+feast:easter:0.45:n:n
+citrus juice:fruit juice:0.9:n:n
+sweet:cookie:0.8:n:n
+room:kitchen:0.8:n:n
+meal:lunch:0.85:n:n
+school:new school:0.85:n:n
+flower:mum:0.75:n:n
+gold:stainless steel:0.8:n:n
+social event:dinner:0.75:n:n
+racquet sport:outdoor sport:0.85:n:n
+stone fruit:frozen fruit:0.75:n:n
+vegetable:bean:0.8:n:n
+popular sport:athletic event:0.8:n:n
+game animal:exotic animal:0.65:n:n
+global company:multinational company:0.95:n:n
+cost:food:0.6:n:n
+vegetable:eggplant:0.75:n:n
+sport:martial art:0.75:n:n
+vegetable:pepper:0.8:n:n
+spring:river:0.7:n:n
+vegetable:beet:0.6:n:n
+animal:german shepherd:0.75:n:n
+animal:poodle:0.8:n:n
+date:asian pear:0.5:n:n
+recreational sport:intramural sport:0.85:n:n
+tree fruit:berry:0.7:n:n
+team sport:olympic sport:0.85:n:n
+small fruit:red fruit:0.7:n:n
+range:food processor:0.75:n:n
+insect:caterpillar:0.8:n:n
+guinea pig:elephant:0.7:n:n
+athletic event:intramural sport:0.8:n:n
+sport:kick boxing:0.75:n:n
+public place:street:0.7:n:n
+experimental scientist:chemist:0.8:n:n
+forest animal:caged animal:0.65:n:n
+marine animal:cold-blooded animal:0.65:n:n
+india:developing country:0.8:n:n
+product:instant coffee:0.8:n:n
+insect:cockroach:0.8:n:n
+ruminant animal:farm animal:0.8:n:n
+exotic animal:feral animal:0.7:n:n
+combat sport:sport:0.85:n:n
+produce:acidic fruit:0.1:n:n
+acid:vinegar:0.85:n:n
+ice:storm:0.7:n:n
+endangered animal:predatory animal:0.7:n:n
+bus:flight:0.75:n:n
+grazing animal:large animal:0.7:n:n
+nocturnal animal:exotic animal:0.55:n:n
+sport event:recreational sport:0.75:n:n
+passion fruit:blackberry:0.85:n:n
+date:valentine's day:0.85:n:n
+neighboring country:nation:0.65:n:n
+tropical fruit:citrus fruit:0.75:n:n
+developing country:country:0.85:n:n
+big player:key player:0.95:n:n
+international company:competitor:0.35:n:n
+dry fruit:red fruit:0.65:n:n
+insect:ladybug:0.8:n:n
+mouse:mp3 player:0.6:n:n
+athletics:olympic sport:0.8:n:n
+active sport:athletic event:0.85:n:n
+role:mentor:0.8:n:n
+contact sport:winter sport:0.75:n:n
+social animal:caged animal:0.6:n:n
+employer:large corporation:0.6:n:n
+outdoor sport:athletics:0.85:n:n
+animal:flying squirrel:0.8:n:n
+adventure sport:popular sport:0.85:n:n
+citrus juice:dry fruit:0.5:n:n
+spectator sport:water sport:0.75:n:n
+juicy fruit:frozen fruit:0.75:n:n
+animal:monarch butterfly:0.8:n:n
+asian country:western country:0.75:n:n
+endurance sport:racquet sport:0.7:n:n
+leader:gandhi:0.8:n:n
+rival:multinational company:0.3:n:n
+farm animal:aquatic animal:0.7:n:n
+animal:polar bear:0.8:n:n
+aquatic animal:forest animal:0.7:n:n
+staff:kitchen staff:0.8:n:n
+banking company:company:0.75:n:n
+household name:big player:0.6:n:n
+event:lunch:0.7:n:n
+convenient store:bakery:0.7:n:n
+fruit:artichoke:0.65:n:n
+support:meal:0.55:n:n
+library:restaurant:0.65:n:n
+sport:mountain biking:0.8:n:n
+large corporation:private company:0.7:n:n
+olympic sport:sport event:0.85:n:n
+large company:manufacturer:0.7:n:n
+butter:cream:0.95:n:n
+film:louise:0.5:n:n
+wild animal:cat:0.7:n:n
+player:oil company:0.05:n:n
+martial art:karate:0.85:n:n
+lime:pumpkin:0.45:n:n
+fruit:brussels sprout:0.55:n:n
+chicken:hen:0.95:n:n
+fruit:green pepper:0.35:n:n
+notebook:pencil:0.7:n:n
+fruit:green bean:0.5:n:n
+climacteric fruit:vegetable juice:0.6:n:n
+donor:emerging market:0.1:n:n
+pool:restaurant:0.3:n:n
+management:supper:0.4:n:n
+neighbor:latin american country:0.2:n:n
+jurisdiction:emerging economy:0.3:n:n
+vegetable juice:juicy fruit:0.55:n:n
+dried fruit:wild fruit:0.65:n:n
+bank account:product description:0.05:n:n
+casserole:egg:0.3:n:n
+shell:bone:0.5:n:n
+seasonal fruit:vegetable juice:0.5:n:n
+water sport:sport event:0.85:n:n
+working:meal:0.25:n:n
+household pet:cold-blooded animal:0.6:n:n
+travel:meal:0.25:n:n
+staff:supper:0.15:n:n
+sun microsystems:penguin:0:n:n
+reason:hypertension:0.1:n:n
+alcoholic beverage:sports equipment:0:n:n
+fruit:bell pepper:0.3:n:n
+honda:general mills:0.45:n:n
+zip code:ip address:0.65:n:n
+company:great britain:0.05:n:n
+company:new zealand:0.05:n:n
+company:united states:0.05:n:n
+social security number:credit card:0.65:n:n
+worm:windows media player:0.25:n:n
+fruit:brazil nut:0.5:n:n
+music:lunch:0.1:n:n
+fresh fruit:green bean:0.55:n:n
+banana:garlic:0.35:n:n
+power:arab country:0.15:n:n
+european country:emerging economy:0.5:n:n
+play:lunch:0.4:n:n
+acai berry:adidas:0:n:n
+fruit:sweet potato:0.4:n:n
+animal:martial art:0.25:n:n
+manufacturer:predatory animal:0:n:n
+racquet sport:fruit:0:n:n
+vinegar:couscous:0.4:n:n
+competitive sport:social animal:0.05:n:n
+sport:czech republic:0.1:n:n
+spread:pie:0.25:n:n
+company:mountain biking:0.05:n:n
+company:table tennis:0.05:n:n
+business card:washing machine:0.05:n:n
+mobile phone:soft drink:0.05:n:n
+watch:cream:0.15:n:n
+bank of america:uk:0.2:n:n
+brainstorming:google alerts:0.15:n:n
+animal:gasket:0.3:n:n
+industry:meal:0.25:n:n
+company:cross country:0.1:n:n
+company:field hockey:0:n:n
+company:hong kong:0:n:n
+company:ice hockey:0:n:n
+group:dinner:0.3:n:n
+industry:cinema:0.1:n:n
+organism:tiger:0.6:n:n
+project:music:0.3:n:n
+sport:sri lanka:0.1:n:n
+sport:united kingdom:0.05:n:n
+sport:united states:0.05:n:n
+adventure sport:large country:0.35:n:n
+domestic animal:fruit juice:0.05:n:n
+dry fruit:latin american country:0:n:n
+economy:developing country:0.6:n:n
+extreme sport:asian country:0:n:n
+fruit juice:active sport:0:n:n
+fruit juice:wild animal:0:n:n
+game animal:spectator sport:0.1:n:n
+global company:ball:0:n:n
+government:latin american country:0.45:n:n
+local fruit:marine animal:0.15:n:n
+pie:exotic fruit:0.4:n:n
+sport:citrus juice:0:n:n
+summer fruit:feral animal:0.3:n:n
+carbon fiber:newspaper article:0.1:n:n
+gymnastics:general electric:0.05:n:n
+hike:production:0.35:n:n
+hp:wild boar:0:n:n
+media:trading:0.25:n:n
+party:dinner:0.65:n:n
+peanut butter:motor vehicle:0.05:n:n
+plum:home depot:0.05:n:n
+population:expiration date:0.25:n:n
+sri lanka:cattle:0.05:n:n
+visual basic:pareto chart:0.35:n:n
