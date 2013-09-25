@@ -216,9 +216,9 @@
     <module>de.tudarmstadt.ukp.similarity.experiments.api-asl</module>
   </modules>
   <scm>
-  	<url>http://code.google.com/p/dkpro-similarity-asl/source/browse/#svn/tags/de.tudarmstadt.ukp.similarity-asl-1.1.0</url>
-  	<connection>http://dkpro-similarity-asl.googlecode.com/svn/tags/de.tudarmstadt.ukp.similarity-asl-1.1.0</connection>
-  	<developerConnection>scm:svn:https://dkpro-similarity-asl.googlecode.com/svn/tags/de.tudarmstadt.ukp.similarity-asl-1.1.0</developerConnection>
+  	<url>http://code.google.com/p/dkpro-similarity-asl/source/browse/</url>
+  	<connection>scm:svn:http://dkpro-similarity-asl.googlecode.com/svn/trunk</connection>
+  	<developerConnection>scm:svn:https://dkpro-similarity-asl.googlecode.com/svn/trunk</developerConnection>
   </scm>
   <name>DKPro Similarity</name>
   <url>https://code.google.com/p/dkpro-similarity-asl/</url>
