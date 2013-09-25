@@ -1,0 +1,245 @@
+###############################################################################################################
+		Question: What is typically included in a class definition?
+		Answer:  Data members (attributes) and member functions.
+
+2	[6]	For us it is usually a set, get, and displayMessge or other messages that tell you what properties a class has but does not reveal its implementations. You could have anything you want in your own class definition.
+4	[5]	The attributes of said class. Also whether or not it is a subclass. Also whether it is public private or protected.
+5	[8]	Information telling the compiler what data members and member functions belong to the class.
+5	[3]	Since class is user defined, the body of the declaration can contain members, that can be either data or function declarations, and optionally access specifiers.  Example for specifiers would be public, private, and protected.  There is the keyword Class and the Class body is enclosed with brackets ({}). 
+2	[4]	An object and data.
+3	[9]	It's specific class name, includes only information defined by that class... implementation details... etc.
+5	[22]	data members and member functions.
+5	[23]	A class definition usually contains the function and its data members
+5	[2]	Data members and member functions
+3.5	[29]	member functions
+5	[31]	Member functions and data members belonging to the class.
+4.5	[12]	a public and private area that includes the functions and variables that are used in the class
+3.5	[21]	the keyword class followed by they class name, on the inside you declare public and private declarations of your class
+3	[13]	A class definition typically includes function definitions.
+5	[11]	It begins with Class, followed by the class name, then usually a constructor, data members and member functions that delineates the class is included in any class's definition.
+4.5	[17]	the data and methods 
+4.5	[7]	A constructor, functions, and variables that are accessible to by that class, and possibly other classes depending on how they are done.
+5	[10]	Member functions and data members.
+2.5	[27]	public section and private section, and there must be a semicolon to set the end
+5	[25]	member funtions and data members
+5	[20]	Data members and Member functions
+5	[18]	data members and member functions
+3.5	[19]	the class name and its public data types such as constructors, methods, functions.
+4.5	[30]	a constructor and several data members, and at least one public data member or method
+2	[16]	class name, two curly prenthesis, public and private
+5	[26]	data members and member functions
+4.5	[1]	Data and functions
+5	[28]	functions and data members that belong to the class
+5	[15]	class variables, function definitions for the class
+4.5	[14]	A class is an expanded concept of a data structure, it holds both the data and the functions being executed 
+
+###############################################################################################################
+		Question:  What is the difference between a data member and a local variable inside a member function?
+		Answer:  Data members can be accessed from any member functions inside the class defintion. Local variables can only be accessed inside the member function that defines them.
+
+3	[6]	 Data members are the data components of a particular class.  A member function are the functioning components of the class.
+2.5	[5]	 A field variable is a variable that is declared as a member of a class. A local variable is avariable that isdeclared local to a method.
+4.5	[8]	Data members are declared inside the class, but outside of any member functions. Unlike with local variables, each object of the class keeps its own copy of the data members stored in memory.
+4.5	[3]	Data member are variables that represent an attribute in a class definition.  Local variables declared in a function body cannot be used outside of that function body.  When a function terminates the values of its local variables are lost.
+5	[4]	A local variable cannot be accessed outside the function in which it is declared. Data members normally are private. Variables of functions declared private are accessible only to member functions of the class in which they are declared.
+4.5	[9]	A data member is part of a C++ class or structure that stores data of a certain type... A local variable inside a member function is only available inside that function, and can be used to derive a desired outcome.
+3.5	[22]	A local variable can only be accessed within the scope of its declaration.
+4.5	[23]	Data members are the atributes of the function and can be used outside the function.<br>Local variable can not be used outside the function and the value is lost after the function terminates.
+4	[2]	data members are permanent attributes of the class, local variables inside a member function are lost when the scope of the member function ends.
+4	[29]	data members are declared in a class definition but outside the bodies of a class's member-function definitions. Local variables are declared in a function definition's body
+4.5	[31]	A data member is globally accessible, while a local variable is only accessible inside the member function.
+5	[12]	A variable inside a member function can only be accessed inside that member and a data member can be accessed throughought the program.
+4.5	[21]	Local variables are used only within the scope of its declaration
+2	[13]	A data member is a more general term describing all objects instantiated within a member function.  "Local" in local variables refers more to the scope of a variable, which may be located in anything from a control structure to a class.  Local variables whose scope are in a member function are the same as data members of member functions.
+3.5	[11]	A data member exists permanently in that program's memory as long as it's run.<br><br>A local variable inside a member function is temporal and only used to operate in the function and exists as long as the function is run.
+5	[17]	local variables can only be used within the function, where as data members can be set to public access and can be used throughout
+4.5	[7]	The local variable is lost once it exits the block of code, while the data member is not.
+4.5	[10]	Every member function can access and modify a data member.<br>A local variable can only be used from the line of declaration to the next closing } before it is lost from memory.
+5	[27]	data member is accessible to all functions in the class, where local variable is only available to the member function and value is lost when function closes
+4.5	[25]	Data members are variables that are declared inside the class definition but outside of the bodies of the class member functions. Local variables can only be used within the function declaration.
+4	[20]	The data member can be accessed outside of the class, whereas the local variable cannot.
+5	[18]	Local variables cannot be used outside of that function body. When a function terminates the values of its local variables are lost. Where as data members are variables in a class definition, and they exist throughout the life of the object.<br>
+2	[19]	a local variable in a member function has to be static. a data member can change its value freely.
+5	[30]	a local variable is only useable within the function it is defined, whereas a data member is available to any method within its class
+5	[16]	Variable declared in a function defination's body cannot be used outside of that function.<br><br>Data members accessible only to member function of that class.
+4.5	[26]	data members <br><br>local variables are declared in a function definitionâ€™s body.<br>they Cannot be used outside of that function body.<br>When a function terminates, the values of its local variables are lost.<br><br><br>
+4.5	[1]	local variable is only available in the function.
+4.5	[28]	local variables are accessed inside member functions only while data members <br><br>can be accessed throughout the class
+5	[15]	A data member is accessible anywhere in the class, while i local variable in a member function is only accessible in that particular function, and is freed after the function exits.
+4	[14]	a Data member is encapsulated within a class or object,  it is static and can be shared by all instances of that class. <br>however local variable's are only used from the function or block in which it is declared and not the whole class. other wise they would be called global variables. 
+
+###############################################################################################################
+		Question:  What is the difference between a constructor and a function?
+		Answer: A constructor is called whenever an object is created, whereas a function needs to be called explicitely. Constructors do not have return type, but functions have to indicate a return type.
+
+2.5	[6]	 A constructor initializes an object or objects of a class.  A function of a class performs a task such as display a line of text or do some kind of mathematical operations.
+3	[5]	all constructors are functions but not all functions are constructors. Also functions can have nearly infinite purposes, while constructors always create an instance of whichever class you are using. You can change how a constructor does something but not what it does. With functions you can change not only the how but also the what.
+5	[8]	Unlike regular functions, constructors are only used to initialize an objectâ€™s data when it is created. Constructors must also be given the same name as the class and cannot return any values.<br>
+4.5	[3]	A constructor typically used to intialize data members and allocate resources, for instance memory, files, etc.  Also a constructor cannot return values.  Functions are operations that maybe globally defined.
+4	[4]	Constructors cannot return values, so they cannot specify a return type. Normally, constructors are declared public.
+3	[9]	A constructor is a method that starts new instances of a class. (Example: Employee employee1(parameters) starts a new instance of object of type Employee). A function is simply a module w/in a program that completes its single desired task.
+3.5	[22]	A constructor is called whenever a new object of that class is made.
+4	[23]	A constructor does not return any date and has no return type.<br><br>Functions can return date or not return data can have a return type.
+4	[2]	A constructor is automatically called whenever an instance of a class is created, a function must be explicitly called by the user. 
+4	[29]	constructors cannot return values, so they cannot specify a return type like functions can.
+3.5	[31]	A constructor is a function used to initialize an object's data when it is created.
+2.5	[12]	a constructor initialises everything so that nothing is left empty or with random varioubles and a function modifies those variables with data.
+3.5	[21]	A constructor initialized values at the execution of its instantiation. It provides default values.
+4	[13]	A constructor sets up the default values of variables when an object is instantiated, whereas a function allows interaction with that object.
+3	[11]	A constructor is used to create an object that can be employed in the main function of a program.  This may or may not execute code along with it.<br><br>A function is a set of code that executes when called, but does not create a new object.
+4	[17]	a constructor initializes data members but the functions actually perform tasks. Constructors cant return values either. 
+3.5	[7]	a constructor does not need a type, and it is used to initialize the variables.
+4	[10]	Constructors don't have a return type.
+3	[27]	constructor creates the class object into memory where functions perform actions against that object
+4	[25]	constructors cannot return values
+2.5	[20]	A constructor initializes values and a function usual performs some sort of operation.
+5	[18]	A constructor is a function used to initialize an object's data when it is created. It's call is made implicitly when the object is created and must be defined with the same name as the class. Constructor also cannot return a value like a function can.
+4	[19]	A constructor is used to create an instance of a class and has the same name as that class. A function cannot have the same name as a class and computes data.
+3	[30]	a constructor is a function that initializes a class instance, a function performs whatever task it is written for
+4	[16]	A constructor cannot return values, not even void, but function get a return value.
+5	[26]	a constructor cannot return values, its not even void. it is used to initialize an object's data when it is created.<br>whereas, a function is created to do a specific task, and it can return values.
+2.5	[1]	A constructor initializes an object. A function is part of an object.
+2.5	[28]	constructors initialize the data that is then used in the calculations of a <br><br>function
+3.5	[15]	a constructor is called when the class is created, a function can be called any time.
+4	[14]	constructor is a special block of statements called when an object is created, either when it is declared statically or constructed on the stack. However a function is a portion of code within a larger program, which performs a specific task and independent to the rest of the code. 
+
+###############################################################################################################
+		Question: When does C++ create a default constructor?
+		Answer: If no constructor is provided, the compiler provides one by default. If a constructor is defined for a class, the compiler does not create a default constructor.
+
+5	[6]	The compiler creates a default constructor when we do not define one in our class file
+3.5	[5]	during compilation
+5	[8]	When the class does not explicitly include a constructor.
+3	[3]	When no parameters are set is when a default constructor is used.  
+5	[4]	When a class does not explicitly include a constructor.
+1.5	[9]	When there are no arguments passed.
+5	[22]	when there is not one already for a specific class
+3.5	[23]	When it the programs compiles
+5	[2]	when a constructor is not provided by the programmer of the class
+5	[29]	In any class that does not explicitly include a constructor.
+1	[31]	Before the main function of the code.
+5	[12]	whenevery you dont specifiy your own
+5	[21]	When non are provided
+5	[13]	C++ will create a default constructor when no other constructor is present.
+5	[11]	When no constructor was specified in the constructor's class, but the class is instantiated in a program.
+5	[17]	When no constructor exists when one is needed, a parameterless default constructor is declared.
+5	[7]	The Compiler creates this automatically for you, unless you specifically create one.
+5	[10]	In any class that doesn't explicitly include a constructor.
+5	[27]	when no user-defined constructor exists
+5	[25]	If a class does not explicitly include a constructor, the compiler creates one.
+5	[20]	When you do not provide your own constructor.
+5	[18]	When a class does not explicitly include a constructor.
+5	[19]	C++ creates a default constructor during compilation if one is not provided.
+5	[30]	when a class does not explicitly include a constructor
+5	[16]	The compiler will provide one when class does not explictly include a consructor.
+5	[26]	when the programmer does not explicitly include a constructor
+5	[1]	When one is not explicitly stated.
+5	[28]	when one is not explicitly included by a class<br>
+5	[15]	When you dont specify any constructors.
+5	[14]	at the very beginning when you run a complier, matter a fact in C++ it generates its own default constructor for the class provided if no other constructors have been provided by user
+
+###############################################################################################################
+		Question:  How many constructors can be created for a class?
+		Answer: Unlimited number.
+
+0	[6]	Just one per class.
+5	[5]	As many as you want so long as they have different parameters.
+5	[8]	There is no limit to the number of constructors in a class because like functions, constructors can be overloaded.
+1.5	[3]	It depends what type of class is being defined.  Typically you would have a constructor call for each object.
+5	[4]	In C++, the constructor can be overloaded in that there can be more than one constructor for a class, each having different parameters.
+0	[9]	1
+5	[22]	any number you want
+0	[23]	One
+5	[2]	by default just one, but they may be overloaded to create as many constructors as necessary
+5	[29]	as many as you want
+5	[31]	As many as you want, with different parameters.
+5	[12]	infinite
+5	[21]	as many as you need
+5	[13]	As many as are needed, depending on how many variables one wishes to directly modify or leave as default when instantiating an object.
+5	[11]	A very large amount of constructors can be created for any given class through overloading.  When two constructors with a different type or number of parameters are created, they are said to be overloaded, and C++ can recognize which constructor to use based on the type of the variables that are passed/returned.
+2.5	[17]	It depends on the number of objects. Each object should have a constructor.
+5	[7]	Theoretically unlimited, as long as they are defined by the programmer.
+5	[10]	As many as needed.
+5	[27]	as many as wanted/needed
+4.5	[25]	several
+0	[20]	One
+0	[18]	one
+5	[19]	There can be infinite constructors as long as the signature is different.
+1.5	[30]	that depends on the number of data members in the class
+0	[16]	one
+5	[26]	you can overload constructors as you need
+5	[1]	As many as the programmer wants to create. 
+0	[28]	one
+5	[15]	as many as you want, as long as they each have a unique argument list
+5	[14]	as many as the user decides to use. 
+
+###############################################################################################################
+		Question:  What is the difference between a function prototype and a function definition?
+		Answer: A function prototype includes the function signature, i.e., the name of the function, the return type, and the parameters' type. The function definition includes the actual body of the function. 
+
+4	[6]	 A function definition does not require any additional information that needs to be passed inside its parenthesis<br> to execute. While a definition prototype requires more than one parameters to be passed in order to complete its <br>task.
+2.5	[5]	The FUNCTION PROTOTYPE is where the programmer declares that he/she is using a function other than main( ). This is like declaring a variable, the programmer knows that he/she will be using in the future, but has yet to say where they are going to use it, or how. This is answers the question who, it gives the function a name and character. The function prototype, by common practice is placed at the beginning of the program after the #includes and before main( ).<br>The FUNCTION DEFINITION is the guts of the function. This is where the programmer decides what the function is going to do and tells it how to do it. It takes whatever information it is given and performs the operations. It works sort of like the brain, the brain takes in input and based upon that input performs in some way producing an output. The function defintion is placed outside of main( ) and any other functions. A function is its own entity and should be thought of as such.
+5	[8]	A function prototype tells the compiler the function name, return type and the number and type of parameters without revealing the implementations contained in the function definition.
+3	[3]	Function prototype is a declaration.  Function definitions (w/multiple parameters) often require more than one piece of information. to perform their tasks.
+5	[4]	A function prototype is a declaration of a function that tells the compiler the function's name, its return type and the types of its parameters.
+4.5	[9]	A prototype shows only return types and necessary parameters. The definition includes names for those parameters and defines what the object is actually capable of doing.
+4.5	[22]	prototype only tells the user what data types go into a function and what type is returned.
+4.5	[23]	Function prototype is located in the .h file and only contains the access function name and paramater type.<br><br>Function definition contains the code for the function to perform its activity.
+4	[2]	a function prototype is used to reference the compiler to a function that will be defined later on, a function definition is the actual function itself, complete with return type, parameters, etc...
+4.5	[29]	A function prototype describes a class's public interface without revealing the class's member function implementations
+2	[31]	Function definitions are just that, the definition. The prototype is what the compiler uses to check that calls to function are correct.
+3	[12]	a prototype does not include any actual code where the function has all the code that is executed in the program.
+3	[21]	a prototype declares what will be used in the program and the definition 
+5	[13]	A function prototype lays out the name, return type, and the number and types of parameters the function expects to receive in a certain order.  The details for function prototypes are in the function definition.
+5	[11]	A function definition is the code that defines the function placed in the {} brackets that determines that function's operation.<br><br>A function prototype shows the function's public interface without exposing implementation.  It shows name, return type and type of paramaters.
+3.5	[17]	A function prototype is just a declaration of the function existing, and cant be used as an actual function. A function has to be created with a definition within to tell the compiler what the function does.
+4.5	[7]	the Prototype creates a framework to call the function definition. While a function definition is where the function is actually programmed out and created into a final product.
+4.5	[10]	A function prototype describes the class's public interface without providing how the function works.<br>A function definition contains the inner workings of the function.
+3.5	[27]	prototype states all functions in that class before compilation, where the definition actually holds the source for the functions
+5	[25]	Function prototypes tell the compiler the function names, its return type, and the types of its parameters where as, function definitions actually implement the member functions.
+4	[20]	A function prototype just specifies parameters.  A function definition includes parameters and a code body.
+4.5	[18]	Function prototypes describe the class's public interface
+4.5	[19]	A prototype only declares name, return type, and input type.<br>A definition also defines the scope, variables, process, and return function 
+4	[30]	a function prototype simply declares the functions parameters, the function definition includes any necessary variables and the function's actual code
+3.5	[16]	A functgion prototype is a declaration of a function , while function definition specifies what a function does
+5	[26]	in a function prototype you include the return type, the name of the function, and its parameters if any are needed.<br><br>in a function definition you write the code of what the function will do. 
+4.5	[1]	A function definition contains all the code for a function to work. A function prototype just shows the output, input and function name.
+4.5	[28]	function prototype describe the class's public interface without revealing <br><br>the class's member function implementations,  function definitions show what <br><br>implementations are being done
+5	[15]	A function prototype only names the function, its return type, and it's argument list, while a definition defines the above as well as what the function actually does.
+4.5	[14]	function prototype describes a classes interface without reviling whatever is inside as for the function definition can't do that. <br>
+
+###############################################################################################################
+		Question: What is the role of a header-file?
+		Answer: To store a class interface, including data members and member function prototypes.
+
+4.5	[6]	the role of a header file list all the functions a class can do while hiding the inner workings of its functions<br>
+3	[5]	The main role of header file is it is used to share information among various files.
+3.5	[8]	Header files separate files in which classes are defined and allow the compiler to recognize classes when used elsewhere.
+0	[3]	No
+3.5	[4]	A header file consists of "reusable" source code such as a class in a file that by convention has a .h filename extension. This differs from .cpp files that contain "source-code."
+4.5	[9]	To provide information about the contents of a library. It includes the definition of classes, declarations of functions, data types, and constants.
+4.5	[22]	the header file shows the user what types go into and come out of a function but does not allow a user to manipulate the actual code for the function.
+3.5	[23]	Header files declares the class member functions.
+4	[2]	A header file allows for the separation of declaration and implementation into separate files. 
+1.5	[29]	the header file has access to the C++ Standard Library and makes certain classes like class string work.
+2.5	[31]	â€œInstructâ€ the compiler on how to interface with library and user-written components.
+3	[12]	create a comon area to contain reusable functions.
+3	[21]	to declare the functions being used in the classes
+1.5	[13]	#include "hat.h"  allows the use of the hat container, so called from the act of pulling names from a hat.  The header file for hat includes functions for storage and retrieval of it's contents, mainly put(), peek(), and pull().
+4	[11]	To hold reusable content or modules separate from the actual  source-code file that can be easily referenced and employed for different programs.
+5	[17]	a header file is a file used to store a list of prototye functions and data members.
+3.5	[7]	A header file is a cross communication method between source files, to help limit the size of each individual program. Without header files a program will be 1 large lump of code and thus fairly hard to debug and traverse.
+3	[10]	It contains reusable source code for use by other classes.
+3.5	[27]	to separate the source code from the main function, allows the methods/classes to be included in the program without direct coding. allows re usability.
+2.5	[25]	Header files have reusable source code in a file that a programer can use. 
+3.5	[20]	To hide the definition and details of a class.  Also to help readability of the main C++ file.
+3.5	[18]	To allow the compiler to recognize the classes when used elsewhere.
+4	[19]	A header file declares a class, its data, and functions available through that class.
+3	[30]	header files contain code which can be used in multiple files
+3	[16]	Allow compiler to recognize the classes when used elsewhere
+3.5	[26]	Allow compiler to recognize the classes when used elsewhere<br>
+3	[1]	To promote function reusuablitly
+3	[28]	class definitions are placed here
+4.5	[15]	A header file usually contains class and/or function prototypes.
+1	[14]	contains all the standard C++ library's i.e. string 
+
