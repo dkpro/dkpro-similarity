@@ -1,13 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>de.tudarmstadt.ukp.dkpro.misc.superpom</artifactId>
-    <groupId>de.tudarmstadt.ukp.dkpro.misc</groupId>
-    <version>1.0.23</version>
+    <artifactId>dkpro-parent-pom</artifactId>
+    <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+    <version>6</version>
   </parent>
   <artifactId>dkpro.similarity-gpl</artifactId>
   <version>2.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
+      <distributionManagement>
+          <repository>
+                  <id>ukp-oss</id>
+                  <url>dav:https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-releases-local</url>
+          </repository>
+          <snapshotRepository>
+                  <id>ukp-oss</id>
+                  <url>dav:https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-snapshots-local</url>
+          </snapshotRepository>
+  </distributionManagement>
   <dependencies>
   	<dependency>
   		<groupId>edu.ucla.sspace</groupId>
@@ -149,6 +159,15 @@
         </dependency>
   	</dependencies>
   </dependencyManagement>
+     <build>
+          <extensions>
+                  <extension>
+                          <groupId>org.apache.maven.wagon</groupId>
+                          <artifactId>wagon-webdav</artifactId>
+                          <version>1.0-beta-2</version>
+                  </extension>
+          </extensions>
+  </build>
   <modules>
   	<module>dkpro.similarity.algorithms.lexical-gpl</module>
     <module>dkpro.similarity.algorithms.lexsub-gpl</module>
