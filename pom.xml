@@ -18,14 +18,33 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>de.tudarmstadt.ukp.dkpro.misc.superpom</artifactId>
-    <groupId>de.tudarmstadt.ukp.dkpro.misc</groupId>
-    <version>1.0.23</version>
+    <artifactId>dkpro-parent-pom</artifactId>
+    <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+    <version>6</version>
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity-asl</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
+      <distributionManagement>
+          <repository>
+                  <id>ukp-oss</id>
+                  <url>dav:https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-releases-local</url>
+          </repository>
+          <snapshotRepository>
+                  <id>ukp-oss</id>
+                  <url>dav:https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-snapshots-local</url>
+          </snapshotRepository>
+  </distributionManagement>
+   <build>
+          <extensions>
+                  <extension>
+                          <groupId>org.apache.maven.wagon</groupId>
+                          <artifactId>wagon-webdav</artifactId>
+                          <version>1.0-beta-2</version>
+                  </extension>
+          </extensions>
+  </build>
   <dependencies>
   	<dependency>
   		<groupId>junit</groupId>
@@ -77,74 +96,74 @@
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   			<artifactId>de.tudarmstadt.ukp.similarity.algorithms.api-asl</artifactId>
-  			<version>1.1.0</version>
+  			<version>1.1.0-SNAPSHOT</version>
   		</dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.core-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lsr-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.sound-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.structure-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.style-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.wikipedia-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.dkpro.api-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.dkpro.core-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
                 <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.dkpro.data-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
                 <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.dkpro.io-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.experiments</groupId>
             <artifactId>
                 de.tudarmstadt.ukp.similarity.experiments.api-asl
             </artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
