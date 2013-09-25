@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Fri Sep 21 09:54:00 CEST 2012
+ * Updated by JCasGen Wed Sep 25 09:04:05 CEST 2013
  * @generated */
 public class WordChoiceProblem_Type extends Annotation_Type {
   /** @generated */
@@ -42,7 +42,7 @@ public class WordChoiceProblem_Type extends Annotation_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("dkpro.similarity.type.WordChoiceProblem");
  
   /** @generated */
   final Feature casFeat_Target;
@@ -51,13 +51,13 @@ public class WordChoiceProblem_Type extends Annotation_Type {
   /** @generated */ 
   public String getTarget(int addr) {
         if (featOkTst && casFeat_Target == null)
-      jcas.throwFeatMissing("Target", "de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+      jcas.throwFeatMissing("Target", "dkpro.similarity.type.WordChoiceProblem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Target);
   }
   /** @generated */    
   public void setTarget(int addr, String v) {
         if (featOkTst && casFeat_Target == null)
-      jcas.throwFeatMissing("Target", "de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+      jcas.throwFeatMissing("Target", "dkpro.similarity.type.WordChoiceProblem");
     ll_cas.ll_setStringValue(addr, casFeatCode_Target, v);}
     
   
@@ -69,13 +69,13 @@ public class WordChoiceProblem_Type extends Annotation_Type {
   /** @generated */ 
   public String getCandidate1(int addr) {
         if (featOkTst && casFeat_Candidate1 == null)
-      jcas.throwFeatMissing("Candidate1", "de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+      jcas.throwFeatMissing("Candidate1", "dkpro.similarity.type.WordChoiceProblem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Candidate1);
   }
   /** @generated */    
   public void setCandidate1(int addr, String v) {
         if (featOkTst && casFeat_Candidate1 == null)
-      jcas.throwFeatMissing("Candidate1", "de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+      jcas.throwFeatMissing("Candidate1", "dkpro.similarity.type.WordChoiceProblem");
     ll_cas.ll_setStringValue(addr, casFeatCode_Candidate1, v);}
     
   
@@ -87,13 +87,13 @@ public class WordChoiceProblem_Type extends Annotation_Type {
   /** @generated */ 
   public String getCandidate2(int addr) {
         if (featOkTst && casFeat_Candidate2 == null)
-      jcas.throwFeatMissing("Candidate2", "de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+      jcas.throwFeatMissing("Candidate2", "dkpro.similarity.type.WordChoiceProblem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Candidate2);
   }
   /** @generated */    
   public void setCandidate2(int addr, String v) {
         if (featOkTst && casFeat_Candidate2 == null)
-      jcas.throwFeatMissing("Candidate2", "de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+      jcas.throwFeatMissing("Candidate2", "dkpro.similarity.type.WordChoiceProblem");
     ll_cas.ll_setStringValue(addr, casFeatCode_Candidate2, v);}
     
   
@@ -105,13 +105,13 @@ public class WordChoiceProblem_Type extends Annotation_Type {
   /** @generated */ 
   public String getCandidate3(int addr) {
         if (featOkTst && casFeat_Candidate3 == null)
-      jcas.throwFeatMissing("Candidate3", "de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+      jcas.throwFeatMissing("Candidate3", "dkpro.similarity.type.WordChoiceProblem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Candidate3);
   }
   /** @generated */    
   public void setCandidate3(int addr, String v) {
         if (featOkTst && casFeat_Candidate3 == null)
-      jcas.throwFeatMissing("Candidate3", "de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+      jcas.throwFeatMissing("Candidate3", "dkpro.similarity.type.WordChoiceProblem");
     ll_cas.ll_setStringValue(addr, casFeatCode_Candidate3, v);}
     
   
@@ -123,13 +123,13 @@ public class WordChoiceProblem_Type extends Annotation_Type {
   /** @generated */ 
   public String getCandidate4(int addr) {
         if (featOkTst && casFeat_Candidate4 == null)
-      jcas.throwFeatMissing("Candidate4", "de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+      jcas.throwFeatMissing("Candidate4", "dkpro.similarity.type.WordChoiceProblem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Candidate4);
   }
   /** @generated */    
   public void setCandidate4(int addr, String v) {
         if (featOkTst && casFeat_Candidate4 == null)
-      jcas.throwFeatMissing("Candidate4", "de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+      jcas.throwFeatMissing("Candidate4", "dkpro.similarity.type.WordChoiceProblem");
     ll_cas.ll_setStringValue(addr, casFeatCode_Candidate4, v);}
     
   
@@ -141,13 +141,13 @@ public class WordChoiceProblem_Type extends Annotation_Type {
   /** @generated */ 
   public int getCorrectAnswer(int addr) {
         if (featOkTst && casFeat_CorrectAnswer == null)
-      jcas.throwFeatMissing("CorrectAnswer", "de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+      jcas.throwFeatMissing("CorrectAnswer", "dkpro.similarity.type.WordChoiceProblem");
     return ll_cas.ll_getIntValue(addr, casFeatCode_CorrectAnswer);
   }
   /** @generated */    
   public void setCorrectAnswer(int addr, int v) {
         if (featOkTst && casFeat_CorrectAnswer == null)
-      jcas.throwFeatMissing("CorrectAnswer", "de.tudarmstadt.ukp.similarity.type.WordChoiceProblem");
+      jcas.throwFeatMissing("CorrectAnswer", "dkpro.similarity.type.WordChoiceProblem");
     ll_cas.ll_setIntValue(addr, casFeatCode_CorrectAnswer, v);}
     
   

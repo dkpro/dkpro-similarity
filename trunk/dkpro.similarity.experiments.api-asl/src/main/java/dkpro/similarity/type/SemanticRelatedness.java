@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Fri Sep 21 09:55:55 CEST 2012
- * XML source: /home/zesch/workspace_new/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.experiments.api-asl/src/main/resources/desc/type/SemanticRelatedness.xml
+ * Updated by JCasGen Wed Sep 25 09:03:34 CEST 2013
+ * XML source: /home/zesch/workspace_new/dkpro.similarity-asl/dkpro.similarity.experiments.api-asl/src/main/resources/desc/type/SemanticRelatedness.xml
  * @generated */
 public class SemanticRelatedness extends Annotation {
   /** @generated
@@ -69,14 +69,14 @@ public class SemanticRelatedness extends Annotation {
    * @generated */
   public String getMeasureType() {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_MeasureType == null)
-      jcasType.jcas.throwFeatMissing("MeasureType", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("MeasureType", "dkpro.similarity.type.SemanticRelatedness");
     return jcasType.ll_cas.ll_getStringValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_MeasureType);}
     
   /** setter for MeasureType - sets The type of the semantic relatedness measure that was used to create the annotation. 
    * @generated */
   public void setMeasureType(String v) {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_MeasureType == null)
-      jcasType.jcas.throwFeatMissing("MeasureType", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("MeasureType", "dkpro.similarity.type.SemanticRelatedness");
     jcasType.ll_cas.ll_setStringValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_MeasureType, v);}    
    
     
@@ -87,14 +87,14 @@ public class SemanticRelatedness extends Annotation {
    * @generated */
   public double getRelatednessValue() {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_RelatednessValue == null)
-      jcasType.jcas.throwFeatMissing("RelatednessValue", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("RelatednessValue", "dkpro.similarity.type.SemanticRelatedness");
     return jcasType.ll_cas.ll_getDoubleValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_RelatednessValue);}
     
   /** setter for RelatednessValue - sets The semantic relatedness value. 
    * @generated */
   public void setRelatednessValue(double v) {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_RelatednessValue == null)
-      jcasType.jcas.throwFeatMissing("RelatednessValue", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("RelatednessValue", "dkpro.similarity.type.SemanticRelatedness");
     jcasType.ll_cas.ll_setDoubleValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_RelatednessValue, v);}    
    
     
@@ -105,14 +105,14 @@ public class SemanticRelatedness extends Annotation {
    * @generated */
   public String getMeasureName() {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_MeasureName == null)
-      jcasType.jcas.throwFeatMissing("MeasureName", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("MeasureName", "dkpro.similarity.type.SemanticRelatedness");
     return jcasType.ll_cas.ll_getStringValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_MeasureName);}
     
   /** setter for MeasureName - sets The name of the semantic relatedness measure that was used to create the annotation. 
    * @generated */
   public void setMeasureName(String v) {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_MeasureName == null)
-      jcasType.jcas.throwFeatMissing("MeasureName", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("MeasureName", "dkpro.similarity.type.SemanticRelatedness");
     jcasType.ll_cas.ll_setStringValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_MeasureName, v);}    
    
     
@@ -123,14 +123,14 @@ public class SemanticRelatedness extends Annotation {
    * @generated */
   public WordPair getWordPair() {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_WordPair == null)
-      jcasType.jcas.throwFeatMissing("WordPair", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("WordPair", "dkpro.similarity.type.SemanticRelatedness");
     return (WordPair)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_WordPair)));}
     
   /** setter for WordPair - sets  
    * @generated */
   public void setWordPair(WordPair v) {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_WordPair == null)
-      jcasType.jcas.throwFeatMissing("WordPair", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("WordPair", "dkpro.similarity.type.SemanticRelatedness");
     jcasType.ll_cas.ll_setRefValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_WordPair, jcasType.ll_cas.ll_getFSRef(v));}    
    
     
@@ -141,14 +141,14 @@ public class SemanticRelatedness extends Annotation {
    * @generated */
   public String getTerm1() {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_Term1 == null)
-      jcasType.jcas.throwFeatMissing("Term1", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("Term1", "dkpro.similarity.type.SemanticRelatedness");
     return jcasType.ll_cas.ll_getStringValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_Term1);}
     
   /** setter for Term1 - sets  
    * @generated */
   public void setTerm1(String v) {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_Term1 == null)
-      jcasType.jcas.throwFeatMissing("Term1", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("Term1", "dkpro.similarity.type.SemanticRelatedness");
     jcasType.ll_cas.ll_setStringValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_Term1, v);}    
    
     
@@ -159,14 +159,14 @@ public class SemanticRelatedness extends Annotation {
    * @generated */
   public String getTerm2() {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_Term2 == null)
-      jcasType.jcas.throwFeatMissing("Term2", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("Term2", "dkpro.similarity.type.SemanticRelatedness");
     return jcasType.ll_cas.ll_getStringValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_Term2);}
     
   /** setter for Term2 - sets  
    * @generated */
   public void setTerm2(String v) {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_Term2 == null)
-      jcasType.jcas.throwFeatMissing("Term2", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("Term2", "dkpro.similarity.type.SemanticRelatedness");
     jcasType.ll_cas.ll_setStringValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_Term2, v);}    
    
     
@@ -177,14 +177,14 @@ public class SemanticRelatedness extends Annotation {
    * @generated */
   public AnnotationPair getAnnotationPair() {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_AnnotationPair == null)
-      jcasType.jcas.throwFeatMissing("AnnotationPair", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("AnnotationPair", "dkpro.similarity.type.SemanticRelatedness");
     return (AnnotationPair)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_AnnotationPair)));}
     
   /** setter for AnnotationPair - sets  
    * @generated */
   public void setAnnotationPair(AnnotationPair v) {
     if (SemanticRelatedness_Type.featOkTst && ((SemanticRelatedness_Type)jcasType).casFeat_AnnotationPair == null)
-      jcasType.jcas.throwFeatMissing("AnnotationPair", "de.tudarmstadt.ukp.similarity.type.SemanticRelatedness");
+      jcasType.jcas.throwFeatMissing("AnnotationPair", "dkpro.similarity.type.SemanticRelatedness");
     jcasType.ll_cas.ll_setRefValue(addr, ((SemanticRelatedness_Type)jcasType).casFeatCode_AnnotationPair, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 

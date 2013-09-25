@@ -6,7 +6,7 @@
   <vendor/>
   <types>
     <typeDescription>
-      <name>de.tudarmstadt.ukp.similarity.type.AnnotationPair</name>
+      <name>dkpro.similarity.type.AnnotationPair</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>
@@ -33,9 +33,9 @@
       </features>
     </typeDescription>
     <typeDescription>
-      <name>de.tudarmstadt.ukp.similarity.type.WeightedAnnotationPair</name>
+      <name>dkpro.similarity.type.WeightedAnnotationPair</name>
       <description/>
-      <supertypeName>de.tudarmstadt.ukp.similarity.type.AnnotationPair</supertypeName>
+      <supertypeName>dkpro.similarity.type.AnnotationPair</supertypeName>
       <features>
         <featureDescription>
           <name>weight</name>

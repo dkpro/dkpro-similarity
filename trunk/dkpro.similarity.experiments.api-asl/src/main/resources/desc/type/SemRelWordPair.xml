@@ -9,9 +9,9 @@
   </imports>
   <types>
     <typeDescription>
-      <name>de.tudarmstadt.ukp.similarity.type.SemRelWordPair</name>
+      <name>dkpro.similarity.type.SemRelWordPair</name>
       <description/>
-      <supertypeName>de.tudarmstadt.ukp.similarity.type.WordPair</supertypeName>
+      <supertypeName>dkpro.similarity.type.WordPair</supertypeName>
       <features>
         <featureDescription>
           <name>GoldValue</name>

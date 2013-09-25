@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** 
- * Updated by JCasGen Fri Sep 21 09:56:00 CEST 2012
+ * Updated by JCasGen Wed Sep 25 09:03:34 CEST 2013
  * @generated */
 public class WeightedAnnotationPair_Type extends AnnotationPair_Type {
   /** @generated */
@@ -41,7 +41,7 @@ public class WeightedAnnotationPair_Type extends AnnotationPair_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("de.tudarmstadt.ukp.similarity.type.WeightedAnnotationPair");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("dkpro.similarity.type.WeightedAnnotationPair");
  
   /** @generated */
   final Feature casFeat_weight;
@@ -50,13 +50,13 @@ public class WeightedAnnotationPair_Type extends AnnotationPair_Type {
   /** @generated */ 
   public double getWeight(int addr) {
         if (featOkTst && casFeat_weight == null)
-      jcas.throwFeatMissing("weight", "de.tudarmstadt.ukp.similarity.type.WeightedAnnotationPair");
+      jcas.throwFeatMissing("weight", "dkpro.similarity.type.WeightedAnnotationPair");
     return ll_cas.ll_getDoubleValue(addr, casFeatCode_weight);
   }
   /** @generated */    
   public void setWeight(int addr, double v) {
         if (featOkTst && casFeat_weight == null)
-      jcas.throwFeatMissing("weight", "de.tudarmstadt.ukp.similarity.type.WeightedAnnotationPair");
+      jcas.throwFeatMissing("weight", "dkpro.similarity.type.WeightedAnnotationPair");
     ll_cas.ll_setDoubleValue(addr, casFeatCode_weight, v);}
     
   

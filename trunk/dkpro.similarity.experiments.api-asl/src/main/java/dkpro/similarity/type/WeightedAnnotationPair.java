@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Fri Sep 21 09:56:00 CEST 2012
- * XML source: /home/zesch/workspace_new/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.experiments.api-asl/src/main/resources/desc/type/AnnotationPair.xml
+ * Updated by JCasGen Wed Sep 25 09:03:34 CEST 2013
+ * XML source: /home/zesch/workspace_new/dkpro.similarity-asl/dkpro.similarity.experiments.api-asl/src/main/resources/desc/type/SemanticRelatedness.xml
  * @generated */
 public class WeightedAnnotationPair extends AnnotationPair {
   /** @generated
@@ -68,14 +68,14 @@ public class WeightedAnnotationPair extends AnnotationPair {
    * @generated */
   public double getWeight() {
     if (WeightedAnnotationPair_Type.featOkTst && ((WeightedAnnotationPair_Type)jcasType).casFeat_weight == null)
-      jcasType.jcas.throwFeatMissing("weight", "de.tudarmstadt.ukp.similarity.type.WeightedAnnotationPair");
+      jcasType.jcas.throwFeatMissing("weight", "dkpro.similarity.type.WeightedAnnotationPair");
     return jcasType.ll_cas.ll_getDoubleValue(addr, ((WeightedAnnotationPair_Type)jcasType).casFeatCode_weight);}
     
   /** setter for weight - sets  
    * @generated */
   public void setWeight(double v) {
     if (WeightedAnnotationPair_Type.featOkTst && ((WeightedAnnotationPair_Type)jcasType).casFeat_weight == null)
-      jcasType.jcas.throwFeatMissing("weight", "de.tudarmstadt.ukp.similarity.type.WeightedAnnotationPair");
+      jcasType.jcas.throwFeatMissing("weight", "dkpro.similarity.type.WeightedAnnotationPair");
     jcasType.ll_cas.ll_setDoubleValue(addr, ((WeightedAnnotationPair_Type)jcasType).casFeatCode_weight, v);}    
   }
 
