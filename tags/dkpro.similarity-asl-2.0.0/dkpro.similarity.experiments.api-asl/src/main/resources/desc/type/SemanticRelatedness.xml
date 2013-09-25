@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+<name>SemanticRelatedness</name>
+<description></description>
+<version>1.0</version>
+<vendor></vendor>
+<imports>
+<import name="desc.type.WordPair"/>
+<import name="desc.type.AnnotationPair"/>
+</imports>
+<types>
+<typeDescription>
+<name>dkpro.similarity.type.SemanticRelatedness</name>
+<description></description>
+<supertypeName>uima.tcas.Annotation</supertypeName>
+<features>
+<featureDescription>
+<name>MeasureType</name>
+<description>The type of the semantic relatedness measure that was used to create the annotation.</description>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>RelatednessValue</name>
+<description>The semantic relatedness value.</description>
+<rangeTypeName>uima.cas.Double</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>MeasureName</name>
+<description>The name of the semantic relatedness measure that was used to create the annotation.</description>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>WordPair</name>
+<description></description>
+<rangeTypeName>dkpro.similarity.type.WordPair</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>Term1</name>
+<description></description>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>Term2</name>
+<description></description>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>AnnotationPair</name>
+<description/>
+<rangeTypeName>dkpro.similarity.type.AnnotationPair</rangeTypeName>
+</featureDescription>
+</features>
+</typeDescription>
+</types>
+</typeSystemDescription>
