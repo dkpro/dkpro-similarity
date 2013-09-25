@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Fri Sep 21 09:56:00 CEST 2012
- * XML source: /home/zesch/workspace_new/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.experiments.api-asl/src/main/resources/desc/type/AnnotationPair.xml
+ * Updated by JCasGen Wed Sep 25 09:03:34 CEST 2013
+ * XML source: /home/zesch/workspace_new/dkpro.similarity-asl/dkpro.similarity.experiments.api-asl/src/main/resources/desc/type/SemanticRelatedness.xml
  * @generated */
 public class AnnotationPair extends Annotation {
   /** @generated
@@ -69,14 +69,14 @@ public class AnnotationPair extends Annotation {
    * @generated */
   public Annotation getAnnotation1() {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_Annotation1 == null)
-      jcasType.jcas.throwFeatMissing("Annotation1", "de.tudarmstadt.ukp.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("Annotation1", "dkpro.similarity.type.AnnotationPair");
     return (Annotation)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_Annotation1)));}
     
   /** setter for Annotation1 - sets  
    * @generated */
   public void setAnnotation1(Annotation v) {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_Annotation1 == null)
-      jcasType.jcas.throwFeatMissing("Annotation1", "de.tudarmstadt.ukp.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("Annotation1", "dkpro.similarity.type.AnnotationPair");
     jcasType.ll_cas.ll_setRefValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_Annotation1, jcasType.ll_cas.ll_getFSRef(v));}    
    
     
@@ -87,14 +87,14 @@ public class AnnotationPair extends Annotation {
    * @generated */
   public Annotation getAnnotation2() {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_Annotation2 == null)
-      jcasType.jcas.throwFeatMissing("Annotation2", "de.tudarmstadt.ukp.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("Annotation2", "dkpro.similarity.type.AnnotationPair");
     return (Annotation)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_Annotation2)));}
     
   /** setter for Annotation2 - sets  
    * @generated */
   public void setAnnotation2(Annotation v) {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_Annotation2 == null)
-      jcasType.jcas.throwFeatMissing("Annotation2", "de.tudarmstadt.ukp.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("Annotation2", "dkpro.similarity.type.AnnotationPair");
     jcasType.ll_cas.ll_setRefValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_Annotation2, jcasType.ll_cas.ll_getFSRef(v));}    
    
     
@@ -105,14 +105,14 @@ public class AnnotationPair extends Annotation {
    * @generated */
   public String getStringRepresentation1() {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_StringRepresentation1 == null)
-      jcasType.jcas.throwFeatMissing("StringRepresentation1", "de.tudarmstadt.ukp.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("StringRepresentation1", "dkpro.similarity.type.AnnotationPair");
     return jcasType.ll_cas.ll_getStringValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_StringRepresentation1);}
     
   /** setter for StringRepresentation1 - sets  
    * @generated */
   public void setStringRepresentation1(String v) {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_StringRepresentation1 == null)
-      jcasType.jcas.throwFeatMissing("StringRepresentation1", "de.tudarmstadt.ukp.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("StringRepresentation1", "dkpro.similarity.type.AnnotationPair");
     jcasType.ll_cas.ll_setStringValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_StringRepresentation1, v);}    
    
     
@@ -123,14 +123,14 @@ public class AnnotationPair extends Annotation {
    * @generated */
   public String getStringRepresentation2() {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_StringRepresentation2 == null)
-      jcasType.jcas.throwFeatMissing("StringRepresentation2", "de.tudarmstadt.ukp.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("StringRepresentation2", "dkpro.similarity.type.AnnotationPair");
     return jcasType.ll_cas.ll_getStringValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_StringRepresentation2);}
     
   /** setter for StringRepresentation2 - sets  
    * @generated */
   public void setStringRepresentation2(String v) {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_StringRepresentation2 == null)
-      jcasType.jcas.throwFeatMissing("StringRepresentation2", "de.tudarmstadt.ukp.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("StringRepresentation2", "dkpro.similarity.type.AnnotationPair");
     jcasType.ll_cas.ll_setStringValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_StringRepresentation2, v);}    
   }
 

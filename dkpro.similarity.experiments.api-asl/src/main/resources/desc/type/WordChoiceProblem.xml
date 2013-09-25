@@ -6,7 +6,7 @@
   <vendor/>
   <types>
     <typeDescription>
-      <name>de.tudarmstadt.ukp.similarity.type.WordChoiceProblem</name>
+      <name>dkpro.similarity.type.WordChoiceProblem</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>

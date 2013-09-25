@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** 
- * Updated by JCasGen Fri Sep 21 09:55:49 CEST 2012
+ * Updated by JCasGen Wed Sep 25 09:03:58 CEST 2013
  * @generated */
 public class SemRelWordPair_Type extends WordPair_Type {
   /** @generated */
@@ -41,7 +41,7 @@ public class SemRelWordPair_Type extends WordPair_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("de.tudarmstadt.ukp.similarity.type.SemRelWordPair");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("dkpro.similarity.type.SemRelWordPair");
  
   /** @generated */
   final Feature casFeat_GoldValue;
@@ -50,13 +50,13 @@ public class SemRelWordPair_Type extends WordPair_Type {
   /** @generated */ 
   public double getGoldValue(int addr) {
         if (featOkTst && casFeat_GoldValue == null)
-      jcas.throwFeatMissing("GoldValue", "de.tudarmstadt.ukp.similarity.type.SemRelWordPair");
+      jcas.throwFeatMissing("GoldValue", "dkpro.similarity.type.SemRelWordPair");
     return ll_cas.ll_getDoubleValue(addr, casFeatCode_GoldValue);
   }
   /** @generated */    
   public void setGoldValue(int addr, double v) {
         if (featOkTst && casFeat_GoldValue == null)
-      jcas.throwFeatMissing("GoldValue", "de.tudarmstadt.ukp.similarity.type.SemRelWordPair");
+      jcas.throwFeatMissing("GoldValue", "dkpro.similarity.type.SemRelWordPair");
     ll_cas.ll_setDoubleValue(addr, casFeatCode_GoldValue, v);}
     
   

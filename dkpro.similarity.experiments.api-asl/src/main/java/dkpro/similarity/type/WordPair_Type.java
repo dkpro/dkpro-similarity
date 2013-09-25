@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Fri Sep 21 09:55:55 CEST 2012
+ * Updated by JCasGen Wed Sep 25 09:04:12 CEST 2013
  * @generated */
 public class WordPair_Type extends Annotation_Type {
   /** @generated */
@@ -42,7 +42,7 @@ public class WordPair_Type extends Annotation_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("de.tudarmstadt.ukp.similarity.type.WordPair");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("dkpro.similarity.type.WordPair");
  
   /** @generated */
   final Feature casFeat_Word1;
@@ -51,13 +51,13 @@ public class WordPair_Type extends Annotation_Type {
   /** @generated */ 
   public String getWord1(int addr) {
         if (featOkTst && casFeat_Word1 == null)
-      jcas.throwFeatMissing("Word1", "de.tudarmstadt.ukp.similarity.type.WordPair");
+      jcas.throwFeatMissing("Word1", "dkpro.similarity.type.WordPair");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Word1);
   }
   /** @generated */    
   public void setWord1(int addr, String v) {
         if (featOkTst && casFeat_Word1 == null)
-      jcas.throwFeatMissing("Word1", "de.tudarmstadt.ukp.similarity.type.WordPair");
+      jcas.throwFeatMissing("Word1", "dkpro.similarity.type.WordPair");
     ll_cas.ll_setStringValue(addr, casFeatCode_Word1, v);}
     
   
@@ -69,13 +69,13 @@ public class WordPair_Type extends Annotation_Type {
   /** @generated */ 
   public String getWord2(int addr) {
         if (featOkTst && casFeat_Word2 == null)
-      jcas.throwFeatMissing("Word2", "de.tudarmstadt.ukp.similarity.type.WordPair");
+      jcas.throwFeatMissing("Word2", "dkpro.similarity.type.WordPair");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Word2);
   }
   /** @generated */    
   public void setWord2(int addr, String v) {
         if (featOkTst && casFeat_Word2 == null)
-      jcas.throwFeatMissing("Word2", "de.tudarmstadt.ukp.similarity.type.WordPair");
+      jcas.throwFeatMissing("Word2", "dkpro.similarity.type.WordPair");
     ll_cas.ll_setStringValue(addr, casFeatCode_Word2, v);}
     
   
@@ -87,13 +87,13 @@ public class WordPair_Type extends Annotation_Type {
   /** @generated */ 
   public int getPos1(int addr) {
         if (featOkTst && casFeat_Pos1 == null)
-      jcas.throwFeatMissing("Pos1", "de.tudarmstadt.ukp.similarity.type.WordPair");
+      jcas.throwFeatMissing("Pos1", "dkpro.similarity.type.WordPair");
     return ll_cas.ll_getRefValue(addr, casFeatCode_Pos1);
   }
   /** @generated */    
   public void setPos1(int addr, int v) {
         if (featOkTst && casFeat_Pos1 == null)
-      jcas.throwFeatMissing("Pos1", "de.tudarmstadt.ukp.similarity.type.WordPair");
+      jcas.throwFeatMissing("Pos1", "dkpro.similarity.type.WordPair");
     ll_cas.ll_setRefValue(addr, casFeatCode_Pos1, v);}
     
   
@@ -105,13 +105,13 @@ public class WordPair_Type extends Annotation_Type {
   /** @generated */ 
   public int getPos2(int addr) {
         if (featOkTst && casFeat_Pos2 == null)
-      jcas.throwFeatMissing("Pos2", "de.tudarmstadt.ukp.similarity.type.WordPair");
+      jcas.throwFeatMissing("Pos2", "dkpro.similarity.type.WordPair");
     return ll_cas.ll_getRefValue(addr, casFeatCode_Pos2);
   }
   /** @generated */    
   public void setPos2(int addr, int v) {
         if (featOkTst && casFeat_Pos2 == null)
-      jcas.throwFeatMissing("Pos2", "de.tudarmstadt.ukp.similarity.type.WordPair");
+      jcas.throwFeatMissing("Pos2", "dkpro.similarity.type.WordPair");
     ll_cas.ll_setRefValue(addr, casFeatCode_Pos2, v);}
     
   
@@ -123,13 +123,13 @@ public class WordPair_Type extends Annotation_Type {
   /** @generated */ 
   public int getToken1(int addr) {
         if (featOkTst && casFeat_Token1 == null)
-      jcas.throwFeatMissing("Token1", "de.tudarmstadt.ukp.similarity.type.WordPair");
+      jcas.throwFeatMissing("Token1", "dkpro.similarity.type.WordPair");
     return ll_cas.ll_getRefValue(addr, casFeatCode_Token1);
   }
   /** @generated */    
   public void setToken1(int addr, int v) {
         if (featOkTst && casFeat_Token1 == null)
-      jcas.throwFeatMissing("Token1", "de.tudarmstadt.ukp.similarity.type.WordPair");
+      jcas.throwFeatMissing("Token1", "dkpro.similarity.type.WordPair");
     ll_cas.ll_setRefValue(addr, casFeatCode_Token1, v);}
     
   
@@ -141,13 +141,13 @@ public class WordPair_Type extends Annotation_Type {
   /** @generated */ 
   public int getToken2(int addr) {
         if (featOkTst && casFeat_Token2 == null)
-      jcas.throwFeatMissing("Token2", "de.tudarmstadt.ukp.similarity.type.WordPair");
+      jcas.throwFeatMissing("Token2", "dkpro.similarity.type.WordPair");
     return ll_cas.ll_getRefValue(addr, casFeatCode_Token2);
   }
   /** @generated */    
   public void setToken2(int addr, int v) {
         if (featOkTst && casFeat_Token2 == null)
-      jcas.throwFeatMissing("Token2", "de.tudarmstadt.ukp.similarity.type.WordPair");
+      jcas.throwFeatMissing("Token2", "dkpro.similarity.type.WordPair");
     ll_cas.ll_setRefValue(addr, casFeatCode_Token2, v);}
     
   
