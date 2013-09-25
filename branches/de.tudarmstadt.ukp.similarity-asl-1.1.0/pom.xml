@@ -24,7 +24,7 @@
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity-asl</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1-SNAPSHOT</version>
   <packaging>pom</packaging>
       <distributionManagement>
           <repository>
@@ -96,74 +96,74 @@
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
   			<artifactId>de.tudarmstadt.ukp.similarity.algorithms.api-asl</artifactId>
-  			<version>1.1.0</version>
+  			<version>1.1.1-SNAPSHOT</version>
   		</dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.core-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lexical-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.lsr-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.sound-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.structure-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.style-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.vsm-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.algorithms.wikipedia-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.dkpro.api-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.dkpro.core-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
                 <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.dkpro.data-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
                 <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
             <artifactId>de.tudarmstadt.ukp.similarity.dkpro.io-asl</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity.experiments</groupId>
             <artifactId>
                 de.tudarmstadt.ukp.similarity.experiments.api-asl
             </artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
@@ -216,9 +216,9 @@
     <module>de.tudarmstadt.ukp.similarity.experiments.api-asl</module>
   </modules>
   <scm>
-  	<url>http://code.google.com/p/dkpro-similarity-asl/source/browse/tags/de.tudarmstadt.ukp.similarity-asl-1.1.0</url>
-  	<connection>scm:svn:http://dkpro-similarity-asl.googlecode.com/svn/tags/de.tudarmstadt.ukp.similarity-asl-1.1.0</connection>
-  	<developerConnection>scm:svn:https://dkpro-similarity-asl.googlecode.com/svn/tags/de.tudarmstadt.ukp.similarity-asl-1.1.0</developerConnection>
+  	<url>http://code.google.com/p/dkpro-similarity-asl/source/browse/</url>
+  	<connection>scm:svn:http://dkpro-similarity-asl.googlecode.com/svn/trunk</connection>
+  	<developerConnection>scm:svn:https://dkpro-similarity-asl.googlecode.com/svn/trunk</developerConnection>
   </scm>
   <name>DKPro Similarity</name>
   <url>https://code.google.com/p/dkpro-similarity-asl/</url>
