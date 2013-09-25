@@ -1,14 +1,33 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>de.tudarmstadt.ukp.dkpro.misc.superpom</artifactId>
-    <groupId>de.tudarmstadt.ukp.dkpro.misc</groupId>
-    <version>1.0.23</version>
+    <artifactId>dkpro-parent-pom</artifactId>
+    <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+    <version>6</version>
   </parent>
   <groupId>de.tudarmstadt.ukp.similarity</groupId>
   <artifactId>de.tudarmstadt.ukp.similarity-gpl</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
+      <distributionManagement>
+          <repository>
+                  <id>ukp-oss</id>
+                  <url>dav:https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-releases-local</url>
+          </repository>
+          <snapshotRepository>
+                  <id>ukp-oss</id>
+                  <url>dav:https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-snapshots-local</url>
+          </snapshotRepository>
+  </distributionManagement>
+   <build>
+          <extensions>
+                  <extension>
+                          <groupId>org.apache.maven.wagon</groupId>
+                          <artifactId>wagon-webdav</artifactId>
+                          <version>1.0-beta-2</version>
+                  </extension>
+          </extensions>
+  </build>
   <dependencies>
   	<dependency>
   		<groupId>edu.ucla.sspace</groupId>
@@ -37,7 +56,7 @@
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity</groupId>
   			<artifactId>de.tudarmstadt.ukp.similarity-asl</artifactId>
-  			<version>1.1.0</version>
+  			<version>1.1.0-SNAPSHOT</version>
   			<type>pom</type>
   			<scope>import</scope>
   		</dependency>
@@ -48,7 +67,7 @@
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.algorithms.lexical-gpl
   			</artifactId>
-  			<version>1.1.0</version>
+  			<version>1.1.0-SNAPSHOT</version>
   		</dependency>
   		<dependency>
   			<groupId>
@@ -57,7 +76,7 @@
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.algorithms.lexsub-gpl
   			</artifactId>
-  			<version>1.1.0</version>
+  			<version>1.1.0-SNAPSHOT</version>
   		</dependency>
   		<dependency>
   			<groupId>
@@ -66,7 +85,7 @@
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.algorithms.lsr-gpl
   			</artifactId>
-  			<version>1.1.0</version>
+  			<version>1.1.0-SNAPSHOT</version>
   		</dependency>
         <dependency>
             <groupId>
@@ -75,7 +94,7 @@
             <artifactId>
                 de.tudarmstadt.ukp.similarity.algorithms.ml-gpl
             </artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
   		<dependency>
   			<groupId>
@@ -84,49 +103,49 @@
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.algorithms.sspace-gpl
   			</artifactId>
-  			<version>1.1.0</version>
+  			<version>1.1.0-SNAPSHOT</version>
   		</dependency>
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity.dkpro</groupId>
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.dkpro.core-gpl
   			</artifactId>
-  			<version>1.1.0</version>
+  			<version>1.1.0-SNAPSHOT</version>
   		</dependency>
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity</groupId>
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.experiments.rte-gpl
   			</artifactId>
-  			<version>1.1.0</version>
+  			<version>1.1.0-SNAPSHOT</version>
   		</dependency>
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity</groupId>
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl
   			</artifactId>
-  			<version>1.1.0</version>
+  			<version>1.1.0-SNAPSHOT</version>
   		</dependency>
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.similarity</groupId>
   			<artifactId>
   				de.tudarmstadt.ukp.similarity.experiments.sts-2013-gpl
   			</artifactId>
-  			<version>1.1.0</version>
+  			<version>1.1.0-SNAPSHOT</version>
   		</dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity</groupId>
             <artifactId>
                 de.tudarmstadt.ukp.similarity.ml.core-gpl
             </artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.similarity</groupId>
             <artifactId>
                 de.tudarmstadt.ukp.similarity.ml.io-gpl
             </artifactId>
-            <version>1.1.0</version>
+            <version>1.1.0-SNAPSHOT</version>
         </dependency>
   		<dependency>
   			<groupId>nz.ac.waikato.cms.weka</groupId>
