@@ -76,4 +76,10 @@ public class VectorAdapter<V extends Vector> implements DoubleVector
 	{
 		return new VectorAdapter<V>(aVector);
 	}
+
+    @Override
+    public double magnitude()
+    {
+        throw new UnsupportedOperationException();
+    }
 }
