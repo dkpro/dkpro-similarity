@@ -20,18 +20,18 @@ package dkpro.similarity.algorithms.vsm;
 import java.util.Collection;
 import java.util.Comparator;
 
+import no.uib.cipr.matrix.DenseVector;
 import no.uib.cipr.matrix.Vector;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.lucene.search.Similarity;
 
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
-import dkpro.similarity.algorithms.vsm.store.VectorReader;
 import dkpro.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeIdf;
 import dkpro.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeTf;
-import edu.ucla.sspace.common.Similarity;
-import edu.ucla.sspace.vector.DenseVector;
+import dkpro.similarity.algorithms.vsm.store.VectorReader;
 
 /**
  * Compare two texts or terms represented by vectors. Combining this comparator with different
