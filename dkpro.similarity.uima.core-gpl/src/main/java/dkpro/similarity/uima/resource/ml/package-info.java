@@ -17,7 +17,6 @@
  ******************************************************************************/
 
 /**
- * Contains the external resources which wrap the text similarity measures for
- * use in a DKPro pipeline. 
+ * Machine learning (weka) based uimed components.
  */
-package dkpro.similarity.uima.resource;
+package dkpro.similarity.uima.resource.ml;

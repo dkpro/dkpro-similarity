@@ -15,17 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package dkpro.similarity.uima.resource.lsr;
+package dkpro.similarity.algorithms.lsr.uima;
  
 import java.util.Map;
 
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
-import org.apache.uima.fit.descriptor.ConfigurationParameter;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
 import dkpro.similarity.algorithms.lsr.gloss.GlossOverlapComparator;
-import dkpro.similarity.uima.resource.lsr.LSRRelatednessResourceBase;
+import dkpro.similarity.algorithms.lsr.uima.path.LSRRelatednessResourceBase;
 
 public final class GlossOverlapRelatednessResource
 	extends LSRRelatednessResourceBase

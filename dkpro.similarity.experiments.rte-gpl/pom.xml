@@ -84,8 +84,8 @@
     	<artifactId>commons-io</artifactId>
     </dependency>
     <dependency>
-    	<groupId>nz.ac.waikato.cms.weka</groupId>
-    	<artifactId>weka-dev</artifactId>
+    	<groupId>dkpro.similarity</groupId>
+    	<artifactId>dkpro.similarity.algorithms.lexical-asl</artifactId>
     </dependency>
   </dependencies>
 </project>

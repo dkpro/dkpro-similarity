@@ -26,18 +26,18 @@ import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceCompar
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
 import dkpro.similarity.algorithms.lexical.string.MongeElkanSecondStringComparator;
+import dkpro.similarity.algorithms.lexical.uima.ngrams.WordNGramContainmentResource;
+import dkpro.similarity.algorithms.lexical.uima.ngrams.WordNGramJaccardResource;
+import dkpro.similarity.algorithms.structure.uima.StopwordNGramContainmentMeasureResource;
+import dkpro.similarity.algorithms.style.uima.FunctionWordFrequenciesMeasureResource;
+import dkpro.similarity.algorithms.vsm.uima.VectorIndexSourceRelatednessResource;
 import dkpro.similarity.ml.FeatureConfig;
 import dkpro.similarity.ml.io.SimilarityScoreWriter;
 import dkpro.similarity.uima.annotator.SimilarityScorer;
 import dkpro.similarity.uima.io.CombinationReader;
-import dkpro.similarity.uima.io.ShortAnswerGradingReader;
 import dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
+import dkpro.similarity.uima.io.ShortAnswerGradingReader;
 import dkpro.similarity.uima.resource.SimpleTextSimilarityResource;
-import dkpro.similarity.uima.resource.lexical.ngrams.WordNGramContainmentResource;
-import dkpro.similarity.uima.resource.lexical.ngrams.WordNGramJaccardResource;
-import dkpro.similarity.uima.resource.structure.StopwordNGramContainmentMeasureResource;
-import dkpro.similarity.uima.resource.style.FunctionWordFrequenciesMeasureResource;
-import dkpro.similarity.uima.resource.vsm.VectorIndexSourceRelatednessResource;
 
 
 public class FeatureGenerationTest

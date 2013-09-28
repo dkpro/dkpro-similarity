@@ -13,7 +13,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 import de.tudarmstadt.langtech.substituter.MLSenseSubstituter;
 import de.tudarmstadt.langtech.substituter.SenseSubstituter;
 import de.tudarmstadt.langtech.substituter.Substitution;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.DKProContext;
+import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import dkpro.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import dkpro.similarity.algorithms.api.SimilarityException;
@@ -34,7 +34,7 @@ public class TWSISubstituteWrapper
 	public TWSISubstituteWrapper(TextSimilarityMeasure measure)
 	{		
 		try {
-			this.sensub = new MLSenseSubstituter(DKProContext.getContext().getWorkspace() + "/TWSI2/conf/TWSI2_config.conf");
+			this.sensub = new MLSenseSubstituter(DkproContext.getContext().getWorkspace() + "/TWSI2/conf/TWSI2_config.conf");
 		}
 		catch (IOException e) {
 			System.err.println("Unable to load TWSI.");

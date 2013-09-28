@@ -18,28 +18,25 @@
   		<artifactId>
   			de.tudarmstadt.langtech.substituter.twsi
   		</artifactId>
-  		<version>0.1.0</version>
+  		<version>1.0.1</version>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   		<artifactId>
   			de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl
   		</artifactId>
-  		<version>1.3.0</version>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   		<artifactId>
   			de.tudarmstadt.ukp.dkpro.core.api.resources-asl
   		</artifactId>
-  		<version>1.4.0</version>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   		<artifactId>
   			de.tudarmstadt.ukp.dkpro.core.opennlp-asl
   		</artifactId>
-  		<version>1.4.0</version>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
@@ -53,14 +50,17 @@
   		<artifactId>
   			de.tudarmstadt.ukp.dkpro.core.gate-gpl
   		</artifactId>
-  		<version>1.4.0</version>
   	</dependency>
   	<dependency>
   		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   		<artifactId>
   			de.tudarmstadt.ukp.dkpro.core.tokit-asl
   		</artifactId>
-  		<version>1.4.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>dkpro.similarity</groupId>
+  		<artifactId>dkpro.similarity.uima.core-asl</artifactId>
   	</dependency>
   </dependencies>
+  <version>2.2.0-SNAPSHOT</version>
 </project>

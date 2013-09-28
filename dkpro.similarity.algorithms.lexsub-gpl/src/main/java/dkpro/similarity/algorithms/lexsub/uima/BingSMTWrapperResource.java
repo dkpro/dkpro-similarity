@@ -1,4 +1,4 @@
-package dkpro.similarity.uima.resource.lexsub;
+package dkpro.similarity.algorithms.lexsub.uima;
 
 import java.util.Map;
 

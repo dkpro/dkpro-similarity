@@ -33,35 +33,5 @@
   			dkpro.similarity.uima.core-asl
   		</artifactId>
   	</dependency>
-  	<dependency>
-  		<groupId>dkpro.similarity</groupId>
-  		<artifactId>
-  			dkpro.similarity.algorithms.lsr-gpl
-  		</artifactId>
-  	</dependency>
-  	<dependency>
-  		<groupId>dkpro.similarity</groupId>
-  		<artifactId>
-  			dkpro.similarity.algorithms.lexsub-gpl
-  		</artifactId>
-  	</dependency>
-  	<dependency>
-  		<groupId>dkpro.similarity</groupId>
-  		<artifactId>
-  			dkpro.similarity.algorithms.vsm-asl
-  		</artifactId>
-  	</dependency>
-  	<dependency>
-  		<groupId>dkpro.similarity</groupId>
-  		<artifactId>
-  			dkpro.similarity.algorithms.sspace-gpl
-  		</artifactId>
-  	</dependency>
-  	<dependency>
-  		<groupId>dkpro.similarity</groupId>
-  		<artifactId>
-  			dkpro.similarity.algorithms.ml-gpl
-  		</artifactId>
-  	</dependency>
   </dependencies>
 </project>

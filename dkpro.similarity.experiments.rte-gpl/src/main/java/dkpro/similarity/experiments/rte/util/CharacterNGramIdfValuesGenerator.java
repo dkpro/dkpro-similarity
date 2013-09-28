@@ -69,8 +69,9 @@ public class CharacterNGramIdfValuesGenerator
 			
 			// Get all ngrams
 			Set<String> allNGrams = new HashSet<String>();
-			for (Set<String> doc : docs)
-				allNGrams.addAll(doc);
+			for (Set<String> doc : docs) {
+                allNGrams.addAll(doc);
+            }
 			
 			// Compute idf values			
 			for (String ngram : allNGrams)
@@ -78,8 +79,9 @@ public class CharacterNGramIdfValuesGenerator
 				double count = 0;
 				for (Set<String> doc : docs)
 				{					
-					if (doc.contains(ngram))
-						count++;
+					if (doc.contains(ngram)) {
+                        count++;
+                    }
 				}
 				idfValues.put(ngram, count);
 			}

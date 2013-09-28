@@ -1,4 +1,4 @@
-package dkpro.similarity.uima.resource.vsm;
+package dkpro.similarity.algorithms.sspace.uima;
 
 import java.io.File;
 import java.io.IOException;

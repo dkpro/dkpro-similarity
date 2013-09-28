@@ -16,15 +16,15 @@ import org.apache.uima.fit.factory.AggregateBuilder;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
-//import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
+import dkpro.similarity.algorithms.lexical.uima.ngrams.WordNGramContainmentResource;
 import dkpro.similarity.algorithms.style.TypeTokenRatioComparator;
 import dkpro.similarity.uima.annotator.SimilarityScorer;
 import dkpro.similarity.uima.io.CombinationReader;
-import dkpro.similarity.uima.io.PlainTextCombinationReader;
 import dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
+import dkpro.similarity.uima.io.PlainTextCombinationReader;
 import dkpro.similarity.uima.resource.SimpleJCasTextSimilarityResource;
 import dkpro.similarity.uima.resource.SimpleTextSimilarityResource;
-import dkpro.similarity.uima.resource.lexical.ngrams.WordNGramContainmentResource;
+//import de.tudarmstadt.ukp.dkpro.core.treetagger.TreeTaggerPosLemmaTT4J;
 
 
 public class WithDKPro
@@ -39,6 +39,7 @@ public class WithDKPro
 		{	
 			CollectionReader reader = createReader(PlainTextCombinationReader.class,
 					PlainTextCombinationReader.PARAM_INPUT_DIR, "classpath:/datasets/test/plaintext",
+					PlainTextCombinationReader.PARAM_LANGUAGE, "en",
 					PlainTextCombinationReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
 	
 			AnalysisEngineDescription seg = createEngineDescription(
