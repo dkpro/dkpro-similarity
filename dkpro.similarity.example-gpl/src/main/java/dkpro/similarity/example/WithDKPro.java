@@ -16,6 +16,7 @@ import org.apache.uima.fit.factory.AggregateBuilder;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
+import dkpro.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure;
 import dkpro.similarity.algorithms.lexical.uima.ngrams.WordNGramContainmentResource;
 import dkpro.similarity.algorithms.style.TypeTokenRatioComparator;
 import dkpro.similarity.uima.annotator.SimilarityScorer;
@@ -85,7 +86,7 @@ public class WithDKPro
 			    SimilarityScorer.PARAM_SEGMENT_FEATURE_PATH, "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
 			    SimilarityScorer.PARAM_TEXT_SIMILARITY_RESOURCE, createExternalResourceDescription(
 			    	SimpleTextSimilarityResource.class,
-			    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, "de.tudarmstadt.ukp.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure")
+			    	SimpleTextSimilarityResource.PARAM_TEXT_SIMILARITY_MEASURE, WordNGramContainmentMeasure.class.getName())
 			    );
 			return scorer;
 		case 2:
