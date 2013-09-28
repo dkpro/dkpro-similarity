@@ -6,7 +6,7 @@
   <vendor/>
   <types>
     <typeDescription>
-      <name>de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore</name>
+      <name>dkpro.similarity.uima.api.type.TextSimilarityScore</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>
@@ -18,14 +18,14 @@
       </features>
     </typeDescription>
     <typeDescription>
-      <name>de.tudarmstadt.ukp.similarity.dkpro.api.type.GoldTextSimilarityScore</name>
+      <name>dkpro.similarity.uima.api.type.GoldTextSimilarityScore</name>
       <description/>
-      <supertypeName>de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore</supertypeName>
+      <supertypeName>dkpro.similarity.uima.api.type.TextSimilarityScore</supertypeName>
     </typeDescription>
     <typeDescription>
-      <name>de.tudarmstadt.ukp.similarity.dkpro.api.type.ExperimentalTextSimilarityScore</name>
+      <name>dkpro.similarity.uima.api.type.ExperimentalTextSimilarityScore</name>
       <description/>
-      <supertypeName>de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore</supertypeName>
+      <supertypeName>dkpro.similarity.uima.api.type.TextSimilarityScore</supertypeName>
     </typeDescription>
   </types>
 </typeSystemDescription>

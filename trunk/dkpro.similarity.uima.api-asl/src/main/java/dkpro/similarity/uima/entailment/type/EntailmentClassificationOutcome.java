@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Fri Dec 07 15:44:30 CET 2012
- * XML source: /home/zesch/workspace_new/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.dkpro.api-asl/src/main/resources/desc/type/EntailmentClassificationOutcome.xml
+ * Updated by JCasGen Sat Sep 28 15:25:40 CEST 2013
+ * XML source: /home/zesch/workspace_new/dkpro.similarity-asl/dkpro.similarity.uima.api-asl/src/main/resources/desc/type/EntailmentClassificationOutcome.xml
  * @generated */
 public class EntailmentClassificationOutcome extends Annotation {
   /** @generated
@@ -69,14 +69,14 @@ public class EntailmentClassificationOutcome extends Annotation {
    * @generated */
   public String getOutcome() {
     if (EntailmentClassificationOutcome_Type.featOkTst && ((EntailmentClassificationOutcome_Type)jcasType).casFeat_outcome == null)
-      jcasType.jcas.throwFeatMissing("outcome", "de.tudarmstadt.ukp.similarity.entailment.type.EntailmentClassificationOutcome");
+      jcasType.jcas.throwFeatMissing("outcome", "dkpro.similarity.uima.entailment.type.EntailmentClassificationOutcome");
     return jcasType.ll_cas.ll_getStringValue(addr, ((EntailmentClassificationOutcome_Type)jcasType).casFeatCode_outcome);}
     
   /** setter for outcome - sets  
    * @generated */
   public void setOutcome(String v) {
     if (EntailmentClassificationOutcome_Type.featOkTst && ((EntailmentClassificationOutcome_Type)jcasType).casFeat_outcome == null)
-      jcasType.jcas.throwFeatMissing("outcome", "de.tudarmstadt.ukp.similarity.entailment.type.EntailmentClassificationOutcome");
+      jcasType.jcas.throwFeatMissing("outcome", "dkpro.similarity.uima.entailment.type.EntailmentClassificationOutcome");
     jcasType.ll_cas.ll_setStringValue(addr, ((EntailmentClassificationOutcome_Type)jcasType).casFeatCode_outcome, v);}    
   }
 

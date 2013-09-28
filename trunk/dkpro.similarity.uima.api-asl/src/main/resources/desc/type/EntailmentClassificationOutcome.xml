@@ -6,7 +6,7 @@
   <vendor/>
   <types>
     <typeDescription>
-      <name>de.tudarmstadt.ukp.similarity.entailment.type.EntailmentClassificationOutcome</name>
+      <name>dkpro.similarity.uima.entailment.type.EntailmentClassificationOutcome</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>

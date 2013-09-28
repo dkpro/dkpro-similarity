@@ -31,7 +31,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Thu May 31 16:23:19 CEST 2012
+ * Updated by JCasGen Sat Sep 28 15:25:36 CEST 2013
  * @generated */
 public class TextSimilarityScore_Type extends Annotation_Type {
   /** @generated */
@@ -56,7 +56,7 @@ public class TextSimilarityScore_Type extends Annotation_Type {
   public final static int typeIndexID = TextSimilarityScore.typeIndexID;
   /** @generated 
      @modifiable */
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("dkpro.similarity.uima.api.type.TextSimilarityScore");
  
   /** @generated */
   final Feature casFeat_Score;
@@ -65,13 +65,13 @@ public class TextSimilarityScore_Type extends Annotation_Type {
   /** @generated */ 
   public double getScore(int addr) {
         if (featOkTst && casFeat_Score == null)
-      jcas.throwFeatMissing("Score", "de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore");
+      jcas.throwFeatMissing("Score", "dkpro.similarity.uima.api.type.TextSimilarityScore");
     return ll_cas.ll_getDoubleValue(addr, casFeatCode_Score);
   }
   /** @generated */    
   public void setScore(int addr, double v) {
         if (featOkTst && casFeat_Score == null)
-      jcas.throwFeatMissing("Score", "de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore");
+      jcas.throwFeatMissing("Score", "dkpro.similarity.uima.api.type.TextSimilarityScore");
     ll_cas.ll_setDoubleValue(addr, casFeatCode_Score, v);}
     
   
