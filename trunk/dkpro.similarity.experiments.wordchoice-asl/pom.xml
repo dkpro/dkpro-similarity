@@ -27,6 +27,12 @@
     <dependency>
         <groupId>dkpro.similarity</groupId>
         <artifactId>
+            dkpro.similarity.algorithms.lsr-asl
+        </artifactId>
+    </dependency>
+    <dependency>
+        <groupId>dkpro.similarity</groupId>
+        <artifactId>
             dkpro.similarity.uima.core-asl
         </artifactId>
     </dependency>

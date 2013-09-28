@@ -26,11 +26,11 @@ import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import de.tudarmstadt.ukp.dkpro.core.api.io.ResourceCollectionReaderBase;
+import dkpro.similarity.algorithms.lsr.uima.path.JiangConrathRelatednessResource;
+import dkpro.similarity.algorithms.lsr.uima.path.LSRRelatednessResourceBase;
+import dkpro.similarity.algorithms.lsr.uima.path.LinRelatednessResource;
 import dkpro.similarity.experiments.wordpairs.io.SemanticRelatednessResultWriter;
 import dkpro.similarity.experiments.wordpairs.io.WordPairReader;
-import dkpro.similarity.uima.resource.lsr.JiangConrathRelatednessResource;
-import dkpro.similarity.uima.resource.lsr.LSRRelatednessResourceBase;
-import dkpro.similarity.uima.resource.lsr.LinRelatednessResource;
 
 public class WordPairExperiment
 {

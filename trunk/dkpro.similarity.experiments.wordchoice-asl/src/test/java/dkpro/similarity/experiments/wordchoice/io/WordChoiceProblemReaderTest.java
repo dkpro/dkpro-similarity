@@ -12,7 +12,6 @@ import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.core.api.io.ResourceCollectionReaderBase;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import dkpro.similarity.experiments.wordchoice.io.WordChoiceProblemReader;
 import dkpro.similarity.type.WordChoiceProblem;
 
 public class WordChoiceProblemReaderTest
