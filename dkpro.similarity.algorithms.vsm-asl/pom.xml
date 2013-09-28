@@ -29,6 +29,10 @@
   		<artifactId>dkpro.similarity.algorithms.api-asl</artifactId>
   	</dependency>
   	<dependency>
+        <groupId>dkpro.similarity</groupId>
+        <artifactId>dkpro.similarity.uima.core-asl</artifactId>
+    </dependency>
+  	<dependency>
   		<groupId>com.googlecode.matrix-toolkits-java</groupId>
   		<artifactId>mtj</artifactId>
   		<version>0.9.14</version>

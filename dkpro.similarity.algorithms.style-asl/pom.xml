@@ -15,6 +15,10 @@
   		<groupId>dkpro.similarity</groupId>
   		<artifactId>dkpro.similarity.algorithms.api-asl</artifactId>
   	</dependency>
+    <dependency>
+        <groupId>dkpro.similarity</groupId>
+        <artifactId>dkpro.similarity.uima.core-asl</artifactId>
+    </dependency>
   	<dependency>
   		<groupId>org.apache.commons</groupId>
   		<artifactId>commons-math</artifactId>
