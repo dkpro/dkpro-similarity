@@ -27,8 +27,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Thu May 31 16:23:19 CEST 2012
- * XML source: /home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity/de.tudarmstadt.ukp.similarity.dkpro/de.tudarmstadt.ukp.similarity.dkpro.api/src/main/resources/desc/type/Similarity.xml
+ * Updated by JCasGen Sat Sep 28 15:25:36 CEST 2013
+ * XML source: /home/zesch/workspace_new/dkpro.similarity-asl/dkpro.similarity.uima.api-asl/src/main/resources/desc/type/Similarity.xml
  * @generated */
 public class ExperimentalTextSimilarityScore extends TextSimilarityScore {
   /** @generated
@@ -44,7 +44,7 @@ public class ExperimentalTextSimilarityScore extends TextSimilarityScore {
  
   /** Never called.  Disable default constructor
    * @generated */
-  protected ExperimentalTextSimilarityScore() {}
+  protected ExperimentalTextSimilarityScore() {/* intentionally empty block */}
     
   /** Internal - constructor used by generator 
    * @generated */

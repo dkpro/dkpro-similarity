@@ -28,7 +28,7 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
 /** 
- * Updated by JCasGen Thu May 31 16:23:19 CEST 2012
+ * Updated by JCasGen Sat Sep 28 15:25:36 CEST 2013
  * @generated */
 public class GoldTextSimilarityScore_Type extends TextSimilarityScore_Type {
   /** @generated */
@@ -53,7 +53,7 @@ public class GoldTextSimilarityScore_Type extends TextSimilarityScore_Type {
   public final static int typeIndexID = GoldTextSimilarityScore.typeIndexID;
   /** @generated 
      @modifiable */
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("de.tudarmstadt.ukp.similarity.dkpro.api.type.GoldTextSimilarityScore");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("dkpro.similarity.uima.api.type.GoldTextSimilarityScore");
 
 
 

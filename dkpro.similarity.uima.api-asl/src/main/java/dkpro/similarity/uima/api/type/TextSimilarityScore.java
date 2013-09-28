@@ -28,8 +28,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Thu May 31 16:23:19 CEST 2012
- * XML source: /home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity/de.tudarmstadt.ukp.similarity.dkpro/de.tudarmstadt.ukp.similarity.dkpro.api/src/main/resources/desc/type/Similarity.xml
+ * Updated by JCasGen Sat Sep 28 15:25:36 CEST 2013
+ * XML source: /home/zesch/workspace_new/dkpro.similarity-asl/dkpro.similarity.uima.api-asl/src/main/resources/desc/type/Similarity.xml
  * @generated */
 public class TextSimilarityScore extends Annotation {
   /** @generated
@@ -45,7 +45,7 @@ public class TextSimilarityScore extends Annotation {
  
   /** Never called.  Disable default constructor
    * @generated */
-  protected TextSimilarityScore() {}
+  protected TextSimilarityScore() {/* intentionally empty block */}
     
   /** Internal - constructor used by generator 
    * @generated */
@@ -83,14 +83,14 @@ public class TextSimilarityScore extends Annotation {
    * @generated */
   public double getScore() {
     if (TextSimilarityScore_Type.featOkTst && ((TextSimilarityScore_Type)jcasType).casFeat_Score == null)
-      jcasType.jcas.throwFeatMissing("Score", "de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore");
+      jcasType.jcas.throwFeatMissing("Score", "dkpro.similarity.uima.api.type.TextSimilarityScore");
     return jcasType.ll_cas.ll_getDoubleValue(addr, ((TextSimilarityScore_Type)jcasType).casFeatCode_Score);}
     
   /** setter for Score - sets  
    * @generated */
   public void setScore(double v) {
     if (TextSimilarityScore_Type.featOkTst && ((TextSimilarityScore_Type)jcasType).casFeat_Score == null)
-      jcasType.jcas.throwFeatMissing("Score", "de.tudarmstadt.ukp.similarity.dkpro.api.type.TextSimilarityScore");
+      jcasType.jcas.throwFeatMissing("Score", "dkpro.similarity.uima.api.type.TextSimilarityScore");
     jcasType.ll_cas.ll_setDoubleValue(addr, ((TextSimilarityScore_Type)jcasType).casFeatCode_Score, v);}    
   }
 
