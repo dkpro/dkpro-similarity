@@ -31,6 +31,14 @@ import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import dkpro.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
+import dkpro.similarity.algorithms.lexical.uima.ngrams.CharacterNGramResource;
+import dkpro.similarity.algorithms.lexical.uima.ngrams.WordNGramContainmentResource;
+import dkpro.similarity.algorithms.lexical.uima.ngrams.WordNGramJaccardResource;
+import dkpro.similarity.algorithms.lexical.uima.string.GreedyStringTilingMeasureResource;
+import dkpro.similarity.algorithms.lexsub.uima.TWSISubstituteWrapperResource;
+import dkpro.similarity.algorithms.lsr.uima.aggregate.MCS06AggregateResource;
+import dkpro.similarity.algorithms.lsr.uima.path.ResnikRelatednessResource;
+import dkpro.similarity.algorithms.vsm.uima.VectorIndexSourceRelatednessResource;
 import dkpro.similarity.experiments.sts2013.Pipeline.Dataset;
 import dkpro.similarity.experiments.sts2013.Pipeline.Mode;
 import dkpro.similarity.experiments.sts2013.util.CharacterNGramIdfValuesGenerator;
@@ -40,17 +48,9 @@ import dkpro.similarity.ml.FeatureConfig;
 import dkpro.similarity.ml.io.SimilarityScoreWriter;
 import dkpro.similarity.uima.annotator.SimilarityScorer;
 import dkpro.similarity.uima.io.CombinationReader;
-import dkpro.similarity.uima.io.SemEvalCorpusReader;
 import dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
+import dkpro.similarity.uima.io.SemEvalCorpusReader;
 import dkpro.similarity.uima.resource.SimpleTextSimilarityResource;
-import dkpro.similarity.uima.resource.lexical.ngrams.CharacterNGramResource;
-import dkpro.similarity.uima.resource.lexical.ngrams.WordNGramContainmentResource;
-import dkpro.similarity.uima.resource.lexical.ngrams.WordNGramJaccardResource;
-import dkpro.similarity.uima.resource.lexical.string.GreedyStringTilingMeasureResource;
-import dkpro.similarity.uima.resource.lexsub.TWSISubstituteWrapperResource;
-import dkpro.similarity.uima.resource.lsr.ResnikRelatednessResource;
-import dkpro.similarity.uima.resource.lsr.aggregate.MCS06AggregateResource;
-import dkpro.similarity.uima.resource.vsm.VectorIndexSourceRelatednessResource;
 
 
 /**

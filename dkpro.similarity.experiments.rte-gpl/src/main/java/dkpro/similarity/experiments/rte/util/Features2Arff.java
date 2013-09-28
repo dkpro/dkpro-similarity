@@ -10,8 +10,11 @@
  ******************************************************************************/
 package dkpro.similarity.experiments.rte.util;
 
-import java.io.File;
+import static dkpro.similarity.experiments.rte.Pipeline.FEATURES_DIR;
+import static dkpro.similarity.experiments.rte.Pipeline.GOLD_DIR;
+import static dkpro.similarity.experiments.rte.Pipeline.MODELS_DIR;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,14 +24,8 @@ import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import dkpro.similarity.experiments.rte.Pipeline.Dataset;
-
-import static dkpro.similarity.experiments.rte.Pipeline.FEATURES_DIR;
-import static dkpro.similarity.experiments.rte.Pipeline.GOLD_DIR;
-import static dkpro.similarity.experiments.rte.Pipeline.MODELS_DIR;
 
 
 public class Features2Arff

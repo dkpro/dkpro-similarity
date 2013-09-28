@@ -22,8 +22,8 @@ import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 
 import dkpro.similarity.experiments.rte.Pipeline.Dataset;
-import dkpro.similarity.uima.io.RTECorpusReader;
 import dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
+import dkpro.similarity.uima.io.RTECorpusReader;
 
 
 public class ConvertToPlainText

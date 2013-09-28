@@ -10,8 +10,6 @@
  ******************************************************************************/
 package dkpro.similarity.experiments.rte;
 
-import static dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier.LOGISTIC;
-import static dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier.SMO;
 import static dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric.Accuracy;
 import static dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric.AveragePrecision;
 import static dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric.CWS;
@@ -24,6 +22,7 @@ import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
+import dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier;
 import dkpro.similarity.experiments.rte.util.Evaluator;
 import dkpro.similarity.experiments.rte.util.Features2Arff;
 import dkpro.similarity.experiments.rte.util.GoldstandardCreator;
@@ -121,8 +120,8 @@ public class Pipeline
 		Features2Arff.toArffFile(devset, true);
 
 		// Run the classifier
-		Evaluator.runClassifierCV(SMO, devset);
-		Evaluator.runClassifierCV(LOGISTIC, devset);
+		Evaluator.runClassifierCV(WekaClassifier.SMO, devset);
+		Evaluator.runClassifierCV(WekaClassifier.LOGISTIC, devset);
 		
 		// Evaluate
 		Evaluator.runEvaluationMetric(Accuracy, devset);
@@ -146,8 +145,8 @@ public class Pipeline
 		Features2Arff.toArffFile(testset, true);
 
 		// Run the classifer
-		Evaluator.runClassifier(SMO, devset, testset);
-		Evaluator.runClassifier(LOGISTIC, devset, testset);
+		Evaluator.runClassifier(WekaClassifier.SMO, devset, testset);
+		Evaluator.runClassifier(WekaClassifier.LOGISTIC, devset, testset);
 
 		// Evaluate
 		Evaluator.runEvaluationMetric(Accuracy, testset);

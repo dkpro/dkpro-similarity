@@ -62,5 +62,4 @@
   		<artifactId>dkpro.similarity.uima.core-asl</artifactId>
   	</dependency>
   </dependencies>
-  <version>2.2.0-SNAPSHOT</version>
 </project>

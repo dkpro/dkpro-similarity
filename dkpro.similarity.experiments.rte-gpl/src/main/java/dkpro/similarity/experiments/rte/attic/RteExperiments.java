@@ -20,8 +20,8 @@ import org.apache.uima.fit.pipeline.SimplePipeline;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
 import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
-import dkpro.similarity.uima.io.RTECorpusReader;
 import dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
+import dkpro.similarity.uima.io.RTECorpusReader;
 
 public class RteExperiments
 {
