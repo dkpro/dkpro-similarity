@@ -133,9 +133,5 @@
   		</artifactId>
   		<version>0.8.0</version>
   	</dependency>
-  	<dependency>
-  		<groupId>nz.ac.waikato.cms.weka</groupId>
-  		<artifactId>weka-dev</artifactId>
-  	</dependency>
   </dependencies>
 </project>

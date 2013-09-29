@@ -61,8 +61,8 @@ import dkpro.similarity.experiments.sts2013baseline.filter.LogFilter;
 import dkpro.similarity.ml.io.SimilarityScoreWriter;
 import dkpro.similarity.uima.annotator.SimilarityScorer;
 import dkpro.similarity.uima.io.CombinationReader;
-import dkpro.similarity.uima.io.SemEvalCorpusReader;
 import dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
+import dkpro.similarity.uima.io.SemEvalCorpusReader;
 import dkpro.similarity.uima.resource.ml.LinearRegressionResource;
 
 
@@ -106,7 +106,7 @@ public class Evaluator
 	}
 	
 	public static void runLinearRegressionCV(Mode mode, Dataset... datasets)
-		throws Exception
+	    throws Exception
 	{
 		for (Dataset dataset : datasets)
 		{
@@ -121,9 +121,17 @@ public class Evaluator
 			// Add IDs to the instances
 			AddID.main(new String[] {"-i", MODELS_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".arff",
  								 	 "-o", MODELS_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + "-plusIDs.arff" });
-			Instances data = DataSource.read(MODELS_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + "-plusIDs.arff");
-			data.setClassIndex(data.numAttributes() - 1);				
+
+			String location = MODELS_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + "-plusIDs.arff";
 			
+	        Instances data = DataSource.read(location);
+	        
+	        if (data == null) {
+	            throw new IOException("Could not load data from: " + location);
+	        }
+	        
+	        data.setClassIndex(data.numAttributes() - 1);
+						
 	        // Instantiate the Remove filter
 	        Remove removeIDFilter = new Remove();
         	removeIDFilter.setAttributeIndices("first");

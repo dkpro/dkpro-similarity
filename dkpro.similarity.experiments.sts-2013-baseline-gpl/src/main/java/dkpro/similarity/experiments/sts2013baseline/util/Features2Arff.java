@@ -56,6 +56,8 @@ public class Features2Arff
 		throws IOException
 	{
 		System.out.println("Generating ARFF file");
+        File outFile = new File(MODELS_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".arff");
+//        System.out.println(outFile.getAbsolutePath());
 		
 		Collection<File> files = FileUtils.listFiles(
 				new File(FEATURES_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString()),
@@ -64,9 +66,7 @@ public class Features2Arff
 		
 		String arffString = toArffString(files, goldStandardInputStream);
 		
-		FileUtils.writeStringToFile(
-				new File(MODELS_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".arff"),
-				arffString);
+		FileUtils.writeStringToFile(outFile, arffString);
 		
 		System.out.println(" - done");
 	}
@@ -81,7 +81,7 @@ public class Features2Arff
 		
 		// Init data object
 		Map<Integer,List<Double>> data = new HashMap<Integer,List<Double>>();
-		
+				
 		for (File file : csvFiles)
 		{			
 			String feature = file.getParentFile().getName() + "/" + file.getName().substring(0, file.getName().length() - 4);
@@ -92,6 +92,11 @@ public class Features2Arff
 			
 			// Read data
 			List<String> lines = FileUtils.readLines(file);
+			
+			if (lines.size() == 0) {
+			    System.err.println("Empty feature file for " + feature + ". Experiment will probably fail.");
+			}
+			
 			for (int doc = 1; doc <= lines.size(); doc++)
 			{
 				String line = lines.get(doc - 1);
@@ -147,8 +152,8 @@ public class Features2Arff
 			
 		for (int doc = 1; doc <= lines.size(); doc++)
 		{	
-			System.out.println(lines.get(doc - 1).length());
-			System.out.println(lines.get(doc - 1));
+//			System.out.println(lines.get(doc - 1).length());
+//			System.out.println(lines.get(doc - 1));
 			if (lines.get(doc - 1).length() == 0)
 			{
 				System.out.println("here2");
@@ -157,7 +162,7 @@ public class Features2Arff
 			
 			double value = Double.parseDouble(lines.get(doc - 1));				
 			
-			System.out.println(doc);
+//			System.out.println(doc);
 			
 			List<Double> docObj = data.get(doc);
 			docObj.add(value);
