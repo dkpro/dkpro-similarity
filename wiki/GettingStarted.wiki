@@ -34,9 +34,9 @@ In case you run into problems (i.e. dependencies are not resolvable), try adding
   * In case the above step doesn't work (as the search index may not be up-to-date), edit the *pom.xml* with a plain text editor. Add the following child to the *dependencies* element:
 {{{
 <dependency>
-  <groupId>de.tudarmstadt.ukp.similarity.algorithms</groupId>
-  <artifactId>de.tudarmstadt.ukp.similarity.algorithms.api-asl</artifactId>
-  <version>1.0.0</version>
+  <groupId>dkpro.similarity</groupId>
+  <artifactId>dkpro.similarity.algorithms.api-asl</artifactId>
+  <version>2.0.0</version>
   <scope>compile</scope>
 </dependency>
 }}}
