@@ -24,7 +24,7 @@
   </parent>
   <groupId>dkpro.similarity</groupId>
   <artifactId>dkpro.similarity-asl</artifactId>
-  <version>2.1.0-SNAPSHOT</version>
+  <version>2.1.0</version>
   <packaging>pom</packaging>
     <distributionManagement>
           <repository>
@@ -87,74 +87,74 @@
   		<dependency>
   			<groupId>dkpro.similarity</groupId>
   			<artifactId>dkpro.similarity.algorithms.api-asl</artifactId>
-  			<version>2.1.0-SNAPSHOT</version>
+  			<version>2.1.0</version>
   		</dependency>
         <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>dkpro.similarity.algorithms.core-asl</artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>dkpro.similarity.algorithms.lexical-asl</artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>dkpro.similarity.algorithms.lsr-asl</artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>dkpro.similarity.algorithms.sound-asl</artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>dkpro.similarity.algorithms.structure-asl</artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>dkpro.similarity.algorithms.style-asl</artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>dkpro.similarity.algorithms.vsm-asl</artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>dkpro.similarity.algorithms.wikipedia-asl</artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>dkpro.similarity.uima.api-asl</artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>dkpro.similarity.uima.core-asl</artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
                 <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>dkpro.similarity.uima.data-asl</artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>dkpro.similarity.uima.io-asl</artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>dkpro.similarity</groupId>
             <artifactId>
                 dkpro.similarity.experiments.api-asl
             </artifactId>
-            <version>2.1.0-SNAPSHOT</version>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
@@ -212,9 +212,9 @@
     <module>dkpro.similarity.experiments.api-asl</module>
   </modules>
   <scm>
-  	<url>http://code.google.com/p/dkpro-similarity-asl/source/browse/#svn/trunk</url>
-  	<connection>http://dkpro-similarity-asl.googlecode.com/svn/trunk/</connection>
-  	<developerConnection>scm:svn:https://dkpro-similarity-asl.googlecode.com/svn/trunk/</developerConnection>
+  	<url>http://code.google.com/p/dkpro-similarity-asl/source/browse/#svn/tags/dkpro.similarity-asl-2.1.0</url>
+  	<connection>http://dkpro-similarity-asl.googlecode.com/svn/tags/dkpro.similarity-asl-2.1.0</connection>
+  	<developerConnection>scm:svn:https://dkpro-similarity-asl.googlecode.com/svn/tags/dkpro.similarity-asl-2.1.0</developerConnection>
   </scm>
   <name>DKPro Similarity</name>
   <url>https://code.google.com/p/dkpro-similarity-asl/</url>
