@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>Relatedness</name>
+  <description/>
+  <version>1.0</version>
+  <vendor/>
+  <types>
+    <typeDescription>
+      <name>dkpro.similarity.uima.api.type.TextSimilarityScore</name>
+      <description/>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>Score</name>
+          <description/>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>dkpro.similarity.uima.api.type.GoldTextSimilarityScore</name>
+      <description/>
+      <supertypeName>dkpro.similarity.uima.api.type.TextSimilarityScore</supertypeName>
+    </typeDescription>
+    <typeDescription>
+      <name>dkpro.similarity.uima.api.type.ExperimentalTextSimilarityScore</name>
+      <description/>
+      <supertypeName>dkpro.similarity.uima.api.type.TextSimilarityScore</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

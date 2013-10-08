@@ -1,0 +1,123 @@
+#WORD1:WORD2:MEAN:POS1:POS2
+underwear:lingerie:3.94118:n:n
+digital camera:photographer:3.85294:n:n
+tuition:fee:3.84706:n:n
+leaf:rake:3.81781:n:n
+symptom:fever:3.79412:n:n
+fertility:ovary:3.78235:n:n
+beef:slaughterhouse:3.77727:n:n
+broadcast:commentator:3.75455:n:n
+apparel:jewellery:3.715:n:n
+arrest:detention:3.69:n:n
+hardware:pc:3.60714:n:n
+street:neighborhood:3.6:n:n
+pixel:digital camera:3.57143:n:n
+vehicle:trailer:3.53571:n:n
+mathematics:method:3.47:n:n
+draft:manuscript:3.46471:n:n
+flavor:pepper:3.45:n:n
+defense:soldier:3.39091:n:n
+seller:profit:3.38636:n:n
+lion:cage:3.35548:n:n
+treasure:hunter:3.345:n:n
+translation:meaning:3.33182:n:n
+bread:egg:3.235:n:n
+garage:opener:3.20714:n:n
+prohibition:rum:3.17143:n:n
+fax:e-mail:3.17143:n:n
+captive:custody:3.14545:n:n
+solar system:sphere:3.13:n:n
+vegetation:pastureland:3.12727:n:n
+leather:pouch:3.12143:n:n
+terrace:pavilion:3.1:n:n
+recycling:landfill:3.085:n:n
+garden:art:3.065:n:n
+recording studio:loudspeaker:3.00714:n:n
+strike:enemy:2.99773:n:n
+ethanol:benzene:2.995:n:n
+pepper:corn:2.99:n:n
+murder:gang:2.92727:n:n
+multiple:coefficient:2.91765:n:n
+infantry:reconnaissance:2.9:n:n
+density:electron:2.9:n:n
+representation:gender:2.85882:n:n
+palm:anatomy:2.78571:n:n
+poem:singer:2.78182:n:n
+maintenance:aviation:2.74:n:n
+mushroom:herb:2.72941:n:n
+yeast:lager:2.71429:n:n
+headache:caffeine:2.71176:n:n
+truss:cantilever bridge:2.709:n:n
+workplace:discrimination:2.67:n:n
+hunter:squirrel:2.66429:n:n
+disorder:abuse:2.65682:n:n
+contract:legislation:2.65:n:n
+motivation:morality:2.51765:n:n
+sewer:overflow:2.5125:n:n
+blindness:placebo:2.48:n:n
+agility:fox hunting:2.46364:n:n
+proportion:stability:2.394:n:n
+drug:public school:2.33571:n:n
+resentment:instigator:2.27857:n:n
+pow:combatant:2.25714:n:n
+banana:salad:2.25294:n:n
+emphasis:newspaper:2.24:n:n
+forestry:urban area:2.225:n:n
+hypocrisy:condemnation:2.22353:n:n
+facility:activity:2.04545:n:n
+rendezvous:convoy:2.04286:n:n
+propagation:radio wave:2.01176:n:n
+puppetry:slapstick:2:n:n
+public domain:brand:1.99412:n:n
+cartridge:lid:1.97143:n:n
+enclosure:mental health:1.91765:n:n
+credit:foundation:1.91176:n:n
+guardian:livestock:1.90909:n:n
+coronation:majority rule:1.885:n:n
+enzyme:depression:1.87727:n:n
+precursor:prevention:1.85909:n:n
+arbitration:committee:1.83529:n:n
+lemon:coriander:1.75455:n:n
+stock:bull:1.6585:n:n
+vicar:archdiocese:1.65714:n:n
+scrap:chemical element:1.57:n:n
+paranoia:newsroom:1.48235:n:n
+phase:consistency:1.47353:n:n
+hope:psychology:1.44286:n:n
+juvenile:rope:1.39286:n:n
+half-hour:weeknight:1.37059:n:n
+evolution:publicity:1.35909:n:n
+contestant:donor:1.30588:n:n
+sheet:window:1.21364:n:n
+robbery:mobile phone:1.21364:n:n
+metre:semifinal:1.2:n:n
+relief:total:1.18182:n:n
+public service:array:1.1775:n:n
+fresco:modern times:1.10588:n:n
+summit:canal:1.09091:n:n
+outlet:silk:1.085:n:n
+greed:vest:1.075:n:n
+eyeball:flatworm:1.045:n:n
+spreadsheet:silk:0.98636:n:n
+distinction:sword:0.93636:n:n
+inclusion:career:0.82727:n:n
+feud:programmer:0.805:n:n
+switch:glass:0.79286:n:n
+penalty:programming:0.77857:n:n
+duty:verb:0.77143:n:n
+catering:loan:0.76765:n:n
+musical group:confession:0.755:n:n
+complication:harp:0.74286:n:n
+female:insect:0.73636:n:n
+seminar:fern:0.71429:n:n
+home run:surfer:0.70588:n:n
+mishap:cube root:0.7:n:n
+thriller:sunlight:0.61429:n:n
+crusade:catwalk:0.58636:n:n
+jumper:furnishing:0.58571:n:n
+eclipse:cord:0.57:n:n
+fork:combination:0.54545:n:n
+madness:nest:0.45909:n:n
+gas:algebra:0.41176:n:n
+hotel:bibliography:0.36529:n:n
+gladiator:plastic bag:0.12941:n:n
