@@ -58,9 +58,8 @@ public class PlainTextCombinationReader
 			throw new ResourceInitializationException(e);
 		}
 		File inputDir = new File(inputUrl.getFile());
-		
-		List<File> files = listFiles(inputDir, ".txt", false);		
-		for (File file : files)
+
+		for (File file : FileUtils.listFiles(inputDir, new String[] {"txt"}, false))
 		{
 			try {
 				String s = FileUtils.readFileToString(file);
@@ -82,29 +81,4 @@ public class PlainTextCombinationReader
 
 		return pairs;
 	}
-	
-	private List<File> listFiles(File folder, String suffix, boolean recursively)
-	{
-		List<File> files = new ArrayList<File>();
-		
-		String s = folder.getAbsolutePath();
-		
-		for (File file : folder.listFiles())
-		{
-			if (file.isDirectory())
-			{
-				if (recursively && !file.getName().startsWith(".")) {
-                    files.addAll(listFiles(file, suffix, recursively));
-                }
-			} else {
-				if (!file.getName().startsWith(".") && 
-					file.getName().endsWith(suffix)) {
-                    files.add(file);
-                }
-			}
-		}
-		
-		return files;
-	}
-
 }
