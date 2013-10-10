@@ -196,6 +196,12 @@ public abstract class CombinationReader
 			DocumentMetaData md2 = DocumentMetaData.create(view2);
 			md2.setCollectionId(currentPair2.getCollectionID());
 			md2.setDocumentId(currentPair2.getID2());
+			
+			
+			// add DMD also to base cas - required for many writers
+			DocumentMetaData dmd = DocumentMetaData.create(jcas);
+            dmd.setCollectionId(currentPair1.getCollectionID());
+            dmd.setDocumentId(currentPair1.getID1() + "-" + currentPair2.getID2());
 		}
 		catch (CASException e) {
 			throw new CollectionException(e);

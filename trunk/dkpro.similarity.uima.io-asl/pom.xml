@@ -53,5 +53,17 @@
   		<artifactId>xml-resolver</artifactId>
   		<version>1.2</version>
   	</dependency>
+  	<dependency>
+  		<groupId>dkpro.similarity</groupId>
+  		<artifactId>dkpro.similarity.uima.data-asl</artifactId>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+  		<artifactId>
+  			de.tudarmstadt.ukp.dkpro.core.io.xmi-asl
+  		</artifactId>
+  		<scope>test</scope>
+  	</dependency>
   </dependencies>
 </project>
