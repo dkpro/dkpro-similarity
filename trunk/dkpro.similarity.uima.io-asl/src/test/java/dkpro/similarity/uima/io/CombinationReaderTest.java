@@ -33,6 +33,6 @@ public class CombinationReaderTest
             i++;
         }
         
-        assertEquals(i, 2);
+        assertEquals(2, i);
     }
 }
