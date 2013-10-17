@@ -13,13 +13,13 @@ public class WithoutDKPro
 		throws SimilarityException
 	{
 		// These are the two input documents
-		List<String> lemmas1 = getTokens("The quick brown fox jumps over the lazy dog");     
-		List<String> lemmas2 = getTokens("The quick brown dog jumps over the lazy fox");
+		String[] tokens1 = "The quick brown fox jumps over the lazy dog".split(" ");     
+		String[] tokens2 = "The quick brown dog jumps over the lazy fox".split(" ");
 		
 		// Compute a trigram relatedness		
 		TextSimilarityMeasure measure = new WordNGramContainmentMeasure(3);
 
-		double score = measure.getSimilarity(lemmas1, lemmas2);
+		double score = measure.getSimilarity(tokens1, tokens2);
 
 		System.out.println("Trigram similarity: " + score);
 		
