@@ -29,4 +29,11 @@ public abstract class TextSimilarityMeasureBase
 	{
 		return getSimilarity(asList(aTerm1), asList(aTerm2));
 	}
+	
+    @Override
+    public double getSimilarity(final String[] strings1, final String[] strings2)
+        throws SimilarityException
+    {
+        return getSimilarity(asList(strings1), asList(strings2));
+    }
 }

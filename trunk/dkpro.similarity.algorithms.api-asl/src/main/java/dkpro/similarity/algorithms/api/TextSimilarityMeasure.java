@@ -31,4 +31,10 @@ public interface TextSimilarityMeasure
 	 */
 	double getSimilarity(Collection<String> strings1, Collection<String> strings2)
 		throws SimilarityException;
+	
+	   /**
+     * Computes the similarity between two bags of words text representations.
+     */
+    double getSimilarity(String[] strings1, String[] strings2)
+        throws SimilarityException;
 }

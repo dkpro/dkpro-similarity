@@ -46,6 +46,13 @@ public abstract class TextSimilarityResourceBase
     }
 
     @Override
+    public double getSimilarity(String[] strings1, String[] strings2)
+        throws SimilarityException
+    {
+        return measure.getSimilarity(strings1, strings2);
+    }
+
+    @Override
     public double getSimilarity(String string1, String string2)
         throws SimilarityException
     {
