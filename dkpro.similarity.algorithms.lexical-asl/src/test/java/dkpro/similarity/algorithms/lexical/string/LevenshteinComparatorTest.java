@@ -22,26 +22,41 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import dkpro.similarity.algorithms.api.TermSimilarityMeasure;
-import dkpro.similarity.algorithms.lexical.string.LevenshteinComparator;
-   
+import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 
 public class LevenshteinComparatorTest
 {
-	private static final double epsilon = 0.0001;
-	
+    private static final double epsilon = 0.0001;
+
     @Test
     public void test()
-		throws Exception
-	{
-		String a1 = "test String1";
-		String a2 = "test String2";
+        throws Exception
+    {
+        String a1 = "test String1";
+        String a2 = "test String2";
 
-		String b1 = "This is my string";
-		String b2 = "That is your string";
+        String b1 = "This is my string";
+        String b2 = "That is your string";
 
-		TermSimilarityMeasure measure = new LevenshteinComparator();
+        TermSimilarityMeasure measure = new LevenshteinComparator();
 
-		assertEquals(1, measure.getSimilarity(a1, a2), epsilon);
-		assertEquals(6, measure.getSimilarity(b1, b2), epsilon);
-   }
+        assertEquals(1, measure.getSimilarity(a1, a2), epsilon);
+        assertEquals(6, measure.getSimilarity(b1, b2), epsilon);
+    }
+
+    @Test
+    public void testCollection()
+        throws Exception
+    {
+        String[] a1 = "test String1".split(" ");
+        String[] a2 = "test String2".split(" ");
+
+        String[] b1 = "This is my string".split(" ");
+        String[] b2 = "That is your string".split(" ");
+
+        TextSimilarityMeasure measure = new LevenshteinComparator();
+
+        assertEquals(1, measure.getSimilarity(a1, a2), epsilon);
+        assertEquals(6, measure.getSimilarity(b1, b2), epsilon);
+    }
 }

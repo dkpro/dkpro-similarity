@@ -19,7 +19,7 @@ package dkpro.similarity.algorithms.lexical.string;
 
 import java.util.Collection;
 
-import org.apache.commons.lang.NotImplementedException;
+import org.apache.commons.lang.StringUtils;
 
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
@@ -74,9 +74,22 @@ public class LevenshteinComparator
 	 }
 
 	@Override
-	public double getSimilarity(Collection<String> stringList1, Collection<String> stringList2)
+	public double getSimilarity(Collection<String> strings1, Collection<String> strings2)
 		throws SimilarityException
 	{
-		throw new SimilarityException(new NotImplementedException());
-	}
+        if (strings1.size() == 0 || strings2.size() == 0) {
+            return 0.0;
+        }
+
+        String concatenatedString1 = StringUtils.join(strings1, " ");
+        String concatenatedString2 = StringUtils.join(strings2, " ");
+
+        if (concatenatedString1.length() == 0 || concatenatedString2.length() == 0) {
+            return 0.0;
+        }
+
+        double distance = getSimilarity(concatenatedString1,  concatenatedString2);
+
+        return distance;
+    }
 }
