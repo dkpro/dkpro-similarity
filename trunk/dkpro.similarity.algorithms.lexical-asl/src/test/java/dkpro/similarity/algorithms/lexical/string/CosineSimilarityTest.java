@@ -28,7 +28,7 @@ import java.util.Map;
 import org.junit.Test;
 
 import dkpro.similarity.algorithms.api.TermSimilarityMeasure;
-import dkpro.similarity.algorithms.lexical.string.CosineSimilarity;
+import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
    
 public class CosineSimilarityTest {
 
@@ -38,13 +38,13 @@ public class CosineSimilarityTest {
     public void tfBinaryL2()
 		throws Exception
 	{
-		String a1 = "test String1";
-		String a2 = "test String2";
+		String[] a1 = "test String1".split(" ");
+		String[] a2 = "test String2".split(" ");
 
-		String b1 = "This is my string";
-		String b2 = "That should be your string";
+		String[] b1 = "This is my string".split(" ");
+		String[] b2 = "That should be your string".split(" ");
 
-		TermSimilarityMeasure comparator = new CosineSimilarity(
+		TextSimilarityMeasure comparator = new CosineSimilarity(
 		        CosineSimilarity.WeightingModeTf.BINARY,
 		        CosineSimilarity.NormalizationMode.L2
 		);
@@ -59,18 +59,37 @@ public class CosineSimilarityTest {
 //		assertEquals(simMetricsComparator.getRelatedness(a1.toLowerCase(), a2.toLowerCase()), comparator.getRelatedness(a1, a2), epsilon);
 //		assertEquals(simMetricsComparator.getRelatedness(b1, b2), comparator.getRelatedness(b1, b2), epsilon);
 	}
+    
+    @Test
+    public void tfBinaryL2Character()
+        throws Exception
+    {
+        String a1 = "test String1";
+        String a2 = "test String2";
+
+        String b1 = "This is my string";
+        String b2 = "That should be your string";
+
+        TermSimilarityMeasure comparator = new CosineSimilarity(
+                CosineSimilarity.WeightingModeTf.BINARY,
+                CosineSimilarity.NormalizationMode.L2
+        );
+
+        assertEquals(0.9,    comparator.getSimilarity(a1, a2), epsilon);
+        assertEquals(0.73127, comparator.getSimilarity(b1, b2), epsilon);
+    }
 
 	@Test
 	public void tfFrequencyL1L2()
 		throws Exception
 	{
-		String a1 = "test String1";
-		String a2 = "test String2";
+		String[] a1 = "test String1".split(" ");
+		String[] a2 = "test String2".split(" ");
 
-		String b1 = "test String1 test";
-		String b2 = "string2 test";
+		String[] b1 = "test String1 test".split(" ");
+		String[] b2 = "string2 test".split(" ");
 
-		TermSimilarityMeasure comparator = new CosineSimilarity(
+		TextSimilarityMeasure comparator = new CosineSimilarity(
 		        CosineSimilarity.WeightingModeTf.FREQUENCY,
 		        CosineSimilarity.NormalizationMode.L1
         );
@@ -97,13 +116,13 @@ public class CosineSimilarityTest {
 		idfScores.put("String1", 1.0 / 2.0);
 		idfScores.put("String2", 1.0 / 3.0);
 
-		String a1 = "test String1";
-		String a2 = "test String2";
+		String[] a1 = "test String1".split(" ");
+		String[] a2 = "test String2".split(" ");
 
-		String b1 = "test String1 test";
-		String b2 = "String2 test";
+		String[] b1 = "test String1 test".split(" ");
+		String[] b2 = "String2 test".split(" ");
 
-		TermSimilarityMeasure comparator = new CosineSimilarity(
+		TextSimilarityMeasure comparator = new CosineSimilarity(
 		        CosineSimilarity.WeightingModeIdf.PASSTHROUGH,
 		        CosineSimilarity.NormalizationMode.L2,
                 idfScores
@@ -122,13 +141,13 @@ public class CosineSimilarityTest {
 		idfScores.put("String1", 1.0 / 2.0);
 		idfScores.put("String2", 1.0 / 3.0);
 
-		String a1 = "test String1";
-		String a2 = "test String2";
+		String[] a1 = "test String1".split(" ");
+		String[] a2 = "test String2".split(" ");
 
-		String b1 = "test String1 test";
-		String b2 = "String2 test";
+		String[] b1 = "test String1 test".split(" ");
+		String[] b2 = "String2 test".split(" ");
 
-		TermSimilarityMeasure comparator = new CosineSimilarity(
+		TextSimilarityMeasure comparator = new CosineSimilarity(
 		        CosineSimilarity.WeightingModeTf.FREQUENCY,
 		        CosineSimilarity.WeightingModeIdf.PASSTHROUGH,
 		        CosineSimilarity.NormalizationMode.L2,
@@ -147,20 +166,20 @@ public class CosineSimilarityTest {
 		idfScores.put("test", 1.0 / 2.0);
 		idfScores.put("String1", 1.0 / 2.0);
 
-		String a1 = "test String1";
-		String a2 = "test String2";
+		String[] a1 = "test String1".split(" ");
+		String[] a2 = "test String2".split(" ");
 
-		String b1 = "test String1 test";
-		String b2 = "String2 test";
+		String[] b1 = "test String1 test".split(" ");
+		String[] b2 = "String2 test".split(" ");
 
-		TermSimilarityMeasure comparator1 = new CosineSimilarity(
+		TextSimilarityMeasure comparator1 = new CosineSimilarity(
 		        CosineSimilarity.WeightingModeTf.FREQUENCY,
 		        CosineSimilarity.WeightingModeIdf.LOG,
 		        CosineSimilarity.NormalizationMode.L2,
                 idfScores
         );
 
-		TermSimilarityMeasure comparator2 = new CosineSimilarity(
+		TextSimilarityMeasure comparator2 = new CosineSimilarity(
 		        CosineSimilarity.WeightingModeTf.FREQUENCY,
 		        CosineSimilarity.WeightingModeIdf.LOGPLUSONE,
 		        CosineSimilarity.NormalizationMode.L2,

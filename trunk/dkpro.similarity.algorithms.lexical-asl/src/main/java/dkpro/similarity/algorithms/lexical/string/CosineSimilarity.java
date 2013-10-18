@@ -19,10 +19,11 @@ package dkpro.similarity.algorithms.lexical.string;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -220,12 +221,27 @@ public class CosineSimilarity
 		return num / norm;
 	}
 
+	/* 
+	 * Up to 2.0.0, this used to treat the strings as representations of whole sentences that were silently tokenized.
+	 * I think that this is counter-intuitive and intransparent.
+	 * From 2.1.0 onwards, this will instead do a character-based cosine similarity on the strings. 
+	 */
 	@Override
 	public double getSimilarity(String string1, String string2)
 		throws SimilarityException
 	{
-		// Apply naive whitespace tokenization
-		return getSimilarity(Arrays.asList(string1.split(" ")), Arrays.asList(string2.split(" ")));
+	    List<String> parts1 = new ArrayList<String>();
+	    List<String> parts2 = new ArrayList<String>();
+	    
+	    for (char c : string1.toCharArray()) {
+	        parts1.add(Character.toString(c));
+	    }
+	    
+        for (char c : string2.toCharArray()) {
+            parts2.add(Character.toString(c));
+        }
+
+	    return getSimilarity(parts1, parts2);
 	}
 
 	private Vector getVector(Collection<String> aUnionTermSet, Collection<String> aTerms)
