@@ -18,10 +18,10 @@ After the download has finished, unzip the whole folder into {{{$DKPRO_HOME/ESA/
 
 Please note that the indexes have been created on lemmatized texts. So please also lemmatize your input texts first, before passing them to the similarity measure.
 
-==== Understanding the difference between VectorIndexReader and LuceneVectorReader ====
-The ESA indexes you have downloaded in the previous step are VectorIndexes that store for each word the full vector over the document space, i.e. when you want to compute the similarity between two words the similarity measure just retrieves the vectors stored for the words and computes the similarity. You need a VectorIndexReader to load them and you cannot change the vectors anymore (e.g. normalize or use some weighting scheme).
+==== Understanding the difference between !VectorIndexReader and !LuceneVectorReader ====
+The ESA indexes you have downloaded in the previous step are !VectorIndexes that store for each word the full vector over the document space, i.e. when you want to compute the similarity between two words the similarity measure just retrieves the vectors stored for the words and computes the similarity. You need a !VectorIndexReader to load them and you cannot change the vectors anymore (e.g. normalize or use some weighting scheme).
 
-LuceneVectorReader are used to create the above vectors from a Lucene index build from a document collection (more about this in the next section). When a similarity measure wants to get a vector for a word, it queries Lucene for the term frequencies of that word in each document. This is more flexible, as we can do all sorts of weighting and normalizing, but it is also much, much slower.
+!LuceneVectorReader are used to create the above vectors from a Lucene index build from a document collection (more about this in the next section). When a similarity measure wants to get a vector for a word, it queries Lucene for the term frequencies of that word in each document. This is more flexible, as we can do all sorts of weighting and normalizing, but it is also much, much slower.
 
 ==== Build Your Own Index ====
 
