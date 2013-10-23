@@ -43,7 +43,7 @@ import dkpro.similarity.algorithms.vsm.store.VectorReader;
  * {@code
  * VectorReader lsaReader = new SSpaceVectorReader(new File("my/text/files/directory"));
  * lsaReader.setVectorAggregation(VectorAggregation.SUM);
- * TextRelatednessMeasure cmp = new VectorComparator(lsaReader);
+ * VectorComparator cmp = new VectorComparator(lsaReader);
  * cmp.setInnerVectorProduct(InnerVectorProduct.COSINE);
  * cmp.setNormalization(VectorNorm.L2);
  * }
