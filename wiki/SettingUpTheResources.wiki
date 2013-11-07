@@ -12,7 +12,7 @@ Before continuing, please make sure that you have set up an environment_variable
 
 Explicit Semantic Analysis (ESA) (Gabrilovich and Markovitch, 2007) is a method which computes similarity based on word occurrences in a given document collection. While it was originally proposed on Wikipedia, other document collections with similar properties have also been found to work well, e.g. Wiktionary and !WordNet.
 
-The vector indexes can be downloaded [http://code.google.com/p/dkpro-similarity-asl/downloads/list here] for [http://dkpro-similarity-asl.googlecode.com/files/esa_vector_index_wiktionary_en.zip Wiktionary] or [http://dkpro-similarity-asl.googlecode.com/files/esa_vector_index_wordnet_en.zip WordNet]. As the Wikipedia index is much larger (about 900 MB zipped), you can get it [http://public.ukp.informatik.tu-darmstadt.de/baer/wp_eng_lem_nc_c.zip here].
+The vector indexes can be downloaded [http://code.google.com/p/dkpro-similarity-asl/downloads/list here] for [http://dkpro-similarity-asl.googlecode.com/files/esa_vector_index_wiktionary_en.zip Wiktionary] or [http://dkpro-similarity-asl.googlecode.com/files/esa_vector_index_wordnet_en.zip WordNet]. As the Wikipedia index is much larger (about 900 MB zipped), you can get it [https://public.ukp.informatik.tu-darmstadt.de/baer/wp_eng_lem_nc_c.zip here].
 
 After the download has finished, unzip the whole folder into {{{$DKPRO_HOME/ESA/VectorIndexes/<subdir>}}}, where {{{subdir}}} is an arbitrary name for each resource, e.g. "wordnet".
 
