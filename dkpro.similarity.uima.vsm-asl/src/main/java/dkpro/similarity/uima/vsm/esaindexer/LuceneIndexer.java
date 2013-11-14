@@ -64,12 +64,12 @@ public class LuceneIndexer extends JCasAnnotator_ImplBase {
 	 */
 	public static final String PARAM_MIN_TERMS_PER_DOCUMENT = "MinTermsPerDocument";
 	@ConfigurationParameter(name = PARAM_MIN_TERMS_PER_DOCUMENT, mandatory = false, defaultValue = "50")
-	private int minTermsPerDocument;
+	protected int minTermsPerDocument;
 
 	private final static Matcher characterPattern = Pattern.compile("[a-zA-Z]*").matcher("");
 
 	private File indexDir;
-	private IndexWriter indexWriter;
+	protected IndexWriter indexWriter;
 
 	@Override
 	public void initialize(UimaContext context) throws ResourceInitializationException {
