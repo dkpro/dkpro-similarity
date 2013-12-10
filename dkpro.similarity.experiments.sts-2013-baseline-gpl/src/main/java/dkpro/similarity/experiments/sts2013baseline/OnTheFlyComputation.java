@@ -1,6 +1,7 @@
 package dkpro.similarity.experiments.sts2013baseline;
 
 import static dkpro.similarity.experiments.sts2013baseline.Pipeline.DATASET_DIR;
+import static dkpro.similarity.experiments.sts2013baseline.Pipeline.FEATURES_DIR;
 import static dkpro.similarity.experiments.sts2013baseline.Pipeline.GOLDSTANDARD_DIR;
 import static dkpro.similarity.experiments.sts2013baseline.Pipeline.OUTPUT_DIR;
 import static dkpro.similarity.experiments.sts2013baseline.Pipeline.Dataset.ALL;
@@ -57,6 +58,10 @@ public class OnTheFlyComputation
             goldFile.createNewFile();
             FileUtils.writeStringToFile(goldFile, "0.0");
 
+            // remove old arff file
+            File featureDir = new File(ResourceUtils.resolveLocation(FEATURES_DIR + "/test/").getFile());
+            FileUtils.deleteDirectory(featureDir);
+            
             // Generate the features for test data
             FeatureGeneration.generateFeatures(OnTheFly, TEST);
             
