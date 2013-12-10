@@ -77,6 +77,7 @@ public class Evaluator
 		{
 			CollectionReader reader = createReader(SemEvalCorpusReader.class,
 					SemEvalCorpusReader.PARAM_INPUT_FILE, DATASET_DIR + "/test/STS.input." + dataset.toString() + ".txt",
+					SemEvalCorpusReader.PARAM_LANGUAGE, "en",
 					SemEvalCorpusReader.PARAM_COMBINATION_STRATEGY, CombinationStrategy.SAME_ROW_ONLY.toString());
 			
 			AnalysisEngineDescription seg = createEngineDescription(BreakIteratorSegmenter.class);

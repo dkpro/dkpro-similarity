@@ -50,7 +50,8 @@ public class Pipeline
 		MSRvid,
 		OnWN,
 		SMTeuroparl,
-		SMTnews
+		SMTnews,
+		OnTheFly
 	}
 	
 	public enum EvaluationMetric

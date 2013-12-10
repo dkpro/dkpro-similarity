@@ -15,7 +15,7 @@ public class LinearRegressionResource
 	extends JCasTextSimilarityResourceBase
 {
 	public static final String PARAM_LOG_FILTER = "LogFilter";
-	@ConfigurationParameter(name=PARAM_LOG_FILTER, mandatory=true)
+	@ConfigurationParameter(name=PARAM_LOG_FILTER, mandatory=true, defaultValue="true")
 	private boolean logFilter;
 	
 	public static final String PARAM_TRAIN_ARFF = "TRAIN_ARFF";
