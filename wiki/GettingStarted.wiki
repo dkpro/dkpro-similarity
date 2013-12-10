@@ -28,7 +28,7 @@ In case you run into problems (i.e. dependencies are not resolvable), try adding
             <id>ukp-oss</id>
             <url>dav:https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-snapshots-local/</url>
     </snapshotRepository>
-  </distributionManagement>
+</distributionManagement>
 }}}
 
 == Step 3: Add the Dependencies ==
