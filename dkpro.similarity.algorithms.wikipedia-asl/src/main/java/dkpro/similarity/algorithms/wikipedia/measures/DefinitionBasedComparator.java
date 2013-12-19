@@ -32,13 +32,8 @@ public abstract class DefinitionBasedComparator
     extends WikipediaRelatednessMeasureBase
 {
 
-    protected Measure measure;
-    protected CombinationStrategy strategy;
-
     public DefinitionBasedComparator(Wikipedia pWiki, Measure pMeasure, CombinationStrategy pStrategy) {
         super(pWiki, pMeasure, pStrategy);
-        this.measure  = pMeasure;
-        this.strategy = pStrategy;
     }
 
     /**
@@ -120,17 +115,17 @@ public abstract class DefinitionBasedComparator
      * @return The cleaned token.
      */
     private String cleanToken(String token) {
-        // TODO this is implemented a bit inefficient, I think
-        token.replace("(", "");
-        token.replace(")", "");
-        token.replace("[", "");
-        token.replace("]", "");
-        token.replace("!", "");
-        token.replace("?", "");
-        token.replace(",", "");
-        token.replace(".", "");
-        token.replace(":", "");
-        token.replace(";", "");
+        // TODO this is implemented a bit inefficiently, I think
+        token = token.replace("(", "");
+        token = token.replace(")", "");
+        token = token.replace("[", "");
+        token = token.replace("]", "");
+        token = token.replace("!", "");
+        token = token.replace("?", "");
+        token = token.replace(",", "");
+        token = token.replace(".", "");
+        token = token.replace(":", "");
+        token = token.replace(";", "");
         return token;
     }
 

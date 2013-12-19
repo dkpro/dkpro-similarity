@@ -22,6 +22,7 @@ import java.util.Set;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
 import de.tudarmstadt.ukp.wikipedia.api.Category;
 import de.tudarmstadt.ukp.wikipedia.api.Page;
 import de.tudarmstadt.ukp.wikipedia.api.exception.WikiApiException;
@@ -49,7 +50,7 @@ public class RelatednessUtilities implements Measures {
     public Set<Category> getCategories(Page page) throws WikiApiException {
         Set<Category> categories = new HashSet<Category>(page.getCategories());
 //        logger.debug(CommonUtilities.getSetContents(categories));
-        if (categories == null) {
+        if (categories.size() == 0) {
             logger.info (page.getTitle() + " not categorized.");
         }
         return categories;
