@@ -99,8 +99,8 @@ public class ShortAnswerGradingReader
 						switch (documentIDs)
 						{
 							case sequential:
-								id1 = new Integer(seq_no).toString();
-								id2 = new Integer(seq_no).toString();
+								id1 = Integer.valueOf(seq_no).toString();
+								id2 = Integer.valueOf(seq_no).toString();
 								break;
 							default:
 								id1 = assignment + ":" + questionIndex;
