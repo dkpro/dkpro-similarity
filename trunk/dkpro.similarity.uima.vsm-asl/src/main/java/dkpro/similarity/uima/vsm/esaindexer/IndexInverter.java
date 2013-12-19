@@ -68,7 +68,9 @@ public class IndexInverter {
 	public void createInvertedIndex() throws CorruptIndexException, IOException, SimilarityException {
 
 		deleteQuietly(invertedIndexDir);
-		invertedIndexDir.mkdirs();
+		if (!invertedIndexDir.mkdirs()) {
+		    throw new IOException("Cannot create folder: " + invertedIndexDir);
+		}
 
 		final IndexReader reader = IndexReader.open(FSDirectory.open(luceneIndexDir));
 		final TermEnum termEnum = reader.terms();
