@@ -19,8 +19,9 @@ package dkpro.similarity.uima.io;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
@@ -63,9 +64,11 @@ public class CsvWriter
 		
 		try {
 			// Make sure all intermediate dirs are there
-			outputFile.getParentFile().mkdirs();
+			 if (!outputFile.getParentFile().mkdirs()) {
+			     throw new IOException("Could not create folder: " + outputFile);
+			 }
 			
-			writer = new BufferedWriter(new FileWriter(outputFile));
+			writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8"));
 		}
 		catch (IOException e) {
 			throw new ResourceInitializationException(e);
