@@ -204,7 +204,7 @@ public abstract class LexSemResourceComparator
 			scores.add(NOT_FOUND);
 		}
 
-		return distanceMeasure ? Collections.min(scores) : Collections.max(scores);
+		return isDistanceMeasure() ? Collections.min(scores) : Collections.max(scores);
 	}
 
 }

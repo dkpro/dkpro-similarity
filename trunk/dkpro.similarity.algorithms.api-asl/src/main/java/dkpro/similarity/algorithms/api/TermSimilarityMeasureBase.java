@@ -21,8 +21,6 @@ package dkpro.similarity.algorithms.api;
 public abstract class TermSimilarityMeasureBase
 	implements TermSimilarityMeasure
 {
-	protected boolean distanceMeasure = false;
-
 	@Override
 	public void beginMassOperation()
 	{
@@ -57,6 +55,6 @@ public abstract class TermSimilarityMeasureBase
 	@Override
 	public boolean isDistanceMeasure()
 	{
-		return distanceMeasure;
+		return false;
 	}
 }
