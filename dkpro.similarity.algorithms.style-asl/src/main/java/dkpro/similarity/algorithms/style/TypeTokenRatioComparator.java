@@ -63,7 +63,7 @@ public class TypeTokenRatioComparator
 		}
 		
 		// Compute property
-		double ttr = new Double(types.size()) / new Double(tokens.size());
+		double ttr = (double) types.size() / tokens.size();
 		
 		return ttr;
 	}

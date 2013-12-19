@@ -110,8 +110,14 @@ public class MTLDComparator
 		}
 		
 		// mtld = number of tokens divided by factor count
-		double mtld = (factors == 0) ? (0.0) : (new Integer(lemmas.size()).doubleValue() / factors);
-		
+		double mtld;
+		if (factors == 0) {
+		    mtld = 0.0;
+		}
+		else {
+		    mtld = lemmas.size() / factors;
+
+		}
 		return mtld;
 	}
 }

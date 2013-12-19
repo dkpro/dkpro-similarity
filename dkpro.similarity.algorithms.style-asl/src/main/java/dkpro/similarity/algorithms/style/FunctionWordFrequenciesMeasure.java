@@ -119,7 +119,7 @@ public class FunctionWordFrequenciesMeasure
             String functionWord = functionWords.get(i);
             
             if (freq.containsKey(functionWord)) {
-                v[i] = new Double(freq.get(functionWord));
+                v[i] = freq.get(functionWord);
             }
             else {
                 v[i] = 0.0;
