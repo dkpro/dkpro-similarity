@@ -37,6 +37,6 @@ public class LongestCommonSubsequenceNormComparator
 	{
 		String lcs = getLCS(string1.toLowerCase(), string2.toLowerCase());
 		
-		return new Integer(lcs.length()).doubleValue() / new Integer(string1.length()).doubleValue();
+		return (double) lcs.length() / string1.length();
 	}
 }

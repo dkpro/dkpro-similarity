@@ -33,8 +33,7 @@ import dkpro.similarity.algorithms.api.SimilarityException;
 public class PathLengthComparator
 	extends PathBasedComparator
 {
-	protected boolean distanceMeasure = true;
-	protected final double NOT_RELATED = Double.POSITIVE_INFINITY;
+	protected final static double NOT_RELATED = Double.POSITIVE_INFINITY;
 	
     private double diameter = Double.MAX_VALUE;
     private boolean convertToRelatedness = false;
@@ -72,5 +71,11 @@ public class PathLengthComparator
         else {
             return distance;
         }
+    }
+	
+    @Override
+    public boolean isDistanceMeasure()
+    {
+        return true;
     }
 }

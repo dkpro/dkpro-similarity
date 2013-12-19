@@ -46,7 +46,6 @@ import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 public class CharacterNGramMeasure
 	extends TextSimilarityMeasureBase
 {
-	protected boolean distanceMeasure = true;
 	
 	private static final String alphabet = "abcdefjhijklmnopqrstuvwxyz0123456789";
 	
@@ -96,31 +95,38 @@ public class CharacterNGramMeasure
 		int idx = 0;
 		for (String ngram : ngrams)
 		{
-			if (tf1.containsKey(ngram) && idf.containsKey(ngram))
-				tfidf1[idx] = tf1.get(ngram) * idf.get(ngram);
-			else
-				tfidf1[idx] = 0.0;
+			if (tf1.containsKey(ngram) && idf.containsKey(ngram)) {
+                tfidf1[idx] = tf1.get(ngram) * idf.get(ngram);
+            }
+            else {
+                tfidf1[idx] = 0.0;
+            }
 			
-			if (tf2.containsKey(ngram) && idf.containsKey(ngram))
-				tfidf2[idx] = tf2.get(ngram) * idf.get(ngram);
-			else
-				tfidf2[idx] = 0.0;
+			if (tf2.containsKey(ngram) && idf.containsKey(ngram)) {
+                tfidf2[idx] = tf2.get(ngram) * idf.get(ngram);
+            }
+            else {
+                tfidf2[idx] = 0.0;
+            }
 			       
 			idx++;
 		}
 		
 		// Compute Cosine
 		double dotprod = 0.0;
-		for (int i = 0; i < ngrams.size(); i++)
-			dotprod += tfidf1[i] * tfidf2[i];
+		for (int i = 0; i < ngrams.size(); i++) {
+            dotprod += tfidf1[i] * tfidf2[i];
+        }
 		
 		double mag1 = 0.0;
-		for (int i = 0; i < ngrams.size(); i++)
-			mag1 += Math.pow(tfidf1[i], 2);
+		for (int i = 0; i < ngrams.size(); i++) {
+            mag1 += Math.pow(tfidf1[i], 2);
+        }
 		
 		double mag2 = 0.0;
-		for (int i = 0; i < ngrams.size(); i++)
-			mag2 += Math.pow(tfidf2[i], 2);
+		for (int i = 0; i < ngrams.size(); i++) {
+            mag2 += Math.pow(tfidf2[i], 2);
+        }
 		
 		return dotprod / (Math.sqrt(mag1) * Math.sqrt(mag2));
 	}
@@ -140,8 +146,9 @@ public class CharacterNGramMeasure
 		for (String ngram : ngrams)
 		{
 			double count = 0;
-			if (tf.containsKey(ngram))
-				count = tf.get(ngram);
+			if (tf.containsKey(ngram)) {
+                count = tf.get(ngram);
+            }
 			
 			count++;
 			tf.put(ngram, count);
@@ -177,8 +184,9 @@ public class CharacterNGramMeasure
 		
 		for (char c : chars)
 		{
-			if (alphabet.indexOf(c) > -1)
-				sb.append(c);
+			if (alphabet.indexOf(c) > -1) {
+                sb.append(c);
+            }
 		}
 		
 		return sb.toString();
@@ -189,4 +197,10 @@ public class CharacterNGramMeasure
 	{
 		return this.getClass().getSimpleName() + "_" + n + "grams";
 	}
+
+    @Override
+    public boolean isDistanceMeasure()
+    {
+        return true;
+    }	
 }

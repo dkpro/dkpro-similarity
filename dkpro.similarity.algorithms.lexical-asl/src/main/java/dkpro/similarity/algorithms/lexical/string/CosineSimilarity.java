@@ -33,8 +33,6 @@ import no.uib.cipr.matrix.Vector;
 
 import org.apache.commons.io.FileUtils;
 
-import com.google.common.base.Function;
-
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 import dkpro.similarity.algorithms.vsm.InnerVectorProduct;
@@ -304,15 +302,6 @@ public class CosineSimilarity
 
 		return vector;
 	}
-
-	Function<String, String> toLowerCase = new Function<String, String>()
-	{
-		@Override
-		public String apply(String string)
-		{
-			return string.toLowerCase();
-		}
-	};
 
 	private Map<String, AtomicInteger> getTermFrequencies(Collection<String> terms)
 	{
