@@ -78,7 +78,7 @@ public class ShortAnswerGradingReader
 						// A new question starts here
 						i++;
 						line = lines.get(i);
-						line.substring(12);			// Skip "\t\tQuestion: " prefix
+						line = line.substring(12);			// Skip "\t\tQuestion: " prefix
 						questionIndex++;
 
 						i++;									// Advance to perfect answer line

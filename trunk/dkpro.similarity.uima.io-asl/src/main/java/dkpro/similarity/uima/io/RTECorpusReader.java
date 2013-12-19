@@ -80,7 +80,7 @@ public class RTECorpusReader
 			reader = new SAXReader(false);
 			
 			// Disable DTD resolution (which fails due to relative path to DTD file)
-			NullEntityResolver resolver = new NullEntityResolver();  
+			NullEntityResolver resolver = new NullEntityResolver();
 			reader.setEntityResolver(resolver);  
 			
 			url = ResourceUtils.resolveLocation(inputFile, this, this.getUimaContext());
@@ -185,7 +185,7 @@ public class RTECorpusReader
         public InputSource resolveEntity (String publicId, String systemId)
     		throws SAXException, IOException
     	{
-    		return new InputSource(new ByteArrayInputStream(emptyDtd.getBytes()));
+    		return new InputSource(new ByteArrayInputStream(emptyDtd.getBytes("UTF-8")));
     	}
     }
 }

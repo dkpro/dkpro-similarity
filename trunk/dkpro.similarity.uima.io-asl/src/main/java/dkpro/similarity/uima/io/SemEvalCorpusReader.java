@@ -72,7 +72,7 @@ public class SemEvalCorpusReader
 		try {
 			url = ResourceUtils.resolveLocation(inputFile, this, this.getUimaContext());
 			is = url.openStream();
-			br = new BufferedReader(new InputStreamReader(is));
+			br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 			String strLine;
 			while ((strLine = br.readLine()) != null)   {
 				lines.add(strLine);
