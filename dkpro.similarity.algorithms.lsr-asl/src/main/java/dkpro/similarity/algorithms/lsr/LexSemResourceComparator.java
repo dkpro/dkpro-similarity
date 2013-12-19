@@ -32,8 +32,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity;
-import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity.PoS;
+import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
@@ -43,7 +43,7 @@ public abstract class LexSemResourceComparator
 {
 	private final Log log = LogFactory.getLog(getClass());
 
-	protected final double NOT_RELATED = -1.0;
+	protected final static double NOT_RELATED = -1.0;
 
 	private LexicalSemanticResource lexSemResource;
 	private Map<String, Set<Entity>> cache;
