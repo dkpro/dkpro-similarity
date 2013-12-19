@@ -23,8 +23,8 @@ import java.util.Set;
 import no.uib.cipr.matrix.DenseVector;
 import no.uib.cipr.matrix.Matrices;
 import no.uib.cipr.matrix.Vector;
-import no.uib.cipr.matrix.VectorEntry;
 import no.uib.cipr.matrix.Vector.Norm;
+import no.uib.cipr.matrix.VectorEntry;
 import no.uib.cipr.matrix.sparse.SparseVector;
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.vsm.VectorNorm;
@@ -177,7 +177,7 @@ public abstract class IndexedDocumentsVectorReaderBase
 		}
 		else if (modeTf.equals(WeightingModeTf.normalized)) {
 			if (tf > 0) {
-				tfModified = tf	* Math.log(getIndexVocabularySize() / getDocumentLength(aDocId));
+				tfModified = tf * Math.log((double) getIndexVocabularySize() / getDocumentLength(aDocId));
 			}
 			else {
 				tfModified = 0;

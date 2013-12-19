@@ -47,7 +47,7 @@ public class LuceneVectorReader
 
 	private IndexReader reader;
 	private Map<Integer, Integer> documentVocabularySizes;
-	private final int indexVocabularySize = -1;
+	private int indexVocabularySize = -1;
 	private String termBuffer;
 	private Map<Integer, Integer> termFrequencies;
 
@@ -108,7 +108,7 @@ public class LuceneVectorReader
 				while (te.next()) {
 					iTerms++;
 				}
-				return iTerms;
+				indexVocabularySize = iTerms;
 			}
 			return indexVocabularySize;
 		}
