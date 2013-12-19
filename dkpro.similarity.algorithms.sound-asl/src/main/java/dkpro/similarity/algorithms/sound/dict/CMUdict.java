@@ -18,8 +18,10 @@
 package dkpro.similarity.algorithms.sound.dict;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -42,16 +44,16 @@ public class CMUdict
 	private final static String DICT_PATH = "src/main/resources/cmudict/cmudict.0.7a";
 
 	public CMUdict() throws IOException, PronouncingDictionaryException {
-		this(new FileReader(DICT_PATH));
+		this(new InputStreamReader(new FileInputStream(DICT_PATH), "UTF-8"));
 	}
 
-	public CMUdict(FileReader fileReader)
+	public CMUdict(Reader reader)
 		throws IOException, PronouncingDictionaryException
 	{
 		String line;
 		int lineNumber = 0;
 		final Pattern cmuPattern = Pattern.compile("(.+?)(\\(\\d+\\))?  (.*)");
-		final BufferedReader bufRead = new BufferedReader(fileReader);
+		final BufferedReader bufRead = new BufferedReader(reader);
 		dict = new MultiValueMap();
 
 		while ((line = bufRead.readLine()) != null) {
