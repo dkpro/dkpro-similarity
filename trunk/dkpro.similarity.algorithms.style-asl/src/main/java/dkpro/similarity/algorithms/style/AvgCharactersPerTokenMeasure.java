@@ -34,6 +34,6 @@ public class AvgCharactersPerTokenMeasure
             noOfCharacters += token.getCoveredText().length();
         }
 		
-		return new Double(noOfCharacters) / new Double(t1.size() + t2.size());
+		return (double) noOfCharacters / (t1.size() + t2.size());
     }
 }

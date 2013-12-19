@@ -35,6 +35,6 @@ public class AvgTokensPerSentenceMeasure
             noOfTokens += JCasUtil.selectCovered(jcas1, Token.class, sentence).size();
         }
 		
-		return new Double(noOfTokens) / new Double(s1.size() + s2.size());
+		return (double) noOfTokens / (s1.size() + s2.size());
     }
 }
