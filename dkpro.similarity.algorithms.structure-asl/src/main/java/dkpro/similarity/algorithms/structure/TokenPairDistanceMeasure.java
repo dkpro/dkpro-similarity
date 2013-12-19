@@ -50,12 +50,14 @@ public class TokenPairDistanceMeasure
 	{
 		// Transform input lists into lowercase string lists
 		List<String> sl1 = new ArrayList<String>();
-		for (String s : stringList1)
-			sl1.add(s.toLowerCase());
+		for (String s : stringList1) {
+            sl1.add(s.toLowerCase());
+        }
 		
 		List<String> sl2 = new ArrayList<String>();
-		for (String s : stringList2)
-			sl2.add(s.toLowerCase());	
+		for (String s : stringList2) {
+            sl2.add(s.toLowerCase());
+        }	
 		
 		// Get word sets
 		Set<String> strings1 = new HashSet<String>(sl1);		
@@ -97,8 +99,8 @@ public class TokenPairDistanceMeasure
 				int idx2b = sl2.indexOf(p.getString2());
 				int idx2diff = transform(idx2a - idx2b);
 				
-				v1[i] = new Double(idx1diff);
-				v2[i] = new Double(idx2diff);
+				v1[i] = idx1diff;
+				v2[i] = idx2diff;
 			}
 					
 			PearsonsCorrelation pearson = new PearsonsCorrelation();
@@ -131,13 +133,18 @@ public class TokenPairDistanceMeasure
 			return s1.hashCode() + s2.hashCode();
 		}
 		
+		
+		
 		@Override
 		public boolean equals(Object obj)
 		{
 			if (this == obj) {
 				return true;
 			}
-			else if (this.getClass().equals(obj.getClass()))
+            if (obj == null) {
+                return false;
+            }
+			if (this.getClass().equals(obj.getClass()))
 			{
 				Pair otherObj = (Pair)obj;
 				if ((s1.equals(otherObj.getString1()) && s2.equals(otherObj.getString2())) || 
