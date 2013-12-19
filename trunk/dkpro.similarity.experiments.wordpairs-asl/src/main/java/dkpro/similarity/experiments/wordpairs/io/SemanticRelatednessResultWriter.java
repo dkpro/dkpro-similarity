@@ -216,7 +216,7 @@ public class SemanticRelatednessResultWriter extends JCasAnnotator_ImplBase {
         }
     }
 
-    private class Scores {
+    private static class Scores {
         private final Map<String,Double> measureScoreMap;
 
         public Scores(String measureKey, double relatednessValue) {
