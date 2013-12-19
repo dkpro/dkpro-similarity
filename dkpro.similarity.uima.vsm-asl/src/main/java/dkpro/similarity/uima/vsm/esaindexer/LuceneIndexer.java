@@ -77,7 +77,9 @@ public class LuceneIndexer extends JCasAnnotator_ImplBase {
 
 		indexDir = new File(indexPath);
 		deleteQuietly(indexDir);
-		indexDir.mkdirs();
+        if (!indexDir.mkdirs()) {
+            throw new ResourceInitializationException(new IOException("Cannot create folder: " + indexDir));
+        }
 		
 		IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_35, null);
 		try {
