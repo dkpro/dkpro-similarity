@@ -59,7 +59,12 @@ public class SemEvalCorpusReader
 	private String inputFile;
 	
 	
-	@Override
+	protected String getInputFile()
+    {
+        return inputFile;
+    }
+
+    @Override
 	public List<CombinationPair> getAlignedPairs()
 		throws ResourceInitializationException
 	{
