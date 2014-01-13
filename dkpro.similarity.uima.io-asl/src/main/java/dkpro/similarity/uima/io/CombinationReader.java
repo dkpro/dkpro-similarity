@@ -286,4 +286,14 @@ public abstract class CombinationReader
 	{
 		return index < numberOfCombinations;
 	}
+
+    protected int getIndex()
+    {
+        return index;
+    }
+
+    protected int getNumberOfCombinations()
+    {
+        return numberOfCombinations;
+    }
 }
