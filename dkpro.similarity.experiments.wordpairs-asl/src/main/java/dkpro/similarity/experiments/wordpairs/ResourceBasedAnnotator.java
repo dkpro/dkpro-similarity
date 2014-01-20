@@ -25,6 +25,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.Level;
 
 import dkpro.similarity.algorithms.api.SimilarityException;
+import dkpro.similarity.algorithms.api.TermSimilarityMeasure;
 import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 import dkpro.similarity.type.SemanticRelatedness;
 import dkpro.similarity.type.WordPair;
@@ -42,7 +43,7 @@ public class ResourceBasedAnnotator
         throws AnalysisEngineProcessException
     {
 
-        double semRelValue = -1.0;
+        double semRelValue = TermSimilarityMeasure.NOT_FOUND;
 
         String term1 = null;
         String term2 = null;
@@ -51,7 +52,7 @@ public class ResourceBasedAnnotator
         for (WordPair wp : JCasUtil.select(jcas, WordPair.class)) {
             i++;
             if (i % 10 == 0) {
-                getContext().getLogger().log(Level.INFO, measure.getName() + " processing word pair " + i);
+                getContext().getLogger().log(Level.CONFIG, measure.getName() + " processing word pair " + i);
             }
 
             term1 = wp.getWord1();
