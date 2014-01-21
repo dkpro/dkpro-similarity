@@ -31,10 +31,10 @@ public class SenseEnabledLuceneIndexer
         if (terms.size() > minTermsPerDocument) {
             final Document doc = new Document();
             for (String term : terms) {
-                doc.add(new Field(LuceneVectorReader.FIELD_NAME, term, Field.Store.YES, Field.Index.NOT_ANALYZED));
+                doc.add(new Field(LuceneVectorReader.FIELD_NAME, term, Field.Store.YES, Field.Index.NOT_ANALYZED, Field.TermVector.YES));
             }
             doc.add(new Field("id", DocumentMetaData.get(jCas).getDocumentTitle(), Field.Store.YES,
-                    Field.Index.NOT_ANALYZED));
+                    Field.Index.NOT_ANALYZED, Field.TermVector.YES));
             try {
                 indexWriter.addDocument(doc);
             } catch (IOException e) {
