@@ -21,11 +21,11 @@ In case you run into problems (i.e. dependencies are not resolvable), try adding
 {{{
 <repository>
     <id>ukp-oss</id>
-    <url>dav:https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-releases-local/</url>
+    <url>https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-releases-local/</url>
 </repository>
 <repository>
     <id>ukp-oss</id>
-    <url>dav:https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-snapshots-local/</url>
+    <url>https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-snapshots-local/</url>
 </repository>
 }}}
 
