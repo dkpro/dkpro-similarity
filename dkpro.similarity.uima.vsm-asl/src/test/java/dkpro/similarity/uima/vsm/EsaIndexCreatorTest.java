@@ -29,12 +29,14 @@ import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 import org.junit.Test;
 
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Stem;
 import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
 import de.tudarmstadt.ukp.dkpro.core.snowball.SnowballStemmer;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import dkpro.similarity.algorithms.vsm.store.vectorindex.VectorIndexReader;
 import dkpro.similarity.uima.vsm.esaindexer.IndexInverter;
 import dkpro.similarity.uima.vsm.esaindexer.LuceneIndexer;
+import dkpro.similarity.uima.vsm.lsa.LsaIndexer;
 
 public class EsaIndexCreatorTest {
 	
@@ -63,7 +65,9 @@ public class EsaIndexCreatorTest {
         AnalysisEngine indexTermGenerator = createEngine(
                 LuceneIndexer.class,
                 LuceneIndexer.PARAM_INDEX_PATH, luceneIndexPath,
-                LuceneIndexer.PARAM_MIN_TERMS_PER_DOCUMENT, 1);
+                LuceneIndexer.PARAM_MIN_TERMS_PER_DOCUMENT, 1,
+                LsaIndexer.PARAM_FEATURE_PATH, Stem.class.getName() + "/value");
+
 
         SimplePipeline.runPipeline(reader, segmenter, stemmer, indexTermGenerator);        
 
