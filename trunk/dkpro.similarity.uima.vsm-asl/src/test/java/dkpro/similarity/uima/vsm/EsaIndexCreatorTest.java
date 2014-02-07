@@ -36,7 +36,6 @@ import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import dkpro.similarity.algorithms.vsm.store.vectorindex.VectorIndexReader;
 import dkpro.similarity.uima.vsm.esaindexer.IndexInverter;
 import dkpro.similarity.uima.vsm.esaindexer.LuceneIndexer;
-import dkpro.similarity.uima.vsm.lsa.LsaIndexer;
 
 public class EsaIndexCreatorTest {
 	
@@ -66,7 +65,7 @@ public class EsaIndexCreatorTest {
                 LuceneIndexer.class,
                 LuceneIndexer.PARAM_INDEX_PATH, luceneIndexPath,
                 LuceneIndexer.PARAM_MIN_TERMS_PER_DOCUMENT, 1,
-                LsaIndexer.PARAM_FEATURE_PATH, Stem.class.getName() + "/value");
+                LuceneIndexer.PARAM_FEATURE_PATH, Stem.class.getName() + "/value");
 
 
         SimplePipeline.runPipeline(reader, segmenter, stemmer, indexTermGenerator);        
