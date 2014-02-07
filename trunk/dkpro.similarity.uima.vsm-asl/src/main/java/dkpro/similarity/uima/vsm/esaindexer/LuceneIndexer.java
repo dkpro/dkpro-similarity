@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,31 +34,41 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.cas.text.AnnotationFS;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
-import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
+import de.tudarmstadt.ukp.dkpro.core.api.featurepath.FeaturePathException;
+import de.tudarmstadt.ukp.dkpro.core.api.featurepath.FeaturePathFactory;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Stem;
 import dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
 
 /**
- * Creates an external Lucene index created based on stems.
+ * Creates an external Lucene index.
  * 
  * @author Mateusz Parzonka
+ * @author zesch
  * 
  */
 public class LuceneIndexer extends JCasAnnotator_ImplBase {
 
 	/**
-	 * Path to the directory where the Lucene index is stored.
+	 * Path to the directory where the Lucene will be is stored.
 	 */
 	public static final String PARAM_INDEX_PATH = "IndexPath";
 	@ConfigurationParameter(name = PARAM_INDEX_PATH, mandatory = true)
-	private String indexPath;
+	private File indexPath;
 
+    /**
+     * This annotator is type agnostic, so it is mandatory to specify the type of the working
+     * annotation and how to obtain the string representation with the feature path.
+     */
+    public static final String PARAM_FEATURE_PATH = "featurePath";
+    @ConfigurationParameter(name = PARAM_FEATURE_PATH, mandatory = true)
+    private String featurePath;
+    
 	/**
 	 * Minimal number of terms per document. Note: Terms are counted *after* the
 	 * relevance filter is applied.
@@ -68,22 +79,20 @@ public class LuceneIndexer extends JCasAnnotator_ImplBase {
 
 	private final static Matcher characterPattern = Pattern.compile("[a-zA-Z]*").matcher("");
 
-	private File indexDir;
 	protected IndexWriter indexWriter;
 
 	@Override
 	public void initialize(UimaContext context) throws ResourceInitializationException {
 		super.initialize(context);
 
-		indexDir = new File(indexPath);
-		deleteQuietly(indexDir);
-        if (!indexDir.mkdirs()) {
-            throw new ResourceInitializationException(new IOException("Cannot create folder: " + indexDir));
+		deleteQuietly(indexPath);
+        if (!indexPath.mkdirs()) {
+            throw new ResourceInitializationException(new IOException("Cannot create folder: " + indexPath.getAbsolutePath()));
         }
 		
 		IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_35, null);
 		try {
-			indexWriter = new IndexWriter(FSDirectory.open(indexDir), config);
+			indexWriter = new IndexWriter(FSDirectory.open(indexPath), config);
 		} catch (IOException e) {
 			throw new ResourceInitializationException(e);
 		}
@@ -92,13 +101,22 @@ public class LuceneIndexer extends JCasAnnotator_ImplBase {
 	@Override
 	public void process(JCas jCas) throws AnalysisEngineProcessException {
 		final List<String> terms = new ArrayList<String>();
-		// aggregate relevant terms
-		for (Stem stem : JCasUtil.select(jCas, Stem.class)) {
-			final String term = stem.getValue();
-			if (isRelevant(term)) {
-				terms.add(term);
-			}
+		
+		try {
+    		// aggregate relevant terms
+    		for (Entry<AnnotationFS, String> entry : FeaturePathFactory.select(jCas.getCas(),
+                    featurePath))
+    	    {
+                String term = entry.getValue();
+    			if (isRelevant(term)) {
+    				terms.add(term);
+    			}
+    		}
 		}
+		catch (FeaturePathException e) {
+		    throw new AnalysisEngineProcessException(e);
+		}
+		
 		// index all terms if the document is long enough
 		if (terms.size() > minTermsPerDocument) {
 			final Document doc = new Document();
@@ -127,7 +145,9 @@ public class LuceneIndexer extends JCasAnnotator_ImplBase {
 	}
 
 	@Override
-	public void collectionProcessComplete() throws AnalysisEngineProcessException {
+	public void collectionProcessComplete()
+	        throws AnalysisEngineProcessException
+	{
 		super.collectionProcessComplete();
 		try {
 			indexWriter.commit();
