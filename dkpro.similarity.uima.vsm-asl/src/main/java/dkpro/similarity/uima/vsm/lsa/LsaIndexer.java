@@ -60,7 +60,7 @@ public class LsaIndexer
 	{
 		super.initialize(context);
 
-		nrOfDocuments++;
+		nrOfDocuments = 0;
 		
         try {
             sspace = new LatentSemanticAnalysis();
@@ -72,6 +72,8 @@ public class LsaIndexer
 
 	@Override
 	public void process(JCas jCas) throws AnalysisEngineProcessException {
+	    nrOfDocuments++;
+	    
 		final List<String> terms = new ArrayList<String>();
         try {
             for (Entry<AnnotationFS, String> entry : FeaturePathFactory.select(jCas.getCas(),
