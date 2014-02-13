@@ -25,6 +25,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOError;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -153,7 +154,9 @@ import edu.ucla.sspace.vector.Vector;
  *
  * @author David Jurgens
  */
-public class LatentSemanticAnalysis implements SemanticSpace {
+public class LatentSemanticAnalysis implements SemanticSpace, Serializable {
+
+    private static final long serialVersionUID = 220l;
 
     /**
      * The prefix for naming publically accessible properties
@@ -362,6 +365,7 @@ public class LatentSemanticAnalysis implements SemanticSpace {
     /**
      * {@inheritDoc}
      */
+    @Override
     public Set<String> getWords() {
         return Collections.unmodifiableSet(termToIndex.keySet());
     }
@@ -369,6 +373,7 @@ public class LatentSemanticAnalysis implements SemanticSpace {
     /**
      * {@inheritDoc}
      */
+    @Override
     public Vector getVector(String word) {
         // determine the index for the word
         Integer index = termToIndex.get(word);
@@ -412,6 +417,7 @@ public class LatentSemanticAnalysis implements SemanticSpace {
     /**
      * {@inheritDoc}
      */
+    @Override
     public String getSpaceName() {
         return LSA_SSPACE_NAME;
     }
@@ -419,6 +425,7 @@ public class LatentSemanticAnalysis implements SemanticSpace {
     /**
      * {@inheritDoc}
      */
+    @Override
     public int getVectorLength() {
     	return wordSpace.getRowVector(0).length();
 //        return wordSpace.columns();
@@ -431,6 +438,7 @@ public class LatentSemanticAnalysis implements SemanticSpace {
      *        LatentSemanticAnalysis javadoc} for the full list of supported
      *        properties.
      */
+    @Override
     public void processSpace(Properties properties) {
         try {
             // first ensure that we are no longer writing to the matrix
