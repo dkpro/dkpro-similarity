@@ -28,7 +28,7 @@ import de.tudarmstadt.ukp.wikipedia.api.Page;
 import de.tudarmstadt.ukp.wikipedia.api.Wikipedia;
 import de.tudarmstadt.ukp.wikipedia.api.exception.WikiApiException;
 
-public class WikiLinkComparator extends WikipediaRelatednessMeasureBase {
+public class WikiLinkComparator extends WikipediaSimilarityMeasureBase {
 
     private WikiLinkCache cache;
     private final long numberOfArticles;

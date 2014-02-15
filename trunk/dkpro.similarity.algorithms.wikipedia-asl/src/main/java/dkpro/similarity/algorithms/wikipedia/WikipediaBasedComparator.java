@@ -35,7 +35,7 @@ import dkpro.similarity.algorithms.wikipedia.measures.LeskFullComparator;
 import dkpro.similarity.algorithms.wikipedia.measures.LinBestComparator;
 import dkpro.similarity.algorithms.wikipedia.measures.PathLengthBestComparator;
 import dkpro.similarity.algorithms.wikipedia.measures.ResnikBestComparator;
-import dkpro.similarity.algorithms.wikipedia.measures.WikipediaRelatednessMeasureBase;
+import dkpro.similarity.algorithms.wikipedia.measures.WikipediaSimilarityMeasureBase;
 import dkpro.similarity.algorithms.wikipedia.measures.WuPalmerBestComparator;
 
 
@@ -63,7 +63,7 @@ public class WikipediaBasedComparator
         WuPalmer
     }
 
-    private WikipediaRelatednessMeasureBase wikipediaComparator;
+    private WikipediaSimilarityMeasureBase wikipediaComparator;
     private WikipediaBasedRelatednessMeasure measure;
 
 

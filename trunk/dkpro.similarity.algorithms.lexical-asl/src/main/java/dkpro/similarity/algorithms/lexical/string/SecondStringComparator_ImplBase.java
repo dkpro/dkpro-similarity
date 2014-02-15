@@ -28,7 +28,7 @@ public abstract class SecondStringComparator_ImplBase
     protected AbstractStringDistance secondStringMeasureL1;
     protected AbstractStringDistance secondStringMeasureL2;
 
-    public enum SecondStringTextRelatednessMeasure {
+    public enum SecondStringTextSimilarityMeasure {
         Jaro,
         JaroWinkler,
         Levenshtein,
