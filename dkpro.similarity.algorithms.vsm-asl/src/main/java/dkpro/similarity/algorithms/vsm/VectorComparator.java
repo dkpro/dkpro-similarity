@@ -61,7 +61,7 @@ import dkpro.similarity.algorithms.vsm.store.VectorReader;
  * wikipediaReader.WeightingModeIdf(WeightingModeIdf.constantOne);
  * wikipediaReader.setWeightingThreshold(0.0f);
  * wikipediaReader.setVectorLengthThreshold(1.0f);
- * TextRelatednessMeasure cmp = new VectorComparator(wikipediaReader);
+ * TextMeasure cmp = new VectorComparator(wikipediaReader);
  * cmp.setInnerProduct(InnerVectorProduct.AVERAGE_PRODUCT);
  * cmp.setNormalization(VectorNorm.NONE); // Vectors already normalized by vector reader
  * }

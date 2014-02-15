@@ -48,8 +48,8 @@ public class MCS06AggregateComparator
 	private Cache<Set<String>,Double> cache;
 	
 	/**
-	 * The constructor ideally should take a _Term_RelatednessMeasure as parameter,
-	 * not a _Text_RelatednessMeasure. However, as the LSR-based comparators are
+	 * The constructor ideally should take a _Term_SimilarityMeasure as parameter,
+	 * not a _Text_SimilarityMeasure. However, as the LSR-based comparators are
 	 * implemented as the latter, we stick to that here, but use only the word-
 	 * relatedness function.   
 	 * @param measure The word similarity measure to use.
@@ -147,10 +147,12 @@ public class MCS06AggregateComparator
 			
 			if (stringList2.size() > 0)
 			{
-				if (measure.isDistanceMeasure())
-					bestSubscore = Collections.min(subscores);
-				else
-					bestSubscore = Collections.max(subscores);
+				if (measure.isDistanceMeasure()) {
+                    bestSubscore = Collections.min(subscores);
+                }
+                else {
+                    bestSubscore = Collections.max(subscores);
+                }
 				
 				// Handle error cases such as "not found"
 				if (bestSubscore < 0.0)

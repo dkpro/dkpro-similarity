@@ -54,7 +54,7 @@ public class CosineSimilarityTest {
 
 //		// Also compare with SimMetrics
 //		// Note: SimMetrics Cosine is case-sensitive!
-//		TermRelatednessMeasure simMetricsComparator = new CosineSimMetricComparator();
+//		TermSimilarityMeasure simMetricsComparator = new CosineSimMetricComparator();
 //
 //		assertEquals(simMetricsComparator.getRelatedness(a1.toLowerCase(), a2.toLowerCase()), comparator.getRelatedness(a1, a2), epsilon);
 //		assertEquals(simMetricsComparator.getRelatedness(b1, b2), comparator.getRelatedness(b1, b2), epsilon);
