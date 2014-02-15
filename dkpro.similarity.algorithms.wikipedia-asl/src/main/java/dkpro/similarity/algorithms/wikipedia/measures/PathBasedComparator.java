@@ -27,7 +27,7 @@ import de.tudarmstadt.ukp.wikipedia.api.Wikipedia;
  *
  */
 public abstract class PathBasedComparator
-    extends WikipediaRelatednessMeasureBase
+    extends WikipediaSimilarityMeasureBase
 {
 
     protected CategoryGraph catGraph;

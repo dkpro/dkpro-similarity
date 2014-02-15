@@ -38,7 +38,7 @@ import de.tudarmstadt.ukp.wikipedia.api.exception.WikiRelatednessException;
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.api.TermSimilarityMeasureBase;
 
-public abstract class WikipediaRelatednessMeasureBase
+public abstract class WikipediaSimilarityMeasureBase
     extends TermSimilarityMeasureBase
     implements Measures
 {
@@ -50,7 +50,7 @@ public abstract class WikipediaRelatednessMeasureBase
     protected CombinationStrategy strategy;
     protected boolean useCache; // indicates whether to use built-in cache or not
 
-    public WikipediaRelatednessMeasureBase(Wikipedia pWiki, Measure pMeasure, CombinationStrategy pStrategy) {
+    public WikipediaSimilarityMeasureBase(Wikipedia pWiki, Measure pMeasure, CombinationStrategy pStrategy) {
         this.wiki             = pWiki;
         this.measure  = pMeasure;
         this.strategy = pStrategy;

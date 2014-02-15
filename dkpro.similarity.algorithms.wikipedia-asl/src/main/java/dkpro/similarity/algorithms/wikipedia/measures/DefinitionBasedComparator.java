@@ -29,7 +29,7 @@ import de.tudarmstadt.ukp.wikipedia.api.Wikipedia;
 import de.tudarmstadt.ukp.wikipedia.api.exception.WikiApiException;
 
 public abstract class DefinitionBasedComparator
-    extends WikipediaRelatednessMeasureBase
+    extends WikipediaSimilarityMeasureBase
 {
 
     public DefinitionBasedComparator(Wikipedia pWiki, Measure pMeasure, CombinationStrategy pStrategy) {

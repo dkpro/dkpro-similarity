@@ -22,7 +22,7 @@ import de.tudarmstadt.ukp.wikipedia.api.Wikipedia;
 import de.tudarmstadt.ukp.wikipedia.api.exception.WikiApiException;
 
 public abstract class InformationContentBasedComparator
-    extends WikipediaRelatednessMeasureBase
+    extends WikipediaSimilarityMeasureBase
 {
 
     protected CategoryGraph catGraph;
