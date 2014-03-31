@@ -58,6 +58,10 @@ extends TextSimilarityResourceBase
     @ConfigurationParameter(name=PARAM_PASSWORD, mandatory=true, defaultValue="student")
     private String password;
 
+    public static final String PARAM_USE_OUTBOUND_LINKS = "UseOutboundLinks";
+    @ConfigurationParameter(name=PARAM_USE_OUTBOUND_LINKS, mandatory=true, defaultValue="false")
+    private boolean useOutboundLinks;
+
     @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public boolean initialize(ResourceSpecifier aSpecifier, Map aAdditionalParams)
@@ -79,7 +83,7 @@ extends TextSimilarityResourceBase
             throw new ResourceInitializationException();
         }
   
-        TextSimilarityMeasureBase measure = new WLMComparator(wiki, true);
+        TextSimilarityMeasureBase measure = new WLMComparator(wiki, false, useOutboundLinks);
         this.measure = measure;
         
         mode = TextSimilarityResourceMode.text;
@@ -91,7 +95,7 @@ extends TextSimilarityResourceBase
     public double getSimilarity(String string1, String string2)
         throws SimilarityException
     {
-        System.out.println("Computing similarity between " + string1 + " and " + string2);
+//        System.out.println("Computing similarity between " + string1 + " and " + string2);
         double similarity = super.getSimilarity(string1, string2);
 //        if(similarity<0){
 //            similarity=0;
@@ -99,10 +103,10 @@ extends TextSimilarityResourceBase
 //        if(similarity>0){
 //            System.out.println(string1 +"\t" + string2 +"\t" + similarity);
 //        }
-        System.out.printf("%-12s %-12s %.2f %n",
-                string1,
-                string2,
-        similarity);
+//        System.out.printf("%-12s %-12s %.2f %n",
+//                string1,
+//                string2,
+//        similarity);
 
         return similarity;
     }
