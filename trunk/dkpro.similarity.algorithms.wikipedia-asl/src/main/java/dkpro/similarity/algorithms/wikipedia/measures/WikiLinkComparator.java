@@ -32,17 +32,23 @@ public class WikiLinkComparator extends WikipediaSimilarityMeasureBase {
 
     private WikiLinkCache cache;
     private final long numberOfArticles;
+    private boolean useOutboundLinks;
 
     public WikiLinkComparator(Wikipedia pWiki) {
-        this(pWiki, true);
+        this(pWiki, true, false);
     }
 
     public WikiLinkComparator(Wikipedia pWiki, boolean useCache) {
+        this(pWiki, useCache, false);
+    }
+
+    public WikiLinkComparator(Wikipedia pWiki, boolean useCache, boolean useOutboundLinks) {
         super(pWiki, Measure.WikiLinkMeasure, CombinationStrategy.Best);
         this.numberOfArticles = pWiki.getMetaData().getNumberOfPages() - pWiki.getMetaData().getNumberOfRedirectPages() - pWiki.getMetaData().getNumberOfDisambiguationPages();
         if (useCache) {
             this.cache = new WikiLinkCache(pWiki);
         }
+        this.useOutboundLinks = useOutboundLinks;
     }
 
     @Override
@@ -105,7 +111,12 @@ public class WikiLinkComparator extends WikipediaSimilarityMeasureBase {
 
         // TODO TZ: I deactivated outlink relatedness computation as it is computationally more expansive and I do not fully understand David's code for that branch
 
-        return getRelatednessFromInLinks(article1, article2) ;
+        if(useOutboundLinks){
+            return getRelatednessFromOutLinks(article1, article2) ;
+        }
+        else{
+            return getRelatednessFromInLinks(article1, article2) ;
+        }
 
     }
 
@@ -118,6 +129,23 @@ public class WikiLinkComparator extends WikipediaSimilarityMeasureBase {
         int[] linksA = getLinksInIds(article1) ;
         int[] linksB = getLinksInIds(article2) ;
 
+        return getRelatednessFromLinks(linksA, linksB);
+    }
+
+    private double getRelatednessFromOutLinks(Page article1, Page article2) throws WikiApiException {
+
+        if (article1.getPageId() == article2.getPageId()) {
+            return 1.0;
+        }
+
+        int[] linksA = getLinksOutIds(article1) ;
+        int[] linksB = getLinksOutIds(article2) ;
+
+        return getRelatednessFromLinks(linksA, linksB);
+    }
+
+    private double getRelatednessFromLinks(int[] linksA, int[] linksB)
+    {
         int linksBoth = 0 ;
 
         int indexA = 0 ;
@@ -142,9 +170,9 @@ public class WikiLinkComparator extends WikipediaSimilarityMeasureBase {
         double a = Math.log(linksA.length) ;
         double b = Math.log(linksB.length) ;
         double ab = Math.log(linksBoth) ;
-        double m = Math.log(this.numberOfArticles) ;
+        double m = Math.log(this.numberOfArticles);
 
-        double sr = (Math.max(a, b) -ab) / (m - Math.min(a, b)) ;
+        double sr = (Math.max(a, b) -ab) / (m - Math.min(a, b));
 
         if (Double.isNaN(sr) || Double.isInfinite(sr) || sr > 1) {
 			sr = 1 ;
@@ -170,14 +198,36 @@ public class WikiLinkComparator extends WikipediaSimilarityMeasureBase {
 
     }
 
+    /**
+     * @return an ordered array of article ids that link from this page (with redirects resolved)
+     * @throws WikiApiException
+     */
+    public int[] getLinksOutIds(Page article) throws WikiApiException {
+
+        return getOutlinkIds(article);
+        
+    }
+
     protected static int[] getInlinkIds(Page article) {
         Set<Integer> inlinkIds = article.getInlinkIDs();
-    	int[] ids = new int[inlinkIds.size()];
-    	int n = 0;
-    	for (Integer id : inlinkIds) {
-    		ids[n] = id;
-    		n++;
-    	}
+        int[] ids = new int[inlinkIds.size()];
+        int n = 0;
+        for (Integer id : inlinkIds) {
+            ids[n] = id;
+            n++;
+        }
+        Arrays.sort(ids);
+        return ids;
+    }
+
+    protected static int[] getOutlinkIds(Page article) {
+        Set<Integer> outlinkIds = article.getOutlinkIDs();
+        int[] ids = new int[outlinkIds.size()];
+        int n = 0;
+        for (Integer id : outlinkIds) {
+            ids[n] = id;;
+            n++;
+        }
         Arrays.sort(ids);
         return ids;
     }
@@ -311,7 +361,7 @@ public class WikiLinkComparator extends WikipediaSimilarityMeasureBase {
 //        }
 //        return outLinkIds ;
 //    }
-//
+
 //    /**
 //     * @param article
 //     * @return An array of

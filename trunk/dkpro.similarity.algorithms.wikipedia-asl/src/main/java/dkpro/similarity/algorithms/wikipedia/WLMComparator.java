@@ -45,14 +45,14 @@ public class WLMComparator
 	public WLMComparator(Wikipedia wiki)
 		throws SimilarityException
 	{
-		this(wiki, true);
+		this(wiki, true, false);
 	}
 
-	public WLMComparator(Wikipedia wiki, boolean useCache)
+	public WLMComparator(Wikipedia wiki, boolean useCache, boolean useOutboundLinks)
 	{
 		super();
 
-		wikiLinkComparator = new WikiLinkComparator(wiki, useCache);
+		wikiLinkComparator = new WikiLinkComparator(wiki, useCache, useOutboundLinks);
 		// do not use the JWPL database cache
 		wikiLinkComparator.setUseCache(false);
 	}
