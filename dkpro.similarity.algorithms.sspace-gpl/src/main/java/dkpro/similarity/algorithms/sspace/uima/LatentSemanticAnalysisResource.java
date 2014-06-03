@@ -32,7 +32,7 @@ public class LatentSemanticAnalysisResource
     
     public static final String PARAM_CACHE_SIZE = "CacheSize";
     @ConfigurationParameter(name = PARAM_CACHE_SIZE, mandatory = true, defaultValue="100")
-    protected String cacheSize;
+    protected int cacheSize;
     
     public static final String PARAM_PERSISTENTLY_STORE_MODEL = "PersistentlyStoreModel";
     @ConfigurationParameter(name = PARAM_PERSISTENTLY_STORE_MODEL, mandatory = true, defaultValue="false")
@@ -85,7 +85,7 @@ public class LatentSemanticAnalysisResource
 				
 			measure = new VectorComparator(new CachingVectorReader(
 	                new SSpaceVectorReader(sspace),
-	                Integer.parseInt(cacheSize))); 
+	                cacheSize)); 
 	}
 		catch (IOException e) {
 			throw new ResourceInitializationException(e);

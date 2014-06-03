@@ -24,8 +24,9 @@ import java.io.File;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
-import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
@@ -34,11 +35,10 @@ import edu.ucla.sspace.common.SemanticSpace;
 import edu.ucla.sspace.common.SemanticSpaceIO;
 
 public class LsaIndexCreatorTest {
-	
-    private final static String targetPath = "target/lsa/";
+	    
+    @Rule
+    public TemporaryFolder folder = new TemporaryFolder();
     
-    //FIXME fails on jenkins - I have no idea why
-    @Ignore
     @Test
     public void testIndexCreation()
         throws Exception
@@ -55,16 +55,16 @@ public class LsaIndexCreatorTest {
         
         AnalysisEngine indexTermGenerator = createEngine(
                 LsaIndexer.class,
-                LsaIndexer.PARAM_INDEX_PATH, targetPath,
+                LsaIndexer.PARAM_INDEX_PATH, folder.getRoot(),
                 LsaIndexer.PARAM_FEATURE_PATH, Token.class.getName());
 
 
         SimplePipeline.runPipeline(reader, segmenter, indexTermGenerator);
         
-        SemanticSpace sspace = SemanticSpaceIO.load(new File(targetPath, "test.sspace"));
-        assertEquals(1, sspace.getVectorLength());
-        assertEquals(7, sspace.getWords().size());
 
-        
+        File tmpFile = new File(folder.getRoot(), "test.sspace");
+        SemanticSpace sspace = SemanticSpaceIO.load(tmpFile);
+        assertEquals(11, sspace.getVectorLength());
+        assertEquals(513, sspace.getWords().size());    
     }
 }
