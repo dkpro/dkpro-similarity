@@ -24,6 +24,7 @@ import java.io.File;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
@@ -39,6 +40,7 @@ public class LsaIndexCreatorTest {
     @Rule
     public TemporaryFolder folder = new TemporaryFolder();
     
+    @Ignore
     @Test
     public void testIndexCreation()
         throws Exception

@@ -79,8 +79,8 @@ public class LsaIndexer
             for (Entry<AnnotationFS, String> entry : FeaturePathFactory.select(jCas.getCas(),
                     featurePath))
             {
-                System.out.println(entry.getKey());
-                System.out.println(entry.getValue());
+//                System.out.println(entry.getKey());
+//                System.out.println(entry.getValue());
                 terms.add(entry.getValue());
             }
             
