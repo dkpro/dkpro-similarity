@@ -1,5 +1,6 @@
 package dkpro.similarity.algorithms.lexsub.uima;
 
+import java.io.IOException;
 import java.util.Map;
 
 import org.apache.uima.resource.ResourceInitializationException;
@@ -38,6 +39,10 @@ public class TWSISubstituteWrapperResource
 	{
 		super.afterResourcesInitialized();
 		
-		measure = new TWSISubstituteWrapper(textSimilarityMeasure);
+		try {
+			measure = new TWSISubstituteWrapper(textSimilarityMeasure);
+		} catch (IOException e) {
+			throw new ResourceInitializationException(e);
+		}
 	}
 }

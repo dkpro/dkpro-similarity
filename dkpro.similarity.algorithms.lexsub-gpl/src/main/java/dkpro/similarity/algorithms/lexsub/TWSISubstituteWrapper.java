@@ -32,14 +32,9 @@ public class TWSISubstituteWrapper
 	TextSimilarityMeasure measure;
 	
 	public TWSISubstituteWrapper(TextSimilarityMeasure measure)
+		throws IOException
 	{		
-		try {
-			this.sensub = new MLSenseSubstituter(DkproContext.getContext().getWorkspace() + "/TWSI2/conf/TWSI2_config.conf");
-		}
-		catch (IOException e) {
-			System.err.println("Unable to load TWSI.");
-			e.printStackTrace();
-		}
+		this.sensub = new MLSenseSubstituter(DkproContext.getContext().getWorkspace() + "/TWSI2/conf/TWSI2_config.conf");
 		this.measure = measure;
 	}
 	
