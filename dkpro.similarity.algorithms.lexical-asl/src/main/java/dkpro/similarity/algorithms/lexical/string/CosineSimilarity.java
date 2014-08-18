@@ -83,6 +83,12 @@ public class CosineSimilarity
 		initialize(null, modeIdf, normMode, idfScores);
 	}
 
+	/**
+	 * @param modeTf What kind of TF weighting should be used
+	 * @param modeIdf What kind of IDF weighting should be used
+	 * @param normMode What kind of normalization should be used
+	 * @param idfScores A map of strings to IDF scores
+	 */
 	public CosineSimilarity(WeightingModeTf modeTf, WeightingModeIdf modeIdf,
 			NormalizationMode normMode, Map<String, Double> idfScores)
 	{
@@ -262,7 +268,7 @@ public class CosineSimilarity
 					score = Math.log(score);
 				}
 				if (weightingModeTf == WeightingModeTf.FREQUENCY_LOGPLUSONE) {
-					score = Math.log(score + 1);
+					score = Math.log(score) + 1;
 				}
 
 				vector.set(i, score);
@@ -272,9 +278,9 @@ public class CosineSimilarity
 
 		// IDF
 		if (weightingMode == WeightingMode.IDF || weightingMode == WeightingMode.TFIDF) {
-			int i = 0;;
+			int i = 0;
 			for (String term : aUnionTermSet) {
-				double score = 0;
+				double score = 1.0;
 
 				if (aTerms.contains(term) && idfScores.containsKey(term)) {
 					score = idfScores.get(term);
@@ -288,7 +294,7 @@ public class CosineSimilarity
 					score = Math.log(score);
 				}
 				if (weightingModeIdf == WeightingModeIdf.LOGPLUSONE) {
-					score = Math.log(1+score);
+					score = Math.log(score) + 1;
 				}
 				if (weightingMode == WeightingMode.TFIDF) {
 					vector.set(i, vector.get(i) * score);

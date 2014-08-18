@@ -128,8 +128,8 @@ public class CosineSimilarityTest {
                 idfScores
         );
 
-		assertEquals(0.5883, comparator.getSimilarity(a1, a2), epsilon);
-		assertEquals(0.5883, comparator.getSimilarity(b1, b2), epsilon);
+		assertEquals(0.7582, comparator.getSimilarity(a1, a2), epsilon);
+		assertEquals(0.7582, comparator.getSimilarity(b1, b2), epsilon);
 	}
 
 	@Test
@@ -186,8 +186,17 @@ public class CosineSimilarityTest {
                 idfScores
         );
 
-		assertEquals(Double.NaN, comparator1.getSimilarity(a1, a2), epsilon);
-		assertEquals(0.89442d,   comparator2.getSimilarity(b1, b2), epsilon);
+		assertEquals(0.707107, comparator1.getSimilarity(a1, a2), epsilon);
+		assertEquals(0.207432, comparator2.getSimilarity(a1, a2), epsilon);
+		assertEquals(0.894427, comparator1.getSimilarity(b1, b2), epsilon);
+		assertEquals(0.262383, comparator2.getSimilarity(b1, b2), epsilon);
+		
+		// not test with "String2" in the map
+		idfScores.put("String2", 2.0/2.0);
+		assertEquals(0.707107, comparator1.getSimilarity(a1, a2), epsilon);
+		assertEquals(0.207432, comparator2.getSimilarity(a1, a2), epsilon);
+		assertEquals(0.894427, comparator1.getSimilarity(b1, b2), epsilon);
+		assertEquals(0.262383, comparator2.getSimilarity(b1, b2), epsilon);		
 	}
 	
 	@Test
