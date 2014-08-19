@@ -75,7 +75,7 @@ public class CosineSimilarityTest {
                 CosineSimilarity.NormalizationMode.L2
         );
 
-        assertEquals(0.9,    comparator.getSimilarity(a1, a2), epsilon);
+        assertEquals(0.89999,    comparator.getSimilarity(a1, a2), epsilon);
         assertEquals(0.73127, comparator.getSimilarity(b1, b2), epsilon);
     }
 
@@ -123,13 +123,14 @@ public class CosineSimilarityTest {
 		String[] b2 = "String2 test".split(" ");
 
 		TextSimilarityMeasure comparator = new CosineSimilarity(
+				CosineSimilarity.WeightingModeTf.BINARY,
 		        CosineSimilarity.WeightingModeIdf.PASSTHROUGH,
 		        CosineSimilarity.NormalizationMode.L2,
                 idfScores
         );
 
-		assertEquals(0.7582, comparator.getSimilarity(a1, a2), epsilon);
-		assertEquals(0.7582, comparator.getSimilarity(b1, b2), epsilon);
+		assertEquals(0.5884, comparator.getSimilarity(a1, a2), epsilon);
+		assertEquals(0.5884, comparator.getSimilarity(b1, b2), epsilon);
 	}
 
 	@Test
@@ -186,17 +187,17 @@ public class CosineSimilarityTest {
                 idfScores
         );
 
-		assertEquals(0.707107, comparator1.getSimilarity(a1, a2), epsilon);
-		assertEquals(0.207432, comparator2.getSimilarity(a1, a2), epsilon);
-		assertEquals(0.894427, comparator1.getSimilarity(b1, b2), epsilon);
-		assertEquals(0.262383, comparator2.getSimilarity(b1, b2), epsilon);
+		assertEquals(0.499999, comparator1.getSimilarity(a1, a2), epsilon);
+		assertEquals(0.499999, comparator2.getSimilarity(a1, a2), epsilon);
+		assertEquals(0.632455, comparator1.getSimilarity(b1, b2), epsilon);
+		assertEquals(0.632455, comparator2.getSimilarity(b1, b2), epsilon);
 		
 		// not test with "String2" in the map
-		idfScores.put("String2", 2.0/2.0);
-		assertEquals(0.707107, comparator1.getSimilarity(a1, a2), epsilon);
-		assertEquals(0.207432, comparator2.getSimilarity(a1, a2), epsilon);
-		assertEquals(0.894427, comparator1.getSimilarity(b1, b2), epsilon);
-		assertEquals(0.262383, comparator2.getSimilarity(b1, b2), epsilon);		
+		idfScores.put("String2", 1.0/2.0);
+		assertEquals(0.499999, comparator1.getSimilarity(a1, a2), epsilon);
+		assertEquals(0.499999, comparator2.getSimilarity(a1, a2), epsilon);
+		assertEquals(0.632455, comparator1.getSimilarity(b1, b2), epsilon);
+		assertEquals(0.632455, comparator2.getSimilarity(b1, b2), epsilon);		
 	}
 	
 	@Test

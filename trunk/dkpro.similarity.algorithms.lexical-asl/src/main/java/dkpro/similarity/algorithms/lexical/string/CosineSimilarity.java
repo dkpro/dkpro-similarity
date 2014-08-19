@@ -26,13 +26,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import no.uib.cipr.matrix.DenseVector;
 import no.uib.cipr.matrix.Vector;
 
 import org.apache.commons.io.FileUtils;
 
+import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 import dkpro.similarity.algorithms.vsm.InnerVectorProduct;
@@ -56,9 +56,12 @@ public class CosineSimilarity
 		L1, L2
 	}
 
+	// TZ 2014-08-19
+	// removed the IDF only weighting mode, as it always needs to be used together with TF
+	// otherwise both vectors will be equal and similarity will always be 1 no matter what weighting is used
 	private enum WeightingMode
 	{
-		TF, IDF, TFIDF
+		TF, TFIDF
 	}
 
 	private WeightingMode weightingMode;
@@ -75,12 +78,6 @@ public class CosineSimilarity
 	public CosineSimilarity(WeightingModeTf modeTf, NormalizationMode normMode)
 	{
 		initialize(modeTf, null, normMode, null);
-	}
-
-	public CosineSimilarity(WeightingModeIdf modeIdf, NormalizationMode normMode,
-			Map<String, Double> idfScores)
-	{
-		initialize(null, modeIdf, normMode, idfScores);
 	}
 
 	/**
@@ -129,29 +126,22 @@ public class CosineSimilarity
 	public CosineSimilarity(WeightingModeTf modeTf, WeightingModeIdf modeIdf,
 			NormalizationMode normMode, String idfScoresFile)
 	{
-		HashMap<String, Double> idfValues ;
-		if(idfScoresFile != null)
-		{
-		idfValues = new HashMap<String,Double>();
-		try {
-			for (String line : FileUtils.readLines(new File(idfScoresFile)))
-			{
-				if (line.length() > 0)
-				{
-					String[] cols = line.split("\t");
-					idfValues.put(cols[0], Double.parseDouble(cols[1]));
+		HashMap<String, Double> idfValues;
+		if (idfScoresFile != null) {
+			idfValues = new HashMap<String, Double>();
+			try {
+				for (String line : FileUtils.readLines(new File(idfScoresFile))) {
+					if (line.length() > 0) {
+						String[] cols = line.split("\t");
+						idfValues.put(cols[0], Double.parseDouble(cols[1]));
+					}
 				}
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-		}
-		catch (NumberFormatException e) {
-			e.printStackTrace();
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-		}
-		else
-		{
+		} else {
 			idfValues = null;
 		}
 		initialize(modeTf, modeIdf, normMode, idfValues);
@@ -162,7 +152,7 @@ public class CosineSimilarity
 			NormalizationMode normMode, Map<String, Double> idfScores)
 	{
 		if (modeTf == null && modeIdf != null) {
-			this.weightingMode = WeightingMode.IDF;
+			this.weightingMode = WeightingMode.TFIDF;
 		}
 		else if (modeTf != null && modeIdf == null) {
 			this.weightingMode = WeightingMode.TF;
@@ -178,34 +168,20 @@ public class CosineSimilarity
 	}
 
 	@Override
-	public double getSimilarity(Collection<String> aTerms1, Collection<String> aTerms2)
+	public double getSimilarity(Collection<String> terms1, Collection<String> terms2)
 		throws SimilarityException
 	{
-		// Convert terms to lower case
-		//Collection<String> terms1 = Collections2.transform(aTerms1, toLowerCase);
-		//Collection<String> terms2 = Collections2.transform(aTerms2, toLowerCase);
-		Collection<String> terms1 = aTerms1;
-		Collection<String> terms2 = aTerms2;
-
-		// Get common term list
+		// fix for issue #11
+		// all equal, return 1.0
 		Set<String> unionTermSet = new HashSet<String>(terms1);
 		unionTermSet.addAll(terms2);
+		if (terms1.size() == terms2.size() && terms1.size() == unionTermSet.size()) {
+		    return 1.0;
+		}
 
 		// Get TF/IDF/TFIDF vectors
 		Vector vector1 = getVector(unionTermSet, terms1);
 		Vector vector2 = getVector(unionTermSet, terms2);
-
-		// fix for issue #11
-		int equalElements = 0;
-		for (int i=0; i<vector1.size(); i++) {
-		    if (vector1.get(i) == vector2.get(i)) {
-		        equalElements++;
-		    }
-		}
-		// all equal, return 1.0
-		if (equalElements == unionTermSet.size()) {
-		    return 1.0;
-		}
 		
 		// Numerator
 		double num = InnerVectorProduct.COSINE.apply(vector1, vector2);
@@ -221,6 +197,11 @@ public class CosineSimilarity
 		default:
 			throw new IllegalStateException("Unsupported norm: "+normalizationMode);
 		}
+		
+		if (norm == 0.0) {
+			return 0.0;
+		}
+		
 		// Normalized score
 		return num / norm;
 	}
@@ -248,27 +229,39 @@ public class CosineSimilarity
 	    return getSimilarity(parts1, parts2);
 	}
 
-	private Vector getVector(Collection<String> aUnionTermSet, Collection<String> aTerms)
+	private Vector getVector(Collection<String> allTerms, Collection<String> docTerms)
 	{
-		Vector vector = new DenseVector(aUnionTermSet.size());
+		Vector vector = new DenseVector(allTerms.size());
 
 		// TF
 		if (weightingMode == WeightingMode.TF || weightingMode == WeightingMode.TFIDF) {
-			Map<String, AtomicInteger> tf = getTermFrequencies(aTerms);
+			FrequencyDistribution<String> fd = new FrequencyDistribution<String>();
+			fd.incAll(docTerms);
 
 			int i = 0;
-			for (String term : aUnionTermSet) {
-				double score = (tf.get(term) != null) ? tf.get(term).get() : 0.0;
+			for (String term : allTerms) {
+				double score = fd.getCount(term);
 
-				// Weight score
 				if (weightingModeTf == WeightingModeTf.BINARY) {
-					score = score >= 1 ? 1 : 0;
+					if (score >= 1) {
+						score = 1.0;
+					}
 				}
-				if (weightingModeTf == WeightingModeTf.FREQUENCY_LOG) {
-					score = Math.log(score);
+				else if (weightingModeTf == WeightingModeTf.FREQUENCY_LOG) {
+					if (score > 0.0) {
+						score = Math.log(score);
+					}
 				}
-				if (weightingModeTf == WeightingModeTf.FREQUENCY_LOGPLUSONE) {
-					score = Math.log(score) + 1;
+				else if (weightingModeTf == WeightingModeTf.FREQUENCY_LOGPLUSONE) {
+					if (score > 0.0) {
+						score = Math.log(score) + 1;
+					}
+				}
+				else if (weightingModeTf == WeightingModeTf.FREQUENCY) {
+					// do nothing, we already have the frequency as the score
+				}
+				else {
+					throw new IllegalArgumentException("Unhandled weighting parameter: " + weightingModeTf);
 				}
 
 				vector.set(i, score);
@@ -277,52 +270,53 @@ public class CosineSimilarity
 		}
 
 		// IDF
-		if (weightingMode == WeightingMode.IDF || weightingMode == WeightingMode.TFIDF) {
+		if (weightingMode == WeightingMode.TFIDF) {
 			int i = 0;
-			for (String term : aUnionTermSet) {
-				double score = 1.0;
-
-				if (aTerms.contains(term) && idfScores.containsKey(term)) {
+			
+			// get the smallest IDF value in the map - it will be used for weighting unseen tokens
+			double minScore = 1.0;
+			for (String term : allTerms) {
+				if (idfScores.containsKey(term) && idfScores.get(term) < minScore) {
+					minScore = idfScores.get(term);
+				}
+			}
+			
+			for (String term : allTerms) {
+				double score = 0.0;
+				
+				if (idfScores.containsKey(term)) {
 					score = idfScores.get(term);
 				}
-
-				// Weight score
-				if (weightingModeIdf == WeightingModeIdf.BINARY) {
-					score = score >= 1 ? 1 : 0;
+				else {
+					// we do not want to have a 0.0 zero value, as this will lead to NaN with log-weighting
+					// so we use the smallest recorded IDF value
+					score = minScore;
 				}
-				if (weightingModeIdf == WeightingModeIdf.LOG) {
+
+				// it is a bit unclear what binary IDF should actually be
+				if (weightingModeIdf == WeightingModeIdf.BINARY) {
+					if (score < 1.0) {
+						score = 0.0;
+					}
+				}
+				else if (weightingModeIdf == WeightingModeIdf.LOG) {
 					score = Math.log(score);
 				}
-				if (weightingModeIdf == WeightingModeIdf.LOGPLUSONE) {
+				else if (weightingModeIdf == WeightingModeIdf.LOGPLUSONE) {
 					score = Math.log(score) + 1;
 				}
-				if (weightingMode == WeightingMode.TFIDF) {
-					vector.set(i, vector.get(i) * score);
+				else if (weightingModeIdf == WeightingModeIdf.PASSTHROUGH) {
+					// do nothing, we already have the idf as the score
 				}
 				else {
-					vector.set(i, score);
+					throw new IllegalArgumentException("Unhandled weighting parameter: " + weightingModeIdf);
 				}
+				
+				vector.set(i, vector.get(i) * score);
 				i++;
 			}
 		}
 
 		return vector;
 	}
-
-	private Map<String, AtomicInteger> getTermFrequencies(Collection<String> terms)
-	{
-		Map<String, AtomicInteger> frequencies = new HashMap<String, AtomicInteger>();
-
-		for (String term : terms) {
-			AtomicInteger freq = frequencies.get(term);
-			if (freq == null) {
-				freq = new AtomicInteger();
-				frequencies.put(term, freq);
-			}
-			freq.incrementAndGet();
-		}
-
-		return frequencies;
-	}
-
 }
