@@ -19,14 +19,16 @@ In order to set up your Eclipse installation properly and use this repository, w
 
 In case you run into problems (i.e. dependencies are not resolvable), try adding these lines to your *pom.xml*:
 {{{
-<repository>
-    <id>ukp-oss</id>
-    <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-releases-local/</url>
-</repository>
-<repository>
-    <id>ukp-oss</id>
-    <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-snapshots-local/</url>
-</repository>
+   <repositories>
+        <repository>
+            <id>ukp-oss-releases</id>
+            <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases</url>
+        </repository>
+        <repository>
+            <id>ukp-oss-snapshots</id>
+            <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots</url>
+        </repository>
+    </repositories>
 }}}
 
 == Step 3: Add the Dependencies ==
