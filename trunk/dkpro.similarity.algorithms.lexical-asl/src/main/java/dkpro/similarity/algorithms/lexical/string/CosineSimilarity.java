@@ -48,7 +48,7 @@ public class CosineSimilarity
 
 	public enum WeightingModeIdf
 	{
-		BINARY, LOG, PASSTHROUGH, LOGPLUSONE
+		LOG, PASSTHROUGH, LOGPLUSONE
 	}
 
 	public enum NormalizationMode
@@ -294,12 +294,7 @@ public class CosineSimilarity
 				}
 
 				// it is a bit unclear what binary IDF should actually be
-				if (weightingModeIdf == WeightingModeIdf.BINARY) {
-					if (score < 1.0) {
-						score = 0.0;
-					}
-				}
-				else if (weightingModeIdf == WeightingModeIdf.LOG) {
+				if (weightingModeIdf == WeightingModeIdf.LOG) {
 					score = Math.log(score);
 				}
 				else if (weightingModeIdf == WeightingModeIdf.LOGPLUSONE) {
