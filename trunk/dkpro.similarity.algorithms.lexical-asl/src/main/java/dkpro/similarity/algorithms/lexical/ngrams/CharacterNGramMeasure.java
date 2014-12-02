@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.NotImplementedException;
+import org.apache.commons.lang.StringUtils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import dkpro.similarity.algorithms.api.SimilarityException;
@@ -136,7 +136,7 @@ public class CharacterNGramMeasure
 			Collection<String> stringList2)
 		throws SimilarityException
 	{
-		throw new SimilarityException(new NotImplementedException());
+		return getSimilarity(StringUtils.join(stringList1, " "), StringUtils.join(stringList2, " "));
 	}
 	
 	private Map<String, Double> getTF(Set<String> ngrams)
