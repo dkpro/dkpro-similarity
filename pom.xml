@@ -49,6 +49,7 @@
     </repositories>
     <properties>
         <dkpro.core.version>1.7.0</dkpro.core.version>
+        <lsr.version>0.8.0</lsr.version>
     </properties>
     <dependencies>
         <dependency>
@@ -101,7 +102,7 @@
             <dependency>
                 <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
                 <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource-asl</artifactId>
-                <version>0.8.0</version>
+                <version>${lsr.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
