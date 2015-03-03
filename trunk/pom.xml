@@ -20,7 +20,7 @@
   <parent>
     <artifactId>dkpro-parent-pom</artifactId>
     <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-    <version>6</version>
+    <version>10</version>
   </parent>
   <groupId>dkpro.similarity</groupId>
   <artifactId>dkpro.similarity-asl</artifactId>
@@ -36,6 +36,9 @@
                   <url>dav:https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-snapshots-local</url>
           </snapshotRepository>
   </distributionManagement>
+  <properties>
+    <dkpro.core.version>1.7.0</dkpro.core.version>
+  </properties>
   <dependencies>
   	<dependency>
   		<groupId>junit</groupId>
@@ -66,14 +69,14 @@
   		<dependency>
   			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
   			<artifactId>de.tudarmstadt.ukp.dkpro.core-asl</artifactId>
-  			<version>1.5.0</version>
+            <version>${dkpro.core.version}</version>
   			<type>pom</type>
   			<scope>import</scope>
   		</dependency>
         <dependency>
             <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
             <artifactId>de.tudarmstadt.ukp.dkpro.core-gpl</artifactId>
-            <version>1.5.0</version>
+            <version>${dkpro.core.version}</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
