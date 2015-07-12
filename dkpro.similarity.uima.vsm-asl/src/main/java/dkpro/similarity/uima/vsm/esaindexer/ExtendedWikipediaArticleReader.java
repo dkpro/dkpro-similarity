@@ -23,7 +23,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.io.jwpl.WikipediaArticleReader;
-import de.tudarmstadt.ukp.dkpro.lab.ProgressMeter;
+import dkpro.similarity.algorithms.vsm.util.ProgressMeter;
 
 /**
  * Extends the standard WikipediaArticleReader with progress tracking.

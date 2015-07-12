@@ -32,10 +32,10 @@ import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.TermEnum;
 import org.apache.lucene.store.FSDirectory;
 
-import de.tudarmstadt.ukp.dkpro.lab.ProgressMeter;
 import dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
 import dkpro.similarity.algorithms.vsm.store.VectorReader;
 import dkpro.similarity.algorithms.vsm.store.vectorindex.VectorIndexWriter;
+import dkpro.similarity.algorithms.vsm.util.ProgressMeter;
 
 /**
  * Convert an index created using {@link EsaIndex} to a ESA Vector Cache index which intelligently

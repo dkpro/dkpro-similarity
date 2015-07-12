@@ -7,16 +7,14 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
 
-import de.tudarmstadt.ukp.dkpro.lab.task.Dimension;
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.vsm.InnerVectorProduct;
 import dkpro.similarity.algorithms.vsm.VectorAggregation;
 import dkpro.similarity.algorithms.vsm.VectorComparator;
 import dkpro.similarity.algorithms.vsm.VectorNorm;
-import dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
 import dkpro.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeIdf;
 import dkpro.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeTf;
-import dkpro.similarity.algorithms.vsm.store.vectorindex.VectorIndexReader;
+import dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
 import dkpro.similarity.uima.resource.TextSimilarityResourceBase;
 
 /**

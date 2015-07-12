@@ -29,11 +29,11 @@ import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.TermEnum;
 import org.apache.lucene.store.FSDirectory;
 
-import de.tudarmstadt.ukp.dkpro.lab.ProgressMeter;
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
 import dkpro.similarity.algorithms.vsm.store.convert.ConvertLuceneToVectorIndex;
 import dkpro.similarity.algorithms.vsm.store.vectorindex.VectorIndexWriter;
+import dkpro.similarity.algorithms.vsm.util.ProgressMeter;
 
 /**
  * Creates an inverted index for ESA. Based on

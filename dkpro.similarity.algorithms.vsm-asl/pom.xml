@@ -52,10 +52,6 @@
             <version>3.5.0</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.dkpro.lab</groupId>
-            <artifactId>de.tudarmstadt.ukp.dkpro.lab.core</artifactId>
-        </dependency>
-        <dependency>
             <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
             <artifactId>de.tudarmstadt.ukp.dkpro.core.api.parameter-asl</artifactId>
         </dependency>
