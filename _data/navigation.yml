@@ -2,7 +2,7 @@
   url: "https://dkpro.github.io"
   side: left
 
-- title: PROJECT_X
+- title: Similarity
   url: "/"
   side: left
 
@@ -24,11 +24,11 @@
 #    url: "/typesystem/"
 
 - title: "Issues"
-  url: "http://github.com/dkpro/PROJECT_X/issues"
+  url: "http://github.com/dkpro/dkpro-similarity/issues"
   side: left
 
 - title: Source
-  url: "http://github.com/dkpro/PROJECT_X"
+  url: "http://github.com/dkpro/dkpro-similarity"
   side: left
 
 #- title: "Contact"

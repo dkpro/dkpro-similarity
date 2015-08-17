@@ -5,55 +5,109 @@
 # this work, you have to use › layout: frontpage
 #
 layout: frontpage
-title: "DKPro Core"
-#header:
-#	title: DKPro Core
-#   image_fullwidth: "header_unsplash_12.jpg"
-header-1:
-    title: A collection of software components for natural language processing (NLP) based on the Apache UIMA framework.
-    text: Many NLP tools are already freely available in the NLP research community. DKPro Core provides Apache UIMA components wrapping these tools (and some original tools) so they can be used interchangeably in UIMA processing pipelines. DKPro Core builds heavily on uimaFIT which allows for rapid and easy development of NLP processing pipelines, for wrapping existing tools and for creating original UIMA components.
+title: "DKPro Similarity"
 ---
 
+{% assign stable = (site.data.releases | where:"status", "stable" | first) %}
+{% assign unstable = (site.data.releases | where:"status", "unstable" | first) %}
 
-How to cite
------------
+*DKPro Similarity* is an open source framework for text similarity. Our goal is to provide a comprehensive repository of text similarity measures which are implemented using standardized interfaces. The framework is designed to complement [DKPro Core](https://dkpro.github.io/dkpro-core), a collection of software components for natural language processing (NLP) based on the Apache UIMA framework. DKPro Similarity comprises a wide variety of measures ranging from ones based on simple n-grams and common subsequences to high-dimensional vector comparisons and structural, stylistic, and phonetic measures. In order to promote the reproducibility of experimental results and to provide reliable, permanent experimental conditions for future studies, DKPro Similarity additionally comes with a set of full-featured experimental setups which can be run out-of-the-box and be used for future systems to built upon.
 
-Many of the wrapped third-party components and the models used by them should be cited individually. We currently do not provide a comprehensive overview over citable publications. We encourage you to track down citable publications for these dependencies. However, you might find pointers to some relevant publications in the Model overview of the DKPro Core release you are using or in the JavaDoc of individual components.
+{% comment %}
+This project contains the components that are licensed under the Apache Software License (ASL) version 2. Additional components are available in the [http://code.google.com/p/dkpro-similarity-gpl GPL-licensed repository].
+{% endcomment %}
 
-Please cite DKPro Core itself as:
+{% comment %}
+REC: I suggest to remove this
 
-> Eckart de Castilho, R. and Gurevych, I. (2014). **A broad-coverage collection of portable NLP components for building shareable analysis pipelines**. In Proceedings of the Workshop on Open Infrastructures and Analysis Frameworks for HLT (OIAF4HLT) at COLING 2014, to be published, Dublin, Ireland.
-[(pdf)][1] [(bib)][2]
+Versions:
 
-License
--------
+  * The latest stable version is *2.1.0* of October 8, 2013.
+    * Major bug fixes compared to somewhat unstable 2.0.0 release.
+  *  Previous versions:
+    * Version *2.0.0* of September 26, 2013.
+      * Change in the main version due to backwards incompatible changes in the package structure
+      * A lot of bug fixes, additional measures, and experimental setups.
+    * Version *1.0.1* of August 12, 2013.
+  * Current development version: {{ unstable.version }}
+{% endcomment %}
 
-All components in DKPro Core ASL are licensed under the [Apache Software License (ASL) version 2][3] - but their dependencies may not be:
+## Getting Started
 
-**IMPORTANT LICENSE NOTE** - It must be pointed out that while the component's source code itself is licensed under the ASL, individual components might make use of third-party libraries or products that are not licensed under the ASL, such as LGPL libraries or libraries which are free for research but may not be used in commercial scenarios. Please be aware of the third party licenses and respect them.
+Check out our [Started guide](http://code.google.com/p/dkpro-similarity-asl/wiki/GettingStarted Getting) and our [API documentation](http://dkpro-similarity-asl.googlecode.com/svn/apidocs/index.html). You may also want to have a closer look at our [ACL 2013 system demonstration paper](http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2013/ACL_Demo_2013_Dab_CameraReady.pdf) which summarizes the architecture, the available text similarity measures, and the existing experimental setups.
 
-About DKPro Core
-----------------
+## Included Experiments
 
-This project was initiated by the Ubiquitous Knowledge Processing Lab (UKP) at the Technische Universität Darmstadt, Germany under the auspices of Prof. Dr. Iryna Gurevych.
+#### Word Pair Similarity Experiments
 
-It is now jointly developed at UKP Lab, Technische Universität Darmstadt and Language Technology Lab, Universität Duisburg-Essen.
+The project contains a ready-made experiment with the most common evaluation datasets for word pair similarity. [Learn more ... (FIXME)](point to ASCIIDOC: WordPairSimilarity)
 
+#### Word Choice Experiments / TOEFL Synonym Questions
 
-<span class="footnotes">**Image sources**: [LogoJava.png][4] by Christian F. Burprich, Creative Commons (Attribution-Noncommercial-Share Alike 3.0 Unported), color changed; [LogoPython.png][5] by IFA; [LogoGroovy.png][6] by pictonic.co; [IconComponents.png][7], [IconModels.png][8] by [Visual Pharm][9]; [IconFormatText.png][10], [IconFormatBlank.png][11] by [Honza Dousek][12]; [IconTypeSystem.png][13] by Designmodo</span>
+Pipeline with datasets for word choice / TOEFL Synonym Question experiments.
+[Wiki Page in ACL Wiki](http://www.aclweb.org/aclwiki/index.php?title=TOEFL_Synonym_Questions_%28State_of_the_art%29 ) on the topic.
 
-[1]: https://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/OIAF4HLT2014DKProCore_cameraready.pdf
-[2]: https://www.ukp.tu-darmstadt.de/publications/details/?no_cache=1&tx_bibtex_pi1%5Bpub_id%5D=TUD-CS-2014-0864&type=99&tx_bibtex_pi1%5Bbibtex%5D=yes
-[3]: http://www.apache.org/licenses/LICENSE-2.0
-[4]: https://www.iconfinder.com/icons/16890/java_icon#size=128
-[5]: https://www.iconfinder.com/icons/282803/logo_python_icon#size=128
-[6]: http://findicons.com/icon/576242/pl_groovy_02?id=576242
-[7]: https://www.iconfinder.com/icons/175334/services_icon#size=128
-[8]: https://www.iconfinder.com/icons/174880/database_icon#size=128
-[9]: http://icons8.com/
-[10]: https://www.iconfinder.com/icons/199323/extension_file_format_txt_icon#size=128
-[11]: https://www.iconfinder.com/icons/199231/blank_extension_file_format_icon#size=128
-[12]: https://www.iconfinder.com/iconsets/lexter-flat-colorfull-file-formats
-[13]: https://www.iconfinder.com/icons/115791/tag_icon#size=128
-[14]: http://uima.apache.org
-[15]: http://uima.apache.org/uimafit
+#### Recognizing Textual Entailment (RTE) experiments
+
+Pipelines and datasets for RTE 1-5 experiments.
+[http://aclweb.org/aclwiki/index.php?title=Recognizing_Textual_Entailment Wikki Page in ACL Wiki] on the topic.
+
+#### *SEM 2013 Shared Task: Semantic Textual Similarity
+
+For all users interested in the [Shared Task of the *SEM 2013 conference](http://ixa2.si.ehu.es/sts/), we describe [here (FIXME)](point to ASCIIDOC: SemEval2013) one of the task's offical baseline systems, which is roughly the system ranked best in the [SemEval-2012 exercises](http://ixa2.si.ehu.es/starsem/proc/pdf/STARSEM-SEMEVAL051.pdf).
+
+## Reference
+
+If you plan to refer to DKPro Similarity in your publications, please cite
+
+> Daniel Bär, Torsten Zesch, and Iryna Gurevych. *DKPro Similarity: An Open Source Framework for Text Similarity*, in _Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics: System Demonstrations_, pages 121-126, August 2013, Sofia, Bulgaria. [(pdf)](http://aclweb.org/anthology/P/P13/P13-4021.pdf) [(bib)](http://aclweb.org/anthology/P/P13/P13-4021.bib)
+
+DKPro Similarity is currently jointly maintained by [Language Technology Lab](http://www.langtech.inf.uni-due.de/), Universität Duisburg-Essen and [UKP Lab](http://www.ukp.tu-darmstadt.de/), Technische Universität Darmstadt.
+
+## Code Example
+
+In this example, we want to compute similarity between two given texts which are already lemmatized. We assume that lemmatization has already been done e.g. with a DKPro pipeline. 
+As a similarity measure, we choose a popular word n-gram model by Lyon et al. (2004). Moreover, make sure that both the _*.algorithms.api-asl_ and the _*.algorithms.lexical-asl_ dependency modules have been added to your pom.xml, as described in the [Getting Started Guide](http://code.google.com/p/dkpro-similarity-asl/wiki/GettingStarted).
+
+{% highlight java %}
+// this similarity measure is defined in the dkpro.similarity.algorithms.lexical-asl package
+// you need to add that to your .pom to make that example work
+// there are some examples that should work out of the box in dkpro.similarity.example-gpl 
+TextSimilarityMeasure measure = new WordNGramJaccardMeasure(3);    // Use word trigrams
+
+String[] tokens1 = "This is a short example text.".split(" ");   
+String[] tokens2 = "A short example text could look like that.".split(" ");
+
+// only works from 2.1.0-SHAPSHOT onwards, for previous versions you need to convert to Collection<String> first
+double score = measure.getSimilarity(tokens1, tokens2);
+
+System.out.println("Similarity: " + score);
+{% endhighlight %}
+
+## Interfaces & Algorithms
+
+The algorithms collected in this framework implement one of the following interfaces:
+
+  * *TermSimilarityMeasure(String, String)* - Similarity between two terms.
+  * *TextSimilarityMeasure(`Collection<String>`, `Collection<String>`)* - Similarity between two collections of strings representing whole documents.
+  * *TextSimilarityMeasure(`String[]`, `String[]`)* - Similarity between two arrays of strings representing whole documents.
+  * *JCasTextSimilarityMeasure(JCas, JCas)* - Similarity between two texts based on a UIMA JCas representation.
+
+### Overview of Algorithms
+
+| *Module* | *Algorithms* |
+| algorithms.lexical | GreedyStringTiling, Jaro, Levenshtein, LongestCommonSubsequence, MongeElkan, NGramBased, ... |
+| algorithms.lsr| Based on lexical-semantic resources such as WordNet or Wikipedia, e.g. GlossOverlap, JiangConrath, LeacockChodorow, Lin, Resnik, WuPalmerComparator |
+| algorithms.sound | Metaphone, Soundex |
+| algorithms.sspace | LSA |
+| algorithms.style | FunctionWordFrequency, MTLD, TypeTokenRatio |
+| algorithms.vsm | Vector-space models, e.g. ESA |
+| algorithms.wikipedia | Special Wikipedia measures like, WikipediaLinkMeasure or measures based on the CategoryGraph. |
+| dkpro.core | UIMA resources for the core algorithms. |
+| dkpro.io | UIMA readers for the usual similarity datasets: Meter, RTE, SemEval, WebisCPC11 |
+
+## Related Projects
+
+  * [DKPro Core](https://dkpro.github.io/dkpro-core)
+  * [DKPro Lexical Semantic Resources](https://dkpro.github.io/dkpro-lsr)
+  * [JWPL Wikipedia API](https://dkpro.github.io/dkpro-jwpl)
