@@ -15,12 +15,13 @@ DKPro Similarity comes with a ready-made experiment pipeline for evaluating word
 ## Datasets
 The following datasets are included in the experiment
 
+
 ### English
 * Rubenstein & Goodenough (RG65)
-* * the classical similarity dataset
+  * the classical similarity dataset
 ﻿* Rubenstein, H., & Goodenough, J. B. (1965). Contextual Correlates of Synonymy. Communications of the ACM, 8(10), 627-633.
 * Miller & Charles (MC30)
-* * subset of Rubenstein & Goodenough dataset
+    * subset of Rubenstein & Goodenough dataset
 ﻿Miller, G. A., & Charles, W. G. (1991). Contextual Correlates of Semantic Similarity. Language and Cognitive Processes, 6(1), 1-28.
 Finkelstein et al. (WS353)
 the full finkelstein dataset, as well as the two parts that were annotated by different groups of annotators
