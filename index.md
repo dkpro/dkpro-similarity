@@ -67,7 +67,7 @@ DKPro Similarity is currently jointly maintained by [Language Technology Lab](ht
 ## Code Example
 
 In this example, we want to compute similarity between two given texts which are already lemmatized. We assume that lemmatization has already been done e.g. with a DKPro pipeline. 
-As a similarity measure, we choose a popular word n-gram model by Lyon et al. (2004). Moreover, make sure that both the _*.algorithms.api-asl_ and the _*.algorithms.lexical-asl_ dependency modules have been added to your pom.xml, as described in the [Getting Started Guide](http://code.google.com/p/dkpro-similarity-asl/wiki/GettingStarted).
+As a similarity measure, we choose a popular word n-gram model by Lyon et al. (2004). Moreover, make sure that both the _*.algorithms.api-asl_ and the _*.algorithms.lexical-asl_ dependency modules have been added to your pom.xml, as described in the [Getting Started Guide](/dkpro-similarity/GettingStarted).
 
 {% highlight java %}
 // this similarity measure is defined in the dkpro.similarity.algorithms.lexical-asl package
