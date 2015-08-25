@@ -4,14 +4,9 @@ title: "SemEval2013"
 permalink: "/semeval2013/"
 ---
 
-This project was initiated under the auspices of Prof. Iryna Gurevych, [Ubiquitous Knowledge Processing Lab (UKP)](http://www.ukp.tu-darmstadt.de/), Technische Universität Darmstadt.
-
-DKPro Similarity is currently jointly maintained by [Language Technology Lab](http://www.langtech.inf.uni-due.de/), Universität Duisburg-Essen and [UKP Lab](http://www.ukp.tu-darmstadt.de/), Technische Universität Darmstadt.
-
-
 This page is intended for all participants of the shared task of the *SEM 2013 conference. We describe one of the task's offical baseline systems, which is roughly the system ranked best in the SemEval-2012 exercises.
 
-System Description
+## System Description
 The system described here uses a simple log-linear regression model, trained on the training data, to combine multiple text similarity measures of varying complexity. These range from simple character and word n-grams and common subsequences to complex features such as Explicit Semantic Analysis vector comparisons and aggregation of word similarity based on lexical-semantic resources. Our ﬁnal models, one per dataset, consist of a log-linear combination of about 20 features. For details, please refer to our system description paper.
 
 The system presented here differs from the original implementation at SemEval-2012 in that it does not use a distributional thesaurus and only a single text expansion mechanism (lexical substitution only, no statistical machine translation), as the corresponding code and the accompanying resources cannot be readily made available to the public.
