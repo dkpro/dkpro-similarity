@@ -49,4 +49,4 @@ With other Maven modules which you intend to use, repeat these steps. These may 
 
 
 ## Step 4: Additional Resources
-Several measures in DKPro Similarity require additional resources, e.g. WordNet. Continue reading here for details on how to obtain and install them.
+Several measures in DKPro Similarity require additional resources, e.g. WordNet. Continue reading [here](/dkpro-similarity/settinguptheresources) for details on how to obtain and install them.
