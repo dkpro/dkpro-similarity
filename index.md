@@ -34,7 +34,7 @@ Versions:
 
 ## Getting Started
 
-Check out our [Getting started guide](/dkpro-similarity/GettingStarted) and our [API documentation]((/dkpro-similarity/ApiDocumentation). You may also want to have a closer look at our [ACL 2013 system demonstration paper](http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2013/ACL_Demo_2013_Dab_CameraReady.pdf) which summarizes the architecture, the available text similarity measures, and the existing experimental setups.
+Check out our [Getting started guide](/dkpro-similarity/gettingstarted). You may also want to have a closer look at our [ACL 2013 system demonstration paper](http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2013/ACL_Demo_2013_Dab_CameraReady.pdf) which summarizes the architecture, the available text similarity measures, and the existing experimental setups.
 
 ## Included Experiments
 
@@ -54,7 +54,7 @@ Pipelines and datasets for RTE 1-5 experiments.
 
 #### *SEM 2013 Shared Task: Semantic Textual Similarity
 
-For all users interested in the [Shared Task of the *SEM 2013 conference](http://ixa2.si.ehu.es/sts/), we describe [here](/dkpro-similarity/SemEval2013) one of the task's offical baseline systems, which is roughly the system ranked best in the [SemEval-2012 exercises](http://ixa2.si.ehu.es/starsem/proc/pdf/STARSEM-SEMEVAL051.pdf).
+For all users interested in the [Shared Task of the *SEM 2013 conference](http://ixa2.si.ehu.es/sts/), we describe [here](/dkpro-similarity/semeval2013) one of the task's offical baseline systems, which is roughly the system ranked best in the [SemEval-2012 exercises](http://ixa2.si.ehu.es/starsem/proc/pdf/STARSEM-SEMEVAL051.pdf).
 
 ## Reference
 
@@ -67,7 +67,7 @@ DKPro Similarity is currently jointly maintained by [Language Technology Lab](ht
 ## Code Example
 
 In this example, we want to compute similarity between two given texts which are already lemmatized. We assume that lemmatization has already been done e.g. with a DKPro pipeline. 
-As a similarity measure, we choose a popular word n-gram model by Lyon et al. (2004). Moreover, make sure that both the _*.algorithms.api-asl_ and the _*.algorithms.lexical-asl_ dependency modules have been added to your pom.xml, as described in the [Getting Started Guide](/dkpro-similarity/GettingStarted).
+As a similarity measure, we choose a popular word n-gram model by Lyon et al. (2004). Moreover, make sure that both the _*.algorithms.api-asl_ and the _*.algorithms.lexical-asl_ dependency modules have been added to your pom.xml, as described in the [Getting Started Guide](/dkpro-similarity/gettingstarted).
 
 {% highlight java %}
 // this similarity measure is defined in the dkpro.similarity.algorithms.lexical-asl package
