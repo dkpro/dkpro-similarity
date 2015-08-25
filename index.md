@@ -13,25 +13,6 @@ title: "DKPro Similarity"
 
 *DKPro Similarity* is an open source framework for text similarity. Our goal is to provide a comprehensive repository of text similarity measures which are implemented using standardized interfaces. The framework is designed to complement [DKPro Core][DKPRO_CORE], a collection of software components for natural language processing (NLP) based on the Apache UIMA framework. DKPro Similarity comprises a wide variety of measures ranging from ones based on simple n-grams and common subsequences to high-dimensional vector comparisons and structural, stylistic, and phonetic measures. In order to promote the reproducibility of experimental results and to provide reliable, permanent experimental conditions for future studies, DKPro Similarity additionally comes with a set of full-featured experimental setups which can be run out-of-the-box and be used for future systems to built upon.
 
-{% comment %}
-This project contains the components that are licensed under the Apache Software License (ASL) version 2. Additional components are available in the [http://code.google.com/p/dkpro-similarity-gpl GPL-licensed repository].
-{% endcomment %}
-
-{% comment %}
-REC: I suggest to remove this
-
-Versions:
-
-  * The latest stable version is *2.1.0* of October 8, 2013.
-    * Major bug fixes compared to somewhat unstable 2.0.0 release.
-  *  Previous versions:
-    * Version *2.0.0* of September 26, 2013.
-      * Change in the main version due to backwards incompatible changes in the package structure
-      * A lot of bug fixes, additional measures, and experimental setups.
-    * Version *1.0.1* of August 12, 2013.
-  * Current development version: {{ unstable.version }}
-{% endcomment %}
-
 ## Getting Started
 
 Check out our [Getting started guide](/dkpro-similarity/gettingstarted). You may also want to have a closer look at our [ACL 2013 system demonstration paper](http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2013/ACL_Demo_2013_Dab_CameraReady.pdf) which summarizes the architecture, the available text similarity measures, and the existing experimental setups.
