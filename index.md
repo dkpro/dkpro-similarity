@@ -11,7 +11,7 @@ title: "DKPro Similarity"
 {% assign stable = (site.data.releases | where:"status", "stable" | first) %}
 {% assign unstable = (site.data.releases | where:"status", "unstable" | first) %}
 
-*DKPro Similarity* is an open source framework for text similarity. Our goal is to provide a comprehensive repository of text similarity measures which are implemented using standardized interfaces. The framework is designed to complement [DKPro Core](https://dkpro.github.io/dkpro-core), a collection of software components for natural language processing (NLP) based on the Apache UIMA framework. DKPro Similarity comprises a wide variety of measures ranging from ones based on simple n-grams and common subsequences to high-dimensional vector comparisons and structural, stylistic, and phonetic measures. In order to promote the reproducibility of experimental results and to provide reliable, permanent experimental conditions for future studies, DKPro Similarity additionally comes with a set of full-featured experimental setups which can be run out-of-the-box and be used for future systems to built upon.
+*DKPro Similarity* is an open source framework for text similarity. Our goal is to provide a comprehensive repository of text similarity measures which are implemented using standardized interfaces. The framework is designed to complement [DKPro Core][DKPRO_CORE], a collection of software components for natural language processing (NLP) based on the Apache UIMA framework. DKPro Similarity comprises a wide variety of measures ranging from ones based on simple n-grams and common subsequences to high-dimensional vector comparisons and structural, stylistic, and phonetic measures. In order to promote the reproducibility of experimental results and to provide reliable, permanent experimental conditions for future studies, DKPro Similarity additionally comes with a set of full-featured experimental setups which can be run out-of-the-box and be used for future systems to built upon.
 
 {% comment %}
 This project contains the components that are licensed under the Apache Software License (ASL) version 2. Additional components are available in the [http://code.google.com/p/dkpro-similarity-gpl GPL-licensed repository].
@@ -34,13 +34,13 @@ Versions:
 
 ## Getting Started
 
-Check out our [Started guide](http://code.google.com/p/dkpro-similarity-asl/wiki/GettingStarted Getting) and our [API documentation](http://dkpro-similarity-asl.googlecode.com/svn/apidocs/index.html). You may also want to have a closer look at our [ACL 2013 system demonstration paper](http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2013/ACL_Demo_2013_Dab_CameraReady.pdf) which summarizes the architecture, the available text similarity measures, and the existing experimental setups.
+Check out our [Getting started guide](/dkpro-similarity/GettingStarted) and our [API documentation]((/dkpro-similarity/ApiDocumentation). You may also want to have a closer look at our [ACL 2013 system demonstration paper](http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2013/ACL_Demo_2013_Dab_CameraReady.pdf) which summarizes the architecture, the available text similarity measures, and the existing experimental setups.
 
 ## Included Experiments
 
 #### Word Pair Similarity Experiments
 
-The project contains a ready-made experiment with the most common evaluation datasets for word pair similarity. [Learn more ... (FIXME)](point to ASCIIDOC: WordPairSimilarity)
+The project contains a ready-made experiment with the most common evaluation datasets for word pair similarity. [Learn more ...](/dkpro-similarity/WordPairSimilarity)
 
 #### Word Choice Experiments / TOEFL Synonym Questions
 
@@ -54,7 +54,7 @@ Pipelines and datasets for RTE 1-5 experiments.
 
 #### *SEM 2013 Shared Task: Semantic Textual Similarity
 
-For all users interested in the [Shared Task of the *SEM 2013 conference](http://ixa2.si.ehu.es/sts/), we describe [here (FIXME)](point to ASCIIDOC: SemEval2013) one of the task's offical baseline systems, which is roughly the system ranked best in the [SemEval-2012 exercises](http://ixa2.si.ehu.es/starsem/proc/pdf/STARSEM-SEMEVAL051.pdf).
+For all users interested in the [Shared Task of the *SEM 2013 conference](http://ixa2.si.ehu.es/sts/), we describe [here](/dkpro-similarity/SemEval2013) one of the task's offical baseline systems, which is roughly the system ranked best in the [SemEval-2012 exercises](http://ixa2.si.ehu.es/starsem/proc/pdf/STARSEM-SEMEVAL051.pdf).
 
 ## Reference
 
@@ -111,3 +111,6 @@ The algorithms collected in this framework implement one of the following interf
   * [DKPro Core](https://dkpro.github.io/dkpro-core)
   * [DKPro Lexical Semantic Resources](https://dkpro.github.io/dkpro-lsr)
   * [JWPL Wikipedia API](https://dkpro.github.io/dkpro-jwpl)
+
+[DKPRO_CORE]: https://dkpro.github.io/dkpro-core
+[DKPRO_LAB]: https://dkpro.github.io/dkpro-lab
