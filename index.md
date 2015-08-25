@@ -40,7 +40,7 @@ Check out our [Getting started guide](/dkpro-similarity/gettingstarted). You may
 
 #### Word Pair Similarity Experiments
 
-The project contains a ready-made experiment with the most common evaluation datasets for word pair similarity. [Learn more ...](/dkpro-similarity/WordPairSimilarity)
+The project contains a ready-made experiment with the most common evaluation datasets for word pair similarity. [Learn more ...](/dkpro-similarity/wordpairsimilarity)
 
 #### Word Choice Experiments / TOEFL Synonym Questions
 
