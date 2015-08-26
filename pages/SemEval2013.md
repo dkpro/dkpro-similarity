@@ -4,7 +4,7 @@ title: "SemEval2013"
 permalink: "/semeval2013/"
 ---
 
-This page is intended for all participants of the shared task of the *SEM 2013 conference. We describe one of the task's offical baseline systems, which is roughly the system ranked best in the SemEval-2012 exercises.
+This page is intended for all participants of the shared task of the [*SEM 2013 conference](http://ixa2.si.ehu.es/sts/). We describe one of the task's offical baseline systems, which is roughly the system ranked best in the [SemEval-2012 exercises](http://ixa2.si.ehu.es/starsem/proc/pdf/STARSEM-SEMEVAL051.pdf).
 
 ## System Description
 The system described here uses a simple log-linear regression model, trained on the training data, to combine multiple text similarity measures of varying complexity. These range from simple character and word n-grams and common subsequences to complex features such as Explicit Semantic Analysis vector comparisons and aggregation of word similarity based on lexical-semantic resources. Our ﬁnal models, one per dataset, consist of a log-linear combination of about 20 features. For details, please refer to our system description paper.
@@ -29,16 +29,16 @@ The presented system is implemented as part of DKPro Similarity, a collection of
 ### Step 1: Maven Setup
 The project is implemented as a Java Maven project. It makes use of some libraries that are not readily available in public Maven repositories. Therefore we have set up a Maven repository which provides these libraries as well as releases of this project.
 
-In order to set up your Eclipse installation properly, we ask you to follow these instructions ("Eclipse Setup") where you find details on all required plugins. You also need to make sure that you have set up our open source Maven repository properly (instructions; "Configuring Maven for full access to the UKP Maven Repository").
+In order to set up your Eclipse installation properly, we ask you to follow [these instructions](https://dkpro.github.io/dkpro-core/pages/setup-user.html) ("Eclipse Setup") where you find details on all required plugins. You also need to make sure that you have set up our open source Maven repository properly (instructions; "Configuring Maven for full access to the UKP Maven Repository").
 
 ### Step 2: Checkout
-Next, check out the project ("Check out as Maven project" in Eclipse). It is enough to check out only the module `trunk/de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl`, which resides in the GPL variant of the similarity package. Need help with the checkout?
+Next, check out the project ("Check out as Maven project" in Eclipse). It is enough to check out only the module `trunk/de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl`, which resides in the GPL variant of the similarity package. [Need help with the checkout?](https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20Core%20Documentation%20(GitHub)/de.tudarmstadt.ukp.dkpro.core$de.tudarmstadt.ukp.dkpro.core.doc-asl/doclinks/2/)
 
 ### Step 3: Run
 You should now be able to run the system. Therefore, execute the Pipeline with the `-D` program argument, to start in training mode.
 
 ### Extend the system
-We explicitly encourage you to extend the system. New similarity measures can be added with ease by subclassing TextSimilarityMeasureBase. We added an example for a custom measure called `MyTextSimilarityMeasure` to the `*.example` package, and added the corresponding calls to the FeatureGeneration class.
+We explicitly encourage you to extend the system. New similarity measures can be added with ease by subclassing TextSimilarityMeasureBase. We added an example for a custom measure called `MyTextSimilarityMeasure` to the `*.example` package, and added the corresponding calls to the `FeatureGeneration` class.
 
 #### Add a custom similarity measure
 In general, a new text similarity measure can be added by doing two things: (a) setting up a concrete class for implementing the measure, which subclasses TextSimilarityMeasureBase, and (b) adding a wrapper class which subclasses TextSimilarityResourceBase which allows to use the measure in a DKPro language processing pipeline.
@@ -101,4 +101,4 @@ Classifier baseClassifier = new LinearRegression();
 {% endhighlight xml %}
 
 
-to suit your needs. Weka is already available through the Maven dependencies, so feel free to experiment with any other classifier from that package.
+to suit your needs. [Weka](Weka) is already available through the Maven dependencies, so feel free to experiment with any other classifier from that package.
