@@ -13,9 +13,11 @@ The system presented here differs from the original implementation at SemEval-20
 
 The performance of the presented system for the 2012 data is:
 
-Mode	ALL	Mean	MSRpar	MSRvid	SMTeuroparl	OnWN	SMTnews
-Train	.863	.742	.688	.801	.736	-	-
-Test	.694	.584	.620	.808	.376	.657	.462
+| Mode      | ALL       | Mean      | MSRpar    | MSRvid        | SMTeuroparl       | OnWN      | SMTnews   |
+| --------- |----------:|----------:|----------:|--------------:|------------------:|----------:|----------:|
+|Train      | .863      | .742      | .688      | .801      | .736                  | -         | -         |
+|Test       | .694      | .584      | .620      | .808      | .376                  | .657      | .462      |
+
 If you plan to refer to our original system in your publications, please cite
 
 > Daniel Bär, Chris Biemann, Iryna Gurevych, and Torsten Zesch. *UKP: Computing Semantic Textual Similarity by Combining Multiple Content Similarity Measures*, in _Proceedings of the 6th International Workshop on Semantic Evaluation, in conjunction with the 1st Joint Conference on Lexical and Computational Semantics_, pages 435-440, June 2012, Montreal, Canada. (pdf)](http://www.aclweb.org/anthology/S12-1059) [(bib)](http://www.aclweb.org/anthology/S12-1059.bib)
