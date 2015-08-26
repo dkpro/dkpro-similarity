@@ -12,7 +12,7 @@ Before continuing, please make sure that you have set up an environment_variable
 ## Explicit Semantic Analysis: Vector Indexes
 Explicit Semantic Analysis (ESA) (Gabrilovich and Markovitch, 2007) is a method which computes similarity based on word occurrences in a given document collection. While it was originally proposed on Wikipedia, other document collections with similar properties have also been found to work well, e.g. Wiktionary and WordNet.
 
-The vector indexes can be downloaded [here](/dkpro-similarity/downloads/) for Wiktionary or WordNet. As the Wikipedia index is much larger (about 900 MB zipped), you can get it [here](https://public.ukp.informatik.tu-darmstadt.de/baer/wp_eng_lem_nc_c.zip).
+The vector indexes can be downloaded for [Wiktionary](https://public.ukp.informatik.tu-darmstadt.de/dkprosimilarity/esa_vector_index_wiktionary_en.zip) or [WordNet](https://public.ukp.informatik.tu-darmstadt.de/dkprosimilarity/esa_vector_index_wordnet_en.zip). The Wikipedia index is much larger (about 900 MB zipped), you can get it [here](https://public.ukp.informatik.tu-darmstadt.de/dkprosimilarity/wp_eng_lem_nc_c.zip).
 
 After the download has finished, unzip the whole folder into `$DKPRO_HOME/ESA/VectorIndexes/<subdir>`, where subdir is an arbitrary name for each resource, e.g. "wordnet".
 
@@ -35,17 +35,17 @@ The EsaIndexer can then be run without any arguments. However, if you process a 
 ## Lexical Semantic Resources for Word Aggregation Measures
 There are a number of word similarity measures which compute similarity based on their distance in a lexical-semantic resource graph, e.g. WordNet. By applying an aggregation strategy such as the one by Mihalcea et al. (2006), these scores are then aggregated to the document level. While WordNet is a classic example, we also constructed graphs on Wiktionary. Note: These resource graphs are different from the vector indexes above!
 
-The resource graphs can be downloaded here: Wiktionary and WordNet.
+The resource graphs can be downloaded here: [Wiktionary](http://uby.ukp.informatik.tu-darmstadt.de/wiktionary/jwktl_0.15.2_en20100403.7z) and [WordNet](https://public.ukp.informatik.tu-darmstadt.de/dkprosimilarity/lsr_wordnet_en.zip).
 
 After the download has finished, unzip the whole folder into `$DKPRO_HOME/LexSemResources/<subdir>`, where subdir is an arbitrary name for each resource, e.g. "wordnet".
 
 Please note that these resources have been created on lemmatized texts. So please also lemmatize your input texts first, before passing them to the similarity measure.
 
-For these resources, you further need to create the folder `$DKPRO_HOME/de.tudarmstadt.ukp.dkpro.lexsemresource.core.ResourceFactory`. Copy the `resources.xml` here. Then edit the XML file and set the absolute paths for the beans wordnet-en and wiktionary-en according to your system.
+For these resources, you further need to create the folder `$DKPRO_HOME/de.tudarmstadt.ukp.dkpro.lexsemresource.core.ResourceFactory`. Copy the [resources.xml](https://public.ukp.informatik.tu-darmstadt.de/dkprosimilarity/resources.xml) here. Then edit the XML file and set the absolute paths for the beans wordnet-en and wiktionary-en according to your system.
 
 For WordNet, please also edit the file `wordnet_properties.xml` in `$DKPRO_HOME/LexSemResources/<wordnet>/`. Here, set the dictionary_path at the end of the file according to your system.
 
 ## Models for Lexical Substitution
 The lexical substitution system based on supervised word sense disambiguation (Biemann, 2012) automatically provides substitutions for a set of about 1,000 frequent English nouns with high precision.
 
-In order to use this system, download the word models here, and extract it to `$DKPRO_HOME/TWSI2`. In a final step, edit `$DKPRO_HOME/TWSI2/conf/TWSI2_config.conf` and set the correct absolute path for mainDir.
+In order to use this system, download the word models [here](https://public.ukp.informatik.tu-darmstadt.de/dkprosimilarity/TWSI2.zip), and extract it to `$DKPRO_HOME/TWSI2`. In a final step, edit `$DKPRO_HOME/TWSI2/conf/TWSI2_config.conf` and set the correct absolute path for mainDir.
