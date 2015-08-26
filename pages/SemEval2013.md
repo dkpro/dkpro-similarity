@@ -18,7 +18,7 @@ Train	.863	.742	.688	.801	.736	-	-
 Test	.694	.584	.620	.808	.376	.657	.462
 If you plan to refer to our original system in your publications, please cite
 
-Daniel Bär, Chris Biemann, Iryna Gurevych, and Torsten Zesch. UKP: Computing Semantic Textual Similarity by Combining Multiple Content Similarity Measures, in Proceedings of the 6th International Workshop on Semantic Evaluation, in conjunction with the 1st Joint Conference on Lexical and Computational Semantics, pages 435-440, June 2012, Montreal, Canada. (pdf) (bib)
+> Daniel Bär, Chris Biemann, Iryna Gurevych, and Torsten Zesch. *UKP: Computing Semantic Textual Similarity by Combining Multiple Content Similarity Measures*, in _Proceedings of the 6th International Workshop on Semantic Evaluation, in conjunction with the 1st Joint Conference on Lexical and Computational Semantics_, pages 435-440, June 2012, Montreal, Canada. (pdf)](http://www.aclweb.org/anthology/S12-1059) [(bib)](http://www.aclweb.org/anthology/S12-1059.bib)
 
 
 ## Installation Instructions
@@ -30,7 +30,7 @@ The project is implemented as a Java Maven project. It makes use of some librari
 In order to set up your Eclipse installation properly, we ask you to follow these instructions ("Eclipse Setup") where you find details on all required plugins. You also need to make sure that you have set up our open source Maven repository properly (instructions; "Configuring Maven for full access to the UKP Maven Repository").
 
 ### Step 2: Checkout
-Next, check out the project ("Check out as Maven project" in Eclipse). It is enough to check out only the module trunk/de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl, which resides in the GPL variant of the similarity package. Need help with the checkout?
+Next, check out the project ("Check out as Maven project" in Eclipse). It is enough to check out only the module `trunk/de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl`, which resides in the GPL variant of the similarity package. Need help with the checkout?
 
 ### Step 3: Run
 You should now be able to run the system. Therefore, execute the Pipeline with the -D program argument, to start in training mode.

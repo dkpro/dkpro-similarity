@@ -7,14 +7,14 @@ permalink: "/settinguptheresources/"
 Some text similarity measures implemented in our framework operate on lexical-semantic resources, e.g. measures which determine pairwise word similarity on WordNet. In the following, we describe which resources are required by which measures, and how they can be obtained and installed.
 
 ## Prerequisite: DKPRO_HOME environment variable
-Before continuing, please make sure that you have set up an environment_variable DKPRO_HOME either system-wide or per-project in the Eclipse run configuration. The variable should point to a (possibly yet empty) directory which is intended to store any sort of resources which are to be used by any DKPro component.
+Before continuing, please make sure that you have set up an environment_variable `DKPRO_HOME` either system-wide or per-project in the Eclipse run configuration. The variable should point to a (possibly yet empty) directory which is intended to store any sort of resources which are to be used by any DKPro component.
 
 ## Explicit Semantic Analysis: Vector Indexes
 Explicit Semantic Analysis (ESA) (Gabrilovich and Markovitch, 2007) is a method which computes similarity based on word occurrences in a given document collection. While it was originally proposed on Wikipedia, other document collections with similar properties have also been found to work well, e.g. Wiktionary and WordNet.
 
 The vector indexes can be downloaded [here](/dkpro-similarity/download/) for Wiktionary or WordNet. As the Wikipedia index is much larger (about 900 MB zipped), you can get it [here](https://public.ukp.informatik.tu-darmstadt.de/baer/wp_eng_lem_nc_c.zip).
 
-After the download has finished, unzip the whole folder into $DKPRO_HOME/ESA/VectorIndexes/<subdir>, where subdir is an arbitrary name for each resource, e.g. "wordnet".
+After the download has finished, unzip the whole folder into `$DKPRO_HOME/ESA/VectorIndexes/<subdir>`, where subdir is an arbitrary name for each resource, e.g. "wordnet".
 
 Please note that the indexes have been created on lemmatized texts. So please also lemmatize your input texts first, before passing them to the similarity measure.
 
@@ -26,10 +26,10 @@ LuceneVectorReader are used to create the above vectors from a Lucene index buil
 ### Build Your Own Index
 If you want to create your own index to be used with ESA, you can do so with a few simple steps:
 
-You can find an out-of-the-box solution for the ESA index creation in the Maven module de.tudarmstadt.ukp.similarity.dkpro.vsm-asl in the class EsaIndexer.
-In the method createLuceneWikipediaIndex(), you need to specify where your document collection can be found. As a prerequisite, you need to have an SQL dump of Wikipedia ready, or any other (domain-specific) document collection which is formatted accordingly.
+You can find an out-of-the-box solution for the ESA index creation in the Maven module `de.tudarmstadt.ukp.similarity.dkpro.vsm-asl` in the class EsaIndexer.
+In the method `createLuceneWikipediaIndex()`, you need to specify where your document collection can be found. As a prerequisite, you need to have an SQL dump of Wikipedia ready, or any other (domain-specific) document collection which is formatted accordingly.
 Make sure you set the right Language property throughout this method.
-The EsaIndexer can then be run without any arguments. However, if you process a large document collection such as Wikipedia, you may want to increase the maxiumum Java heap size in the run configuration's VM arguments (-Xmx<Size>).
+The EsaIndexer can then be run without any arguments. However, if you process a large document collection such as Wikipedia, you may want to increase the maxiumum Java heap size in the run configuration's VM arguments (`-Xmx<Size>`).
 
 
 ## Lexical Semantic Resources for Word Aggregation Measures
@@ -37,13 +37,13 @@ There are a number of word similarity measures which compute similarity based on
 
 The resource graphs can be downloaded here: Wiktionary and WordNet.
 
-After the download has finished, unzip the whole folder into $DKPRO_HOME/LexSemResources/<subdir>, where subdir is an arbitrary name for each resource, e.g. "wordnet".
+After the download has finished, unzip the whole folder into `$DKPRO_HOME/LexSemResources/<subdir>`, where subdir is an arbitrary name for each resource, e.g. "wordnet".
 
 Please note that these resources have been created on lemmatized texts. So please also lemmatize your input texts first, before passing them to the similarity measure.
 
-For these resources, you further need to create the folder $DKPRO_HOME/de.tudarmstadt.ukp.dkpro.lexsemresource.core.ResourceFactory. Copy the resources.xml here. Then edit the XML file and set the absolute paths for the beans wordnet-en and wiktionary-en according to your system.
+For these resources, you further need to create the folder `$DKPRO_HOME/de.tudarmstadt.ukp.dkpro.lexsemresource.core.ResourceFactory`. Copy the `resources.xml` here. Then edit the XML file and set the absolute paths for the beans wordnet-en and wiktionary-en according to your system.
 
-For WordNet, please also edit the file wordnet_properties.xml in $DKPRO_HOME/LexSemResources/<wordnet>/. Here, set the dictionary_path at the end of the file according to your system.
+For WordNet, please also edit the file `wordnet_properties.xml` in `$DKPRO_HOME/LexSemResources/<wordnet>/`. Here, set the dictionary_path at the end of the file according to your system.
 
 ## Models for Lexical Substitution
 The lexical substitution system based on supervised word sense disambiguation (Biemann, 2012) automatically provides substitutions for a set of about 1,000 frequent English nouns with high precision.
