@@ -9,6 +9,12 @@ This page is intended for all participants of the shared task of the [*SEM 2013 
 ## System Description
 The system described here uses a simple log-linear regression model, trained on the training data, to combine multiple text similarity measures of varying complexity. These range from simple character and word n-grams and common subsequences to complex features such as Explicit Semantic Analysis vector comparisons and aggregation of word similarity based on lexical-semantic resources. Our ﬁnal models, one per dataset, consist of a log-linear combination of about 20 features. For details, please refer to our system description paper.
 
+If you plan to refer to our original system in your publications, please cite
+
+> Daniel Bär, Chris Biemann, Iryna Gurevych, and Torsten Zesch. *UKP: Computing Semantic Textual Similarity by Combining Multiple Content Similarity Measures*, in _Proceedings of the 6th International Workshop on Semantic Evaluation, in conjunction with the 1st Joint Conference on Lexical and Computational Semantics_, pages 435-440, June 2012, Montreal, Canada. (pdf)](http://www.aclweb.org/anthology/S12-1059) [(bib)](http://www.aclweb.org/anthology/S12-1059.bib)
+
+
+
 The system presented here differs from the original implementation at SemEval-2012 in that it does not use a distributional thesaurus and only a single text expansion mechanism (lexical substitution only, no statistical machine translation), as the corresponding code and the accompanying resources cannot be readily made available to the public.
 
 The performance of the presented system for the 2012 data is:
@@ -17,10 +23,6 @@ The performance of the presented system for the 2012 data is:
 | --------- |----------:|----------:|----------:|--------------:|------------------:|----------:|----------:|
 |Train      | .863      | .742      | .688      | .801      | .736                  | -         | -         |
 |Test       | .694      | .584      | .620      | .808      | .376                  | .657      | .462      |
-
-If you plan to refer to our original system in your publications, please cite
-
-> Daniel Bär, Chris Biemann, Iryna Gurevych, and Torsten Zesch. *UKP: Computing Semantic Textual Similarity by Combining Multiple Content Similarity Measures*, in _Proceedings of the 6th International Workshop on Semantic Evaluation, in conjunction with the 1st Joint Conference on Lexical and Computational Semantics_, pages 435-440, June 2012, Montreal, Canada. (pdf)](http://www.aclweb.org/anthology/S12-1059) [(bib)](http://www.aclweb.org/anthology/S12-1059.bib)
 
 
 ## Installation Instructions
@@ -101,4 +103,4 @@ Classifier baseClassifier = new LinearRegression();
 {% endhighlight xml %}
 
 
-to suit your needs. [Weka](Weka) is already available through the Maven dependencies, so feel free to experiment with any other classifier from that package.
+to suit your needs. [Weka](http://weka.wikispaces.com/) is already available through the Maven dependencies, so feel free to experiment with any other classifier from that package.
