@@ -35,10 +35,10 @@ In order to set up your Eclipse installation properly, we ask you to follow thes
 Next, check out the project ("Check out as Maven project" in Eclipse). It is enough to check out only the module `trunk/de.tudarmstadt.ukp.similarity.experiments.sts-2013-baseline-gpl`, which resides in the GPL variant of the similarity package. Need help with the checkout?
 
 ### Step 3: Run
-You should now be able to run the system. Therefore, execute the Pipeline with the -D program argument, to start in training mode.
+You should now be able to run the system. Therefore, execute the Pipeline with the `-D` program argument, to start in training mode.
 
 ### Extend the system
-We explicitly encourage you to extend the system. New similarity measures can be added with ease by subclassing TextSimilarityMeasureBase. We added an example for a custom measure called MyTextSimilarityMeasure to the *.example package, and added the corresponding calls to the FeatureGeneration class.
+We explicitly encourage you to extend the system. New similarity measures can be added with ease by subclassing TextSimilarityMeasureBase. We added an example for a custom measure called `MyTextSimilarityMeasure` to the `*.example` package, and added the corresponding calls to the FeatureGeneration class.
 
 #### Add a custom similarity measure
 In general, a new text similarity measure can be added by doing two things: (a) setting up a concrete class for implementing the measure, which subclasses TextSimilarityMeasureBase, and (b) adding a wrapper class which subclasses TextSimilarityResourceBase which allows to use the measure in a DKPro language processing pipeline.
@@ -94,7 +94,7 @@ return true;
 
 
 #### Use a different classifier
-In case you do not want to use a Linear Regression classifier, but experiment with your own, please go to the *.util.Evaluator class, and just modify the line
+In case you do not want to use a Linear Regression classifier, but experiment with your own, please go to the `*.util.Evaluator` class, and just modify the line
 
 {% highlight xml %}
 Classifier baseClassifier = new LinearRegression();

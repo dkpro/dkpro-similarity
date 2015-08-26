@@ -12,7 +12,7 @@ Before continuing, please make sure that you have set up an environment_variable
 ## Explicit Semantic Analysis: Vector Indexes
 Explicit Semantic Analysis (ESA) (Gabrilovich and Markovitch, 2007) is a method which computes similarity based on word occurrences in a given document collection. While it was originally proposed on Wikipedia, other document collections with similar properties have also been found to work well, e.g. Wiktionary and WordNet.
 
-The vector indexes can be downloaded [here](/dkpro-similarity/download/) for Wiktionary or WordNet. As the Wikipedia index is much larger (about 900 MB zipped), you can get it [here](https://public.ukp.informatik.tu-darmstadt.de/baer/wp_eng_lem_nc_c.zip).
+The vector indexes can be downloaded [here](/dkpro-similarity/downloads/) for Wiktionary or WordNet. As the Wikipedia index is much larger (about 900 MB zipped), you can get it [here](https://public.ukp.informatik.tu-darmstadt.de/baer/wp_eng_lem_nc_c.zip).
 
 After the download has finished, unzip the whole folder into `$DKPRO_HOME/ESA/VectorIndexes/<subdir>`, where subdir is an arbitrary name for each resource, e.g. "wordnet".
 
@@ -48,4 +48,4 @@ For WordNet, please also edit the file `wordnet_properties.xml` in `$DKPRO_HOME/
 ## Models for Lexical Substitution
 The lexical substitution system based on supervised word sense disambiguation (Biemann, 2012) automatically provides substitutions for a set of about 1,000 frequent English nouns with high precision.
 
-In order to use this system, download the word models here, and extract it to $DKPRO_HOME/TWSI2. In a final step, edit $DKPRO_HOME/TWSI2/conf/TWSI2_config.conf and set the correct absolute path for mainDir.
+In order to use this system, download the word models here, and extract it to `$DKPRO_HOME/TWSI2`. In a final step, edit `$DKPRO_HOME/TWSI2/conf/TWSI2_config.conf` and set the correct absolute path for mainDir.
