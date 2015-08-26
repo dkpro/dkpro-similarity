@@ -30,7 +30,7 @@ The following datasets are included in the experiment
     * http://adapt.seiee.sjtu.edu.cn/similarity/
 * Yang & Powers (YP130)
     * verb similarity
-﻿   * Yang, D., & Powers, D. M. W. (2006). Verb Similarity on the Taxonomy of WordNet. Proceedings of the Third International WordNet Conference (GWC-06) (pp. 121-128). Jeju Island, Korea.
+﻿    * Yang, D., & Powers, D. M. W. (2006). Verb Similarity on the Taxonomy of WordNet. Proceedings of the Third International WordNet Conference (GWC-06) (pp. 121-128). Jeju Island, Korea.
 * Szumlanski et al. (2013) (SGS130)
     * relatedness dataset
     * Note: leaves/rake has been changed to leaf/rake as the plural is not found in WordNet and most other pairs are singular, too.
@@ -38,9 +38,9 @@ The following datasets are included in the experiment
 
 ### German
 * Translated and re-annotated data for Miller & Charles (Gur30) and Rubenstein & Goodenough (Gur65), as well as 350 cross POS word pairs (Gur350)
-﻿   * Gurevych, I. (2005). Using the Structure of a Conceptual Network in Computing Semantic Relatedness. Proceedings of IJCNLP (pp. 767-778).
+    * Gurevych, I. (2005). Using the Structure of a Conceptual Network in Computing Semantic Relatedness. Proceedings of IJCNLP (pp. 767-778).
 * 222 German word pairs annotated on the sense level (ZG222)
-﻿   * Zesch, T., & Gurevych, I. (2006). Automatically Creating Datasets for Measures of Semantic Relatedness. Proceedings of the Workshop on Linguistic Distances (pp. 16-24). Sydney, Australia
+    * Zesch, T., & Gurevych, I. (2006). Automatically Creating Datasets for Measures of Semantic Relatedness. Proceedings of the Workshop on Linguistic Distances (pp. 16-24). Sydney, Australia
 
 ### Arabic, Romanian, Spanish
 * Translated and re-annotated data for Miller & Charles and Finkelstein
