@@ -18,7 +18,7 @@ permalink: "/downloads/"
 <dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>{{ stable.groupId }}<groupId>
+      <groupId>{{ stable.groupId }}</groupId>
       <artifactId>{{ stable.artifactId }}</artifactId>
       <version>${dkpro.similarity.version}</version>
       <type>pom</type>
