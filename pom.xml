@@ -93,13 +93,6 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>de.tudarmstadt.ukp.dkpro.lab</groupId>
-                <artifactId>de.tudarmstadt.ukp.dkpro.lab</artifactId>
-                <version>0.10.0</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
                 <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
                 <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource-asl</artifactId>
                 <version>${lsr.version}</version>
