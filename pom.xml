@@ -229,4 +229,8 @@
         <connection>scm:git:https://github.com/dkpro/dkpro-similarity</connection>
         <developerConnection>scm:git:https://github.com/dkpro/dkpro-similarity</developerConnection>
     </scm>
+    <issueManagement>
+    	<system>GitHub</system>
+    	<url>https://github.com/dkpro/dkpro-similarity/issues</url>
+    </issueManagement>
 </project>
