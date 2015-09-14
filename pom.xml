@@ -233,4 +233,8 @@
     	<system>GitHub</system>
     	<url>https://github.com/dkpro/dkpro-similarity/issues</url>
     </issueManagement>
+    <organization>
+    	<name>Ubiquitous Knowledge Processing (UKP) Lab, Technische Universität Darmstadt</name>
+    	<url>https://www.ukp.tu-darmstadt.de/</url>
+    </organization>
 </project>
