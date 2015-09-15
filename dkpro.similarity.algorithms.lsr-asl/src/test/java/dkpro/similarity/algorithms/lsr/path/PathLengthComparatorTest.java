@@ -47,7 +47,7 @@ public class PathLengthComparatorTest {
 
     @BeforeClass
     public static void initialize() throws ResourceLoaderException  {
-        wordnet    = ResourceFactory.getInstance().get("wordnet", "en");
+        wordnet    = ResourceFactory.getInstance().get("wordnet3", "en");
 //        germanet   = ResourceFactory.getInstance().get("germanet7", "de");
         wikipedia  = ResourceFactory.getInstance().get("wikipedia", "test");
 //        wiktionary = ResourceFactory.getInstance().get("wiktionary", "en");

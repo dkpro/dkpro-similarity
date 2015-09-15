@@ -74,7 +74,7 @@ public class WuPalmerComparatorTest
         
         Assume.assumeTrue(Runtime.getRuntime().maxMemory() >= 2000000000);
 
-        LexicalSemanticResource wordnet = ResourceFactory.getInstance().get("wordnet", "en");
+        LexicalSemanticResource wordnet = ResourceFactory.getInstance().get("wordnet3", "en");
         wordnet.setIsCaseSensitive(false);
 
         LexSemResourceComparator comparator = new WuPalmerComparator(wordnet, wordnet.getRoot());

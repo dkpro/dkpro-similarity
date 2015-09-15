@@ -129,7 +129,7 @@ public class LinComparatorTest
 	public void testLinBipartite()
 		throws Exception
 	{
-//    	LexicalSemanticResource wordnet = ResourceFactory.getInstance().get("wordnet", "en");
+//    	LexicalSemanticResource wordnet = ResourceFactory.getInstance().get("wordnet3", "en");
 
 //    	WbpgmAggregator comparator =
 //    		new WbpgmAggregator(new LinComparator(wordnet), Normalization.NONE);

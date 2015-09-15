@@ -77,7 +77,7 @@ public class JiangConrathComparatorTest
         
         Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
 
-        LexicalSemanticResource wordnet = ResourceFactory.getInstance().get("wordnet", "en");
+        LexicalSemanticResource wordnet = ResourceFactory.getInstance().get("wordnet3", "en");
         wordnet.setIsCaseSensitive(false);
 
         LexSemResourceComparator comparator = new JiangConrathComparator(wordnet, wordnet.getRoot());
