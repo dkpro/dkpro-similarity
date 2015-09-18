@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * Computes the overlap of part-of-speech n-grams using the
  * containment measure, similarly as for the word n-grams
- * in the {@link WordNGramContainmentMeasure}. 
+ * in the {@code WordNGramContainmentMeasure}. 
  */
 public class PosNGramContainmentMeasure
 	extends PosNGramJaccardMeasure

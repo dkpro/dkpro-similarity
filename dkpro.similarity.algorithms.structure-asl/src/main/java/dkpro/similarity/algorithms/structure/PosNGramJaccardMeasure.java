@@ -18,7 +18,7 @@ import dkpro.similarity.algorithms.api.SimilarityException;
 /**
  * Computes the overlap of part-of-speech n-grams using the
  * Jaccard measure, similarly as for the word n-grams
- * in the {@link WordNGramJaccardMeasure}. 
+ * in the {@code WordNGramJaccardMeasure}. 
  */
 public class PosNGramJaccardMeasure
 	extends JCasTextSimilarityMeasureBase

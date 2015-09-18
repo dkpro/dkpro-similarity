@@ -123,7 +123,6 @@ public class WikiLinkCache {
      * @throws IOException
      * @throws FileNotFoundException
      * @throws ClassNotFoundException
-     * @throws Exception
      */
     public Object deserializeObject(File file) throws FileNotFoundException, IOException, ClassNotFoundException {
         logger.info("Loading cache from file: " + file.getAbsolutePath());

@@ -23,7 +23,7 @@ public enum VectorAggregation
 	/**
 	 * Aggregates multiple vectors into one by simple addition.
 	 *
-	 * @see {@link SumVectorAggregation}
+	 * @see {@code SumVectorAggregation}
 	 */
 	SUM,
 
@@ -31,7 +31,7 @@ public enum VectorAggregation
 	 * Aggregates multiple vectors into one by addition and then dividing each element by the number
 	 * of aggregated vectors.
 	 *
-	 * @see {@link CentroidVectorAggregation}
+	 * @see {@code CentroidVectorAggregation}
 	 */
 	CENTROID;
 

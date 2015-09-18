@@ -38,7 +38,7 @@ import dkpro.similarity.algorithms.vsm.store.vectorindex.VectorIndexWriter;
 import dkpro.similarity.algorithms.vsm.util.ProgressMeter;
 
 /**
- * Convert an index created using {@link EsaIndex} to a ESA Vector Cache index which intelligently
+ * Convert an index created using {@code EsaIndex} to a ESA Vector Cache index which intelligently
  * compresses and stores vectors using {@link VectorIndexWriter}.
  *
  * @author Richard Eckart de Castilho

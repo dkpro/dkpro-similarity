@@ -69,7 +69,7 @@ public enum InnerVectorProduct
 	 * <p>
 	 * Range: 0.0 - 1.0
 	 *
-	 * @see <a href="http://en.wikipedia.org/wiki/Dice_coefficient">Dice's coefficient (Wikipedia)</a>
+	 * @see <a href="http://en.wikipedia.org/wiki/Dice_coefficient">Dice coefficient (Wikipedia)</a>
 	 * @see <a href="http://en.wikipedia.org/wiki/Fuzzy_set">Fuzzy sets (Wikipedia)</a>
 	 */
 	DICE;

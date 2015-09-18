@@ -21,11 +21,11 @@
  *
  * We define three categories of comparators:
  * <ul>
- * <li>{@link TermSimilarityMeasure} - comparison of two terms, e.g.
+ * <li>{@code TermSimilarityMeasure} - comparison of two terms, e.g.
  *     <a href="http://portal.acm.org/citation.cfm?id=657297">Lin (1998)</a></li>
- * <li>{@link TextSimilarityMeasure} - comparison of two texts, e.g. LSA
+ * <li>{@code TextSimilarityMeasure} - comparison of two texts, e.g. LSA
  * 	   <a href="http://lsa.colorado.edu/papers/dp1.LSAintro.pdf">Landauer et. al (1998)</a></li>
- * <li>{@link JCasTextSimilarityMeasure} - comparison of two texts in JCas format</li>
+ * <li>{@code JCasTextSimilarityMeasure} - comparison of two texts in JCas format</li>
  * </ul>
  * 
  * All comparators are case-sensitive.

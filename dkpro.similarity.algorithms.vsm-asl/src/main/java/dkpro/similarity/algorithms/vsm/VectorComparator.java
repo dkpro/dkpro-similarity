@@ -20,12 +20,10 @@ package dkpro.similarity.algorithms.vsm;
 import java.util.Collection;
 import java.util.Comparator;
 
-import no.uib.cipr.matrix.DenseVector;
 import no.uib.cipr.matrix.Vector;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.lucene.search.Similarity;
 
 import dkpro.similarity.algorithms.api.SimilarityException;
 import dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
@@ -48,8 +46,8 @@ import dkpro.similarity.algorithms.vsm.store.VectorReader;
  * cmp.setNormalization(VectorNorm.L2);
  * }
  * </pre>
- * Cf. SSpace {@link Similarity#cosineSimilarity cosine} and
- * {@link DenseVector#magnitude() vector norm} (L2) implementations.
+ * Cf. SSpace {@code Similarity#cosineSimilarity cosine} and
+ * {@code DenseVector#magnitude() vector norm} (L2) implementations.
  * <p>
  * Example for ESA using a Lucene index (e.g. of the Wikipedia):
  * <pre>
@@ -125,7 +123,7 @@ public class VectorComparator
 	}
 
 	/**
-	 * Normally {@link #getSimilarity(String, String)} returns {@link Comparator#NOT_FOUND} when
+	 * Normally {@link #getSimilarity(String, String)} returns {@code Comparator#NOT_FOUND} when
 	 * one of the terms was not found in an index. If you do not care about that and simply want to
 	 * treat this case as a relatedness of zero, set this flag.
 	 *
