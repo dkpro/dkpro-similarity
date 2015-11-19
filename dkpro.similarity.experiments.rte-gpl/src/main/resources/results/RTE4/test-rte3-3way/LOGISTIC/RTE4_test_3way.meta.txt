@@ -1,0 +1,196 @@
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                                                    Class
+Variable                                                                       ENTAILMENT                 UNKNOWN
+=================================================================================================================
+n-grams/WordNGramContainmentMeasure_5_stopword-filtered                         -414.6985               -502.0801
+n-grams/CharacterNGramMeasure_4                                                     7.486                  6.5461
+n-grams/WordNGramContainmentMeasure_2                                             63.0321                  70.097
+n-grams/WordNGramJaccardMeasure_2                                                -82.9921                -90.7055
+n-grams/CharacterNGramMeasure_6                                                   57.4681                135.5761
+n-grams/CharacterNGramMeasure_10                                                  29.6427                 58.7191
+n-grams/WordNGramContainmentMeasure_1                                            -16.8414                  -8.175
+n-grams/WordNGramContainmentMeasure_4_stopword-filtered                           310.884                389.0649
+n-grams/WordNGramJaccardMeasure_1                                                   22.67                 11.6298
+n-grams/WordNGramJaccardMeasure_2_stopword-filtered                              -82.9921                -90.7055
+n-grams/CharacterNGramMeasure_7                                                  -25.2552                -108.451
+n-grams/CharacterNGramMeasure_3                                                    3.7987                 -2.9025
+n-grams/WordNGramContainmentMeasure_2_stopword-filtered                           63.0321                  70.097
+n-grams/WordNGramContainmentMeasure_3_stopword-filtered                         -108.4064               -141.7985
+n-grams/CharacterNGramMeasure_8                                                   14.9389                114.8442
+n-grams/CharacterNGramMeasure_5                                                  -39.4233                -77.9849
+n-grams/CharacterNGramMeasure_2                                                   -0.4786                   1.156
+n-grams/WordNGramJaccardMeasure_5                                                467.9908                572.0343
+n-grams/WordNGramContainmentMeasure_1_stopword-filtered                          -16.8414                  -8.175
+n-grams/CharacterNGramMeasure_9                                                  -43.7216               -128.5908
+n-grams/WordNGramJaccardMeasure_4                                               -369.4752               -455.9203
+n-grams/WordNGramJaccardMeasure_4_stopword-filtered                             -369.4752               -455.9203
+n-grams/WordNGramJaccardMeasure_3_stopword-filtered                              138.8584                177.6457
+n-grams/WordNGramContainmentMeasure_5                                           -414.6985               -502.0801
+n-grams/WordNGramJaccardMeasure_5_stopword-filtered                              467.9908                572.0343
+n-grams/WordNGramJaccardMeasure_1_stopword-filtered                                 22.67                 11.6298
+n-grams/WordNGramContainmentMeasure_3                                           -108.4064               -141.7985
+n-grams/WordNGramContainmentMeasure_4                                             310.884                389.0649
+n-grams/WordNGramJaccardMeasure_3                                                138.8584                177.6457
+word-sim/TWSI_MCS06_Resnik_WordNet                                                -1.8271                 -1.5251
+word-sim/MCS06_Resnik_WordNet                                                       0.282                 -0.4138
+lsa/LSA                                                                           -1.6843                 -3.1575
+style/FunctionWordFrequenciesMeasure_mosteller-wallace                            -1.2789                   3.607
+style/TokenRatioComparator                                                         0.4904                  0.2428
+style/SentenceRatioComparator                                                      0.3491                  0.0825
+style/MTLDComparator                                                              -0.0243                  0.1522
+style/AvgCharactersPerTokenComparator                                              0.1479                  0.6978
+style/FunctionWordFrequenciesMeasure_english-punctuation                          -1.5352                  0.6252
+style/TypeTokenRatioComparator                                                    -2.2242                  -6.215
+style/FunctionWordFrequenciesMeasure_stamatatos                                    1.8208                 -3.2751
+string/CosineSimilarity                                                           -0.0634                 -0.9829
+string/LongestCommonSubsequenceNormComparator                                      35.856                 37.8905
+string/GreedyStringTiling_3                                                       -2.4782                 -9.3823
+string/LongestCommonSubstringComparator                                           -3.0849                 -3.7022
+string/LongestCommonSubsequenceComparator                                        -23.6045                -15.1219
+esa/ESA_Wiktionary                                                                -1.1396                  0.0794
+esa/ESA_WordNet                                                                   -0.0459                 -0.5006
+esa/ESA_Wikipedia                                                                  5.1295                  4.1123
+structure/StopwordNGramContainmentMeasure_3_english-punctuation                   -17.124                 -18.066
+structure/TokenPairDistanceMeasure                                                 0.7821                  0.5383
+structure/PosNGramJaccardMeasure_2                                               -36.2543                -39.5349
+structure/StopwordNGramContainmentMeasure_5_english-punctuation                    1.1651               -124.7521
+structure/StopwordNGramContainmentMeasure_6_stamatatos                           312.2933               -242.0833
+structure/StopwordNGramContainmentMeasure_4_stamatatos                           -59.0388                 13.9232
+structure/StopwordNGramContainmentMeasure_6_mosteller-wallace                   -128.7171                 83.4353
+structure/StopwordNGramContainmentMeasure_7_stamatatos                           158.9484                478.4636
+structure/PosNGramContainmentMeasure_1                                             1.2328                -10.5362
+structure/TokenPairOrderingMeasure                                                -0.5634                 -0.8452
+structure/StopwordNGramContainmentMeasure_5_mosteller-wallace                   -134.8137                 48.8779
+structure/PosNGramContainmentMeasure_3                                           -99.7728               -101.4898
+structure/PosNGramContainmentMeasure_2                                            30.1445                  35.125
+structure/StopwordNGramContainmentMeasure_7_mosteller-wallace                    333.5495                920.5874
+structure/PosNGramJaccardMeasure_5                                               -24.2962               -169.5374
+structure/StopwordNGramContainmentMeasure_7_english-punctuation                  402.0593               -885.4285
+structure/PosNGramJaccardMeasure_1                                                -0.1825                  9.6303
+structure/StopwordNGramContainmentMeasure_5_stamatatos                             82.268                 38.4205
+structure/PosNGramContainmentMeasure_5                                            28.8035                137.0928
+structure/PosNGramContainmentMeasure_7                                          -582.8395               -468.7778
+structure/StopwordNGramContainmentMeasure_2_mosteller-wallace                     12.5385                  7.5947
+structure/PosNGramContainmentMeasure_6                                           670.9716                597.4417
+structure/PosNGramContainmentMeasure_4                                           -28.2218                -30.3469
+structure/StopwordNGramContainmentMeasure_4_mosteller-wallace                     38.8121               -121.7584
+structure/StopwordNGramContainmentMeasure_2_english-punctuation                    2.8705                  0.8785
+structure/PosNGramJaccardMeasure_6                                              -730.1382               -638.7847
+structure/StopwordNGramContainmentMeasure_6_english-punctuation                 -464.8871                231.4445
+structure/StopwordNGramContainmentMeasure_4_english-punctuation                   273.997                278.2934
+structure/PosNGramJaccardMeasure_7                                               619.1099                489.3092
+structure/StopwordNGramContainmentMeasure_3_mosteller-wallace                     -41.125                -51.5829
+structure/StopwordNGramContainmentMeasure_2_stamatatos                            -9.5855                 -3.2692
+structure/PosNGramJaccardMeasure_3                                               121.4126                123.5942
+structure/PosNGramJaccardMeasure_4                                                34.5018                 34.7321
+structure/StopwordNGramContainmentMeasure_3_stamatatos                            55.6633                 64.8695
+Intercept                                                                         -1.1874                  2.2848
+
+
+Odds Ratios...
+                                                                                    Class
+Variable                                                                       ENTAILMENT                 UNKNOWN
+=================================================================================================================
+n-grams/WordNGramContainmentMeasure_5_stopword-filtered                                 0                       0
+n-grams/CharacterNGramMeasure_4                                                 1782.9659                696.5239
+n-grams/WordNGramContainmentMeasure_2                                2.368720885547955E27    2.771724673227036E30
+n-grams/WordNGramJaccardMeasure_2                                                       0                       0
+n-grams/CharacterNGramMeasure_6                                       9.07955866497159E24    7.584628714187215E58
+n-grams/CharacterNGramMeasure_10                                     7.475590034908959E12    3.172251368010106E25
+n-grams/WordNGramContainmentMeasure_1                                                   0                  0.0003
+n-grams/WordNGramContainmentMeasure_4_stopword-filtered             1.035581228419215E135     9.3058125865033E168
+n-grams/WordNGramJaccardMeasure_1                                         7005938549.0159             112395.4936
+n-grams/WordNGramJaccardMeasure_2_stopword-filtered                                     0                       0
+n-grams/CharacterNGramMeasure_7                                                         0                       0
+n-grams/CharacterNGramMeasure_3                                                   44.6424                  0.0549
+n-grams/WordNGramContainmentMeasure_2_stopword-filtered              2.368719042141417E27   2.7717215810848775E30
+n-grams/WordNGramContainmentMeasure_3_stopword-filtered                                 0                       0
+n-grams/CharacterNGramMeasure_8                                              3075317.2318    7.519425750014127E49
+n-grams/CharacterNGramMeasure_5                                                         0                       0
+n-grams/CharacterNGramMeasure_2                                                    0.6197                  3.1772
+n-grams/WordNGramJaccardMeasure_5                                  1.7612180241648624E203  2.6998133840564887E248
+n-grams/WordNGramContainmentMeasure_1_stopword-filtered                                 0                  0.0003
+n-grams/CharacterNGramMeasure_9                                                         0                       0
+n-grams/WordNGramJaccardMeasure_4                                                       0                       0
+n-grams/WordNGramJaccardMeasure_4_stopword-filtered                                     0                       0
+n-grams/WordNGramJaccardMeasure_3_stopword-filtered                 2.0203921316243298E60   1.4143562468305046E77
+n-grams/WordNGramContainmentMeasure_5                                                   0                       0
+n-grams/WordNGramJaccardMeasure_5_stopword-filtered                 1.761221916089058E203  2.6998032922201013E248
+n-grams/WordNGramJaccardMeasure_1_stopword-filtered                       7005939188.9871             112395.4688
+n-grams/WordNGramContainmentMeasure_3                                                   0                       0
+n-grams/WordNGramContainmentMeasure_4                              1.0355814184629195E135   9.305737219920384E168
+n-grams/WordNGramJaccardMeasure_3                                   2.0203922678110133E60   1.4143569363666715E77
+word-sim/TWSI_MCS06_Resnik_WordNet                                                 0.1609                  0.2176
+word-sim/MCS06_Resnik_WordNet                                                      1.3258                  0.6611
+lsa/LSA                                                                            0.1856                  0.0425
+style/FunctionWordFrequenciesMeasure_mosteller-wallace                             0.2783                 36.8538
+style/TokenRatioComparator                                                          1.633                  1.2748
+style/SentenceRatioComparator                                                      1.4179                   1.086
+style/MTLDComparator                                                                0.976                  1.1644
+style/AvgCharactersPerTokenComparator                                              1.1594                  2.0092
+style/FunctionWordFrequenciesMeasure_english-punctuation                           0.2154                  1.8686
+style/TypeTokenRatioComparator                                                     0.1082                   0.002
+style/FunctionWordFrequenciesMeasure_stamatatos                                    6.1769                  0.0378
+string/CosineSimilarity                                                            0.9386                  0.3742
+string/LongestCommonSubsequenceNormComparator                       3.7329768065987435E15     2.85520701792683E16
+string/GreedyStringTiling_3                                                        0.0839                  0.0001
+string/LongestCommonSubstringComparator                                            0.0457                  0.0247
+string/LongestCommonSubsequenceComparator                                               0                       0
+esa/ESA_Wiktionary                                                                   0.32                  1.0827
+esa/ESA_WordNet                                                                    0.9552                  0.6062
+esa/ESA_Wikipedia                                                                168.9349                 61.0866
+structure/StopwordNGramContainmentMeasure_3_english-punctuation                         0                       0
+structure/TokenPairDistanceMeasure                                                 2.1861                   1.713
+structure/PosNGramJaccardMeasure_2                                                      0                       0
+structure/StopwordNGramContainmentMeasure_5_english-punctuation                    3.2064                       0
+structure/StopwordNGramContainmentMeasure_6_stamatatos             4.2388834614253197E135                       0
+structure/StopwordNGramContainmentMeasure_4_stamatatos                                  0            1113669.3617
+structure/StopwordNGramContainmentMeasure_6_mosteller-wallace                           0    1.719898184234972E36
+structure/StopwordNGramContainmentMeasure_7_stamatatos               1.072503048833836E69   6.224292534298796E207
+structure/PosNGramContainmentMeasure_1                                             3.4309                       0
+structure/TokenPairOrderingMeasure                                                 0.5693                  0.4295
+structure/StopwordNGramContainmentMeasure_5_mosteller-wallace                           0   1.6880968349813996E21
+structure/PosNGramContainmentMeasure_3                                                  0                       0
+structure/PosNGramContainmentMeasure_2                              1.2348199186208738E13   1.7971279173419435E15
+structure/StopwordNGramContainmentMeasure_7_mosteller-wallace       7.222821403098176E144                Infinity
+structure/PosNGramJaccardMeasure_5                                                      0                       0
+structure/StopwordNGramContainmentMeasure_7_english-punctuation     4.093999345507482E174                       0
+structure/PosNGramJaccardMeasure_1                                                 0.8332              15219.5757
+structure/StopwordNGramContainmentMeasure_5_stamatatos               5.352177503493228E35   4.8509856569284072E16
+structure/PosNGramContainmentMeasure_5                              3.2299313284128193E12   3.4566778963898386E59
+structure/PosNGramContainmentMeasure_7                                                  0                       0
+structure/StopwordNGramContainmentMeasure_2_mosteller-wallace                 278867.2188               1987.6448
+structure/PosNGramContainmentMeasure_6                             2.5077159807288614E291  2.9216377135496318E259
+structure/PosNGramContainmentMeasure_4                                                  0                       0
+structure/StopwordNGramContainmentMeasure_4_mosteller-wallace       7.1760474365315816E16                       0
+structure/StopwordNGramContainmentMeasure_2_english-punctuation                    17.645                  2.4073
+structure/PosNGramJaccardMeasure_6                                                      0                       0
+structure/StopwordNGramContainmentMeasure_6_english-punctuation                         0   3.273984011559405E100
+structure/StopwordNGramContainmentMeasure_4_english-punctuation     9.894256520821238E118   7.265562949650324E120
+structure/PosNGramJaccardMeasure_7                                  7.516401280137051E268  3.1937537480657336E212
+structure/StopwordNGramContainmentMeasure_3_mosteller-wallace                           0                       0
+structure/StopwordNGramContainmentMeasure_2_stamatatos                             0.0001                   0.038
+structure/PosNGramJaccardMeasure_3                                   5.356011294153561E52   4.7455897185001705E53
+structure/PosNGramJaccardMeasure_4                                   9.637460527762932E14   1.2132699607469698E15
+structure/StopwordNGramContainmentMeasure_3_stamatatos               1.493769785083254E24   1.4874763175199387E28
+
+
+Correctly Classified Instances         540               54      %
+Incorrectly Classified Instances       460               46      %
+Kappa statistic                          0.1741
+Mean absolute error                      0.3579
+Root mean squared error                  0.4553
+Relative absolute error                 90.1841 %
+Root relative squared error            101.2068 %
+Coverage of cases (0.95 level)          93.1    %
+Mean rel. region size (0.95 level)      86.8    %
+Total Number of Instances             1000     
+
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+ 376 107  17 |   a = ENTAILMENT
+ 181 159  10 |   b = UNKNOWN
+ 106  39   5 |   c = CONTRADICTION
+
