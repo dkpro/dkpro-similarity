@@ -28,11 +28,13 @@ The following datasets are included in the experiment
   * relatedness dataset
   * Note: leaves/rake has been changed to leaf/rake as the plural is not found in WordNet and most other pairs are singular, too.
   * _Szumlanski, S., Gomez, F. & Sims, V. K. (2013). A New Set of Norms for Semantic Relatedness Measures. Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers) (pp. 890-895). Sofia, Bulgaria._
+
 ### German
 * Translated and re-annotated data for Miller & Charles (Gur30) and Rubenstein & Goodenough (Gur65), as well as 350 cross POS word pairs (Gur350)
  * ﻿_Gurevych, I. (2005). Using the Structure of a Conceptual Network in Computing Semantic Relatedness. Proceedings of IJCNLP (pp. 767-778)._
 * 222 German word pairs annotated on the sense level (ZG222)
  * ﻿_Zesch, T., & Gurevych, I. (2006). Automatically Creating Datasets for Measures of Semantic Relatedness. Proceedings of the Workshop on Linguistic Distances (pp. 16-24)._ Sydney, Australia_
+
 ### Arabic, Romanian, Spanish
 * Translated and re-annotated data for Miller & Charles and Finkelstein
   * _﻿Hassan, S., & Mihalcea, R. (2009). Cross-lingual Semantic Relatedness Using Encyclopedic Knowledge. Proceedings of the 2009 Conference on Empirical Methods in Natural Language Processing (pp. 1192-1201)._
