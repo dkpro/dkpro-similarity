@@ -1,17 +1,17 @@
 #summary Description of the word pair similarity experiments in DKPro Similarity
 
-= Introduction =
+## Introduction =
 
 DKPro Similarity comes with a ready-made experiment pipeline for evaluating word pair similarity/relatedness.
 The most common evaluation datasets are already included (see below).
 
-= Datasets =
+## Datasets =
 
 The following datasets are included in the experiment
-  * English
-    * Rubenstein & Goodenough (RG65)
-      * the classical similarity dataset
-      * _﻿Rubenstein, H., & Goodenough, J. B. (1965). Contextual Correlates of Synonymy. Communications of the ACM, 8(10), 627-633._
+* English
+ * Rubenstein & Goodenough (RG65)
+  * the classical similarity dataset
+  * _﻿Rubenstein, H., & Goodenough, J. B. (1965). Contextual Correlates of Synonymy. Communications of the ACM, 8(10), 627-633._
     * Miller & Charles (MC30)
       * subset of Rubenstein & Goodenough dataset
       * _﻿Miller, G. A., & Charles, W. G. (1991). Contextual Correlates of Semantic Similarity. Language and Cognitive Processes, 6(1), 1-28._
