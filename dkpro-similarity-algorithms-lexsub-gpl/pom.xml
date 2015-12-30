@@ -34,7 +34,7 @@
     <dependency>
       <groupId>de.tudarmstadt.langtech.substituter.twsi</groupId>
       <artifactId>de.tudarmstadt.langtech.substituter.twsi</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.2</version>
     </dependency>
     <dependency>
       <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
