@@ -19,7 +19,7 @@ package dkpro.similarity.algorithms.structure;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.Test;
@@ -35,8 +35,8 @@ public class StopwordNGramContainmentMeasureTest
 	public void run()
 		throws Exception
 	{
-		List<String> doc1 = new ArrayList<String>();
-		List<String> doc2 = new ArrayList<String>();
+		List<String> doc1 = new LinkedList<String>();
+		List<String> doc2 = new LinkedList<String>();
 		
 		doc1.add("the");
 		doc1.add("quick");

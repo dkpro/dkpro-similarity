@@ -17,12 +17,13 @@
  *******************************************************************************/
 package dkpro.similarity.algorithms.structure;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
 
 import dkpro.similarity.algorithms.api.SimilarityException;
@@ -48,27 +49,28 @@ public class TokenPairDistanceMeasure
 			Collection<String> stringList2)
 		throws SimilarityException
 	{
+		
 		// Transform input lists into lowercase string lists
-		List<String> sl1 = new ArrayList<String>();
+		List<String> sl1 = new LinkedList<String>();
 		for (String s : stringList1) {
             sl1.add(s.toLowerCase());
         }
 		
-		List<String> sl2 = new ArrayList<String>();
+		List<String> sl2 = new LinkedList<String>();
 		for (String s : stringList2) {
             sl2.add(s.toLowerCase());
         }	
 		
 		// Get word sets
-		Set<String> strings1 = new HashSet<String>(sl1);		
-		Set<String> strings2 = new HashSet<String>(sl2);
+		Set<String> strings1 = new LinkedHashSet<String>(sl1);		
+		Set<String> strings2 = new LinkedHashSet<String>(sl2);
 		
 		// Get a common word list
-		List<String> commonStrings = new ArrayList<String>(strings1);
+		List<String> commonStrings = new LinkedList<String>(strings1);
 		commonStrings.retainAll(strings2);
 		
 		// Build up pairs (ignoring order, i.e. a-b or b-a)
-		Set<Pair> pairs = new HashSet<Pair>();
+		Set<Pair> pairs = new LinkedHashSet<Pair>();
 		for (String s1 : commonStrings) {
 			for (String s2 : commonStrings)
 			{
@@ -85,7 +87,7 @@ public class TokenPairDistanceMeasure
 			double[] v1 = new double[pairs.size()];
 			double[] v2 = new double[pairs.size()];
 			
-			List<Pair> pairList = new ArrayList<Pair>(pairs);
+			List<Pair> pairList = new LinkedList<Pair>(pairs);
 			
 			for (int i = 0; i < pairList.size(); i++)
 			{
@@ -102,7 +104,7 @@ public class TokenPairDistanceMeasure
 				v1[i] = idx1diff;
 				v2[i] = idx2diff;
 			}
-					
+			
 			PearsonsCorrelation pearson = new PearsonsCorrelation();
 			return pearson.correlation(v1, v2);
 		}

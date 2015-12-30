@@ -19,9 +19,10 @@ package dkpro.similarity.algorithms.structure;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import dkpro.similarity.algorithms.api.TextSimilarityMeasure;
@@ -39,41 +40,41 @@ public class TokenPairOrderingMeasureTest
 		TextSimilarityMeasure comparator = new TokenPairDistanceMeasure();
 		
 		// Reference document
-		List<String> doc1 = new ArrayList<String>();
+		List<String> doc1 = new LinkedList<String>();
 		doc1.add("one");
 		doc1.add("two");
 		doc1.add("three");
 		doc1.add("four");
 		
 		// Test 1
-		List<String> doc2 = new ArrayList<String>();
+		List<String> doc2 = new LinkedList<String>();
 		doc2.add("two");
 		doc2.add("one");
 		
 		assertEquals(0.0, comparator.getSimilarity(doc1, doc2), epsilon);
 		
 		// Test 2
-		doc2 = new ArrayList<String>();
+		doc2 = new LinkedList<String>();
 		doc2.add("one");
 		doc2.add("two");
 		
 		assertEquals(0.0, comparator.getSimilarity(doc1, doc2), epsilon);
 		
 		// Test 3
-		doc2 = new ArrayList<String>();
+		doc2 = new LinkedList<String>();
 		doc2.add("one");
 		doc2.add("three");
 		doc2.add("two");
 
-		assertEquals(0.928, comparator.getSimilarity(doc1, doc2), epsilon);
+		assertEquals(0.188, comparator.getSimilarity(doc1, doc2), epsilon);
 		
 		// Test 4
-		doc2 = new ArrayList<String>();
+		doc2 = new LinkedList<String>();
 		doc2.add("one");
 		doc2.add("three");
 		doc2.add("two");
 		doc2.add("four");
 		
-		assertEquals(0.838, comparator.getSimilarity(doc1, doc2), epsilon);
+		assertEquals(0.478, comparator.getSimilarity(doc1, doc2), epsilon);
 	}
 }
