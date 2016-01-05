@@ -1,87 +1,93 @@
-<!--
-  Copyright 2012-2015
-  Ubiquitous Knowledge Processing (UKP) Lab
-  Technische Universität Darmstadt
-
-  This program is free software: you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
-
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with this program. If not, see <http://www.gnu.org/licenses/>.
--->
+<!-- Copyright 2012-2015 Ubiquitous Knowledge Processing (UKP) Lab Technische 
+	Universität Darmstadt This program is free software: you can redistribute 
+	it and/or modify it under the terms of the GNU General Public License as 
+	published by the Free Software Foundation, either version 3 of the License, 
+	or (at your option) any later version. This program is distributed in the 
+	hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied 
+	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+	GNU General Public License for more details. You should have received a copy 
+	of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.dkpro.similarity</groupId>
-    <artifactId>dkpro-similarity</artifactId>
-    <version>2.2.0-SNAPSHOT</version>
-  </parent>
-  <name>DKPro Similarity Experiments</name>
-  <artifactId>dkpro-similarity-experiments</artifactId>
-  <packaging>pom</packaging>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.dkpro.similarity</groupId>
+		<artifactId>dkpro-similarity</artifactId>
+		<version>2.2.0-SNAPSHOT</version>
+	</parent>
+	<name>DKPro Similarity Experiments</name>
+	<artifactId>dkpro-similarity-experiments</artifactId>
+	<packaging>pom</packaging>
+	<properties>
+  	<lsr.version>0.8.1</lsr.version>
+  </properties>
   <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.dkpro.similarity</groupId>
-        <artifactId>dkpro-similarity-experiments.api-asl</artifactId>
-        <version>2.2.0-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.dkpro.similarity</groupId>
-        <artifactId>dkpro-similarity-experiments-rte-gpl</artifactId>
-        <version>2.2.0-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.dkpro.similarity</groupId>
-        <artifactId>dkpro-similarity-experiments-sts-2013-baseline-gpl</artifactId>
-        <version>2.2.0-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.dkpro.similarity</groupId>
-        <artifactId>dkpro-similarity-experiments-sts-2013-gpl</artifactId>
-        <version>2.2.0-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.dkpro.similarity</groupId>
-        <artifactId>dkpro-similarity-experiments-api-asl</artifactId>
-        <version>2.2.0-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.dkpro.similarity</groupId>
-        <artifactId>dkpro-similarity-experiments-rte-gpl</artifactId>
-        <version>2.2.0-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.dkpro.similarity</groupId>
-        <artifactId>dkpro-similarity-experiments-sts-2013-baseline-gpl</artifactId>
-        <version>2.2.0-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.dkpro.similarity</groupId>
-        <artifactId>dkpro-similarity-experiments-sts-2013-gpl</artifactId>
-        <version>2.2.0-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.dkpro.similarity</groupId>
-        <artifactId>dkpro-similarity-experiments-coling2012-gpl</artifactId>
-        <version>2.2.0-SNAPSHOT</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-  <modules>
-    <module>../dkpro-similarity-experiments-wordpairs-asl</module>
-    <module>../dkpro-similarity-experiments-wordchoice-asl</module>
-    <module>../dkpro-similarity-experiments-api-asl</module>
-    <module>../dkpro-similarity-experiments-sts-2013-baseline-gpl</module>
-    <module>../dkpro-similarity-experiments-rte-gpl</module>
-    <module>../dkpro-similarity-experiments-sts-2013-gpl</module>
-  </modules>
+		<dependencies>
+			<dependency>
+				<groupId>org.dkpro.similarity</groupId>
+				<artifactId>dkpro-similarity-experiments.api-asl</artifactId>
+				<version>2.2.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.dkpro.similarity</groupId>
+				<artifactId>dkpro-similarity-experiments-rte-gpl</artifactId>
+				<version>2.2.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.dkpro.similarity</groupId>
+				<artifactId>dkpro-similarity-experiments-sts-2013-baseline-gpl</artifactId>
+				<version>2.2.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.dkpro.similarity</groupId>
+				<artifactId>dkpro-similarity-experiments-sts-2013-gpl</artifactId>
+				<version>2.2.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.dkpro.similarity</groupId>
+				<artifactId>dkpro-similarity-experiments-api-asl</artifactId>
+				<version>2.2.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.dkpro.similarity</groupId>
+				<artifactId>dkpro-similarity-experiments-rte-gpl</artifactId>
+				<version>2.2.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.dkpro.similarity</groupId>
+				<artifactId>dkpro-similarity-experiments-sts-2013-baseline-gpl</artifactId>
+				<version>2.2.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.dkpro.similarity</groupId>
+				<artifactId>dkpro-similarity-experiments-sts-2013-gpl</artifactId>
+				<version>2.2.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>org.dkpro.similarity</groupId>
+				<artifactId>dkpro-similarity-experiments-coling2012-gpl</artifactId>
+				<version>2.2.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+				<artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource-asl</artifactId>
+				<version>${lsr.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+				<artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl</artifactId>
+				<version>${lsr.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<modules>
+		<module>../dkpro-similarity-experiments-wordpairs-asl</module>
+		<module>../dkpro-similarity-experiments-wordchoice-asl</module>
+		<module>../dkpro-similarity-experiments-api-asl</module>
+		<module>../dkpro-similarity-experiments-sts-2013-baseline-gpl</module>
+		<module>../dkpro-similarity-experiments-rte-gpl</module>
+		<module>../dkpro-similarity-experiments-sts-2013-gpl</module>
+	</modules>
 </project>

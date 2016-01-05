@@ -43,14 +43,6 @@
       <artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
     </dependency>
     <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.api-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.core-asl</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-algorithms-api-asl</artifactId>
     </dependency>

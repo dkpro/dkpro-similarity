@@ -49,7 +49,6 @@
   </repositories>
   <properties>
     <dkpro.core.version>1.7.0</dkpro.core.version>
-    <lsr.version>0.8.1</lsr.version>
   </properties>
   <dependencies>
     <dependency>
@@ -76,18 +75,6 @@
         <version>${dkpro.core.version}</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-        <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource-asl</artifactId>
-        <version>${lsr.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-        <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl</artifactId>
-        <version>${lsr.version}</version>
       </dependency>
       <dependency>
         <groupId>commons-codec</groupId>
@@ -153,7 +140,7 @@
   <modules>
     <module>dkpro-similarity-asl</module>
     <module>dkpro-similarity-gpl</module>
-    <module>dkpro-similarity-experiments</module>
+    
   </modules>
   <scm>
     <url>https://github.com/dkpro/dkpro-similarity</url>
