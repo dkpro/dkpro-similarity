@@ -35,10 +35,5 @@
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-algorithms-api-asl</artifactId>
     </dependency>
-    <dependency>
-      <groupId>hultiglib</groupId>
-      <artifactId>hultiglib</artifactId>
-      <version>1.1</version>
-    </dependency>
   </dependencies>
 </project>
