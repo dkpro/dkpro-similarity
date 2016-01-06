@@ -22,6 +22,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.wikipedia.api.CategoryGraph;
@@ -45,7 +46,7 @@ public class MeasuresTest {
     private static Wikipedia wiki;
     private static CategoryGraph catGraph;
 
-    @BeforeClass
+//    @BeforeClass
     public static void setupWikipedia() throws WikiApiException {
         DatabaseConfiguration db = new DatabaseConfiguration();
         db.setDatabase("wikiapi_test");
@@ -63,7 +64,7 @@ public class MeasuresTest {
 
     }
 
-    @AfterClass
+//    @AfterClass
     public static void cleanUp() throws WikiApiException {
         catGraph.deleteRootPathMap();
     }
@@ -71,6 +72,7 @@ public class MeasuresTest {
     // jc(c1,c2) = IC(c1) + IC(c2) - 2* IC( lcs(c1,c2) )
     // distance measure! 0.0 is best value.
     @Test
+    @Ignore
     public void testJiangConrathMeasure() throws Exception {
         JiangConrathBestComparator jcbc = new JiangConrathBestComparator(wiki, catGraph);
 
@@ -122,6 +124,7 @@ public class MeasuresTest {
     // minPL is measured in edges, i.e. the distance of a node to itself is 1!
     // (A distance of 0, would cause logarithm error (or a division by zero)).
     @Test
+    @Ignore
     public void testLeacockChodorowMeasure() throws Exception {
         LeacockChodorowBestComparator lcbc = new LeacockChodorowBestComparator(wiki, catGraph);
         lcbc.setUseCache(false);
@@ -165,6 +168,7 @@ public class MeasuresTest {
 
     // lin(c1,c2) = 2 * ic ( lcs(c1,c2) ) / IC(c1) + IC(c2)
     @Test
+    @Ignore
     public void testLinMeasure() throws Exception {
         LinBestComparator lbc = new LinBestComparator(wiki, catGraph);
         lbc.setUseCache(false);
@@ -208,6 +212,7 @@ public class MeasuresTest {
     }
 
     @Test
+    @Ignore
     public void testPathLengthMeasure() throws Exception {
         PathLengthBestComparator plbc = new PathLengthBestComparator(wiki, catGraph);
         plbc.setUseCache(false);
@@ -247,6 +252,7 @@ public class MeasuresTest {
 
     // res(c1,c2) = IC ( lcs(c1,c2) )
     @Test
+    @Ignore
     public void testResnikMeasure() throws Exception {
         ResnikBestComparator rbc = new ResnikBestComparator(wiki, catGraph);
         rbc.setUseCache(false);
@@ -279,6 +285,7 @@ public class MeasuresTest {
 
     // wp(c1,c2) = 2 * depth(lcs(c1,c2) / ( pl(c1,lcs(c1,c2)) + pl(c2,lcs(c1,c2)) + 2 * depth(lcs(c1,c2)) )
     @Test
+    @Ignore
     public void testWuPalmerMeasure() throws Exception {
         WuPalmerBestComparator wpbc = new WuPalmerBestComparator(wiki, catGraph);
         wpbc.setUseCache(false);

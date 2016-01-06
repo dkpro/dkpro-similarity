@@ -31,6 +31,7 @@ public class WikiLinkPerformanceTest {
     private static final int CYCLES = 5;
 
     @Test
+    @Ignore
     public void test()
         throws Exception
     {

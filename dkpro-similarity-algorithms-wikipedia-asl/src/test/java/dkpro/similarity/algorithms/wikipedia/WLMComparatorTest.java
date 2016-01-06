@@ -21,6 +21,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.wikipedia.api.DatabaseConfiguration;
@@ -36,7 +37,7 @@ public class WLMComparatorTest {
 
     private Wikipedia wiki;
 
-    @Before
+//    @Before
 	public void setupWikipedia()
 		throws WikiApiException
 	{
@@ -55,6 +56,7 @@ public class WLMComparatorTest {
 
 
     @Test
+    @Ignore
 	public void testWlvmWithCache()
 		throws Exception
 	{
@@ -63,6 +65,7 @@ public class WLMComparatorTest {
     }
 
     @Test
+    @Ignore
 	public void testWlvmWithoutCache()
 		throws Exception
 	{
