@@ -29,6 +29,7 @@
   <packaging>pom</packaging>
   <name>DKPro Similarity</name>
   <url>https://dkpro.github.io/dkpro-similarity/</url>
+  <inceptionYear>2007</inceptionYear>
   <description>DKPro Similarity is an open source framework for text similarity. Our goal is to provide a comprehensive repository of text similarity measures which are implemented using standardized interfaces. The framework is designed to complement DKPro Core, a collection of software components for natural language processing based on the Apache UIMA framework. </description>
   <distributionManagement>
     <repository>
