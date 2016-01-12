@@ -27,11 +27,6 @@
     <artifactId>dkpro-similarity-algorithms-lexical-asl</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.google.collections</groupId>
-            <artifactId>google-collections</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
             <groupId>org.dkpro.similarity</groupId>
             <artifactId>dkpro-similarity-algorithms-api-asl</artifactId>
         </dependency>
@@ -53,9 +48,35 @@
             <artifactId>de.tudarmstadt.ukp.dkpro.core.api.frequency-asl
   		</artifactId>
         </dependency>
+                <dependency>
+    <groupId>commons-lang</groupId>
+    <artifactId>commons-lang</artifactId>
+</dependency>
+    <dependency>
+    	<groupId>commons-io</groupId>
+    	<artifactId>commons-io</artifactId>
+    </dependency>
+<dependency>
+    <groupId>com.googlecode.matrix-toolkits-java</groupId>
+    <artifactId>mtj</artifactId>
+    <version>1.0.4</version>
+</dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-            <artifactId>de.tudarmstadt.ukp.dkpro.core.frequency-asl</artifactId>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+        	<groupId>org.dkpro.similarity</groupId>
+        	<artifactId>dkpro-similarity-uima-core-asl</artifactId>
+        </dependency>
+        <dependency>
+        	<groupId>org.apache.uima</groupId>
+        	<artifactId>uimaj-core</artifactId>
+        </dependency>
+        <dependency>
+        	<groupId>org.apache.uima</groupId>
+        	<artifactId>uimafit-core</artifactId>
         </dependency>
     </dependencies>
 </project>

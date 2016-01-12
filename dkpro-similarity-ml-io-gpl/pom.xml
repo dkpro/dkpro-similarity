@@ -34,8 +34,20 @@
       <artifactId>de.tudarmstadt.ukp.dkpro.core.api.metadata-asl</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-uima-io-asl</artifactId>
+    	<groupId>org.dkpro.similarity</groupId>
+    	<artifactId>dkpro-similarity-uima-api-asl</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.uima</groupId>
+    	<artifactId>uimaj-core</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.uima</groupId>
+    	<artifactId>uimafit-core</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.dkpro.similarity</groupId>
+    	<artifactId>dkpro-similarity-uima-io-asl</artifactId>
     </dependency>
   </dependencies>
 </project>

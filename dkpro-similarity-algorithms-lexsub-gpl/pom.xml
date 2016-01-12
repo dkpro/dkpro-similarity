@@ -34,6 +34,10 @@
       <artifactId>dkpro-similarity-algorithms-api-asl</artifactId>
     </dependency>
     <dependency>
+    	<groupId>commons-lang</groupId>
+    	<artifactId>commons-lang</artifactId>
+    </dependency>
+    <dependency>
       <groupId>de.tudarmstadt.langtech.substituter.twsi</groupId>
       <artifactId>de.tudarmstadt.langtech.substituter.twsi</artifactId>
       <version>1.0.2</version>
@@ -65,6 +69,20 @@
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-uima-core-asl</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+    	<artifactId>
+    		de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl
+    	</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.uima</groupId>
+    	<artifactId>uimaj-core</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.uima</groupId>
+    	<artifactId>uimafit-core</artifactId>
     </dependency>
   </dependencies>
   <dependencyManagement>

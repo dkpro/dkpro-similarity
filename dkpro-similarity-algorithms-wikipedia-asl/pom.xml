@@ -44,5 +44,28 @@
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-uima-core-asl</artifactId>
     </dependency>
+    <dependency>
+    	<groupId>org.jgrapht</groupId>
+    	<artifactId>jgrapht-jdk1.5</artifactId>
+    	<version>0.7.3</version>
+    </dependency>
+    <dependency>
+    	<groupId>commons-logging</groupId>
+    	<artifactId>commons-logging</artifactId>
+    	<version>1.1.1</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.uima</groupId>
+    	<artifactId>uimaj-core</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.uima</groupId>
+    	<artifactId>uimafit-core</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>junit</groupId>
+    	<artifactId>junit</artifactId>
+    	<scope>test</scope>
+    </dependency>
   </dependencies>
 </project>

@@ -34,6 +34,11 @@
       <artifactId>dkpro-similarity-algorithms-vsm-asl</artifactId>
     </dependency>
     <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-uima-core-asl</artifactId>
     </dependency>
@@ -57,9 +62,37 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>gov.nist.math</groupId>
-      <artifactId>jama</artifactId>
-      <version>1.0.3</version>
+    	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+    	<artifactId>
+    		de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl
+    	</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>commons-io</groupId>
+    	<artifactId>commons-io</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.dkpro.similarity</groupId>
+    	<artifactId>dkpro-similarity-algorithms-api-asl</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+    	<artifactId>
+    		de.tudarmstadt.ukp.dkpro.core.api.featurepath-asl
+    	</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.uima</groupId>
+    	<artifactId>uimaj-core</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>com.googlecode.matrix-toolkits-java</groupId>
+    	<artifactId>mtj</artifactId>
+    	<version>1.0.4</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.uima</groupId>
+    	<artifactId>uimafit-core</artifactId>
     </dependency>
   </dependencies>
 </project>

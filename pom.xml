@@ -31,36 +31,9 @@
   <url>https://dkpro.github.io/dkpro-similarity/</url>
   <inceptionYear>2012</inceptionYear>
   <description>DKPro Similarity is an open source framework for text similarity. Our goal is to provide a comprehensive repository of text similarity measures which are implemented using standardized interfaces. The framework is designed to complement DKPro Core, a collection of software components for natural language processing based on the Apache UIMA framework. </description>
-  <distributionManagement>
-    <repository>
-      <id>ukp-oss</id>
-      <url>dav:https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-releases-local</url>
-    </repository>
-    <snapshotRepository>
-      <id>ukp-oss</id>
-      <url>dav:https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-snapshots-local</url>
-    </snapshotRepository>
-  </distributionManagement>
-  <repositories>
-    <repository>
-      <id>java.net-m2</id>
-      <name>java.net - Maven 2</name>
-      <url>https://repository.jboss.org/nexus/content/repositories/java.net-m2</url>
-    </repository>
-  </repositories>
   <properties>
     <dkpro.core.version>1.7.0</dkpro.core.version>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.uima</groupId>
-      <artifactId>uimafit-core</artifactId>
-    </dependency>
-  </dependencies>
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -91,16 +64,6 @@
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-math</artifactId>
         <version>2.2</version>
-      </dependency>
-      <dependency>
-        <groupId>dom4j</groupId>
-        <artifactId>dom4j</artifactId>
-        <version>1.6.1</version>
-      </dependency>
-      <dependency>
-        <groupId>jaxen</groupId>
-        <artifactId>jaxen</artifactId>
-        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>nz.ac.waikato.cms.weka</groupId>

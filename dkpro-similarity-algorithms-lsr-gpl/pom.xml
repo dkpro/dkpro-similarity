@@ -63,6 +63,11 @@
       <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>
     </dependency>
       <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
         <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
         <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl</artifactId>
       </dependency>

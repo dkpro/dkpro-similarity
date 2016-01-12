@@ -25,4 +25,10 @@
     <relativePath>../dkpro-similarity-asl</relativePath>
   </parent>
   <artifactId>dkpro-similarity-uima-api-asl</artifactId>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.uima</groupId>
+  		<artifactId>uimaj-core</artifactId>
+  	</dependency>
+  </dependencies>
 </project>

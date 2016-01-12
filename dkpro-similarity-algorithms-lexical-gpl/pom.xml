@@ -37,5 +37,9 @@
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-algorithms-api-asl</artifactId>
     </dependency>
+    <dependency>
+    	<groupId>commons-lang</groupId>
+    	<artifactId>commons-lang</artifactId>
+    </dependency>
   </dependencies>
 </project>

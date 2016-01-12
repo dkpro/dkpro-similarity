@@ -39,19 +39,6 @@
       <artifactId>de.tudarmstadt.ukp.dkpro.core.api.resources-asl</artifactId>
     </dependency>
     <dependency>
-      <groupId>dom4j</groupId>
-      <artifactId>dom4j</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>jaxen</groupId>
-      <artifactId>jaxen</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>xml-resolver</groupId>
-      <artifactId>xml-resolver</artifactId>
-      <version>1.2</version>
-    </dependency>
-    <dependency>
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-uima-data-asl</artifactId>
       <scope>test</scope>
@@ -60,6 +47,45 @@
       <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
       <artifactId>de.tudarmstadt.ukp.dkpro.core.io.xmi-asl</artifactId>
       <scope>test</scope>
+    </dependency>
+        <dependency>
+    	<groupId>commons-io</groupId>
+    	<artifactId>commons-io</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>commons-lang</groupId>
+    	<artifactId>commons-lang</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.uima</groupId>
+    	<artifactId>uimaj-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>jaxen</groupId>
+      <artifactId>jaxen</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>xerces</groupId>
+    	<artifactId>xmlParserAPIs</artifactId>
+    	<version>2.6.2</version>
+    </dependency>
+    <dependency>
+    	<groupId>xml-apis</groupId>
+    	<artifactId>xml-apis</artifactId>
+    	<version>1.0.b2</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.uima</groupId>
+    	<artifactId>uimafit-core</artifactId>
     </dependency>
   </dependencies>
 </project>
