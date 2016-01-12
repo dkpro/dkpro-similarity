@@ -66,6 +66,7 @@
     	<artifactId>
     		de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl
     	</artifactId>
+    	<scope>test</scope>
     </dependency>
     <dependency>
     	<groupId>commons-io</groupId>
