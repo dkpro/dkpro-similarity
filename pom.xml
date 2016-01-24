@@ -15,7 +15,7 @@
 	</parent>
 	<groupId>org.dkpro.similarity</groupId>
 	<artifactId>dkpro-similarity</artifactId>
-	<version>2.2.0</version>
+	<version>2.3.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>DKPro Similarity</name>
 	<url>https://dkpro.github.io/dkpro-similarity/</url>
@@ -165,7 +165,7 @@
 		<url>https://github.com/dkpro/dkpro-similarity</url>
 		<connection>scm:git:https://github.com/dkpro/dkpro-similarity</connection>
 		<developerConnection>scm:git:https://github.com/dkpro/dkpro-similarity</developerConnection>
-	  <tag>dkpro-similarity-2.2.0</tag>
+	  <tag>HEAD</tag>
   </scm>
 	<issueManagement>
 		<system>GitHub</system>
