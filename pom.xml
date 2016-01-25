@@ -164,7 +164,7 @@
 	</modules>
 	<scm>
 		<url>https://github.com/dkpro/dkpro-similarity</url>
-		<connection>scm:git:git://github.com/dkpro/dkpro-similarity</connection>
+		<connection>scm:git:git://github.com/dkpro/dkpro-similarity.git</connection>
 		<developerConnection>scm:git:git@github.com/dkpro/dkpro-similarity.git</developerConnection>
 	</scm>
 	<issueManagement>
