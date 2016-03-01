@@ -8,6 +8,12 @@
 #
 # Possible status: "stable", "unstable"
 
+- version 2.2.0
+  date: 2016-01-26
+  status: stable
+  groupId: org.dkpro.similarity
+  artifactId: dkpro-similarity
+
 - version: 2.1.0
   date: 2013-10-08
   status: stable
