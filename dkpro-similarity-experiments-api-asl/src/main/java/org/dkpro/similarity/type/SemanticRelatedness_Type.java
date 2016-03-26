@@ -42,7 +42,7 @@ public class SemanticRelatedness_Type extends Annotation_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("dkpro.similarity.type.SemanticRelatedness");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.dkpro.similarity.type.SemanticRelatedness");
  
   /** @generated */
   final Feature casFeat_MeasureType;
@@ -51,13 +51,13 @@ public class SemanticRelatedness_Type extends Annotation_Type {
   /** @generated */ 
   public String getMeasureType(int addr) {
         if (featOkTst && casFeat_MeasureType == null)
-      jcas.throwFeatMissing("MeasureType", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("MeasureType", "org.dkpro.similarity.type.SemanticRelatedness");
     return ll_cas.ll_getStringValue(addr, casFeatCode_MeasureType);
   }
   /** @generated */    
   public void setMeasureType(int addr, String v) {
         if (featOkTst && casFeat_MeasureType == null)
-      jcas.throwFeatMissing("MeasureType", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("MeasureType", "org.dkpro.similarity.type.SemanticRelatedness");
     ll_cas.ll_setStringValue(addr, casFeatCode_MeasureType, v);}
     
   
@@ -69,13 +69,13 @@ public class SemanticRelatedness_Type extends Annotation_Type {
   /** @generated */ 
   public double getRelatednessValue(int addr) {
         if (featOkTst && casFeat_RelatednessValue == null)
-      jcas.throwFeatMissing("RelatednessValue", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("RelatednessValue", "org.dkpro.similarity.type.SemanticRelatedness");
     return ll_cas.ll_getDoubleValue(addr, casFeatCode_RelatednessValue);
   }
   /** @generated */    
   public void setRelatednessValue(int addr, double v) {
         if (featOkTst && casFeat_RelatednessValue == null)
-      jcas.throwFeatMissing("RelatednessValue", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("RelatednessValue", "org.dkpro.similarity.type.SemanticRelatedness");
     ll_cas.ll_setDoubleValue(addr, casFeatCode_RelatednessValue, v);}
     
   
@@ -87,13 +87,13 @@ public class SemanticRelatedness_Type extends Annotation_Type {
   /** @generated */ 
   public String getMeasureName(int addr) {
         if (featOkTst && casFeat_MeasureName == null)
-      jcas.throwFeatMissing("MeasureName", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("MeasureName", "org.dkpro.similarity.type.SemanticRelatedness");
     return ll_cas.ll_getStringValue(addr, casFeatCode_MeasureName);
   }
   /** @generated */    
   public void setMeasureName(int addr, String v) {
         if (featOkTst && casFeat_MeasureName == null)
-      jcas.throwFeatMissing("MeasureName", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("MeasureName", "org.dkpro.similarity.type.SemanticRelatedness");
     ll_cas.ll_setStringValue(addr, casFeatCode_MeasureName, v);}
     
   
@@ -105,13 +105,13 @@ public class SemanticRelatedness_Type extends Annotation_Type {
   /** @generated */ 
   public int getWordPair(int addr) {
         if (featOkTst && casFeat_WordPair == null)
-      jcas.throwFeatMissing("WordPair", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("WordPair", "org.dkpro.similarity.type.SemanticRelatedness");
     return ll_cas.ll_getRefValue(addr, casFeatCode_WordPair);
   }
   /** @generated */    
   public void setWordPair(int addr, int v) {
         if (featOkTst && casFeat_WordPair == null)
-      jcas.throwFeatMissing("WordPair", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("WordPair", "org.dkpro.similarity.type.SemanticRelatedness");
     ll_cas.ll_setRefValue(addr, casFeatCode_WordPair, v);}
     
   
@@ -123,13 +123,13 @@ public class SemanticRelatedness_Type extends Annotation_Type {
   /** @generated */ 
   public String getTerm1(int addr) {
         if (featOkTst && casFeat_Term1 == null)
-      jcas.throwFeatMissing("Term1", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("Term1", "org.dkpro.similarity.type.SemanticRelatedness");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Term1);
   }
   /** @generated */    
   public void setTerm1(int addr, String v) {
         if (featOkTst && casFeat_Term1 == null)
-      jcas.throwFeatMissing("Term1", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("Term1", "org.dkpro.similarity.type.SemanticRelatedness");
     ll_cas.ll_setStringValue(addr, casFeatCode_Term1, v);}
     
   
@@ -141,13 +141,13 @@ public class SemanticRelatedness_Type extends Annotation_Type {
   /** @generated */ 
   public String getTerm2(int addr) {
         if (featOkTst && casFeat_Term2 == null)
-      jcas.throwFeatMissing("Term2", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("Term2", "org.dkpro.similarity.type.SemanticRelatedness");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Term2);
   }
   /** @generated */    
   public void setTerm2(int addr, String v) {
         if (featOkTst && casFeat_Term2 == null)
-      jcas.throwFeatMissing("Term2", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("Term2", "org.dkpro.similarity.type.SemanticRelatedness");
     ll_cas.ll_setStringValue(addr, casFeatCode_Term2, v);}
     
   
@@ -159,13 +159,13 @@ public class SemanticRelatedness_Type extends Annotation_Type {
   /** @generated */ 
   public int getAnnotationPair(int addr) {
         if (featOkTst && casFeat_AnnotationPair == null)
-      jcas.throwFeatMissing("AnnotationPair", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("AnnotationPair", "org.dkpro.similarity.type.SemanticRelatedness");
     return ll_cas.ll_getRefValue(addr, casFeatCode_AnnotationPair);
   }
   /** @generated */    
   public void setAnnotationPair(int addr, int v) {
         if (featOkTst && casFeat_AnnotationPair == null)
-      jcas.throwFeatMissing("AnnotationPair", "dkpro.similarity.type.SemanticRelatedness");
+      jcas.throwFeatMissing("AnnotationPair", "org.dkpro.similarity.type.SemanticRelatedness");
     ll_cas.ll_setRefValue(addr, casFeatCode_AnnotationPair, v);}
     
   
@@ -191,7 +191,7 @@ public class SemanticRelatedness_Type extends Annotation_Type {
     casFeatCode_MeasureName  = (null == casFeat_MeasureName) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_MeasureName).getCode();
 
  
-    casFeat_WordPair = jcas.getRequiredFeatureDE(casType, "WordPair", "dkpro.similarity.type.WordPair", featOkTst);
+    casFeat_WordPair = jcas.getRequiredFeatureDE(casType, "WordPair", "org.dkpro.similarity.type.WordPair", featOkTst);
     casFeatCode_WordPair  = (null == casFeat_WordPair) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_WordPair).getCode();
 
  
@@ -203,7 +203,7 @@ public class SemanticRelatedness_Type extends Annotation_Type {
     casFeatCode_Term2  = (null == casFeat_Term2) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Term2).getCode();
 
  
-    casFeat_AnnotationPair = jcas.getRequiredFeatureDE(casType, "AnnotationPair", "dkpro.similarity.type.AnnotationPair", featOkTst);
+    casFeat_AnnotationPair = jcas.getRequiredFeatureDE(casType, "AnnotationPair", "org.dkpro.similarity.type.AnnotationPair", featOkTst);
     casFeatCode_AnnotationPair  = (null == casFeat_AnnotationPair) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_AnnotationPair).getCode();
 
   }

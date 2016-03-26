@@ -41,7 +41,7 @@ public class SemRelWordPair_Type extends WordPair_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("dkpro.similarity.type.SemRelWordPair");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.dkpro.similarity.type.SemRelWordPair");
  
   /** @generated */
   final Feature casFeat_GoldValue;
@@ -50,13 +50,13 @@ public class SemRelWordPair_Type extends WordPair_Type {
   /** @generated */ 
   public double getGoldValue(int addr) {
         if (featOkTst && casFeat_GoldValue == null)
-      jcas.throwFeatMissing("GoldValue", "dkpro.similarity.type.SemRelWordPair");
+      jcas.throwFeatMissing("GoldValue", "org.dkpro.similarity.type.SemRelWordPair");
     return ll_cas.ll_getDoubleValue(addr, casFeatCode_GoldValue);
   }
   /** @generated */    
   public void setGoldValue(int addr, double v) {
         if (featOkTst && casFeat_GoldValue == null)
-      jcas.throwFeatMissing("GoldValue", "dkpro.similarity.type.SemRelWordPair");
+      jcas.throwFeatMissing("GoldValue", "org.dkpro.similarity.type.SemRelWordPair");
     ll_cas.ll_setDoubleValue(addr, casFeatCode_GoldValue, v);}
     
   

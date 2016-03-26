@@ -69,14 +69,14 @@ public class AnnotationPair extends Annotation {
    * @generated */
   public Annotation getAnnotation1() {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_Annotation1 == null)
-      jcasType.jcas.throwFeatMissing("Annotation1", "dkpro.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("Annotation1", "org.dkpro.similarity.type.AnnotationPair");
     return (Annotation)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_Annotation1)));}
     
   /** setter for Annotation1 - sets  
    * @generated */
   public void setAnnotation1(Annotation v) {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_Annotation1 == null)
-      jcasType.jcas.throwFeatMissing("Annotation1", "dkpro.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("Annotation1", "org.dkpro.similarity.type.AnnotationPair");
     jcasType.ll_cas.ll_setRefValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_Annotation1, jcasType.ll_cas.ll_getFSRef(v));}    
    
     
@@ -87,14 +87,14 @@ public class AnnotationPair extends Annotation {
    * @generated */
   public Annotation getAnnotation2() {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_Annotation2 == null)
-      jcasType.jcas.throwFeatMissing("Annotation2", "dkpro.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("Annotation2", "org.dkpro.similarity.type.AnnotationPair");
     return (Annotation)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_Annotation2)));}
     
   /** setter for Annotation2 - sets  
    * @generated */
   public void setAnnotation2(Annotation v) {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_Annotation2 == null)
-      jcasType.jcas.throwFeatMissing("Annotation2", "dkpro.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("Annotation2", "org.dkpro.similarity.type.AnnotationPair");
     jcasType.ll_cas.ll_setRefValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_Annotation2, jcasType.ll_cas.ll_getFSRef(v));}    
    
     
@@ -105,14 +105,14 @@ public class AnnotationPair extends Annotation {
    * @generated */
   public String getStringRepresentation1() {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_StringRepresentation1 == null)
-      jcasType.jcas.throwFeatMissing("StringRepresentation1", "dkpro.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("StringRepresentation1", "org.dkpro.similarity.type.AnnotationPair");
     return jcasType.ll_cas.ll_getStringValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_StringRepresentation1);}
     
   /** setter for StringRepresentation1 - sets  
    * @generated */
   public void setStringRepresentation1(String v) {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_StringRepresentation1 == null)
-      jcasType.jcas.throwFeatMissing("StringRepresentation1", "dkpro.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("StringRepresentation1", "org.dkpro.similarity.type.AnnotationPair");
     jcasType.ll_cas.ll_setStringValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_StringRepresentation1, v);}    
    
     
@@ -123,14 +123,14 @@ public class AnnotationPair extends Annotation {
    * @generated */
   public String getStringRepresentation2() {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_StringRepresentation2 == null)
-      jcasType.jcas.throwFeatMissing("StringRepresentation2", "dkpro.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("StringRepresentation2", "org.dkpro.similarity.type.AnnotationPair");
     return jcasType.ll_cas.ll_getStringValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_StringRepresentation2);}
     
   /** setter for StringRepresentation2 - sets  
    * @generated */
   public void setStringRepresentation2(String v) {
     if (AnnotationPair_Type.featOkTst && ((AnnotationPair_Type)jcasType).casFeat_StringRepresentation2 == null)
-      jcasType.jcas.throwFeatMissing("StringRepresentation2", "dkpro.similarity.type.AnnotationPair");
+      jcasType.jcas.throwFeatMissing("StringRepresentation2", "org.dkpro.similarity.type.AnnotationPair");
     jcasType.ll_cas.ll_setStringValue(addr, ((AnnotationPair_Type)jcasType).casFeatCode_StringRepresentation2, v);}    
   }
 

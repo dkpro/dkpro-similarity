@@ -68,14 +68,14 @@ public class WeightedAnnotationPair extends AnnotationPair {
    * @generated */
   public double getWeight() {
     if (WeightedAnnotationPair_Type.featOkTst && ((WeightedAnnotationPair_Type)jcasType).casFeat_weight == null)
-      jcasType.jcas.throwFeatMissing("weight", "dkpro.similarity.type.WeightedAnnotationPair");
+      jcasType.jcas.throwFeatMissing("weight", "org.dkpro.similarity.type.WeightedAnnotationPair");
     return jcasType.ll_cas.ll_getDoubleValue(addr, ((WeightedAnnotationPair_Type)jcasType).casFeatCode_weight);}
     
   /** setter for weight - sets  
    * @generated */
   public void setWeight(double v) {
     if (WeightedAnnotationPair_Type.featOkTst && ((WeightedAnnotationPair_Type)jcasType).casFeat_weight == null)
-      jcasType.jcas.throwFeatMissing("weight", "dkpro.similarity.type.WeightedAnnotationPair");
+      jcasType.jcas.throwFeatMissing("weight", "org.dkpro.similarity.type.WeightedAnnotationPair");
     jcasType.ll_cas.ll_setDoubleValue(addr, ((WeightedAnnotationPair_Type)jcasType).casFeatCode_weight, v);}    
   }
 

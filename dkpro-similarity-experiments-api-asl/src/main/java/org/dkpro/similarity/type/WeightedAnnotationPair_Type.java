@@ -41,7 +41,7 @@ public class WeightedAnnotationPair_Type extends AnnotationPair_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("dkpro.similarity.type.WeightedAnnotationPair");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.dkpro.similarity.type.WeightedAnnotationPair");
  
   /** @generated */
   final Feature casFeat_weight;
@@ -50,13 +50,13 @@ public class WeightedAnnotationPair_Type extends AnnotationPair_Type {
   /** @generated */ 
   public double getWeight(int addr) {
         if (featOkTst && casFeat_weight == null)
-      jcas.throwFeatMissing("weight", "dkpro.similarity.type.WeightedAnnotationPair");
+      jcas.throwFeatMissing("weight", "org.dkpro.similarity.type.WeightedAnnotationPair");
     return ll_cas.ll_getDoubleValue(addr, casFeatCode_weight);
   }
   /** @generated */    
   public void setWeight(int addr, double v) {
         if (featOkTst && casFeat_weight == null)
-      jcas.throwFeatMissing("weight", "dkpro.similarity.type.WeightedAnnotationPair");
+      jcas.throwFeatMissing("weight", "org.dkpro.similarity.type.WeightedAnnotationPair");
     ll_cas.ll_setDoubleValue(addr, casFeatCode_weight, v);}
     
   
