@@ -10,7 +10,7 @@
   </imports>
   <types>
     <typeDescription>
-      <name>dkpro.similarity.type.WordPair</name>
+      <name>org.dkpro.similarity.type.WordPair</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>

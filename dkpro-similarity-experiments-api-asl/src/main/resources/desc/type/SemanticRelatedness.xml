@@ -10,7 +10,7 @@
 </imports>
 <types>
 <typeDescription>
-<name>dkpro.similarity.type.SemanticRelatedness</name>
+<name>org.dkpro.similarity.type.SemanticRelatedness</name>
 <description></description>
 <supertypeName>uima.tcas.Annotation</supertypeName>
 <features>
@@ -32,7 +32,7 @@
 <featureDescription>
 <name>WordPair</name>
 <description></description>
-<rangeTypeName>dkpro.similarity.type.WordPair</rangeTypeName>
+<rangeTypeName>org.dkpro.similarity.type.WordPair</rangeTypeName>
 </featureDescription>
 <featureDescription>
 <name>Term1</name>
@@ -47,7 +47,7 @@
 <featureDescription>
 <name>AnnotationPair</name>
 <description/>
-<rangeTypeName>dkpro.similarity.type.AnnotationPair</rangeTypeName>
+<rangeTypeName>org.dkpro.similarity.type.AnnotationPair</rangeTypeName>
 </featureDescription>
 </features>
 </typeDescription>

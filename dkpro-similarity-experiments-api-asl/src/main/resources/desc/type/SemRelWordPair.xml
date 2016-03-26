@@ -9,9 +9,9 @@
   </imports>
   <types>
     <typeDescription>
-      <name>dkpro.similarity.type.SemRelWordPair</name>
+      <name>org.dkpro.similarity.type.SemRelWordPair</name>
       <description/>
-      <supertypeName>dkpro.similarity.type.WordPair</supertypeName>
+      <supertypeName>org.dkpro.similarity.type.WordPair</supertypeName>
       <features>
         <featureDescription>
           <name>GoldValue</name>

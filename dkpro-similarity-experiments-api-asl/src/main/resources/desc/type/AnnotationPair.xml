@@ -6,7 +6,7 @@
   <vendor/>
   <types>
     <typeDescription>
-      <name>dkpro.similarity.type.AnnotationPair</name>
+      <name>org.dkpro.similarity.type.AnnotationPair</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>
@@ -33,9 +33,9 @@
       </features>
     </typeDescription>
     <typeDescription>
-      <name>dkpro.similarity.type.WeightedAnnotationPair</name>
+      <name>org.dkpro.similarity.type.WeightedAnnotationPair</name>
       <description/>
-      <supertypeName>dkpro.similarity.type.AnnotationPair</supertypeName>
+      <supertypeName>org.dkpro.similarity.type.AnnotationPair</supertypeName>
       <features>
         <featureDescription>
           <name>weight</name>

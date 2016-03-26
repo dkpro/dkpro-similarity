@@ -110,8 +110,8 @@
             <exclude>LICENSE.txt</exclude>
             <exclude>src/main/resources/**/*</exclude>
             <exclude>src/test/resources/**/*</exclude>
-            <exclude>src/main/java/dkpro/similarity/algorithms/sspace/util/DocumentVectorBuilder.java</exclude>
-            <exclude>src/main/java/dkpro/similarity/algorithms/sspace/util/LatentSemanticAnalysis.java</exclude>
+            <exclude>src/main/java/org/dkpro/similarity/algorithms/sspace/util/DocumentVectorBuilder.java</exclude>
+            <exclude>src/main/java/org/dkpro/similarity/algorithms/sspace/util/LatentSemanticAnalysis.java</exclude>
             <exclude>.license-header.txt</exclude>
           </excludes>
         </configuration>
