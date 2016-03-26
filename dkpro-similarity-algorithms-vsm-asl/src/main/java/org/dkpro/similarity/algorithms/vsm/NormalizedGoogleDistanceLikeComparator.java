@@ -27,7 +27,7 @@ import org.dkpro.similarity.algorithms.vsm.store.VectorReader;
 
 
 /**
- * Computes a distance value similar to the Normalized Google Distance (Cilibrasi & Vitanyi, 2004).
+ * Computes a distance value similar to the Normalized Google Distance (Cilibrasi &amp; Vitanyi, 2004).
 
  * @author zesch
  *

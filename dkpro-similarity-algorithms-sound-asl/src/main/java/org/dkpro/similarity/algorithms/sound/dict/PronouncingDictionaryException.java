@@ -18,7 +18,7 @@
 package org.dkpro.similarity.algorithms.sound.dict;
 
 /**
- * @author Tristan Miller <miller@ukp.informatik.tu-darmstadt.de>
+ * @author Tristan Miller
  *
  */
 public class PronouncingDictionaryException

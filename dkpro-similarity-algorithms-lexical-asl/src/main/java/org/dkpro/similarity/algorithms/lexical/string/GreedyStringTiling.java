@@ -59,11 +59,11 @@ public class GreedyStringTiling
 	    return getSimilarity(StringUtils.join(stringList1, " "), StringUtils.join(stringList2, " "));
 	}
 	
-	/**
-	 * Considers both parameters to be full texts, not individual terms.
-	 * @parameter string1 The first string is considered to be the suspicious
-	 * document.
-	 */
+    /**
+     * Considers both parameters to be full texts, not individual terms.
+     * 
+     * @param string1 The first string is considered to be the suspicious document.
+     */
 	@Override
 	public double getSimilarity(String string1, String string2)
 		throws SimilarityException
@@ -84,8 +84,9 @@ public class GreedyStringTiling
 			{
 				for (int j = s2.getFirstUnmarkedIndex(); j < s2.length(); j++)
 				{
-					if (i == -1 || j == -1)
-						break;
+					if (i == -1 || j == -1) {
+                        break;
+                    }
 					
 					int k = 0;
 					while ((i + k) < s1.length() && (j + k) < s2.length() &&
@@ -113,8 +114,9 @@ public class GreedyStringTiling
 				for (int i = 0; i < maxmatch; i++)
 				{
 					if (s1.isMarked(t.getIndex1() + i) ||
-						s2.isMarked(t.getIndex2() + i))
-						occluded = true;
+						s2.isMarked(t.getIndex2() + i)) {
+                        occluded = true;
+                    }
 						
 				}
 				
@@ -169,8 +171,9 @@ public class GreedyStringTiling
 			this.string = string;
 			this.marker = new boolean[string.length()];
 			
-			for (int i = 0; i < marker.length; i++)
-				marker[i] = false;
+			for (int i = 0; i < marker.length; i++) {
+                marker[i] = false;
+            }
 		}
 		
 		public void mark(int index)
@@ -202,8 +205,9 @@ public class GreedyStringTiling
 		{
 			for (int i = 0; i < marker.length; i++)
 			{
-				if (marker[i] == false)
-					return i;
+				if (marker[i] == false) {
+                    return i;
+                }
 			}
 			return -1;
 		}
@@ -228,8 +232,9 @@ public class GreedyStringTiling
 			int count = 0;
 			for (int i = 0; i < marker.length; i++)
 			{
-				if (marker[i] == true)
-					count++;
+				if (marker[i] == true) {
+                    count++;
+                }
 			}
 			return count;
 		}
@@ -249,14 +254,17 @@ public class GreedyStringTiling
 					boolean startOfTile = false;
 					for (Integer startIndex : startIndexes)
 					{
-						if (startIndex.equals(i))
-							startOfTile = true;
+						if (startIndex.equals(i)) {
+                            startOfTile = true;
+                        }
 					}
 					
-					if (startOfTile)
-						sb.append("][" + characterAtIndex(i));
-					else
-						sb.append(characterAtIndex(i));
+					if (startOfTile) {
+                        sb.append("][" + characterAtIndex(i));
+                    }
+                    else {
+                        sb.append(characterAtIndex(i));
+                    }
 				} else if (isMarked(i) && !markOpen)
 				{
 					sb.append("[" + characterAtIndex(i));
@@ -290,10 +298,12 @@ public class GreedyStringTiling
 		public void addTile(int index1, int index2, int length)
 		{
 			List<Tile> tilesOfGivenLength;
-			if (tiles.containsKey(length))
-				tilesOfGivenLength = tiles.get(length);
-			else
-				tilesOfGivenLength = new ArrayList<Tile>();
+			if (tiles.containsKey(length)) {
+                tilesOfGivenLength = tiles.get(length);
+            }
+            else {
+                tilesOfGivenLength = new ArrayList<Tile>();
+            }
 			
 			tilesOfGivenLength.add(new Tile(index1, index2, length));
 			
@@ -312,8 +322,9 @@ public class GreedyStringTiling
 		
 		public List<Tile> getTiles(int length)
 		{
-			if (!tiles.containsKey(length))
-				return new ArrayList<Tile>();
+			if (!tiles.containsKey(length)) {
+                return new ArrayList<Tile>();
+            }
 			
 			return tiles.get(length);
 		}
@@ -328,20 +339,23 @@ public class GreedyStringTiling
 			return string2;
 		}
 		
-		public String toString()
+		@Override
+        public String toString()
 		{
 			StringBuilder sb = new StringBuilder();
 			
 			for (Tile t : getTiles())
 			{
 				sb.append(t.getIndex1() + " [");
-				for (int i = 0; i < t.length; i++)
-					sb.append(string1.characterAtIndex(t.getIndex1() + i));
+				for (int i = 0; i < t.length; i++) {
+                    sb.append(string1.characterAtIndex(t.getIndex1() + i));
+                }
 				sb.append("] ** ");
 				
 				sb.append(t.getIndex2() + " [");
-				for (int i = 0; i < t.length; i++)
-					sb.append(string2.characterAtIndex(t.getIndex2() + i));
+				for (int i = 0; i < t.length; i++) {
+                    sb.append(string2.characterAtIndex(t.getIndex2() + i));
+                }
 				sb.append("]");
 				
 				sb.append("\n");

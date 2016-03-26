@@ -60,7 +60,7 @@ import edu.ucla.sspace.vector.Vector;
  * <ul>
  *
  *   <li style="font-family:Garamond, Georgia, serif"> Landauer, T. K., Foltz,
- *     P. W., & Laham, D. (1998).  Introduction to Latent Semantic
+ *     P. W., &amp; Laham, D. (1998).  Introduction to Latent Semantic
  *     Analysis. <i>Discourse Processes</i>, <b>25</b>, 259-284.  Available <a
  *     href="http://lsa.colorado.edu/papers/dp1.LSAintro.pdf">here</a> </li>
  *
@@ -276,14 +276,9 @@ public class LatentSemanticAnalysis implements SemanticSpace, Serializable {
     }
 
     /**
-     * Parses the document.
-     *
-     * <p>
-     *
-     * This method is thread-safe and may be called in parallel with separate
-     * documents to speed up overall processing time.
-     *
-     * @param document {@inheritDoc}
+     * <p>Parses the document.</p>
+     * <p>This method is thread-safe and may be called in parallel with separate
+     * documents to speed up overall processing time.</p>
      */
     public void processDocument(Collection<String> documentTokens) {
         // Create a mapping for each term that is seen in the document to the

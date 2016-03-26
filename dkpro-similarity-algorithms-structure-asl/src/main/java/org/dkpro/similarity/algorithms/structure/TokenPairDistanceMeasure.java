@@ -23,7 +23,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
@@ -31,7 +30,7 @@ import org.dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 /**
  * This measure corresponds to the Composite Feature "Distance" as described in:
  * 
- * ﻿Hatzivassiloglou, V., Klavans, J., & Eskin, E. (1999)
+ * ﻿Hatzivassiloglou, V., Klavans, J., &amp; Eskin, E. (1999)
  * Detecting text similarity over short passages: Exploring linguistic feature
  * combinations via machine learning. Proceedings of the Joint SIGDAT Conference
  * on Empirical Methods in Natural Language Processing and Very Large Corpora. 

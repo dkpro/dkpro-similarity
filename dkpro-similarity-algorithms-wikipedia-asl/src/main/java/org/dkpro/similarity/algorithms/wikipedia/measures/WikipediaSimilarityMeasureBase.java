@@ -350,7 +350,7 @@ public abstract class WikipediaSimilarityMeasureBase
     }
 
     /**
-     * Relatedness values < 0 are invalid by definition.
+     * Relatedness values &lt; 0 are invalid by definition.
      * @param valueList A list containing the values.
      * @return Returns the minimum of the values in the given list, or NO_SENSE if the value list is empty.
      */

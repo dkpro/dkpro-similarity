@@ -54,7 +54,7 @@ public class SSpaceVectorReader
 	 * Create a vector source for an existing semantic space. To build such a space, you best
 	 * use the LsiIndexWriter from DKPro IR.
 	 *
-	 * @parameter dimensions An existing semantic space (usually an *.sspace file)
+	 * @param aSSpace An existing semantic space (usually an *.sspace file)
 	 */
 	public SSpaceVectorReader(SemanticSpace aSSpace)
 	{
@@ -67,8 +67,8 @@ public class SSpaceVectorReader
 	 * If you want to have full control over the tokenization, normalization, stop word removal
 	 * and such, you should build the semantic space yourself and then use the other constructor.
 	 *
-	 * @parameter directory Path to the document collection
-	 * @see {@link #createSemanticSpace}
+	 * @param aDirectory Path to the document collection
+	 * @see #createSemanticSpace
 	 */
 	public SSpaceVectorReader(File aDirectory)
 		throws IOException

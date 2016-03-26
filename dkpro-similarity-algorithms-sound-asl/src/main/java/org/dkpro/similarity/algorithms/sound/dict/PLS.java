@@ -36,7 +36,7 @@ import org.dom4j.io.SAXReader;
  * href="http://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon
  * Specification</a>.  Note that &lt;alias&gt; elements are not yet supported.
  *
- * @author Tristan Miller <miller@ukp.informatik.tu-darmstadt.de>
+ * @author Tristan Miller
  *
  */
 public class PLS

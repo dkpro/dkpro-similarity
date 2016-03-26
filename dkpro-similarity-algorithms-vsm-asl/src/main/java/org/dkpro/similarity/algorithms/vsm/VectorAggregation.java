@@ -17,13 +17,16 @@
  *******************************************************************************/
 package org.dkpro.similarity.algorithms.vsm;
 
+import org.dkpro.similarity.algorithms.vsm.VectorAggregationStrategy.CentroidVectorAggregation;
+import org.dkpro.similarity.algorithms.vsm.VectorAggregationStrategy.SumVectorAggregation;
+
 
 public enum VectorAggregation
 {
 	/**
 	 * Aggregates multiple vectors into one by simple addition.
 	 *
-	 * @see {@code SumVectorAggregation}
+	 * @see SumVectorAggregation
 	 */
 	SUM,
 
@@ -31,7 +34,7 @@ public enum VectorAggregation
 	 * Aggregates multiple vectors into one by addition and then dividing each element by the number
 	 * of aggregated vectors.
 	 *
-	 * @see {@code CentroidVectorAggregation}
+	 * @see CentroidVectorAggregation
 	 */
 	CENTROID;
 

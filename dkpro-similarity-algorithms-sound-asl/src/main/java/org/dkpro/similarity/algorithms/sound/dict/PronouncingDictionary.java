@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * An interface for pronouncing dictionaries.
  *
- * @author Tristan Miller <miller@ukp.informatik.tu-darmstadt.de>
+ * @author Tristan Miller
  *
  */
 public interface PronouncingDictionary

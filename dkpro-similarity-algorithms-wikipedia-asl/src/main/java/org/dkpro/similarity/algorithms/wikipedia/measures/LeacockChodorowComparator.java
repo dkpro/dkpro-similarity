@@ -70,7 +70,6 @@ public abstract class LeacockChodorowComparator
      *
      * @param page1 The first page.
      * @param page2 The second page.
-     * @param strategy The combination strategy.
      * return A list with the leacock-chodorow relatedness values between all categories of the given pages.
      */
     @Override

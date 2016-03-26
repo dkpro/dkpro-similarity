@@ -34,7 +34,7 @@ import org.apache.commons.collections.map.MultiValueMap;
  * href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict">CMU Pronouncing
  * Dictionary</a>.
  *
- * @author Tristan Miller <miller@ukp.informatik.tu-darmstadt.de>
+ * @author Tristan Miller
  *
  */
 public class CMUdict

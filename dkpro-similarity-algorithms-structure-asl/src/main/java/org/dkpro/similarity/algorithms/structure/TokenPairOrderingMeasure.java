@@ -21,7 +21,7 @@ package org.dkpro.similarity.algorithms.structure;
 /**
  * This measure corresponds to the Composite Feature "Ordering" as described in:
  * 
- * ﻿Hatzivassiloglou, V., Klavans, J., & Eskin, E. (1999)
+ * ﻿Hatzivassiloglou, V., Klavans, J., &amp; Eskin, E. (1999)
  * Detecting text similarity over short passages: Exploring linguistic feature
  * combinations via machine learning. Proceedings of the Joint SIGDAT Conference
  * on Empirical Methods in Natural Language Processing and Very Large Corpora. 

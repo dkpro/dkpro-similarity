@@ -18,8 +18,6 @@
 package org.dkpro.similarity.algorithms.vsm;
 
 import java.util.Collection;
-import java.util.Comparator;
-
 import no.uib.cipr.matrix.Vector;
 
 import org.apache.commons.logging.Log;
@@ -67,26 +65,81 @@ import org.dkpro.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBas
  * [<a href="http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2011/cicling2011gstzig.pdf">Szarvas et. al, 2011</a>].
  * The following table shows these combinations:
  *
- * <pre>
- *                      |              |   inner    |
- *                      |    weights   |  product   | norm |   pruning  |
- * ---------------------+--------------+------------+------+------------+
- * Szarvas et al., 2011 | log-TF       | avg. prod. |  L2  | --         |
- * H&M (reimpl)         | norm-TF      | Lesk       |  L1  | --         |
- * H&M, 2009            | norm-TF      | Lesk       |  ??  | ??         |
- * G&M (reimpl)         | log-TF * IDF | dot prod.  |  L2  | --         |
- * G&M, 2007            | log-TF * IDF | dot prod.  |  L2  | sliding w. |
- * Zesch et al., 2008   | log-TF * IDF | dot prod.  |  L2  | --         |
+ * <table>
+ * <caption>Combinations</caption>
+ * <tr>
+ * <th></th>
+ * <th>weights</th>
+ * <th>inner product</th>
+ * <th>norm</th>
+ * <th>pruning</th>
+ * </tr>
+ * <tr>
+ * <td>Szarvas et al., 2011</td>
+ * <td>log-TF</td>
+ * <td>avg. prod.</td>
+ * <td>L2</td>
+ * <td>--</td>
+ * </tr>
+ * <tr>
+ * <td>H&amp;M (reimpl)</td>
+ * <td>norm-TF</td>
+ * <td>Lesk</td>
+ * <td>L1</td>
+ * <td>--</td>
+ * </tr>
+ * <tr>
+ * <td>H&amp;M, 2009</td>
+ * <td>norm-TF</td>
+ * <td>Lesk</td>
+ * <td>??</td>
+ * <td>??</td>
+ * </tr>
+ * <tr>
+ * <td>G&amp;M, (reimpl)</td>
+ * <td>log-TF * IDF</td>
+ * <td>dot prod.</td>
+ * <td>L2</td>
+ * <td>--</td>
+ * </tr>
+ * <tr>
+ * <td>G&amp;M, 2007</td>
+ * <td>log-TF * IDF</td>
+ * <td>dot prod.</td>
+ * <td>L2</td>
+ * <td>sliding w.</td>
+ * </tr>
+ * <tr>
+ * <td>Zesch et al., 2008</td>
+ * <td>log-TF * IDF</td>
+ * <td>dot prod.</td>
+ * <td>L2</td>
+ * <td>--</td>
+ * </tr>
+ * </table>
  *
- *                      | weidhtingModeTf | weightingModeIdf |
- * ---------------------+-----------------+------------------+
- * log-TF * IDF         | logPlusOne      | normal           |
- * norm-TF              | normalized      | constantOne      |
- * </pre>
+ * <table>
+ * <caption>Combinations</caption>
+ * <tr>
+ * <th></th>
+ * <th>weidhtingModeTf</th>
+ * <th>weightingModeIdf</th>
+ * </tr>
+ * <tr>
+ * <td>log-TF * IDF</td>
+ * <td>logPlusOne</td>
+ * <td>normal</td>
+ * </tr>
+ * <tr>
+ * <td>norm-TF</td>
+ * <td>normalized</td>
+ * <td>constantOne</td>
+ * </tr>
+ * </table>
  *
  * <ul>
- *   <li>[<a href="http://www.jair.org/media/2669/live-2669-4346-jair.pdf">G&M, 2007</a>]: Wikipedia-based semantic interpretation for natural language processing</li>
- *   <li>[<a href="www.aclweb.org/anthology/D/D09/D09-1124.pdf">H&M, 2009</a>]: Cross-lingual Semantic Relatedness Using Encyclopedic Knowledge</li>
+ *   <li>[<a href="http://www.jair.org/media/2669/live-2669-4346-jair.pdf">G&amp;M, 2007</a>]: Wikipedia-based semantic interpretation for natural language processing</li>
+ *   <li>[<a href="www.aclweb.org/anthology/D/D09/D09-1124.pdf">H&amp;M, 2009</a>]: Cross-lingual Semantic Relatedness Using Encyclopedic Knowledge</li>
  *   <li>[<a href="http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2011/cicling2011gstzig.pdf">Szarvas et al., 2011</a>]: Combining heterogeneous knowledge resources for improved distributional semantic models</li>
  *   <li>[<a href="http://www.ukp.tu-darmstadt.de/fileadmin/user_upload/Group_UKP/publikationen/2008/Zesch.pdf">Zesch et al., 2008</a>]: Using Wiktionary for Computing Semantic Relatedness</li>
  * </ul>

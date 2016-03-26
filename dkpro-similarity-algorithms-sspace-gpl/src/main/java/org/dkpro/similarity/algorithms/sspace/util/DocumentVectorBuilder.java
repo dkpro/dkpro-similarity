@@ -33,20 +33,17 @@ import edu.ucla.sspace.vector.Vector;
 
 
 /**
- * {@code DocumentVectorBuilder} generates {@code Vector} representations of a
+ * <p>{@code DocumentVectorBuilder} generates {@code Vector} representations of a
  * document, based on semantic {@code Vector}s provided for a {@code
  * SemanticSpace}.  This can be consider as a projecting the document into the
- * semantic space.
+ * semantic space.</p>
  *
- * </p>
- *
- * Documents will be tokenized using the current tokenizing
+ * <p>Documents will be tokenized using the current tokenizing
  * method, and the vector in the {@code SemanticSpace} corresponding to each
- * word found in the document will be combined together.
+ * word found in the document will be combined together.</p>
  *
- * </p>
- * Options for combining term {@code Vector}s include summation, average, and
- * term frequency weighting.
+ * <p>Options for combining term {@code Vector}s include summation, average, and
+ * term frequency weighting.</p>
  *
  * @author Keith Stevens
  */
@@ -93,8 +90,6 @@ public class DocumentVectorBuilder {
     /**
      * Represent a document as the summation of term Vectors.
      *
-     * @param document A {@code BufferedReader} for a document to project into a
-     *                 {@code SemanticSpace}.
      * @param documentVector A {@code Vector} which has been pre-allocated to
      *                       store the document's representation.  This is
      *                       pre-allocated so that users of {@code
