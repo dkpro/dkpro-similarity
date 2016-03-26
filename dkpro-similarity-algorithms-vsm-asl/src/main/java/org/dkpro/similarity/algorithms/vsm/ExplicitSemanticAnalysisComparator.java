@@ -24,7 +24,7 @@ import org.dkpro.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBas
 
 
 /**
- * Convenience comparator that uses the more flexible {@link VectorComparator}<br/>
+ * Convenience comparator that uses the more flexible {@link VectorComparator}<br>
  * in order to reimplement ESA as closely as possible.
  * 
  * <pre>

@@ -74,7 +74,7 @@ public class WikiLinkComparator extends WikipediaSimilarityMeasureBase {
      *
      * <p>
      * The details of this measure (and an evaluation) is described in the paper:
-     * <br/>
+     * <br>
      * Milne, D and Witten, I.H. (2008) An effective, low-cost measure of semantic relatedness obtained from Wikipedia links. In Proceedings of WIKIAI'08.
      * </p>
      *
