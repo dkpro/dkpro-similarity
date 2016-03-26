@@ -94,7 +94,7 @@
     <module>../dkpro-similarity-algorithms-api-asl</module>
     <module>../dkpro-similarity-algorithms-core-asl</module>
     <module>../dkpro-similarity-algorithms-lexical-asl</module>
-
+    <module>../dkpro-similarity-algorithms-lsr-asl</module>
     <module>../dkpro-similarity-algorithms-sound-asl</module>
     <module>../dkpro-similarity-algorithms-structure-asl</module>
     <module>../dkpro-similarity-algorithms-style-asl</module>

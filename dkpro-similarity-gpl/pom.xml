@@ -78,7 +78,7 @@
   <modules>
     <module>../dkpro-similarity-algorithms-lexical-gpl</module>
     <module>../dkpro-similarity-algorithms-lexsub-gpl</module>
-
+    <module>../dkpro-similarity-algorithms-lsr-gpl</module>
     <module>../dkpro-similarity-algorithms-ml-gpl</module>
     <module>../dkpro-similarity-algorithms-sspace-gpl</module>
     <module>../dkpro-similarity-example-gpl</module>

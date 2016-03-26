@@ -104,6 +104,7 @@
   <modules>
     <module>dkpro-similarity-asl</module>
     <module>dkpro-similarity-gpl</module>
+    <module>dkpro-similarity-experiments</module>
   </modules>
   <scm>
     <url>https://github.com/dkpro/dkpro-similarity</url>
