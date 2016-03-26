@@ -1,6 +1,6 @@
 <!--
 
-    Copyright 2012-2016    
+    Copyright 2012-2016
     Ubiquitous Knowledge Processing (UKP) Lab
     Technische Universität Darmstadt
 
@@ -18,7 +18,8 @@
     along with this program.  If not, see http://www.gnu.org/licenses/.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.dkpro.similarity</groupId>
@@ -33,20 +34,20 @@
       <artifactId>de.tudarmstadt.ukp.dkpro.core.api.metadata-asl</artifactId>
     </dependency>
     <dependency>
-    	<groupId>org.dkpro.similarity</groupId>
-    	<artifactId>dkpro-similarity-uima-api-asl</artifactId>
+      <groupId>org.dkpro.similarity</groupId>
+      <artifactId>dkpro-similarity-uima-api-asl</artifactId>
     </dependency>
     <dependency>
-    	<groupId>org.apache.uima</groupId>
-    	<artifactId>uimaj-core</artifactId>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimaj-core</artifactId>
     </dependency>
     <dependency>
-    	<groupId>org.apache.uima</groupId>
-    	<artifactId>uimafit-core</artifactId>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimafit-core</artifactId>
     </dependency>
     <dependency>
-    	<groupId>org.dkpro.similarity</groupId>
-    	<artifactId>dkpro-similarity-uima-io-asl</artifactId>
+      <groupId>org.dkpro.similarity</groupId>
+      <artifactId>dkpro-similarity-uima-io-asl</artifactId>
     </dependency>
   </dependencies>
 </project>

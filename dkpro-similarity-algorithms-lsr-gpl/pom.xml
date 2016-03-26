@@ -1,6 +1,6 @@
 <!--
 
-    Copyright 2012-2016    
+    Copyright 2012-2016
     Ubiquitous Knowledge Processing (UKP) Lab
     Technische Universität Darmstadt
 
@@ -62,21 +62,21 @@
       <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
       <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>
     </dependency>
-      <dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
-        <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-        <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl</artifactId>
-      </dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl</artifactId>
+    </dependency>
   </dependencies>
   <properties>
-  	<lsr.version>0.8.1</lsr.version>
+    <lsr.version>0.8.1</lsr.version>
   </properties>
   <dependencyManagement>
-  	<dependencies>
+    <dependencies>
       <dependency>
         <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
         <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource-asl</artifactId>
@@ -89,6 +89,6 @@
         <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl</artifactId>
         <version>${lsr.version}</version>
       </dependency>
-  	</dependencies>
+    </dependencies>
   </dependencyManagement>
 </project>
