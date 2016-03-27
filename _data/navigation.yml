@@ -31,9 +31,9 @@
   url: "http://github.com/dkpro/dkpro-similarity"
   side: left
 
-#- title: "Contact"
-#  url: "/mailinglists/"
-#  side: left
+- title: "Contact"
+  url: "/mailinglists/"
+  side: left
 #  dropdown:
 #  - title: "Mailing lists"
 #    url: "/mailinglists/"
