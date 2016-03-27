@@ -50,20 +50,19 @@ DKPro Similarity is currently jointly maintained by [Language Technology Lab](ht
 In this example, we want to compute similarity between two given texts which are already lemmatized. We assume that lemmatization has already been done e.g. with a DKPro pipeline. 
 As a similarity measure, we choose a popular word n-gram model by Lyon et al. (2004). Moreover, make sure that both the _*.algorithms.api-asl_ and the _*.algorithms.lexical-asl_ dependency modules have been added to your pom.xml, as described in the [Getting Started Guide](/dkpro-similarity/gettingstarted).
 
-{% highlight java %}
+```java
 // this similarity measure is defined in the dkpro.similarity.algorithms.lexical-asl package
 // you need to add that to your .pom to make that example work
 // there are some examples that should work out of the box in dkpro.similarity.example-gpl 
 TextSimilarityMeasure measure = new WordNGramJaccardMeasure(3);    // Use word trigrams
 
-String[] tokens1 = "This is a short example text.".split(" ");   
-String[] tokens2 = "A short example text could look like that.".split(" ");
+String[] tokens1 = "This is a short example text .".split(" ");   
+String[] tokens2 = "A short example text could look like that .".split(" ");
 
-// only works from 2.1.0-SHAPSHOT onwards, for previous versions you need to convert to Collection<String> first
 double score = measure.getSimilarity(tokens1, tokens2);
 
 System.out.println("Similarity: " + score);
-{% endhighlight %}
+``
 
 ## Interfaces & Algorithms
 
