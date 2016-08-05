@@ -21,6 +21,9 @@ The following datasets are included in the experiment
 * Finkelstein et al. (WS353)
     * the full finkelstein dataset, as well as the two parts that were annotated by different groups of annotators
     ﻿* Finkelstein, L., Gabrilovich, E., Matias, Y., Rivlin, E., Solan, Z., & Wolfman, G. (2002). Placing Search in Context: The Concept Revisited. ACM Transactions on Information Systems, 20(1), 116-131.
+* Gerz et al. (SimVerb-3500)
+    * verb similarity
+    * SimVerb-3500: A Large-Scale Evaluation Set of Verb Similarity (2016). Daniela Gerz, Ivan Vulić, Felix Hill, Roi Reichart and Anna Korhonen. EMNLP 2016.
 * Hill et al. 2014 (Sim999)
     * SimLex-999: Evaluating Semantic Models with (Genuine) Similarity Estimation. 2014. Felix Hill, Roi Reichart and Anna Korhonen. Preprint pubslished on arXiv. arXiv:1408.3456
     * semantic similarity
