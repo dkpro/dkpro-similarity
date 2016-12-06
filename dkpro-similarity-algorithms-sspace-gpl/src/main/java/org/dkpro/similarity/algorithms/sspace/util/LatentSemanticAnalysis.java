@@ -122,17 +122,6 @@ import edu.ucla.sspace.vector.Vector;
  *      implements {@link Transform}.  The class should be public, not abstract,
  *      and should provide a public no-arg constructor.<p>
  *
- * <dt> <i>Property:</i> <code><b>{@value LSA_DIMENSIONS_PROPERTY}
- *      </b></code> <br>
- *      <i>Default:</i> {@code 300}
- *
- * <dd style="padding-top: .5em">The number of dimensions to use for the
- *       semantic space.  This value is used as input to the SVD.<p>
- *
- * <dt> <i>Property:</i> <code><b>{@value LSA_SVD_ALGORITHM_PROPERTY}
- *      </b></code> <br>
- *      <i>Default:</i> {@link edu.ucla.sspace.matrix.SVD.Algorithm#ANY}
- *
  * <dd style="padding-top: .5em">This property sets the specific SVD algorithm
  *       that LSA will use to reduce the dimensionality of the word-document
  *       matrix.  In general, users should not need to set this property, as the
