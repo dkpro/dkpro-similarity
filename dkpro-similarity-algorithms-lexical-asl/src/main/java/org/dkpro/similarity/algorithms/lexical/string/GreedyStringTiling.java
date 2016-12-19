@@ -71,9 +71,6 @@ public class GreedyStringTiling
 		MarkedString s1 = new MarkedString(string1);
 		MarkedString s2 = new MarkedString(string2);
 		
-		if (s1.length() == 0) {
-      			return 0;
-    		}
 		TileCollection finalTiles = new TileCollection(s1, s2);
 		
 		int maxmatch = Integer.MAX_VALUE;
