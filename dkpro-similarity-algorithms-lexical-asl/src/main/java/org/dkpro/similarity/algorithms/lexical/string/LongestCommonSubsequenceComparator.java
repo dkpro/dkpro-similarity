@@ -45,6 +45,9 @@ public class LongestCommonSubsequenceComparator
 	public double getSimilarity(String string1, String string2)
 		throws SimilarityException
 	{
+		if (string1.trim().isEmpty()) {
+      			return 0;
+    		}
 		String lcs = getLCS(string1, string2);
 		
 		// Normalize
