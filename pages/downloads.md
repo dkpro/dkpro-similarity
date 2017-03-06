@@ -8,7 +8,7 @@ permalink: "/downloads/"
 
 ## Maven
 
-{{ site.title }} is availble via the Maven infrastructure.
+{{ site.title }} is available via the Maven infrastructure.
 
 {% highlight xml %}
 <properties>
@@ -30,7 +30,7 @@ permalink: "/downloads/"
 <dependencies>
   <dependency>
     <groupId>{{ stable.groupId }}</groupId>
-    <artifactId>dkpro.similarity.uima.core-asl</artifactId>
+    <artifactId>{{ stable.artifactIdLong }}</artifactId>
   </dependency>
 </dependencies>
 {% endhighlight xml %}

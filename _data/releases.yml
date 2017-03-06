@@ -12,18 +12,21 @@
   date: 2016-01-26
   status: stable
   groupId: org.dkpro.similarity
-  artifactId: dkpro-similarity
+  artifactId: dkpro-similarity-uima-core-asl
+  artifactIdLong: dkpro-similarity-uima-core-asl
 
 - version: 2.1.0
   date: 2013-10-08
   status: stable
   groupId: dkpro.similarity
   artifactId: dkpro.similarity-asl
+  artifactIdLong: dkpro.similarity.uima.core-asl
 
 - version: 0.8.0-SNAPSHOT
   date: unknown
   status: unstable
   groupId: dkpro.similarity
   artifactId: dkpro.similarity
+  artifactIdLong: dkpro.similarity.uima.core-asl
 #  user_guide_url: https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20TC%20Documentation%20(GitHub)/de.tudarmstadt.ukp.dkpro.tc%24dkpro-tc-doc/doclinks/1/
 #  developer_guide_url: https://zoidberg.ukp.informatik.tu-darmstadt.de/jenkins/job/DKPro%20TC%20Documentation%20(GitHub)/de.tudarmstadt.ukp.dkpro.tc%24dkpro-tc-doc/doclinks/2/
