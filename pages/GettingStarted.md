@@ -13,7 +13,7 @@ In order to set up your Eclipse installation properly and use this repository, w
 In Eclipse, choose to create new a Maven Project.
 On the first page of the properties dialog, tick Create a simple project (skip archetype selection).
 On the next page, choose a Group ID and an Artifact ID for your project. We suggest to use com.yourdomain.yourname as the Group ID and com.yourdomain.yourname.sandbox as the Artifact ID.
-Set the parent project to de.tudarmstadt.ukp.dkpro.core (Group ID), dkpro-parent-pom (Artifact ID), in the latest version (2 or above)
+Set the parent project to org.dkpro (Group ID), dkpro-parent-pom (Artifact ID), in the latest version (15 or above)
 Select this one, leave all other options on default and click Finish.
 In case you run into problems (i.e. dependencies are not resolvable), try adding these lines to your pom.xml:
 
@@ -38,10 +38,9 @@ In case the above step doesn't work (as the search index may not be up-to-date),
 
 {% highlight xml %}
 <dependency>
-<groupId>dkpro.similarity</groupId>
-<artifactId>dkpro.similarity.algorithms.api-asl</artifactId>
-<version>2.1.0</version>
-<scope>compile</scope>
+<groupId>org.dkpro.similarity</groupId>
+<artifactId>dkpro-similarity-algorithms-api-asl</artifactId>
+<version>2.2.0</version>
 </dependency>
 {% endhighlight xml %}
 
