@@ -1,10 +1,10 @@
 ---
 layout: page-fullwidth
-title: "SemEval2013"
+title: "SemEval2012"
 permalink: "/semeval2013/"
 ---
 
-This page is intended for all participants of the shared task of the [*SEM 2013 conference](http://ixa2.si.ehu.es/sts/). We describe one of the task's offical baseline systems, which is roughly the system ranked best in the [SemEval-2012 exercises](http://ixa2.si.ehu.es/starsem/proc/pdf/STARSEM-SEMEVAL051.pdf).
+This page is intended for all participants of the [Semantic Textual Similarity](https://www.cs.york.ac.uk/semeval-2012/task6.html) shared task of the [*SEM 2012 conference](https://www.cs.york.ac.uk/semeval-2012/index.html). We describe one of the task's offical baseline systems, which is roughly the system ranked best in the [SemEval-2012 exercises](http://ixa2.si.ehu.es/starsem/proc/pdf/STARSEM-SEMEVAL051.pdf).
 
 ## System Description
 The system described here uses a simple log-linear regression model, trained on the training data, to combine multiple text similarity measures of varying complexity. These range from simple character and word n-grams and common subsequences to complex features such as Explicit Semantic Analysis vector comparisons and aggregation of word similarity based on lexical-semantic resources. Our ﬁnal models, one per dataset, consist of a log-linear combination of about 20 features. For details, please refer to our system description paper.
