@@ -187,7 +187,7 @@ public class FeatureGeneration
 		/* TODO: If you plan to use the following measures, make sure that you have the
 		 * necessary resources installed. 
 		 * Details on obtaining and installing them can be found here:
-		 * http://code.google.com/p/dkpro-similarity-asl/wiki/SettingUpTheResources
+		 * https://dkpro.github.io/dkpro-similarity/settinguptheresources/
 		 */
 		
 //		// Resnik word similarity measure, aggregated according to Mihalcea et al. (2006)
