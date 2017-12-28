@@ -129,12 +129,6 @@
     </plugin>
   </plugins>
   </build>
-  <repositories>
-    <repository>
-      <id>ukp-oss-releases</id>
-      <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases</url>
-    </repository>
-  </repositories>
   <modules>
     <module>dkpro-similarity-asl</module>
     <module>dkpro-similarity-gpl</module>
