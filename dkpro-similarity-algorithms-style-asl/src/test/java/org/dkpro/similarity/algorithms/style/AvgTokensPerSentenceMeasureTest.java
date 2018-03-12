@@ -24,7 +24,6 @@ import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.JCasBuilder;
 import org.apache.uima.jcas.JCas;
 import org.dkpro.similarity.algorithms.api.JCasTextSimilarityMeasure;
-import org.dkpro.similarity.algorithms.style.AvgTokensPerSentenceMeasure;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
@@ -39,7 +38,7 @@ public class AvgTokensPerSentenceMeasureTest
 	{
 		JCasTextSimilarityMeasure comparator = new AvgTokensPerSentenceMeasure();
 		
-		AnalysisEngine ae = AnalysisEngineFactory.createPrimitive(BreakIteratorSegmenter.class);
+		AnalysisEngine ae = AnalysisEngineFactory.createEngine(BreakIteratorSegmenter.class);
 		
 		JCasBuilder cb = new JCasBuilder(ae.newJCas());
 		cb.add("One two three four");

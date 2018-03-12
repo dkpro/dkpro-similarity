@@ -23,7 +23,6 @@ import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.JCasBuilder;
 import org.dkpro.similarity.algorithms.api.JCasTextSimilarityMeasure;
-import org.dkpro.similarity.algorithms.style.AvgCharactersPerTokenMeasure;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
@@ -39,7 +38,7 @@ public class AvgCharactersPerTokenMeasureTest
 	{
 		JCasTextSimilarityMeasure comparator = new AvgCharactersPerTokenMeasure();
 		
-		AnalysisEngine ae = AnalysisEngineFactory.createPrimitive(BreakIteratorSegmenter.class);
+		AnalysisEngine ae = AnalysisEngineFactory.createEngine(BreakIteratorSegmenter.class);
 		
 		JCasBuilder cb = new JCasBuilder(ae.newJCas());
         cb.add("one", Token.class);
