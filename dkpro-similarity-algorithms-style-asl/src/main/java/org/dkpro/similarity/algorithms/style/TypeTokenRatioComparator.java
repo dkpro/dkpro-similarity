@@ -28,7 +28,6 @@ import org.apache.uima.jcas.tcas.Annotation;
 import org.dkpro.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 
@@ -68,14 +67,10 @@ public class TypeTokenRatioComparator
 		for (Sentence sentence : sentences)
 		{
 			List<Token> theseTokens = JCasUtil.selectCovered(jcas, Token.class, sentence);
-			List<Lemma> theseLemmas = JCasUtil.selectCovered(jcas, Lemma.class, sentence);
 			
 			for (Token token : theseTokens) {
                 tokens.add(token.getCoveredText().toLowerCase());
-            }
-			
-			for (Lemma lemma : theseLemmas) {
-                types.add(lemma.getValue().toLowerCase());
+                types.add(token.getCoveredText().toLowerCase());
             }
 		}
 		

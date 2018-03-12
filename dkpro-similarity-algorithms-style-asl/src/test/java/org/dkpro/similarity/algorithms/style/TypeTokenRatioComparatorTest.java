@@ -17,8 +17,7 @@
  *******************************************************************************/
 package org.dkpro.similarity.algorithms.style;
 
-import static org.apache.uima.fit.factory.AnalysisEngineFactory.createAggregateDescription;
-import static org.apache.uima.fit.factory.AnalysisEngineFactory.createPrimitiveDescription;
+import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.junit.Assert.assertEquals;
 
 import org.apache.uima.analysis_engine.AnalysisEngine;
@@ -26,11 +25,8 @@ import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.JCasBuilder;
 import org.apache.uima.jcas.JCas;
 import org.dkpro.similarity.algorithms.api.JCasTextSimilarityMeasure;
-import org.dkpro.similarity.algorithms.style.TypeTokenRatioComparator;
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
-import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 
 public class TypeTokenRatioComparatorTest
@@ -43,13 +39,9 @@ public class TypeTokenRatioComparatorTest
     {
         JCasTextSimilarityMeasure comparator = new TypeTokenRatioComparator();
 
-        AnalysisEngine ae = AnalysisEngineFactory.createAggregate(
-        	createAggregateDescription(
-        		createPrimitiveDescription(BreakIteratorSegmenter.class),
-        		createPrimitiveDescription(OpenNlpPosTagger.class,
-        				OpenNlpPosTagger.PARAM_LANGUAGE, "en"),
-        		createPrimitiveDescription(GateLemmatizer.class)
-        		));
+        AnalysisEngine ae = AnalysisEngineFactory.createEngine(
+        		createEngineDescription(BreakIteratorSegmenter.class)
+        );
 
         // First document
         JCasBuilder cb1 = new JCasBuilder(ae.newJCas());
