@@ -15,7 +15,8 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -25,7 +26,14 @@
     <relativePath>../dkpro-similarity-asl</relativePath>
   </parent>
   <artifactId>dkpro-similarity-algorithms-lsr-asl</artifactId>
+  <properties>
+    <lsr.version>0.8.1</lsr.version>
+  </properties>
   <dependencies>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging-api</artifactId>
+    </dependency>
     <dependency>
       <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
       <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.graph-asl</artifactId>
@@ -36,42 +44,23 @@
     </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-algorithms-wikipedia-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-algorithms-core-asl</artifactId>
     </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-algorithms-lexical-asl</artifactId>
+      <artifactId>dkpro-similarity-uima-core-asl</artifactId>
     </dependency>
     <dependency>
-      <groupId>net.sourceforge.htmlunit</groupId>
-      <artifactId>htmlunit</artifactId>
-      <version>2.10</version>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimafit-core</artifactId>
     </dependency>
     <dependency>
-      <groupId>commons-codec</groupId>
-      <artifactId>commons-codec</artifactId>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimaj-core</artifactId>
     </dependency>
     <dependency>
-      <groupId>commons-httpclient</groupId>
-      <artifactId>commons-httpclient</artifactId>
-      <version>3.1</version>
-    </dependency>
-    <dependency>
-      <groupId>cssparser</groupId>
-      <artifactId>cssparser</artifactId>
-      <version>0.9.4</version>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.core.api.frequency-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.core.frequency-asl</artifactId>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -94,9 +83,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <properties>
-    <lsr.version>0.8.1</lsr.version>
-  </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -111,7 +97,24 @@
         <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl</artifactId>
         <version>${lsr.version}</version>
       </dependency>
-
     </dependencies>
   </dependencyManagement>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <configuration>
+            <usedDependencies>
+              <!-- Used by reflection in tests and not detected by byte-code analysis -->
+              <usedDependency>de.tudarmstadt.ukp.dkpro.lexsemresource:de.tudarmstadt.ukp.dkpro.lexsemresource.wikipedia-asl</usedDependency>
+              <usedDependency>de.tudarmstadt.ukp.dkpro.lexsemresource:de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl</usedDependency>
+              <usedDependency>de.tudarmstadt.ukp.dkpro.lexsemresource:de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</usedDependency>
+            </usedDependencies>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>
