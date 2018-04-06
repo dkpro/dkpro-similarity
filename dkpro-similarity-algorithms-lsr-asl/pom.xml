@@ -36,6 +36,14 @@
     </dependency>
     <dependency>
       <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.api-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.core-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
       <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.graph-asl</artifactId>
     </dependency>
     <dependency>
