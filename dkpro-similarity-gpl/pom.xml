@@ -40,11 +40,6 @@
       </dependency>
       <dependency>
         <groupId>org.dkpro.similarity</groupId>
-        <artifactId>dkpro-similarity-algorithms-lexical-gpl</artifactId>
-        <version>2.3.0-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.dkpro.similarity</groupId>
         <artifactId>dkpro-similarity-algorithms-lexsub-gpl</artifactId>
         <version>2.3.0-SNAPSHOT</version>
       </dependency>
@@ -76,12 +71,9 @@
     </dependencies>
   </dependencyManagement>
   <modules>
-    <module>../dkpro-similarity-algorithms-lexical-gpl</module>
     <module>../dkpro-similarity-algorithms-lexsub-gpl</module>
-    <module>../dkpro-similarity-algorithms-lsr-gpl</module>
     <module>../dkpro-similarity-algorithms-ml-gpl</module>
     <module>../dkpro-similarity-algorithms-sspace-gpl</module>
-    <module>../dkpro-similarity-example-gpl</module>
     <module>../dkpro-similarity-ml-core-gpl</module>
     <module>../dkpro-similarity-ml-io-gpl</module>
     <module>../dkpro-similarity-uima-core-gpl</module>
@@ -127,4 +119,23 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <!-- Profile for modules with dependencies that are not on Maven Central -->
+      <id>deps-not-on-maven-central</id>
+      <modules>
+        <module>../dkpro-similarity-algorithms-lsr-gpl</module>
+        <module>../dkpro-similarity-example-gpl</module>
+      </modules>
+      <dependencyManagement>
+        <dependencies>
+          <dependency>
+            <groupId>org.dkpro.similarity</groupId>
+            <artifactId>dkpro-similarity-algorithms-lsr-gpl</artifactId>
+            <version>${project.version}</version>
+          </dependency>
+        </dependencies>
+      </dependencyManagement>
+    </profile>
+  </profiles>
 </project>

@@ -39,18 +39,12 @@
       <artifactId>de.tudarmstadt.ukp.dkpro.core.api.resources-asl</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-uima-data-asl</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.core.io.xmi-asl</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimafit-core</artifactId>
     </dependency>
     <dependency>
       <groupId>commons-lang</groupId>
@@ -74,8 +68,36 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.uima</groupId>
-      <artifactId>uimafit-core</artifactId>
+      <groupId>org.dkpro.similarity</groupId>
+      <artifactId>dkpro-similarity-uima-data-asl</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.core.io.xmi-asl</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <configuration>
+            <usedDependencies>
+              <!-- Resource arifacts -->
+              <usedDependency>org.dkpro.similarity:dkpro-similarity-uima-data-asl</usedDependency>
+            </usedDependencies>
+            <ignoredUsedUndeclaredDependencies>
+              <!--
+                - The XML APIs are part of the JDK - we do not want them as dependencies.
+              -->
+              <ignoredUsedUndeclaredDependency>xml-apis:xml-apis</ignoredUsedUndeclaredDependency>
+            </ignoredUsedUndeclaredDependencies>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>

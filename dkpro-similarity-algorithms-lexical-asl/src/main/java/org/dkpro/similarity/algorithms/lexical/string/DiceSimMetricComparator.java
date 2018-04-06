@@ -18,7 +18,7 @@
  */
 package org.dkpro.similarity.algorithms.lexical.string;
 
-import uk.ac.shef.wit.simmetrics.similaritymetrics.DiceSimilarity;
+import org.simmetrics.metrics.StringMetrics;
 
 /**
  * Dice similarity as implemented by the 
@@ -28,8 +28,7 @@ import uk.ac.shef.wit.simmetrics.similaritymetrics.DiceSimilarity;
 public class DiceSimMetricComparator
 	extends SimMetricsComparator_ImplBase
 {
-    
     public DiceSimMetricComparator() {
-        this.similarityMeasure = new DiceSimilarity();
+        this.similarityMeasure = StringMetrics.dice();
     }
 }

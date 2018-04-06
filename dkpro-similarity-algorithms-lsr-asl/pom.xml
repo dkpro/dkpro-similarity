@@ -31,21 +31,6 @@
       <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.graph-asl</artifactId>
     </dependency>
     <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wikipedia-asl</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-algorithms-api-asl</artifactId>
     </dependency>
@@ -93,9 +78,22 @@
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
-
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wikipedia-asl</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
-
   <properties>
     <lsr.version>0.8.1</lsr.version>
   </properties>

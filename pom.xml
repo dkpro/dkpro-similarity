@@ -15,13 +15,14 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.dkpro</groupId>
     <artifactId>dkpro-parent-pom</artifactId>
-    <version>13</version>
+    <version>19</version>
   </parent>
   <groupId>org.dkpro.similarity</groupId>
   <artifactId>dkpro-similarity</artifactId>
@@ -31,9 +32,36 @@
   <url>https://dkpro.github.io/dkpro-similarity/</url>
   <inceptionYear>2012</inceptionYear>
   <description>DKPro Similarity is an open source framework for text similarity. Our goal is to provide a comprehensive repository of text similarity measures which are implemented using standardized interfaces. The framework is designed to complement DKPro Core, a collection of software components for natural language processing based on the Apache UIMA framework. </description>
+  <organization>
+    <name>Ubiquitous Knowledge Processing (UKP) Lab, Technische Universität Darmstadt</name>
+    <url>https://www.ukp.tu-darmstadt.de/</url>
+  </organization>
+  <modules>
+    <module>dkpro-similarity-asl</module>
+    <module>dkpro-similarity-gpl</module>
+  </modules>
+  <scm>
+    <url>https://github.com/dkpro/dkpro-similarity</url>
+    <connection>scm:git:git://github.com/dkpro/dkpro-similarity.git</connection>
+    <developerConnection>scm:git:git@github.com:dkpro/dkpro-similarity.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/dkpro/dkpro-similarity/issues</url>
+  </issueManagement>
   <properties>
-    <dkpro.core.version>1.9.0</dkpro.core.version>
+    <dkpro.core.version>1.9.1</dkpro.core.version>
   </properties>
+  <repositories>
+    <repository>
+      <id>ukp-oss-model-releases</id>
+      <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-model-releases-local</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -53,17 +81,27 @@
       <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
-        <version>1.6</version>
+        <version>1.11</version>
       </dependency>
       <dependency>
         <groupId>commons-collections</groupId>
         <artifactId>commons-collections</artifactId>
-        <version>3.2.1</version>
+        <version>3.2.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-collections4</artifactId>
+        <version>4.1</version>
       </dependency>
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-math</artifactId>
         <version>2.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-math3</artifactId>
+        <version>3.6.1</version>
       </dependency>
       <dependency>
         <groupId>nz.ac.waikato.cms.weka</groupId>
@@ -85,73 +123,51 @@
         <artifactId>serializer</artifactId>
         <version>2.7.1</version>
       </dependency>
-      <dependency>
-        <groupId>uk.ac.shef.wit.simmetrics</groupId>
-        <artifactId>simmetrics</artifactId>
-        <version>1.6.2.20070207</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
   <build>
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-webdav</artifactId>
-        <version>1.0-beta-2</version>
-      </extension>
-    </extensions>
-  <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-javadoc-plugin</artifactId>
-      <configuration>
-        <notimestamp>true</notimestamp>
-        <!-- Exclude UIMA types and internal API -->
-        <excludePackageNames>*.internal.*</excludePackageNames>
-        <sourceFileExcludes>
-          <exclude>**/*_Type.java</exclude>
-        </sourceFileExcludes>
-        <tags>
-          <tag>
-            <name>generated</name>
-            <placement>X</placement>
-          </tag>
-          <tag>
-            <name>ordered</name>
-            <placement>X</placement>
-          </tag>
-          <tag>
-            <name>modifiable</name>
-            <placement>X</placement>
-          </tag>
-        </tags>
-      </configuration>
-    </plugin>
-  </plugins>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <notimestamp>true</notimestamp>
+          <!-- Exclude UIMA types and internal API -->
+          <excludePackageNames>*.internal.*</excludePackageNames>
+          <sourceFileExcludes>
+            <exclude>**/*_Type.java</exclude>
+          </sourceFileExcludes>
+          <tags>
+            <tag>
+              <name>generated</name>
+              <placement>X</placement>
+            </tag>
+            <tag>
+              <name>ordered</name>
+              <placement>X</placement>
+            </tag>
+            <tag>
+              <name>modifiable</name>
+              <placement>X</placement>
+            </tag>
+          </tags>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
-  <repositories>
-    <repository>
-      <id>ukp-oss-releases</id>
-      <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases</url>
-    </repository>
-  </repositories>
-  <modules>
-    <module>dkpro-similarity-asl</module>
-    <module>dkpro-similarity-gpl</module>
-    <module>dkpro-similarity-experiments</module>
-  </modules>
-  <scm>
-    <url>https://github.com/dkpro/dkpro-similarity</url>
-    <connection>scm:git:git://github.com/dkpro/dkpro-similarity.git</connection>
-    <developerConnection>scm:git:git@github.com:dkpro/dkpro-similarity.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
-  <issueManagement>
-    <system>GitHub</system>
-    <url>https://github.com/dkpro/dkpro-similarity/issues</url>
-  </issueManagement>
-  <organization>
-    <name>Ubiquitous Knowledge Processing (UKP) Lab, Technische Universität Darmstadt</name>
-    <url>https://www.ukp.tu-darmstadt.de/</url>
-  </organization>
+  <profiles>
+    <profile>
+      <!-- Profile for modules with dependencies that are not on Maven Central -->
+      <id>deps-not-on-maven-central</id>
+      <modules>
+        <module>dkpro-similarity-experiments</module>
+      </modules>
+      <repositories>
+        <repository>
+          <id>ukp-oss-releases</id>
+          <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
 </project>

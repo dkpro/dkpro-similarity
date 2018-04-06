@@ -22,8 +22,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.collections.MultiMap;
-import org.apache.commons.collections.map.MultiValueMap;
+import org.apache.commons.collections4.MultiMap;
+import org.apache.commons.collections4.map.MultiValueMap;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;

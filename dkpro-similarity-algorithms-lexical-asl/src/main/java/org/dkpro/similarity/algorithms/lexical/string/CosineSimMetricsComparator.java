@@ -22,9 +22,8 @@ import java.util.Collection;
 
 import org.apache.commons.lang.StringUtils;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
-
-import uk.ac.shef.wit.simmetrics.similaritymetrics.AbstractStringMetric;
-import uk.ac.shef.wit.simmetrics.similaritymetrics.CosineSimilarity;
+import org.simmetrics.StringMetric;
+import org.simmetrics.metrics.StringMetrics;
 
 /**
  * Cosine similarity as implemented by the 
@@ -33,18 +32,17 @@ import uk.ac.shef.wit.simmetrics.similaritymetrics.CosineSimilarity;
 public class CosineSimMetricsComparator
 	extends SimMetricsComparator_ImplBase
 {
+    private final StringMetric similarityMeasure;
     
     public CosineSimMetricsComparator() {
-        this.similarityMeasure = new CosineSimilarity();
+        this.similarityMeasure = StringMetrics.cosineSimilarity();
     }
-
-	private final AbstractStringMetric similarityMeasure;
 
     @Override
     public double getSimilarity(String s1, String s2)
         throws SimilarityException
     {
-        return similarityMeasure.getSimilarity(s1, s2);
+        return similarityMeasure.compare(s1, s2);
     }
 
     @Override
@@ -62,7 +60,7 @@ public class CosineSimMetricsComparator
             return 0.0;
         }
 
-        double similarity = similarityMeasure.getSimilarity(concatenatedString1, concatenatedString2);
+        double similarity = similarityMeasure.compare(concatenatedString1, concatenatedString2);
 
         return similarity;
     }

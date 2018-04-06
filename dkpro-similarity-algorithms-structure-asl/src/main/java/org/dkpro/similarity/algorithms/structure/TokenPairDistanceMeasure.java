@@ -23,7 +23,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
+import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 

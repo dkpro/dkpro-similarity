@@ -32,14 +32,11 @@
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-algorithms-lsr-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>uk.ac.shef.wit.simmetrics</groupId>
-      <artifactId>simmetrics</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-algorithms-lexical-gpl</artifactId>
+      <!-- 
+        The version is declared here so Eclipse can resolve the dependency even without
+        activating the "deps-not-on-maven-central" profile.
+      -->
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
