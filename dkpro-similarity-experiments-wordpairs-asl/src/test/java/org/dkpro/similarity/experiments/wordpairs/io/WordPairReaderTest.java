@@ -7,8 +7,6 @@ import org.apache.uima.fit.factory.CollectionReaderFactory;
 import org.apache.uima.fit.pipeline.JCasIterable;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.jcas.tcas.DocumentAnnotation;
-import org.dkpro.similarity.experiments.wordpairs.io.WordPairReader;
 import org.dkpro.similarity.type.SemRelWordPair;
 import org.junit.Test;
 
@@ -34,7 +32,7 @@ public class WordPairReaderTest
             DocumentMetaData md = DocumentMetaData.get(jcas);
             System.out.println(md.getDocumentUri());
 
-            assertEquals(1, JCasUtil.select(jcas, DocumentAnnotation.class).size());
+            assertEquals(1, JCasUtil.select(jcas, DocumentMetaData.class).size());
 
             int i = 0;
             for (SemRelWordPair pair : JCasUtil.select(jcas, SemRelWordPair.class)) {
@@ -75,7 +73,7 @@ public class WordPairReaderTest
             DocumentMetaData md = DocumentMetaData.get(jcas);
             System.out.println(md.getDocumentUri());
 
-            assertEquals(1, JCasUtil.select(jcas, DocumentAnnotation.class).size());
+            assertEquals(1, JCasUtil.select(jcas, DocumentMetaData.class).size());
 
             int i = 0;
             for (SemRelWordPair pair : JCasUtil.select(jcas, SemRelWordPair.class)) {

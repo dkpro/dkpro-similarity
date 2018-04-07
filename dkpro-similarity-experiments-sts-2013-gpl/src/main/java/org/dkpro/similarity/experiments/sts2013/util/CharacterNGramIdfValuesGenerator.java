@@ -24,7 +24,7 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.dkpro.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
 import org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset;
 import org.dkpro.similarity.experiments.sts2013.Pipeline.Mode;

@@ -16,7 +16,8 @@
   You should have received a copy of the GNU General Public License
   along with this program. If not, see http://www.gnu.org/licenses/.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -28,6 +29,14 @@
   <artifactId>dkpro-similarity-experiments-rte-gpl</artifactId>
   <dependencies>
     <dependency>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimaj-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimafit-core</artifactId>
+    </dependency>
+    <dependency>
       <groupId>nz.ac.waikato.cms.weka</groupId>
       <artifactId>weka-dev</artifactId>
     </dependency>
@@ -36,8 +45,28 @@
       <artifactId>commons-cli</artifactId>
     </dependency>
     <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-algorithms-api-asl</artifactId>
+      <artifactId>dkpro-similarity-algorithms-vsm-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.core.api.metadata-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.core.api.resources-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
     </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
@@ -77,10 +106,6 @@
     </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-uima-core-gpl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-uima-data-asl</artifactId>
     </dependency>
     <dependency>
@@ -112,6 +137,10 @@
       <artifactId>commons-io</artifactId>
     </dependency>
     <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+    <dependency>
     	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
     	<artifactId>de.tudarmstadt.ukp.dkpro.core.gate-asl</artifactId>
     </dependency>
@@ -125,20 +154,24 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <dependency>
-        <groupId>org.dkpro.similarity</groupId>
-        <artifactId>dkpro-similarity-asl</artifactId>
-        <version>2.3.0-SNAPSHOT</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.dkpro.similarity</groupId>
-        <artifactId>dkpro-similarity-gpl</artifactId>
-        <version>2.3.0-SNAPSHOT</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
     </dependencies>
   </dependencyManagement>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <configuration>
+            <usedDependencies>
+              <!-- Data artifacts are not detected by byte-code analysis -->
+              <usedDependency>org.dkpro.similarity:dkpro-similarity-uima-data-asl</usedDependency>
+              <!-- Models are not detected by byte-code analysis -->
+              <usedDependency>de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-model-tagger-en-maxent</usedDependency>
+            </usedDependencies>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>

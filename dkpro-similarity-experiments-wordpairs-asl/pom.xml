@@ -27,12 +27,36 @@
   <artifactId>dkpro-similarity-experiments-wordpairs-asl</artifactId>
   <dependencies>
     <dependency>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimaj-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimafit-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-math3</artifactId>
     </dependency>
     <dependency>
       <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
       <artifactId>de.tudarmstadt.ukp.dkpro.core.api.metadata-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.core.api.io-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
     </dependency>
     <dependency>
       <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
@@ -48,15 +72,12 @@
     </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-uima-core-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-experiments-api-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <dependencyManagement>

@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.apache.commons.lang.NotImplementedException;
+import org.apache.commons.lang3.NotImplementedException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.factory.AnalysisEngineFactory;
@@ -157,7 +157,7 @@ public class BingSMTWrapper
 			Collection<String> stringList2)
 		throws SimilarityException
 	{
-		throw new SimilarityException(new NotImplementedException());
+        throw new NotImplementedException("Similarity between collections is not supported.");
 	}
 	
 	@Override

@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.dkpro.similarity.experiments.sts2013baseline.Pipeline.Dataset;
 import org.dkpro.similarity.experiments.sts2013baseline.Pipeline.Mode;
 import org.springframework.core.io.Resource;
