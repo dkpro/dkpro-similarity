@@ -47,11 +47,6 @@
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-algorithms-lsr-asl</artifactId>
-      <!-- 
-        The version is declared here so Eclipse can resolve the dependency even without
-        activating the "deps-not-on-maven-central" profile.
-      -->
-      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
@@ -101,17 +96,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-        <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource-asl</artifactId>
-        <version>${lsr.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
   <build>
     <pluginManagement>
       <plugins>

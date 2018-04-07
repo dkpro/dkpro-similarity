@@ -25,11 +25,7 @@
     <version>2.3.0-SNAPSHOT</version>
     <relativePath>../dkpro-similarity-asl</relativePath>
   </parent>
-  <artifactId>dkpro-similarity-algorithms-lsr-asl</artifactId>
-  <properties>
-    <lsr.version>0.8.1</lsr.version>
-  </properties>
-  <dependencies>
+  <artifactId>dkpro-similarity-algorithms-lsr-asl</artifactId>  <dependencies>
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging-api</artifactId>
@@ -91,22 +87,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-        <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource-asl</artifactId>
-        <version>${lsr.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-        <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl</artifactId>
-        <version>${lsr.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
   <build>
     <pluginManagement>
       <plugins>
