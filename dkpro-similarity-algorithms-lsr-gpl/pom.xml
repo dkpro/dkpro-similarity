@@ -33,6 +33,18 @@
   </properties>
   <dependencies>
     <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimaj-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimafit-core</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-algorithms-lsr-asl</artifactId>
       <!-- 
@@ -47,11 +59,15 @@
     </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-uima-core-asl</artifactId>
+      <artifactId>dkpro-similarity-algorithms-api-asl</artifactId>
     </dependency>
     <dependency>
       <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.graph-asl</artifactId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.api-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.core-asl</artifactId>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -76,6 +92,12 @@
     <dependency>
       <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
       <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.wikipedia</groupId>
+      <artifactId>de.tudarmstadt.ukp.wikipedia.api</artifactId>
+      <version>0.9.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
