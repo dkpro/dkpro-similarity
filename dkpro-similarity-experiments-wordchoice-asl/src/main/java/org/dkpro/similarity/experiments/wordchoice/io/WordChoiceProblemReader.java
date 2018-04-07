@@ -19,7 +19,6 @@ package org.dkpro.similarity.experiments.wordchoice.io;
 
 import java.io.IOException;
 
-import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.collection.CollectionException;
@@ -86,10 +85,7 @@ public class WordChoiceProblemReader extends TextReader {
      * - followed by an integer indicating the correct answer
      * For example: "target:cand1:cand2:cand3:cand4:correct"
      *
-     * @param infile The file containing the word choice problems
-     * @param aJCas The jcas.
-     * @throws AnalysisEngineProcessException
-     * @throws CollectionException 
+     * @param jcas The jcas.
      */
     private void processDocument(JCas jcas, String document) throws CollectionException {
 
