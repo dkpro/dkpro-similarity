@@ -165,7 +165,7 @@ public abstract class PathBasedComparator
             minPathLength = entityGraph.getShortestPathLength(e1, e2, DirectionMode.undirected);
         }
 
-        if (minPathLength == Double.POSITIVE_INFINITY) {
+        if (minPathLength == Double.POSITIVE_INFINITY || minPathLength < 0.0) {
             return NO_PATH;
         }
 
