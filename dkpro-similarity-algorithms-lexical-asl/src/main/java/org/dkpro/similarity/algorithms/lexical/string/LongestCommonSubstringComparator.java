@@ -19,7 +19,7 @@ package org.dkpro.similarity.algorithms.lexical.string;
 
 import java.util.Collection;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 import org.dkpro.similarity.algorithms.lexical.string.util.gst.GeneralizedSuffixTree;

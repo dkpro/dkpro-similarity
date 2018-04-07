@@ -18,7 +18,7 @@
 package org.dkpro.similarity.algorithms.vsm.store.convert;
 
 import static org.apache.commons.io.FileUtils.deleteQuietly;
-import static org.apache.commons.lang.StringUtils.isNumericSpace;
+import static org.apache.commons.lang3.StringUtils.isNumericSpace;
 
 import java.io.File;
 import java.util.HashSet;

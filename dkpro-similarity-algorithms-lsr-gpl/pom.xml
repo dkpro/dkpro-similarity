@@ -28,38 +28,41 @@
     <relativePath>../dkpro-similarity-gpl</relativePath>
   </parent>
   <artifactId>dkpro-similarity-algorithms-lsr-gpl</artifactId>
+  <properties>
+    <lsr.version>0.8.1</lsr.version>
+  </properties>
   <dependencies>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimaj-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimafit-core</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-algorithms-lsr-asl</artifactId>
     </dependency>
     <dependency>
-      <groupId>uk.ac.shef.wit.simmetrics</groupId>
-      <artifactId>simmetrics</artifactId>
+      <groupId>org.dkpro.similarity</groupId>
+      <artifactId>dkpro-similarity-algorithms-lexical-asl</artifactId>
     </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-algorithms-lexical-gpl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-uima-core-asl</artifactId>
+      <artifactId>dkpro-similarity-algorithms-api-asl</artifactId>
     </dependency>
     <dependency>
       <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.graph-asl</artifactId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.api-asl</artifactId>
     </dependency>
     <dependency>
       <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wikipedia-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.core-asl</artifactId>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -67,27 +70,48 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.dkpro.similarity</groupId>
+      <artifactId>dkpro-similarity-algorithms-wikipedia-asl</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl</artifactId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wikipedia-asl</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.wikipedia</groupId>
+      <artifactId>de.tudarmstadt.ukp.wikipedia.api</artifactId>
+      <version>0.9.1</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
-  <properties>
-    <lsr.version>0.8.1</lsr.version>
-  </properties>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-        <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource-asl</artifactId>
-        <version>${lsr.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-        <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.germanet-gpl</artifactId>
-        <version>${lsr.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <configuration>
+            <usedDependencies>
+              <!-- Used by reflection in tests and not detected by byte-code analysis -->
+              <usedDependency>de.tudarmstadt.ukp.dkpro.lexsemresource:de.tudarmstadt.ukp.dkpro.lexsemresource.wikipedia-asl</usedDependency>
+              <usedDependency>de.tudarmstadt.ukp.dkpro.lexsemresource:de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl</usedDependency>
+              <usedDependency>de.tudarmstadt.ukp.dkpro.lexsemresource:de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</usedDependency>
+            </usedDependencies>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 </project>

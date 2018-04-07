@@ -28,12 +28,40 @@
   <artifactId>dkpro-similarity-experiments-sts-2013-gpl</artifactId>
   <dependencies>
     <dependency>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimaj-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.uima</groupId>
+      <artifactId>uimafit-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-math3</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+    </dependency>
+    <dependency>
       <groupId>nz.ac.waikato.cms.weka</groupId>
       <artifactId>weka-dev</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-algorithms-api-asl</artifactId>
+      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.core.api.resources-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+      <artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
     </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
@@ -50,15 +78,6 @@
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
       <artifactId>dkpro-similarity-algorithms-lsr-asl</artifactId>
-      <version>2.3.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-algorithms-structure-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.dkpro.similarity</groupId>
-      <artifactId>dkpro-similarity-algorithms-style-asl</artifactId>
     </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
@@ -87,7 +106,6 @@
     <dependency>
       <groupId>commons-cli</groupId>
       <artifactId>commons-cli</artifactId>
-      <version>1.2</version>
     </dependency>
     <dependency>
       <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
@@ -95,31 +113,11 @@
     </dependency>
     <dependency>
       <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+        <artifactId>de.tudarmstadt.ukp.dkpro.core.opennlp-asl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
       <artifactId>de.tudarmstadt.ukp.dkpro.core.opennlp-model-tagger-en-maxent</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wikipedia-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.core-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.api-asl</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.lexsemresource</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.graph-asl</artifactId>
     </dependency>
     <dependency>
       <groupId>org.dkpro.similarity</groupId>
@@ -155,4 +153,21 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-</project>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <configuration>
+            <usedDependencies>
+              <!-- Data artifacts are not detected by byte-code analysis -->
+              <usedDependency>org.dkpro.similarity:dkpro-similarity-uima-data-asl</usedDependency>
+              <!-- Models are not detected by byte-code analysis -->
+              <usedDependency>de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.opennlp-model-tagger-en-maxent</usedDependency>
+            </usedDependencies>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build></project>

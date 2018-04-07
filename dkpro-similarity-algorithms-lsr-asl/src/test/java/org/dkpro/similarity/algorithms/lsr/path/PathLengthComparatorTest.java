@@ -84,8 +84,8 @@ public class PathLengthComparatorTest {
 
         assertEquals(0.0, comparator.getSimilarity(entitiesTree, entitiesTree), epsilon);
         assertEquals(2.0, comparator.getSimilarity(entitiesTree, entitiesPlant), epsilon);
-        assertEquals(-2.0, comparator.getSimilarity(entitiesTree, entitiesFast), epsilon);
-
+        assertEquals(PathLengthComparator.NOT_FOUND,
+                comparator.getSimilarity(entitiesTree, entitiesFast), epsilon);
     }
 
     @Test
@@ -144,8 +144,10 @@ public class PathLengthComparatorTest {
         assertEquals(0.0, comparator.getSimilarity(entitiesAuto, entitiesAuto), epsilon);
         assertEquals(1.0, comparator.getSimilarity(entitiesAuto, entitiesFahrzeug), epsilon);
         assertEquals(3.0, comparator.getSimilarity(entitiesAuto, entitiesGarten), epsilon);
-        assertEquals(-1.0, comparator.getSimilarity(entitiesAuto, entitiesEmpty), epsilon);
-        assertEquals(-2.0, comparator.getSimilarity(entitiesAuto, entitiesUnknown), epsilon);
+        assertEquals(PathLengthComparator.NOT_FOUND,
+                comparator.getSimilarity(entitiesAuto, entitiesEmpty), epsilon);
+        assertEquals(PathLengthComparator.NOT_FOUND,
+                comparator.getSimilarity(entitiesAuto, entitiesUnknown), epsilon);
 
         // test symmetry
         assertEquals(comparator.getSimilarity(entitiesFahrzeug, entitiesAuto), comparator.getSimilarity(entitiesAuto, entitiesFahrzeug), epsilon);

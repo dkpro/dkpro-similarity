@@ -29,8 +29,8 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.math.stat.correlation.PearsonsCorrelation;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;

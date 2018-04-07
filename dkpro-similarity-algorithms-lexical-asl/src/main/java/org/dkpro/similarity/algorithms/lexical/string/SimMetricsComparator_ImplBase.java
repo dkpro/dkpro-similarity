@@ -20,31 +20,31 @@ package org.dkpro.similarity.algorithms.lexical.string;
 
 import java.util.Collection;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
+import org.dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
+import org.simmetrics.StringMetric;
 
-import uk.ac.shef.wit.simmetrics.similaritymetrics.AbstractStringMetric;
-import uk.ac.shef.wit.simmetrics.similaritymetrics.CosineSimilarity;
 
 /**
- * Cosine similarity as implemented by the 
- * {@link SimMetricsComparator_ImplBase SimMetrics} library.
+ * Abstract base class for all similarity measures that are based
+ * on the SimMetrics library (Chapman, Norton, and Ciravegna, 2005).
+ *
+ * Chapman S., Norton B., and Ciravegna F. (2005). Armadillo: Integrating
+ * Knowledge for the Semantic Web. In Proceedings of the Dagstuhl Seminar
+ * in Machine Learning for the Semantic Web, Wadern, Germany.
+ * <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.60.5185&rep=rep1&type=pdf">(pdf)</a>
  */
-public class CosineSimMetricsComparator
-	extends SimMetricsComparator_ImplBase
+public abstract class SimMetricsComparator_ImplBase
+	extends TextSimilarityMeasureBase
 {
-    
-    public CosineSimMetricsComparator() {
-        this.similarityMeasure = new CosineSimilarity();
-    }
-
-	private final AbstractStringMetric similarityMeasure;
+	protected StringMetric similarityMeasure;
 
     @Override
     public double getSimilarity(String s1, String s2)
         throws SimilarityException
     {
-        return similarityMeasure.getSimilarity(s1, s2);
+        return similarityMeasure.compare(s1, s2);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class CosineSimMetricsComparator
             return 0.0;
         }
 
-        double similarity = similarityMeasure.getSimilarity(concatenatedString1, concatenatedString2);
+        double similarity = similarityMeasure.compare(concatenatedString1, concatenatedString2);
 
         return similarity;
     }

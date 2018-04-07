@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.apache.commons.lang.NotImplementedException;
+import org.apache.commons.lang3.NotImplementedException;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
@@ -178,7 +178,7 @@ public class TWSISubstituteWrapper
 			Collection<String> stringList2)
 		throws SimilarityException
 	{
-		throw new SimilarityException(new NotImplementedException());
+        throw new NotImplementedException("Similarity between collections is not supported.");
 	}
 	
 	@Override
