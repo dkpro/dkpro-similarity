@@ -116,9 +116,11 @@ public class LinComparatorTest
         Set<Entity> entities5 = germaNet.getEntity("Macht");
         Set<Entity> entities6 = germaNet.getEntity("Reich");
 
-        assertEquals(-1.0, comparator.getSimilarity(entities1, entities2), epsilon);
+        assertEquals(LinComparator.NOT_FOUND, comparator.getSimilarity(entities1, entities2),
+                epsilon);
 
-        assertEquals(-1.0, comparator.getSimilarity(entities3, entities4), epsilon);
+        assertEquals(LinComparator.NOT_FOUND, comparator.getSimilarity(entities3, entities4),
+                epsilon);
 
         assertEquals(0.0, comparator.getSimilarity(entities5, entities6), epsilon);
     }
