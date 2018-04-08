@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.dkpro.similarity.experiments.rte.util;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.dkpro.similarity.experiments.rte.Pipeline.UTILS_DIR;
 
 import java.io.File;
@@ -61,7 +62,7 @@ public class CharacterNGramIdfValuesGenerator
 			
 			for (File file : files)
 			{			
-				Set<String> ngrams = measure.getNGrams(FileUtils.readFileToString(file));
+				Set<String> ngrams = measure.getNGrams(FileUtils.readFileToString(file, UTF_8));
 				
 				docs.add(ngrams);
 			}
@@ -98,7 +99,7 @@ public class CharacterNGramIdfValuesGenerator
 			{
 				sb.append(key + "\t" + idfValues.get(key) + LF);
 			}
-			FileUtils.writeStringToFile(outputFile, sb.toString());
+			FileUtils.writeStringToFile(outputFile, sb.toString(), UTF_8);
 			
 			System.out.println(" - done");
 		}

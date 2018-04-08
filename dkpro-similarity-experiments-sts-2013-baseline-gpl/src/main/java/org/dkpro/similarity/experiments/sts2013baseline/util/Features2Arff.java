@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.dkpro.similarity.experiments.sts2013baseline.util;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.dkpro.similarity.experiments.sts2013baseline.Pipeline.FEATURES_DIR;
 import static org.dkpro.similarity.experiments.sts2013baseline.Pipeline.GOLDSTANDARD_DIR;
 import static org.dkpro.similarity.experiments.sts2013baseline.Pipeline.MODELS_DIR;
@@ -19,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -65,7 +67,7 @@ public class Features2Arff
 		
 		String arffString = toArffString(files, goldStandardInputStream);
 		
-		FileUtils.writeStringToFile(outFile, arffString);
+		FileUtils.writeStringToFile(outFile, arffString, UTF_8);
 		
 		System.out.println(" - done");
 	}
@@ -90,7 +92,7 @@ public class Features2Arff
 			arff.append("@attribute " + feature + " numeric" + LF);
 			
 			// Read data
-			List<String> lines = FileUtils.readLines(file);
+			List<String> lines = FileUtils.readLines(file, UTF_8);
 			
 			if (lines.size() == 0) {
 			    System.err.println("Empty feature file for " + feature + ". Experiment will probably fail.");
@@ -144,7 +146,8 @@ public class Features2Arff
 		}
 		else
 		{
-			for (int i = 0; i < FileUtils.readLines(csvFiles.iterator().next()).size(); i++) {
+            for (int i = 0; i < FileUtils
+                    .readLines(csvFiles.iterator().next(), StandardCharsets.UTF_8).size(); i++) {
                 lines.add("0.0");
             }
 		}

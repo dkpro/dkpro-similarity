@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.dkpro.similarity.experiments.rte.util;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.dkpro.similarity.experiments.rte.Pipeline.UTILS_DIR;
 
@@ -73,7 +74,7 @@ public class WordIdfValuesGenerator
 			{
 				List<String> doc = new ArrayList<String>();
 				
-				Collection<Lemma> lemmas = getLemmas(FileUtils.readFileToString(file));
+				Collection<Lemma> lemmas = getLemmas(FileUtils.readFileToString(file, UTF_8));
 				
 				for (Lemma lemma : lemmas)
 				{
@@ -123,7 +124,7 @@ public class WordIdfValuesGenerator
 			{
 				sb.append(key + "\t" + idfValues.get(key) + LF);
 			}
-			FileUtils.writeStringToFile(outputFile, sb.toString());
+			FileUtils.writeStringToFile(outputFile, sb.toString(), UTF_8);
 			
 			System.out.println(" - done");
 		}

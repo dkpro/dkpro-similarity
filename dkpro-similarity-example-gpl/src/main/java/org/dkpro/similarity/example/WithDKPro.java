@@ -18,6 +18,7 @@
  */
 package org.dkpro.similarity.example;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
@@ -84,7 +85,7 @@ public class WithDKPro
 			
 			// Read the output and print to the console
 			File out = new File(OUTPUT_FILE);
-			String output = FileUtils.readFileToString(out);
+			String output = FileUtils.readFileToString(out, UTF_8);
 			System.out.println(output);
 		}
 	}

@@ -18,6 +18,8 @@
  */
 package org.dkpro.similarity.example.ml;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +74,7 @@ public class FeatureCombination
 				gs);
 		
 		// Output to file
-		FileUtils.writeStringToFile(TEMP_ARFF_FILE, arff);
+		FileUtils.writeStringToFile(TEMP_ARFF_FILE, arff, UTF_8);
 		
 		// Read with Weka
 		Instances data = DataSource.read(TEMP_ARFF_FILE.getAbsolutePath());
@@ -92,7 +94,7 @@ public class FeatureCombination
 				null);	// we pass null for the gold standard in the Test setting
 		
 		// Output to file
-		FileUtils.writeStringToFile(TEMP_ARFF_FILE, arff);
+		FileUtils.writeStringToFile(TEMP_ARFF_FILE, arff, UTF_8);
 		
 		// Read with Weka
 		Instances data = DataSource.read(TEMP_ARFF_FILE.getAbsolutePath());

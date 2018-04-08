@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.dkpro.similarity.experiments.rte.util;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.dkpro.similarity.experiments.rte.Pipeline.FEATURES_DIR;
 import static org.dkpro.similarity.experiments.rte.Pipeline.GOLD_DIR;
 import static org.dkpro.similarity.experiments.rte.Pipeline.MODELS_DIR;
@@ -50,7 +51,6 @@ public class Features2Arff
 		}
 	}
 		
-	@SuppressWarnings("unchecked")
 	private static void toArffFile(Dataset dataset, File goldStandard)
 		throws IOException
 	{
@@ -65,7 +65,7 @@ public class Features2Arff
 		
 		FileUtils.writeStringToFile(
 				new File(MODELS_DIR + "/" + dataset.toString() + ".arff"),
-				arffString);
+				arffString, UTF_8);
 		
 		System.out.println(" - done");
 	}
@@ -91,7 +91,7 @@ public class Features2Arff
 			arff.append("@attribute " + feature + " numeric" + LF);
 			
 			// Read data
-			List<String> lines = FileUtils.readLines(file);
+			List<String> lines = FileUtils.readLines(file, UTF_8);
 			for (int doc = 1; doc <= lines.size(); doc++)
 			{
 				String line = lines.get(doc - 1);
@@ -101,19 +101,26 @@ public class Features2Arff
 					String value = line;	// There's just the score on the line, nothing else.
 					
 					// Transform "NaN" to 0.0
-					if (value.equals("NaN"))
-						value = "0.0";
+					if (value.equals("NaN")) {
+                        value = "0.0";
+                    }
 					
 					// Limit to [0;5] interval
-					if (Double.parseDouble(value) > 5.0) value = "5.0";
-					if (Double.parseDouble(value) < 0.0) value = "0.0";
+					if (Double.parseDouble(value) > 5.0) {
+                        value = "5.0";
+                    }
+					if (Double.parseDouble(value) < 0.0) {
+                        value = "0.0";
+                    }
 					
 					// Get doc object in data list
 					List<String> docObj;
-					if (data.containsKey(doc))
-						docObj = data.get(doc);
-					else
-						docObj = new ArrayList<String>();
+					if (data.containsKey(doc)) {
+                        docObj = data.get(doc);
+                    }
+                    else {
+                        docObj = new ArrayList<String>();
+                    }
 					
 					// Put data
 					docObj.add(value);
@@ -124,22 +131,25 @@ public class Features2Arff
 		
 		// Add gold attribute to attribute list in header
 		// We also need to do this for unlabeled data
-		if (RteUtil.hasThreeWayClassification(dataset))
-			arff.append("@attribute gold { ENTAILMENT, UNKNOWN, CONTRADICTION } " + LF);
-		else
-			arff.append("@attribute gold { TRUE, FALSE } " + LF);
+		if (RteUtil.hasThreeWayClassification(dataset)) {
+            arff.append("@attribute gold { ENTAILMENT, UNKNOWN, CONTRADICTION } " + LF);
+        }
+        else {
+            arff.append("@attribute gold { TRUE, FALSE } " + LF);
+        }
 		
 		// Add gold similarity score 
 		List<String> lines;
 		if (goldFile != null)
 		{
-			lines = FileUtils.readLines(goldFile);
+			lines = FileUtils.readLines(goldFile, UTF_8);
 		}
 		else
 		{
 			lines = new ArrayList<String>();
-			for (int i = 0; i < FileUtils.readLines(csvFiles.iterator().next()).size(); i++)
-				lines.add("FALSE");
+			for (int i = 0; i < FileUtils.readLines(csvFiles.iterator().next(), UTF_8).size(); i++) {
+                lines.add("FALSE");
+            }
 		}
 			
 		for (int doc = 1; doc <= lines.size(); doc++)

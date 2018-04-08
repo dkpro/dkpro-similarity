@@ -18,6 +18,8 @@
  */
 package org.dkpro.similarity.example.ml;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,8 +44,9 @@ public class Features2Arff
 				listFiles(inputDir, ".txt", true),
 				new File(G_BASE_PATH + "/src/main/resources/goldstandards/semeval/train/STS.gs.ALLcombined.txt"));
 		
-		FileUtils.writeStringToFile(new File("src/main/resources/models/semeval-train-all-combined.arff"), arff);
-		
+        FileUtils.writeStringToFile(
+                new File("src/main/resources/models/semeval-train-all-combined.arff"), arff, UTF_8);
+
 		// TEST
 		
 		String BASE_PATH = "/home/danielb/Projekte/Similarity/workspace/de.tudarmstadt.ukp.similarity-asl/de.tudarmstadt.ukp.similarity.example";
@@ -53,7 +56,7 @@ public class Features2Arff
 				listFiles(inputDir, ".txt", true),
 				null);
 		
-		FileUtils.writeStringToFile(new File("src/main/resources/models/mm09.arff"), arff);
+        FileUtils.writeStringToFile(new File("src/main/resources/models/mm09.arff"), arff, UTF_8);
 	}
 	
 	private static List<File> listFiles(File folder, String suffix, boolean recursively)
@@ -66,12 +69,14 @@ public class Features2Arff
 		{
 			if (file.isDirectory())
 			{
-				if (recursively && !file.getName().startsWith("."))
-					files.addAll(listFiles(file, suffix, recursively));
+				if (recursively && !file.getName().startsWith(".")) {
+                    files.addAll(listFiles(file, suffix, recursively));
+                }
 			} else {
 				if (!file.getName().startsWith(".") && 
-					file.getName().endsWith(suffix))
-					files.add(file);
+					file.getName().endsWith(suffix)) {
+                    files.add(file);
+                }
 			}
 		}
 		

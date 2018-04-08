@@ -24,6 +24,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -104,7 +105,7 @@ public class BingTranslator
     {
         URL url = new URL(uri);
         try (BufferedReader bufferedReader = new BufferedReader(
-                new InputStreamReader(url.openStream()))) {
+                new InputStreamReader(url.openStream(), StandardCharsets.UTF_8))) {
             String text = "";
             String line = null;
             while ((line = bufferedReader.readLine()) != null) {

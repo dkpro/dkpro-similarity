@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.dkpro.similarity.experiments.rte.util;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.dkpro.similarity.experiments.rte.Pipeline.GOLD_DIR;
 import static org.dkpro.similarity.experiments.rte.Pipeline.MODELS_DIR;
 import static org.dkpro.similarity.experiments.rte.Pipeline.OUTPUT_DIR;
@@ -183,26 +184,28 @@ public class Evaluator
 	    
 	    // Output classifications
 	    StringBuilder sb = new StringBuilder();
-	    for (String score : scores)
-	    	sb.append(score.toString() + LF);
+	    for (String score : scores) {
+            sb.append(score.toString() + LF);
+        }
 	    
 	    FileUtils.writeStringToFile(
 	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + "/" + wekaClassifier.toString() + "/" + testDataset.toString() + ".csv"),
-	    	sb.toString());
+	    	sb.toString(), UTF_8);
 	    
 	    // Output probabilities
 	    sb = new StringBuilder();
-	    for (Double probability : probabilities)
-	    	sb.append(probability.toString() + LF);
+	    for (Double probability : probabilities) {
+            sb.append(probability.toString() + LF);
+        }
 	    
 	    FileUtils.writeStringToFile(
 	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + "/" + wekaClassifier.toString() + "/" + testDataset.toString() + ".probabilities.csv"),
-	    	sb.toString());
+	    	sb.toString(), UTF_8);
 	    
 	    // Output predictions
 	    FileUtils.writeStringToFile(
 	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + "/" + wekaClassifier.toString() + "/" + testDataset.toString() + ".predictions.txt"),
-	    	output.getBuffer().toString());
+	    	output.getBuffer().toString(), UTF_8);
 	    
 	    // Output meta information
 	    sb = new StringBuilder();
@@ -212,7 +215,7 @@ public class Evaluator
 	    
 	    FileUtils.writeStringToFile(
 	    	new File(OUTPUT_DIR + "/" + testDataset.toString() + "/" + wekaClassifier.toString() + "/" + testDataset.toString() + ".meta.txt"),
-	    	sb.toString());
+	    	sb.toString(), UTF_8);
 	}
 	
 	public static void runClassifierCV(WekaClassifier wekaClassifier, Dataset dataset)
@@ -279,10 +282,12 @@ public class Evaluator
 	        Filter.useFilter(train, filter);  // trains the classifier
 	        
 	        Instances pred = Filter.useFilter(test, filter);  // performs predictions on test set
-	        if (predictedData == null)
-	        	predictedData = new Instances(pred, 0);
-	        for (int j = 0; j < pred.numInstances(); j++)
-	        	predictedData.add(pred.instance(j));		        
+	        if (predictedData == null) {
+                predictedData = new Instances(pred, 0);
+            }
+	        for (int j = 0; j < pred.numInstances(); j++) {
+                predictedData.add(pred.instance(j));
+            }		        
 	    }
 	    
 	    System.out.println(eval.toSummaryString());
@@ -304,12 +309,13 @@ public class Evaluator
 	    
 	    // Output classifications
 	    StringBuilder sb = new StringBuilder();
-	    for (String score : scores)
-	    	sb.append(score.toString() + LF);
+	    for (String score : scores) {
+            sb.append(score.toString() + LF);
+        }
 	    
 	    FileUtils.writeStringToFile(
 	    	new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".csv"),
-	    	sb.toString());
+	    	sb.toString(), UTF_8);
 	    
 	    // Output prediction arff
 	    DataSink.write(
@@ -324,7 +330,7 @@ public class Evaluator
 	    
 	    FileUtils.writeStringToFile(
 	    	new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".meta.txt"),
-	    	sb.toString());
+	    	sb.toString(), UTF_8);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -338,16 +344,19 @@ public class Evaluator
 		List<File> dirs = CollectionUtils.arrayToList(dirsArray);
 		
 		// Don't list hidden dirs (such as .svn)
-		for (int i = dirs.size() - 1; i >= 0; i--)
-			if (dirs.get(i).getName().startsWith("."))
-					dirs.remove(i);
+		for (int i = dirs.size() - 1; i >= 0; i--) {
+            if (dirs.get(i).getName().startsWith(".")) {
+                dirs.remove(i);
+            }
+        }
 		
 		// Iteratively evaluate all classifiers' results
-		for (File dir : dirs)
-			runEvaluationMetric(
+		for (File dir : dirs) {
+            runEvaluationMetric(
 					WekaClassifier.valueOf(dir.getName()),
 					metric,
 					dataset);
+        }
 	}
 	
 	public static void runEvaluationMetric(WekaClassifier wekaClassifier, EvaluationMetric metric, Dataset dataset)
@@ -357,11 +366,15 @@ public class Evaluator
 			
 		if (metric == Accuracy)
 		{
-			// Read gold scores
-			List<String> goldScores = FileUtils.readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"));
-						
-			// Read the experimental scores
-			List<String> expScores = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".csv"));
+            // Read gold scores
+            List<String> goldScores = FileUtils
+                    .readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"), UTF_8);
+
+            // Read the experimental scores
+            List<String> expScores = FileUtils.readLines(
+                    new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString()
+                            + "/" + dataset.toString() + ".csv"),
+                    UTF_8);
 						
 			// Compute the accuracy
 			double acc = 0.0;
@@ -369,8 +382,9 @@ public class Evaluator
 			{
 				// The predictions have a max length of 8 characters...
 				if (goldScores.get(i).substring(0, Math.min(goldScores.get(i).length(), 8)).equals(
-						expScores.get(i).substring(0, Math.min(expScores.get(i).length(), 8))))
-					acc++;
+						expScores.get(i).substring(0, Math.min(expScores.get(i).length(), 8)))) {
+                    acc++;
+                }
 			}
 			acc = acc / goldScores.size();
 			
@@ -378,14 +392,21 @@ public class Evaluator
 		}
 		if (metric == CWS)
 		{
-			// Read gold scores
-			List<String> goldScores = FileUtils.readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"));
-						
-			// Read the experimental scores
-			List<String> expScores = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".csv"));
-			
-			// Read the confidence scores
-			List<String> probabilities = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".probabilities.csv"));
+            // Read gold scores
+            List<String> goldScores = FileUtils
+                    .readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"), UTF_8);
+
+            // Read the experimental scores
+            List<String> expScores = FileUtils.readLines(
+                    new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString()
+                            + "/" + dataset.toString() + ".csv"),
+                    UTF_8);
+
+            // Read the confidence scores
+            List<String> probabilities = FileUtils.readLines(
+                    new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString()
+                            + "/" + dataset.toString() + ".probabilities.csv"),
+                    UTF_8);
 			
 			// Combine the data
 			List<CwsData> data = new ArrayList<CwsData>();
@@ -409,8 +430,9 @@ public class Evaluator
 				double cws_sub = 0.0;
 				for (int j = 0; j <= i; j++)
 				{
-					if (data.get(j).isCorrect())
-						cws_sub++;
+					if (data.get(j).isCorrect()) {
+                        cws_sub++;
+                    }
 				}
 				cws_sub /= (i+1);
 				
@@ -422,37 +444,52 @@ public class Evaluator
 		}
 		if (metric == AveragePrecision)
 		{
-			// Read gold scores
-			List<String> goldScores = FileUtils.readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"));
+            // Read gold scores
+            List<String> goldScores = FileUtils
+                    .readLines(new File(GOLD_DIR + "/" + dataset.toString() + ".txt"), UTF_8);
 
 			// Trim to 8 characters
-			for (int i = 0; i < goldScores.size(); i++)
-				if (goldScores.get(i).length() > 8)
-					goldScores.set(i, goldScores.get(i).substring(0, 8));
+			for (int i = 0; i < goldScores.size(); i++) {
+                if (goldScores.get(i).length() > 8) {
+                    goldScores.set(i, goldScores.get(i).substring(0, 8));
+                }
+            }
 			
-			// Read the experimental scores
-			List<String> expScores = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".csv"));
+            // Read the experimental scores
+            List<String> expScores = FileUtils.readLines(
+                    new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString()
+                            + "/" + dataset.toString() + ".csv"),
+                    UTF_8);
 			
 			// Trim to 8 characters
-			for (int i = 0; i < expScores.size(); i++)
-				if (expScores.get(i).length() > 8)
-					expScores.set(i, expScores.get(i).substring(0, 8));
+			for (int i = 0; i < expScores.size(); i++) {
+                if (expScores.get(i).length() > 8) {
+                    expScores.set(i, expScores.get(i).substring(0, 8));
+                }
+            }
 			
-			// Read the confidence scores
-			List<String> probabilities = FileUtils.readLines(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + ".probabilities.csv"));
+            // Read the confidence scores
+            List<String> probabilities = FileUtils.readLines(
+                    new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString()
+                            + "/" + dataset.toString() + ".probabilities.csv"),
+                    UTF_8);
 			
 			// Conflate UNKONWN + CONTRADICTION classes for 3-way classifications
 			if (RteUtil.hasThreeWayClassification(dataset))
 			{
 				// Gold
-				for (int i = 0; i < goldScores.size(); i++)
-					if (goldScores.get(i).equals("CONTRADI") || goldScores.get(i).equals("NO") || goldScores.get(i).equals("FALSE"))
-						goldScores.set(i, "FALSE");
+				for (int i = 0; i < goldScores.size(); i++) {
+                    if (goldScores.get(i).equals("CONTRADI") || goldScores.get(i).equals("NO") || goldScores.get(i).equals("FALSE")) {
+                        goldScores.set(i, "FALSE");
+                    }
+                }
 				
 				// Experimental
-				for (int i = 0; i < expScores.size(); i++)
-					if (expScores.get(i).equals("CONTRADI") || expScores.get(i).equals("NO") || expScores.get(i).equals("FALSE"))
-						expScores.set(i, "FALSE");
+				for (int i = 0; i < expScores.size(); i++) {
+                    if (expScores.get(i).equals("CONTRADI") || expScores.get(i).equals("NO") || expScores.get(i).equals("FALSE")) {
+                        expScores.set(i, "FALSE");
+                    }
+                }
 			}
 			
 			// Combine the data
@@ -482,8 +519,9 @@ public class Evaluator
 					
 					for (int j = 0; j <= i; j++)
 					{
-						if (data.get(j).isCorrect())
-							ap_sub++;
+						if (data.get(j).isCorrect()) {
+                            ap_sub++;
+                        }
 					}
 					ap_sub /= (i+1);
 				}
@@ -495,7 +533,10 @@ public class Evaluator
 			sb.append(avgPrec);
 		}
 
-		FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString() + "/" + dataset.toString() + "_" + metric.toString() + ".txt"), sb.toString());
+        FileUtils.writeStringToFile(
+                new File(OUTPUT_DIR + "/" + dataset.toString() + "/" + wekaClassifier.toString()
+                        + "/" + dataset.toString() + "_" + metric.toString() + ".txt"),
+                sb.toString(), UTF_8);
 		
 		System.out.println("[" + wekaClassifier.toString() + "] " + metric.toString() + ": " + sb.toString());
 	}
@@ -519,7 +560,8 @@ public class Evaluator
 			return goldScore.equals(expScore);
 		}
 
-		public int compareTo(Object other)
+		@Override
+        public int compareTo(Object other)
 		{
 			CwsData otherObj = (CwsData)other;
 			

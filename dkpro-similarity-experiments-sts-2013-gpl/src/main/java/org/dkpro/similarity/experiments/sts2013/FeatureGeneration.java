@@ -1,5 +1,6 @@
 package org.dkpro.similarity.experiments.sts2013;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
@@ -373,18 +374,18 @@ public class FeatureGeneration
 				{					
 					System.out.println(" - processing " + feature.getName());
 					
-					String concat = FileUtils.readFileToString(feature);
+					String concat = FileUtils.readFileToString(feature, UTF_8);
 					
 					for (int i = 1; i < sources.length; i++)
 					{
 						File nextFile = new File(feature.getAbsolutePath().replaceAll(sources[0].toString(), sources[i].toString()));
 						
-						concat += FileUtils.readFileToString(nextFile);
+						concat += FileUtils.readFileToString(nextFile, UTF_8);
 					}
 					
 					File outputFile = new File(feature.getAbsolutePath().replace(sources[0].toString(), outputFolderName));
 					
-					FileUtils.writeStringToFile(outputFile, concat);
+					FileUtils.writeStringToFile(outputFile, concat, UTF_8);
 				}
 			}
 		}

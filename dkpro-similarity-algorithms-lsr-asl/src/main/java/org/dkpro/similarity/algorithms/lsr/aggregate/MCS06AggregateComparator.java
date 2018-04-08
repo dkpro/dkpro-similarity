@@ -17,6 +17,8 @@
  *******************************************************************************/
 package org.dkpro.similarity.algorithms.lsr.aggregate;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
@@ -62,7 +64,7 @@ public class MCS06AggregateComparator
 		// Read idf values
 		idfValues = new HashMap<String,Double>();
 		
-		for (String line : (List<String>) FileUtils.readLines(idfValuesFile))
+		for (String line : (List<String>) FileUtils.readLines(idfValuesFile, UTF_8))
 		{
 			if (line.length() > 0)
 			{

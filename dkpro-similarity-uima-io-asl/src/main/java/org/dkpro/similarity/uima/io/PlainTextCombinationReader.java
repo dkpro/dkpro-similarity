@@ -17,6 +17,8 @@
  *******************************************************************************/
 package org.dkpro.similarity.uima.io;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -62,7 +64,7 @@ public class PlainTextCombinationReader
 		for (File file : FileUtils.listFiles(inputDir, new String[] {"txt"}, false))
 		{
 			try {
-				String s = FileUtils.readFileToString(file);
+				String s = FileUtils.readFileToString(file, UTF_8);
 				
 				String id = file.getName().substring(file.getName().length() - 5, file.getName().length() - 4);
 				

@@ -25,6 +25,7 @@ import org.dkpro.similarity.experiments.sts2013.Pipeline.Mode;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.dkpro.similarity.experiments.sts2013.Pipeline.FEATURES_DIR;
 import static org.dkpro.similarity.experiments.sts2013.Pipeline.GOLDSTANDARD_DIR;
 import static org.dkpro.similarity.experiments.sts2013.Pipeline.MODELS_DIR;
@@ -61,9 +62,8 @@ public class Features2Arff
 		
 		String arffString = toArffString(files, goldStandard);
 		
-		FileUtils.writeStringToFile(
-				new File(MODELS_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".arff"),
-				arffString);
+        FileUtils.writeStringToFile(new File(MODELS_DIR + "/" + mode.toString().toLowerCase() + "/"
+                + dataset.toString() + ".arff"), arffString, UTF_8);
 		
 		System.out.println(" - done");
 	}
@@ -89,7 +89,7 @@ public class Features2Arff
 			arff.append("@attribute " + feature + " numeric" + LF);
 			
 			// Read data
-			List<String> lines = FileUtils.readLines(file);
+			List<String> lines = FileUtils.readLines(file, UTF_8);
 			for (int doc = 1; doc <= lines.size(); doc++)
 			{
 				String line = lines.get(doc - 1);
@@ -99,15 +99,21 @@ public class Features2Arff
 					double value = Double.parseDouble(line);	// There's just the score on the line, nothing else.
 					
 					// Limit to [0;5] interval
-					if (value > 5.0) value = 5.0;
-					if (value < 0.0) value = 0.0;
+					if (value > 5.0) {
+                        value = 5.0;
+                    }
+					if (value < 0.0) {
+                        value = 0.0;
+                    }
 					
 					// Get doc object in data list
 					List<Double> docObj;
-					if (data.containsKey(doc))
-						docObj = data.get(doc);
-					else
-						docObj = new ArrayList<Double>();
+					if (data.containsKey(doc)) {
+                        docObj = data.get(doc);
+                    }
+                    else {
+                        docObj = new ArrayList<Double>();
+                    }
 					
 					// Put data
 					docObj.add(value);
@@ -124,13 +130,14 @@ public class Features2Arff
 		List<String> lines;
 		if (goldFile != null)
 		{
-			lines = FileUtils.readLines(goldFile);
+			lines = FileUtils.readLines(goldFile, UTF_8);
 		}
 		else
 		{
 			lines = new ArrayList<String>();
-			for (int i = 0; i < FileUtils.readLines(csvFiles.iterator().next()).size(); i++)
-				lines.add("0.0");
+            for (int i = 0; i < FileUtils.readLines(csvFiles.iterator().next(), UTF_8).size(); i++) {
+                lines.add("0.0");
+            }
 		}
 			
 		for (int doc = 1; doc <= lines.size(); doc++)

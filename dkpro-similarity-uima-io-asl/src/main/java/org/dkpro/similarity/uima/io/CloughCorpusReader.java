@@ -17,6 +17,8 @@
  *******************************************************************************/
 package org.dkpro.similarity.uima.io;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,12 +56,12 @@ public class CloughCorpusReader
 		for (File answerFile : answerFiles)
 		{
 			try {
-				String answer = FileUtils.readFileToString(answerFile);
+				String answer = FileUtils.readFileToString(answerFile, UTF_8);
 				
 				String task = answerFile.getName().substring(answerFile.getName().length() - 5, answerFile.getName().length() - 4);
 				
 				File originalFile = new File(answerFile.getParent() + "/orig_task" + task + ".txt"); 
-				String original = FileUtils.readFileToString(originalFile);
+				String original = FileUtils.readFileToString(originalFile, UTF_8);
 					
 				CombinationPair pair = new CombinationPair(inputDir.getAbsolutePath());
 				pair.setID1(answerFile.getName().substring(0, answerFile.getName().length() - 4));

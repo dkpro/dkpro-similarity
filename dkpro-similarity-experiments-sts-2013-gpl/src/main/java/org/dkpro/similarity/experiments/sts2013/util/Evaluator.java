@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.dkpro.similarity.experiments.sts2013.util;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
@@ -209,9 +210,8 @@ public class Evaluator
                 sb.append(score.toString() + LF);
             }
 		    
-		    FileUtils.writeStringToFile(
-		    	new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".csv"),
-		    	sb.toString());
+            FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase()
+                    + "/" + dataset.toString() + ".csv"), sb.toString(), UTF_8);
 		}
 	}
 	
@@ -237,7 +237,7 @@ public class Evaluator
 			{
 				File expScoresFile = new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".csv");
 				
-				List<String> lines = FileUtils.readLines(expScoresFile);
+				List<String> lines = FileUtils.readLines(expScoresFile, UTF_8);
 				
 				for (String line : lines) {
                     concatExp.add(Double.parseDouble(line));
@@ -254,7 +254,7 @@ public class Evaluator
 		        Resource res = r.getResource(gsScoresFilePath);				
 				File gsScoresFile = res.getFile();
 				
-				List<String> lines = FileUtils.readLines(gsScoresFile);
+				List<String> lines = FileUtils.readLines(gsScoresFile, UTF_8);
 				
 				for (String line : lines) {
                     concatGS.add(Double.parseDouble(line));
@@ -276,7 +276,7 @@ public class Evaluator
 			for (Dataset dataset : datasets)
 			{
 				File resultFile = new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt");
-				double score = Double.parseDouble(FileUtils.readFileToString(resultFile));
+				double score = Double.parseDouble(FileUtils.readFileToString(resultFile, UTF_8));
 				
 				scores.add(score);
 			}
@@ -296,11 +296,13 @@ public class Evaluator
 			
 			for (Dataset dataset : datasets)
 			{
-				File resultFile = new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt");
-				double score = Double.parseDouble(FileUtils.readFileToString(resultFile));
-				
-				File scoresFile = new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".csv");
-				int weight = FileUtils.readLines(scoresFile).size();
+                File resultFile = new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/"
+                        + dataset.toString() + ".txt");
+                double score = Double.parseDouble(FileUtils.readFileToString(resultFile, UTF_8));
+
+                File scoresFile = new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/"
+                        + dataset.toString() + ".csv");
+                int weight = FileUtils.readLines(scoresFile, UTF_8).size();
 				
 				scores.add(score);
 				weights.add(weight);
@@ -321,10 +323,10 @@ public class Evaluator
 			sb.append(mean);
 		}
 
-		FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + metric.toString() + ".txt"), sb.toString());
+        FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/"
+                + metric.toString() + ".txt"), sb.toString(), UTF_8);
 	}
 	
-	@SuppressWarnings("unchecked")
 	private static void computePearsonCorrelation(Mode mode, Dataset dataset)
 		throws IOException
 	{
@@ -340,8 +342,8 @@ public class Evaluator
 		List<Double> expScores = new ArrayList<Double>();
 		List<Double> gsScores = new ArrayList<Double>();
 		
-		List<String> expLines = FileUtils.readLines(expScoresFile);
-		List<String> gsLines = FileUtils.readLines(gsScoresFile);
+		List<String> expLines = FileUtils.readLines(expScoresFile, UTF_8);
+		List<String> gsLines = FileUtils.readLines(gsScoresFile, UTF_8);
 		
 		for (int i = 0; i < expLines.size(); i++)
 		{
@@ -355,8 +357,7 @@ public class Evaluator
 		PearsonsCorrelation pearson = new PearsonsCorrelation();
 		Double correl = pearson.correlation(expArray, gsArray);
 		
-		FileUtils.writeStringToFile(
-				new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/" + dataset.toString() + ".txt"),
-				correl.toString());
+        FileUtils.writeStringToFile(new File(OUTPUT_DIR + "/" + mode.toString().toLowerCase() + "/"
+                + dataset.toString() + ".txt"), correl.toString(), UTF_8);
 	}
 }

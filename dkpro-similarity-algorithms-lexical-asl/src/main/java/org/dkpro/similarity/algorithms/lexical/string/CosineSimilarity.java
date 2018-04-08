@@ -17,6 +17,8 @@
  *******************************************************************************/
 package org.dkpro.similarity.algorithms.lexical.string;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -100,7 +102,7 @@ public class CosineSimilarity
 		{
 		idfValues = new HashMap<String,Double>();
 		try {
-			for (String line : FileUtils.readLines(new File(idfScoresFile)))
+			for (String line : FileUtils.readLines(new File(idfScoresFile), UTF_8))
 			{
 				if (line.length() > 0)
 				{
@@ -130,7 +132,7 @@ public class CosineSimilarity
 		if (idfScoresFile != null) {
 			idfValues = new HashMap<String, Double>();
 			try {
-				for (String line : FileUtils.readLines(new File(idfScoresFile))) {
+				for (String line : FileUtils.readLines(new File(idfScoresFile), UTF_8)) {
 					if (line.length() > 0) {
 						String[] cols = line.split("\t");
 						idfValues.put(cols[0], Double.parseDouble(cols[1]));

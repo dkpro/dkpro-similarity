@@ -17,6 +17,8 @@
  *******************************************************************************/
 package org.dkpro.similarity.uima.io;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -53,12 +55,12 @@ public class WebisCPC11Reader
 		for (File original : originals)
 		{
 			try {
-				String textOriginal = FileUtils.readFileToString(original);
+				String textOriginal = FileUtils.readFileToString(original, UTF_8);
 				
 				String id = original.getName().substring(original.getName().length() - 5, original.getName().length() - 4);
 				
 				File paraphrase = new File(original.getParent() + "/" + id + "-paraphrase.txt"); 
-				String textParaphrase = FileUtils.readFileToString(paraphrase);
+				String textParaphrase = FileUtils.readFileToString(paraphrase, UTF_8);
 					
 				CombinationPair pair = new CombinationPair(inputDir.getAbsolutePath());
 				pair.setID1(original.getName().substring(0, original.getName().length() - 4));

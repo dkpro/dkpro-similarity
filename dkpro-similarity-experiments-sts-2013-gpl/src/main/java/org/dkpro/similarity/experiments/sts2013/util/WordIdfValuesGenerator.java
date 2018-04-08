@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.dkpro.similarity.experiments.sts2013.util;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.dkpro.similarity.experiments.sts2013.Pipeline.DATASET_DIR;
 import static org.dkpro.similarity.experiments.sts2013.Pipeline.UTILS_DIR;
@@ -122,7 +123,7 @@ public class WordIdfValuesGenerator
 			{
 				sb.append(key + "\t" + idfValues.get(key) + LF);
 			}
-			FileUtils.writeStringToFile(outputFile, sb.toString());
+			FileUtils.writeStringToFile(outputFile, sb.toString(), UTF_8);
 			
 			System.out.println(" - done");
 		}

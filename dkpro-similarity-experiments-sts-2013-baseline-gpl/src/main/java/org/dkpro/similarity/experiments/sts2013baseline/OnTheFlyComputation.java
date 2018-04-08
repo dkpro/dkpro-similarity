@@ -1,5 +1,6 @@
 package org.dkpro.similarity.experiments.sts2013baseline;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.dkpro.similarity.experiments.sts2013baseline.Pipeline.DATASET_DIR;
 import static org.dkpro.similarity.experiments.sts2013baseline.Pipeline.FEATURES_DIR;
 import static org.dkpro.similarity.experiments.sts2013baseline.Pipeline.GOLDSTANDARD_DIR;
@@ -51,12 +52,12 @@ public class OnTheFlyComputation
             File inputDir = new File(ResourceUtils.resolveLocation(DATASET_DIR + "/test/").getFile());
             File inputFile = new File(inputDir, "STS.input." + OnTheFly.name() + ".txt");
             inputFile.createNewFile();
-            FileUtils.writeStringToFile(inputFile, texts1[i] + "\t" + texts2[i]);
+            FileUtils.writeStringToFile(inputFile, texts1[i] + "\t" + texts2[i], UTF_8);
             
             File goldDir = new File(ResourceUtils.resolveLocation(GOLDSTANDARD_DIR + "/test/").getFile());
             File goldFile = new File(goldDir, "STS.gs." + OnTheFly.name() + ".txt");
             goldFile.createNewFile();
-            FileUtils.writeStringToFile(goldFile, "0.0");
+            FileUtils.writeStringToFile(goldFile, "0.0", UTF_8);
 
             // remove old arff file
             File featureDir = new File(ResourceUtils.resolveLocation(FEATURES_DIR + "/test/").getFile());
@@ -76,7 +77,8 @@ public class OnTheFlyComputation
             goldFile.delete();
             
             // output result
-            String result = FileUtils.readFileToString(new File(OUTPUT_DIR + "/test/" + OnTheFly.name() + ".csv"));
+            String result = FileUtils.readFileToString(
+                    new File(OUTPUT_DIR + "/test/" + OnTheFly.name() + ".csv"), UTF_8);
             System.out.println("Result: " + result);
         }
     }

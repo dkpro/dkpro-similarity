@@ -18,6 +18,8 @@
  */
 package org.dkpro.similarity.ml.util;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,7 +61,7 @@ public class ArffConverter
 			arff.append("@attribute " + feature + " numeric" + LF);
 			
 			// Read data
-			List<String> lines = FileUtils.readLines(file);
+			List<String> lines = FileUtils.readLines(file, UTF_8);
 			for (int doc = 1; doc <= lines.size(); doc++)
 			{
 				String line = lines.get(doc - 1);
@@ -70,10 +72,12 @@ public class ArffConverter
 					
 					// Get doc object in data list
 					List<Double> docObj;
-					if (data.containsKey(doc))
-						docObj = data.get(doc);
-					else
-						docObj = new ArrayList<Double>();
+					if (data.containsKey(doc)) {
+                        docObj = data.get(doc);
+                    }
+                    else {
+                        docObj = new ArrayList<Double>();
+                    }
 					
 					// Put data
 					docObj.add(value);
@@ -90,13 +94,14 @@ public class ArffConverter
 		List<String> lines;
 		if (goldFile != null)
 		{
-			lines = FileUtils.readLines(goldFile);
+			lines = FileUtils.readLines(goldFile, UTF_8);
 		}
 		else
 		{
 			lines = new ArrayList<String>();
-			for (int i = 0; i < FileUtils.readLines(csvFiles.iterator().next()).size(); i++)
-				lines.add("0.0");
+            for (int i = 0; i < FileUtils.readLines(csvFiles.iterator().next(), UTF_8).size(); i++) {
+                lines.add("0.0");
+            }
 		}
 			
 		for (int doc = 1; doc <= lines.size(); doc++)

@@ -20,25 +20,20 @@ package org.dkpro.similarity.algorithms.lexical.string;
 import static org.junit.Assert.assertEquals;
 
 import org.dkpro.similarity.algorithms.api.TermSimilarityMeasure;
-import org.dkpro.similarity.algorithms.lexical.string.MongeElkanSecondStringComparator;
 import org.junit.Test;
-
-import com.wcohen.ss.MongeElkan;
-   
 
 public class MongeElkanSecondStringComparatorTest
 {
-	private static final double epsilon = 0.0001;
-	
+    private static final double epsilon = 0.0001;
+
     @Test
-    public void test()
-		throws Exception
-	{
-		String a1 = "test String";
-		String a2 = "test Strimg";
+    public void test() throws Exception
+    {
+        String a1 = "test String";
+        String a2 = "test Strimg";
 
-		TermSimilarityMeasure measure = new MongeElkanSecondStringComparator();
+        TermSimilarityMeasure measure = new MongeElkanSecondStringComparator();
 
-		assertEquals(.9636, measure.getSimilarity(a1, a2), epsilon);
-   }
+        assertEquals(.9636, measure.getSimilarity(a1, a2), epsilon);
+    }
 }

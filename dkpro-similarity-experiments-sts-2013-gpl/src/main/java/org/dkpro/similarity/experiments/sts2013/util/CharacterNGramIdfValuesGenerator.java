@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.dkpro.similarity.experiments.sts2013.util;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.dkpro.similarity.experiments.sts2013.Pipeline.DATASET_DIR;
 import static org.dkpro.similarity.experiments.sts2013.Pipeline.UTILS_DIR;
 
@@ -24,7 +25,6 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.dkpro.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
 import org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset;
 import org.dkpro.similarity.experiments.sts2013.Pipeline.Mode;
@@ -69,8 +69,9 @@ public class CharacterNGramIdfValuesGenerator
 			
 			// Get all ngrams
 			Set<String> allNGrams = new HashSet<String>();
-			for (Set<String> doc : docs)
-				allNGrams.addAll(doc);
+			for (Set<String> doc : docs) {
+                allNGrams.addAll(doc);
+            }
 			
 			// Compute idf values			
 			for (String ngram : allNGrams)
@@ -78,8 +79,9 @@ public class CharacterNGramIdfValuesGenerator
 				double count = 0;
 				for (Set<String> doc : docs)
 				{					
-					if (doc.contains(ngram))
-						count++;
+					if (doc.contains(ngram)) {
+                        count++;
+                    }
 				}
 				idfValues.put(ngram, count);
 			}
@@ -97,7 +99,7 @@ public class CharacterNGramIdfValuesGenerator
 			{
 				sb.append(key + "\t" + idfValues.get(key) + LF);
 			}
-			FileUtils.writeStringToFile(outputFile, sb.toString());
+			FileUtils.writeStringToFile(outputFile, sb.toString(), UTF_8);
 			
 			System.out.println(" - done");
 		}

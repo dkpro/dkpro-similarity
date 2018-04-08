@@ -17,6 +17,8 @@
  *******************************************************************************/
 package org.dkpro.similarity.uima.io;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
@@ -81,7 +83,7 @@ public class MeterCorpusReader
 			{
 				try {
 					// Source files has a 13-line header. Remove it first.
-					List<String> sourceLines = FileUtils.readLines(sourceFile);
+					List<String> sourceLines = FileUtils.readLines(sourceFile, UTF_8);
 					for (int i = 0; i < 13; i++) {
                         sourceLines.remove(0);
                     }
@@ -104,7 +106,7 @@ public class MeterCorpusReader
 					}						
 					
 					String source = StringUtils.join(sourceLines, LF);					
-					String suspicious = FileUtils.readFileToString(suspiciousFile);
+					String suspicious = FileUtils.readFileToString(suspiciousFile, UTF_8);
 					
 					// Get IDs
 					String sourceID = sourceFile.getAbsolutePath().substring(
