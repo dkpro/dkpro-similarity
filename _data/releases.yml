@@ -8,6 +8,13 @@
 #
 # Possible status: "stable", "unstable"
 
+- version: 2.3.0
+  date: 2018-04-10
+  status: stable
+  groupId: org.dkpro.similarity
+  artifactId: dkpro-similarity-uima-core-asl
+  artifactIdLong: dkpro-similarity-uima-core-asl
+
 - version: 2.2.0
   date: 2016-01-26
   status: stable
