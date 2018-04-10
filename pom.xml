@@ -163,7 +163,7 @@
         <module>dkpro-similarity-experiments</module>
       </modules>
       <properties>
-        <lsr.version>0.8.1</lsr.version>
+        <lsr.version>0.8.2-SNAPSHOT</lsr.version>
       </properties>
       <repositories>
         <repository>

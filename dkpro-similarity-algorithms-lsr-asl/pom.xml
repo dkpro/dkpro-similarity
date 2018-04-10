@@ -86,6 +86,17 @@
       <artifactId>de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>net.sf.extjwnl</groupId>
+      <artifactId>extjwnl-data-wn30</artifactId>
+      <version>1.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <build>
     <pluginManagement>
@@ -99,6 +110,8 @@
               <usedDependency>de.tudarmstadt.ukp.dkpro.lexsemresource:de.tudarmstadt.ukp.dkpro.lexsemresource.wikipedia-asl</usedDependency>
               <usedDependency>de.tudarmstadt.ukp.dkpro.lexsemresource:de.tudarmstadt.ukp.dkpro.lexsemresource.wiktionary-asl</usedDependency>
               <usedDependency>de.tudarmstadt.ukp.dkpro.lexsemresource:de.tudarmstadt.ukp.dkpro.lexsemresource.wordnet-asl</usedDependency>
+              <!-- Data dependencies are not detected by byte-code analysis -->
+              <usedDependency>net.sf.extjwnl:extjwnl-data-wn30</usedDependency>
             </usedDependencies>
           </configuration>
         </plugin>
