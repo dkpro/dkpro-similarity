@@ -25,6 +25,7 @@ import java.util.Set;
 
 import org.dkpro.similarity.algorithms.lsr.LexSemResourceComparator;
 import org.dkpro.similarity.algorithms.lsr.path.PathLengthComparator;
+import org.junit.AfterClass;
 import org.junit.Assume;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -32,32 +33,37 @@ import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity.PoS;
+import de.tudarmstadt.ukp.dkpro.lexsemresource.LSRFramework;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.core.ResourceFactory;
-import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.ResourceLoaderException;
 
 public class PathLengthComparatorTest {
 
     private static final double epsilon = 0.0001;
 
-    private static LexicalSemanticResource wordnet;
-    private static LexicalSemanticResource germanet;
-    private static LexicalSemanticResource wikipedia;
-    private static LexicalSemanticResource wiktionary;
-
+    private static String oldWorkspace;
+    
     @BeforeClass
-    public static void initialize() throws ResourceLoaderException  {
-        wordnet    = ResourceFactory.getInstance().get("wordnet3", "en");
-//        germanet   = ResourceFactory.getInstance().get("germanet7", "de");
-        wikipedia  = ResourceFactory.getInstance().get("wikipedia", "test");
-//        wiktionary = ResourceFactory.getInstance().get("wiktionary", "en");
+    public static void setup()
+    {
+        oldWorkspace = System.getProperty(LSRFramework.SYS_LSR_WORKSPACE);
+        System.setProperty(LSRFramework.SYS_LSR_WORKSPACE,
+                "target/test-output/PathLengthComparatorTest/");
     }
-
+    
+    @AfterClass
+    public static void teardown()
+    {
+         System.setProperty(LSRFramework.SYS_LSR_WORKSPACE, oldWorkspace);
+    }
+    
     @Ignore("The original GermaNet API is not Apache licensed.")
     @Test
 	public void testGermaNetUsingResourceLoader()
 		throws Exception
 	{
+        LexicalSemanticResource germanet = ResourceFactory.getInstance().get("germanet7", "de");
+        
         LexSemResourceComparator comparator = new PathLengthComparator(germanet);
 
         Set<Entity> entitiesAuto    = germanet.getEntity("Auto", PoS.n);
@@ -69,13 +75,15 @@ public class PathLengthComparatorTest {
         assertEquals(6.0, comparator.getSimilarity(entitiesAuto, entitiesSchnell), epsilon);
     }
 
-//    @Ignore("The path from 'tree' to 'tree' should be 0 but is 13! - See bug 163")
     @Test
 	public void testWordNet()
 		throws Exception
 	{
         Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
 
+        LexicalSemanticResource wordnet = ResourceFactory.getInstance().get("wordnet-default",
+                "en");
+        
 		LexSemResourceComparator comparator = new PathLengthComparator(wordnet);
 
         Set<Entity> entitiesTree  = wordnet.getEntity("tree", PoS.n);
@@ -94,6 +102,8 @@ public class PathLengthComparatorTest {
 	{
         Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
 
+        LexicalSemanticResource wikipedia = ResourceFactory.getInstance().get("wikipedia", "test");
+        
 		LexSemResourceComparator comparator = new PathLengthComparator(wikipedia);
 
         // this are pages
@@ -132,6 +142,8 @@ public class PathLengthComparatorTest {
 	public void testWiktionary()
 		throws Exception
 	{
+        LexicalSemanticResource wiktionary = ResourceFactory.getInstance().get("wiktionary", "en");
+        
         LexSemResourceComparator comparator = new PathLengthComparator(wiktionary);
 
         Set<Entity> entitiesFahrzeug = wiktionary.getEntity("Fahrzeug");
