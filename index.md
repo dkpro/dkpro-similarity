@@ -5,7 +5,7 @@
 # this work, you have to use › layout: frontpage
 #
 layout: frontpage
-title: "DKPro Similarity"
+title: "Welcome"
 ---
 
 {% assign stable = site.data.releases | where: "status", "stable" | first %}
