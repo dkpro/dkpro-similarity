@@ -4,7 +4,7 @@ title: "Downloads"
 permalink: "/downloads/"
 ---
 
-{% assign stable = (site.data.releases | where:"status", "stable" | first) %}
+{% assign stable = site.data.releases | where: "status", "stable" | first %}
 
 ## Maven
 
