@@ -1,8 +1,21 @@
 package org.dkpro.similarity.experiments.sts2013;
 
-import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.*;
-import static org.dkpro.similarity.experiments.sts2013.Pipeline.EvaluationMetric.*;
-import static org.dkpro.similarity.experiments.sts2013.Pipeline.Mode.*;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.ALL;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.FNWN;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.MSRparTest;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.MSRparTrain;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.MSRvidTest;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.MSRvidTrain;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.OnWN;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.OnWNTest;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.SMT;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.SMTeuroparlTest;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.SMTeuroparlTrain;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.SMTnewsTest;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset.headlines;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.EvaluationMetric.PearsonWeightedMean;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Mode.TEST;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.Mode.TRAIN;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;

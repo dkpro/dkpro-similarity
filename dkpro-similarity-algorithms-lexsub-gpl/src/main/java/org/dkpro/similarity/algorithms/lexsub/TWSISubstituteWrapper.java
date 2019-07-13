@@ -27,6 +27,7 @@ import org.apache.commons.lang3.NotImplementedException;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+import org.dkpro.core.api.resources.DkproContext;
 import org.dkpro.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasure;
@@ -34,7 +35,6 @@ import org.dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 import de.tudarmstadt.langtech.substituter.MLSenseSubstituter;
 import de.tudarmstadt.langtech.substituter.SenseSubstituter;
 import de.tudarmstadt.langtech.substituter.Substitution;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 
 

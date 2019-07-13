@@ -25,14 +25,14 @@ import java.io.Reader;
 import java.util.Iterator;
 import java.util.Properties;
 
-import no.uib.cipr.matrix.Vector;
-
 import org.apache.commons.io.IOUtils;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.vsm.store.VectorReader;
 
 import com.sleepycat.bind.tuple.TupleBinding;
 import com.sleepycat.je.DatabaseException;
+
+import no.uib.cipr.matrix.Vector;
 
 /**
  * Reads an ESA vector index.

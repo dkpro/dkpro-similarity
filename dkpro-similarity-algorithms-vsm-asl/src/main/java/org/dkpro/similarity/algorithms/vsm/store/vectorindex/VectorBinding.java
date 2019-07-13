@@ -29,17 +29,17 @@ import java.util.zip.GZIPOutputStream;
 import javax.imageio.stream.ImageInputStreamImpl;
 import javax.imageio.stream.ImageOutputStreamImpl;
 
-import no.uib.cipr.matrix.DenseVector;
-import no.uib.cipr.matrix.Matrices;
-import no.uib.cipr.matrix.Vector;
-import no.uib.cipr.matrix.sparse.SparseVector;
-
 import org.apache.tools.bzip2.CBZip2InputStream;
 import org.apache.tools.bzip2.CBZip2OutputStream;
 
 import com.sleepycat.bind.tuple.TupleBinding;
 import com.sleepycat.bind.tuple.TupleInput;
 import com.sleepycat.bind.tuple.TupleOutput;
+
+import no.uib.cipr.matrix.DenseVector;
+import no.uib.cipr.matrix.Matrices;
+import no.uib.cipr.matrix.Vector;
+import no.uib.cipr.matrix.sparse.SparseVector;
 
 /**
  * This binding tries to optimize vector storage. Very sparse vectors are simply stored as sparse

@@ -14,18 +14,18 @@ import static org.dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric.Acc
 import static org.dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric.AveragePrecision;
 import static org.dkpro.similarity.experiments.rte.Pipeline.EvaluationMetric.CWS;
 
+import java.text.ParseException;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
+import org.dkpro.core.api.resources.DkproContext;
 import org.dkpro.similarity.algorithms.ml.ClassifierSimilarityMeasure.WekaClassifier;
 import org.dkpro.similarity.experiments.rte.util.Evaluator;
 import org.dkpro.similarity.experiments.rte.util.Features2Arff;
 import org.dkpro.similarity.experiments.rte.util.GoldstandardCreator;
-
-import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
 
 
 /**

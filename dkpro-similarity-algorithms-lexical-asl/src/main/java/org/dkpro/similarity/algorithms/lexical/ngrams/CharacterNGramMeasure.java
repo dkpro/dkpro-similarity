@@ -29,10 +29,9 @@ import java.util.Set;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.dkpro.core.api.resources.ResourceUtils;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
-
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 
 /**
  * Character n-gram measure as described in

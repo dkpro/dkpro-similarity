@@ -20,7 +20,6 @@ package org.dkpro.similarity.algorithms.lexical.string;
 import static org.junit.Assert.assertEquals;
 
 import org.dkpro.similarity.algorithms.api.TermSimilarityMeasure;
-import org.dkpro.similarity.algorithms.lexical.string.GreedyStringTiling;
 import org.junit.Test;
    
 

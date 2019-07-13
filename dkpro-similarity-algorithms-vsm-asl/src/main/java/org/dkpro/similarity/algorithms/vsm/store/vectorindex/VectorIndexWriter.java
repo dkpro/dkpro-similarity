@@ -24,11 +24,11 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.Properties;
 
-import no.uib.cipr.matrix.Vector;
-
 import org.apache.commons.io.IOUtils;
 
 import com.sleepycat.bind.tuple.TupleBinding;
+
+import no.uib.cipr.matrix.Vector;
 
 /**
  * Writes an ESA vector index.

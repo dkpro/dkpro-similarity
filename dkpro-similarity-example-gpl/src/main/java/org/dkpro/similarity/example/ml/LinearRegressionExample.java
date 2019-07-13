@@ -32,15 +32,15 @@ import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.factory.AggregateBuilder;
 import org.apache.uima.fit.pipeline.SimplePipeline;
+import org.dkpro.core.tokit.BreakIteratorSegmenter;
 import org.dkpro.similarity.ml.io.SimilarityScoreWriter;
 import org.dkpro.similarity.uima.annotator.SimilarityScorer;
 import org.dkpro.similarity.uima.io.CombinationReader;
-import org.dkpro.similarity.uima.io.ShortAnswerGradingReader;
 import org.dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
+import org.dkpro.similarity.uima.io.ShortAnswerGradingReader;
 import org.dkpro.similarity.uima.resource.ml.LinearRegressionResource;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
-import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 
 public class LinearRegressionExample
 {

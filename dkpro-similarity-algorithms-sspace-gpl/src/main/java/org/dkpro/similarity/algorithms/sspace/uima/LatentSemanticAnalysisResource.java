@@ -23,15 +23,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
 
+import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
-import org.apache.uima.fit.descriptor.ConfigurationParameter;
+import org.dkpro.core.api.resources.ResourceUtils;
 import org.dkpro.similarity.algorithms.sspace.SSpaceVectorReader;
 import org.dkpro.similarity.algorithms.vsm.VectorComparator;
 import org.dkpro.similarity.algorithms.vsm.store.CachingVectorReader;
 import org.dkpro.similarity.uima.resource.TextSimilarityResourceBase;
 
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import edu.ucla.sspace.common.SemanticSpace;
 import edu.ucla.sspace.common.SemanticSpaceIO;
 import edu.ucla.sspace.common.SemanticSpaceIO.SSpaceFormat;

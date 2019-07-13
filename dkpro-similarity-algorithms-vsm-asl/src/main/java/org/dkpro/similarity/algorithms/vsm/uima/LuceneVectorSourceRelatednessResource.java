@@ -23,11 +23,10 @@ import java.util.Map;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
+import org.dkpro.core.api.parameter.ComponentParameters;
 import org.dkpro.similarity.algorithms.vsm.VectorComparator;
 import org.dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
 import org.dkpro.similarity.uima.resource.TextSimilarityResourceBase;
-
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
 
 public final class LuceneVectorSourceRelatednessResource
 	extends TextSimilarityResourceBase

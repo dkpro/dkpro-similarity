@@ -51,8 +51,8 @@
       <artifactId>de.tudarmstadt.ukp.similarity.dkpro.core-asl</artifactId>
     </dependency>
     <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.core.tokit-asl</artifactId>
+      <groupId>org.dkpro.core</groupId>
+      <artifactId>dkpro-core-io-tokit-asl</artifactId>
       <version>1.4.0</version>
     </dependency>
     <dependency>
@@ -74,13 +74,13 @@
       <version>1.2</version>
     </dependency>
     <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl</artifactId>
+      <groupId>org.dkpro.core</groupId>
+      <artifactId>dkpro-core-io-stanfordnlp-gpl</artifactId>
       <version>1.4.0</version>
     </dependency>
     <dependency>
-      <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-      <artifactId>de.tudarmstadt.ukp.dkpro.core.opennlp-model-tagger-en-maxent</artifactId>
+      <groupId>org.dkpro.core</groupId>
+      <artifactId>dkpro-core-io-opennlp-model-tagger-en-maxent</artifactId>
       <version>20120616.0</version>
     </dependency>
     <dependency>

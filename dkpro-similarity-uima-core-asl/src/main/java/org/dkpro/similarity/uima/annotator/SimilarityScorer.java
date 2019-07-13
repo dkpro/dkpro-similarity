@@ -32,13 +32,13 @@ import org.apache.uima.fit.descriptor.ExternalResource;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.dkpro.core.api.featurepath.FeaturePathException;
+import org.dkpro.core.api.featurepath.FeaturePathFactory;
 import org.dkpro.similarity.algorithms.api.JCasTextSimilarityMeasure;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.uima.api.type.ExperimentalTextSimilarityScore;
 import org.dkpro.similarity.uima.resource.TextSimilarityResourceBase;
 
-import de.tudarmstadt.ukp.dkpro.core.api.featurepath.FeaturePathException;
-import de.tudarmstadt.ukp.dkpro.core.api.featurepath.FeaturePathFactory;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 
 

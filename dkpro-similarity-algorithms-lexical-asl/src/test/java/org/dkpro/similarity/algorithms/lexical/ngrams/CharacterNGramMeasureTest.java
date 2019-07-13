@@ -23,7 +23,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.dkpro.similarity.algorithms.api.TermSimilarityMeasure;
-import org.dkpro.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
 import org.junit.Test;
    
 

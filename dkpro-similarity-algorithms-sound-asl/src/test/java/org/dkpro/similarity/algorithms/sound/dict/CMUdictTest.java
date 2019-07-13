@@ -23,8 +23,6 @@ import static org.junit.Assert.assertNull;
 import java.io.IOException;
 import java.util.List;
 
-import org.dkpro.similarity.algorithms.sound.dict.CMUdict;
-import org.dkpro.similarity.algorithms.sound.dict.PronouncingDictionaryException;
 import org.junit.Test;
 
 /**

@@ -22,15 +22,13 @@ import static org.junit.Assert.assertNotNull;
 
 import java.io.File;
 
+import org.apache.commons.io.FileUtils;
+import org.junit.Test;
+
 import no.uib.cipr.matrix.DenseVector;
 import no.uib.cipr.matrix.Vector;
 import no.uib.cipr.matrix.Vector.Norm;
 import no.uib.cipr.matrix.sparse.SparseVector;
-
-import org.apache.commons.io.FileUtils;
-import org.dkpro.similarity.algorithms.vsm.store.vectorindex.VectorIndexReader;
-import org.dkpro.similarity.algorithms.vsm.store.vectorindex.VectorIndexWriter;
-import org.junit.Test;
 
 public class VectorIndexReaderWriterTest
 {

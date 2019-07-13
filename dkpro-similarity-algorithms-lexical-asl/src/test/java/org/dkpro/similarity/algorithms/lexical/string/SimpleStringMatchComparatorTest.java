@@ -24,9 +24,6 @@ import java.util.List;
 
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasure;
-import org.dkpro.similarity.algorithms.lexical.string.BoundedSubstringMatchComparator;
-import org.dkpro.similarity.algorithms.lexical.string.ExactStringMatchComparator;
-import org.dkpro.similarity.algorithms.lexical.string.SubstringMatchComparator;
 import org.junit.Test;
 
 public class SimpleStringMatchComparatorTest {

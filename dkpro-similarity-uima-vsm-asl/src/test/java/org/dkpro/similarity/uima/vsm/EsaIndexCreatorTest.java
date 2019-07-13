@@ -22,20 +22,19 @@ import static org.junit.Assert.assertNotNull;
 
 import java.io.File;
 
-import no.uib.cipr.matrix.Vector;
-
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
+import org.dkpro.core.io.text.TextReader;
+import org.dkpro.core.snowball.SnowballStemmer;
+import org.dkpro.core.tokit.BreakIteratorSegmenter;
 import org.dkpro.similarity.algorithms.vsm.store.vectorindex.VectorIndexReader;
 import org.dkpro.similarity.uima.vsm.esaindexer.IndexInverter;
 import org.dkpro.similarity.uima.vsm.esaindexer.LuceneIndexer;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Stem;
-import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
-import de.tudarmstadt.ukp.dkpro.core.snowball.SnowballStemmer;
-import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
+import no.uib.cipr.matrix.Vector;
 
 public class EsaIndexCreatorTest {
 	

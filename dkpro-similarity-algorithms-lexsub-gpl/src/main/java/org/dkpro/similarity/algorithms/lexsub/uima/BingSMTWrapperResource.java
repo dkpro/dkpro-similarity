@@ -20,10 +20,10 @@ package org.dkpro.similarity.algorithms.lexsub.uima;
 
 import java.util.Map;
 
-import org.apache.uima.resource.ResourceInitializationException;
-import org.apache.uima.resource.ResourceSpecifier;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.descriptor.ExternalResource;
+import org.apache.uima.resource.ResourceInitializationException;
+import org.apache.uima.resource.ResourceSpecifier;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 import org.dkpro.similarity.algorithms.lexsub.BingSMTWrapper;
 import org.dkpro.similarity.algorithms.lexsub.BingSMTWrapper.Language;

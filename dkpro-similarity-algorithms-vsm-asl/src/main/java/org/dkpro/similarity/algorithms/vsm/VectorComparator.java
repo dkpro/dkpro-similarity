@@ -18,15 +18,16 @@
 package org.dkpro.similarity.algorithms.vsm;
 
 import java.util.Collection;
-import no.uib.cipr.matrix.Vector;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
-import org.dkpro.similarity.algorithms.vsm.store.VectorReader;
 import org.dkpro.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeIdf;
 import org.dkpro.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeTf;
+import org.dkpro.similarity.algorithms.vsm.store.VectorReader;
+
+import no.uib.cipr.matrix.Vector;
 
 /**
  * Compare two texts or terms represented by vectors. Combining this comparator with different

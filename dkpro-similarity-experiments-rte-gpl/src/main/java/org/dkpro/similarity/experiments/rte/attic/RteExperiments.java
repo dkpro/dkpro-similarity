@@ -16,12 +16,11 @@ import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
-import org.dkpro.similarity.uima.io.RTECorpusReader;
+import org.dkpro.core.api.resources.DkproContext;
+import org.dkpro.core.gate.GateLemmatizer;
+import org.dkpro.core.opennlp.OpenNlpPosTagger;
 import org.dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
-
-import de.tudarmstadt.ukp.dkpro.core.api.resources.DkproContext;
-import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
-import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
+import org.dkpro.similarity.uima.io.RTECorpusReader;
 
 public class RteExperiments
 {

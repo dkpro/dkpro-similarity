@@ -24,13 +24,9 @@ import java.io.File;
 
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TermSimilarityMeasure;
-import org.dkpro.similarity.algorithms.vsm.InnerVectorProduct;
-import org.dkpro.similarity.algorithms.vsm.VectorAggregation;
-import org.dkpro.similarity.algorithms.vsm.VectorComparator;
-import org.dkpro.similarity.algorithms.vsm.VectorNorm;
-import org.dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
 import org.dkpro.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeIdf;
 import org.dkpro.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeTf;
+import org.dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
 import org.junit.Ignore;
 import org.junit.Test;
 

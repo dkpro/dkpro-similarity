@@ -25,10 +25,10 @@ import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
+import org.dkpro.core.io.jwpl.WikipediaReaderBase;
+import org.dkpro.core.snowball.SnowballStemmer;
+import org.dkpro.core.tokit.BreakIteratorSegmenter;
 
-import de.tudarmstadt.ukp.dkpro.core.io.jwpl.WikipediaReaderBase;
-import de.tudarmstadt.ukp.dkpro.core.snowball.SnowballStemmer;
-import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 import de.tudarmstadt.ukp.wikipedia.api.WikiConstants.Language;
 
 /**

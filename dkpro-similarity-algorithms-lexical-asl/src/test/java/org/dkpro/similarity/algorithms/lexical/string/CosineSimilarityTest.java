@@ -27,7 +27,6 @@ import java.util.Map;
 
 import org.dkpro.similarity.algorithms.api.TermSimilarityMeasure;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasure;
-import org.dkpro.similarity.algorithms.lexical.string.CosineSimilarity;
 import org.junit.Test;
    
 public class CosineSimilarityTest {

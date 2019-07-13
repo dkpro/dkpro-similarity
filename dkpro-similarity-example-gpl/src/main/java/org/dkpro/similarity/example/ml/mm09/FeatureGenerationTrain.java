@@ -32,6 +32,7 @@ import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.factory.AggregateBuilder;
 import org.apache.uima.fit.pipeline.SimplePipeline;
+import org.dkpro.core.tokit.BreakIteratorSegmenter;
 import org.dkpro.similarity.algorithms.lexical.string.JaroSecondStringComparator;
 import org.dkpro.similarity.algorithms.lexical.string.JaroWinklerSecondStringComparator;
 import org.dkpro.similarity.algorithms.lexical.string.LevenshteinComparator;
@@ -48,14 +49,13 @@ import org.dkpro.similarity.ml.FeatureConfig;
 import org.dkpro.similarity.ml.io.SimilarityScoreWriter;
 import org.dkpro.similarity.uima.annotator.SimilarityScorer;
 import org.dkpro.similarity.uima.io.CombinationReader;
-import org.dkpro.similarity.uima.io.SemEvalCorpusReader;
 import org.dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
+import org.dkpro.similarity.uima.io.SemEvalCorpusReader;
 import org.dkpro.similarity.uima.resource.SimpleTextSimilarityResource;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
-import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 
 
 public class FeatureGenerationTrain

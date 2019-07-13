@@ -25,11 +25,10 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.dkpro.core.api.resources.ResourceUtils;
 import org.dkpro.similarity.algorithms.lexical.ngrams.CharacterNGramMeasure;
 import org.dkpro.similarity.experiments.sts2013baseline.Pipeline.Dataset;
 import org.dkpro.similarity.experiments.sts2013baseline.Pipeline.Mode;
-
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 
 
 public class CharacterNGramIdfValuesGenerator

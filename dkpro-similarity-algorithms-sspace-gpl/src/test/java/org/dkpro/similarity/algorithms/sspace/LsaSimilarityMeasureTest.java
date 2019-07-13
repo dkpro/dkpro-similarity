@@ -18,14 +18,13 @@
  */
 package org.dkpro.similarity.algorithms.sspace;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.File;
 import java.io.IOException;
 
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasure;
-import org.dkpro.similarity.algorithms.sspace.LsaSimilarityMeasure;
 import org.junit.Test;
 
 public class LsaSimilarityMeasureTest {

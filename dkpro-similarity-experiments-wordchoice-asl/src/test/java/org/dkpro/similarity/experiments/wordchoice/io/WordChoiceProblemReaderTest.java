@@ -7,11 +7,10 @@ import org.apache.uima.fit.factory.CollectionReaderFactory;
 import org.apache.uima.fit.pipeline.JCasIterable;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
-import org.dkpro.similarity.experiments.wordchoice.io.WordChoiceProblemReader;
+import org.dkpro.core.api.io.ResourceCollectionReaderBase;
 import org.dkpro.similarity.type.WordChoiceProblem;
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.dkpro.core.api.io.ResourceCollectionReaderBase;
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 
 public class WordChoiceProblemReaderTest

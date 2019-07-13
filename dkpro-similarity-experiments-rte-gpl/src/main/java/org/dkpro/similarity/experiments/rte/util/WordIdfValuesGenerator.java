@@ -29,12 +29,12 @@ import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
+import org.dkpro.core.gate.GateLemmatizer;
+import org.dkpro.core.opennlp.OpenNlpPosTagger;
+import org.dkpro.core.tokit.BreakIteratorSegmenter;
 import org.dkpro.similarity.experiments.rte.Pipeline.Dataset;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
-import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
-import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
-import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 
 
 public class WordIdfValuesGenerator

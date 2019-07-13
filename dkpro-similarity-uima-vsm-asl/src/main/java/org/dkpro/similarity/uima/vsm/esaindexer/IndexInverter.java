@@ -22,8 +22,6 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-import no.uib.cipr.matrix.Vector;
-
 import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.TermEnum;
@@ -33,6 +31,8 @@ import org.dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
 import org.dkpro.similarity.algorithms.vsm.store.convert.ConvertLuceneToVectorIndex;
 import org.dkpro.similarity.algorithms.vsm.store.vectorindex.VectorIndexWriter;
 import org.dkpro.similarity.algorithms.vsm.util.ProgressMeter;
+
+import no.uib.cipr.matrix.Vector;
 
 /**
  * Creates an inverted index for ESA. Based on

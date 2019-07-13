@@ -26,8 +26,6 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import no.uib.cipr.matrix.Vector;
-
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.TermEnum;
 import org.apache.lucene.store.FSDirectory;
@@ -35,6 +33,8 @@ import org.dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
 import org.dkpro.similarity.algorithms.vsm.store.VectorReader;
 import org.dkpro.similarity.algorithms.vsm.store.vectorindex.VectorIndexWriter;
 import org.dkpro.similarity.algorithms.vsm.util.ProgressMeter;
+
+import no.uib.cipr.matrix.Vector;
 
 /**
  * Convert an index created using {@code EsaIndex} to a ESA Vector Cache index which intelligently
