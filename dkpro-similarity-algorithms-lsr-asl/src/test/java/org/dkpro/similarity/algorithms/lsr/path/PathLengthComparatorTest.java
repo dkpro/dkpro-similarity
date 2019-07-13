@@ -36,7 +36,8 @@ import de.tudarmstadt.ukp.dkpro.lexsemresource.LexicalSemanticResource;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.core.ResourceFactory;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.ResourceLoaderException;
 
-public class PathLengthComparatorTest {
+public class PathLengthComparatorTest
+{
 
     private static final double epsilon = 0.0001;
 
@@ -46,22 +47,22 @@ public class PathLengthComparatorTest {
     private static LexicalSemanticResource wiktionary;
 
     @BeforeClass
-    public static void initialize() throws ResourceLoaderException  {
-        wordnet    = ResourceFactory.getInstance().get("wordnet3", "en");
-//        germanet   = ResourceFactory.getInstance().get("germanet7", "de");
-        wikipedia  = ResourceFactory.getInstance().get("wikipedia", "test");
-//        wiktionary = ResourceFactory.getInstance().get("wiktionary", "en");
+    public static void initialize() throws ResourceLoaderException
+    {
+        wordnet = ResourceFactory.getInstance().get("wordnet3", "en");
+        // germanet = ResourceFactory.getInstance().get("germanet7", "de");
+        wikipedia = ResourceFactory.getInstance().get("wikipedia", "test");
+        // wiktionary = ResourceFactory.getInstance().get("wiktionary", "en");
     }
 
     @Ignore("The original GermaNet API is not Apache licensed.")
     @Test
-	public void testGermaNetUsingResourceLoader()
-		throws Exception
-	{
+    public void testGermaNetUsingResourceLoader() throws Exception
+    {
         LexSemResourceComparator comparator = new PathLengthComparator(germanet);
 
-        Set<Entity> entitiesAuto    = germanet.getEntity("Auto", PoS.n);
-        Set<Entity> entitiesBagger  = germanet.getEntity("Bagger", PoS.n);
+        Set<Entity> entitiesAuto = germanet.getEntity("Auto", PoS.n);
+        Set<Entity> entitiesBagger = germanet.getEntity("Bagger", PoS.n);
         Set<Entity> entitiesSchnell = germanet.getEntity("schnell", PoS.adj);
 
         assertEquals(0.0, comparator.getSimilarity(entitiesAuto, entitiesAuto), epsilon);
@@ -69,18 +70,17 @@ public class PathLengthComparatorTest {
         assertEquals(6.0, comparator.getSimilarity(entitiesAuto, entitiesSchnell), epsilon);
     }
 
-//    @Ignore("The path from 'tree' to 'tree' should be 0 but is 13! - See bug 163")
+    // @Ignore("The path from 'tree' to 'tree' should be 0 but is 13! - See bug 163")
     @Test
-	public void testWordNet()
-		throws Exception
-	{
+    public void testWordNet() throws Exception
+    {
         Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
 
-		LexSemResourceComparator comparator = new PathLengthComparator(wordnet);
+        LexSemResourceComparator comparator = new PathLengthComparator(wordnet);
 
-        Set<Entity> entitiesTree  = wordnet.getEntity("tree", PoS.n);
+        Set<Entity> entitiesTree = wordnet.getEntity("tree", PoS.n);
         Set<Entity> entitiesPlant = wordnet.getEntity("plant", PoS.n);
-        Set<Entity> entitiesFast  = wordnet.getEntity("fast", PoS.adj);
+        Set<Entity> entitiesFast = wordnet.getEntity("fast", PoS.adj);
 
         assertEquals(0.0, comparator.getSimilarity(entitiesTree, entitiesTree), epsilon);
         assertEquals(2.0, comparator.getSimilarity(entitiesTree, entitiesPlant), epsilon);
@@ -88,23 +88,24 @@ public class PathLengthComparatorTest {
                 comparator.getSimilarity(entitiesTree, entitiesFast), epsilon);
     }
 
+    @Ignore("MySQL server with Wikipedia data not available")
     @Test
-	public void testWikipediaArticle()
-		throws Exception
-	{
+    public void testWikipediaArticle() throws Exception
+    {
         Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
 
-		LexSemResourceComparator comparator = new PathLengthComparator(wikipedia);
+        LexSemResourceComparator comparator = new PathLengthComparator(wikipedia);
 
         // this are pages
         // we have to find a way to cast the path length between pages to the path length between
-		// the corresponding categories
-        Set<Entity> entitiesTK3   = wikipedia.getEntity("TK3");
+        // the corresponding categories
+        Set<Entity> entitiesTK3 = wikipedia.getEntity("TK3");
         Set<Entity> entitiesIryna = wikipedia.getEntity("Iryna Gurevych");
-        Set<Entity> entitiesUKP   = wikipedia.getEntity("UKP");
-        Set<Entity> entitiesNCS   = wikipedia.getEntity("NCS");
-        Set<Entity> entitiesNCSl  = wikipedia.getEntity("Net Centric Systems");
-        Set<Entity> entitiesNLP   = wikipedia.getEntity("Natural Language Processing for Ambient Intelligence");
+        Set<Entity> entitiesUKP = wikipedia.getEntity("UKP");
+        Set<Entity> entitiesNCS = wikipedia.getEntity("NCS");
+        Set<Entity> entitiesNCSl = wikipedia.getEntity("Net Centric Systems");
+        Set<Entity> entitiesNLP = wikipedia
+                .getEntity("Natural Language Processing for Ambient Intelligence");
 
         assertTrue("TK3", entitiesTK3.size() > 0);
         assertTrue("Iryna Gurevych", entitiesIryna.size() > 0);
@@ -129,16 +130,15 @@ public class PathLengthComparatorTest {
 
     @Test
     @Ignore("WiktionaryResource.getParents() is not implemented.")
-	public void testWiktionary()
-		throws Exception
-	{
+    public void testWiktionary() throws Exception
+    {
         LexSemResourceComparator comparator = new PathLengthComparator(wiktionary);
 
         Set<Entity> entitiesFahrzeug = wiktionary.getEntity("Fahrzeug");
-        Set<Entity> entitiesAuto     = wiktionary.getEntity("Auto");
-        Set<Entity> entitiesGarten   = wiktionary.getEntity("Garten");
-        Set<Entity> entitiesEmpty    = new HashSet<Entity>();
-        Set<Entity> entitiesUnknown  = new HashSet<Entity>();
+        Set<Entity> entitiesAuto = wiktionary.getEntity("Auto");
+        Set<Entity> entitiesGarten = wiktionary.getEntity("Garten");
+        Set<Entity> entitiesEmpty = new HashSet<Entity>();
+        Set<Entity> entitiesUnknown = new HashSet<Entity>();
         entitiesUnknown.add(new Entity("humbelgrmpfh"));
 
         assertEquals(0.0, comparator.getSimilarity(entitiesAuto, entitiesAuto), epsilon);
@@ -150,6 +150,7 @@ public class PathLengthComparatorTest {
                 comparator.getSimilarity(entitiesAuto, entitiesUnknown), epsilon);
 
         // test symmetry
-        assertEquals(comparator.getSimilarity(entitiesFahrzeug, entitiesAuto), comparator.getSimilarity(entitiesAuto, entitiesFahrzeug), epsilon);
+        assertEquals(comparator.getSimilarity(entitiesFahrzeug, entitiesAuto),
+                comparator.getSimilarity(entitiesAuto, entitiesFahrzeug), epsilon);
     }
 }
