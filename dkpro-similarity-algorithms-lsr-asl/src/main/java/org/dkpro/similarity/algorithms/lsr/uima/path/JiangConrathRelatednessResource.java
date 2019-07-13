@@ -26,25 +26,24 @@ import org.dkpro.similarity.algorithms.lsr.path.JiangConrathComparator;
 import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResourceException;
 
 public final class JiangConrathRelatednessResource
-	extends LSRRelatednessResourceBase
+    extends LSRRelatednessResourceBase
 {
-
     @SuppressWarnings({ "rawtypes" })
     @Override
-	public boolean initialize(ResourceSpecifier aSpecifier, Map aAdditionalParams)
-		throws ResourceInitializationException
-	{
-		if (!super.initialize(aSpecifier, aAdditionalParams)) {
-			return false;
-		}
+    public boolean initialize(ResourceSpecifier aSpecifier, Map aAdditionalParams)
+        throws ResourceInitializationException
+    {
+        if (!super.initialize(aSpecifier, aAdditionalParams)) {
+            return false;
+        }
 
-  		try {
+        try {
             measure = new JiangConrathComparator(lsr);
         }
         catch (LexicalSemanticResourceException e) {
             throw new ResourceInitializationException(e);
         }
 
-		return true;
-	}
+        return true;
+    }
 }

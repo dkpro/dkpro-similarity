@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.dkpro</groupId>
     <artifactId>dkpro-parent-pom</artifactId>
-    <version>19</version>
+    <version>22</version>
   </parent>
   <groupId>org.dkpro.similarity</groupId>
   <artifactId>dkpro-similarity</artifactId>
