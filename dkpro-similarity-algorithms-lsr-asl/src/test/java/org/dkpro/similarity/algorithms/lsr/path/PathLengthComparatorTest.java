@@ -18,8 +18,6 @@
 package org.dkpro.similarity.algorithms.lsr.path;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -43,7 +41,7 @@ public class PathLengthComparatorTest
 
     private static LexicalSemanticResource wordnet;
     private static LexicalSemanticResource germanet;
-    private static LexicalSemanticResource wikipedia;
+    //private static LexicalSemanticResource wikipedia;
     private static LexicalSemanticResource wiktionary;
 
     @BeforeClass
@@ -51,7 +49,7 @@ public class PathLengthComparatorTest
     {
         wordnet = ResourceFactory.getInstance().get("wordnet3", "en");
         // germanet = ResourceFactory.getInstance().get("germanet7", "de");
-        wikipedia = ResourceFactory.getInstance().get("wikipedia", "test");
+        //wikipedia = ResourceFactory.getInstance().get("wikipedia", "test");
         // wiktionary = ResourceFactory.getInstance().get("wiktionary", "en");
     }
 
@@ -88,45 +86,45 @@ public class PathLengthComparatorTest
                 comparator.getSimilarity(entitiesTree, entitiesFast), epsilon);
     }
 
-    @Ignore("MySQL server with Wikipedia data not available")
-    @Test
-    public void testWikipediaArticle() throws Exception
-    {
-        Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
-
-        LexSemResourceComparator comparator = new PathLengthComparator(wikipedia);
-
-        // this are pages
-        // we have to find a way to cast the path length between pages to the path length between
-        // the corresponding categories
-        Set<Entity> entitiesTK3 = wikipedia.getEntity("TK3");
-        Set<Entity> entitiesIryna = wikipedia.getEntity("Iryna Gurevych");
-        Set<Entity> entitiesUKP = wikipedia.getEntity("UKP");
-        Set<Entity> entitiesNCS = wikipedia.getEntity("NCS");
-        Set<Entity> entitiesNCSl = wikipedia.getEntity("Net Centric Systems");
-        Set<Entity> entitiesNLP = wikipedia
-                .getEntity("Natural Language Processing for Ambient Intelligence");
-
-        assertTrue("TK3", entitiesTK3.size() > 0);
-        assertTrue("Iryna Gurevych", entitiesIryna.size() > 0);
-        assertTrue("UKP", entitiesUKP.size() > 0);
-        assertTrue("NCS", entitiesNCS.size() > 0);
-        assertTrue("Net Centric Systems", entitiesNCSl.size() > 0);
-        assertTrue("Natural Language Processing for Ambient Intelligence", entitiesNLP.size() > 0);
-
-        // same page
-        assertEquals(0.0, comparator.getSimilarity(entitiesTK3, entitiesTK3), epsilon);
-
-        // different pages
-        // pathlength in Edges = 2
-        assertEquals(2.0, comparator.getSimilarity(entitiesIryna, entitiesUKP), epsilon);
-
-        // page and redirect
-        assertEquals(0.0, comparator.getSimilarity(entitiesNCS, entitiesNCSl), epsilon);
-
-        // one edge / zero nodes distance
-        assertEquals(1.0, comparator.getSimilarity(entitiesUKP, entitiesNLP), epsilon);
-    }
+//    @Ignore("MySQL server with Wikipedia data not available")
+//    @Test
+//    public void testWikipediaArticle() throws Exception
+//    {
+//        Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
+//
+//        LexSemResourceComparator comparator = new PathLengthComparator(wikipedia);
+//
+//        // this are pages
+//        // we have to find a way to cast the path length between pages to the path length between
+//        // the corresponding categories
+//        Set<Entity> entitiesTK3 = wikipedia.getEntity("TK3");
+//        Set<Entity> entitiesIryna = wikipedia.getEntity("Iryna Gurevych");
+//        Set<Entity> entitiesUKP = wikipedia.getEntity("UKP");
+//        Set<Entity> entitiesNCS = wikipedia.getEntity("NCS");
+//        Set<Entity> entitiesNCSl = wikipedia.getEntity("Net Centric Systems");
+//        Set<Entity> entitiesNLP = wikipedia
+//                .getEntity("Natural Language Processing for Ambient Intelligence");
+//
+//        assertTrue("TK3", entitiesTK3.size() > 0);
+//        assertTrue("Iryna Gurevych", entitiesIryna.size() > 0);
+//        assertTrue("UKP", entitiesUKP.size() > 0);
+//        assertTrue("NCS", entitiesNCS.size() > 0);
+//        assertTrue("Net Centric Systems", entitiesNCSl.size() > 0);
+//        assertTrue("Natural Language Processing for Ambient Intelligence", entitiesNLP.size() > 0);
+//
+//        // same page
+//        assertEquals(0.0, comparator.getSimilarity(entitiesTK3, entitiesTK3), epsilon);
+//
+//        // different pages
+//        // pathlength in Edges = 2
+//        assertEquals(2.0, comparator.getSimilarity(entitiesIryna, entitiesUKP), epsilon);
+//
+//        // page and redirect
+//        assertEquals(0.0, comparator.getSimilarity(entitiesNCS, entitiesNCSl), epsilon);
+//
+//        // one edge / zero nodes distance
+//        assertEquals(1.0, comparator.getSimilarity(entitiesUKP, entitiesNLP), epsilon);
+//    }
 
     @Test
     @Ignore("WiktionaryResource.getParents() is not implemented.")
