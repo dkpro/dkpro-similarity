@@ -27,11 +27,11 @@ import org.apache.uima.collection.CollectionException;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.Level;
+import org.dkpro.core.io.text.TextReader;
 import org.dkpro.similarity.type.SemRelWordPair;
 
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
-import de.tudarmstadt.ukp.dkpro.core.io.text.TextReader;
 
 /**
  * Reads semantic relatedness word pair datasets.

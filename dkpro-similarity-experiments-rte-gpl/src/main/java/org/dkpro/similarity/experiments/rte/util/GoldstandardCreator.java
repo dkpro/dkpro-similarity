@@ -17,12 +17,11 @@ import static org.dkpro.similarity.experiments.rte.Pipeline.DATASET_DIR;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
+import org.dkpro.core.gate.GateLemmatizer;
+import org.dkpro.core.opennlp.OpenNlpPosTagger;
 import org.dkpro.similarity.experiments.rte.Pipeline.Dataset;
-import org.dkpro.similarity.uima.io.RTECorpusReader;
 import org.dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
-
-import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
-import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
+import org.dkpro.similarity.uima.io.RTECorpusReader;
 
 
 public class GoldstandardCreator

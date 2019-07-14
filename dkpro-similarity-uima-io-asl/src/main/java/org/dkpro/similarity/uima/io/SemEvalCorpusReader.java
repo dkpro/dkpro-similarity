@@ -28,9 +28,8 @@ import java.util.List;
 import org.apache.commons.io.IOUtils;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.dkpro.core.api.resources.ResourceUtils;
 import org.dkpro.similarity.uima.io.util.CombinationPair;
-
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 
 /**
  * Reader for the datasets used in the Semantic Textual Similarity (STS)

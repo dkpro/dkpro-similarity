@@ -23,8 +23,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.Set;
 
 import org.dkpro.similarity.algorithms.lsr.LexSemResourceComparator;
-import org.dkpro.similarity.algorithms.lsr.path.LeacockChodorowComparator;
 import org.junit.Assume;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.tudarmstadt.ukp.dkpro.lexsemresource.Entity;
@@ -33,35 +33,33 @@ import de.tudarmstadt.ukp.dkpro.lexsemresource.core.ResourceFactory;
 
 public class LeacockChodorowComparatorTest
 {
-	private static final double epsilon = 0.0001;
+    private static final double epsilon = 0.0001;
 
-	
-	@Test
-	public void testLC98WikipediaCategory()
-		throws Exception
-	{
+    @Ignore("MySQL server with Wikipedia data not available")
+    @Test
+    public void testLC98WikipediaCategory() throws Exception
+    {
+        Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
 
-	    Assume.assumeTrue(Runtime.getRuntime().maxMemory() > 1000000000);
-	    
-		LexicalSemanticResource wikiResource = ResourceFactory.getInstance().get(
-				"wikipedia_category", "test");
+        LexicalSemanticResource wikiResource = ResourceFactory.getInstance()
+                .get("wikipedia_category", "test");
 
-		LexSemResourceComparator comparator = new LeacockChodorowComparator(wikiResource);
+        LexSemResourceComparator comparator = new LeacockChodorowComparator(wikiResource);
 
-		Set<Entity> entitiesAqua = wikiResource.getEntity("AQUA");
-		Set<Entity> entitiesSir = wikiResource.getEntity("SIR");
-		Set<Entity> entitiesUKP = wikiResource.getEntity("UKP");
+        Set<Entity> entitiesAqua = wikiResource.getEntity("AQUA");
+        Set<Entity> entitiesSir = wikiResource.getEntity("SIR");
+        Set<Entity> entitiesUKP = wikiResource.getEntity("UKP");
 
-		assertTrue("AQUA", entitiesAqua.size() > 0);
-		assertTrue("SIR", entitiesSir.size() > 0);
-		assertTrue("UKP", entitiesUKP.size() > 0);
+        assertTrue("AQUA", entitiesAqua.size() > 0);
+        assertTrue("SIR", entitiesSir.size() > 0);
+        assertTrue("UKP", entitiesUKP.size() > 0);
 
-		// same page
-		assertEquals(2.0794, comparator.getSimilarity(entitiesAqua, entitiesAqua), epsilon);
+        // same page
+        assertEquals(2.0794, comparator.getSimilarity(entitiesAqua, entitiesAqua), epsilon);
 
-		// different pages
-		// pathlength in Edges = 2
-		assertEquals(-Math.log(0.375), comparator.getSimilarity(entitiesAqua, entitiesSir),
-				epsilon);
-	}
+        // different pages
+        // pathlength in Edges = 2
+        assertEquals(-Math.log(0.375), comparator.getSimilarity(entitiesAqua, entitiesSir),
+                epsilon);
+    }
 }

@@ -23,10 +23,9 @@ import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.JCasBuilder;
 import org.apache.uima.jcas.JCas;
+import org.dkpro.core.tokit.BreakIteratorSegmenter;
 import org.dkpro.similarity.algorithms.api.JCasTextSimilarityMeasure;
 import org.junit.Test;
-
-import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 
 public class AvgTokensPerSentenceMeasureTest
 {

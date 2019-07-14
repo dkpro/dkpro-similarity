@@ -32,6 +32,7 @@ import org.apache.uima.collection.CollectionException;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.dkpro.core.api.resources.ResourceUtils;
 import org.dkpro.similarity.uima.entailment.type.EntailmentClassificationOutcome;
 import org.dkpro.similarity.uima.io.util.CombinationPair;
 import org.dkpro.similarity.uima.io.util.EntailmentPair;
@@ -46,8 +47,6 @@ import org.jaxen.dom4j.Dom4jXPath;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 
 /**
  * Reader for the Recognizing Textual Entailment (RTE) datasets

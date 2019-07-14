@@ -24,8 +24,8 @@ import static org.apache.uima.fit.factory.CollectionReaderFactory.createReader;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
-import org.dkpro.similarity.uima.io.ShortAnswerGradingReader;
 import org.dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
+import org.dkpro.similarity.uima.io.ShortAnswerGradingReader;
 
 public class OutputGoldstandard
 {

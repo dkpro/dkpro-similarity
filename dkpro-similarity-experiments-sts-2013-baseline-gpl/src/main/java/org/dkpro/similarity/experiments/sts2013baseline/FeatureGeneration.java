@@ -21,6 +21,9 @@ import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.factory.AggregateBuilder;
 import org.apache.uima.fit.pipeline.SimplePipeline;
+import org.dkpro.core.gate.GateLemmatizer;
+import org.dkpro.core.opennlp.OpenNlpPosTagger;
+import org.dkpro.core.tokit.BreakIteratorSegmenter;
 import org.dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
 import org.dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import org.dkpro.similarity.algorithms.lexical.string.LongestCommonSubstringComparator;
@@ -37,16 +40,13 @@ import org.dkpro.similarity.ml.FeatureConfig;
 import org.dkpro.similarity.ml.io.SimilarityScoreWriter;
 import org.dkpro.similarity.uima.annotator.SimilarityScorer;
 import org.dkpro.similarity.uima.io.CombinationReader;
-import org.dkpro.similarity.uima.io.SemEvalCorpusReader;
 import org.dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
+import org.dkpro.similarity.uima.io.SemEvalCorpusReader;
 import org.dkpro.similarity.uima.resource.SimpleTextSimilarityResource;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Document;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
-import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
-import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
-import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 
 
 /**

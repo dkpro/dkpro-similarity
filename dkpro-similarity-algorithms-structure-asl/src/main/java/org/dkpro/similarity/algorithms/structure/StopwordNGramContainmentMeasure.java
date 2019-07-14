@@ -28,10 +28,9 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.io.IOUtils;
+import org.dkpro.core.api.resources.ResourceUtils;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
-
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 
 
 /**
@@ -61,8 +60,9 @@ public class StopwordNGramContainmentMeasure
             is = url.openStream();
             String content = IOUtils.toString(is, "UTF-8");
             for (String line : Arrays.asList(content.split("\n"))) {
-                if (line.length() > 0)
+                if (line.length() > 0) {
                     stopwords.add(line);
+                }
             }
         }
         finally{
@@ -87,8 +87,9 @@ public class StopwordNGramContainmentMeasure
 		double norm = Math.max(ngrams1.size(), ngrams2.size());
 		double sim = 0.0;
 		
-		if (norm > 0.0)
-			sim = commonNGrams.size() / norm;
+		if (norm > 0.0) {
+            sim = commonNGrams.size() / norm;
+        }
 		
 		return sim;
 	}
@@ -100,8 +101,9 @@ public class StopwordNGramContainmentMeasure
 		
 		for (String token : inputTokens)
 		{
-			if (stopwords.contains(token))
-				outputTokens.add(token);
+			if (stopwords.contains(token)) {
+                outputTokens.add(token);
+            }
 		}
 		
 		return outputTokens;

@@ -33,17 +33,16 @@ import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.component.CasDumpWriter;
 import org.apache.uima.fit.factory.AggregateBuilder;
 import org.apache.uima.fit.pipeline.SimplePipeline;
+import org.dkpro.core.tokit.BreakIteratorSegmenter;
 import org.dkpro.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure;
 import org.dkpro.similarity.algorithms.lexical.uima.ngrams.WordNGramContainmentResource;
 import org.dkpro.similarity.algorithms.style.TypeTokenRatioComparator;
 import org.dkpro.similarity.uima.annotator.SimilarityScorer;
 import org.dkpro.similarity.uima.io.CombinationReader;
-import org.dkpro.similarity.uima.io.PlainTextCombinationReader;
 import org.dkpro.similarity.uima.io.CombinationReader.CombinationStrategy;
+import org.dkpro.similarity.uima.io.PlainTextCombinationReader;
 import org.dkpro.similarity.uima.resource.SimpleJCasTextSimilarityResource;
 import org.dkpro.similarity.uima.resource.SimpleTextSimilarityResource;
-
-import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 
 
 public class WithDKPro

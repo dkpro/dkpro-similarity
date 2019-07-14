@@ -18,8 +18,8 @@
  */
 package org.dkpro.similarity.algorithms.sspace.util;
 
-import no.uib.cipr.matrix.Vector;
 import edu.ucla.sspace.vector.DoubleVector;
+import no.uib.cipr.matrix.Vector;
 
 /**
  * Adapt SSpace {@link edu.ucla.sspace.vector.Vector} to {@link Vector}.

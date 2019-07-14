@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.dkpro</groupId>
     <artifactId>dkpro-parent-pom</artifactId>
-    <version>19</version>
+    <version>22</version>
   </parent>
   <groupId>org.dkpro.similarity</groupId>
   <artifactId>dkpro-similarity</artifactId>
@@ -49,7 +49,7 @@
     <url>https://github.com/dkpro/dkpro-similarity/issues</url>
   </issueManagement>
   <properties>
-    <dkpro.core.version>1.9.1</dkpro.core.version>
+    <dkpro.core.version>1.11.0</dkpro.core.version>
   </properties>
   <repositories>
     <repository>
@@ -63,15 +63,15 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-        <artifactId>de.tudarmstadt.ukp.dkpro.core-asl</artifactId>
+        <groupId>org.dkpro.core</groupId>
+        <artifactId>dkpro-core-asl</artifactId>
         <version>${dkpro.core.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-        <artifactId>de.tudarmstadt.ukp.dkpro.core-gpl</artifactId>
+        <groupId>org.dkpro.core</groupId>
+        <artifactId>dkpro-core-gpl</artifactId>
         <version>${dkpro.core.version}</version>
         <type>pom</type>
         <scope>import</scope>

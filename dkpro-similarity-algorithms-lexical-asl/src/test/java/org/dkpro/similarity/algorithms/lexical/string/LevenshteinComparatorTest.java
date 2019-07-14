@@ -21,7 +21,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.dkpro.similarity.algorithms.api.TermSimilarityMeasure;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasure;
-import org.dkpro.similarity.algorithms.lexical.string.LevenshteinComparator;
 import org.junit.Test;
 
 public class LevenshteinComparatorTest

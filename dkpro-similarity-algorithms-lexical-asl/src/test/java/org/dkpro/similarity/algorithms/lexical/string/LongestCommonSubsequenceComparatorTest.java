@@ -19,8 +19,6 @@ package org.dkpro.similarity.algorithms.lexical.string;
 
 import static org.junit.Assert.assertEquals;
 
-import org.dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceComparator;
-import org.dkpro.similarity.algorithms.lexical.string.LongestCommonSubsequenceNormComparator;
 import org.junit.Test;
 
 public class LongestCommonSubsequenceComparatorTest

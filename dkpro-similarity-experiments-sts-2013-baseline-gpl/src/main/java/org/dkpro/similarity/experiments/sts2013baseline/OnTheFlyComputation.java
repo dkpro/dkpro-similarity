@@ -16,10 +16,9 @@ import static org.dkpro.similarity.experiments.sts2013baseline.Pipeline.Mode.TRA
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
+import org.dkpro.core.api.resources.ResourceUtils;
 import org.dkpro.similarity.experiments.sts2013baseline.util.Evaluator;
 import org.dkpro.similarity.experiments.sts2013baseline.util.Features2Arff;
-
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 
 public class OnTheFlyComputation
 {

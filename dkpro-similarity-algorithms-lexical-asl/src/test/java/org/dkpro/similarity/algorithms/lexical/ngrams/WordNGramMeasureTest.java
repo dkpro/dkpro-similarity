@@ -21,9 +21,8 @@ import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
+
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasure;
-import org.dkpro.similarity.algorithms.lexical.ngrams.WordNGramContainmentMeasure;
-import org.dkpro.similarity.algorithms.lexical.ngrams.WordNGramJaccardMeasure;
 import org.junit.Test;
    
 public class WordNGramMeasureTest

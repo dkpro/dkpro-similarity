@@ -17,13 +17,13 @@
  *******************************************************************************/
 package org.dkpro.similarity.algorithms.vsm;
 
-import no.uib.cipr.matrix.Vector;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TermSimilarityMeasureBase;
 import org.dkpro.similarity.algorithms.vsm.store.VectorReader;
+
+import no.uib.cipr.matrix.Vector;
 
 
 /**

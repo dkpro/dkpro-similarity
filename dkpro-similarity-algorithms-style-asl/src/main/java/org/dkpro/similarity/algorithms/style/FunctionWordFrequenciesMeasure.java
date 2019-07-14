@@ -32,10 +32,10 @@ import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+import org.dkpro.core.api.resources.ResourceUtils;
 import org.dkpro.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 
 /**

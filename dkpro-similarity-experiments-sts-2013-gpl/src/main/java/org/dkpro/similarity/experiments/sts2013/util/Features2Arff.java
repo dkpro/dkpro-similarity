@@ -10,6 +10,11 @@
  ******************************************************************************/
 package org.dkpro.similarity.experiments.sts2013.util;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.FEATURES_DIR;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.GOLDSTANDARD_DIR;
+import static org.dkpro.similarity.experiments.sts2013.Pipeline.MODELS_DIR;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,11 +29,6 @@ import org.dkpro.similarity.experiments.sts2013.Pipeline.Dataset;
 import org.dkpro.similarity.experiments.sts2013.Pipeline.Mode;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.dkpro.similarity.experiments.sts2013.Pipeline.FEATURES_DIR;
-import static org.dkpro.similarity.experiments.sts2013.Pipeline.GOLDSTANDARD_DIR;
-import static org.dkpro.similarity.experiments.sts2013.Pipeline.MODELS_DIR;
 
 
 public class Features2Arff

@@ -24,13 +24,12 @@ import static org.apache.uima.fit.factory.ExternalResourceFactory.createExternal
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.fit.pipeline.SimplePipeline;
+import org.dkpro.core.api.io.ResourceCollectionReaderBase;
 import org.dkpro.similarity.algorithms.lsr.uima.path.JiangConrathRelatednessResource;
 import org.dkpro.similarity.algorithms.lsr.uima.path.LSRRelatednessResourceBase;
 import org.dkpro.similarity.algorithms.lsr.uima.path.LinRelatednessResource;
 import org.dkpro.similarity.experiments.wordpairs.io.SemanticRelatednessResultWriter;
 import org.dkpro.similarity.experiments.wordpairs.io.WordPairReader;
-
-import de.tudarmstadt.ukp.dkpro.core.api.io.ResourceCollectionReaderBase;
 
 public class WordPairExperiment
 {

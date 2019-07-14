@@ -17,10 +17,10 @@
  *******************************************************************************/
 package org.dkpro.similarity.algorithms.vsm;
 
-import org.dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
-import org.dkpro.similarity.algorithms.vsm.store.VectorReader;
 import org.dkpro.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeIdf;
 import org.dkpro.similarity.algorithms.vsm.store.IndexedDocumentsVectorReaderBase.WeightingModeTf;
+import org.dkpro.similarity.algorithms.vsm.store.LuceneVectorReader;
+import org.dkpro.similarity.algorithms.vsm.store.VectorReader;
 
 
 /**

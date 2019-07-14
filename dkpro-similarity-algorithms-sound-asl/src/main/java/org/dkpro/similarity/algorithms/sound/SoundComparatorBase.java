@@ -19,10 +19,9 @@ package org.dkpro.similarity.algorithms.sound;
 
 import org.apache.commons.codec.EncoderException;
 import org.apache.commons.codec.StringEncoder;
+import org.dkpro.core.api.phonetics.util.SoundUtils;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TermSimilarityMeasureBase;
-
-import de.tudarmstadt.ukp.dkpro.core.api.phonetics.util.SoundUtils;
 
 /**
  * Base class wrapper for sound based comparators implemented in commons-codec.

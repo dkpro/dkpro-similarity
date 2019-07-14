@@ -33,15 +33,15 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
+import org.dkpro.core.gate.GateLemmatizer;
+import org.dkpro.core.opennlp.OpenNlpPosTagger;
+import org.dkpro.core.tokit.BreakIteratorSegmenter;
 import org.dkpro.similarity.algorithms.api.JCasTextSimilarityMeasureBase;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 import org.dkpro.similarity.algorithms.lexsub.util.BingTranslator;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
-import de.tudarmstadt.ukp.dkpro.core.gate.GateLemmatizer;
-import de.tudarmstadt.ukp.dkpro.core.opennlp.OpenNlpPosTagger;
-import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 
 /**
  * Similarity measure which uses the Microsoft Bing translator to translate

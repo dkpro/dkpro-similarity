@@ -20,7 +20,6 @@ package org.dkpro.similarity.algorithms.sound;
 import static org.junit.Assert.assertEquals;
 
 import org.dkpro.similarity.algorithms.api.TermSimilarityMeasure;
-import org.dkpro.similarity.algorithms.sound.ColognePhoneticComparator;
 import org.junit.Test;
 
 public class ColognePhoneticComparatorTest

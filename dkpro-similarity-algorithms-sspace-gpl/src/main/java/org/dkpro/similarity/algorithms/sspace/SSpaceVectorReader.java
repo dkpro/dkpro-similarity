@@ -27,9 +27,6 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Properties;
 
-import no.uib.cipr.matrix.Vector;
-import no.uib.cipr.matrix.sparse.SparseVector;
-
 import org.apache.commons.io.FileUtils;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.sspace.util.DocumentVectorBuilder;
@@ -38,6 +35,8 @@ import org.dkpro.similarity.algorithms.sspace.util.VectorAdapter;
 import org.dkpro.similarity.algorithms.vsm.store.VectorReader;
 
 import edu.ucla.sspace.common.SemanticSpace;
+import no.uib.cipr.matrix.Vector;
+import no.uib.cipr.matrix.sparse.SparseVector;
 
 /**
  * Vector reader accessing a {@link SemanticSpace}.

@@ -34,37 +34,36 @@ import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.ResourceLoaderException
  *
  */
 public abstract class LSRRelatednessResourceBase
-	extends TextSimilarityResourceBase
+    extends TextSimilarityResourceBase
 {
-
     // Attention! Can only have String parameters in external resources.
-    
+
     public static final String PARAM_RESOURCE_NAME = "LsrResourceName";
     @ConfigurationParameter(name = PARAM_RESOURCE_NAME, mandatory = true)
     protected String lsrResourceName;
-    
+
     public static final String PARAM_RESOURCE_LANGUAGE = "LSRResourceLanguage";
     @ConfigurationParameter(name = PARAM_RESOURCE_LANGUAGE, mandatory = true)
     protected String lsrResourceLanguage;
 
     protected LexicalSemanticResource lsr;
-    
+
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
-	public boolean initialize(ResourceSpecifier aSpecifier, Map aAdditionalParams)
-		throws ResourceInitializationException
-	{
-		if (!super.initialize(aSpecifier, aAdditionalParams)) {
-			return false;
-		}
+    public boolean initialize(ResourceSpecifier aSpecifier, Map aAdditionalParams)
+        throws ResourceInitializationException
+    {
+        if (!super.initialize(aSpecifier, aAdditionalParams)) {
+            return false;
+        }
 
-		try {
+        try {
             lsr = ResourceFactory.getInstance().get(lsrResourceName, lsrResourceLanguage);
         }
         catch (ResourceLoaderException e) {
             throw new ResourceInitializationException(e);
         }
 
-		return true;
-	}
+        return true;
+    }
 }

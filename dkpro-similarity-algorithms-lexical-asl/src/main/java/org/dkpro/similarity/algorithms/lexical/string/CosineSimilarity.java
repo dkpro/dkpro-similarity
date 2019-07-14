@@ -29,16 +29,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import no.uib.cipr.matrix.DenseVector;
-import no.uib.cipr.matrix.Vector;
-
 import org.apache.commons.io.FileUtils;
+import org.dkpro.core.api.frequency.util.FrequencyDistribution;
 import org.dkpro.similarity.algorithms.api.SimilarityException;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasureBase;
 import org.dkpro.similarity.algorithms.vsm.InnerVectorProduct;
 import org.dkpro.similarity.algorithms.vsm.VectorNorm;
 
-import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
+import no.uib.cipr.matrix.DenseVector;
+import no.uib.cipr.matrix.Vector;
 
 public class CosineSimilarity
 	extends TextSimilarityMeasureBase

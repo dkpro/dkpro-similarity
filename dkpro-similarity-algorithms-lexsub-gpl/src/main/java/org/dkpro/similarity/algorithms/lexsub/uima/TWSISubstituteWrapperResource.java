@@ -21,9 +21,9 @@ package org.dkpro.similarity.algorithms.lexsub.uima;
 import java.io.IOException;
 import java.util.Map;
 
+import org.apache.uima.fit.descriptor.ExternalResource;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
-import org.apache.uima.fit.descriptor.ExternalResource;
 import org.dkpro.similarity.algorithms.api.TextSimilarityMeasure;
 import org.dkpro.similarity.algorithms.lexsub.TWSISubstituteWrapper;
 import org.dkpro.similarity.uima.resource.JCasTextSimilarityResourceBase;

@@ -39,7 +39,6 @@ import de.tudarmstadt.ukp.dkpro.lexsemresource.exception.LexicalSemanticResource
 import de.tudarmstadt.ukp.wikipedia.api.Wikipedia;
 import de.tudarmstadt.ukp.wikipedia.api.exception.WikiException;
 
-
 public class GlossOverlapComparatorTest
 {
     private static final double epsilon = 0.0001;
@@ -48,32 +47,30 @@ public class GlossOverlapComparatorTest
     private LexicalSemanticResource wikiResource;
     private LexicalSemanticResource wktResource;
 
-	@Before
-	public void setupWikipedia()
-		throws Exception
-	{
+    @Before
+    public void setupWikipedia() throws Exception
+    {
         wikiResource = ResourceFactory.getInstance().get("wikipedia", "en");
         wikiResource.setIsCaseSensitive(false);
     }
 
+    // @Before
+    // public void setupWiktionary()
+    // throws Exception
+    // {
+    // wktResource = ResourceFactory.getInstance().get("wiktionary", "de");
+    // }
 
-//	@Before
-//    public void setupWiktionary()
-//        throws Exception
-//    {
-//        wktResource = ResourceFactory.getInstance().get("wiktionary", "de");
-//    }
-
-	@Test
-	public void testGlossOverlapWikipedia()
-		throws Exception
-	{
+    @Ignore("MySQL server with Wikipedia data not available")
+    @Test
+    public void testGlossOverlapWikipedia() throws Exception
+    {
         LexSemResourceComparator comparator = new GlossOverlapComparator(wikiResource, false);
 
-        Set<Entity> entitiesAuto  = wikiResource.getEntity("Automobile");
+        Set<Entity> entitiesAuto = wikiResource.getEntity("Automobile");
         Set<Entity> entitiesTruck = wikiResource.getEntity("Truck");
 
-        assertTrue("Auto",  entitiesAuto.size() > 0);
+        assertTrue("Auto", entitiesAuto.size() > 0);
         assertTrue("Truck", entitiesTruck.size() > 0);
 
         // same page
@@ -84,16 +81,16 @@ public class GlossOverlapComparatorTest
     }
 
     @Ignore("Currently deactivated as Wiktionary resource data is not for API version is not available.")
-	@Test
-	public void testGlossOverlapWiktionary()
-		throws LexicalSemanticResourceException, SimilarityException
-	{
-		LexSemResourceComparator comparator = new GlossOverlapComparator(wktResource, false);
+    @Test
+    public void testGlossOverlapWiktionary()
+        throws LexicalSemanticResourceException, SimilarityException
+    {
+        LexSemResourceComparator comparator = new GlossOverlapComparator(wktResource, false);
 
-        Set<Entity> entities1  = wktResource.getEntity("Bayern");
+        Set<Entity> entities1 = wktResource.getEntity("Bayern");
         Set<Entity> entities2 = wktResource.getEntity("Deutschland");
 
-        assertTrue("Bayern",  entities1.size() > 0);
+        assertTrue("Bayern", entities1.size() > 0);
         assertTrue("Deutschland", entities2.size() > 0);
 
         // same page
@@ -104,25 +101,27 @@ public class GlossOverlapComparatorTest
     }
 
     // LSR-based comparator and JWPL-based comparator should yield equal results
-	// See Bug 144
-	@Test
-	@Ignore("TODO for some reason the leskComparator gloss is from the disambiguation page - need to discover why")
-	public void comparisonWithJwplImplementationTest()
-		throws LexicalSemanticResourceException, WikiException, SimilarityException
-	{
-		wikiResource.setIsCaseSensitive(true);
-		LexSemResourceComparator glossOverlapComparator = new GlossOverlapComparator(wikiResource, false);
+    // See Bug 144
+    @Test
+    @Ignore("TODO for some reason the leskComparator gloss is from the disambiguation page - need to discover why")
+    public void comparisonWithJwplImplementationTest()
+        throws LexicalSemanticResourceException, WikiException, SimilarityException
+    {
+        wikiResource.setIsCaseSensitive(true);
+        LexSemResourceComparator glossOverlapComparator = new GlossOverlapComparator(wikiResource,
+                false);
 
         String term1 = "Automobile";
         String term2 = "Truck";
 
-        Set<Entity> entitiesAuto  = wikiResource.getEntity(term1);
+        Set<Entity> entitiesAuto = wikiResource.getEntity(term1);
         Set<Entity> entitiesTruck = wikiResource.getEntity(term2);
 
         LeskComparator leskComparator = new LeskFirstComparator(wiki);
         leskComparator.setUseCache(false);
 
-        assertEquals(glossOverlapComparator.getSimilarity(entitiesAuto, entitiesTruck), leskComparator.getSimilarity(term1, term2), epsilon);
+        assertEquals(glossOverlapComparator.getSimilarity(entitiesAuto, entitiesTruck),
+                leskComparator.getSimilarity(term1, term2), epsilon);
 
         wikiResource.setIsCaseSensitive(false);
     }
