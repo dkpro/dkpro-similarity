@@ -54,7 +54,7 @@
   <repositories>
     <repository>
       <id>ukp-oss-model-releases</id>
-      <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-model-releases-local</url>
+      <url>https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-model-releases-local</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
@@ -166,7 +166,7 @@
       <repositories>
         <repository>
           <id>ukp-oss-releases</id>
-          <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases</url>
+          <url>https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases</url>
         </repository>
       </repositories>
       <dependencyManagement>
